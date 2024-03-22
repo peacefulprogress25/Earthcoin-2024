@@ -1,3 +1,4 @@
+import Project from "../../Views/Projects";
 export default function Page() {
-  return <div>Projects</div>;
+  return <Project />;
 }
