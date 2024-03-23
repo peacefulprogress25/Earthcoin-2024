@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import ImageView from "../../Components/ImageView";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { EditorState, ContentState } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+import htmlToDraft from "html-to-draftjs";
 
 export default function OverView({ details }) {
-  const [editorLoaded, setEditorLoaded] = useState(false);
-
   const socialIcons = [
     {
       icon: "/assets/icons/chain.svg",
@@ -19,23 +20,14 @@ export default function OverView({ details }) {
       icon: "/assets/icons/linkedin.svg",
     },
   ];
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setEditorLoaded(true);
-    }
-  }, []);
-
-  if (!editorLoaded) {
-    return null;
-  }
-  const { Editor } = require("react-draft-wysiwyg");
-  const { EditorState, ContentState } = require("draft-js");
-  const htmlToDraft = require("html-to-draftjs").default;
-  const contentBlock = htmlToDraft(details.description1);
-  const contentState = ContentState.createFromBlockArray(
-    contentBlock.contentBlocks
-  );
-  const editorState = EditorState.createWithContent(contentState);
+  const addElement = (value) => {
+    const contentBlock = htmlToDraft(value);
+    const contentState = ContentState.createFromBlockArray(
+      contentBlock.contentBlocks
+    );
+    const editorState = EditorState.createWithContent(contentState);
+    return editorState;
+  };
   return (
     <div className="flex w-full flex-col gap-8 px-[5%] mt-6">
       <div className="flex !items-start gap-16">
@@ -80,11 +72,11 @@ export default function OverView({ details }) {
           </p>
           <div className="text-[16px]  font-inter text-[#475467]">
             <Editor
-              editorState={editorState}
+              toolbarHidden
+              editorState={addElement(details?.description1)}
               wrapperClassName="demo-wrapper"
-              editorClassName="richText-editor"
-              toolbarHidden={true}
-              readOnly={true}
+              editorClassName="richText-display"
+              readOnly
             />
             {/* Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
             suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum
