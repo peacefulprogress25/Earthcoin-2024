@@ -125,7 +125,7 @@ export default function Footer() {
     },
   ];
   return (
-    <footer className="h-[60vh] flex flex-col justify-end w-full">
+    <div className="h-[60vh] flex flex-col justify-end w-full">
       <div className="flex my-6 items-start w-full max-w-[1440px] mx-auto  gap-2 px-[8%] justify-between">
         <div className="flex items-start flex-col">
           <ImageView
@@ -232,6 +232,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 }

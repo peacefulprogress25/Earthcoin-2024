@@ -1,10 +1,18 @@
-"use client";
+import { useParams } from "next/navigation";
+import ProjectHeader from "./ProjectHeader";
+import OverView from "./OverView";
 import ImageView from "../../Components/ImageView";
-import { useRouter } from "next/navigation";
-
-export default function ProjectList() {
-  const router = useRouter();
-
+import ProjectImpact from "./ProjectImpact";
+import SeekingFund from "./SeekingFund";
+import GetInTouch from "./GetInTouch";
+import TermsofFunding from "./TermsofFunding";
+import ContractDetails from "./ContractDetails";
+import { Divider, Steps } from "antd";
+import FAQ from "./FAQ";
+import Media from "./Media";
+import "./project.css";
+export default function Projectdetails() {
+  const { id } = useParams();
   const Projects = [
     {
       projectId: "1",
@@ -222,72 +230,101 @@ export default function ProjectList() {
       ],
     },
   ];
-
+  const category = [
+    {
+      section: "Overview",
+    },
+    {
+      section: "Impact",
+    },
+    {
+      section: "Details",
+    },
+    {
+      section: "Contact",
+    },
+  ];
+  const details = Projects.find((project) => project.projectId === id);
   return (
-    <div className="max-w-screen-2xl mx-auto mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full px-2">
-      {Projects.map((project, index) => (
-        <div
-          className="rounded-lg border-4 max-w-[44rem] cursor-pointer w-full h-fit flex flex-col border-[#101828]"
-          key={index}
-          onClick={() => router.push(`/projects/${project.projectId}`)}
-        >
-          <div className="justify-center items-center flex flex-col px-6">
-            <div className="flex justify-center pt-6 gap-2 items-center">
-              <ImageView
-                src={project.icon}
-                alt="avatar"
-                width={50}
-                height={50}
-              />
-              <p className="text-black font-inter font-semibold text-[16px]">
-                {project.subText}
-              </p>
-            </div>
-            <p className="pt-2 font-syne font-semibold text-[24px] text-black">
-              {project.projectName}
-            </p>
-            <p className="pt-2 font-inter font-semibold text-[14px] text-[#EC8000]">
-              {project.category}
-            </p>
-            <p className="py-2 font-inter text-center font-normal text-[14px] text-black">
-              {project.subtitle}
-            </p>
+    <div className="mt-20 min-h-screen w-full">
+      <ProjectHeader details={details} />
+      <div className="w-full justify-center gap-12 border-b border-[#F2F4F7] flex px-2 items-center h-20">
+        {category.map((option, index) => (
+          <p
+            key={index}
+            className="font-inter text-[16px] px-5 font-semibold text-[#475467]"
+          >
+            {option.section}
+          </p>
+        ))}
+      </div>
+      <div className="max-w-screen-2xl mx-auto h-fit flex flex-col px-[8%] gap-12 items-center justify-center w-full">
+        <OverView details={details} />
+        <ImageView
+          src={details.coverPic}
+          alt="coverpic"
+          width={400}
+          height={400}
+          className="w-full object-cover h-[25vh]"
+        />
+        <ProjectImpact details={details} />
+        <div className="flex gap-8 border w-full border-[#FCCA6B] rounded-md p-4">
+          <div className="border-[#EAECF0] grow border-r">
+            <Steps
+              progressDot
+              current={1}
+              direction="vertical"
+              className="custom-step font-inter text-[#101828] font-semibold"
+              items={[
+                {
+                  title: "Pipeline",
+                  description: "Pipeline 30 Apr 2022 - 544 days",
+                },
+                {
+                  title: "Approved",
+                  description: "25 Oct 2023 - 106 days so far",
+                },
+                {
+                  title: "Under implementation",
+                  description: "",
+                },
+                {
+                  title: "Completed",
+                  description: "",
+                },
+              ]}
+            />
           </div>
-          <div className="flex border-t-2 mt-2 w-full border-[#EAECF0]">
-            <div className="flex items-center grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col">
-              <p className="font-syne font-semibold text-[32px] text-[#EC8000]">
-                {project.projectValue}
+          <div className="flex items-start grow flex-col gap-6">
+            <div className="flex flex-col gap-1">
+              <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[18px]">
+                REIGON
               </p>
-              <p className="font-inter font-semibold text-[14px] text-[#101828]">
-                Total project value
-              </p>
-            </div>
-            <div className="flex items-center  py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col">
-              <p className="font-syne font-semibold text-[32px] text-[#EC8000]">
-                {project.fundingNeeded}
-              </p>
-              <p className="font-inter font-semibold  text-[14px] text-[#101828]">
-                Funding needed
+              <p className="text-[#101828] font-medium text-[32px]">
+                {details?.country}
               </p>
             </div>
-            <div className="flex items-center py-2 pb-3  grow justify-center flex-col">
-              <p className="font-syne font-semibold text-[32px] text-[#EC8000]">
-                {project.returnValue}
+            <div className="flex flex-col gap-1">
+              <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[18px]">
+                INVESTMENT TYPE
               </p>
-              <p className="font-inter font-semibold text-[14px] text-[#101828]">
-                Internal rate of return
+              <p className="text-[#101828] font-medium text-[18px]">Debt</p>
+            </div>
+            <div className="flex flex-col gap-1">
+              <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[18px]">
+                PROJECT SIZE
               </p>
+              <p className="text-[#101828] font-medium text-[18px]">Medium</p>
             </div>
           </div>
-          <ImageView
-            src={project.coverPic}
-            alt="coverpic"
-            width={50}
-            height={50}
-            className="w-full object-cover rounded-b-sm  !h-44"
-          />
         </div>
-      ))}
+        <Media details={details} />
+        <TermsofFunding details={details} />
+        <ContractDetails details={details} />
+        <FAQ details={details} />
+        <GetInTouch />
+        <SeekingFund />
+      </div>
     </div>
   );
 }

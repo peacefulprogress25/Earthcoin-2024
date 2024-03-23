@@ -1,3 +1,5 @@
+"use client";
+import Projectdetails from "../../../Views/Projectdetails";
 export default function page() {
-  return <div>page by ID</div>;
+  return <Projectdetails />;
 }

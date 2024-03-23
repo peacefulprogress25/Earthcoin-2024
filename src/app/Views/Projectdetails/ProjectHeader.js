@@ -1,0 +1,33 @@
+import React from "react";
+import ImageView from "../../Components/ImageView";
+
+const headerBg = "/assets/images/Header_sectionBg.svg";
+export default function ProjectHeader({ details }) {
+  return (
+    <div className="flex relative items-center justify-center flex-col h-[40vh] w-full bg-no-repeat">
+      <ImageView
+        src={headerBg}
+        width={400}
+        height={400}
+        className="w-full object-cover h-full"
+      />
+      <div className="justify-center absolute items-center flex flex-col py-8 px-[8%]">
+        <p className="pt-2 font-inter font-semibold text-[16px] text-white">
+          {details.category}
+        </p>
+        <p className="pt-2 font-syne font-semibold text-[48px] text-white">
+          {details.projectName}
+        </p>
+        <p className="py-2 font-inter text-center font-normal text-[20px] text-white">
+          {details.subtitle}
+        </p>
+        <div className="flex justify-center pt-6 gap-2 items-center">
+          <ImageView src={details.icon} alt="avatar" width={50} height={50} />
+          <p className="text-white font-inter font-semibold text-[16px]">
+            {details.subText}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

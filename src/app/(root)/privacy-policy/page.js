@@ -1,3 +1,5 @@
+"use client";
+import PrivacyPolicy from "../../Views/PrivacyPolicy";
 export default function Page() {
-  return <div>Privacy policy</div>;
+  return <PrivacyPolicy />;
 }

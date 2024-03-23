@@ -1,4 +1,5 @@
 import ProjectList from "./ProjectList";
+import WorldMap from "./WorldMap";
 
 export default function Project() {
   const category = [
@@ -22,7 +23,8 @@ export default function Project() {
     },
   ];
   return (
-    <div className="flex mt-14 flex-col">
+    <div className="flex mt-20 flex-col">
+      <WorldMap />
       <div className="w-full justify-center gap-12 border-b border-[#F2F4F7] flex px-2 items-center h-20">
         {category.map((option, index) => (
           <p

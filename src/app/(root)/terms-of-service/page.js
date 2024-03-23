@@ -1,3 +1,5 @@
+"use client";
+import TermsOfService from "../../Views/TermsOfService";
 export default function Page() {
-  return <div>Terms of service</div>;
+  return <TermsOfService />;
 }
