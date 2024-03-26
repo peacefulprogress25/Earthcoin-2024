@@ -23,13 +23,13 @@ export default function Project() {
     },
   ];
   return (
-    <div className="flex mt-20 flex-col">
+    <div className="mt-20 w-full">
       <WorldMap />
-      <div className="w-full justify-center gap-12 border-b border-[#F2F4F7] flex px-2 items-center h-20">
+      <div className="w-full hidden sm:flex cursor-pointer gap-1 sm:gap-12 border-b border-[#F2F4F7]  px-2 items-center justify-between sm:justify-center h-20">
         {category.map((option, index) => (
           <p
             key={index}
-            className="font-inter text-[16px] px-5 font-semibold text-[#475467]"
+            className="font-inter text-[12px] sm:text-[16px] px-0 sm:px-5 font-semibold text-[#475467]"
           >
             {option.section}
           </p>

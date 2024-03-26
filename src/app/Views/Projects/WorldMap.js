@@ -10,7 +10,7 @@ export default function WorldMap() {
         alt="map"
         width={600}
         height={900}
-        className="w-full object-cover h-full"
+        className="!w-full object-cover h-full"
       />
     </div>
   );

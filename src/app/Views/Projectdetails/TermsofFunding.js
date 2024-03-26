@@ -13,17 +13,19 @@ export default function TermsofFunding({ details }) {
     return editorState;
   };
   return (
-    <div className="flex flex-col border-b-2 border-[#EAECF0] pb-8 items-start px-[5%]">
+    <div className="flex flex-col  items-center sm:items-start  px-[5%]">
       <p className="text-[30px] text-left font-semibold text-[#101828] font-syne">
         Terms of funding
       </p>
-      <Editor
-        toolbarHidden
-        editorState={addElement(details?.termsOfFunding)}
-        wrapperClassName="demo-wrapper"
-        editorClassName="richText-display"
-        readOnly
-      />
+      <div className="border-b-2 border-[#EAECF0] pb-8">
+        <Editor
+          toolbarHidden
+          editorState={addElement(details?.termsOfFunding)}
+          wrapperClassName="demo-wrapper"
+          editorClassName="richText-display"
+          readOnly
+        />
+      </div>
     </div>
   );
 }

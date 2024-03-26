@@ -13,7 +13,7 @@ export default function ContractDetails({ details }) {
     return editorState;
   };
   return (
-    <div className="flex flex-col border-b-2 border-[#EAECF0] pb-8 items-start px-[5%]">
+    <div className="flex flex-col items-center sm:items-start px-[5%]">
       <p className="text-[30px] text-left font-semibold text-[#101828] font-syne">
         Contract Details
       </p>
@@ -24,18 +24,20 @@ export default function ContractDetails({ details }) {
         editorClassName="richText-display"
         readOnly
       />
-      <p className="font-inter mt-3 font-medium text-[#EC8000] text-[16px]">
-        Contract Address - 
-        <span className="text-[#101828]">
-          0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6
-        </span>
-      </p>
-      <p className="font-inter mt-1 font-medium text-[#EC8000] text-[16px]">
-        $Earth - 
-        <span className="text-[#101828]">
-          0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6
-        </span>
-      </p>
+      <div className="flex w-full flex-col border-b-2 px-2 border-[#EAECF0] pb-8">
+        <p className="font-inter mt-3 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
+          Contract Address - 
+          <span className="text-[#101828] inline-block">
+            0x9F9f149a02Cddc9a8251207cefD3fF77
+          </span>
+        </p>
+        <p className="font-inter mt-1 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
+          $Earth - 
+          <span className="text-[#101828] inline-block">
+            0x9F9f149a02Cddc9a8251207cefD3fF77
+          </span>
+        </p>
+      </div>
     </div>
   );
 }

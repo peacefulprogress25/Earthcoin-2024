@@ -6,8 +6,8 @@ const logo = "/assets/images/logo.png";
 
 export default function Header() {
   return (
-    <nav className="fixed left-0 top-0 z-10 right-0 bg-white h-20">
-      <div className="flex w-full h-full max-w-[1440px] mx-auto gap-2 items-center  px-[8%]">
+    <nav className="fixed hidden sm:block left-0 top-0 z-10 right-0 bg-white">
+      <div className="flex h-20 w-full mx-auto border-b border-[#F2F4F7] gap-2 items-center px-[1%]  sm:px-[8%]">
         <ImageView
           alt="logo"
           src={logo}
@@ -15,7 +15,7 @@ export default function Header() {
           height={100}
           className="object-contain"
         />
-        <div className="items-center ml-8 flex gap-9 font-inter text-[#475467] font-semibold text-sm">
+        <div className="items-center ml-2 sm:ml-8 flex gap-2 sm:gap-9 font-inter text-[#475467] font-semibold text-sm">
           <Link href="/projects">Projects</Link>
           <Link className="flex items-end gap-1" href="/">
             Raison D’etre <IoIosArrowDown />{" "}

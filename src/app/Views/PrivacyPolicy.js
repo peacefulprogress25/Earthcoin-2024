@@ -19,17 +19,10 @@ export default function PrivacyPolicy() {
     return editorState;
   };
   return (
-    <div className="flex mt-20 mx-auto w-full max-w-screen-lg px-2 py-4 items-center justify-center flex-col">
+    <div className="flex mt-20 mx-auto w-full max-w-screen-lg px-4 py-4 items-center justify-center flex-col">
       <p className="text-[#EC8000] font-semibold text-[16px] font-inter">
         Current as of 20 February 2023
       </p>
-      {/* <Editor
-        editorState={editorState}
-        wrapperClassName="demo-wrapper"
-        editorClassName="richText-editor"
-        toolbarHidden={true}
-        readOnly={true}
-      /> */}
       <Editor
         toolbarHidden
         editorState={addElement(privacypolicy?.details)}

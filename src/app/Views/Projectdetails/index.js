@@ -7,7 +7,8 @@ import SeekingFund from "./SeekingFund";
 import GetInTouch from "./GetInTouch";
 import TermsofFunding from "./TermsofFunding";
 import ContractDetails from "./ContractDetails";
-import { Divider, Steps } from "antd";
+import PeopleSlider from "./PeopleSlider";
+import { Steps } from "antd";
 import FAQ from "./FAQ";
 import Media from "./Media";
 import "./project.css";
@@ -38,22 +39,53 @@ export default function Projectdetails() {
       people: [
         {
           Role: "Founder",
-          img: "https://res.cloudinary.com/dzoeienfl/image/upload/v1699440397/SolarPanelWilliam2%20%281%29%20-%20William%20Skinner.jpg.jpg",
+          img: "/assets/images/media.png",
           Name: "William",
         },
         {
-          Role: "",
-          img: "",
-          Name: "",
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
         {
-          Role: "",
-          img: "",
-          Name: "",
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
         {
-          img: "",
-          Name: "",
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
       ],
       faq: [
@@ -108,22 +140,53 @@ export default function Projectdetails() {
       people: [
         {
           Role: "Founder",
-          img: "https://res.cloudinary.com/dzoeienfl/image/upload/v1699441185/1658384436884%20-%20Joan%20deRB.jfif.jpg",
-          Name: "Gabriela Chang",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
         {
           Role: "Founder",
-          img: "https://res.cloudinary.com/dzoeienfl/image/upload/v1699441219/Jori%202%20-%20Joan%20deRB.jfif.jpg",
-          Name: "Jori",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
         {
-          Role: "",
-          img: "",
-          Name: "",
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
         {
-          img: "",
-          Name: "",
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
       ],
       faq: [
@@ -163,18 +226,53 @@ export default function Projectdetails() {
       people: [
         {
           Role: "Founder",
-          img: "https://res.cloudinary.com/dzoeienfl/image/upload/v1699443468/IMG_0836%20-%20Samuel%20Delesque.jpeg.jpg",
-          Name: "Sam",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
         {
-          Role: "",
-          img: "",
-          Name: "",
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
         {
-          Role: "",
-          img: "",
-          Name: "",
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
       ],
       faq: [
@@ -217,8 +315,54 @@ export default function Projectdetails() {
       homePage: "Yes",
       people: [
         {
-          Role: "Community",
-          img: "http://res.cloudinary.com/dzoeienfl/image/upload/v1699439963/kokonut.png.png",
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
+        },
+        {
+          Role: "Founder",
+          img: "/assets/images/media.png",
+          Name: "William",
         },
       ],
       faq: [
@@ -246,19 +390,19 @@ export default function Projectdetails() {
   ];
   const details = Projects.find((project) => project.projectId === id);
   return (
-    <div className="mt-20 min-h-screen w-full">
+    <div className="min-h-screen mt-20 w-full">
       <ProjectHeader details={details} />
-      <div className="w-full justify-center gap-12 border-b border-[#F2F4F7] flex px-2 items-center h-20">
+      <div className="w-full  cursor-pointer gap-4 sm:gap-12 border-b border-[#F2F4F7] flex px-2 items-center justify-center h-20">
         {category.map((option, index) => (
           <p
             key={index}
-            className="font-inter text-[16px] px-5 font-semibold text-[#475467]"
+            className="font-inter text-[14px] sm:text-[16px] px-1 sm:px-5 font-semibold text-[#475467]"
           >
             {option.section}
           </p>
         ))}
       </div>
-      <div className="max-w-screen-2xl mx-auto h-fit flex flex-col px-[8%] gap-12 items-center justify-center w-full">
+      <div className="max-w-screen-2xl mx-auto h-fit flex flex-col px-4 sm:px-[8%] gap-8 sm:gap-16 items-center justify-center w-full">
         <OverView details={details} />
         <ImageView
           src={details.coverPic}
@@ -278,7 +422,7 @@ export default function Projectdetails() {
               items={[
                 {
                   title: "Pipeline",
-                  description: "Pipeline 30 Apr 2022 - 544 days",
+                  description: "30 Apr 2022 - 544 days",
                 },
                 {
                   title: "Approved",
@@ -297,27 +441,52 @@ export default function Projectdetails() {
           </div>
           <div className="flex items-start grow flex-col gap-6">
             <div className="flex flex-col gap-1">
-              <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[18px]">
+              <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[14px] sm:text-[16px]">
                 REIGON
               </p>
-              <p className="text-[#101828] font-medium text-[32px]">
+              <p className="text-[#101828] font-medium  text-[20px] sm:text-[32px]">
                 {details?.country}
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[18px]">
+              <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[14px] sm:text-[16px]">
                 INVESTMENT TYPE
               </p>
-              <p className="text-[#101828] font-medium text-[18px]">Debt</p>
+              <p className="text-[#101828] font-medium text-[14px] sm:text-[16px]">
+                Debt
+              </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[18px]">
+              <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[14px] sm:text-[16px]">
                 PROJECT SIZE
               </p>
-              <p className="text-[#101828] font-medium text-[18px]">Medium</p>
+              <p className="text-[#101828] font-medium text-[14px] sm:text-[16px]">
+                Medium
+              </p>
             </div>
           </div>
         </div>
+        <div className="flex flex-col w-full items-start gap-2">
+          <p className="font-inter text-[#EC8000] font-medium text-[14px]">
+            ACCREDITED ENTITY
+          </p>
+          <div className="flex w-full justify-between gap-2 items-center">
+            <p className="font-syne text-[#101828] font-semibold text-[18px] sm:text-[27px]">
+              African Development Bank
+            </p>
+            <button className="sm:w-[180px] w-[150px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs  sm:text-sm">
+              Visit company website
+            </button>
+          </div>
+          <p className="font-inter text-[#475467] font-normal text-[14px]">
+            Principal Climate and Environment Finance Officer <br />
+            African Development Bank Climate Change and Green Growth Department
+            CCIA.
+            <br /> Rue Jean Paul II, Plateau, 01 BP 1387 Abidjan 01, Côte
+            d’Ivoire
+          </p>
+        </div>
+        <PeopleSlider details={details} />
         <Media details={details} />
         <TermsofFunding details={details} />
         <ContractDetails details={details} />

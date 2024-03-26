@@ -224,15 +224,15 @@ export default function ProjectList() {
   ];
 
   return (
-    <div className="max-w-screen-2xl mx-auto mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full px-2">
+    <div className="max-w-screen-lg mx-auto mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full px-4 pb-8">
       {Projects.map((project, index) => (
         <div
           className="rounded-lg border-4 max-w-[44rem] cursor-pointer w-full h-fit flex flex-col border-[#101828]"
           key={index}
           onClick={() => router.push(`/projects/${project.projectId}`)}
         >
-          <div className="justify-center items-center flex flex-col px-6">
-            <div className="flex justify-center pt-6 gap-2 items-center">
+          <div className="justify-center items-center flex flex-col px-3 sm:px-6">
+            <div className="flex w-full justify-center pt-3 sm:pt-6 gap-2 items-center">
               <ImageView
                 src={project.icon}
                 alt="avatar"
@@ -243,38 +243,38 @@ export default function ProjectList() {
                 {project.subText}
               </p>
             </div>
-            <p className="pt-2 font-syne font-semibold text-[24px] text-black">
+            <p className="pt-1 sm:pt-2 font-syne text-center font-semibold text-[20px] sm:text-[24px] text-black">
               {project.projectName}
             </p>
-            <p className="pt-2 font-inter font-semibold text-[14px] text-[#EC8000]">
+            <p className="pt-1 sm:pt-2 font-inter font-semibold text-[14px] text-[#EC8000]">
               {project.category}
             </p>
-            <p className="py-2 font-inter text-center font-normal text-[14px] text-black">
+            <p className="py-1 sm:py-2 font-inter text-center font-normal text-[14px] text-black">
               {project.subtitle}
             </p>
           </div>
           <div className="flex border-t-2 mt-2 w-full border-[#EAECF0]">
-            <div className="flex items-center grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col">
-              <p className="font-syne font-semibold text-[32px] text-[#EC8000]">
+            <div className="flex items-center px-1 grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col">
+              <p className="font-syne font-semibold text-center text-[18px] sm:text-[32px] text-[#EC8000]">
                 {project.projectValue}
               </p>
-              <p className="font-inter font-semibold text-[14px] text-[#101828]">
+              <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
                 Total project value
               </p>
             </div>
-            <div className="flex items-center  py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col">
-              <p className="font-syne font-semibold text-[32px] text-[#EC8000]">
+            <div className="flex items-center  px-1 py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col">
+              <p className="font-syne font-semibold text-[18px] text-center sm:text-[32px] text-[#EC8000]">
                 {project.fundingNeeded}
               </p>
-              <p className="font-inter font-semibold  text-[14px] text-[#101828]">
+              <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
                 Funding needed
               </p>
             </div>
-            <div className="flex items-center py-2 pb-3  grow justify-center flex-col">
-              <p className="font-syne font-semibold text-[32px] text-[#EC8000]">
+            <div className="flex items-center py-2 pb-3 px-1  grow justify-center flex-col">
+              <p className="font-syne font-semibold text-[18px] text-center sm:text-[32px] text-[#EC8000]">
                 {project.returnValue}
               </p>
-              <p className="font-inter font-semibold text-[14px] text-[#101828]">
+              <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
                 Internal rate of return
               </p>
             </div>
@@ -284,7 +284,7 @@ export default function ProjectList() {
             alt="coverpic"
             width={50}
             height={50}
-            className="w-full object-cover rounded-b-sm  !h-44"
+            className="w-full object-cover rounded-b-sm !h-32 sm:!h-44"
           />
         </div>
       ))}
