@@ -1,22 +1,33 @@
 "use client";
+import { useState, useEffect } from "react";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { EditorState, ContentState } from "draft-js";
-import { Editor } from "react-draft-wysiwyg";
-import htmlToDraft from "html-to-draftjs";
 
 export default function TermsOfService() {
   const termsConditions = {
     details:
       '<h1 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 32px;">Terms and Conditions for DailyPing</span>&nbsp;</h1>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Introduction </span></h2>\n<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">These Website Standard Terms and Conditions written on this webpage shall manage your use of our website, DailyPing</span> <span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;"> accessible at </span><a href="https://dailyping.xyz/" target="_self"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">DailyPing</span></a>&nbsp;&nbsp;</p>\n<p style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">These Terms will be applied fully and affect to your use of this Website. By using this Website, you agreed to accept all terms and conditions written in here. You must not use this Website if you disagree with any of these Website Standard Terms and Conditions. </span></p>\n<p style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Minors or people below 18 years old are not allowed to use this Website. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Intellectual Property Rights </span></h2>\n<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Other than the content you own, under these Terms, DailyPing</span> <span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;"> and/or its licensors own all the intellectual property rights and materials contained in this Website. </span></p>\n<p style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">You are granted limited license only for purposes of viewing the material contained on this Website. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Restrictions </span></h2>\n<p style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">You are specifically restricted from all of the following:  </span></p>\n<ul>\n<li style="margin-left:1.5em;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">publishing any Website material in any other media; </span></li>\n<li style="margin-left:1.5em;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">selling, sublicensing and/or otherwise commercializing any Website material; </span></li>\n<li style="margin-left:1.5em;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">publicly performing and/or showing any Website material; </span></li>\n<li style="margin-left:1.5em;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">using this Website in any way that is or may be damaging to this Website; </span></li>\n<li style="margin-left:1.5em;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">using this Website in any way that impacts user access to this Website; </span></li>\n<li style="margin-left:1.5em;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">using this Website contrary to applicable laws and regulations, or in any way may cause harm to the Website, or to any person or business entity; </span></li>\n<li style="margin-left:1.5em;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">engaging in any data mining, data harvesting, data extracting or any other similar activity in relation to this Website; </span></li>\n<li style="margin-left:1.5em;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">using this Website to engage in any advertising or marketing. </span></li>\n</ul>\n<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Certain areas of this Website are restricted from being access by you and DailyPing</span> <span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">may further restrict access by you to any areas of this Website, at any time, in absolute discretion. Any user ID and password you may have for this Website are confidential and you must maintain confidentiality as well. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Your Content </span></h2>\n<p style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">In these Website Standard Terms and Conditions, "Your Content" shall mean any audio, video text, images or other material you choose to display on this Website. By displaying Your Content, you grant DailyPing a non-exclusive, worldwide irrevocable, sub licensable license to use, reproduce, adapt, publish, translate and distribute it in any and all media. </span></p>\n<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Your Content must be your own and must not be invading any third-party\'s rights. DailyPing</span> <span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;"> reserves the right to remove any of Your Content from this Website at any time without notice. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">No warranties </span></h2>\n<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">This Website is provided "as is," with all faults, and DailyPing</span> <span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;"> express no representations or warranties, of any kind related to this Website or the materials contained on this Website. Also, nothing contained on this Website shall be interpreted as advising you. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Limitation of liability </span></h2>\n<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">In no event shall DailyPing</span> <span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">, nor any of its officers, directors and employees, shall be held liable for anything arising out of or in any way connected with your use of this Website whether such liability is under contract.  DailyPing</span> <span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">, including its officers, directors and employees shall not be held liable for any indirect, consequential or special liability arising out of or in any way related to your use of this Website. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Indemnification </span></h2>\n<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">You hereby indemnify to the fullest extent DailyPing</span> <span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;"> from and against any and/or all liabilities, costs, demands, causes of action, damages and expenses arising in any way related to your breach of any of the provisions of these Terms. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Severability </span></h2>\n<p style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">If any provision of these Terms is found to be invalid under any applicable law, such provisions shall be deleted without affecting the remaining provisions herein. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Variation of Terms </span></h2>\n<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">DailyPing</span> <span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;"> is permitted to revise these Terms at any time as it sees fit, and by using this Website you are expected to review these Terms on a regular basis. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Assignment </span></h2>\n<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">The DailyPing</span> <span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;"> is allowed to assign, transfer, and subcontract its rights and/or obligations under these Terms without any notification. However, you are not allowed to assign, transfer, or subcontract any of your rights and/or obligations under these Terms. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Entire Agreement </span></h2>\n<p style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">These Terms constitute the entire agreement between DailyPing and you in relation to your use of this Website, and supersede all prior agreements and understandings. </span></p>\n<h2 style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);">Governing Law &amp; Jurisdiction </span></h2>\n<p style="text-align:start;"><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">These Terms will be governed by and interpreted in accordance with the laws of the State of in, and you submit to the non-exclusive jurisdiction of the state and federal courts located in in for the resolution of any disputes.</span>&nbsp;</p>\n',
   };
-  const addElement = (value) => {
-    const contentBlock = htmlToDraft(value);
-    const contentState = ContentState.createFromBlockArray(
-      contentBlock.contentBlocks
-    );
-    const editorState = EditorState.createWithContent(contentState);
-    return editorState;
-  };
+  const [editorLoaded, setEditorLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setEditorLoaded(true);
+    }
+  }, []);
+
+  if (!editorLoaded) {
+    return null;
+  }
+
+  const { Editor } = require("react-draft-wysiwyg");
+  const { EditorState, ContentState } = require("draft-js");
+  const htmlToDraft = require("html-to-draftjs").default;
+
+  const contentBlock = htmlToDraft(termsConditions?.details);
+  const contentState = ContentState.createFromBlockArray(
+    contentBlock.contentBlocks
+  );
+  const editorState = EditorState.createWithContent(contentState);
 
   return (
     <div className="flex mt-20 mx-auto w-full max-w-screen-lg px-4 py-4 items-center justify-center flex-col">
@@ -24,11 +35,11 @@ export default function TermsOfService() {
         Current as of 20 February 2023
       </p>
       <Editor
-        toolbarHidden
-        editorState={addElement(termsConditions?.details)}
+        editorState={editorState}
         wrapperClassName="demo-wrapper"
-        editorClassName="richText-display"
-        readOnly
+        editorClassName="richText-editor"
+        toolbarHidden={true}
+        readOnly={true}
       />
     </div>
   );
