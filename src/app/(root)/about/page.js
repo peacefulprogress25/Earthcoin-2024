@@ -1,5 +1,5 @@
 import About from "../../Views/About";
 
-export default function Page() {
+export default function Aboutpage() {
   return <About />;
 }
