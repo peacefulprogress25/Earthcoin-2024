@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import ImageView from "../../Components/ImageView";
-import { EditorState, ContentState } from "draft-js";
-import { Editor } from "react-draft-wysiwyg";
-import htmlToDraft from "html-to-draftjs";
-
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 export default function OverView({ details }) {
   const socialIcons = [
     {
@@ -19,14 +16,27 @@ export default function OverView({ details }) {
       icon: "/assets/icons/linkedin.svg",
     },
   ];
-  const addElement = (value) => {
-    const contentBlock = htmlToDraft(value);
-    const contentState = ContentState.createFromBlockArray(
-      contentBlock.contentBlocks
-    );
-    const editorState = EditorState.createWithContent(contentState);
-    return editorState;
-  };
+  const [editorLoaded, setEditorLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setEditorLoaded(true);
+    }
+  }, []);
+
+  if (!editorLoaded) {
+    return null;
+  }
+
+  const { Editor } = require("react-draft-wysiwyg");
+  const { EditorState, ContentState } = require("draft-js");
+  const htmlToDraft = require("html-to-draftjs").default;
+
+  const contentBlock = htmlToDraft(details?.description1);
+  const contentState = ContentState.createFromBlockArray(
+    contentBlock.contentBlocks
+  );
+  const editorState = EditorState.createWithContent(contentState);
   return (
     <div className="flex w-full flex-col gap-8 px-[5%] mt-12">
       <div className="flex flex-col sm:flex-row !items-start gap-16">
@@ -71,11 +81,11 @@ export default function OverView({ details }) {
           </p>
           <div className="text-[14px] sm:text-[16px]  font-inter text-[#475467]">
             <Editor
-              toolbarHidden
-              editorState={addElement(details?.description1)}
+              editorState={editorState}
               wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
+              editorClassName="richText-editor"
+              toolbarHidden={true}
+              readOnly={true}
             />
             {/* Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
             suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum

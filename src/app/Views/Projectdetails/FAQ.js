@@ -1,29 +1,10 @@
 import { useState, useEffect } from "react";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import ImageView from "../../Components/ImageView";
-import { EditorState, ContentState } from "draft-js";
-import { Editor } from "react-draft-wysiwyg";
-import htmlToDraft from "html-to-draftjs";
 
 const plus = "/assets/icons/plus-circle.svg";
 const minus = "/assets/icons/minus-circle.svg";
 export default function FAQ({ details }) {
-  //   const [editorLoaded, setEditorLoaded] = useState(false);
-  //   useEffect(() => {
-  //     if (typeof window !== "undefined") {
-  //       setEditorLoaded(true);
-  //     }
-  //   }, []);
-
-  //   if (!editorLoaded) {
-  //     return null;
-  //   }
-
-  //   const contentBlock = htmlToDraft(details.termsOfFunding);
-  //   const contentState = ContentState.createFromBlockArray(
-  //     contentBlock.contentBlocks
-  //   );
-  //   const editorState = EditorState.createWithContent(contentState);
   return (
     <div className="flex flex-col  w-full  pb-5 !items-start px-[5%]">
       <p className="text-[30px] text-left font-semibold text-[#101828] font-syne">
@@ -56,15 +37,27 @@ function FAQSection({ Question, Answer, i }) {
 
     setIndex(i);
   };
-  console.log(index);
-  const addElement = (value) => {
-    const contentBlock = htmlToDraft(value);
-    const contentState = ContentState.createFromBlockArray(
-      contentBlock.contentBlocks
-    );
-    const editorState = EditorState.createWithContent(contentState);
-    return editorState;
-  };
+  const [editorLoaded, setEditorLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setEditorLoaded(true);
+    }
+  }, []);
+
+  if (!editorLoaded) {
+    return null;
+  }
+
+  const { Editor } = require("react-draft-wysiwyg");
+  const { EditorState, ContentState } = require("draft-js");
+  const htmlToDraft = require("html-to-draftjs").default;
+
+  const contentBlock = htmlToDraft(Answer);
+  const contentState = ContentState.createFromBlockArray(
+    contentBlock.contentBlocks
+  );
+  const editorState = EditorState.createWithContent(contentState);
   return (
     <div
       key={i}
@@ -89,11 +82,11 @@ function FAQSection({ Question, Answer, i }) {
       {index === i ? (
         <div className="">
           <Editor
-            toolbarHidden
-            editorState={addElement(Answer)}
+            editorState={editorState}
             wrapperClassName="demo-wrapper"
-            editorClassName="richText-display"
-            readOnly
+            editorClassName="richText-editor"
+            toolbarHidden={true}
+            readOnly={true}
           />
         </div>
       ) : null}

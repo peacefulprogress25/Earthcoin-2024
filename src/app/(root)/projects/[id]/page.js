@@ -1,5 +1,5 @@
 "use client";
 import Projectdetails from "../../../Views/Projectdetails";
-export default function page() {
+export default function Page() {
   return <Projectdetails />;
 }

@@ -23,7 +23,7 @@ export default function Header() {
           <Link className="flex items-end gap-1" href="/">
             Thesis <IoIosArrowDown />{" "}
           </Link>
-          <Link href="/">Tokenomics</Link>
+          <Link href="/tokenomics">Tokenomics</Link>
         </div>
         <button className="w-[80px] ml-auto text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
           DAPP

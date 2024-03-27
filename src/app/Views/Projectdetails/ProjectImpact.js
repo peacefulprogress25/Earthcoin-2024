@@ -1,18 +1,29 @@
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import ImageView from "../../Components/ImageView";
-import { EditorState, ContentState } from "draft-js";
-import { Editor } from "react-draft-wysiwyg";
-import htmlToDraft from "html-to-draftjs";
+import { useState, useEffect } from "react";
 
 export default function ProjectImpact({ details }) {
-  const addElement = (value) => {
-    const contentBlock = htmlToDraft(value);
-    const contentState = ContentState.createFromBlockArray(
-      contentBlock.contentBlocks
-    );
-    const editorState = EditorState.createWithContent(contentState);
-    return editorState;
-  };
+  const [editorLoaded, setEditorLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setEditorLoaded(true);
+    }
+  }, []);
+
+  if (!editorLoaded) {
+    return null;
+  }
+
+  const { Editor } = require("react-draft-wysiwyg");
+  const { EditorState, ContentState } = require("draft-js");
+  const htmlToDraft = require("html-to-draftjs").default;
+
+  const contentBlock = htmlToDraft(details?.description2);
+  const contentState = ContentState.createFromBlockArray(
+    contentBlock.contentBlocks
+  );
+  const editorState = EditorState.createWithContent(contentState);
   const impacts = [
     {
       icon: "/assets/icons/air.svg",
@@ -37,11 +48,11 @@ export default function ProjectImpact({ details }) {
         Project Impact
       </p>
       <Editor
-        toolbarHidden
-        editorState={addElement(details?.description2)}
+        editorState={editorState}
         wrapperClassName="demo-wrapper"
-        editorClassName="richText-display"
-        readOnly
+        editorClassName="richText-editor"
+        toolbarHidden={true}
+        readOnly={true}
       />
       <div className="flex sm:flex-row flex-col justify-center items-center w-full">
         {impacts.map((impact, index) => (
