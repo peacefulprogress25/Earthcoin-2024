@@ -1,16 +1,16 @@
 import ImageView from "../../Components/ImageView";
 
-const map = "/assets/images/map.png";
+const map = "/assets/images/map.svg";
 export default function WorldMap() {
   return (
-    <div className="w-full h-[100vh]">
+    <div className="w-full">
       {" "}
       <ImageView
         src={map}
         alt="map"
         width={600}
-        height={900}
-        className="!w-full object-cover h-full"
+        height={800}
+        className="!w-full object-cover"
       />
     </div>
   );
