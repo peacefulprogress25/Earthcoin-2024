@@ -125,9 +125,9 @@ export default function Footer() {
     },
   ];
   return (
-    <div className="h-[60vh] flex flex-col justify-end w-full">
-      <div className="flex my-6 items-start w-full max-w-[1440px] mx-auto  gap-2 px-[8%] justify-between">
-        <div className="flex items-start flex-col">
+    <div className="h-fit flex flex-col justify-end w-full">
+      <div className="flex-col flex sm:flex-row my-6 items-center sm:items-start w-full max-w-[1440px] mx-auto  gap-10 px-[8%] justify-between">
+        <div className="flex items-center w-full sm:items-start sm:w-[50%] flex-col">
           <ImageView
             alt="logo"
             src={logo}
@@ -135,86 +135,88 @@ export default function Footer() {
             height={100}
             className="object-contain"
           />
-          <p className="text-[#475467] mt-6 font-normal font-inter text-sm">
+          <p className="text-[#475467] mt-6 font-normal text-center sm:text-left font-inter text-sm">
             Building the solarpunk future <br />
             for a healthy world.
           </p>
         </div>
-        <div className="flex items-start ml-10 gap-3 flex-col">
-          <p className="text-[#667085] font-inter font-semibold text-[13px]">
-            Product
-          </p>
-          {Products.map((product, index) => (
-            <p
-              className="text-[#475467] font-inter font-semibold text-[14px]"
-              key={index}
-            >
-              {product.product}{" "}
-              {product?.new ? (
-                <span className="bg-[#ECFDF3] font-inter text-[#027A48] font-medium text-[12px] rounded-lg px-1">
-                  New
-                </span>
-              ) : null}
+        <div className="  items-center flex flex-col sm:flex-row sm:gap-2 gap-x-2 gap-y-4 w-full justify-center sm:justify-between">
+          <div className="flex items-center  sm:items-start sm:ml-10 gap-3 flex-col">
+            <p className="text-[#667085] font-inter font-semibold text-[13px]">
+              Product
             </p>
-          ))}
-        </div>
-        <div className="flex items-start gap-3 flex-col">
-          <p className="text-[#667085] font-inter font-semibold text-[13px]">
-            Company
-          </p>
-          {Company.map((option, index) => (
-            <p
-              className="text-[#475467] font-inter font-semibold text-[14px]"
-              key={index}
-            >
-              {option.option}{" "}
+            {Products.map((product, index) => (
+              <p
+                className="text-[#475467] font-inter font-semibold text-[14px]"
+                key={index}
+              >
+                {product.product}{" "}
+                {product?.new ? (
+                  <span className="bg-[#ECFDF3] font-inter text-[#027A48] font-medium text-[12px] rounded-lg px-1">
+                    New
+                  </span>
+                ) : null}
+              </p>
+            ))}
+          </div>
+          <div className="flex items-center  sm:items-start gap-3 flex-col">
+            <p className="text-[#667085] font-inter font-semibold text-[13px]">
+              Company
             </p>
-          ))}
-        </div>
+            {Company.map((option, index) => (
+              <p
+                className="text-[#475467] font-inter font-semibold text-[14px]"
+                key={index}
+              >
+                {option.option}{" "}
+              </p>
+            ))}
+          </div>
 
-        <div className="flex items-start gap-3 flex-col">
-          <p className="text-[#667085] font-semibold font-inter text-[13px]">
-            Resources
-          </p>
-          {Resources.map((option, index) => (
-            <p
-              className="text-[#475467] font-semibold font-inter text-[14px]"
-              key={index}
-            >
-              {option.option}{" "}
+          <div className="flex items-center  sm:items-start gap-3 flex-col">
+            <p className="text-[#667085] font-semibold font-inter text-[13px]">
+              Resources
             </p>
-          ))}
-        </div>
-        <div className="flex items-start gap-3 flex-col">
-          <p className="text-[#667085] font-semibold font-inter text-[13px]">
-            Social
-          </p>
-          {Social.map((option, index) => (
-            <p
-              className="text-[#475467] font-semibold font-inter text-[14px]"
-              key={index}
-            >
-              {option.option}{" "}
+            {Resources.map((option, index) => (
+              <p
+                className="text-[#475467] font-semibold font-inter text-[14px]"
+                key={index}
+              >
+                {option.option}{" "}
+              </p>
+            ))}
+          </div>
+          <div className="flex items-center  sm:items-start gap-3 flex-col">
+            <p className="text-[#667085] font-semibold font-inter text-[13px]">
+              Social
             </p>
-          ))}
-        </div>
-        <div className="flex items-start  gap-3 flex-col">
-          <p className="text-[#667085] font-inter  font-semibold text-[13px]">
-            Legal
-          </p>
-          {Legal.map((option, index) => (
-            <p
-              className="text-[#475467] font-inter font-semibold text-[14px]"
-              key={index}
-            >
-              {option.option}{" "}
+            {Social.map((option, index) => (
+              <p
+                className="text-[#475467] font-semibold font-inter text-[14px]"
+                key={index}
+              >
+                {option.option}{" "}
+              </p>
+            ))}
+          </div>
+          <div className="flex items-center  sm:items-start gap-3 flex-col">
+            <p className="text-[#667085] font-inter  font-semibold text-[13px]">
+              Legal
             </p>
-          ))}
+            {Legal.map((option, index) => (
+              <p
+                className="text-[#475467] font-inter font-semibold text-[14px]"
+                key={index}
+              >
+                {option.option}{" "}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
       <div className="bg-[#F9FAFB] w-full flex items-center h-20">
-        <div className="px-[8%] justify-between max-w-[1440px]  h-full mx-auto flex w-full items-center">
-          <p className="text-[#667085] font-normal font-inter text-[14px]">
+        <div className="px-[8%] justify-between max-w-[1440px] gap-4 h-full mx-auto flex w-full items-center">
+          <p className="text-[#667085] font-normal font-inter text-[12px] sm:text-[14px]">
             © 2023 SOLARPUNKDAO. All rights reserved.
           </p>
           <div className="flex gap-2 items-center">
