@@ -5,7 +5,7 @@ const media = "/assets/images/media.png";
 export default function Media({ details }) {
   return (
     <div className="flex flex-col  items-start px-[5%]">
-      <p className="text-[30px] text-left font-semibold text-[#101828] font-syne">
+      <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
         Media
       </p>
       <p className="text-[16px] mt-4 text-left font-normal text-[#475467] font-inter">
@@ -36,7 +36,7 @@ export default function Media({ details }) {
         <span className="underline decoration-[#475467]">Unsplash</span>
       </p>
       <div className="mt-8 border-l-2 flex flex-col items-start border-[#EC8000] pl-3">
-        <p className="text-[30px]  text-left font-medium text-[#101828] font-syne">
+        <p className="text-[26px]  text-left font-medium text-[#101828] font-syne">
           “In a world older and more complete than ours they move finished and
           complete, gifted with extensions of the senses we have lost or never
           attained, living by voices we shall never hear.”

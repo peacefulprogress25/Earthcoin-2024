@@ -29,7 +29,7 @@ export default function Mechanics() {
   const Editordata = [
     {
       details:
-        '<p><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 24px;font-family: Tahoma;">Helios is an open-source platform enabling both web3 &amp; traditional investment in profitable, high impact solar projects in emerging markets, earning users stable, double digit yields uncorrelated with crypto or public markets while averting millions of tonnes of CO2 emissions each year. </span><span style="font-size: 24px;font-family: Tahoma;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 24px;font-family: Tahoma;">With a portfolio of solar assets across 4 continents, Helios is perpetually deploying capital &amp; seeking new C&amp;I solar investment opportunities (50-500kW) globally.</span><span style="font-size: 24px;font-family: Tahoma;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 24px;font-family: Tahoma;">Our project is entirely open source; no Helios employees take any salary; we aim to reinvest all earnings back into solar to create compounding impact.</span><span style="font-size: 24px;font-family: Tahoma;"> </span></p>\n',
+        '<p><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">Helios is an open-source platform enabling both web3 &amp; traditional investment in profitable, high impact solar projects in emerging markets, earning users stable, double digit yields uncorrelated with crypto or public markets while averting millions of tonnes of CO2 emissions each year. </span><span style="font-size: 17px;font-family: inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">With a portfolio of solar assets across 4 continents, Helios is perpetually deploying capital &amp; seeking new C&amp;I solar investment opportunities (50-500kW) globally.</span><span style="font-size: 17px;font-family: inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">Our project is entirely open source; no Helios employees take any salary; we aim to reinvest all earnings back into solar to create compounding impact.</span><span style="font-size: 17px;font-family: inter; font-weight:400;"> </span></p>\n',
     },
   ];
   const chartData = [
@@ -78,10 +78,10 @@ export default function Mechanics() {
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col gap-2 items-center">
-          <p className="text-[#EC8000] font-semibold text-center text-[16px] font-inter">
+          <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             About
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[48px] font-syne">
+          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
             TOKENOMICS
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
@@ -95,7 +95,7 @@ export default function Mechanics() {
           height={400}
           className="w-full mt-4 object-cover"
         />
-        <p className="text-[#101828] font-semibold text-center text-[20px] sm:text-[30px] mr-10 font-syne">
+        <p className="text-[#101828] font-semibold text-center text-[20px] sm:text-[28px] mr-10 font-syne">
           $Earth has been created to -
         </p>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-3 mt-6">
@@ -104,7 +104,7 @@ export default function Mechanics() {
           ))}
         </div>
         <div className="sm:px-[23%] px-4 flex flex-col w-full items-start">
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[30px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             Keeping this in mind, tokenomics for $Earth have been designed such
             that -
           </p>
@@ -117,7 +117,7 @@ export default function Mechanics() {
               readOnly
             />
           </div>
-          <p className="text-[#101828] font-semibold text-left mt-6  text-[20px] sm:text-[30px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6  text-[20px] sm:text-[28px] mr-10 font-syne">
             $Earth token -
           </p>
           <div className="mt-6">
@@ -129,7 +129,7 @@ export default function Mechanics() {
               readOnly
             />
           </div>
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[30px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             Intrinsic Value (IV)
           </p>
           <div className="mt-6">
@@ -148,7 +148,7 @@ export default function Mechanics() {
             height={400}
             className="w-full mt-4 object-cover"
           />
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[30px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             $Earth Premium
           </p>
           <div className="mt-6">
@@ -160,7 +160,7 @@ export default function Mechanics() {
               readOnly
             />
           </div>
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[30px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             $Earth Harvest
           </p>
           <div className="mt-6">
@@ -172,7 +172,7 @@ export default function Mechanics() {
               readOnly
             />
           </div>
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px]   font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px]  font-syne">
             All $Earth harvested through this will be utilized for the following
             -
           </p>
@@ -201,12 +201,12 @@ export default function Mechanics() {
                         : chart.title === "DAO"
                         ? "bg-[#EC8000]"
                         : ""
-                    } w-[5px]  -left-3 top-[11px] absolute h-[5px] rounded-full`}
+                    }w-[5px]  -left-3 top-[8px] absolute h-[5px] rounded-full`}
                   ></div>
-                  <p className="text-[#475467] text-[16px] font-normal">
+                  <p className="text-[#475467] font-inter text-[14px] font-normal">
                     {chart?.title}
                   </p>
-                  <p className="text-[#475467] text-[16px] font-normal">
+                  <p className="text-[#475467] font-inter text-[14px] font-normal">
                     {chart?.percent}
                   </p>
                 </div>

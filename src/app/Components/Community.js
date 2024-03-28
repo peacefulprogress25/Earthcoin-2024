@@ -19,7 +19,7 @@ function Community({ title, description }) {
       <p className="text-[#101828] font-syne text-center font-semibold text-[20px] sm:text-[26px]">
         {title}
       </p>
-      <p className="text-[#475467] font-inter text-center font-normal text-[16px]">
+      <p className="text-[#475467] font-inter mt-2 text-center font-normal text-[16px]">
         {description}
       </p>
       <div className="flex mt-6 gap-1">

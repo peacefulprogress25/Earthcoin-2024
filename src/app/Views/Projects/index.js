@@ -29,7 +29,7 @@ export default function Project() {
         {category.map((option, index) => (
           <p
             key={index}
-            className="font-inter text-[12px] sm:text-[16px] px-0 sm:px-5 font-semibold text-[#475467]"
+            className="font-inter text-[12px] sm:text-[15px] px-0 sm:px-5 font-semibold text-[#475467]"
           >
             {option.section}
           </p>

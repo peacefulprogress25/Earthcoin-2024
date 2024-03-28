@@ -2,12 +2,12 @@ import React from "react";
 
 export default function SeekingFund() {
   return (
-    <div className="w-full bg-[#FFFCF8] rounded-md p-8 flex sm:flex-row gap-3 flex-col justify-between items-start">
+    <div className="w-full bg-[#FFFCF8] rounded-md p-8 flex sm:flex-row mb-6 gap-3 flex-col justify-between items-start">
       <div className="flex flex-col gap-3 items-start">
-        <p className="text-[#EC8000] text-[30px] font-semibold font-syne">
+        <p className="text-[#EC8000] text-[28px] font-semibold font-syne">
           Seeking Funds?
         </p>
-        <p className="text-[#EC8000] text-[20px] font-normal font-syne">
+        <p className="text-[#EC8000] text-[18px] font-normal font-syne">
           Climate solutions seekings funds? Get in touch!
         </p>
       </div>

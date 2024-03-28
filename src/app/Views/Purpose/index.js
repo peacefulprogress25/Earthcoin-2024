@@ -13,7 +13,7 @@ export default function Purpose() {
   const Editordata = [
     {
       details:
-        '<p><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 24px;font-family: Tahoma;">Helios is an open-source platform enabling both web3 &amp; traditional investment in profitable, high impact solar projects in emerging markets, earning users stable, double digit yields uncorrelated with crypto or public markets while averting millions of tonnes of CO2 emissions each year. </span><span style="font-size: 24px;font-family: Tahoma;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 24px;font-family: Tahoma;">With a portfolio of solar assets across 4 continents, Helios is perpetually deploying capital &amp; seeking new C&amp;I solar investment opportunities (50-500kW) globally.</span><span style="font-size: 24px;font-family: Tahoma;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 24px;font-family: Tahoma;">Our project is entirely open source; no Helios employees take any salary; we aim to reinvest all earnings back into solar to create compounding impact.</span><span style="font-size: 24px;font-family: Tahoma;"> </span></p>\n',
+        '<p><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">Helios is an open-source platform enabling both web3 &amp; traditional investment in profitable, high impact solar projects in emerging markets, earning users stable, double digit yields uncorrelated with crypto or public markets while averting millions of tonnes of CO2 emissions each year. </span><span style="font-size: 17px;font-family: inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">With a portfolio of solar assets across 4 continents, Helios is perpetually deploying capital &amp; seeking new C&amp;I solar investment opportunities (50-500kW) globally.</span><span style="font-size: 17px;font-family: inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">Our project is entirely open source; no Helios employees take any salary; we aim to reinvest all earnings back into solar to create compounding impact.</span><span style="font-size: 17px;font-family: inter; font-weight:400;"> </span></p>\n',
     },
   ];
 
@@ -42,10 +42,10 @@ export default function Purpose() {
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col gap-2 items-center">
-          <p className="text-[#EC8000] font-semibold text-center text-[16px] font-inter">
+          <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             About
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[48px] font-syne">
+          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
             PURPOSE
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
@@ -61,7 +61,7 @@ export default function Purpose() {
           className="w-full mt-4 object-cover"
         />
         <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[30px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             Context before currency,
             <span className="text-[#EC8000]">Planet before profits</span>
           </p>
@@ -90,7 +90,7 @@ export default function Purpose() {
               className="object-cover"
             />
           </div>
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[30px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             The recently experienced exponential advances although are
             not decoupled from its tradeoffs -
           </p>
@@ -112,7 +112,7 @@ export default function Purpose() {
           className="w-full mt-4 object-cover"
         />
         <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[30px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             The recently experienced exponential advances although are
             not decoupled from its tradeoffs -
           </p>
@@ -126,7 +126,7 @@ export default function Purpose() {
             />
           </div>
 
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[30px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             The aforementioned tradeoffs or shifts in perception have now come
             seeking reparations. The Anthropocene era characterized by -
           </p>
@@ -144,8 +144,8 @@ export default function Purpose() {
             <ImageView
               src={tree}
               alt="tree"
-              width={450}
-              height={200}
+              width={500}
+              height={240}
               className="!w-full object-cover"
             />
           </div>
@@ -159,7 +159,7 @@ export default function Purpose() {
             />
           </div>
           <div className="mt-8 border-l-2 flex flex-col items-start border-[#EC8000] pl-3">
-            <p className="text-[30px]  text-left font-medium text-[#101828] font-syne">
+            <p className="text-[26px]  text-left font-medium text-[#101828] font-syne">
               “In a world older and more complete than ours they move finished
               and complete, gifted with extensions of the senses we have lost or
               never attained, living by voices we shall never hear.”

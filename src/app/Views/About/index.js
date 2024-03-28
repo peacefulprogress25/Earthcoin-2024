@@ -106,10 +106,10 @@ export default function About() {
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[8%] flex gap-10 flex-col items-center">
         <div className="flex flex-col gap-2 items-center">
-          <p className="text-[#EC8000] font-semibold text-center text-[16px] font-inter">
+          <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             The Team
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[48px] font-syne">
+          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
             Meet the team behind SolarpunkDAO
           </p>
           <p className="text-[#475467] text-center font-normal w-[80%] sm:w-[60%] text-[16px] font-inter">
@@ -125,10 +125,10 @@ export default function About() {
         </div>
         <div className="w-full h-[1px] bg-[#F2F4F7]"></div>
         <div className="flex mt-8 flex-col gap-2 items-center">
-          <p className="text-[#EC8000] font-semibold text-center text-[16px] font-inter">
+          <p className="text-[#EC8000] p-1 px-2 rounded-full bg-[#FFFCF8] font-semibold text-center text-[12px] font-inter">
             Open positions
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[25px] sm:text-[48px] font-syne">
+          <p className="text-[#101828] font-semibold text-center text-[25px] sm:text-[36px] font-syne">
             We’re looking for talented people
           </p>
           <p className="text-[#475467] text-center font-normal w-[80%] sm:w-[55%] text-[16px] font-inter">
@@ -147,7 +147,7 @@ export default function About() {
         <div className="flex w-full items-center flex-col gap-6 ">
           {positions?.map((position, index) => (
             <div className="flex flex-col items-start gap-6" key={index}>
-              <p className="text-[#101828] font-semibold text-left text-[20px] font-inter">
+              <p className="text-[#101828] font-semibold text-left text-[18px] font-inter">
                 {position?.title}
               </p>
               <div className="flex w-full flex-col gap-8">
@@ -156,10 +156,10 @@ export default function About() {
                     className="flex flex-col !w-[20rem] sm:!w-[50rem] rounded-lg border border-[#EAECF0] items-start p-6"
                     key={index}
                   >
-                    <p className="text-[#101828] font-semibold text-left text-[17px] font-inter">
+                    <p className="text-[#101828] font-semibold text-left text-[16px] font-inter">
                       {option?.title}
                     </p>
-                    <p className="text-[#475467] mt-1 font-normal text-left text-[15px] font-inter">
+                    <p className="text-[#475467] mt-1 font-normal text-left text-[14px] font-inter">
                       {option?.description}
                     </p>
                     <div className="flex mt-6 gap-3">
@@ -171,7 +171,7 @@ export default function About() {
                           height={40}
                           className="w-4 object-cover h-4"
                         />
-                        <p className="text-[#475467] font-normal text-left text-[16px] font-inter">
+                        <p className="text-[#475467] font-normal text-left text-[14px] font-inter">
                           {option?.type}
                         </p>
                       </div>
@@ -183,7 +183,7 @@ export default function About() {
                           height={40}
                           className="w-4 object-cover h-4"
                         />
-                        <p className="text-[#475467] font-normal text-left text-[16px] font-inter">
+                        <p className="text-[#475467] font-normal text-left text-[14px] font-inter">
                           {option?.salary}
                         </p>
                       </div>
@@ -196,10 +196,10 @@ export default function About() {
         </div>
       </div>
       <div className="w-full flex flex-col mt-10 items-center justify-center py-20 px-4 bg-[#F9FAFB]">
-        <p className="text-[#101828] font-semibold text-center text-[36px] font-syne">
+        <p className="text-[#101828] font-semibold text-center text-[32px] font-syne">
           Get notified when new roles open up
         </p>
-        <p className="text-[#475467] mt-3 font-normal  text-center text-[18px] font-inter">
+        <p className="text-[#475467] mt-3 font-normal  text-center text-[16px] font-inter">
           Be the first to know when new jobs are posted!
         </p>
         <div className="flex flex-col items-center sm:items-start">
@@ -239,7 +239,7 @@ export function PeopleCard({ people }) {
     },
   ];
   return (
-    <div className="flex flex-col gap-2 max-w-[18rem] w-full">
+    <div className="flex flex-col gap-1 max-w-[18rem] w-full">
       <ImageView
         src={people?.img}
         width={400}
@@ -255,7 +255,7 @@ export function PeopleCard({ people }) {
       <p className="font-inter text-[#475467] font-normal text-[13px]">
         Former co-founder of Opendoor. Early staff at Spotify and Clearbit.
       </p>
-      <div className="flex gap-3">
+      <div className="flex mt-2 gap-3">
         {socialIcons.map((icons, index) => (
           <ImageView
             src={icons?.icon}

@@ -246,16 +246,16 @@ export default function ProjectList() {
             <p className="pt-1 sm:pt-2 font-syne text-center font-semibold text-[20px] sm:text-[24px] text-black">
               {project.projectName}
             </p>
-            <p className="pt-1 sm:pt-2 font-inter font-semibold text-[14px] text-[#EC8000]">
+            <p className="pt-1 sm:pt-2 font-inter font-semibold text-[12px] text-[#EC8000]">
               {project.category}
             </p>
-            <p className="py-1 sm:py-2 font-inter text-center font-normal text-[14px] text-black">
+            <p className="py-1 sm:py-2 font-inter text-center font-normal text-[13px] text-black">
               {project.subtitle}
             </p>
           </div>
-          <div className="flex border-t-2 mt-2 w-full border-[#EAECF0]">
+          <div className="flex border-t-2 mt-4 w-full border-[#EAECF0]">
             <div className="flex items-center px-1 grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col">
-              <p className="font-syne font-semibold text-center text-[18px] sm:text-[32px] text-[#EC8000]">
+              <p className="font-syne font-semibold text-center text-[18px] sm:text-[30px] text-[#EC8000]">
                 {project.projectValue}
               </p>
               <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
@@ -263,7 +263,7 @@ export default function ProjectList() {
               </p>
             </div>
             <div className="flex items-center  px-1 py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col">
-              <p className="font-syne font-semibold text-[18px] text-center sm:text-[32px] text-[#EC8000]">
+              <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
                 {project.fundingNeeded}
               </p>
               <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
@@ -271,7 +271,7 @@ export default function ProjectList() {
               </p>
             </div>
             <div className="flex items-center py-2 pb-3 px-1  grow justify-center flex-col">
-              <p className="font-syne font-semibold text-[18px] text-center sm:text-[32px] text-[#EC8000]">
+              <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
                 {project.returnValue}
               </p>
               <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
@@ -282,9 +282,9 @@ export default function ProjectList() {
           <ImageView
             src={project.coverPic}
             alt="coverpic"
-            width={50}
-            height={50}
-            className="w-full object-cover rounded-b-sm !h-32 sm:!h-44"
+            width={350}
+            height={450}
+            className="w-full object-cover rounded-b-sm"
           />
         </div>
       ))}

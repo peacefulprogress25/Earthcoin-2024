@@ -37,7 +37,7 @@ export default function FooterV2() {
           <div className="flex flex-col sm:flex-row mt-3 sm:mt-6 w-full justify-between sm:justify-center items-center gap-2 sm:gap-4">
             {FooterLinks.map((option, index) => (
               <p
-                className="text-[#667085] cursor-pointer font-inter font-semibold text-[16px]"
+                className="text-[#667085] cursor-pointer font-inter font-semibold text-[14px]"
                 key={index}
               >
                 {option.option}{" "}

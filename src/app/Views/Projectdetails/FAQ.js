@@ -7,10 +7,10 @@ const minus = "/assets/icons/minus-circle.svg";
 export default function FAQ({ details }) {
   return (
     <div className="flex flex-col  w-full  pb-5 !items-start px-[5%]">
-      <p className="text-[30px] text-left font-semibold text-[#101828] font-syne">
+      <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
         Frequently asked questions
       </p>
-      <p className="text-[16px] text-left font-normal text-[#475467] font-inter">
+      <p className="text-[15px] mt-2 text-left font-normal text-[#475467] font-inter">
         Everything you need to know about $Earth.
       </p>
       <div className="flex w-full mt-5 flex-col">

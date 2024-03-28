@@ -7,8 +7,8 @@ export default function BaseLayout({ children }) {
     <main className="flex flex-col">
       <Header />
       <div className="min-h-screen">{children}</div>
-      {/* <Footer /> */}
-      <FooterV2 />
+      <Footer />
+      {/* <FooterV2 /> */}
     </main>
   );
 }

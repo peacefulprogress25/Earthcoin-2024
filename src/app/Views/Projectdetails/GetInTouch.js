@@ -11,7 +11,7 @@ export default function GetInTouch() {
         height={100}
         className="object-cover"
       />
-      <p className="text-[#101828] font-inter text-center mt-3 font-medium text-[20px]">
+      <p className="text-[#101828] font-inter text-center mt-3 font-medium text-[18px]">
         Still have questions?
       </p>
       <p className="text-[#475467] font-inter text-center mt-1 font-light text-[16px]">

@@ -44,7 +44,7 @@ export default function ProjectImpact({ details }) {
   ];
   return (
     <div className="flex flex-col items-start px-[5%]">
-      <p className=" text-[20px] sm:text-[30px] text-left font-semibold text-[#101828] font-syne">
+      <p className=" text-[20px] sm:text-[28px] text-left font-semibold text-[#101828] font-syne">
         Project Impact
       </p>
       <Editor
@@ -57,7 +57,7 @@ export default function ProjectImpact({ details }) {
       <div className="flex sm:flex-row flex-col justify-center items-center w-full">
         {impacts.map((impact, index) => (
           <div
-            className={`flex flex-col p-4 items-center  justify-center w-[14rem] ${
+            className={`flex flex-col p-4 items-center  justify-center w-[18rem] ${
               index !== impacts.length - 1
                 ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
                 : ""
@@ -71,7 +71,7 @@ export default function ProjectImpact({ details }) {
               height={100}
               className="w-12 h-12 sm:w-20 sm:h-20 object-contain"
             />
-            <p className="text-[#101828] text-center text-[18px] mt-2 font-semibold font-inter">
+            <p className="text-[#101828] text-center text-[16px] mt-2 font-semibold font-inter">
               {impact.impact}
             </p>
           </div>

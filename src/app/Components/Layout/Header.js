@@ -20,7 +20,7 @@ export default function Header() {
           <Link className="flex items-end gap-1" href="/">
             Raison D’etre <IoIosArrowDown />{" "}
           </Link>
-          <Link className="flex items-end gap-1" href="/">
+          <Link className="flex items-end gap-1" href="/thesis">
             Thesis <IoIosArrowDown />{" "}
           </Link>
           <Link href="/tokenomics">Tokenomics</Link>

@@ -141,12 +141,12 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex items-start ml-10 gap-3 flex-col">
-          <p className="text-[#667085] font-inter font-semibold text-[14px]">
+          <p className="text-[#667085] font-inter font-semibold text-[13px]">
             Product
           </p>
           {Products.map((product, index) => (
             <p
-              className="text-[#475467] font-inter font-semibold text-[16px]"
+              className="text-[#475467] font-inter font-semibold text-[14px]"
               key={index}
             >
               {product.product}{" "}
@@ -159,12 +159,12 @@ export default function Footer() {
           ))}
         </div>
         <div className="flex items-start gap-3 flex-col">
-          <p className="text-[#667085] font-inter font-semibold text-[14px]">
+          <p className="text-[#667085] font-inter font-semibold text-[13px]">
             Company
           </p>
           {Company.map((option, index) => (
             <p
-              className="text-[#475467] font-inter font-semibold text-[16px]"
+              className="text-[#475467] font-inter font-semibold text-[14px]"
               key={index}
             >
               {option.option}{" "}
@@ -173,12 +173,12 @@ export default function Footer() {
         </div>
 
         <div className="flex items-start gap-3 flex-col">
-          <p className="text-[#667085] font-semibold font-inter text-[14px]">
+          <p className="text-[#667085] font-semibold font-inter text-[13px]">
             Resources
           </p>
           {Resources.map((option, index) => (
             <p
-              className="text-[#475467] font-semibold font-inter text-[16px]"
+              className="text-[#475467] font-semibold font-inter text-[14px]"
               key={index}
             >
               {option.option}{" "}
@@ -186,12 +186,12 @@ export default function Footer() {
           ))}
         </div>
         <div className="flex items-start gap-3 flex-col">
-          <p className="text-[#667085] font-semibold font-inter text-[14px]">
+          <p className="text-[#667085] font-semibold font-inter text-[13px]">
             Social
           </p>
           {Social.map((option, index) => (
             <p
-              className="text-[#475467] font-semibold font-inter text-[16px]"
+              className="text-[#475467] font-semibold font-inter text-[14px]"
               key={index}
             >
               {option.option}{" "}
@@ -199,12 +199,12 @@ export default function Footer() {
           ))}
         </div>
         <div className="flex items-start  gap-3 flex-col">
-          <p className="text-[#667085] font-inter  font-semibold text-[14px]">
+          <p className="text-[#667085] font-inter  font-semibold text-[13px]">
             Legal
           </p>
           {Legal.map((option, index) => (
             <p
-              className="text-[#475467] font-inter font-semibold text-[16px]"
+              className="text-[#475467] font-inter font-semibold text-[14px]"
               key={index}
             >
               {option.option}{" "}
@@ -214,7 +214,7 @@ export default function Footer() {
       </div>
       <div className="bg-[#F9FAFB] w-full flex items-center h-20">
         <div className="px-[8%] justify-between max-w-[1440px]  h-full mx-auto flex w-full items-center">
-          <p className="text-[#667085] font-normal font-inter text-[16px]">
+          <p className="text-[#667085] font-normal font-inter text-[14px]">
             © 2023 SOLARPUNKDAO. All rights reserved.
           </p>
           <div className="flex gap-2 items-center">

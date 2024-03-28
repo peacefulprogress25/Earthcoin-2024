@@ -42,19 +42,21 @@ export default function OverView({ details }) {
       <div className="flex flex-col sm:flex-row !items-start gap-16">
         <div className="flex flex-col gap-2">
           <div className="flex max-w-44 sm:max-w-52 w-full flex-col border-y-2 font-inter py-3 border-[#EAECF0] items-start gap-3">
-            <p className="text-[#EC8000] font-semibold text-[16px]">
+            <p className="text-[#EC8000] font-semibold text-[14px]">
               Priority Rank
             </p>
-            <p className="text-[#475467] font-semibold text-[16px]">#3</p>
-            <p className="text-[#EC8000] font-semibold text-[16px]">Status</p>
-            <p className="text-[#475467] font-semibold text-[16px]">
+            <p className="text-[#475467] font-semibold text-[14px]">#3</p>
+            <p className="text-[#EC8000] font-semibold mt-2 text-[14px]">
+              Status
+            </p>
+            <p className="text-[#475467] font-semibold text-[14px]">
               {details?.status}
             </p>
 
-            <p className="text-[#EC8000] font-semibold text-[16px]">
+            <p className="text-[#EC8000] font-semibold mt-2 text-[14px]">
               Date of approval{" "}
             </p>
-            <p className="text-[#475467] font-semibold text-[16px]">
+            <p className="text-[#475467] font-semibold text-[14px]">
               {details?.dateApproved}
             </p>
           </div>
@@ -76,7 +78,7 @@ export default function OverView({ details }) {
           </div>
         </div>
         <div className="flex flex-col items-start">
-          <p className="text-[#101828] font-semibold font-syne text-[36px]">
+          <p className="text-[#101828] font-semibold font-syne text-[30px]">
             Overview
           </p>
           <div className="text-[14px] sm:text-[16px]  font-inter text-[#475467]">
