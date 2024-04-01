@@ -1,4 +1,4 @@
-import ImageView from "../../Components/ImageView";
+import ImageView from "./ImageView";
 
 const group = "/assets/images/Avatar_group.svg";
 export default function GetInTouch() {

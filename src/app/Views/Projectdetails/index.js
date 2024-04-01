@@ -4,7 +4,7 @@ import OverView from "./OverView";
 import ImageView from "../../Components/ImageView";
 import ProjectImpact from "./ProjectImpact";
 import SeekingFund from "./SeekingFund";
-import GetInTouch from "./GetInTouch";
+import GetInTouch from "../../Components/GetInTouch";
 import TermsofFunding from "./TermsofFunding";
 import ContractDetails from "./ContractDetails";
 import PeopleSlider from "./PeopleSlider";
