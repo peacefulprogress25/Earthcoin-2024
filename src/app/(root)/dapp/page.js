@@ -1,3 +1,6 @@
+"use client";
+import Dapp from "../../Views/Dapp";
+
 export default function Dapppage() {
-  return <div>Dapp</div>;
+  return <Dapp />;
 }

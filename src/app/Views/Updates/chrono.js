@@ -1,6 +1,6 @@
+import "./update.css";
 import { Chrono } from "react-chrono";
 import ImageView from "../../Components/ImageView";
-import "./update.css";
 
 const file = "/assets/icons/file-text.svg";
 const play = "/assets/icons/play.svg";

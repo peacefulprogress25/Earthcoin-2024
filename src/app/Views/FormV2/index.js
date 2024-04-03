@@ -68,17 +68,18 @@ export default function FormV2() {
             className="text-[#667085] font-inter p-2 shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal"
           />
           <label className="text-[#344054] mt-3 font-inter text-[12px] font-medium">
-            Social Contact
+            Phone number
           </label>
           <div className="flex p-2 rounded-md border shadow-sm border-[#D0D5DD]">
-            <select className="w-[90px] font-inter font-normal text-[14px] bg-white outline-none text-[#101828]">
-              <option value="Linkdin">Linkedin</option>
-              <option value="Option 1">Option 1</option>
-              <option value="Option 2">Option 2</option>
+            <select className="w-[60px] font-inter font-normal text-[14px] bg-white outline-none text-[#101828]">
+              <option value="us">us</option>
+              <option value="ind">ind</option>
+              <option value="pt">pt</option>
             </select>
-            <p className="text-[#667085] pl-2 font-inter  text-[12px] font-normal">
-              /company/earth-solarpunkdao/
-            </p>
+            <input
+              type="tel"
+              className="text-[#667085] font-inter outline-none text-[12px] font-normal"
+            />
           </div>
           <label className="text-[#344054] mt-6 font-inter text-[12px] font-medium">
             How can we help?

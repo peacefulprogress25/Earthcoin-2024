@@ -1,0 +1,15 @@
+.ant-switch-checked {
+  background: #fff !important;
+  border: 1px solid #27b676;
+}
+.ant-switch-handle::before {
+  background: #27b676 !important;
+}
+.ant-switch-disabled {
+  background: #fff !important;
+  border: 1px solid #27b676;
+}
+.ant-switch {
+  background: #fff !important;
+  border: 1px solid #27b676;
+}
