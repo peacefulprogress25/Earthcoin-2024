@@ -1,3 +1,4 @@
+import Faq from "./Faq";
 import ProjectList from "./ProjectList";
 import WorldMap from "./WorldMap";
 
@@ -36,6 +37,9 @@ export default function Project() {
         ))}
       </div>
       <ProjectList />
+      <div className="max-w-screen-2xl mx-auto w-full px-[6%]">
+        <Faq />
+      </div>
     </div>
   );
 }

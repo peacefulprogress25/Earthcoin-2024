@@ -26,7 +26,7 @@ export default function FooterV2() {
   return (
     <div className="h-fit  hidden sm:flex flex-col border-t border-[#EAECF0] items-center justify-end w-full">
       <div className="flex my-6  w-full gap-2">
-        <div className="flex w-full py-4 sm:py-8 px-2 sm:px-[8%]  items-center justify-center flex-col">
+        <div className="flex w-full py-4 sm:py-8 px-2 sm:px-[6%]  items-center justify-center flex-col">
           <ImageView
             alt="logo"
             src={logo}

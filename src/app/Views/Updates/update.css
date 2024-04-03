@@ -3,10 +3,6 @@
   font-family: var(--secondary-font) !important;
   font-size: 14px !important;
   font-weight: 500 !important;
-  @media (max-width: 600px) {
-    margin: 0 !important;
-    line-height: 20px;
-  }
 }
 .fwRzpx {
   display: none !important;
@@ -46,10 +42,8 @@
   border: none !important;
   outline: none !important;
   cursor: pointer;
-  @media (max-width: 600px) {
-    height: 270px !important;
-  }
 }
+
 .gJAGSz.active,
 .gJAGSz {
   background: none !important;
@@ -62,10 +56,8 @@
   font-family: var(--secondary-font) !important;
   font-size: 12px !important;
   font-weight: 400 !important;
-  @media (max-width: 600px) {
-    width: 100% !important;
-  }
 }
+
 .kKnUeT {
   color: #667085 !important;
   font-family: var(--secondary-font) !important;
@@ -80,4 +72,12 @@
 }
 .jsVFgY::before {
   background: #e4e7ec !important;
+}
+@media (max-width: 600px) {
+  .hfqrxG {
+    height: 270px !important;
+  }
+  .jHGHrJ {
+    width: 100% !important;
+  }
 }
