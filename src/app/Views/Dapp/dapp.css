@@ -13,3 +13,126 @@
   background: #fff !important;
   border: 1px solid #27b676;
 }
+
+.s1 {
+  transform: translate(2px, 14px) rotate(-10deg);
+}
+.t1 {
+  transform: translate(167px, 60px) rotate(50deg);
+}
+.r1 {
+  transform: translate(162px, 67px) rotate(54deg);
+}
+
+.a1 {
+  transform: translate(156px, 76px) rotate(50deg);
+}
+.d1 {
+  transform: translate(150px, 86px) rotate(50deg);
+}
+.e2 {
+  transform: translate(143px, 96px) rotate(60deg);
+}
+.divider3 {
+  transform: translate(202px, 195px) rotate(90deg);
+}
+.m1 {
+  transform: translate(-150px, 86px) rotate(-50deg);
+}
+.i1 {
+  transform: translate(-154px, 78px) rotate(-50deg);
+}
+.n1 {
+  transform: translate(-158px, 70px) rotate(-50deg);
+}
+.t2 {
+  transform: translate(-164px, 62px) rotate(-45deg);
+}
+.divider4 {
+  transform: translate(-202px, 195px) rotate(90deg);
+}
+.s2 {
+  transform: translate(-175px, 280px) rotate(85deg);
+}
+.b1 {
+  transform: translate(-184px, 289px) rotate(75deg);
+}
+.t3 {
+  transform: translate(-192px, 298px) rotate(68deg);
+}
+.divider5 {
+  transform: translate(-126px, 370px) rotate(35deg);
+}
+.c2 {
+  transform: translate(190px, 320px) rotate(-55deg);
+}
+.l1 {
+  transform: translate(184px, 312px) rotate(-58deg);
+}
+.a3 {
+  transform: translate(178px, 302px) rotate(-60deg);
+}
+.i3 {
+  transform: translate(172px, 295px) rotate(-70deg);
+}
+.m2 {
+  transform: translate(164px, 286px) rotate(-70deg);
+}
+.divider6 {
+  transform: translate(114px, 380px) rotate(-35deg);
+}
+.divider2 {
+  transform: translate(-85px, 26px) rotate(-25deg);
+}
+.divider1 {
+  transform: translate(85px, 26px) rotate(25deg);
+}
+
+.dis1 {
+  transform: translate(-14px, 380px) rotate(35deg);
+}
+.dis2 {
+  transform: translate(-18px, 385px) rotate(35deg);
+}
+.dis3 {
+  transform: translate(-20px, 389px) rotate(35deg);
+}
+.dis4 {
+  transform: translate(-23px, 393px) rotate(25deg);
+}
+.dis5 {
+  transform: translate(-26px, 398px) rotate(25deg);
+}
+.dis6 {
+  transform: translate(-28px, 402px) rotate(20deg);
+}
+.dis7 {
+  transform: translate(-31px, 406px) rotate(17deg);
+}
+.dis8 {
+  transform: translate(-33px, 409px) rotate(12deg);
+}
+.dis9 {
+  transform: translate(-34px, 410px) rotate(7deg);
+}
+.dis10 {
+  transform: translate(-34px, 410px) rotate(0deg);
+}
+.dis11 {
+  transform: translate(-30px, 410px) rotate(-3deg);
+}
+.dis12 {
+  transform: translate(-33px, 408px) rotate(-5deg);
+}
+.dis13 {
+  transform: translate(-35px, 408px) rotate(-15deg);
+}
+.dis14 {
+  transform: translate(-36px, 406px) rotate(-19deg);
+}
+.dis15 {
+  transform: translate(-38px, 403px) rotate(-19deg);
+}
+.dis16 {
+  transform: translate(-36px, 400px) rotate(-21deg);
+}

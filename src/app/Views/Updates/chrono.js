@@ -1,5 +1,5 @@
-import "./update.css";
 import { Chrono } from "react-chrono";
+import "./update.css";
 import ImageView from "../../Components/ImageView";
 
 const file = "/assets/icons/file-text.svg";

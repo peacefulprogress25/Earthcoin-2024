@@ -3,13 +3,13 @@ import { RiArrowDownSFill } from "react-icons/ri";
 
 export default function Trade() {
   return (
-    <div className="flex w-full items-center  flex-col gap-3">
+    <div className="flex w-full items-center p-4 flex-col gap-3">
       <p className="text-black text-center font-inter text-[28px] font-medium">
         Trade $Dai <br /> for $Earth
       </p>
-      <div className="relative w-full items-center flex flex-col gap-2">
-        <div className="flex w-[85%] border items-center border-black justify-between p-1">
-          <div className="flex flex-col items-start">
+      <div className="relative w-full mt-2 items-center flex flex-col gap-2">
+        <div className="flex w-[95%] border items-center border-black justify-between p-1">
+          <div className="flex flex-col gap-2 items-start">
             <p className="text-black text-center font-inter text-[12px] font-medium">
               You pay
             </p>
@@ -24,12 +24,12 @@ export default function Trade() {
               </p>
             </div>
           </div>
-          <button className="border border-black  flex items-center justify-center h-8  py-0 font-inter px-3 text-[12px] font-medium rounded-lg">
+          <button className="border border-black  flex items-center justify-center h-8  py-0 font-inter px-2 text-[12px] font-medium rounded-lg">
             <RiArrowDownSFill size={18} color="#000" /> $DAI
           </button>
         </div>
-        <div className="flex w-[85%] border items-center border-black justify-between p-1">
-          <div className="flex flex-col items-start">
+        <div className="flex w-[95%] border items-center border-black justify-between p-1">
+          <div className="flex flex-col gap-2 items-start">
             <p className="text-black text-center font-inter text-[12px] font-medium">
               You receive
             </p>
@@ -42,17 +42,17 @@ export default function Trade() {
               </p>
             </div>
           </div>
-          <button className="border border-black h-8 flex items-center justify-center py-0 font-inter px-3 text-[12px] font-medium rounded-lg">
+          <button className="border border-black h-8  flex items-center justify-center py-0 font-inter px-2 text-[12px] font-medium rounded-lg">
             <RiArrowDownSFill size={18} color="#000" />
             $Earth
           </button>
         </div>
-        <div className="border absolute top-10 bg-white flex z-10 justify-center items-center p-1 border-black rounded-md">
-          <ImArrowDown color="#000" size={20} />
+        <div className="border absolute top-11 bg-white flex z-10 justify-center items-center  p-2 border-black rounded-sm">
+          <ImArrowDown color="#000" size={16} />
         </div>
       </div>
       <button className="w-[170px] text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#ec8000] p-2 text-sm">
-        Trade
+        TRADE
       </button>
     </div>
   );

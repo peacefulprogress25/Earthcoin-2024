@@ -3,11 +3,11 @@ import { useState } from "react";
 export default function Sbt() {
   const [whitelisted, setWhitelisted] = useState(false);
   return (
-    <div className="flex w-full items-center flex-col gap-3">
+    <div className="flex w-full items-center p-4 flex-col gap-3">
       {whitelisted ? (
         <>
           <p className="text-black text-center font-inter text-[16px] font-medium">
-            Complete KYC to mint this <br /> Soul Bound NFT
+            Complete your KYC to mint this <br /> Soul Bound NFT
           </p>
           <div className="flex w-[90%] flex-col gap-1">
             <input
@@ -42,7 +42,7 @@ export default function Sbt() {
 
       <button
         onClick={() => setWhitelisted(true)}
-        className="w-fit text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#ec8000] p-2 text-sm"
+        className="w-[170px] text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#ec8000] p-2 text-sm"
       >
         GET WHITELISTED
       </button>

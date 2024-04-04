@@ -25,9 +25,14 @@ export default function Header() {
           </Link>
           <Link href="/tokenomics">Tokenomics</Link>
         </div>
-        <button className="w-[80px] ml-auto text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
-          DAPP
-        </button>
+        <>
+          <Link
+            href="/dapp"
+            className="w-[80px] ml-auto text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
+          >
+            DAPP
+          </Link>
+        </>
       </div>
     </nav>
   );
