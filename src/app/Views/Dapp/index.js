@@ -178,7 +178,6 @@ export default function Dapp() {
               <span className="dis8">E</span>
               <span className="dis9">C</span>
               <span className="dis10">T</span>
-              <span></span>
               <span className="dis11">W</span>
               <span className="dis12">A</span>
               <span className="dis13">L</span>

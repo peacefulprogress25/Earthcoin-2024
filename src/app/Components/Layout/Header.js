@@ -34,7 +34,7 @@ export default function Header() {
       title: "What is $EARTH?",
       subtitle: "The latest industry news, updates and info.",
       icon: "/assets/icons/earth.svg",
-      link: "/",
+      link: "/resources",
     },
     {
       title: "How $EARTH works?",
