@@ -1,3 +1,5 @@
+"use client";
+import Main from "../Views/Main";
 export default function Homepage() {
-  return <div>Home</div>;
+  return <Main />;
 }

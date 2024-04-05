@@ -38,7 +38,7 @@ export default function OverView({ details }) {
   );
   const editorState = EditorState.createWithContent(contentState);
   return (
-    <div className="flex w-full flex-col gap-8 px-[5%] mt-12">
+    <div id="overview" className="flex w-full flex-col gap-8 px-[5%] mt-12">
       <div className="flex flex-col sm:flex-row !items-start gap-16">
         <div className="flex flex-col gap-2">
           <div className="flex max-w-44 sm:max-w-52 w-full flex-col border-y-2 font-inter py-3 border-[#EAECF0] items-start gap-3">

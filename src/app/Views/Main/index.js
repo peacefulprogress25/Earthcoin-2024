@@ -1,6 +1,7 @@
 import ImageView from "../../Components/ImageView";
 import { LuArrowUpRight } from "react-icons/lu";
 import SeekingFund from "../../Components/SeekingFund";
+import { useRouter } from "next/navigation";
 
 const main = "/assets/images/main.png";
 const groot = "/assets/images/groot.png";
@@ -8,6 +9,7 @@ const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
 
 export default function Main() {
+  const router = useRouter();
   const funding = [
     {
       balance: "$17k+",
@@ -57,21 +59,25 @@ export default function Main() {
       title: "What is $EARTH?",
       description: "Learn $EARTH mechanics",
       img: "/assets/images/card-bg.png",
+      link: "/",
     },
     {
       title: "How $EARTH works",
       description: "Read about the tokenomics of $EARTH",
       img: "/assets/images/card-bg-2.png",
+      link: "/works",
     },
     {
       title: "Buy $EARTH",
       description: "Trade on Uniswap",
       img: "/assets/images/card-bg-3.png",
+      link: "/",
     },
     {
       title: "Become a node.",
       description: "Obtain rights to mint $Earth",
       img: "/assets/images/card-bg-4.png",
+      link: "/community",
     },
   ];
   const earthData = [
@@ -252,7 +258,11 @@ export default function Main() {
         </div>
         <div className="grid grid-cols-1 items-center sm:grid-cols-2 gap-8">
           {cardData?.map((data, index) => (
-            <div className="relative" key={index}>
+            <div
+              className="relative cursor-pointer"
+              key={index}
+              onClick={() => router.push(data?.link)}
+            >
               <ImageView
                 src={data?.img}
                 alt="main"
@@ -417,7 +427,7 @@ export default function Main() {
         <div className="grid grid-flow-col  grid-rows-3 mt-8 sm:grid-rows-2 gap-6">
           {updates.map((card, index) => (
             <div
-              className={`flex flex-col sm:flex-row gap-6 ${
+              className={`flex flex-col cursor-pointer sm:flex-row gap-6 ${
                 index === 0 ? "sm:row-span-2 row-span-1 !flex-col" : ""
               }`}
               key={index}

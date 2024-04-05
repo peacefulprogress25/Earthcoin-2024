@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ImageView from "./ImageView";
 
 const mintBg = "/assets/images/mintingBg.png";
@@ -21,9 +22,12 @@ export default function Minting() {
             Join over 4,000+ solarpunks already growing with $Earth.
           </p>
         </div>
-        <button className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm">
+        <Link
+          href="/community"
+          className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm"
+        >
           Learn More
-        </button>
+        </Link>
       </div>
     </div>
   );

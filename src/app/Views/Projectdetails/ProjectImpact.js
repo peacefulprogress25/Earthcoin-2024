@@ -43,7 +43,7 @@ export default function ProjectImpact({ details }) {
     },
   ];
   return (
-    <div className="flex flex-col items-start px-[5%]">
+    <div id="impact" className="flex flex-col items-start px-[5%]">
       <p className=" text-[20px] sm:text-[28px] text-left font-semibold text-[#101828] font-syne">
         Project Impact
       </p>

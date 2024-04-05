@@ -1,4 +1,5 @@
 import { useParams } from "next/navigation";
+import Link from "next/link";
 import ProjectHeader from "./ProjectHeader";
 import OverView from "./OverView";
 import ImageView from "../../Components/ImageView";
@@ -377,15 +378,19 @@ export default function Projectdetails() {
   const category = [
     {
       section: "Overview",
+      link: "#overview",
     },
     {
       section: "Impact",
+      link: "#impact",
     },
     {
       section: "Details",
+      link: "#details",
     },
     {
       section: "Contact",
+      link: "#contact",
     },
   ];
   const details = Projects.find((project) => project.projectId === id);
@@ -394,12 +399,14 @@ export default function Projectdetails() {
       <ProjectHeader details={details} />
       <div className="w-full  cursor-pointer gap-4 sm:gap-12 border-b border-[#F2F4F7] flex px-2 items-center justify-center h-20">
         {category.map((option, index) => (
-          <p
+          <Link
             key={index}
+            href={option?.link}
+            passHref
             className="font-inter text-[14px] sm:text-[14px] px-1 sm:px-5 font-semibold text-[#475467]"
           >
             {option.section}
-          </p>
+          </Link>
         ))}
       </div>
       <div className="max-w-screen-2xl mx-auto h-fit flex flex-col px-4 sm:px-[8%] gap-8 sm:gap-16 items-center justify-center w-full">
@@ -412,7 +419,10 @@ export default function Projectdetails() {
           className="w-full object-cover h-[25vh]"
         />
         <ProjectImpact details={details} />
-        <div className="flex gap-8 border w-full border-[#FCCA6B] rounded-md p-4">
+        <div
+          id="details"
+          className="flex gap-8 border w-full border-[#FCCA6B] rounded-md p-4"
+        >
           <div className="border-[#EAECF0] grow border-r">
             <Steps
               progressDot
@@ -466,7 +476,7 @@ export default function Projectdetails() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-full items-start gap-2">
+        <div id="contact" className="flex flex-col w-full items-start gap-2">
           <p className="font-inter text-[#EC8000] font-medium text-[14px]">
             ACCREDITED ENTITY
           </p>

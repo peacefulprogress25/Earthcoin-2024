@@ -33,7 +33,13 @@ export default function Media({ details }) {
       />
       <p className="text-[12px] mt-3 text-left font-normal text-[#475467] font-inter">
         Image courtesy of Laura Davidson via{" "}
-        <span className="underline decoration-[#475467]">Unsplash</span>
+        <a
+          target="_blank"
+          href="https://unsplash.com/photos/QBAH4IldaZY"
+          className="underline decoration-[#475467]"
+        >
+          Unsplash
+        </a>
       </p>
       <div className="mt-8 border-l-2 flex flex-col items-start border-[#EC8000] pl-3">
         <p className="text-[26px]  text-left font-medium text-[#101828] font-syne">
