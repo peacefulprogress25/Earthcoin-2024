@@ -9,6 +9,8 @@ import { LuArrowUpRight } from "react-icons/lu";
 import "./slider.css";
 
 const click = "/assets/icons/circle.svg";
+const left = "/assets/icons/arrow-left.svg";
+const right = "/assets/icons/arrow-right.svg";
 
 export default function PostSlider() {
   const cardData = [
@@ -246,7 +248,7 @@ export default function PostSlider() {
           id="button-prev-post"
         >
           <ImageView
-            src={click}
+            src={left}
             alt="left"
             width={50}
             height={50}
@@ -255,7 +257,7 @@ export default function PostSlider() {
           Previous
         </button>
         <div
-          className="swiper-pagination  gap-1"
+          className="swiper-pagination z-[-1]  gap-1"
           id="swiper-pagination-post"
         ></div>
         <button
@@ -264,7 +266,7 @@ export default function PostSlider() {
         >
           Next
           <ImageView
-            src={click}
+            src={right}
             alt="right"
             width={50}
             height={50}

@@ -61,7 +61,29 @@ export default function ChronoPage() {
           </p>
         </div>
         <div className="flex flex-col h-fit">
-          <Chrono items={updates} mode="VERTICAL">
+          <Chrono
+            items={updates}
+            mode="VERTICAL"
+            disableToolbar
+            cardHeight={200}
+            timelinePointShape="square"
+            timelinePointDimension={20}
+            theme={{
+              primary: "#E4E7EC",
+              secondary: "#667085",
+              titleColor: "#667085",
+              cardTitleColor: "#000000",
+              cardSubtitleColor: "#667085",
+              titleColorActive: "#E4E7EC",
+              iconBackgroundColor: "transparent",
+            }}
+            fontSizes={{
+              cardSubtitle: "14px",
+              cardTitle: "16px",
+              cardText: "12px",
+              title: "14px",
+            }}
+          >
             <button className="flex gap-1 p-1 font-inter border border-[#D0D5DD] rounded-md text-[#6172F3] font-normal text-[14px]">
               <ImageView src={file} alt="file" width={20} height={20} />
               JanuaryExp..

@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import * as d3 from "d3";
 import TransactionPopup from "./TransactionPopup";
 import ImageView from "../../Components/ImageView";
 import Sbt from "./Sbt";
@@ -7,6 +8,7 @@ import Stake from "./Stake";
 import Claim from "./Claim";
 import Mint from "./Mint";
 import "./dapp.css";
+import Chart from "./Chart";
 
 const GradientBg = "/assets/images/dapp-bg.png";
 const wallet = "/assets/icons/wallet-white.svg";
@@ -41,14 +43,8 @@ export default function Dapp() {
       title: "Treasury Size",
     },
   ];
-  const categories = [
-    "STAKE",
-    "TRADE",
-    "CLAIM",
-    "DISCONNECT WALLET",
-    "SBT",
-    "MINT",
-  ];
+
+  // const data = ["STAKE", "TRADE", "CLAIM", "DISCONNECT WALLET", "SBT", "MINT"];
   const handleBtnClick = (content) => {
     console.log(content);
     setScreen(content);
@@ -62,6 +58,41 @@ export default function Dapp() {
 
     return formattedAddress;
   };
+
+  const svgRef = useRef(null);
+  const [chartData, setChartData] = useState([]);
+
+  useEffect(() => {
+    const data = [
+      { value: 30, text: "First", color: "red" },
+      { value: 40, text: "Second", color: "green" },
+      { value: 60, text: "Third", color: "blue" },
+      {
+        value: 50,
+        text: "A very very very very very very very very long text",
+        color: "yellow",
+      },
+    ];
+
+    setChartData(data);
+  }, []);
+
+  const splitLongString = (str, count) => {
+    const partLength = Math.round(str.length / count);
+    const words = str.split(" ");
+    const parts = [];
+    str.split(" ").forEach((part) => {
+      if (!parts.length) {
+        parts.push(part);
+      } else {
+        const last = parts[parts.length - 1];
+        if (parts[parts.length - 1].length >= partLength) parts.push(part);
+        else parts[parts.length - 1] += " " + part;
+      }
+    });
+    return parts;
+  };
+
   return (
     <div className="mt-20">
       {/* <button
@@ -105,7 +136,8 @@ export default function Dapp() {
               ))}
             </div>
           </div>
-          <div className="rounded-full relative border-2 flex items-center shadow-lg bg-white justify-center border-black w-[28rem] h-[28rem]">
+          <div className="relative">
+            {/* <div className="rounded-full relative border-2 flex items-center shadow-lg bg-white justify-center border-black w-[28rem] h-[28rem]">
             <div className="divider2 absolute -top-2   bg-black w-[2px] h-[2.4rem]"></div>
             <div
               onClick={() => handleBtnClick("STAKE")}
@@ -129,13 +161,6 @@ export default function Dapp() {
               <span className="e2">E</span>
             </div>
             <div className="divider3 absolute -top-2   bg-black w-[2px] h-[2.4rem]"></div>
-            {/* <div className="text-[18px] h-[2.3rem]  absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-center">
-              <span className="c1">C</span>
-              <span className="l1">L</span>
-              <span className="a2">A</span>
-              <span className="i1">I</span>
-              <span className="m2">M</span>
-            </div> */}
             <div
               onClick={() => handleBtnClick("MINT")}
               className="text-[18px] h-[2.3rem] cursor-pointer absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-center"
@@ -201,18 +226,59 @@ export default function Dapp() {
                 <Sbt />
               )}
             </div>
-          </div>
-
-          {/* <div className="container">
-            <div className="rounded-shape">
-              <p>Lorem</p>
-              <p>Integer</p>
-              <p>Curabitur</p>
-              <p>Vestibulum</p>
-              <p>Phasellus</p>
-            </div>
           </div> */}
-
+            <Chart setScreen={setScreen}> </Chart>
+            <div className="rounded-full border-2 p-4 flex absolute top-[5.25rem] left-[5.23rem] items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]">
+              {screen === "SBT" ? (
+                <Sbt />
+              ) : screen === "TRADE" ? (
+                <Trade />
+              ) : screen === "STAKE" ? (
+                <Stake />
+              ) : screen === "CLAIM" ? (
+                <Claim />
+              ) : screen === "MINT" ? (
+                <Mint />
+              ) : (
+                <Sbt />
+              )}
+            </div>{" "}
+          </div>
+          {/* <div className="relative">
+            <div
+              onClick={() => handleBtnClick("STAKE")}
+              className="text-[18px] h-[8rem] w-[15rem] pt-2 border-black stake bg-white border-2 cursor-pointer  absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-start"
+            >
+              <span>S</span>
+              <span>T</span>
+              <span>A</span>
+              <span>K</span>
+              <span>E</span>
+            </div>
+            <div
+              onClick={() => handleBtnClick("MINT")}
+              className="text-[18px] h-[8rem] w-[15rem] mint pt-2 border-black stake bg-white border-2 cursor-pointer  absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-start"
+            >
+              <span>M</span>
+              <span>I</span>
+              <span>N</span>
+              <span>T</span>
+            </div> */}
+          {/* <div className="rounded-full !z-[20] relative border-2 p-4 inner-circle flex items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]">
+            {screen === "SBT" ? (
+              <Sbt />
+            ) : screen === "TRADE" ? (
+              <Trade />
+            ) : screen === "STAKE" ? (
+              <Stake />
+            ) : screen === "CLAIM" ? (
+              <Claim />
+            ) : screen === "MINT" ? (
+              <Mint />
+            ) : (
+              <Sbt />
+            )}
+          </div> */}
           <div className="flex flex-col bg-[#1d7645]">
             <div className="border-b-2 border-[#31a560]">
               <div className="flex flex-col  items-center justify-center p-4">

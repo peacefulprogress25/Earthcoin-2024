@@ -136,3 +136,43 @@
 .dis16 {
   transform: translate(-14px, 388px) rotate(-25deg);
 }
+.stake {
+  border-top-left-radius: 45%;
+  border-top-right-radius: 45%;
+  border-bottom: transparent;
+  transform: translate(64px, -48px) rotate(0deg);
+  z-index: 5;
+  background: #27b676;
+}
+
+.mint {
+  border-top-left-radius: 55%;
+  border-top-right-radius: 55%;
+  left: -90px;
+  top: 48px;
+  border-bottom: transparent;
+  transform: rotate(-60deg);
+  z-index: 5;
+  background: #9fc838;
+}
+.inner-circle {
+  z-index: 20;
+}
+
+#chart {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--secondary-font);
+}
+
+.monthArc {
+  fill: white;
+  stroke: #aaaaaa;
+}
+
+.monthText {
+  fill: #6b6b6b;
+  font-size: 13px;
+  font-family: "Courgette", sans-serif;
+}
