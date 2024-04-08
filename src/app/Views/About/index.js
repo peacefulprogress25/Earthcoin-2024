@@ -1,4 +1,8 @@
+import { useEffect, useState } from "react";
 import ImageView from "../../Components/ImageView";
+import { nexaflowPageObj } from "../../utils/constants";
+import nexaflowApi from "../../services/nexaflow";
+import Link from "next/link";
 
 const media = "/assets/images/media.png";
 const people = "/assets/images/people.png";
@@ -6,43 +10,22 @@ const clock = "/assets/icons/clock.svg";
 const dollar = "/assets/icons/dollar-sign.svg";
 
 export default function About() {
-  const peoplelist = [
-    {
-      Role: "Founder",
-      img: media,
-      Name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      Role: "Founder",
-      img: media,
-      Name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      Role: "Founder",
-      img: media,
-      Name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      Role: "Founder",
-      img: media,
-      Name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      Role: "Founder",
-      img: media,
-      Name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-  ];
+  const [teams, setTeams] = useState([]);
+  const [jobs, setJobs] = useState([]);
+  useEffect(() => {
+    const getPageByID = async () => {
+      const page = await nexaflowApi.getPageByID({
+        pageId: nexaflowPageObj.teamPage,
+        websiteId: nexaflowPageObj.website,
+      });
+      console.log(page);
+      setTeams(page?.Teams);
+      setJobs(page?.jobs);
+    };
+
+    getPageByID();
+  }, []);
+
   const positions = [
     {
       title: "Design",
@@ -119,7 +102,7 @@ export default function About() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 mt-6 gap-x-6 gap-y-10">
-          {peoplelist.map((people, index) => (
+          {teams?.map((people, index) => (
             <PeopleCard people={people} key={index} />
           ))}
         </div>
@@ -145,7 +128,7 @@ export default function About() {
           className="w-full mt-4 object-cover h-[45vh]"
         />
         <div className="flex w-full items-center flex-col gap-6 ">
-          {positions?.map((position, index) => (
+          {jobs?.map((position, index) => (
             <div className="flex flex-col items-start gap-6" key={index}>
               <p className="text-[#101828] font-semibold text-left text-[18px] font-inter">
                 {position?.title}
@@ -226,44 +209,52 @@ export default function About() {
 }
 
 export function PeopleCard({ people }) {
+  const twiiter = "/assets/icons/twitter.svg";
+  const linkedin = "/assets/icons/linkedin.svg";
+  const football = "/assets/icons/linkedin.svg";
+  const socialLink = people?.socialLinks;
   const socialIcons = [
     {
       icon: "/assets/icons/twitter.svg",
+      link: socialLink?.twitter,
     },
 
     {
       icon: "/assets/icons/linkedin.svg",
+      link: socialLink?.linkedin,
     },
     {
       icon: "/assets/icons/football.svg",
+      link: socialLink?.twitter,
     },
   ];
   return (
     <div className="flex flex-col gap-1 max-w-[18rem] w-full">
       <ImageView
-        src={people?.img}
+        src={people?.image}
         width={400}
         height={400}
         className="w-full h-[16rem]"
       />
       <p className="font-inter text-[#101828] font-semibold text-[16px]">
-        {people?.Name}
+        {people?.name}
       </p>
       <p className="font-inter text-[#EC8000] font-normal text-[14px]">
-        {people?.Role}
+        {people?.title}
       </p>
       <p className="font-inter text-[#475467] font-normal text-[13px]">
-        Former co-founder of Opendoor. Early staff at Spotify and Clearbit.
+        {people?.description}
       </p>
       <div className="flex mt-2 gap-3">
         {socialIcons.map((icons, index) => (
-          <ImageView
-            src={icons?.icon}
-            width={400}
-            height={400}
-            key={index}
-            className="w-5 cursor-pointer h-5"
-          />
+          <Link href={icons?.link} key={index}>
+            <ImageView
+              src={icons?.icon}
+              width={400}
+              height={400}
+              className="w-5 cursor-pointer h-5"
+            />
+          </Link>
         ))}
       </div>
     </div>

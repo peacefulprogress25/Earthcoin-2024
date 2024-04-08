@@ -1,42 +1,57 @@
 import ImageView from "../../Components/ImageView";
 import { useState, useEffect } from "react";
+import { nexaflowPageObj } from "../../utils/constants";
+import nexaflowApi from "../../services/nexaflow";
 
 const faq = "/assets/images/faq.png";
 const plus = "/assets/icons/plus-circle.svg";
 const minus = "/assets/icons/minus-circle.svg";
 export default function Faq() {
-  const faqdata = [
-    {
-      Question: "What is Solarpunk DAO’s goal with $Earth?",
-      Answer:
-        '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span>&nbsp;</p>\n',
-    },
-    {
-      Question: "Is $Earth pegged?",
-      Answer:
-        '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
-    },
-    {
-      Question: "What climate solutions will $Earth fund?",
-      Answer:
-        '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
-    },
-    {
-      Question: "What are $Earth tokenomics?",
-      Answer:
-        '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
-    },
-    {
-      Question: "Will $Earth help offset carbon emissions?",
-      Answer:
-        '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
-    },
-    {
-      Question: "How will governance be handled?",
-      Answer:
-        '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
-    },
-  ];
+  const [faqdata, setFaqdata] = useState([]);
+  useEffect(() => {
+    const getPageByID = async () => {
+      const page = await nexaflowApi.getPageByID({
+        pageId: nexaflowPageObj.faqsPage,
+        websiteId: nexaflowPageObj.website,
+      });
+      console.log(page);
+      setFaqdata(page?.faq);
+    };
+
+    getPageByID();
+  }, []);
+  // const faqdata = [
+  //   {
+  //     Question: "What is Solarpunk DAO’s goal with $Earth?",
+  //     Answer:
+  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span>&nbsp;</p>\n',
+  //   },
+  //   {
+  //     Question: "Is $Earth pegged?",
+  //     Answer:
+  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
+  //   },
+  //   {
+  //     Question: "What climate solutions will $Earth fund?",
+  //     Answer:
+  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
+  //   },
+  //   {
+  //     Question: "What are $Earth tokenomics?",
+  //     Answer:
+  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
+  //   },
+  //   {
+  //     Question: "Will $Earth help offset carbon emissions?",
+  //     Answer:
+  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
+  //   },
+  //   {
+  //     Question: "How will governance be handled?",
+  //     Answer:
+  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
+  //   },
+  // ];
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
@@ -75,11 +90,11 @@ export default function Faq() {
         </div>
         <div className="sm:px-[6%] px-4 flex flex-col w-full items-start">
           {faqdata && faqdata.length
-            ? faqdata.map(({ Question, Answer }, i) => {
+            ? faqdata.map(({ question, answer }, i) => {
                 return (
                   <FAQSection
-                    Question={Question}
-                    Answer={Answer}
+                    Question={question}
+                    Answer={answer}
                     key={i}
                     i={i}
                   />

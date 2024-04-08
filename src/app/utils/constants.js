@@ -1,8 +1,9 @@
 export const nexaflowPageObj = {
-  website: "6566f8690d487853ac0ce6ad",
-  projectsPage: "64d66ab72aed52cfe16de6ad",
-  faqsPage: "64d5d7702aed52cfe16de500",
-  googleSheetId: "656714a70d487853ac0ce9fc",
-  teamPage: "64dca52429dd1fa13462fb6c",
-  corsId: "656764d70d487853ac0ceade",
+  website: "6613bdb5e22f7fb0bb64a427",
+  // projectsPage: "64d66ab72aed52cfe16de6ad",
+  faqsPage: "6613dba2e22f7fb0bb64a8d7",
+  // googleSheetId: "656714a70d487853ac0ce9fc",
+  teamPage: "6613c142e22f7fb0bb64a7f7",
+  privacyPolicyPage: "6613d35ee22f7fb0bb64a88b",
+  // corsId: "656764d70d487853ac0ceade",
 };
