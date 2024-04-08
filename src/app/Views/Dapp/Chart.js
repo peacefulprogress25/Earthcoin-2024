@@ -65,13 +65,19 @@ const Chart = ({ setScreen }) => {
       .style("stroke", "black")
       .style("stroke-width", 2)
       .style("fill", (d, i) => {
-        if (i === 7) return "#CCCCCC"; //Other
-        else return colorScale(i);
+        if (d.data.name === "SBT") {
+          return "#adb745"; // Set the color for "SBT" slice here
+        } else if (i === 7) {
+          return "#CCCCCC"; // Set the color for "Other" slice
+        } else {
+          return colorScale(i);
+        }
       })
+      .style("z-index", "15")
       .on("click", function (event, d) {
         // Reset the fill color of all slices to white
         svg.selectAll(".donutArcSlices").style("fill", "#fff");
-
+        svg.selectAll(".donutText").style("fill", "#000");
         // Set the fill color of the clicked slice
         d3.select(this).style("fill", d.data.color);
 
@@ -128,6 +134,22 @@ const Chart = ({ setScreen }) => {
         // Set different dy values based on the index
         return i < donutData.length / 2 ? 28 : -18;
       })
+      .style("z-index", "2")
+      .on("click", function (event, d) {
+        // Reset the fill color of all slices to white
+        svg.selectAll(".donutArcSlices").style("fill", "#fff");
+        svg.selectAll(".donutText").style("fill", "#000");
+        // Find the corresponding slice and change its color
+        svg
+          .selectAll(".donutArcSlices")
+          .filter(function (sliceData) {
+            return sliceData.data.name === d.name;
+          })
+          .style("fill", d.color);
+
+        // Update the screen with the clicked slice's name
+        setScreen(d.name);
+      })
       .append("textPath")
       .attr("startOffset", "50%")
       .style("text-anchor", "middle")
@@ -139,7 +161,12 @@ const Chart = ({ setScreen }) => {
       });
   }, []);
 
-  return <div id="chart" ref={chartRef} className="cursor-pointer"></div>;
+  return (
+    <div
+      ref={chartRef}
+      className="cursor-pointer chart text-center text-[16px] font-semibold font-inter z-[10]"
+    ></div>
+  );
 };
 
 export default Chart;

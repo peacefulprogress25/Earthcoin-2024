@@ -159,12 +159,12 @@
   z-index: 20;
 }
 
-#chart {
+/* .chart {
   text-align: center;
   font-size: 16px;
   font-weight: 600;
   font-family: var(--secondary-font);
-}
+} */
 
 .monthArc {
   fill: white;

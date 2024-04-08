@@ -12,7 +12,7 @@ export default function Stake() {
     }
   };
   return (
-    <div className="flex w-full items-center p-4 flex-col gap-3">
+    <div className="flex z-[5] items-center justify-center w-[73%] flex-col gap-2">
       <div className="flex gap-3">
         <p
           className={`text-center font-inter text-[16px] font-medium ${

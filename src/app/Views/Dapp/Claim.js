@@ -2,7 +2,7 @@ import { CgDanger } from "react-icons/cg";
 
 function Claim() {
   return (
-    <div className="flex w-full items-center flex-col gap-3 p-4">
+    <div className="flex justify-center w-[73%] items-center flex-col gap-2">
       {" "}
       <CgDanger color="#c1272d" size="70" className="mb-2" />
       <p className="text-[18px] text-center font-inter font-medium text-black">

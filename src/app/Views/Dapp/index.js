@@ -228,7 +228,7 @@ export default function Dapp() {
             </div>
           </div> */}
             <Chart setScreen={setScreen}> </Chart>
-            <div className="rounded-full border-2 p-4 flex absolute top-[5.1rem] left-[5.1rem] items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]">
+            <div className="rounded-full border-2 z-[5] flex absolute top-[5.1rem] left-[5.1rem] items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]">
               {screen === "SBT" ? (
                 <Sbt />
               ) : screen === "TRADE" ? (

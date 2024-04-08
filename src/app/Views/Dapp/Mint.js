@@ -1,6 +1,6 @@
 export default function Mint() {
   return (
-    <div className="flex w-full items-center p-4 flex-col gap-3">
+    <div className="flex w-[72%] items-center flex-col gap-3">
       <p className="text-black text-center font-inter text-[28px] font-medium">
         Mint $Earth <br /> by passing $Dai
       </p>

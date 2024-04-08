@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Sbt() {
   const [whitelisted, setWhitelisted] = useState(false);
   return (
-    <div className="flex w-full items-center p-4 flex-col gap-3">
+    <div className="flex  z-[5] items-center p-4 flex-col gap-3">
       {whitelisted ? (
         <>
           <p className="text-black text-center font-inter text-[16px] font-medium">

@@ -3,7 +3,7 @@ import { RiArrowDownSFill } from "react-icons/ri";
 
 export default function Trade() {
   return (
-    <div className="flex w-full items-center p-4 flex-col gap-3">
+    <div className="flex w-[73%] items-center flex-col gap-3">
       <p className="text-black text-center font-inter text-[28px] font-medium">
         Trade $Dai <br /> for $Earth
       </p>
