@@ -7,8 +7,8 @@ const Chart = ({ setScreen }) => {
   useEffect(() => {
     const screenWidth = window.innerWidth;
     const margin = { left: 20, top: 20, right: 20, bottom: 20 };
-    const width = Math.min(screenWidth, 535) - margin.left - margin.right;
-    const height = Math.min(screenWidth, 535) - margin.top - margin.bottom;
+    const width = Math.min(screenWidth, 531) - margin.left - margin.right;
+    const height = Math.min(screenWidth, 531) - margin.top - margin.bottom;
 
     let svg = d3.select(chartRef.current).select("svg");
 
@@ -28,12 +28,12 @@ const Chart = ({ setScreen }) => {
     }
 
     const donutData = [
-      { name: "STAKE", value: 100, color: "#2c7bb6" },
-      { name: "TRADE", value: 100, color: "#ffffbf" },
-      { name: "CLAIM", value: 100, color: "#d7191c" },
-      { name: "DISCONNECT WALLET", value: 180, color: "#fdae61" },
-      { name: "SBT", value: 100, color: "#abd9e9" },
-      { name: "MINT", value: 100, color: "#d7191c" },
+      { name: "MINT", value: 200, color: "#adb745" },
+      { name: "STAKE", value: 200, color: "#adb745" },
+      { name: "TRADE", value: 200, color: "#adb745" },
+      { name: "CLAIM", value: 170, color: "#adb745" },
+      { name: "DISCONNECT WALLET", value: 270, color: "#c1272d" },
+      { name: "SBT", value: 170, color: "#adb745" },
     ];
 
     const colorScale = d3
@@ -45,7 +45,7 @@ const Chart = ({ setScreen }) => {
     const arc = d3
       .arc()
       .innerRadius((width * 0.75) / 2)
-      .outerRadius((width * 0.75) / 2 + 30);
+      .outerRadius((width * 0.75) / 2 + 45);
 
     const pie = d3
       .pie()
@@ -76,16 +76,43 @@ const Chart = ({ setScreen }) => {
         d3.select(this).style("fill", d.data.color);
 
         // Update the screen with the clicked slice's name
+
         setScreen(d.data.name);
       })
+      //Create the new invisible arcs and flip the direction for the bottom half labels
       .each(function (d, i) {
-        const firstArcSection = /(^.+?)L/;
-        let newArc = firstArcSection.exec(d3.select(this).attr("d"))[1];
+        //Search pattern for everything between the start and the first capital L
+        var firstArcSection = /(^.+?)L/;
+
+        //Grab everything up to the first Line statement
+        var newArc = firstArcSection.exec(d3.select(this).attr("d"))[1];
+        //Replace all the commas so that IE can handle it
         newArc = newArc.replace(/,/g, " ");
+
+        //If the end angle lies beyond a quarter of a circle (90 degrees or pi/2)
+        //flip the end and start position
+        if (d.endAngle > (90 * Math.PI) / 180) {
+          //Everything between the capital M and first capital A
+          var startLoc = /M(.*?)A/;
+          //Everything between the capital A and 0 0 1
+          var middleLoc = /A(.*?)0 0 1/;
+          //Everything between the 0 0 1 and the end of the string (denoted by $)
+          var endLoc = /0 0 1 (.*?)$/;
+          //Flip the direction of the arc by switching the start and end point
+          //and using a 0 (instead of 1) sweep flag
+          var newStart = endLoc.exec(newArc)[1];
+          var newEnd = startLoc.exec(newArc)[1];
+          var middleSec = middleLoc.exec(newArc)[1];
+
+          //Build up the new arc notation, set the sweep-flag to 0
+          newArc = "M" + newStart + "A" + middleSec + "0 0 0 " + newEnd;
+        } //if
+
+        //Create a new invisible arc that the text can flow along
         svg
           .append("path")
           .attr("class", "hiddenDonutArcs")
-          .attr("id", `donutArc${i}`)
+          .attr("id", "donutArc" + i)
           .attr("d", newArc)
           .style("fill", "none");
       });
@@ -96,15 +123,23 @@ const Chart = ({ setScreen }) => {
       .enter()
       .append("text")
       .attr("class", "donutText")
-      .attr("dy", -13)
+      // .attr("dy", 28)
+      .attr("dy", function (d, i) {
+        // Set different dy values based on the index
+        return i < donutData.length / 2 ? 28 : -18;
+      })
       .append("textPath")
       .attr("startOffset", "50%")
       .style("text-anchor", "middle")
-      .attr("xlink:href", (d, i) => `#donutArc${i}`)
-      .text((d) => d.name);
+      .attr("xlink:href", function (d, i) {
+        return "#donutArc" + i;
+      })
+      .text(function (d) {
+        return d.name;
+      });
   }, []);
 
-  return <div id="chart" ref={chartRef}></div>;
+  return <div id="chart" ref={chartRef} className="cursor-pointer"></div>;
 };
 
 export default Chart;
