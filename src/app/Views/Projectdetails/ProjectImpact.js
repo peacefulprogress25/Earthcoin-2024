@@ -19,11 +19,14 @@ export default function ProjectImpact({ details }) {
   const { EditorState, ContentState } = require("draft-js");
   const htmlToDraft = require("html-to-draftjs").default;
 
-  const contentBlock = htmlToDraft(details?.description2);
-  const contentState = ContentState.createFromBlockArray(
-    contentBlock.contentBlocks
-  );
-  const editorState = EditorState.createWithContent(contentState);
+  let editorState = EditorState.createEmpty();
+  if (details?.projectImpact) {
+    const contentBlock = htmlToDraft(details?.projectImpact);
+    const contentState = ContentState.createFromBlockArray(
+      contentBlock.contentBlocks
+    );
+    editorState = EditorState.createWithContent(contentState);
+  }
   const impacts = [
     {
       icon: "/assets/icons/air.svg",
@@ -55,24 +58,24 @@ export default function ProjectImpact({ details }) {
         readOnly={true}
       />
       <div className="flex sm:flex-row flex-col justify-center items-center w-full">
-        {impacts.map((impact, index) => (
+        {details?.positiveExternalities.map((impact, index) => (
           <div
             className={`flex flex-col p-4 items-center  justify-center w-[18rem] ${
-              index !== impacts.length - 1
+              index !== details?.positiveExternalities.length - 1
                 ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
                 : ""
             }`}
             key={index}
           >
             <ImageView
-              alt={impact.impact}
+              alt={impact.title}
               src={impact.icon}
               width={100}
               height={100}
               className="w-12 h-12 sm:w-20 sm:h-20 object-contain"
             />
             <p className="text-[#101828] text-center text-[16px] mt-2 font-semibold font-inter">
-              {impact.impact}
+              {impact.title}
             </p>
           </div>
         ))}

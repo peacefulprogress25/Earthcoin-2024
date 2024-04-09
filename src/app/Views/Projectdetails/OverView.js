@@ -32,11 +32,14 @@ export default function OverView({ details }) {
   const { EditorState, ContentState } = require("draft-js");
   const htmlToDraft = require("html-to-draftjs").default;
 
-  const contentBlock = htmlToDraft(details?.description1);
-  const contentState = ContentState.createFromBlockArray(
-    contentBlock.contentBlocks
-  );
-  const editorState = EditorState.createWithContent(contentState);
+  let editorState = EditorState.createEmpty();
+  if (details?.overview) {
+    const contentBlock = htmlToDraft(details?.overview);
+    const contentState = ContentState.createFromBlockArray(
+      contentBlock.contentBlocks
+    );
+    editorState = EditorState.createWithContent(contentState);
+  }
   return (
     <div id="overview" className="flex w-full flex-col gap-8 px-[5%] mt-12">
       <div className="flex flex-col sm:flex-row !items-start gap-16">
@@ -45,7 +48,9 @@ export default function OverView({ details }) {
             <p className="text-[#EC8000] font-semibold text-[14px]">
               Priority Rank
             </p>
-            <p className="text-[#475467] font-semibold text-[14px]">#3</p>
+            <p className="text-[#475467] font-semibold text-[14px]">
+              #{details?.priorityRank}
+            </p>
             <p className="text-[#EC8000] font-semibold mt-2 text-[14px]">
               Status
             </p>
@@ -122,7 +127,7 @@ export default function OverView({ details }) {
         </div>
         <div className="flex items-center w-[14rem] sm:w-[18rem] px-4  py-6 rounded-lg shadow-lg border-2 border-[#EAECF0]  justify-center flex-col">
           <p className="font-syne font-semibold text-[20px] text-center sm:text-[32px] text-[#EC8000]">
-            {details.returnValue}
+            {details.Irr}
           </p>
           <p className="font-inter font-semibold text-center text-[14px] text-[#101828]">
             Internal rate of return

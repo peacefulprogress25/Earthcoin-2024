@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { nexaflowPageObj } from "../utils/constants";
 import nexaflowApi from "../services/nexaflow";
+import { Loader } from "../Components/Loader";
 
 export default function TermsOfService() {
   const [termsOfService, setTeamsOfService] = useState();
@@ -56,13 +57,20 @@ export default function TermsOfService() {
           website.
         </p>
       </div>
-      <Editor
-        editorState={editorState}
-        wrapperClassName="demo-wrapper"
-        editorClassName="richText-editor"
-        toolbarHidden={true}
-        readOnly={true}
-      />
+
+      {termsOfService?.details ? (
+        <Editor
+          editorState={editorState}
+          wrapperClassName="demo-wrapper"
+          editorClassName="richText-editor"
+          toolbarHidden={true}
+          readOnly={true}
+        />
+      ) : (
+        <div className="h-[60vh] w-full flex items-center justify-center">
+          <Loader />
+        </div>
+      )}
     </div>
   );
 }

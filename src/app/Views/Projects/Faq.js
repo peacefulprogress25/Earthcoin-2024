@@ -1,4 +1,6 @@
-export default function Faq() {
+import { Loader } from "../../Components/Loader";
+
+export default function Faq({ faq }) {
   const faqData = [
     {
       title: "Is there a free trial available?",
@@ -41,22 +43,30 @@ export default function Faq() {
         the answer <br /> you’re looking for? Please{" "}
         <a className="underline">chat to our friendly team</a>
       </p>
-      <div className="grid grid-cols-1 w-full items-center sm:items-start my-8 mb-10 gap-x-2 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
-        {faqData?.map((faq, index) => (
-          <div
-            className="flex flex-col items-center sm:items-start  gap-2"
-            key={index}
-          >
-            <p className="text-[#101828] text-center sm:text-left mt-2 font-semibold  text-[14px] font-inter">
-              {faq?.title}
-            </p>
-            <p className="text-[#475467] w-[75%] text-center sm:text-left font-normal  text-[14px] font-inter">
-              {faq?.description}
-            </p>
-          </div>
-        ))}
-      </div>
-      <div className="w-full flex bg-[#F9FAFB] items-center sm:items-start  p-4 py-6 rounded-md justify-between flex-col sm:flex-row">
+
+      {faq && faq?.length ? (
+        <div className="grid grid-cols-1 w-full items-center sm:items-start my-8 mb-10 gap-x-2 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
+          {faq?.map((faq, index) => (
+            <div
+              className="flex flex-col items-center sm:items-start  gap-2"
+              key={index}
+            >
+              <p className="text-[#101828] text-center sm:text-left mt-2 font-semibold  text-[14px] font-inter">
+                {faq?.Question}
+              </p>
+              <p className="text-[#475467] w-[75%] text-center sm:text-left font-normal  text-[14px] font-inter">
+                {faq?.Answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="h-[60vh] w-full flex items-center justify-center">
+          <Loader />
+        </div>
+      )}
+
+      {/* <div className="w-full flex bg-[#F9FAFB] items-center sm:items-start  p-4 py-6 rounded-md justify-between flex-col sm:flex-row">
         <div className="flex  flex-col">
           <p className="text-[#101828] font-inter text-center sm:text-left  font-medium text-[16px]">
             Still have questions?
@@ -69,7 +79,7 @@ export default function Faq() {
         <button className="w-[100px] mt-2 sm:mt-0  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm">
           Get in touch
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

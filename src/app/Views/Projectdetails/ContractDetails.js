@@ -17,7 +17,7 @@ export default function ContractDetails({ details }) {
   const { EditorState, ContentState } = require("draft-js");
   const htmlToDraft = require("html-to-draftjs").default;
 
-  const contentBlock = htmlToDraft(details?.termsOfFunding);
+  const contentBlock = htmlToDraft(details?.contractDetails?.details);
   const contentState = ContentState.createFromBlockArray(
     contentBlock.contentBlocks
   );
@@ -38,13 +38,13 @@ export default function ContractDetails({ details }) {
         <p className="font-inter mt-3 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
           Contract Address - 
           <span className="text-[#101828] inline-block">
-            0x9F9f149a02Cddc9a8251207cefD3fF77
+            {details?.contractDetails?.contractAddress}
           </span>
         </p>
         <p className="font-inter mt-1 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
           $Earth - 
           <span className="text-[#101828] inline-block">
-            0x9F9f149a02Cddc9a8251207cefD3fF77
+            {details?.contractDetails?.earth}
           </span>
         </p>
       </div>

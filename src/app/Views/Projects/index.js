@@ -1,6 +1,10 @@
 import Faq from "./Faq";
 import ProjectList from "./ProjectList";
 import WorldMap from "./WorldMap";
+import { nexaflowPageObj } from "../../utils/constants";
+import nexaflowApi from "../../services/nexaflow";
+import { useState, useEffect } from "react";
+import Gpt from "../../Components/Gpt";
 
 export default function Project() {
   const category = [
@@ -23,6 +27,21 @@ export default function Project() {
       section: "Solarpunk Tech",
     },
   ];
+  const [projects, setProjects] = useState([]);
+  const [faq, setFaq] = useState([]);
+  useEffect(() => {
+    const getPageByID = async () => {
+      const page = await nexaflowApi.getPageByID({
+        pageId: nexaflowPageObj.projectsPage,
+        websiteId: nexaflowPageObj.website,
+      });
+      console.log(page);
+      setProjects(page?.Projects);
+      setFaq(page?.Faq);
+    };
+
+    getPageByID();
+  }, []);
   return (
     <div className="mt-20 w-full">
       <WorldMap />
@@ -36,9 +55,10 @@ export default function Project() {
           </p>
         ))}
       </div>
-      <ProjectList />
+      <ProjectList projects={projects} />
       <div className="max-w-screen-2xl mx-auto w-full px-[6%]">
-        <Faq />
+        <Faq faq={faq} />
+        <Gpt />
       </div>
     </div>
   );

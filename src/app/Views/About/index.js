@@ -3,6 +3,7 @@ import ImageView from "../../Components/ImageView";
 import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
 import Link from "next/link";
+import { Loader } from "../../Components/Loader";
 
 const media = "/assets/images/media.png";
 const people = "/assets/images/people.png";
@@ -26,65 +27,6 @@ export default function About() {
     getPageByID();
   }, []);
 
-  const positions = [
-    {
-      title: "Design",
-      position: [
-        {
-          title: "Product Designer",
-          description:
-            "We’re looking for a mid-level product designer to join our team.",
-          type: "Full-time",
-          salary: "80k - 100k",
-        },
-        {
-          title: "UX Designer",
-          description:
-            "We’re looking for a mid-level product designer to join our team.",
-          type: "Full-time",
-          salary: "80k - 100k",
-        },
-      ],
-    },
-    {
-      title: "Software Development",
-      position: [
-        {
-          title: "Product Designer",
-          description:
-            "We’re looking for a mid-level product designer to join our team.",
-          type: "Full-time",
-          salary: "80k - 100k",
-        },
-        {
-          title: "UX Designer",
-          description:
-            "We’re looking for a mid-level product designer to join our team.",
-          type: "Full-time",
-          salary: "80k - 100k",
-        },
-        {
-          title: "UX Designer",
-          description:
-            "We’re looking for a mid-level product designer to join our team.",
-          type: "Full-time",
-          salary: "80k - 100k",
-        },
-      ],
-    },
-    {
-      title: "Customer Success",
-      position: [
-        {
-          title: "Customer Success Manager",
-          description:
-            "We’re looking for a mid-level product designer to join our team.",
-          type: "Full-time",
-          salary: "80k - 100k",
-        },
-      ],
-    },
-  ];
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[8%] flex gap-10 flex-col items-center">
@@ -101,11 +43,18 @@ export default function About() {
             remote ream!
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 mt-6 gap-x-6 gap-y-10">
-          {teams?.map((people, index) => (
-            <PeopleCard people={people} key={index} />
-          ))}
-        </div>
+        {teams && teams.length ? (
+          <div className="grid grid-cols-1 sm:grid-cols-3 mt-6 gap-x-6 gap-y-10">
+            {teams?.map((people, index) => (
+              <PeopleCard people={people} key={index} />
+            ))}
+          </div>
+        ) : (
+          <div className="h-[60vh] w-full flex items-center justify-center">
+            <Loader />
+          </div>
+        )}
+
         <div className="w-full h-[1px] bg-[#F2F4F7]"></div>
         <div className="flex mt-8 flex-col gap-2 items-center">
           <p className="text-[#EC8000] p-1 px-2 rounded-full bg-[#FFFCF8] font-semibold text-center text-[12px] font-inter">
@@ -128,54 +77,60 @@ export default function About() {
           className="w-full mt-4 object-cover h-[45vh]"
         />
         <div className="flex w-full items-center flex-col gap-6 ">
-          {jobs?.map((position, index) => (
-            <div className="flex flex-col items-start gap-6" key={index}>
-              <p className="text-[#101828] font-semibold text-left text-[18px] font-inter">
-                {position?.title}
-              </p>
-              <div className="flex w-full flex-col gap-8">
-                {position?.position?.map((option, index) => (
-                  <div
-                    className="flex flex-col !w-[20rem] sm:!w-[50rem] rounded-lg border border-[#EAECF0] items-start p-6"
-                    key={index}
-                  >
-                    <p className="text-[#101828] font-semibold text-left text-[16px] font-inter">
-                      {option?.title}
-                    </p>
-                    <p className="text-[#475467] mt-1 font-normal text-left text-[14px] font-inter">
-                      {option?.description}
-                    </p>
-                    <div className="flex mt-6 gap-3">
-                      <div className="flex items-center gap-1">
-                        <ImageView
-                          src={clock}
-                          alt="clock"
-                          width={40}
-                          height={40}
-                          className="w-4 object-cover h-4"
-                        />
-                        <p className="text-[#475467] font-normal text-left text-[14px] font-inter">
-                          {option?.type}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <ImageView
-                          src={dollar}
-                          alt="dollar"
-                          width={40}
-                          height={40}
-                          className="w-4 object-cover h-4"
-                        />
-                        <p className="text-[#475467] font-normal text-left text-[14px] font-inter">
-                          {option?.salary}
-                        </p>
+          {jobs && jobs.length ? (
+            jobs?.map((position, index) => (
+              <div className="flex flex-col items-start gap-6" key={index}>
+                <p className="text-[#101828] font-semibold text-left text-[18px] font-inter">
+                  {position?.title}
+                </p>
+                <div className="flex w-full flex-col gap-8">
+                  {position?.position?.map((option, index) => (
+                    <div
+                      className="flex flex-col !w-[20rem] sm:!w-[50rem] rounded-lg border border-[#EAECF0] items-start p-6"
+                      key={index}
+                    >
+                      <p className="text-[#101828] font-semibold text-left text-[16px] font-inter">
+                        {option?.title}
+                      </p>
+                      <p className="text-[#475467] mt-1 font-normal text-left text-[14px] font-inter">
+                        {option?.description}
+                      </p>
+                      <div className="flex mt-6 gap-3">
+                        <div className="flex items-center gap-1">
+                          <ImageView
+                            src={clock}
+                            alt="clock"
+                            width={40}
+                            height={40}
+                            className="w-4 object-cover h-4"
+                          />
+                          <p className="text-[#475467] font-normal text-left text-[14px] font-inter">
+                            {option?.type}
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <ImageView
+                            src={dollar}
+                            alt="dollar"
+                            width={40}
+                            height={40}
+                            className="w-4 object-cover h-4"
+                          />
+                          <p className="text-[#475467] font-normal text-left text-[14px] font-inter">
+                            {option?.salary}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
+            ))
+          ) : (
+            <div className="h-[60vh] w-full flex items-center justify-center">
+              <Loader />
             </div>
-          ))}
+          )}
         </div>
       </div>
       <div className="w-full flex flex-col mt-10 items-center justify-center py-20 px-4 bg-[#F9FAFB]">

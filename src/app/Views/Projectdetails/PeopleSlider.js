@@ -4,6 +4,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./project.css";
+import Link from "next/link";
 
 const media = "/assets/images/media.png";
 const leftArrow = "/assets/icons/left_arrow.svg";
@@ -11,58 +12,72 @@ const rightArrow = "/assets/icons/right_arrow.svg";
 export default function PeopleSlider({ details }) {
   const peoplelist = [
     {
-      Role: "Founder",
-      img: media,
-      Name: "William",
+      position: "Founder",
+      image: media,
+      name: "William",
       description:
         "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
     },
     {
-      Role: "Founder",
-      img: media,
-      Name: "William",
+      position: "Founder",
+      image: media,
+      name: "William",
       description:
         "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
     },
     {
-      Role: "Founder",
-      img: media,
-      Name: "William",
+      position: "Founder",
+      image: media,
+      name: "William",
       description:
         "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
     },
     {
-      Role: "Founder",
-      img: media,
-      Name: "William",
+      position: "Founder",
+      image: media,
+      name: "William",
       description:
         "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
     },
     {
-      Role: "Founder",
-      img: media,
-      Name: "William",
+      position: "Founder",
+      image: media,
+      name: "William",
       description:
         "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
     },
     {
-      Role: "Founder",
-      img: media,
-      Name: "William",
+      position: "Founder",
+      image: media,
+      name: "William",
       description:
         "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
     },
     {
-      Role: "Founder",
-      img: media,
-      Name: "William",
+      position: "Founder",
+      image: media,
+      name: "William",
       description:
         "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
     },
     {
-      Role: "Founder",
-      img: media,
-      Name: "William",
+      position: "Founder",
+      image: media,
+      name: "William",
+      description:
+        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
+    },
+    {
+      position: "Founder",
+      image: media,
+      name: "William",
+      description:
+        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
+    },
+    {
+      position: "Founder",
+      image: media,
+      name: "William",
       description:
         "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
     },
@@ -83,7 +98,7 @@ export default function PeopleSlider({ details }) {
           }}
           modules={[Navigation]}
         >
-          {details?.people.map((people, index) => (
+          {details?.teams.map((people, index) => (
             <SwiperSlide key={index}>
               <PeopleCard people={people} />
             </SwiperSlide>
@@ -123,41 +138,46 @@ export default function PeopleSlider({ details }) {
 export function PeopleCard({ people }) {
   const socialIcons = [
     {
-      icon: "/assets/icons/google.svg",
+      icon: "/assets/icons/twitter.svg",
+      link: people?.twitter,
     },
+
     {
       icon: "/assets/icons/linkedin.svg",
+      link: people?.linkedin,
     },
     {
-      icon: "/assets/icons/twitter.svg",
+      icon: "/assets/icons/football.svg",
+      link: people?.twitter,
     },
   ];
   return (
     <div className="flex flex-col gap-2 max-w-[14rem] w-full">
       <ImageView
-        src={people?.img}
+        src={people?.image}
         width={400}
         height={400}
         className="w-full h-[12rem]"
       />
       <p className="font-inter text-[#101828] font-semibold text-[16px]">
-        {people?.Name}
+        {people?.name}
       </p>
       <p className="font-inter text-[#EC8000] font-normal text-[14px]">
-        {people?.Role}
+        {people?.position}
       </p>
       <p className="font-inter text-[#475467] font-normal text-[13px]">
-        Former co-founder of Opendoor. Early staff at Spotify and Clearbit.
+        {people?.description}
       </p>
       <div className="flex gap-3">
         {socialIcons.map((icons, index) => (
-          <ImageView
-            src={icons?.icon}
-            width={400}
-            height={400}
-            key={index}
-            className="w-5 cursor-pointer h-5"
-          />
+          <Link href={icons?.link} key={index}>
+            <ImageView
+              src={icons?.icon}
+              width={400}
+              height={400}
+              className="w-5 cursor-pointer h-5"
+            />
+          </Link>
         ))}
       </div>
     </div>

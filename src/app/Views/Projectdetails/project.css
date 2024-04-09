@@ -84,6 +84,10 @@
   }
 }
 .people {
+  .swiper {
+    margin-left: 0 !important;
+  }
+
   .swiper-slide {
     width: 14rem !important;
   }

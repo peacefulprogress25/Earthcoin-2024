@@ -2,6 +2,8 @@ import ImageView from "../../Components/ImageView";
 import { useState, useEffect } from "react";
 import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
+import { Loader } from "../../Components/Loader";
+import Gpt from "../../Components/Gpt";
 
 const faq = "/assets/images/faq.png";
 const plus = "/assets/icons/plus-circle.svg";
@@ -20,38 +22,7 @@ export default function Faq() {
 
     getPageByID();
   }, []);
-  // const faqdata = [
-  //   {
-  //     Question: "What is Solarpunk DAO’s goal with $Earth?",
-  //     Answer:
-  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span>&nbsp;</p>\n',
-  //   },
-  //   {
-  //     Question: "Is $Earth pegged?",
-  //     Answer:
-  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
-  //   },
-  //   {
-  //     Question: "What climate solutions will $Earth fund?",
-  //     Answer:
-  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
-  //   },
-  //   {
-  //     Question: "What are $Earth tokenomics?",
-  //     Answer:
-  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
-  //   },
-  //   {
-  //     Question: "Will $Earth help offset carbon emissions?",
-  //     Answer:
-  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
-  //   },
-  //   {
-  //     Question: "How will governance be handled?",
-  //     Answer:
-  //       '<p><span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: medium;">Mobilize capital required for climate solutions over the next 30 years</span></p>\n',
-  //   },
-  // ];
+
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
@@ -66,41 +37,19 @@ export default function Faq() {
             Have questions? We’re here to help.
           </p>
         </div>
-        <div className="relative  w-full">
-          <ImageView
-            src={faq}
-            alt="faq"
-            width={800}
-            height={800}
-            className="w-full  h-[35vh] sm:h-[50vh] rounded-md object-cover"
-          />
-          <div className="flex w-full justify-between gap-6 items-center py-4 px-8 absolute bottom-2 sm:bottom-4">
-            <div className="flex flex-col gap-2 items-start">
-              <p className="text-white font-syne font-semibold text-[15px] sm:text-[28px]">
-                Converse with our AI assitant
-              </p>
-              <p className="text-white font-inter font-normal  text-[10px] sm:text-[16px]">
-                Can’t find the answer you’re looking for? Ask our AI assistant.
-              </p>
-            </div>
-            <button className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm">
-              Earth GPT
-            </button>
-          </div>
-        </div>
+        <Gpt />
         <div className="sm:px-[6%] px-4 flex flex-col w-full items-start">
-          {faqdata && faqdata.length
-            ? faqdata.map(({ question, answer }, i) => {
-                return (
-                  <FAQSection
-                    Question={question}
-                    Answer={answer}
-                    key={i}
-                    i={i}
-                  />
-                );
-              })
-            : ""}
+          {faqdata && faqdata.length ? (
+            faqdata.map(({ question, answer }, i) => {
+              return (
+                <FAQSection Question={question} Answer={answer} key={i} i={i} />
+              );
+            })
+          ) : (
+            <div className="h-[60vh] w-full flex items-center justify-center">
+              <Loader />
+            </div>
+          )}
         </div>
       </div>
     </div>
