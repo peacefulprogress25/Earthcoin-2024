@@ -85,9 +85,11 @@ export default function About() {
                 </p>
                 <div className="flex w-full flex-col gap-8">
                   {position?.position?.map((option, index) => (
-                    <div
+                    <Link
                       className="flex flex-col !w-[20rem] sm:!w-[50rem] rounded-lg border border-[#EAECF0] items-start p-6"
                       key={index}
+                      href={option?.link}
+                      target="_blank"
                     >
                       <p className="text-[#101828] font-semibold text-left text-[16px] font-inter">
                         {option?.title}
@@ -121,7 +123,7 @@ export default function About() {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>

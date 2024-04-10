@@ -6,7 +6,14 @@ import nexaflowApi from "../../services/nexaflow";
 import { Loader } from "../../Components/Loader";
 
 export default function ProjectList({ projects }) {
-  const sortedProjects = projects.sort((a, b) => a.order - b.order);
+  const reversedProjects = [...projects].reverse();
+  const hasOrder = projects.some((project) => project.order !== undefined);
+  let sortedProjects;
+  if (hasOrder) {
+    sortedProjects = reversedProjects.sort((a, b) => a.order - b.order);
+  } else {
+    sortedProjects = reversedProjects;
+  }
   const router = useRouter();
 
   // const Projects = [
@@ -230,7 +237,7 @@ export default function ProjectList({ projects }) {
   return (
     <div className="max-w-screen-lg mx-auto mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full px-4 pb-8">
       {sortedProjects && sortedProjects?.length ? (
-        projects.map((project, index) => (
+        sortedProjects.map((project, index) => (
           <div
             className="rounded-lg border-4 max-w-[44rem] cursor-pointer w-full h-fit flex flex-col border-[#101828]"
             key={index}

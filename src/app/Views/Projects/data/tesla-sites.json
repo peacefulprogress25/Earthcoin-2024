@@ -1,0 +1,234 @@
+[
+  {
+    "id": 2215,
+    "locationId": "dangjinsupercharger",
+    "name": "Dangjin, South Korea",
+    "status": "OPEN",
+    "address": {
+      "street": "충남 당진시 송악읍 송악로 63",
+      "city": "당진",
+      "state": "48",
+      "zip": null,
+      "countryId": 137,
+      "country": "South Korea",
+      "regionId": 102,
+      "region": "Asia Pacific"
+    },
+    "gps": {
+      "latitude": 36.909503,
+      "longitude": 126.69407466
+    },
+    "dateOpened": "2019-12-20",
+    "stallCount": 6,
+    "counted": true,
+    "elevationMeters": 42,
+    "powerKilowatt": 120,
+    "solarCanopy": false,
+    "battery": false,
+    "statusDays": 0,
+    "urlDiscuss": false
+  },
+
+  {
+    "id": 355,
+    "locationId": "lafayettesupercharger",
+    "name": "Lafayette, IN",
+    "status": "OPEN",
+    "address": {
+      "street": "4901 Indiana 26",
+      "city": "Lafayette",
+      "state": "IN",
+      "zip": "47905",
+      "countryId": 100,
+      "country": "USA",
+      "regionId": 100,
+      "region": "North America"
+    },
+    "gps": {
+      "latitude": 40.416187,
+      "longitude": -86.814084
+    },
+    "dateOpened": "2014-10-10",
+    "stallCount": 8,
+    "counted": true,
+    "elevationMeters": 202,
+    "powerKilowatt": 150,
+    "solarCanopy": false,
+    "battery": false,
+    "statusDays": 0,
+    "urlDiscuss": true
+  },
+  {
+    "id": 382,
+    "locationId": "gavlesupercharger",
+    "name": "Gävle, Sweden",
+    "status": "OPEN",
+    "address": {
+      "street": "Brovägen, by Dinners Gävlebro AB",
+      "city": "Gävle",
+      "state": null,
+      "zip": "805 91",
+      "countryId": 109,
+      "country": "Sweden",
+      "regionId": 101,
+      "region": "Europe"
+    },
+    "gps": {
+      "latitude": 60.648513,
+      "longitude": 17.120583
+    },
+    "dateOpened": "2014-11-11",
+    "stallCount": 14,
+    "counted": true,
+    "elevationMeters": 37,
+    "powerKilowatt": 150,
+    "solarCanopy": false,
+    "battery": false,
+    "statusDays": 0,
+    "urlDiscuss": false
+  },
+  {
+    "id": 349,
+    "locationId": "batonrougelasupercharger",
+    "name": "Baton Rouge, LA",
+    "status": "OPEN",
+    "address": {
+      "street": "3535 Perkins Rd",
+      "city": "Baton Rouge",
+      "state": "LA",
+      "zip": "70808",
+      "countryId": 100,
+      "country": "USA",
+      "regionId": 100,
+      "region": "North America"
+    },
+    "gps": {
+      "latitude": 30.423892,
+      "longitude": -91.154637
+    },
+    "dateOpened": "2015-01-22",
+    "stallCount": 6,
+    "counted": true,
+    "elevationMeters": 10,
+    "powerKilowatt": 150,
+    "solarCanopy": false,
+    "battery": false,
+    "statusDays": 0,
+    "urlDiscuss": true
+  },
+  {
+    "id": 1357,
+    "locationId": "phoenixonesupercharger",
+    "name": "Phoenix - Agua Fria Fwy, AZ",
+    "status": "OPEN",
+    "address": {
+      "street": "2805 W Agua Fria Fwy",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85027",
+      "countryId": 100,
+      "country": "USA",
+      "regionId": 100,
+      "region": "North America"
+    },
+    "gps": {
+      "latitude": 33.667011,
+      "longitude": -112.120891
+    },
+    "dateOpened": "2018-03-21",
+    "stallCount": 16,
+    "counted": true,
+    "elevationMeters": 417,
+    "powerKilowatt": 150,
+    "solarCanopy": false,
+    "battery": false,
+    "statusDays": 0,
+    "urlDiscuss": true
+  },
+  {
+    "id": 359,
+    "locationId": "kastrup",
+    "name": "Kastrup, Denmark",
+    "status": "CLOSED_PERM",
+    "address": {
+      "street": "Kirstinehøj 43 - Will be permanently closed from 1st of April 2019.",
+      "city": "Kastrup",
+      "state": null,
+      "zip": "2770",
+      "countryId": 107,
+      "country": "Denmark",
+      "regionId": 101,
+      "region": "Europe"
+    },
+    "gps": {
+      "latitude": 55.614459,
+      "longitude": 12.613533
+    },
+    "stallCount": 2,
+    "counted": true,
+    "elevationMeters": 2,
+    "powerKilowatt": 0,
+    "solarCanopy": false,
+    "battery": false,
+    "statusDays": 648,
+    "urlDiscuss": true
+  },
+  {
+    "id": 340,
+    "locationId": "denversupercharger",
+    "name": "Denver, CO",
+    "status": "OPEN",
+    "address": {
+      "street": "4310 Airport Way",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80239",
+      "countryId": 100,
+      "country": "USA",
+      "regionId": 100,
+      "region": "North America"
+    },
+    "gps": {
+      "latitude": 39.775259,
+      "longitude": -104.794674
+    },
+    "dateOpened": "2014-11-08",
+    "stallCount": 6,
+    "counted": true,
+    "elevationMeters": 1641,
+    "powerKilowatt": 150,
+    "solarCanopy": false,
+    "battery": false,
+    "statusDays": 0,
+    "urlDiscuss": true
+  },
+  {
+    "id": 908,
+    "locationId": "umeaswedensupercharger",
+    "name": "Umeå, Sweden",
+    "status": "OPEN",
+    "address": {
+      "street": "Marknadsgatan 19, By MAX burger",
+      "city": "Umeå",
+      "state": null,
+      "zip": "90421",
+      "countryId": 109,
+      "country": "Sweden",
+      "regionId": 101,
+      "region": "Europe"
+    },
+    "gps": {
+      "latitude": 63.811159,
+      "longitude": 20.250153
+    },
+    "dateOpened": "2016-10-05",
+    "stallCount": 12,
+    "counted": true,
+    "elevationMeters": 2,
+    "powerKilowatt": 150,
+    "solarCanopy": false,
+    "battery": false,
+    "statusDays": 0,
+    "urlDiscuss": true
+  }
+]

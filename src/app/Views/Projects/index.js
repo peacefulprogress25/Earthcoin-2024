@@ -1,6 +1,6 @@
 import Faq from "./Faq";
 import ProjectList from "./ProjectList";
-import WorldMap from "./WorldMap";
+import Insight from "./insight";
 import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
 import { useState, useEffect } from "react";
@@ -44,7 +44,7 @@ export default function Project() {
   }, []);
   return (
     <div className="mt-20 w-full">
-      <WorldMap />
+      <Insight />
       <div className="w-full hidden sm:flex cursor-pointer gap-1 sm:gap-12 border-b border-[#F2F4F7]  px-2 items-center justify-between sm:justify-center h-20">
         {category.map((option, index) => (
           <p

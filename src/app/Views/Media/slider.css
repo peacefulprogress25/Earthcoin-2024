@@ -1,7 +1,9 @@
 .post_swiper_container {
-  height: 60rem;
+  height: 55rem;
+  margin-left: 0;
   .swiper-slide {
     width: 24rem !important;
+    /* height: 25rem !important; */
   }
 }
 .swiper-button-next {

@@ -12,7 +12,7 @@ const click = "/assets/icons/circle.svg";
 const left = "/assets/icons/arrow-left.svg";
 const right = "/assets/icons/arrow-right.svg";
 
-export default function PostSlider() {
+export default function PostSlider({ post }) {
   const cardData = [
     {
       name: "Olivia Rhye • 20 Jan 2022",
@@ -208,7 +208,7 @@ export default function PostSlider() {
     },
   ];
   return (
-    <div className="overflow-hidden h-fit w-full ">
+    <div className="overflow-hidden h-full w-full ">
       <div className="flex  w-full">
         <Swiper
           centeredSlides={false}
@@ -235,7 +235,7 @@ export default function PostSlider() {
           modules={[Pagination, Navigation, Grid]}
           className="post_swiper_container"
         >
-          {cardData.map((card, index) => (
+          {post.map((card, index) => (
             <SwiperSlide key={index}>
               <SliderCard card={card} />
             </SwiperSlide>
@@ -280,7 +280,7 @@ export default function PostSlider() {
 
 export function SliderCard({ card }) {
   return (
-    <div className={`flex flex-col w-[24rem] gap-6`}>
+    <div className={`flex flex-col h-fit w-[24rem] gap-6`}>
       <ImageView
         src={card.img}
         alt={card.name}
@@ -305,17 +305,17 @@ export function SliderCard({ card }) {
           {card?.tags.map((tag, i) => (
             <p
               className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${
-                tag === "Design"
+                tag?.tag === "Design"
                   ? "text-[#EC8000] bg-[#FFFCF8]"
-                  : tag === "Research"
+                  : tag?.tag === "Research"
                   ? "bg-[#EEF4FF] text-[#3538CD]"
-                  : tag === "Presentation"
+                  : tag?.tag === "Presentation"
                   ? "bg-[#FDF2FA] text-[#C11574]"
                   : ""
               }`}
               key={i}
             >
-              {tag}
+              {tag?.tag}
             </p>
           ))}
         </div>

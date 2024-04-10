@@ -1,3 +1,4 @@
+"use client";
 import Dashboard from "../../Views/Dashboard";
 
 export default function Dashboardpage() {
