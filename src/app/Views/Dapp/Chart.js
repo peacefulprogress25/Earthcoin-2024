@@ -159,7 +159,7 @@ const Chart = ({ setScreen }) => {
       .text(function (d) {
         return d.name;
       });
-  }, []);
+  }, [setScreen]);
 
   return (
     <div

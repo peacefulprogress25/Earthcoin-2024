@@ -1,5 +1,5 @@
+"use client";
 import ImageView from "../../Components/ImageView";
-import WorldMap from "../Projects/WorldMap";
 import Minting from "../../Components/Minting";
 import Insight from "./insight";
 import { nexaflowPageObj } from "../../utils/constants";
