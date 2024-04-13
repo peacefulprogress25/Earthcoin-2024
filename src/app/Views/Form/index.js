@@ -1,7 +1,7 @@
 import ImageView from "../../Components/ImageView";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useState } from "react";
-import useNotification from "../../Components/useNotification";
+import useNotification from "../../Hooks/useNotification";
 import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
 import { BtnLoader } from "../../Components/Loader";

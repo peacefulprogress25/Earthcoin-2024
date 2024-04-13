@@ -1,15 +1,50 @@
+"use client";
 import ImageView from "../../Components/ImageView";
 import { LuArrowUpRight } from "react-icons/lu";
 import SeekingFund from "../../Components/SeekingFund";
 import { useRouter } from "next/navigation";
+import { nexaflowPageObj } from "../../utils/constants";
+import nexaflowApi from "../../services/nexaflow";
+import { useState, useEffect } from "react";
+import { Loader } from "../../Components/Loader";
+import Link from "next/link";
 
 const main = "/assets/images/main.png";
 const groot = "/assets/images/groot.png";
 const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
+const graph = "/assets/icons/graph.svg";
 
 export default function Main() {
   const router = useRouter();
+  const [project, setProject] = useState();
+  const [partners, setPartners] = useState([]);
+  useEffect(() => {
+    const getPageByID = async () => {
+      const page = await nexaflowApi.getPageByID({
+        pageId: nexaflowPageObj.projectsPage,
+        websiteId: nexaflowPageObj.website,
+      });
+      const filteredProjects = page?.Projects.filter(
+        (project) => project.order === "1"
+      );
+      console.log(filteredProjects);
+      setProject(filteredProjects);
+    };
+
+    getPageByID();
+  }, []);
+  useEffect(() => {
+    const getPageByID = async () => {
+      const page = await nexaflowApi.getPageByID({
+        pageId: nexaflowPageObj.landingPage,
+        websiteId: nexaflowPageObj.website,
+      });
+      setPartners(page?.Partners);
+    };
+
+    getPageByID();
+  }, []);
   const funding = [
     {
       balance: "$17k+",
@@ -80,34 +115,11 @@ export default function Main() {
       link: "/community",
     },
   ];
-  const earthData = [
-    {
-      title: "Democratic funding protocol",
-      description:
-        "Curated list of high Impact climate solutions seeking funds from $EARTH treasury",
-      features: [
-        "Directly solving climate/environmental crisis",
-        "Catering to our core needs",
-        "Yield generating",
-        "Building the solarpunk future",
-      ],
-      link: "Go to DAPP",
-      img: "/assets/images/earth-protocol.png",
-      coverPic: "/assets/images/coverpic.png",
-      icon: "/assets/images/Avatar.png",
-      subText: "Helios",
-      projectName: "Kekén Solar Project, 69kWp",
-      projectValue: "$70,000",
-      subtitle: "High Impact solar installation in Sahé, México.",
-      category: "CLEAN ENERGY",
-      country: "Mexico",
-      Irr: "8",
-      context: "Helios ",
-      returnValue: "8%",
-      status: "To Be Commisioned",
-      dateApproved: "1/1/2024",
-      fundingNeeded: "$10,000",
-    },
+  const features = [
+    "Directly solving climate/environmental crisis",
+    "Catering to our core needs",
+    "Yield generating",
+    "Building the solarpunk future",
   ];
   const socialIcons = [
     {
@@ -299,91 +311,97 @@ export default function Main() {
           </p>
         </div>
       </div>
-      {earthData?.map((data, index) => (
-        <div
-          className={`flex flex-col gap-4 my-12 sm:flex-row justify-between`}
-          key={index}
-        >
-          <div className="flex justify-center w-full sm:w-[50%] px-[6%] flex-col gap-2">
-            <p className="text-[#101828] font-semibold text-left text-[20px] sm:text-[28px] font-syne">
-              {data?.title}
-            </p>
-            <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
-              {data?.description}
-            </p>
-            <div className="flex pl-4 flex-col my-4 gap-4">
-              {data?.features?.map((feature, i) => (
-                <div className="flex gap-2" key={i}>
-                  <ImageView src={check} alt="check" width={20} height={20} />
-                  <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
-                    {feature}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div
-            className="rounded-l-lg border-4 border-r-0 max-w-[44rem] cursor-pointer w-full h-fit flex flex-col border-[#101828]"
-            key={index}
-          >
-            <div className="justify-center items-center flex flex-col px-3 sm:px-6">
-              <div className="flex w-full justify-center pt-3 sm:pt-6 gap-2 items-center">
-                <ImageView
-                  src={data.icon}
-                  alt="avatar"
-                  width={50}
-                  height={50}
-                />
-                <p className="text-black font-inter font-semibold text-[16px]">
-                  {data.subText}
+      <div className={`flex flex-col gap-4 my-12 sm:flex-row justify-between`}>
+        <div className="flex justify-center w-full sm:w-[50%] px-[6%] flex-col gap-2">
+          <ImageView src={graph} alt="graph" width={50} height={50} />
+          <p className="text-[#101828] font-semibold text-left text-[20px] sm:text-[28px] font-syne">
+            Democratic funding protocol
+          </p>
+          <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
+            Curated list of high Impact climate solutions seeking funds from
+            $EARTH treasury
+          </p>
+          <div className="flex pl-4 flex-col my-4 gap-4">
+            {features?.map((feature, i) => (
+              <div className="flex gap-2" key={i}>
+                <ImageView src={check} alt="check" width={20} height={20} />
+                <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
+                  {feature}
                 </p>
               </div>
-              <p className="pt-1 sm:pt-2 font-syne text-center font-semibold text-[20px] sm:text-[24px] text-black">
-                {data.projectName}
-              </p>
-              <p className="pt-1 sm:pt-2 font-inter font-semibold text-[12px] text-[#EC8000]">
-                {data.category}
-              </p>
-              <p className="py-1 sm:py-2 font-inter text-center font-normal text-[13px] text-black">
-                {data.subtitle}
-              </p>
-            </div>
-            <div className="flex border-t-2 mt-4 w-full border-[#EAECF0]">
-              <div className="flex items-center px-1 grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col">
-                <p className="font-syne font-semibold text-center text-[18px] sm:text-[30px] text-[#EC8000]">
-                  {data.projectValue}
-                </p>
-                <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
-                  Total project value
-                </p>
-              </div>
-              <div className="flex items-center  px-1 py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col">
-                <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
-                  {data.fundingNeeded}
-                </p>
-                <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
-                  Funding needed
-                </p>
-              </div>
-              <div className="flex items-center py-2 pb-3 px-1  grow justify-center flex-col">
-                <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
-                  {data.returnValue}
-                </p>
-                <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
-                  Internal rate of return
-                </p>
-              </div>
-            </div>
-            <ImageView
-              src={data.coverPic}
-              alt="coverpic"
-              width={350}
-              height={450}
-              className="w-full object-cover rounded-b-sm"
-            />
+            ))}
           </div>
         </div>
-      ))}
+        {project && project.length ? (
+          project?.map((data, index) => (
+            <div
+              className="rounded-l-lg border-4 border-r-0 max-w-[44rem] cursor-pointer w-full h-fit flex flex-col border-[#101828]"
+              key={index}
+              onClick={() => router.push(`/projects/${data.projectId}`)}
+            >
+              <div className="justify-center items-center flex flex-col px-3 sm:px-6">
+                <div className="flex w-full justify-center pt-3 sm:pt-6 gap-2 items-center">
+                  <ImageView
+                    src={data.icon}
+                    alt="avatar"
+                    width={50}
+                    height={50}
+                  />
+                  <p className="text-black font-inter font-semibold text-[16px]">
+                    {data.subText}
+                  </p>
+                </div>
+                <p className="pt-1 sm:pt-2 font-syne text-center font-semibold text-[20px] sm:text-[24px] text-black">
+                  {data.projectName}
+                </p>
+                <p className="pt-1 sm:pt-2 font-inter font-semibold text-[12px] text-[#EC8000]">
+                  {data.category}
+                </p>
+                <p className="py-1 sm:py-2 font-inter text-center font-normal text-[13px] text-black">
+                  {data.subtitle}
+                </p>
+              </div>
+              <div className="flex border-t-2 mt-4 w-full border-[#EAECF0]">
+                <div className="flex items-center px-1 grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col">
+                  <p className="font-syne font-semibold text-center text-[18px] sm:text-[30px] text-[#EC8000]">
+                    {data.projectValue}
+                  </p>
+                  <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
+                    Total project value
+                  </p>
+                </div>
+                <div className="flex items-center  px-1 py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col">
+                  <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
+                    {data.fundingNeeded}
+                  </p>
+                  <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
+                    Funding needed
+                  </p>
+                </div>
+                <div className="flex items-center py-2 pb-3 px-1  grow justify-center flex-col">
+                  <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
+                    {data.returnValue}
+                  </p>
+                  <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
+                    Internal rate of return
+                  </p>
+                </div>
+              </div>
+              <ImageView
+                src={data.coverPic}
+                alt="coverpic"
+                width={350}
+                height={450}
+                className="w-full object-cover rounded-b-sm"
+              />
+            </div>
+          ))
+        ) : (
+          <div className="w-[50%] h-[30vh] flex items-center justify-center">
+            <Loader />
+          </div>
+        )}
+      </div>
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="flex flex-col gap-2 items-center">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
@@ -398,17 +416,27 @@ export default function Main() {
           </p>
         </div>
         <div className="flex flex-wrap  sm:px-[32%] justify-center mt-6 gap-1 sm:gap-5">
-          {socialIcons.map((icons, index) => (
-            <button className="cursor-pointer w-10 h-10" key={index}>
-              <ImageView
-                alt={icons.icon}
-                src={icons.icon}
-                width={50}
-                height={50}
-                className="object-contain"
-              />
-            </button>
-          ))}
+          {partners && partners?.length ? (
+            partners.map((partner, index) => (
+              <Link
+                href={partner?.link}
+                className="cursor-pointer w-10 h-10"
+                key={index}
+              >
+                <ImageView
+                  alt="social"
+                  src={partner.icon}
+                  width={50}
+                  height={50}
+                  className="object-contain"
+                />
+              </Link>
+            ))
+          ) : (
+            <div className="w-full h-[6rem]">
+              <Loader />
+            </div>
+          )}
         </div>
         <button className="w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
           View consortium

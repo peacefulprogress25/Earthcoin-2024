@@ -74,18 +74,18 @@ export default function Purpose() {
               readOnly
             />
           </div>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="mt-6 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
             <ImageView
               src={jungle}
               alt="jungle"
-              width={340}
+              width={370}
               height={200}
               className="object-cover"
             />
             <ImageView
               src={space}
               alt="space"
-              width={340}
+              width={370}
               height={200}
               className="object-cover"
             />
@@ -140,7 +140,7 @@ export default function Purpose() {
               readOnly
             />
           </div>
-          <div className="mt-6">
+          <div className="mt-6 w-full">
             <ImageView
               src={tree}
               alt="tree"
