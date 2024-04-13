@@ -317,17 +317,17 @@ export default function Dashboard() {
                   className="text-[#667085] font-inter text-[14px] font-normal"
                 />
               </div>
-              <div className="w-full hidden sm:flex mb-6 flex-col">
-                <table className="table-auto  !rounded-t-lg  mt-6  border-2 border-[#EAECF0]">
-                  <thead className="bg-transparent h-[40px]  !w-full  text-left font-inter font-medium text-[#475467] text-[12px]">
-                    <tr className="rounded-t-[10px] border border-[#EAECF0]">
-                      <th className="bg-[#F9FAFB] flex-1 rounded-l-[10px] pl-4">
+              <div className="w-full hidden sm:flex border-2 rounded-md mt-6 border-[#EAECF0] mb-6 flex-col">
+                <table className="table-auto">
+                  <thead className="bg-transparent border-b-2 border-[#EAECF0]  h-[40px] !w-full text-left font-inter font-medium text-[#475467] text-[12px]">
+                    <tr className="">
+                      <th className="bg-[#F9FAFB] flex-1  pl-4 rounded-tl-md">
                         <p>Transaction Hash</p>
                       </th>
-                      <th className="bg-[#F9FAFB] flex-1  ">
+                      <th className="bg-[#F9FAFB] flex-1">
                         <p>Method</p>
                       </th>
-                      <th className="bg-[#F9FAFB] flex-1 ">
+                      <th className="bg-[#F9FAFB] flex-1">
                         <p>Block</p>
                       </th>
                       <th className=" bg-[#F9FAFB] flex-1">
@@ -339,16 +339,16 @@ export default function Dashboard() {
                       <th className=" bg-[#F9FAFB] flex-1">
                         <p>To</p>
                       </th>
-                      <th className=" bg-[#F9FAFB] w-[100px] flex-1 pr-2 rounded-r-[10px]">
+                      <th className=" bg-[#F9FAFB] w-[100px] flex-1 pr-2 rounded-tr-md ">
                         <p>Quantity</p>
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="bg-transparent text-[#101828]  !w-full text-[12px] font-semibold">
+                  <tbody className="bg-transparent text-[#101828]    !w-full text-[12px] font-semibold">
                     {transactionList.map((list, index) => (
                       <tr
                         key={index}
-                        className={`h-[60px] border-t-2 rounded-t-md border-[#EAECF0] border-b font-inter font-medium 
+                        className={`h-[60px]  border-b-2  border-[#EAECF0] font-inter font-medium 
                      text-[#101828]`}
                       >
                         <td>
@@ -378,7 +378,7 @@ export default function Dashboard() {
                     ))}
                   </tbody>
                 </table>
-                <div className="flex justify-between items-center w-full p-4 border-b-2 border-x-2 rounded-b-md border-[#EAECF0] h-[50px]">
+                <div className="flex justify-between items-center w-full p-4   h-[50px]">
                   <button className="p-1 cursor-pointer w-fit h-fit border-2 font-medium border-[#D0D5DD] font-inter rounded-md text-[#344054] text-[12px]">
                     Previous
                   </button>

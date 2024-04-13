@@ -9,91 +9,90 @@ import "./map.css";
 import { Loader } from "../../Components/Loader";
 
 const map = "/assets/images/map-bg.png";
-const marker = "/assets/icons/marker.svg";
 const MarkerIconSize = [35, 100];
 const markerIcon = new L.Icon({
   iconUrl: "/assets/icons/marker.svg",
   iconSize: MarkerIconSize,
 });
-export default function WorldMap() {
+export default function WorldMap({ projects }) {
   const position = [20, 100];
   const [loading, setLoading] = useState(true);
-  const Popupdata = [
-    {
-      title: "Index",
-      logo: "/assets/icons/polygon.svg",
-      subtitle: "Ethic Hub",
-      coordinates: { latitude: "46.51802000", longitude: "-95.37615000" },
-    },
-    {
-      logo: "/assets/icons/polygon.svg",
-      title: "Index",
-      subtitle: "Ethic Hub",
-      coordinates: { latitude: "-33.64656000", longitude: "150.73515000" },
-    },
-    {
-      logo: "/assets/icons/polygon.svg",
-      title: "Index",
-      subtitle: "Ethic Hub",
-      coordinates: { latitude: "46.51802000", longitude: "-95.37615000" },
-    },
-    {
-      logo: "/assets/icons/polygon.svg",
-      title: "Index",
-      subtitle: "Ethic Hub",
-      coordinates: { latitude: "-39.64656000", longitude: "150.73515000" },
-    },
-    {
-      logo: "/assets/icons/polygon.svg",
-      title: "Index",
-      subtitle: "Ethic Hub",
+  // const Popupdata = [
+  //   {
+  //     title: "Index",
+  //     logo: "/assets/icons/polygon.svg",
+  //     subtitle: "Ethic Hub",
+  //     coordinates: { latitude: "46.51802000", longitude: "-95.37615000" },
+  //   },
+  //   {
+  //     logo: "/assets/icons/polygon.svg",
+  //     title: "Index",
+  //     subtitle: "Ethic Hub",
+  //     coordinates: { latitude: "-33.64656000", longitude: "150.73515000" },
+  //   },
+  //   {
+  //     logo: "/assets/icons/polygon.svg",
+  //     title: "Index",
+  //     subtitle: "Ethic Hub",
+  //     coordinates: { latitude: "46.51802000", longitude: "-95.37615000" },
+  //   },
+  //   {
+  //     logo: "/assets/icons/polygon.svg",
+  //     title: "Index",
+  //     subtitle: "Ethic Hub",
+  //     coordinates: { latitude: "-39.64656000", longitude: "150.73515000" },
+  //   },
+  //   {
+  //     logo: "/assets/icons/polygon.svg",
+  //     title: "Index",
+  //     subtitle: "Ethic Hub",
 
-      coordinates: { latitude: "56.13068000", longitude: "68.70829000" },
-    },
-    {
-      logo: "/assets/icons/polygon.svg",
-      subtitle: "Ethic Hub",
-      title: "Index",
-      coordinates: { latitude: "36.95127000", longitude: "72.31800000" },
-    },
-    {
-      logo: "/assets/icons/polygon.svg",
-      subtitle: "Ethic Hub",
-      title: "Index",
-      coordinates: { latitude: "13.08784000", longitude: "80.27847000" },
-    },
-    {
-      logo: "/assets/icons/polygon.svg",
-      subtitle: "Ethic Hub",
-      title: "Index",
-      coordinates: { latitude: "36.95127000", longitude: "72.31800000" },
-    },
-    {
-      logo: "/assets/icons/polygon.svg",
-      subtitle: "Ethic Hub",
-      title: "Index",
-      coordinates: { latitude: "35.90617000", longitude: "68.48869000" },
-    },
-    {
-      logo: "/assets/icons/polygon.svg",
-      subtitle: "Ethic Hub",
-      title: "Index",
-      coordinates: { latitude: "34.98735000", longitude: "63.12891000" },
-    },
-  ];
+  //     coordinates: { latitude: "56.13068000", longitude: "68.70829000" },
+  //   },
+  //   {
+  //     logo: "/assets/icons/polygon.svg",
+  //     subtitle: "Ethic Hub",
+  //     title: "Index",
+  //     coordinates: { latitude: "36.95127000", longitude: "72.31800000" },
+  //   },
+  //   {
+  //     logo: "/assets/icons/polygon.svg",
+  //     subtitle: "Ethic Hub",
+  //     title: "Index",
+  //     coordinates: { latitude: "13.08784000", longitude: "80.27847000" },
+  //   },
+  //   {
+  //     logo: "/assets/icons/polygon.svg",
+  //     subtitle: "Ethic Hub",
+  //     title: "Index",
+  //     coordinates: { latitude: "36.95127000", longitude: "72.31800000" },
+  //   },
+  //   {
+  //     logo: "/assets/icons/polygon.svg",
+  //     subtitle: "Ethic Hub",
+  //     title: "Index",
+  //     coordinates: { latitude: "35.90617000", longitude: "68.48869000" },
+  //   },
+  //   {
+  //     logo: "/assets/icons/polygon.svg",
+  //     subtitle: "Ethic Hub",
+  //     title: "Index",
+  //     coordinates: { latitude: "34.98735000", longitude: "63.12891000" },
+  //   },
+  // ];
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
   }, []);
   const renderIcons = () => {
-    return Popupdata && Popupdata.length
-      ? Popupdata.map((map, index) => (
+    return projects && projects.length
+      ? projects.map((map, index) => (
           <Marker
             key={map.title}
             position={[
-              map?.coordinates?.latitude ? map?.coordinates?.latitude : 17.89,
-              map?.coordinates?.longitude ? map?.coordinates?.longitude : 89.56,
+              map?.latitude ? map?.latitude : 17.89,
+              map?.longitude ? map?.longitude : 89.56,
             ]}
             icon={markerIcon}
             eventHandlers={{
@@ -109,7 +108,7 @@ export default function WorldMap() {
               },
             }}
           >
-            <PopoverHandler map={map} key={map.title} id={map.title} />
+            <PopoverHandler map={map} key={map.subText} id={map.subText} />
           </Marker>
         ))
       : null;
@@ -159,13 +158,17 @@ export default function WorldMap() {
 }
 function PopoverHandler({ map, id }) {
   return (
-    <Popup className="map_popup" key={map.title}>
-      <ImageView src={map.logo} alt="alt" width={20} height={20} />
-      <p className="text-[#344054] font-semibold  font-inter ">{map?.title}</p>
-      <p className="text-[#667085] font-normal mt-2 font-inter ">
-        {map?.title}
+    <Popup className="map_popup" key={map.subText}>
+      <ImageView src={map.icon} alt="alt" width={20} height={20} />
+      <p className="text-[#344054] font-semibold  font-inter ">
+        {map?.subText}
       </p>
-      <p className="text-[#667085] font-normal font-inter">{map?.subtitle}</p>
+      <p className="text-[#667085] font-normal mt-2 font-inter text-center">
+        {map?.projectName}
+      </p>
+      <p className="text-[#667085] font-normal text-center font-inter">
+        {map?.category}
+      </p>
     </Popup>
   );
 }

@@ -1,7 +1,106 @@
 import ImageView from "../../Components/ImageView";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import { useState } from "react";
+import useNotification from "../../Components/useNotification";
+import { nexaflowPageObj } from "../../utils/constants";
+import nexaflowApi from "../../services/nexaflow";
+import { BtnLoader } from "../../Components/Loader";
 
 const form = "/assets/images/form.png";
+const fields = {
+  name: "",
+  email: "",
+  companyName: "",
+  about: "",
+  sector: [],
+  socialContact: "",
+};
 export default function Form() {
+  const [formData, setFormData] = useState(fields);
+  const [loading, setLoading] = useState(false);
+  const { showMessage } = useNotification();
+
+  const emailValidation = (data) => {
+    const emailRegex =
+      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return emailRegex.test(data);
+  };
+
+  const fieldErrorMessages = {
+    name: "Name field is required",
+    email: "Email field is required",
+    companyName: "Company name field is required",
+  };
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
+    if (type === "checkbox") {
+      const updatedSectors = checked
+        ? [...formData.sector, value]
+        : formData.sector.filter((sector) => sector !== value);
+
+      setFormData((formData) => ({
+        ...formData,
+        sector: updatedSectors,
+      }));
+    } else {
+      setFormData((formData) => ({
+        ...formData,
+        [name]: value,
+      }));
+    }
+  };
+
+  const submitForm = async () => {
+    for (const fieldName in fieldErrorMessages) {
+      if (!formData[fieldName]) {
+        showMessage({
+          type: "error",
+          value: fieldErrorMessages[fieldName],
+        });
+        return;
+      }
+    }
+    if (!emailValidation(formData.email)) {
+      showMessage({
+        type: "error",
+        value: "Invalid Email",
+      });
+      return;
+    }
+    if (formData.sector.length === 0) {
+      showMessage({
+        type: "error",
+        value: "At least one sector must be selected",
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    const sectorString = formData.sector.join(",");
+    const updatedFormData = { ...formData, sector: sectorString };
+
+    const response = await nexaflowApi.formSubmission({
+      formId: nexaflowPageObj.submitForm,
+      data: updatedFormData,
+    });
+    console.log(response);
+    if (response?.message === "ok") {
+      showMessage({
+        type: "success",
+        value: "Form Submitted",
+      });
+      setFormData(fields);
+    } else {
+      showMessage({
+        type: "error",
+        value: "Error Ocurred",
+      });
+    }
+    setLoading(false);
+  };
+
   const sectorList = [
     {
       sector: "Clean Energy",
@@ -49,7 +148,10 @@ export default function Form() {
           <input
             type="text"
             placeholder="Your name"
-            className="text-[#667085] font-inter p-2 shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal"
+            name="name"
+            className="text-[#667085] font-inter p-2  shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal"
+            onChange={handleChange}
+            value={formData?.name}
           />
           <label className="text-[#344054] mt-3 font-inter text-[12px] font-medium">
             Your Email*
@@ -57,7 +159,10 @@ export default function Form() {
           <input
             type="text"
             placeholder="you@company.com"
+            name="email"
             className="text-[#667085] font-inter p-2 shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal"
+            onChange={handleChange}
+            value={formData?.email}
           />
           <label className="text-[#344054] mt-3 font-inter text-[12px] font-medium">
             Company Website*
@@ -66,13 +171,21 @@ export default function Form() {
             type="text"
             placeholder="Company Website"
             className="text-[#667085] font-inter p-2 shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal"
+            onChange={handleChange}
+            name="companyName"
+            value={formData?.companyName}
           />
           <label className="text-[#344054] mt-3 font-inter text-[12px] font-medium">
             Social Contact
           </label>
           <div className="flex p-2 rounded-md border shadow-sm border-[#D0D5DD]">
-            <select className="w-[90px] font-inter font-normal text-[14px] bg-white outline-none text-[#101828]">
-              <option value="Linkdin">Linkedin</option>
+            <select
+              onChange={handleChange}
+              name="socialContact"
+              value={formData.socialContact}
+              className="w-[90px] font-inter font-normal text-[14px] bg-white outline-none text-[#101828]"
+            >
+              <option value="Linkedin">Linkedin</option>
               <option value="Option 1">Option 1</option>
               <option value="Option 2">Option 2</option>
             </select>
@@ -85,19 +198,22 @@ export default function Form() {
           </label>
           <div className="grid justify-between items-center gap-2 sm:gap-4 grid-cols-2">
             {sectorList?.map((sectors, index) => (
-              <button
+              <label
                 className="cursor-pointer flex items-center gap-2 text-[#344054] text-[12px] text-left sm:text-[14px] font-medium font-inter"
                 key={index}
+                htmlFor={sectors.sector}
               >
                 <input
                   type="checkbox"
-                  id="myCheckbox"
-                  name="myCheckbox"
-                  value="true"
+                  id={sectors.sector}
+                  name={sectors.sector}
+                  value={sectors.sector}
+                  checked={formData.sector.includes(sectors.sector)}
+                  onChange={handleChange}
                   className="!w-[1rem] !h-[1rem] form-checkbox cursor-pointer border-2"
                 />
                 {sectors?.sector}
-              </button>
+              </label>
             ))}
           </div>
           <label className="text-[#344054] mt-6 font-inter text-[12px] font-medium">
@@ -107,12 +223,19 @@ export default function Form() {
             type="text"
             placeholder="Tell us a little about the project..."
             className="text-[#667085] font-inter outline-none  resize-none p-2 h-[110px] shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal"
+            onChange={handleChange}
+            value={formData?.about}
+            name="about"
           />
           <button className="w-full rounded-md bg-[#000000] text-white mt-3 font-semibold font-inter p-2 shadow-sm text-[14px]">
             Upload File
           </button>
-          <button className="w-full rounded-md bg-[#EC8000] text-white mt-4 font-semibold font-inter p-2 shadow-sm text-[14px]">
+          <button
+            onClick={submitForm}
+            className="w-full rounded-md gap-2 flex justify-center items-center bg-[#EC8000] text-white mt-4 font-semibold font-inter p-2 shadow-sm text-[14px]"
+          >
             Submit
+            {loading ? <BtnLoader /> : ""}
           </button>
         </div>
       </div>

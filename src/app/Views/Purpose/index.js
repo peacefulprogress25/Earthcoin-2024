@@ -178,11 +178,11 @@ export default function Purpose() {
             />
           </div>
         </div>
+        <Community
+          title="Ready to go down the rabbit hole?"
+          description="Join our social community!"
+        />
       </div>
-      <Community
-        title="Ready to go down the rabbit hole?"
-        description="Join our social community!"
-      />
     </div>
   );
 }
