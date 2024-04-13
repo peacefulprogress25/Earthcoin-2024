@@ -244,7 +244,7 @@ export default function PostSlider({ post }) {
       </div>
       <div className="slider-controller px-4 h-20 z-20 relative flex justify-center items-center gap-4">
         <button
-          className="cursor-pointer z-10 flex gap-2 items-center text-[#475467] font-inter font-semibold text-[12px] swiper-button-prev"
+          className="cursor-pointer z-[20] flex gap-2 items-center text-[#475467] font-inter font-semibold text-[12px] swiper-button-prev"
           id="button-prev-post"
         >
           <ImageView
@@ -261,7 +261,7 @@ export default function PostSlider({ post }) {
           id="swiper-pagination-post"
         ></div>
         <button
-          className="cursor-pointer z-10 flex gap-2 items-center swiper-button-next text-[#475467] font-inter font-semibold text-[12px]"
+          className="cursor-pointer z-[20] flex gap-2 items-center swiper-button-next text-[#475467] font-inter font-semibold text-[12px]"
           id="button-next-post"
         >
           Next

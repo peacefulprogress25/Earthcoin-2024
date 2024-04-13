@@ -75,3 +75,6 @@
 .slider-controller {
   border-top: 1px solid #eaecf0;
 }
+.swiper-pagination {
+  z-index: -1 !important;
+}

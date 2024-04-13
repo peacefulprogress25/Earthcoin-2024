@@ -31,33 +31,24 @@ export default function Solarpunk() {
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Community
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
-            Become a Solarpuk
+          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[44px] font-syne">
+            Join us!
           </p>
           <p className="text-[#475467] text-center font-normal w-[70%]  text-[16px] font-inter">
-            Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
-            suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum
-            quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris
-            posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At
-            feugiat sapien varius id.
-          </p>
-          <p className="text-[#475467] text-center mt-2 font-normal w-[70%] text-[16px] font-inter">
-            Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat
-            mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu
-            quis fusce augue enim. Quis at habitant diam at. Suscipit tristique
-            risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie
-            aliquet sodales id est ac volutpat.
+            We are active on the following social media platforms. Follow us on
+            whichever platform tickles your fancy and stay updated on all things
+            $EARTH
           </p>
         </div>
         <div className="flex flex-wrap justify-center mt-6 gap-1 sm:gap-5">
           {socialIcons.map((icons, index) => (
-            <button className="cursor-pointer w-10 h-10" key={index}>
+            <button className="cursor-pointer w-16 h-16" key={index}>
               <ImageView
                 alt={icons.icon}
                 src={icons.icon}
-                width={50}
-                height={50}
-                className="object-contain"
+                width={80}
+                height={80}
+                className=""
               />
             </button>
           ))}
