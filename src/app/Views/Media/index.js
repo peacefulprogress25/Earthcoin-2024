@@ -1,3 +1,4 @@
+"use client";
 import ImageView from "../../Components/ImageView";
 import { LuArrowUpRight } from "react-icons/lu";
 import PostSlider from "./PostSlider";
@@ -33,7 +34,10 @@ export default function Media() {
         websiteId: nexaflowPageObj.website,
       });
       console.log(page);
-      setMedia(page?.Media);
+      const highlightedPosts = page?.Posts.filter(
+        (post) => post.highlight === "true"
+      );
+      setMedia(highlightedPosts);
       setPosts(page?.Posts);
     };
 
@@ -90,7 +94,9 @@ export default function Media() {
                     >
                       {card?.title}
                     </p>
-                    {card?.link && <LuArrowUpRight size={22} color="#101828" />}
+                    {index === 0 && (
+                      <LuArrowUpRight size={22} color="#101828" />
+                    )}
                   </div>
                   <p className="text-[#475467] font-inter w-[90%] font-normal text-[14px]">
                     {card?.description}

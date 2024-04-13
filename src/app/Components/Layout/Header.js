@@ -69,7 +69,7 @@ export default function Header() {
   ];
   return (
     <nav className="fixed hidden sm:block left-0 top-0 z-10 right-0 bg-white">
-      <div className="flex h-20 w-full mx-auto border-b border-[#F2F4F7] gap-2 items-center px-[1%]  sm:px-[8%]">
+      <div className="flex h-20 w-full max-w-screen-2xl mx-auto border-b border-[#F2F4F7] gap-2 items-center px-4 sm:px-[6%]">
         <Link href="/">
           <ImageView
             alt="logo"

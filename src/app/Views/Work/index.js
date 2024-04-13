@@ -116,6 +116,7 @@ export default function Work() {
             />
           </div>
         </div>
+        <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
         <Community
           title="Still curious?"
           description="Join our social community to understand further!"

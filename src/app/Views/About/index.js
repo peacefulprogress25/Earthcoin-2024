@@ -44,7 +44,7 @@ export default function About() {
           </p>
         </div>
         {teams && teams.length ? (
-          <div className="grid grid-cols-1 sm:grid-cols-3 mt-6 gap-x-6 gap-y-10">
+          <div className="grid grid-cols-1 mb-10 sm:grid-cols-3 mt-10 gap-x-6 gap-y-12">
             {teams?.map((people, index) => (
               <PeopleCard people={people} key={index} />
             ))}
@@ -56,7 +56,7 @@ export default function About() {
         )}
 
         <div className="w-full h-[1px] bg-[#F2F4F7]"></div>
-        <div className="flex mt-8 flex-col gap-2 items-center">
+        <div className="flex mt-10 flex-col gap-2 items-center">
           <p className="text-[#EC8000] p-1 px-2 rounded-full bg-[#FFFCF8] font-semibold text-center text-[12px] font-inter">
             Open positions
           </p>
@@ -166,9 +166,6 @@ export default function About() {
 }
 
 export function PeopleCard({ people }) {
-  const twiiter = "/assets/icons/twitter.svg";
-  const linkedin = "/assets/icons/linkedin.svg";
-  const football = "/assets/icons/linkedin.svg";
   const socialLink = people?.socialLinks;
   const socialIcons = [
     {
@@ -186,23 +183,23 @@ export function PeopleCard({ people }) {
     },
   ];
   return (
-    <div className="flex flex-col gap-1 max-w-[18rem] w-full">
+    <div className="flex flex-col gap-1  max-w-[16rem] w-full">
       <ImageView
         src={people?.image}
         width={400}
         height={400}
-        className="w-full h-[16rem]"
+        className="w-full h-[14rem]"
       />
-      <p className="font-inter text-[#101828] font-semibold text-[16px]">
+      <p className="font-inter mt-3 text-[#101828] font-semibold text-[16px]">
         {people?.name}
       </p>
       <p className="font-inter text-[#EC8000] font-normal text-[14px]">
         {people?.title}
       </p>
-      <p className="font-inter text-[#475467] font-normal text-[13px]">
+      <p className="font-inter text-[#475467] mt-3 font-normal text-[13px]">
         {people?.description}
       </p>
-      <div className="flex mt-2 gap-3">
+      <div className="flex mt-3 gap-4">
         {socialIcons.map((icons, index) => (
           <Link href={icons?.link} key={index}>
             <ImageView

@@ -74,18 +74,18 @@ export default function Purpose() {
               readOnly
             />
           </div>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="mt-6 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
             <ImageView
               src={jungle}
               alt="jungle"
-              width={340}
+              width={370}
               height={200}
               className="object-cover"
             />
             <ImageView
               src={space}
               alt="space"
-              width={340}
+              width={370}
               height={200}
               className="object-cover"
             />
@@ -140,7 +140,7 @@ export default function Purpose() {
               readOnly
             />
           </div>
-          <div className="mt-6">
+          <div className="mt-6 w-full">
             <ImageView
               src={tree}
               alt="tree"
@@ -168,7 +168,7 @@ export default function Purpose() {
               — Olivia Rhye, Product Designer
             </p>
           </div>
-          <div className="mt-6">
+          <div className="my-6">
             <Editor
               toolbarHidden
               editorState={addElement(Editordata[0]?.details)}
@@ -178,6 +178,7 @@ export default function Purpose() {
             />
           </div>
         </div>
+        <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
         <Community
           title="Ready to go down the rabbit hole?"
           description="Join our social community!"

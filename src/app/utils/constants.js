@@ -7,6 +7,7 @@ export const nexaflowPageObj = {
   earthNodePage: "66168afce22f7fb0bb64bbe2",
   dashboardPage: "661698cde22f7fb0bb64bcd9",
   submitForm: "6618db11e22f7fb0bb64c1a2",
+  landingPage: "661a2ad6e22f7fb0bb64c634",
   // googleSheetId: "656714a70d487853ac0ce9fc",
   teamPage: "6613c142e22f7fb0bb64a7f7",
   privacyPolicyPage: "6613d35ee22f7fb0bb64a88b",

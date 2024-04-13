@@ -7,7 +7,7 @@ const funnel = "/assets/images/funnel.svg";
 const agriculture = "/assets/images/agriculture.png";
 const pieChart = "/assets/images/Piechart-2.png";
 const exportImg = "/assets/images/Export.png";
-const earthPower = "/assets/images/EarthPowers.png";
+const earthPower = "/assets/images/Earthpowers.png";
 
 export default function Thesis() {
   const [editorLoaded, setEditorLoaded] = useState(false);
@@ -82,7 +82,7 @@ export default function Thesis() {
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-6">
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col w-full gap-2 items-center">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             About
           </p>
@@ -123,9 +123,9 @@ export default function Thesis() {
         height={600}
         className="w-full object-cover"
       />
-      <div className="mt-6 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+      <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left  text-[20px] sm:text-[28px] mr-10 font-syne">
             This transition is no longer a IF but a 
             <span className="text-[#EC8000]">WHEN.</span>
           </p>

@@ -15,7 +15,7 @@ function Community({ title, description }) {
     },
   ];
   return (
-    <div className="flex flex-col w-full p-8 items-center rounded-md justify-center bg-[#F9FAFB]">
+    <div className="flex flex-col w-full  mb-16 p-8 items-center rounded-md justify-center bg-[#F9FAFB]">
       <p className="text-[#101828] font-syne text-center font-semibold text-[20px] sm:text-[26px]">
         {title}
       </p>
