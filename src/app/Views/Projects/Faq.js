@@ -1,40 +1,8 @@
 import { Loader } from "../../Components/Loader";
 
 export default function Faq({ faq }) {
-  const faqData = [
-    {
-      title: "Is there a free trial available?",
-      description:
-        "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
-    },
-    {
-      title: "Can other info be added to an invoice?",
-      description:
-        "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
-    },
-    {
-      title: "What is Solarpunk DAO’s goal with $Earth?",
-      description:
-        "Yes, you can try us for free for 30 days. Our friendly team will work with you to get you up and running as soon as possible.",
-    },
-    {
-      title: "What is Solarpunk DAO’s goal with $Earth?",
-      description:
-        "Yes, you can try us for free for 30 days. Our friendly team will work with you to get you up and running as soon as possible.",
-    },
-    {
-      title: "What is Solarpunk DAO’s goal with $Earth?",
-      description:
-        "Yes, you can try us for free for 30 days. Our friendly team will work with you to get you up and running as soon as possible.",
-    },
-    {
-      title: "What is Solarpunk DAO’s goal with $Earth?",
-      description:
-        "Yes, you can try us for free for 30 days. Our friendly team will work with you to get you up and running as soon as possible.",
-    },
-  ];
   return (
-    <div className="flex flex-col items-center sm:items-start">
+    <div className="flex flex-col pb-8 items-center sm:items-start">
       <p className="text-[#101828] font-semibold text-center sm:text-left text-[24px] sm:text-[28px] font-syne">
         FAQs
       </p>

@@ -120,14 +120,14 @@ export default function WorldMap({ projects }) {
         src={map}
         alt="map"
         width={600}
-        height={800}
-        className="!w-full z-[-1] object-cover"
+        height={600}
+        className="z-[-1] w-full h-[50rem] object-cover"
       />
-      <div className="flex flex-col pt-[4rem] absolute top-0 w-full gap-2 items-center">
+      <div className="flex flex-col pt-[1rem] absolute top-0 w-full gap-1 items-center">
         <p className="text-white font-light text-center text-[14px] font-inter">
           PROJECTS
         </p>
-        <p className="text-white font-semibold text-center text-[30px] sm:text-[30px] !font-syne">
+        <p className="text-white font-semibold text-center text-[30px] !font-syne">
           Climate Solutions backing $EARTH
         </p>
         <p className="text-white text-center font-light  text-[16px] font-inter">
@@ -138,7 +138,7 @@ export default function WorldMap({ projects }) {
         center={position}
         zoom={2}
         zoomControl={false}
-        scrollWheelZoom={true}
+        scrollWheelZoom={false}
         attributionControl={false}
         className="leaflet-Map"
       >

@@ -38,13 +38,13 @@ export default function Node() {
           {nodeList && nodeList.length ? (
             nodeList.map((node, index) => (
               <div className="flex gap-3 w-full" key={index}>
-                <div className="p-6 h-fit flex flex-col max-w-[40rem] w-full items-center sm:items-start sm:flex-row border border-[#EAECF0] rounded-lg gap-5">
+                <div className="p-6 h-fit flex flex-col max-w-[40rem] w-full items-center sm:items-start sm:flex-row border border-[#EAECF0] rounded-xl gap-5">
                   <ImageView
                     src={node?.image}
                     alt="node"
                     width={90}
                     height={90}
-                    className="h-[10rem] w-[8rem] object-cover"
+                    className="h-[9rem] w-[9rem] object-cover"
                   />
                   <div className="flex flex-col items-center sm:items-start gap-2">
                     <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
@@ -56,49 +56,40 @@ export default function Node() {
                     <p className="text-[#475467] w-full sm:w-[65%] text-center sm:text-left font-inter font-normal text-[14px]">
                       {node?.description}
                     </p>
-                    <div className="flex  gap-1">
+                    <div className="flex mt-1  gap-3">
                       {/* {socialIcons.map((icons, index) => ( */}
-                      <Link
-                        href={node?.twitter}
-                        className="cursor-pointer w-6 h-6"
-                      >
+                      <Link href={node?.twitter} className="cursor-pointer">
                         <ImageView
                           alt="twitter"
                           src={twitter}
-                          width={20}
-                          height={20}
-                          className="object-contain"
+                          width={18}
+                          height={18}
                         />
                       </Link>
-                      <Link
-                        href={node?.linkedin}
-                        className="cursor-pointer w-6 h-6"
-                      >
+                      <Link href={node?.linkedin} className="cursor-pointer">
                         <ImageView
                           alt="linkedin"
                           src={linkedin}
-                          width={20}
-                          height={20}
-                          className="object-contain"
+                          width={18}
+                          height={18}
                         />
                       </Link>
                       <Link
                         href={node?.companyWebsite}
-                        className="cursor-pointer w-6 h-6"
+                        className="cursor-pointer"
                       >
                         <ImageView
                           alt="website"
                           src={website}
-                          width={20}
-                          height={20}
-                          className="object-contain"
+                          width={18}
+                          height={18}
                         />
                       </Link>
                       {/* ))} */}
                     </div>
                   </div>
                 </div>
-                <div className="p-6 px-8 flex flex-col max-w-[10rem] w-full items-center justify-between border border-[#EAECF0] rounded-lg gap-3">
+                <div className="p-6 px-8 flex flex-col max-w-[10rem] w-full items-center justify-between border border-[#EAECF0] rounded-xl gap-3">
                   <p className="text-[#EC8000] font-inter text-center font-semibold text-[12px]">
                     Wallet Balance
                   </p>

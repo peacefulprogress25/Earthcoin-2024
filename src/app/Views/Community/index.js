@@ -78,7 +78,7 @@ export default function Community() {
           height={300}
           className="w-full h-[18rem]  mt-4 object-cover"
         />
-        <div className="sm:px-[20%] px-4 flex flex-col gap-8 w-full items-start">
+        <div className="sm:px-[20%] px-4 mt-10 mb-16 flex flex-col gap-16 w-full items-start">
           {communityList?.map((community, index) => (
             <div key={index} className=" flex flex-col items-start">
               <p className="text-[#101828] font-semibold text-left text-[20px] sm:text-[28px] font-syne">
@@ -88,19 +88,18 @@ export default function Community() {
                 {community?.description}
               </p>
               {community?.btntext ? (
-                <button className="w-fit min-w-[100px] mt-2  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
+                <button className="w-fit min-w-[100px] mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
                   {community?.btntext}
                 </button>
               ) : (
                 <div className="flex mt-6 gap-1 sm:gap-3">
                   {socialIcons.map((icons, index) => (
-                    <button className="cursor-pointer w-8 h-8" key={index}>
+                    <button className="cursor-pointer w-10 h-10" key={index}>
                       <ImageView
-                        alt={icons.icon}
+                        alt="icon"
                         src={icons.icon}
-                        width={30}
-                        height={30}
-                        className="object-contain"
+                        width={35}
+                        height={35}
                       />
                     </button>
                   ))}

@@ -29,7 +29,7 @@ export default function Main() {
         (project) => project.order === "1"
       );
       console.log(filteredProjects);
-      setProject(filteredProjects);
+      setProject(page?.Projects);
     };
 
     getPageByID();
@@ -210,7 +210,7 @@ export default function Main() {
         className="w-full object-cover"
       />
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full">
-        <div className="flex sm:px-[20%] items-center px-4 flex-col w-full gap-3">
+        <div className="flex sm:px-[20%] items-center pt-10 px-4 flex-col w-full gap-3">
           <ImageView src={zap} alt="zap" width={40} height={40} />
           <p className="text-[#101828] font-semibold text-center text-[24px] sm:text-[34px] leading-[42px] font-syne">
             Embedding climate action, ecosystem services, solarpunk values into
@@ -221,7 +221,7 @@ export default function Main() {
             future.
           </p>
         </div>
-        <div className="flex sm:flex-row flex-col justify-center items-center w-full">
+        <div className="flex sm:flex-row flex-col pb-10 justify-center items-center w-full">
           {funding.map((impact, index) => (
             <div
               className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${
@@ -268,10 +268,10 @@ export default function Main() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-1 items-center sm:grid-cols-2 gap-8">
+        <div className="grid w-full grid-cols-1 items-center sm:grid-cols-2 gap-8">
           {cardData?.map((data, index) => (
             <div
-              className="relative cursor-pointer"
+              className="relative w-full grow cursor-pointer"
               key={index}
               onClick={() => router.push(data?.link)}
             >
@@ -280,7 +280,7 @@ export default function Main() {
                 alt="main"
                 width={600}
                 height={600}
-                className="w-full rounded-[20px] h-[10rem] object-cover"
+                className="rounded-xl w-full h-[14rem]  object-cover"
               />
               <div className="flex flex-col w-full absolute p-[2rem] pb-[4rem] sm:p-[3rem] top-[0rem]">
                 <div className="flex justify-between items-center">
@@ -298,111 +298,117 @@ export default function Main() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col gap-4 items-center">
+        <div className="flex flex-col mt-28 gap-4 items-center">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Projects
           </p>
           <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
-            Projects backing $Earth
+            Climate Solutions backing $Earth
           </p>
-          <p className="text-[#475467] text-center font-normal w-[60%]  text-[16px] font-inter">
-            Powerful, verified projects curated by SOLARPUNKDAO open for funding
-            by the $Earth treasury
+          <p className="text-[#475467] text-center font-normal   text-[16px] font-inter">
+            Verified projects that are eligible to seek funding from $EARTH
+            treasury.
           </p>
         </div>
       </div>
-      <div className={`flex flex-col gap-4 my-12 sm:flex-row justify-between`}>
-        <div className="flex justify-center w-full sm:w-[50%] px-[6%] flex-col gap-2">
-          <ImageView src={graph} alt="graph" width={50} height={50} />
-          <p className="text-[#101828] font-semibold text-left text-[20px] sm:text-[28px] font-syne">
-            Democratic funding protocol
-          </p>
-          <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
-            Curated list of high Impact climate solutions seeking funds from
-            $EARTH treasury
-          </p>
-          <div className="flex pl-4 flex-col my-4 gap-4">
-            {features?.map((feature, i) => (
-              <div className="flex gap-2" key={i}>
-                <ImageView src={check} alt="check" width={20} height={20} />
-                <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
-                  {feature}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-        {project && project.length ? (
-          project?.map((data, index) => (
-            <div
-              className="rounded-l-lg border-4 border-r-0 max-w-[44rem] cursor-pointer w-full h-fit flex flex-col border-[#101828]"
-              key={index}
-              onClick={() => router.push(`/projects/${data.projectId}`)}
-            >
-              <div className="justify-center items-center flex flex-col px-3 sm:px-6">
-                <div className="flex w-full justify-center pt-3 sm:pt-6 gap-2 items-center">
-                  <ImageView
-                    src={data.icon}
-                    alt="avatar"
-                    width={50}
-                    height={50}
-                  />
-                  <p className="text-black font-inter font-semibold text-[16px]">
-                    {data.subText}
+      <div
+        className={`my-16 max-w-screen-2xl  mx-auto pl-[6%] hide-scrollbar overflow-x-auto `}
+      >
+        <div className="flex flex-col w-full sm:flex-row justify-between lg:gap-[1rem] xl:gap-[15rem] 2xl:gap-[25rem]">
+          <div className="flex justify-center min-w-[30rem] w-[30rem] flex-col gap-2">
+            <ImageView src={graph} alt="graph" width={50} height={50} />
+            <p className="text-[#101828] font-semibold text-left text-[20px] sm:text-[28px] font-syne">
+              Democratic funding protocol
+            </p>
+            <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
+              Curated list of high Impact climate solutions seeking funds from
+              $EARTH treasury
+            </p>
+            <div className="flex pl-4 flex-col my-4 gap-4">
+              {features?.map((feature, i) => (
+                <div className="flex gap-2" key={i}>
+                  <ImageView src={check} alt="check" width={20} height={20} />
+                  <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
+                    {feature}
                   </p>
                 </div>
-                <p className="pt-1 sm:pt-2 font-syne text-center font-semibold text-[20px] sm:text-[24px] text-black">
-                  {data.projectName}
-                </p>
-                <p className="pt-1 sm:pt-2 font-inter font-semibold text-[12px] text-[#EC8000]">
-                  {data.category}
-                </p>
-                <p className="py-1 sm:py-2 font-inter text-center font-normal text-[13px] text-black">
-                  {data.subtitle}
-                </p>
-              </div>
-              <div className="flex border-t-2 mt-4 w-full border-[#EAECF0]">
-                <div className="flex items-center px-1 grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col">
-                  <p className="font-syne font-semibold text-center text-[18px] sm:text-[30px] text-[#EC8000]">
-                    {data.projectValue}
-                  </p>
-                  <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
-                    Total project value
-                  </p>
-                </div>
-                <div className="flex items-center  px-1 py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col">
-                  <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
-                    {data.fundingNeeded}
-                  </p>
-                  <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
-                    Funding needed
-                  </p>
-                </div>
-                <div className="flex items-center py-2 pb-3 px-1  grow justify-center flex-col">
-                  <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
-                    {data.returnValue}
-                  </p>
-                  <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
-                    Internal rate of return
-                  </p>
-                </div>
-              </div>
-              <ImageView
-                src={data.coverPic}
-                alt="coverpic"
-                width={350}
-                height={450}
-                className="w-full object-cover rounded-b-sm"
-              />
+              ))}
             </div>
-          ))
-        ) : (
-          <div className="w-[50%] h-[30vh] flex items-center justify-center">
-            <Loader />
           </div>
-        )}
+          <div className="ml-auto flex gap-8">
+            {project && project.length ? (
+              project?.map((data, index) => (
+                <div
+                  className="rounded-lg border-4 w-[40rem] h-fit overflow-hidden cursor-pointer   flex flex-col border-[#101828]"
+                  key={index}
+                  onClick={() => router.push(`/projects/${data.projectId}`)}
+                >
+                  <div className="justify-center items-center flex flex-col px-3 sm:px-6">
+                    <div className="flex w-full justify-center pt-3 sm:pt-6 gap-2 items-center">
+                      <ImageView
+                        src={data.icon}
+                        alt="avatar"
+                        width={50}
+                        height={50}
+                      />
+                      <p className="text-black font-inter font-semibold text-[16px]">
+                        {data.subText}
+                      </p>
+                    </div>
+                    <p className="pt-1 sm:pt-2 font-syne text-center font-semibold text-[20px] sm:text-[24px] text-black">
+                      {data.projectName}
+                    </p>
+                    <p className="pt-1 sm:pt-2 font-inter font-semibold text-[12px] text-[#EC8000]">
+                      {data.category}
+                    </p>
+                    <p className="py-1 sm:py-2 h-[3.5rem] font-inter text-center font-normal text-[13px] text-black">
+                      {data.subtitle}
+                    </p>
+                  </div>
+                  <div className="flex border-t-2 mt-4 w-full border-[#EAECF0]">
+                    <div className="flex items-center px-1 grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col">
+                      <p className="font-syne font-semibold text-center text-[18px] sm:text-[30px] text-[#EC8000]">
+                        {data.projectValue}
+                      </p>
+                      <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
+                        Total project value
+                      </p>
+                    </div>
+                    <div className="flex items-center  px-1 py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col">
+                      <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
+                        {data.fundingNeeded}
+                      </p>
+                      <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
+                        Funding needed
+                      </p>
+                    </div>
+                    <div className="flex items-center py-2 pb-3 px-1  grow justify-center flex-col">
+                      <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
+                        {data.Irr}
+                      </p>
+                      <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
+                        Internal rate of return
+                      </p>
+                    </div>
+                  </div>
+                  <ImageView
+                    src={data.coverPic}
+                    alt="coverpic"
+                    width={350}
+                    height={480}
+                    className="w-full object-cover rounded-b-sm"
+                  />
+                </div>
+              ))
+            ) : (
+              <div className="w-[50%] h-[30vh] flex items-center justify-center">
+                <Loader />
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="flex flex-col gap-2 items-center">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Partners
@@ -418,17 +424,12 @@ export default function Main() {
         <div className="flex flex-wrap  sm:px-[32%] justify-center mt-6 gap-1 sm:gap-5">
           {partners && partners?.length ? (
             partners.map((partner, index) => (
-              <Link
-                href={partner?.link}
-                className="cursor-pointer w-10 h-10"
-                key={index}
-              >
+              <Link href={partner?.link} className="cursor-pointer" key={index}>
                 <ImageView
                   alt="social"
                   src={partner.icon}
-                  width={50}
-                  height={50}
-                  className="object-contain"
+                  width={60}
+                  height={60}
                 />
               </Link>
             ))

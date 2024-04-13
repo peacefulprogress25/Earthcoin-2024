@@ -56,7 +56,7 @@ export default function Project() {
         ))}
       </div>
       <ProjectList projects={projects} />
-      <div className="max-w-screen-2xl mx-auto w-full px-[6%]">
+      <div className="max-w-screen-2xl mx-auto  w-full px-[6%]">
         <Faq faq={faq} />
         <Gpt />
       </div>

@@ -168,7 +168,7 @@ export default function Purpose() {
               — Olivia Rhye, Product Designer
             </p>
           </div>
-          <div className="mt-6">
+          <div className="my-6">
             <Editor
               toolbarHidden
               editorState={addElement(Editordata[0]?.details)}
@@ -178,6 +178,7 @@ export default function Purpose() {
             />
           </div>
         </div>
+        <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
         <Community
           title="Ready to go down the rabbit hole?"
           description="Join our social community!"

@@ -214,6 +214,7 @@ export default function Mechanics() {
             </div>
           </div>
         </div>
+        <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
 
         <Community
           title="Still curious?"
