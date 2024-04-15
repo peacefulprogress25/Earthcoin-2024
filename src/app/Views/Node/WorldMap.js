@@ -63,7 +63,7 @@ export default function WorldMap({ nodeList }) {
         height={800}
         className="!w-full z-[-1] h-[50rem] object-cover"
       />
-      <div className="flex flex-col pt-[2rem] absolute top-0 w-full gap-2 items-center">
+      <div className="flex flex-col pt-[1rem] absolute top-0 w-full gap-1 items-center">
         <p className="text-white font-light text-center text-[14px] font-inter">
           Nodes of $EARTH
         </p>
@@ -78,7 +78,7 @@ export default function WorldMap({ nodeList }) {
         center={position}
         zoom={2}
         zoomControl={false}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
         attributionControl={false}
         className="leaflet-Map"
       >

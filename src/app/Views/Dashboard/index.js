@@ -164,10 +164,10 @@ export default function Dashboard() {
         </div>
         {fundingData && fundingData.length ? (
           <>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex w-full flex-col sm:flex-row gap-6">
               {priceData?.map((price, index) => (
                 <div
-                  className="flex flex-col p-6 w-[18rem] sm:w-[34rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                  className="flex flex-col p-6 w-[18rem] sm:w-[41rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
                   key={index}
                 >
                   <p className="text-[#101828] text-[14px] font-semibold font-inter">
@@ -220,10 +220,10 @@ export default function Dashboard() {
               height={1000}
               className="w-full h-[35vh] object-cover"
             />
-            <div className="grid w-full items-center grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid w-full items-center grid-cols-1  sm:grid-cols-3 gap-6">
               {cardData?.map((price, index) => (
                 <div
-                  className="flex flex-col p-6 w-[18rem] sm:w-[24rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                  className="flex flex-col p-6 w-[18rem] lg:w-[18rem] xl:w-[24rem]  rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
                   key={index}
                 >
                   <p className="text-[#101828] text-[14px] font-semibold font-inter">
@@ -281,10 +281,10 @@ export default function Dashboard() {
               <p className="text-[#475467] text-[14px] text-left  font-normal font-inter">
                 Track, manage and forecast $EARTH trends.
               </p>
-              <div className="flex flex-col sm:flex-row mt-8 gap-6">
+              <div className="flex flex-col flex-wrap sm:flex-row mt-8 gap-6">
                 {fundingData?.map((fund, index) => (
                   <div
-                    className="flex flex-col p-4 w-[14rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                    className="flex flex-col p-4 w-[15rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
                     key={index}
                   >
                     <div className="flex justify-between">

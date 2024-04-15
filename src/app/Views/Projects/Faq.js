@@ -2,7 +2,7 @@ import { Loader } from "../../Components/Loader";
 
 export default function Faq({ faq }) {
   return (
-    <div className="flex flex-col pb-8 items-center sm:items-start">
+    <div className="flex flex-col w-full pb-8 items-center sm:items-start">
       <p className="text-[#101828] font-semibold text-center sm:text-left text-[24px] sm:text-[28px] font-syne">
         FAQs
       </p>
@@ -13,7 +13,7 @@ export default function Faq({ faq }) {
       </p>
 
       {faq && faq?.length ? (
-        <div className="grid grid-cols-1 w-full items-center sm:items-start my-8 mb-10 gap-x-2 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 w-full items-center sm:items-start my-8 mb-10 gap-x-4 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
           {faq?.map((faq, index) => (
             <div
               className="flex flex-col items-center sm:items-start  gap-2"

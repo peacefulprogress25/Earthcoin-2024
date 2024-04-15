@@ -1,41 +1,19 @@
 import ImageView from "../../Components/ImageView";
-import { useState, useEffect } from "react";
 import Community from "../../Components/Community";
 
 export default function Resources() {
   const resources = "/assets/images/resources.png";
   const section = "/assets/images/section.png";
   const economy = "/assets/images/economy.png";
-  const [editorLoaded, setEditorLoaded] = useState(false);
-
-  const Editordata = [
-    {
-      details:
-        '<p><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family:inter; font-weight:400;">Helios is an open-source platform enabling both web3 &amp; traditional investment in profitable, high impact solar projects in emerging markets, earning users stable, double digit yields uncorrelated with crypto or public markets while averting millions of tonnes of CO2 emissions each year. </span><span style="font-size: 17px;font-family:inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family:inter; font-weight:400;">With a portfolio of solar assets across 4 continents, Helios is perpetually deploying capital &amp; seeking new C&amp;I solar investment opportunities (50-500kW) globally.</span><span style="font-size: 17px;font-family:inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family:inter; font-weight:400;">Our project is entirely open source; no Helios employees take any salary; we aim to reinvest all earnings back into solar to create compounding impact.</span><span style="font-size: 17px;font-family:inter; font-weight:400;"> </span></p>\n',
-    },
+  const earthValues = [
+    "$EARTH is new unit of VALUE. It is not pegged to any fiat currency nor to any crypto currency. Much like how Bitcoin and Eth are new units of value, $EARTH is a new unit of value which gets its value from on ground regenerative assets backing $EARTH, the positive externalities that are created by those projects and the demand of $EARTH as a medium of exchange",
+    "$EARTH is a medium of exchange for merchants providing goods and services that take us to a regenerative solarpunk paradigm. We intend to use $EARTH to subsidize such merchants to - a) make them more competitive with businesses that are extractive and hence cheap in $ terms b) Get them economies of scale which should help provide these goods and services to a larger section of society",
+    "$EARTH is creating a monetary system that is powered by projects that are catering to our CORE needs of energy, food, transport, shelter and a hospitable environment. As $EARTH scales it elevates standard of living for all of humanity.",
+    "$EARTH ensures infrastructure powering our future is not owned by nation states or corporations but all those that hold $EARTH",
+    "$EARTH embodies Solarpunk values of radical optimism, compassion, regeneration, tech serving nature, harmony, peace etc. It will be utilized in whatever manner deemed fit to serve these values as occasions arise.",
+    "$EARTH is a tool to process economic + ecological risk while disbursing capital",
+    "$EARTH facilitates a shift from extractive to regenerative economies",
   ];
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setEditorLoaded(true);
-    }
-  }, []);
-
-  if (!editorLoaded) {
-    return null;
-  }
-
-  const { Editor } = require("react-draft-wysiwyg");
-  const { EditorState, ContentState } = require("draft-js");
-  const htmlToDraft = require("html-to-draftjs").default;
-  const addElement = (value) => {
-    const contentBlock = htmlToDraft(value);
-    const contentState = ContentState.createFromBlockArray(
-      contentBlock.contentBlocks
-    );
-    const editorState = EditorState.createWithContent(contentState);
-    return editorState;
-  };
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
@@ -68,13 +46,23 @@ export default function Resources() {
             solarpunk values.
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              It is difficult to get a sense of all that is $EARTH
+              <br />
+              <br />
+              <br />
+              Elephant meme 
+              <br />
+              <br />
+              <br />
+              So here we will shed light on various aspects of $EARTH and how it
+              each parts contributes to our mission/vision in some way. 
+              <br />
+              <br />
+              $EARTH is a digital currency that is 
+              <span className="text-[#EC8000] font-semibold">purely</span>
+               backed by projects in the following sectors -
+            </p>
           </div>
         </div>
         <ImageView
@@ -86,13 +74,46 @@ export default function Resources() {
         />
         <div className="sm:px-[20%] px-4 flex mt-6 flex-col w-full items-start">
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              So like fiat is backed by the government and its military or was
+              backed by gold at some point, how DAI is backed by Eth, Btc, Usdc
+              etc and how ETH is backed by the economic activity on its chain
+              and L2s similary these projects mentioned above will serve as
+              backing for Earth.
+              <br />
+              <br />
+            </p>
+            <ol className="list-decimal">
+              <li className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                $EARTH is a funnel to raise petro $$$ across the world to fund
+                projects tackling climate/env crisis across the world. Every $
+                that is purged directly at the protocol is guaranteed to be
+                allocated to projects building infrastructure for a net zero
+                future in the most transparent manner possible.
+              </li>
+              <br />
+              <li className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                $EARTH is currency that values ecosystem services. When you buy
+                $EARTH you are by default putting a $ price on -
+                <br />
+                <br />
+                <ul className="list-disc pl-6">
+                  <li>Clean Air</li>
+                  <li>Clean Water</li>
+                  <li>Biodiversity</li>
+                  <li>Carbon sequestration</li>
+                  <li>Soil health</li>
+                  <li>Nutrient cycling</li>
+                  <li>Pollination</li>
+                  <li>etc etc ( See full list here )</li>
+                </ul>
+              </li>
+            </ol>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              By doing this we create a reality where we are putting the value
+              of ECOLOGY in our ECONOMY.
+            </p>
           </div>
           <ImageView
             src={economy}
@@ -102,22 +123,31 @@ export default function Resources() {
             className="object-cover w-full mt-6"
           />
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              As the community continues to price these positive externalities,
+              projects creating these start getting access to capital and the
+              success of the project is measured by more holistic parameters
+            </p>
+            <br />
+            <ol className="list-decimal">
+              {earthValues.map((value, index) => (
+                <li
+                  key={index}
+                  className="text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter"
+                >
+                  {value}
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
-        <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
-
-        <Community
-          title="Still curious?"
-          description="Join our social community to understand further!"
-        />
       </div>
+      <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
+
+      <Community
+        title="Still curious?"
+        description="Join our social community to understand further!"
+      />
     </div>
   );
 }

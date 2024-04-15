@@ -10,7 +10,7 @@ export default function Gpt() {
         alt="faq"
         width={800}
         height={800}
-        className="w-full  mb-24 h-[35vh] sm:h-[50vh] rounded-md object-cover"
+        className="w-full   h-[35vh] sm:h-[50vh] rounded-md object-cover"
       />
       <div className="flex w-full justify-between gap-6 items-center py-4 px-8 absolute bottom-2 sm:bottom-4">
         <div className="flex flex-col gap-2 items-start">
