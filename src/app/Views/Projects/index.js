@@ -43,7 +43,7 @@ export default function Project() {
     getPageByID();
   }, []);
   return (
-    <div className="mt-20 w-full">
+    <div className="mt-20 mb-24 w-full">
       <Insight projects={projects} />
       <div className="w-full hidden sm:flex cursor-pointer gap-1 sm:gap-12 border-b border-[#F2F4F7]  px-2 items-center justify-between sm:justify-center h-20">
         {category.map((option, index) => (

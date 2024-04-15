@@ -1,5 +1,4 @@
 import ImageView from "../../Components/ImageView";
-import { useState, useEffect } from "react";
 import Community from "../../Components/Community";
 
 const thesis = "/assets/images/thesis.png";
@@ -10,36 +9,6 @@ const exportImg = "/assets/images/Export.png";
 const earthPower = "/assets/images/Earthpowers.png";
 
 export default function Thesis() {
-  const [editorLoaded, setEditorLoaded] = useState(false);
-
-  const Editordata = [
-    {
-      details:
-        '<p><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">Helios is an open-source platform enabling both web3 &amp; traditional investment in profitable, high impact solar projects in emerging markets, earning users stable, double digit yields uncorrelated with crypto or public markets while averting millions of tonnes of CO2 emissions each year. </span><span style="font-size: 17px;font-family: inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">With a portfolio of solar assets across 4 continents, Helios is perpetually deploying capital &amp; seeking new C&amp;I solar investment opportunities (50-500kW) globally.</span><span style="font-size: 17px;font-family: inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">Our project is entirely open source; no Helios employees take any salary; we aim to reinvest all earnings back into solar to create compounding impact.</span><span style="font-size: 17px;font-family: inter; font-weight:400;"> </span></p>\n',
-    },
-  ];
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setEditorLoaded(true);
-    }
-  }, []);
-
-  if (!editorLoaded) {
-    return null;
-  }
-
-  const { Editor } = require("react-draft-wysiwyg");
-  const { EditorState, ContentState } = require("draft-js");
-  const htmlToDraft = require("html-to-draftjs").default;
-  const addElement = (value) => {
-    const contentBlock = htmlToDraft(value);
-    const contentState = ContentState.createFromBlockArray(
-      contentBlock.contentBlocks
-    );
-    const editorState = EditorState.createWithContent(contentState);
-    return editorState;
-  };
   const chartData = [
     {
       title: "Regenerative Agriculture",
@@ -81,7 +50,7 @@ export default function Thesis() {
   ];
   return (
     <div>
-      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-6">
+      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center">
         <div className="flex flex-col w-full gap-2 items-center">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             About
@@ -106,13 +75,22 @@ export default function Thesis() {
             FUEL to our FIRE
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              Addressing climate change is truly one of those 
+              <span className="text-[#EC8000] font-semibold">
+                once in a generation opportunity.
+              </span>
+               The world as we know it will have to change completely if we are
+              to address climate change holistically. 
+              <span className="text-[#101828] font-semibold">
+                50 GT of CO2 eqv has to become ZERO in the next 30 years
+              </span>
+               and the only way that happens is all the infrastructure
+              supporting humanities core needs becomes 
+              <span className="text-[#EC8000] font-semibold">
+                solarpunk in nature.
+              </span>
+            </p>
           </div>
         </div>
       </div>
@@ -120,23 +98,44 @@ export default function Thesis() {
         src={funnel}
         alt="funnel"
         width={400}
-        height={600}
+        height={500}
         className="w-full object-cover"
       />
-      <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+      <div className="w-full max-w-screen-2xl sm:mt-[-4rem] mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
           <p className="text-[#101828] font-semibold text-left  text-[20px] sm:text-[28px] mr-10 font-syne">
             This transition is no longer a IF but a 
             <span className="text-[#EC8000]">WHEN.</span>
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              Even if we are to believe the righteous intentions of all nation
+              states, climate change will never be their to priority because
+              they are boundary bound plus lack of incentives for long term
+              action.
+              <br />
+              <br />
+              We believe that the biggest impediment towards scaling climate
+              action globally is capital. $Earth leverages the best of 
+              <span className="text-[#EC8000] font-semibold">
+                crypto economics to incentivize blockchain to mobilize
+              </span>
+               capital globally in a capital efficient manner.
+              <br />
+              <br />
+              Our priority with $Earth is to ensure that viable projects
+              building the Solarpunk Infra stack do not face any capital
+              constraints. To this effect we intend to be {" "}
+              <span className="text-[#EC8000] font-semibold">
+                perpetual holding partners
+              </span>
+               in these projects to the maximum extent possible, structuring
+              deals in a way that we always earn pro rata of the projects
+              earnings and are 
+              <span className="text-[#EC8000] font-semibold">
+                equal partners in wins and loses.
+              </span>
+            </p>
           </div>
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             Sectors we are focusing on -
@@ -169,13 +168,33 @@ export default function Thesis() {
               Regenerative Agricuture
             </p>
             <div className="mt-6">
-              <Editor
-                toolbarHidden
-                editorState={addElement(Editordata[0]?.details)}
-                wrapperClassName="demo-wrapper"
-                editorClassName="richText-display"
-                readOnly
-              />
+              <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                As of today less than 5% of our food production comes from
+                regenerative sources. Majority of farming in todays time is
+                chemical intensive using industrial inputs to produce highest
+                yields from land in order to maximize profit. This is highly
+                extractive in nature as it depletes the natural resources
+                required for nutrient rich food and makes no provision to
+                replenish instead pumps more chemicals to compensate.
+                <br />
+                <br />
+                This process also make the land a net carbon emitter where as if
+                the farmer shifts to more regenerative practices which
+                essentially translates to less tilling, more sustainable farming
+                methods to improve top soil health naturally, recycle waste
+                produce as inputs and maintain a robust ecosystem around the
+                farmland. This practice as an added benefit also is capable of
+                absorbing up to 8-9 tones of CO2/acre land annually in its top
+                soil. So not only does it 
+                <span className="text-[#EC8000] font-semibold">
+                  provide nutrient rich food, ensures farming is sustainable in
+                  the long run, decreases external input dependency but also
+                  absorbs a lot of carbon.
+                </span>
+                 We will be funding stewards looking to shift to these
+                regenerative agriculture practices plus the ancillary ecosystem
+                required to make it happen.
+              </p>
             </div>
             <ImageView
               src={agriculture}
@@ -229,27 +248,71 @@ export default function Thesis() {
           <p className="text-[#101828] font-semibold text-left mt-8 text-[20px] sm:text-[28px] mr-10 font-syne">
             Rationale behind sector selection -
           </p>
-          <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
-          </div>
+          <ol className="mt-6 list-decimal">
+            <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              <p className="">
+                They directly address 
+                <span className="text-[#EC8000] font-semibold">all causes</span>
+                 of climate change.
+              </p>
+            </li>
+            <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                They cater to humanities 
+                <span className="text-[#EC8000] font-semibold">
+                  core needs 
+                </span>
+                - energy, food, transport, materials and ecosystems to sustain
+                LIFE
+              </p>
+            </li>
+            <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                All these climate solutions generate tremendous amounts of 
+                <span className="text-[#EC8000] font-semibold">
+                  positive externalities
+                </span>
+                 - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient
+                rich food, Clean Water, Energy Independence, reducing pollution
+                etc.
+              </p>
+            </li>
+            <li className="mb-2 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                These real world solutions have undisputed long term value which
+                also provide 
+                <span className="text-[#EC8000] font-semibold">
+                  monetary yields
+                </span>
+                 uncorrelated to crypto sentiment which ensures strong floor
+                value for $Earth.
+              </p>
+            </li>
+          </ol>
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             How?
           </p>
-          <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+          <div className="w-full mt-6">
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              We have tried to make it as easy and rewarding for anyone across
+              the planet to take constructive climate action by simply buying
+              $Earth and using it eventually to build a sustainable, circular,
+              solarpunky economy.
+              <br />
+              <br />
+              Unlike BTC or ETH which are minted as block rewards for validating
+              transactions on the blockchain, $Earth is only minted against
+              purged $$$ which are used to fund climate solutions. For the first
+              time we will have a 
+              <span className="text-[#EC8000] font-semibold">
+                 currency that is backed by climate solutions
+              </span>
+               which provide essential utility for humanity and not by a shiny
+              metal or military forces.
+            </p>
           </div>
+        </div>
+        <div className="sm:px-[16%] w-full px-4">
           <ImageView
             src={exportImg}
             alt="export"

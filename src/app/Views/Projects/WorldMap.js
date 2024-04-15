@@ -138,7 +138,7 @@ export default function WorldMap({ projects }) {
         center={position}
         zoom={2}
         zoomControl={false}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
         attributionControl={false}
         className="leaflet-Map"
       >

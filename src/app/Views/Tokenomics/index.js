@@ -1,6 +1,5 @@
 import ImageView from "../../Components/ImageView";
 import Card from "./Card";
-import { useState, useEffect } from "react";
 import Community from "../../Components/Community";
 const tokenomics = "/assets/images/tokenomics.png";
 const intrinsicGraph = "/assets/images/intrinsic-Graph.png";
@@ -26,12 +25,7 @@ export default function Mechanics() {
         "Use as a medium of exchange to build the solarpunk paradigm for the future.",
     },
   ];
-  const Editordata = [
-    {
-      details:
-        '<p><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">Helios is an open-source platform enabling both web3 &amp; traditional investment in profitable, high impact solar projects in emerging markets, earning users stable, double digit yields uncorrelated with crypto or public markets while averting millions of tonnes of CO2 emissions each year. </span><span style="font-size: 17px;font-family: inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">With a portfolio of solar assets across 4 continents, Helios is perpetually deploying capital &amp; seeking new C&amp;I solar investment opportunities (50-500kW) globally.</span><span style="font-size: 17px;font-family: inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">Our project is entirely open source; no Helios employees take any salary; we aim to reinvest all earnings back into solar to create compounding impact.</span><span style="font-size: 17px;font-family: inter; font-weight:400;"> </span></p>\n',
-    },
-  ];
+
   const chartData = [
     {
       title: "Liquidity Pool",
@@ -50,30 +44,7 @@ export default function Mechanics() {
       percent: "10.10%",
     },
   ];
-  const [editorLoaded, setEditorLoaded] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setEditorLoaded(true);
-    }
-  }, []);
-
-  if (!editorLoaded) {
-    return null;
-  }
-
-  const { Editor } = require("react-draft-wysiwyg");
-  const { EditorState, ContentState } = require("draft-js");
-  const htmlToDraft = require("html-to-draftjs").default;
-
-  const addElement = (value) => {
-    const contentBlock = htmlToDraft(value);
-    const contentState = ContentState.createFromBlockArray(
-      contentBlock.contentBlocks
-    );
-    const editorState = EditorState.createWithContent(contentState);
-    return editorState;
-  };
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
@@ -109,37 +80,70 @@ export default function Mechanics() {
             that -
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              · New $Earth is only minted in 
+              <span className="text-[#EC8000] font-semibold">exchange</span> of
+              $DAI at the protocol.
+              <br />
+              <br />· Price at which $Earth is minted is 
+              <span className="text-[#EC8000] font-semibold">flexible</span> to
+              adapt to market conditions, confidence in the protocol, and
+              perception of the treasury&apos;s value.
+              <br />
+              <br />· APY is a direct function of amount of $Earth minted + real
+              yield from project + actual demand. 
+              <span className="text-[#EC8000] font-semibold">
+                Not inflation.
+              </span>
+              <br />
+              <br />· Creating a 
+              <span className="text-[#EC8000] font-semibold">
+                range bound mechanism
+              </span>
+               that ensures $earth price experiences a soft floor and ceiling.
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              Since this is one of the first digital currencies that is going to
+              be backed by a variety of real world climate solutions we intend
+              to proceed with 
+              <span className="text-[#101828] font-semibold">
+                calm, care and caution.
+              </span>
+               More than happy to sacrifice short term hype for long term
+              sustainability. Mechanics have been designed to ensure that the
+              currency value is strongly correlated to treasury backing to
+              ensure we don&apos;t ever get carried away by bull market
+              shenanigans only to have bear market hangovers later. How we
+              manage to do this will become clear with our mechanics and their
+              interactions.
+            </p>
           </div>
           <p className="text-[#101828] font-semibold text-left mt-6  text-[20px] sm:text-[28px] mr-10 font-syne">
             $Earth token -
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              Token which all solarpunks will be incentivized to mint directly
+              form the protocol. $Earth&apos;s purpose is to funnel capital into
+              climate solutions and serve as a unit of account representing the
+              value of these projects in its treasury. Its goal is to enable
+              price discovery of positive externalities while serving as a
+              medium of exchange for the solarpunk paradigm.
+            </p>
           </div>
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             Intrinsic Value (IV)
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              Every $Earth token is backed by its treasury holdings in climate
+              solutions. These hard assets provide the Intrinsic Value of
+              $Earth. This value will serve as a reference point only and will
+              not be defended until the point the DAO is able to partly
+              liquidate its holdings to ensure the necessary liquidity to defend
+              the value.
+            </p>
           </div>
           <ImageView
             src={intrinsicGraph}
@@ -152,25 +156,106 @@ export default function Mechanics() {
             $Earth Premium
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              Price at which the protocol lets Solarpunk Nft holders mint $Earth
+              is -
+            </p>
+            <p className="text-[#101828] font-semibold text-left mt-3 text-[16px] sm:text-[18px] mr-10 font-syne">
+              Intrinsic Value (IV) x Mint Multiple = Mint Price
+            </p>
+            <p className="text-[#475467] text-center sm:text-left font-normal mt-2 text-[16px] font-inter">
+              Mint multiple starts at 2 and can be adjusted according to the
+              desired monetary policy outcomes. In effect this would translate
+              to Solarpunk NFT holders being able to always mint at this price
+              irrespective of the AMM price of $Earth. This has the following
+              advantages per our smol brain understanding -
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              · Whenever 
+              <span className="text-[#101828] font-semibold">
+                demand for $Earth on the AMM is
+              </span>
+               <span className="text-[#EC8000] font-semibold">high,</span> NFT
+              holders are incentivized to mint $Earth directly from the protocol
+              which contributes to growing the treasury size. Thereby also
+              disincentivizing speculators/short term holders benefitting from
+              temporary spikes and profit being captured by traders vs protocol.
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              · Whenever price of $Earth is cheaper on AMM than protocol, all
+              buys will be directed there until price 
+              <span className="text-[#101828] font-semibold">finds</span> 
+              <span className="text-[#EC8000] font-semibold"> parity </span> 
+              <span className="text-[#101828] font-semibold">
+                 with protocol price.
+              </span>
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              · All NFT holders will be able to buy directly from the protocol
+              ensuring there is 
+              <span className="text-[#EC8000] font-semibold"> ZERO </span> 
+              <span className="text-[#101828] font-semibold">
+                 slippage while buying,
+              </span>
+              while sellers and buyers on AMM will always face slippage
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              · This mechanic also ensures price of $Earth will tentatively
+              operate in a 
+              <span className="text-[#EC8000] font-semibold"> range </span> 
+              <span className="text-[#101828] font-semibold">
+                 of IV to a slight premium
+              </span>
+              on the protocol minting price. Aim of this is provide scope for
+              price discovery while ensuring price rise is correlated to
+              treasury growth.
+            </p>
           </div>
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             $Earth Harvest
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              This mechanic is to ensure that IV backing of $Earth never falls,
+              only can ever rise. Every time a Nft holders mints $Earth directly
+              from the protocol at a specific mint multiple to IV, the protocol
+              gets to harvest the remainder such that IV doesnt get diluted.
+            </p>
+            <p className="text-[#101828] font-semibold text-left mt-3 text-[16px] sm:text-[18px] mr-10 font-syne">
+              Example -
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              IV - $10
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              Mint multiple - 2
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              $Earth at protocol sold at $20
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              Solarpunk NFT holder pays 20 $Dai for 1 $Earth, while IV of 1
+              $Earth is 10 $DAI.
+            </p>
+            <br />
+            <p className="text-[#EC8000] font-semibold text-center sm:text-left text-[16px] font-inter">
+              This lets protocol harvest 1 $Earth without diluting IV.
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              Higher Mint multiples allow us harvest more with each purchase of
+              $Earth directly from the protocol. The goal is to increase mint
+              multiple gradually as treasury size increases and confidence on
+              $Earth and Solarpunk Dao delivering increases
+            </p>
           </div>
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px]  font-syne">
             All $Earth harvested through this will be utilized for the following

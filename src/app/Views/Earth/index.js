@@ -52,7 +52,7 @@ export default function Earth() {
           </p>
         </div>
       </div>
-      <div className="flex  flex-col">
+      <div className="flex  max-w-screen-2xl mx-auto flex-col">
         {earthData?.map((data, index) => (
           <div
             className={`flex flex-col sm:flex-row justify-between ${

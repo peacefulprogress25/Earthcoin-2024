@@ -25,11 +25,17 @@ export default function Main() {
         pageId: nexaflowPageObj.projectsPage,
         websiteId: nexaflowPageObj.website,
       });
-      const filteredProjects = page?.Projects.filter(
-        (project) => project.order === "1"
+      const reversedProjects = [...page?.Projects].reverse();
+      const hasOrder = page?.Projects.some(
+        (project) => project.order !== undefined
       );
-      console.log(filteredProjects);
-      setProject(page?.Projects);
+      let sortedProjects;
+      if (hasOrder) {
+        sortedProjects = reversedProjects.sort((a, b) => a.order - b.order);
+      } else {
+        sortedProjects = reversedProjects;
+      }
+      setProject(sortedProjects);
     };
 
     getPageByID();

@@ -51,6 +51,7 @@ export default function Faq() {
             </div>
           )}
         </div>
+        <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
       </div>
     </div>
   );

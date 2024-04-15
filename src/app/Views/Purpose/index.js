@@ -1,6 +1,6 @@
 import ImageView from "../../Components/ImageView";
-import { useState, useEffect } from "react";
 import Community from "../../Components/Community";
+
 const purpose = "/assets/images/purpose.png";
 const jungle = "/assets/images/jungle.png";
 const space = "/assets/images/space.png";
@@ -8,36 +8,6 @@ const mountain = "/assets/images/mountain.png";
 const tree = "/assets/images/tree.png";
 
 export default function Purpose() {
-  const [editorLoaded, setEditorLoaded] = useState(false);
-
-  const Editordata = [
-    {
-      details:
-        '<p><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">Helios is an open-source platform enabling both web3 &amp; traditional investment in profitable, high impact solar projects in emerging markets, earning users stable, double digit yields uncorrelated with crypto or public markets while averting millions of tonnes of CO2 emissions each year. </span><span style="font-size: 17px;font-family: inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">With a portfolio of solar assets across 4 continents, Helios is perpetually deploying capital &amp; seeking new C&amp;I solar investment opportunities (50-500kW) globally.</span><span style="font-size: 17px;font-family: inter; font-weight:400;"><br><br></span><span style="color: rgb(32,33,36);background-color: rgb(255,255,255);font-size: 17px;font-family: inter; font-weight:400;">Our project is entirely open source; no Helios employees take any salary; we aim to reinvest all earnings back into solar to create compounding impact.</span><span style="font-size: 17px;font-family: inter; font-weight:400;"> </span></p>\n',
-    },
-  ];
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setEditorLoaded(true);
-    }
-  }, []);
-
-  if (!editorLoaded) {
-    return null;
-  }
-
-  const { Editor } = require("react-draft-wysiwyg");
-  const { EditorState, ContentState } = require("draft-js");
-  const htmlToDraft = require("html-to-draftjs").default;
-  const addElement = (value) => {
-    const contentBlock = htmlToDraft(value);
-    const contentState = ContentState.createFromBlockArray(
-      contentBlock.contentBlocks
-    );
-    const editorState = EditorState.createWithContent(contentState);
-    return editorState;
-  };
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
@@ -66,15 +36,26 @@ export default function Purpose() {
             <span className="text-[#EC8000]">Planet before profits</span>
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              A cosmic satellite observing Sapiens on Earth would certainly
+              admit we have progressed leaps and bounds in eliminating
+              existential threats and pushing the envelope of our consciousness.
+              From developing language to communicate mythical tales of imagined
+              orders now known as &apos;culture&apos; to establishing settled
+              socieities because of agriculture , we have propelled ourselves to
+              the top of the food chain like a rocket on a geological time
+              scale. Our neocortical abilities have enabled us to take complex
+              actions in large scale cooperation frameworks (religion, economy
+              and politics), decode phenomenon around us and harness the power
+              of resources due to which we have largely bypassed our biological
+              limitations and succeeded in hosting over 7 billion of us on
+              earth. The sapiens design coupled with earth&apos;s resources and
+              its presence in the goldilocks zone has created a realm of endless
+              possibilities where we are only limited by our imagination and
+              boundaries of science.
+            </p>
           </div>
-          <div className="mt-6 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="mt-12 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
             <ImageView
               src={jungle}
               alt="jungle"
@@ -95,13 +76,40 @@ export default function Purpose() {
             not decoupled from its tradeoffs -
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              We have sacrificed our connection to the natural world, perceiving
+              it as something that can be domesticated by human will (fairly
+              succeeded at that too).
+              <br />
+              <br />· Accepted incessant planning for the future as a given
+              since the advent of the agricultural revolution.
+              <br />
+              <br />· Assumed invincibility of our species which has been in
+              existence for over a couple million years on this earth. The same
+              earth which has had 5 mass extinctions from 450 million yrs back
+              till date that has wiped out between 75-90 percent of species
+              every time. 4 of those have been climate change induced.
+            </p>
+
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              The dissonance amongst humanity in recognizing the inter
+              connectedness of life and that we are all simply matter processing
+              information differently (whether we got the better bargain in this
+              only time can tell). What began with our departure from the
+              hunter/gatherer lifestyle has meandered its way to the pervasion
+              of neoliberal thought that is assumed for &apos;reality&apos; in
+              today&apos;s time. The quote that says it is easier to imagine the
+              end of world than capitalism has never been more true. It is
+              essential we understand that our current superiority is small
+              parts our effort and in large parts serendipity. Our perpetual
+              superiority will be large parts effort and small parts luck. Hence
+              tread carefully we must as we are yet to find sign of intelligent
+              life absolutely anywhere across the enormously chaotic universe we
+              exist in. Even if we do Life as we know it is a planetary
+              phenomenon, we will never feel completely at home anywhere else in
+              the universe.
+            </p>
           </div>
         </div>
         <ImageView
@@ -117,13 +125,39 @@ export default function Purpose() {
             not decoupled from its tradeoffs -
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              We have sacrificed our connection to the natural world, perceiving
+              it as something that can be domesticated by human will (fairly
+              succeeded at that too).
+              <br />
+              <br />· Accepted incessant planning for the future as a given
+              since the advent of the agricultural revolution.
+              <br />
+              <br />· Assumed invincibility of our species which has been in
+              existence for over a couple million years on this earth. The same
+              earth which has had 5 mass extinctions from 450 million yrs back
+              till date that has wiped out between 75-90 percent of species
+              every time. 4 of those have been climate change induced.
+            </p>
+            <br />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              The dissonance amongst humanity in recognizing the inter
+              connectedness of life and that we are all simply matter processing
+              information differently (whether we got the better bargain in this
+              only time can tell). What began with our departure from the
+              hunter/gatherer lifestyle has meandered its way to the pervasion
+              of neoliberal thought that is assumed for &apos;reality&apos; in
+              today&apos;s time. The quote that says it is easier to imagine the
+              end of world than capitalism has never been more true. It is
+              essential we understand that our current superiority is small
+              parts our effort and in large parts serendipity. Our perpetual
+              superiority will be large parts effort and small parts luck. Hence
+              tread carefully we must as we are yet to find sign of intelligent
+              life absolutely anywhere across the enormously chaotic universe we
+              exist in. Even if we do Life as we know it is a planetary
+              phenomenon, we will never feel completely at home anywhere else in
+              the universe.
+            </p>
           </div>
 
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
@@ -132,13 +166,20 @@ export default function Purpose() {
           </p>
 
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              · Our unrestrained extraction of the decayed plant and animal
+              matter converted to fuel over hundreds of millions of years being
+              exposed to the atmosphere in a matter of mere centuries.
+              <br />
+              <br />· Our unhindered destruction of thriving natural ecosystems
+              for raw materials, grazing and agriculture.
+              <br />
+              <br />· Our infusion of deadly chemicals into the soil, air and
+              water for intensifying agricultural output.
+              <br />
+              <br />· Our toxic use and throw consumerism for exponential
+              growth.
+            </p>
           </div>
           <div className="mt-6 w-full">
             <ImageView
@@ -150,13 +191,33 @@ export default function Purpose() {
             />
           </div>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              The massive rise in our standards of living at nature&apos;s
+              expense has now come claiming the debt in the face of climate
+              change. A debt for which we are unable to come up the necessary
+              accounting standards to restructure it as we have done so for our
+              economies. A debt that is topped with air pollution, land
+              degradation, plastification of oceans, biodiversity loss, mounting
+              landfills and freshwater depletion.
+              <br />
+              <br />
+              The onslaught of major environmental issues is a reflection of the
+              deep systemic fault lines that exist within our ideology of
+              sustaining life currently and it is nature&apos;s way of returning
+              the favor we have so dearly bestowed upon it in recent times.
+              <br />
+              <br />
+              Climate change is more of an umbrella term to describe the various
+              repercussions that a warming earth can have. From raging
+              wildfires, rising sea levels, floods and droughts, intensified
+              cyclones, widespread hunger, unbearable temperatures to
+              unbreathable air. These elements of chaos are fully capable of
+              making the COVID pandemic feel like a ripple in a tsunami. Waves
+              of which we have already begun witnessing and these consequences
+              are still simply what is within our scope of
+              comprehension, unforeseen feedback loops are the icing on the
+              proverbial multi layered climate change cake.
+            </p>
           </div>
           <div className="mt-8 border-l-2 flex flex-col items-start border-[#EC8000] pl-3">
             <p className="text-[26px]  text-left font-medium text-[#101828] font-syne">
@@ -169,16 +230,63 @@ export default function Purpose() {
             </p>
           </div>
           <div className="my-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              Also before we begin to rationalize climate changes on geological
+              timelines it behooves us to keep in mind that there weren&apos;t
+              over 7 going to 9 billion humans breathing on this planet to face
+              its aftermath in the past. While the fruits of development have
+              been unevenly distributed, perils of climate change too are
+              unevenly distributed.
+              <br />
+              <br />
+              It is now a commonly accepted premise that section of humanity
+              that is largely responsible for the predicament at hand is also
+              better equipped to deal with the problem while the lower rungs of
+              society will be left gasping as usual. Un/Fortunately cyclones,
+              fires, viruses and floods don&apos;t comprehend rich and poor
+              neighborhoods, all are equally eligible for the trials and
+              tribulations served by the natural world.
+              <br />
+              <br />
+              Since we all (some more than others) have our un/conscious
+              contributions towards the creation of this climate disaster we
+              need to address the climate disaster also collectively (some more
+              than others). Surely in retrospect we don&apos;t want to realize
+              that all the while we were focused on aiming for the sky that we
+              were actually digging our graves. Earth has provided more than our
+              wildest dreams could ask for it continues to do so but progress of
+              humanity on earth with deeper strides in technological innovation,
+              higher standards of living and becoming a multi planetary species
+              is truly only possible only when the environment is conducive
+              towards it. Not when every action undertaken to date by 21st
+              century humans is in direct detriment of the planet we inhabit.
+              <br />
+              <br />
+              Although we see governments and corporates try to take
+              &apos;bold&apos; action to ward the worst of climate change, its
+              like Einstein said - it is not possible to solve a problem from
+              the same level of frequency that created it. Just like a web3
+              world cannot be created with a web2 business model, the Solarpunk
+              paradigm cannot be established with the current socio-economic
+              framework.
+              <br />
+              <br />
+              It is in the spirit of addressing the concerns holistically that
+              SolarpunkDao has conceptualized $Earth. Recognizing that the
+              problems have come from the separation of environment and economy
+              and that for Sapiens to thrive a synergistic relationship between
+              ecology and economy is essential. Given the systemic nature of the
+              climate change problem, addressing them also addresses several
+              other problems in our society
+              <br />
+              <br />
+              While the economy is futile without ecology, ecology is absolutely
+              fine without the economy. Creating resonance between the two is
+              the only way forward.
+            </p>
           </div>
         </div>
-        <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
+        <div className="w-full h-[2px] my-8 bg-[#F2F4F7]"></div>
         <Community
           title="Ready to go down the rabbit hole?"
           description="Join our social community!"

@@ -109,7 +109,7 @@ export default function OverView({ details }) {
         </div>
       </div>
       <div className="flex sm:flex-row flex-col gap-3 sm:gap-8 mt-2 w-full items-center justify-center border-[#EAECF0]">
-        <div className="flex items-center w-[14rem] sm:w-[18rem]  px-4  py-6  border-2 rounded-lg shadow-lg border-[#EAECF0] justify-center flex-col">
+        <div className="flex items-center w-[14rem] sm:w-[22rem]  px-4  py-6  border-2 rounded-lg shadow-lg border-[#EAECF0] justify-center flex-col">
           <p className="font-syne font-semibold text-center text-[20px] sm:text-[32px] text-[#EC8000]">
             {details.projectValue}
           </p>
@@ -117,7 +117,7 @@ export default function OverView({ details }) {
             Total project value
           </p>
         </div>
-        <div className="flex items-center w-[14rem] sm:w-[18rem] px-4   py-6 border-2 rounded-lg shadow-lg border-[#EAECF0] justify-center flex-col">
+        <div className="flex items-center w-[14rem] sm:w-[22rem] px-4   py-6 border-2 rounded-lg shadow-lg border-[#EAECF0] justify-center flex-col">
           <p className="font-syne font-semibold text-[20px] text-center sm:text-[32px] text-[#EC8000]">
             {details.fundingNeeded}
           </p>
@@ -125,7 +125,7 @@ export default function OverView({ details }) {
             Funding needed
           </p>
         </div>
-        <div className="flex items-center w-[14rem] sm:w-[18rem] px-4  py-6 rounded-lg shadow-lg border-2 border-[#EAECF0]  justify-center flex-col">
+        <div className="flex items-center w-[14rem] sm:w-[22rem] px-4  py-6 rounded-lg shadow-lg border-2 border-[#EAECF0]  justify-center flex-col">
           <p className="font-syne font-semibold text-[20px] text-center sm:text-[32px] text-[#EC8000]">
             {details.Irr}
           </p>

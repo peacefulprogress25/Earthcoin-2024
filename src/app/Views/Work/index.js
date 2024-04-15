@@ -36,6 +36,32 @@ export default function Work() {
     const editorState = EditorState.createWithContent(contentState);
     return editorState;
   };
+  const earthValues = [
+    "You earn your SBT that makes you a Node. (Link on SBT - Become a Node)",
+    "Node purges petro $ directly at the protocol to mint $EARTH",
+    "Protocol sends those $$$ to $EARTH treasury",
+    "$EARTH holders use quadratic voting to determine which projects get funds from $EARTH treasury",
+    "An NFT is minted to represent that particular projects investment.",
+    "$EARTH treasury transfers funds for that project into that NFT",
+    "Crypto $ are transferred from that NFT to our Foundations wallet",
+    "Foundation converts the crypto $ to fiat $",
+    "Fiat $ is transferred to real world entities Bank Account",
+    "Real world entity uses those fiat $ to fund projects",
+    "Once the project executes, they start sending Principal + Interest or Dividends ( depending on debt or equity ) to the Real World entities bank account",
+    "Fiat $ are then converted to crypto $ and send to Foundations wallet",
+    "Foundations wallet then transfers the said funds to the NFT of that particular project",
+    "From the funds transferred by the Foundation, principal amount is trasferred back to the treasury and the interest portion is used to mint $EARTH",
+    "$EARTH minted above is transferred to the Staking contract",
+    "$EARTH stakers earn this as yield as per on going APY.",
+  ];
+  const protocolValues = [
+    "APY - Providing yield to $EARTH stakers",
+    "LP - Creating a protocol owned liquidity pool between $EARTH/$DAI",
+    "DAO - Compensating Solarpunk Dao for its contributions",
+    "Partners - For partners to reward their community for $EARTH aligned actions",
+    "Community - For all activities growing $EARTH",
+    "IV - Portion of this harvested $EARTH can be burnt also, this increases IV of each $EARTH and hence the price.",
+  ];
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
@@ -59,13 +85,15 @@ export default function Work() {
             $EARTH is designed to serve as a capital efficient funnel
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              $EARTH is designed to serve as a capital efficient funnel that
+              incentivizes, mobilizes and allocates petro $ to be projects
+              directly addressing climate change and solving the environmental
+              crisis.
+              <br />
+              Here we provide an overview of each step that takes place to make
+              this happen -
+            </p>
           </div>
         </div>
         <div className="w-full sm:px-[10%] px-4">
@@ -79,25 +107,28 @@ export default function Work() {
         </div>
         <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <ol className="list-decimal">
+              {earthValues.map((value, index) => (
+                <li
+                  key={index}
+                  className="text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter"
+                >
+                  {value}
+                </li>
+              ))}
+            </ol>
           </div>
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             $Earth harvest flow -
           </p>
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              The premium paid to $EARTH wrt to the value of assets backing each
+              $EARTH (Intrinsic Value) allows the protocol to harvest $EARTH
+              till the point it doesnt decrease the intrinsic value of assets
+              backing each $EARTH. This Harvested $EARTH is then used for
+              various activities like -
+            </p>
           </div>
           <ImageView
             src={harvest}
@@ -107,14 +138,23 @@ export default function Work() {
             className="w-full mt-4 object-cover"
           />
           <div className="mt-6">
-            <Editor
-              toolbarHidden
-              editorState={addElement(Editordata[0]?.details)}
-              wrapperClassName="demo-wrapper"
-              editorClassName="richText-display"
-              readOnly
-            />
+            <ol className="list-decimal">
+              {protocolValues.map((value, index) => (
+                <li
+                  key={index}
+                  className="text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter"
+                >
+                  {value}
+                </li>
+              ))}
+            </ol>
+            <br />
+            <br />
           </div>
+          <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+            Nodes of $EARTH will get to vote on how the harvested $EARTH gets
+            allocated amongst these activities
+          </p>
         </div>
         <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
         <Community
