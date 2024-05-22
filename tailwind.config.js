@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#EC8000",
+        darkGray: "#101828",
+        lightGray: "#475467",
+        lightestGray: "#EAECF0"
+
+      },
+      boxShadow: {
+        cardShadow: "0 12px 16px -4px rgba(16, 24, 40, 0.08)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

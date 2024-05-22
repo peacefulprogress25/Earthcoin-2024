@@ -76,17 +76,17 @@ export default function Thesis() {
           </p>
           <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              Addressing climate change is truly one of those 
+              Addressing climate change is truly one of those
               <span className="text-[#EC8000] font-semibold">
                 once in a generation opportunity.
               </span>
-               The world as we know it will have to change completely if we are
-              to address climate change holistically. 
+              The world as we know it will have to change completely if we are
+              to address climate change holistically.
               <span className="text-[#101828] font-semibold">
                 50 GT of CO2 eqv has to become ZERO in the next 30 years
               </span>
-               and the only way that happens is all the infrastructure
-              supporting humanities core needs becomes 
+              and the only way that happens is all the infrastructure
+              supporting humanities core needs becomes
               <span className="text-[#EC8000] font-semibold">
                 solarpunk in nature.
               </span>
@@ -104,7 +104,7 @@ export default function Thesis() {
       <div className="w-full max-w-screen-2xl sm:mt-[-4rem] mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
           <p className="text-[#101828] font-semibold text-left  text-[20px] sm:text-[28px] mr-10 font-syne">
-            This transition is no longer a IF but a 
+            This transition is no longer a IF but a
             <span className="text-[#EC8000]">WHEN.</span>
           </p>
           <div className="mt-6">
@@ -116,11 +116,11 @@ export default function Thesis() {
               <br />
               <br />
               We believe that the biggest impediment towards scaling climate
-              action globally is capital. $Earth leverages the best of 
+              action globally is capital. $Earth leverages the best of
               <span className="text-[#EC8000] font-semibold">
                 crypto economics to incentivize blockchain to mobilize
               </span>
-               capital globally in a capital efficient manner.
+              capital globally in a capital efficient manner.
               <br />
               <br />
               Our priority with $Earth is to ensure that viable projects
@@ -129,9 +129,9 @@ export default function Thesis() {
               <span className="text-[#EC8000] font-semibold">
                 perpetual holding partners
               </span>
-               in these projects to the maximum extent possible, structuring
+              in these projects to the maximum extent possible, structuring
               deals in a way that we always earn pro rata of the projects
-              earnings and are 
+              earnings and are
               <span className="text-[#EC8000] font-semibold">
                 equal partners in wins and loses.
               </span>
@@ -154,9 +154,8 @@ export default function Thesis() {
           <div className="rounded-md bg-[#F9FAFB] flex justify-between border border-[#F2F4F7] p-1">
             {earthPowerData.map((power, index) => (
               <button
-                className={` rounded-md p-1 px-2 text-[#667085]  text-[9px] sm:text-[13px] font-inter font-semibold ${
-                  index === 0 ? "bg-[#FFFFFF] shadow-md text-[#344054]" : ""
-                }`}
+                className={` rounded-md p-1 px-2 text-[#667085]  text-[9px] sm:text-[13px] font-inter font-semibold ${index === 0 ? "bg-[#FFFFFF] shadow-md text-[#344054]" : ""
+                  }`}
                 key={index}
               >
                 {power.title}
@@ -185,13 +184,13 @@ export default function Thesis() {
                 produce as inputs and maintain a robust ecosystem around the
                 farmland. This practice as an added benefit also is capable of
                 absorbing up to 8-9 tones of CO2/acre land annually in its top
-                soil. So not only does it 
+                soil. So not only does it
                 <span className="text-[#EC8000] font-semibold">
                   provide nutrient rich food, ensures farming is sustainable in
                   the long run, decreases external input dependency but also
                   absorbs a lot of carbon.
                 </span>
-                 We will be funding stewards looking to shift to these
+                We will be funding stewards looking to shift to these
                 regenerative agriculture practices plus the ancillary ecosystem
                 required to make it happen.
               </p>
@@ -206,7 +205,7 @@ export default function Thesis() {
           </div>
         </div>
         <div className="sm:px-[20%] px-4 flex flex-col">
-          <div className="flex flex-col gap-16 mt-3 w-full  items-center justify-between sm:flex-row">
+          {/* <div className="flex flex-col gap-16 mt-3 w-full  items-center justify-between sm:flex-row">
             <ImageView
               src={pieChart}
               alt="piechart"
@@ -221,19 +220,18 @@ export default function Thesis() {
                   key={index}
                 >
                   <div
-                    className={`${
-                      chart.title === "Regenerative Agriculture"
+                    className={`${chart.title === "Regenerative Agriculture"
                         ? "bg-[#F4AB1F]"
                         : chart.title === "Ecosystem Conservation"
-                        ? "bg-[#B2BC45]"
-                        : chart.title === "Clean Energy"
-                        ? "bg-[#486D2F]"
-                        : chart.title === "Solarpunk Spaces"
-                        ? "bg-[#045047]"
-                        : chart.title === "Clean Transport"
-                        ? "bg-[#EC8000]"
-                        : ""
-                    } w-[5px]  -left-3 top-[8px] absolute h-[5px] rounded-full`}
+                          ? "bg-[#B2BC45]"
+                          : chart.title === "Clean Energy"
+                            ? "bg-[#486D2F]"
+                            : chart.title === "Solarpunk Spaces"
+                              ? "bg-[#045047]"
+                              : chart.title === "Clean Transport"
+                                ? "bg-[#EC8000]"
+                                : ""
+                      } w-[5px]  -left-3 top-[8px] absolute h-[5px] rounded-full`}
                   ></div>
                   <p className="text-[#475467] font-inter text-[14px] font-normal">
                     {chart?.title}
@@ -244,23 +242,23 @@ export default function Thesis() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
           <p className="text-[#101828] font-semibold text-left mt-8 text-[20px] sm:text-[28px] mr-10 font-syne">
             Rationale behind sector selection -
           </p>
           <ol className="mt-6 list-decimal">
             <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               <p className="">
-                They directly address 
+                They directly address
                 <span className="text-[#EC8000] font-semibold">all causes</span>
-                 of climate change.
+                of climate change.
               </p>
             </li>
             <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-                They cater to humanities 
+                They cater to humanities
                 <span className="text-[#EC8000] font-semibold">
-                  core needs 
+                  core needs
                 </span>
                 - energy, food, transport, materials and ecosystems to sustain
                 LIFE
@@ -268,11 +266,11 @@ export default function Thesis() {
             </li>
             <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-                All these climate solutions generate tremendous amounts of 
+                All these climate solutions generate tremendous amounts of
                 <span className="text-[#EC8000] font-semibold">
                   positive externalities
                 </span>
-                 - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient
+                - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient
                 rich food, Clean Water, Energy Independence, reducing pollution
                 etc.
               </p>
@@ -280,11 +278,11 @@ export default function Thesis() {
             <li className="mb-2 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
                 These real world solutions have undisputed long term value which
-                also provide 
+                also provide
                 <span className="text-[#EC8000] font-semibold">
                   monetary yields
                 </span>
-                 uncorrelated to crypto sentiment which ensures strong floor
+                uncorrelated to crypto sentiment which ensures strong floor
                 value for $Earth.
               </p>
             </li>
@@ -303,16 +301,16 @@ export default function Thesis() {
               Unlike BTC or ETH which are minted as block rewards for validating
               transactions on the blockchain, $Earth is only minted against
               purged $$$ which are used to fund climate solutions. For the first
-              time we will have a 
+              time we will have a
               <span className="text-[#EC8000] font-semibold">
-                 currency that is backed by climate solutions
+                currency that is backed by climate solutions
               </span>
-               which provide essential utility for humanity and not by a shiny
+              which provide essential utility for humanity and not by a shiny
               metal or military forces.
             </p>
           </div>
         </div>
-        <div className="sm:px-[16%] w-full px-4">
+        <div className="sm:px-[20%] w-full px-4">
           <ImageView
             src={exportImg}
             alt="export"

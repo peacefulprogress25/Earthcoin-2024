@@ -63,7 +63,7 @@ export default function Work() {
     "IV - Portion of this harvested $EARTH can be burnt also, this increases IV of each $EARTH and hence the price.",
   ];
   return (
-    <div>
+    <>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col gap-2 items-center">
           <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
@@ -80,7 +80,7 @@ export default function Work() {
           height={200}
           className="w-full mt-4 object-cover"
         />
-        <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
+        <div className="sm:px-[32px] px-4 flex flex-col w-full items-start">
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             $EARTH is designed to serve as a capital efficient funnel
           </p>
@@ -96,72 +96,39 @@ export default function Work() {
             </p>
           </div>
         </div>
-        <div className="w-full sm:px-[10%] px-4">
-          <ImageView
-            src={plan}
-            alt="plan"
-            width={800}
-            height={1800}
-            className="w-full mt-4 object-cover"
-          />
+        <div className="flex justify-center items-center px-[100px]">
+          <div className="">
+            <ImageView
+              src={plan}
+              alt="plan"
+              width={261.13}
+              height={682}
+              className="mt-4 object-cover"
+            />
+          </div>
+          <div className="flex flex-col w-full items-start pl-[64px]">
+            <div className="mt-6">
+              <ol className="list-decimal">
+                {earthValues.map((value, index) => (
+                  <li
+                    key={index}
+                    className="text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter"
+                  >
+                    {value}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
         </div>
-        <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
-          <div className="mt-6">
-            <ol className="list-decimal">
-              {earthValues.map((value, index) => (
-                <li
-                  key={index}
-                  className="text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter"
-                >
-                  {value}
-                </li>
-              ))}
-            </ol>
-          </div>
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-            $Earth harvest flow -
-          </p>
-          <div className="mt-6">
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              The premium paid to $EARTH wrt to the value of assets backing each
-              $EARTH (Intrinsic Value) allows the protocol to harvest $EARTH
-              till the point it doesnt decrease the intrinsic value of assets
-              backing each $EARTH. This Harvested $EARTH is then used for
-              various activities like -
-            </p>
-          </div>
-          <ImageView
-            src={harvest}
-            alt="harvest"
-            width={800}
-            height={800}
-            className="w-full mt-4 object-cover"
-          />
-          <div className="mt-6">
-            <ol className="list-decimal">
-              {protocolValues.map((value, index) => (
-                <li
-                  key={index}
-                  className="text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter"
-                >
-                  {value}
-                </li>
-              ))}
-            </ol>
-            <br />
-            <br />
-          </div>
-          <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-            Nodes of $EARTH will get to vote on how the harvested $EARTH gets
-            allocated amongst these activities
-          </p>
+        <div>
+          <p className="font-inter font-normal text-[18px] text-primary px-[80px]">The premium paid to $EARTH wrt to the value of assets backing each $EARTH (Intrinsic Value) allows the protocol to harvest $EARTH till the point it doesnt decrease the intrinsic value of assets backing each $EARTH. This Harvested $EARTH is then used for various activities like -</p>
         </div>
-        <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
-        <Community
-          title="Still curious?"
-          description="Join our social community to understand further!"
-        />
       </div>
-    </div>
+      <Community
+        title="Still curious?"
+        description="Join our social community to understand further!"
+      />
+    </>
   );
 }

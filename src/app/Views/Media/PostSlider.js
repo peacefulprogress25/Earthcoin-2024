@@ -7,6 +7,7 @@ import "swiper/css/grid";
 import ImageView from "../../Components/ImageView";
 import { LuArrowUpRight } from "react-icons/lu";
 import "./slider.css";
+import Link from "next/link";
 
 const click = "/assets/icons/circle.svg";
 const left = "/assets/icons/arrow-left.svg";
@@ -280,7 +281,11 @@ export default function PostSlider({ post }) {
 
 export function SliderCard({ card }) {
   return (
-    <div className={`flex flex-col h-fit w-[24rem] gap-6`}>
+    <Link
+      href={card?.link}
+      target="_blank"
+      className={`flex flex-col h-fit w-[24rem] gap-6`}
+    >
       <ImageView
         src={card.img}
         alt={card.name}
@@ -320,6 +325,6 @@ export function SliderCard({ card }) {
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

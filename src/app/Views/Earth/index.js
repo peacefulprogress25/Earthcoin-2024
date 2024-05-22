@@ -33,14 +33,15 @@ export default function Earth() {
   ];
   return (
     <div>
-      <div className="mt-20 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+      <div className="mt-20 w-full max-w-screen-2xl mx-auto flex gap-10 flex-col items-center pb-10">
         <ImageView
           src={solarchakra}
           alt="solarchakra"
-          width={400}
-          height={400}
+          className="w-screen"
+          width={1440}
+          height={500}
         />
-        <div className="flex flex-col gap-2 items-center">
+        {/* <div className="flex flex-col gap-2 items-center">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             About
           </p>
@@ -50,14 +51,13 @@ export default function Earth() {
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
             What is $EARTH and how to get $EARTH
           </p>
-        </div>
+        </div> */}
       </div>
       <div className="flex  max-w-screen-2xl mx-auto flex-col">
         {earthData?.map((data, index) => (
           <div
-            className={`flex flex-col sm:flex-row justify-between ${
-              index === 1 ? "flex-col sm:flex-row-reverse" : ""
-            }`}
+            className={`flex flex-col sm:flex-row justify-between ${index === 1 ? "flex-col sm:flex-row-reverse" : ""
+              }`}
             key={index}
           >
             <div className="flex justify-center w-full sm:w-[50%] px-[6%] flex-col gap-2">

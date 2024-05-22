@@ -1,19 +1,13 @@
+"use client"
 import ImageView from "../../Components/ImageView";
 import Community from "../../Components/Community";
 
 export default function Resources() {
   const resources = "/assets/images/resources.png";
   const section = "/assets/images/section.png";
+  const bottomSection = "/assets/images/below-section.png";
   const economy = "/assets/images/economy.png";
-  const earthValues = [
-    "$EARTH is new unit of VALUE. It is not pegged to any fiat currency nor to any crypto currency. Much like how Bitcoin and Eth are new units of value, $EARTH is a new unit of value which gets its value from on ground regenerative assets backing $EARTH, the positive externalities that are created by those projects and the demand of $EARTH as a medium of exchange",
-    "$EARTH is a medium of exchange for merchants providing goods and services that take us to a regenerative solarpunk paradigm. We intend to use $EARTH to subsidize such merchants to - a) make them more competitive with businesses that are extractive and hence cheap in $ terms b) Get them economies of scale which should help provide these goods and services to a larger section of society",
-    "$EARTH is creating a monetary system that is powered by projects that are catering to our CORE needs of energy, food, transport, shelter and a hospitable environment. As $EARTH scales it elevates standard of living for all of humanity.",
-    "$EARTH ensures infrastructure powering our future is not owned by nation states or corporations but all those that hold $EARTH",
-    "$EARTH embodies Solarpunk values of radical optimism, compassion, regeneration, tech serving nature, harmony, peace etc. It will be utilized in whatever manner deemed fit to serve these values as occasions arise.",
-    "$EARTH is a tool to process economic + ecological risk while disbursing capital",
-    "$EARTH facilitates a shift from extractive to regenerative economies",
-  ];
+
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
@@ -51,17 +45,17 @@ export default function Resources() {
               <br />
               <br />
               <br />
-              Elephant meme 
+              Elephant meme
               <br />
               <br />
               <br />
               So here we will shed light on various aspects of $EARTH and how it
-              each parts contributes to our mission/vision in some way. 
+              each parts contributes to our mission/vision in some way.
               <br />
               <br />
-              $EARTH is a digital currency that is 
+              $EARTH is a digital currency that is
               <span className="text-[#EC8000] font-semibold">purely</span>
-               backed by projects in the following sectors -
+              backed by projects in the following sectors -
             </p>
           </div>
         </div>
@@ -72,8 +66,8 @@ export default function Resources() {
           height={500}
           className="object-cover w-full mt-6"
         />
-        <div className="sm:px-[20%] px-4 flex mt-6 flex-col w-full items-start">
-          <div className="mt-6">
+        <div className="flex mt-6 flex-col w-full items-start">
+          <div className="mt-6 sm:px-[20%] px-4">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               So like fiat is backed by the government and its military or was
               backed by gold at some point, how DAI is backed by Eth, Btc, Usdc
@@ -120,25 +114,32 @@ export default function Resources() {
             alt="economy"
             width={800}
             height={500}
-            className="object-cover w-full mt-6"
+            className="object-cover w-full mt-6 sm:px-[20%] px-4"
           />
           <div className="mt-6">
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+            <p className="text-[#475467] text-center sm:text-left font-normal sm:px-[20%] px-4 text-[16px] font-inter">
               As the community continues to price these positive externalities,
               projects creating these start getting access to capital and the
               success of the project is measured by more holistic parameters
             </p>
             <br />
-            <ol className="list-decimal">
-              {earthValues.map((value, index) => (
-                <li
+            <div className="list-decimal">
+              {/* {earthValues.map((value, index) => (
+                <div
                   key={index}
-                  className="text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter"
-                >
-                  {value}
-                </li>
-              ))}
-            </ol>
+                  className=""
+                  dangerouslySetInnerHTML={{ __html: value }}
+                />
+              ))} */}
+              <p className='sm:px-[20%] px-4 text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter'>1. $EARTH is new unit of VALUE. It is not pegged to any fiat currency nor to any crypto currency. Much like how Bitcoin and Eth are new units of value, $EARTH is a new unit of value which gets its value from on ground regenerative assets backing $EARTH, the positive externalities that are created by those projects and the demand of $EARTH as a medium of exchange</p>
+              <p className='sm:px-[20%] px-4 text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter'>2. $EARTH is a medium of exchange for merchants providing goods and services that take us to a regenerative solarpunk paradigm. We intend to use $EARTH to subsidize such merchants to - a) make them more competitive with businesses that are extractive and hence cheap in $ terms b) Get them economies of scale which should help provide these goods and services to a larger section of society</p>
+              <ImageView src={bottomSection} className="py-[48px]" alt='Description of image' width={1216} height={516} />
+              <p className='sm:px-[20%] px-4 text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter'>3. $EARTH is creating a monetary system that is powered by projects that are catering to our CORE needs of energy, food, transport, shelter and a hospitable environment. As $EARTH scales it elevates standard of living for all of humanity.</p>
+              <p className='sm:px-[20%] px-4 text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter'>4. $EARTH ensures infrastructure powering our future is not owned by nation states or corporations but all those that hold $EARTH</p>
+              <p className='sm:px-[20%] px-4 text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter'>5. $EARTH embodies Solarpunk values of radical optimism, compassion, regeneration, tech serving nature, harmony, peace etc. It will be utilized in whatever manner deemed fit to serve these values as occasions arise.</p>
+              <p className='sm:px-[20%] px-4 text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter'>6. $EARTH is a tool to process economic + ecological risk while disbursing capital</p>
+              <p className='sm:px-[20%] px-4 text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter'>7. $EARTH facilitates a shift from extractive to regenerative economies</p>
+            </div>
           </div>
         </div>
       </div>

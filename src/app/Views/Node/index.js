@@ -29,12 +29,14 @@ export default function Node() {
   return (
     <div className="mt-20 w-full">
       <Insight nodeList={nodeList} />
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className="max-w-screen-2xl mx-auto mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="flex sm:px-[20%] px-4 flex-col w-full gap-10">
-          <p className="text-[#101828] font-semibold text-center text-[24px] sm:text-[34px] font-syne">
+          <p className="text-[#101828] font-semibold text-center text-[24px] sm:text-[36px] font-syne">
             From purging petro dollars to forming partnerships to policy making,
             these nodes keep the $EARTH network running
           </p>
+        </div>
+        <div>
           {nodeList && nodeList.length ? (
             nodeList.map((node, index) => (
               <div className="flex gap-3 w-full" key={index}>
@@ -110,6 +112,6 @@ export default function Node() {
         </div>
         <Minting />
       </div>
-    </div>
+    </div >
   );
 }
