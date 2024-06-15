@@ -12,13 +12,13 @@ export default function Header() {
   const aboutMenu = [
     {
       title: "Thesis",
-      subtitle: "The latest industry news, updates and info.",
+      subtitle: "Fuel to our FIRE",
       icon: "/assets/icons/book.svg",
       link: "/thesis",
     },
     {
       title: "Purpose",
-      subtitle: "Learn how our customers are making big changes.",
+      subtitle: "Our reason for existence",
       icon: "/assets/icons/heart.svg",
       link: "/purpose",
     },
@@ -32,37 +32,49 @@ export default function Header() {
   const resourceMenu = [
     {
       title: "What is $EARTH?",
-      subtitle: "The latest industry news, updates and info.",
+      subtitle: "Digital currency fueling climate solutions.",
       icon: "/assets/icons/earth.svg",
       link: "/resources",
     },
     {
       title: "How $EARTH works?",
-      subtitle: "Learn how our customers are making big changes.",
+      subtitle: "Mechanics and flow of $EARTH",
       icon: "/assets/icons/thunder.svg",
       link: "/works",
     },
     {
       title: "How to get $EARTH?",
-      subtitle: "Get up and running on new features and techniques.",
+      subtitle: "Mint and Trade ",
       icon: "/assets/icons/cross.svg",
       link: "/earth",
     },
     {
+      title: "Tokenomics",
+      subtitle: "Mint and Trade ",
+      icon: "/assets/icons/cross.svg",
+      link: "/tokenomics",
+    },
+    {
       title: "$EARTH nodes",
-      subtitle: "All the boring stuff that you (hopefully won’t) need.",
+      subtitle: "",
       icon: "/assets/icons/node.svg",
       link: "/node",
     },
     {
+      title: "What are nodes of $EARTH?",
+      subtitle: "Roles and responsibilities",
+      icon: "/assets/icons/faq.svg",
+      link: "/network",
+    },
+    {
       title: "Become an $EARTH node",
-      subtitle: "Learn, fix a problem, and get answers to your questions.",
+      subtitle: "Steps to follow ",
       icon: "/assets/icons/life-buoy.svg",
       link: "/community",
     },
     {
       title: "FAQ",
-      subtitle: "Learn, fix a problem, and get answers to your questions.",
+      subtitle: "Answers to your $Earth curiosities.",
       icon: "/assets/icons/faq.svg",
       link: "/faq",
     },

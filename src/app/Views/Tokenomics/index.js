@@ -2,6 +2,7 @@ import ImageView from "../../Components/ImageView";
 import Card from "./Card";
 import Community from "../../Components/Community";
 const tokenomics = "/assets/images/tokenomics.png";
+const curious = "/assets/images/Curious.png";
 const intrinsicGraph = "/assets/images/intrinsic-Graph.png";
 const pieChart = "/assets/images/Pie chart.png";
 export default function Mechanics() {
@@ -66,70 +67,31 @@ export default function Mechanics() {
           height={400}
           className="w-full mt-4 object-cover"
         />
-        <p className="text-[#101828] font-semibold text-center text-[20px] sm:text-[28px] mr-10 font-syne">
-          $Earth has been created to -
-        </p>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-3 mt-6">
           {data.map((option, index) => (
             <Card key={index} option={option} />
           ))}
         </div>
-        <div className="sm:px-[23%] px-4 flex flex-col w-full items-start">
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-            Keeping this in mind, tokenomics for $Earth have been designed such
-            that -
+        <div className="sm:px-[13%] px-4 flex flex-col w-full items-start">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px]  font-syne">
+            Here we look at how tokenomics have been designed to achieve these
+            objectives
           </p>
           <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              · New $Earth is only minted in 
-              <span className="text-[#EC8000] font-semibold">exchange</span> of
-              $DAI at the protocol.
-              <br />
-              <br />· Price at which $Earth is minted is 
-              <span className="text-[#EC8000] font-semibold">flexible</span> to
-              adapt to market conditions, confidence in the protocol, and
-              perception of the treasury&apos;s value.
-              <br />
-              <br />· APY is a direct function of amount of $Earth minted + real
-              yield from project + actual demand. 
-              <span className="text-[#EC8000] font-semibold">
-                Not inflation.
-              </span>
-              <br />
-              <br />· Creating a 
-              <span className="text-[#EC8000] font-semibold">
-                range bound mechanism
-              </span>
-               that ensures $earth price experiences a soft floor and ceiling.
-            </p>
-            <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              Since this is one of the first digital currencies that is going to
-              be backed by a variety of real world climate solutions we intend
-              to proceed with 
-              <span className="text-[#101828] font-semibold">
-                calm, care and caution.
-              </span>
-               More than happy to sacrifice short term hype for long term
-              sustainability. Mechanics have been designed to ensure that the
-              currency value is strongly correlated to treasury backing to
-              ensure we don&apos;t ever get carried away by bull market
-              shenanigans only to have bear market hangovers later. How we
-              manage to do this will become clear with our mechanics and their
-              interactions.
+              In order to get an understanding of $EARTH currency design we will
+              first explain key concepts and then take you through an example of
+              how these concepts play out in action
             </p>
           </div>
-          <p className="text-[#101828] font-semibold text-left mt-6  text-[20px] sm:text-[28px] mr-10 font-syne">
-            $Earth token -
-          </p>
-          <div className="mt-6">
+          <div className="mt-6 w-full flex gap-10 items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] font-semibold text-left   text-[20px]  font-syne">
+              $Earth token -
+            </p>
+
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              Token which all solarpunks will be incentivized to mint directly
-              form the protocol. $Earth&apos;s purpose is to funnel capital into
-              climate solutions and serve as a unit of account representing the
-              value of these projects in its treasury. Its goal is to enable
-              price discovery of positive externalities while serving as a
-              medium of exchange for the solarpunk paradigm.
+              Token that can be minted/created only when petro $$$ are purged at
+              the protocol level by Earth Nodes.
             </p>
           </div>
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
@@ -303,6 +265,7 @@ export default function Mechanics() {
 
         <Community
           title="Still curious?"
+          img={curious}
           description="Join our social community to understand further!"
         />
       </div>

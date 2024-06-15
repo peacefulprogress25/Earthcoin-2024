@@ -35,83 +35,85 @@ export default function Node() {
             From purging petro dollars to forming partnerships to policy making,
             these nodes keep the $EARTH network running
           </p>
-        </div>
-        <div>
-          {nodeList && nodeList.length ? (
-            nodeList.map((node, index) => (
-              <div className="flex gap-3 w-full" key={index}>
-                <div className="p-6 h-fit flex flex-col max-w-[40rem] w-full items-center sm:items-start sm:flex-row border border-[#EAECF0] rounded-xl gap-5">
-                  <ImageView
-                    src={node?.image}
-                    alt="node"
-                    width={90}
-                    height={90}
-                    className="h-[9rem] w-[9rem] object-cover"
-                  />
-                  <div className="flex flex-col items-center sm:items-start gap-2">
-                    <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
-                      {node?.country}
-                    </p>
-                    <p className="text-[#101828] font-inter font-semibold text-[16px]">
-                      {node?.name}
-                    </p>
-                    <p className="text-[#475467] w-full sm:w-[65%] text-center sm:text-left font-inter font-normal text-[14px]">
-                      {node?.description}
-                    </p>
-                    <div className="flex mt-1  gap-3">
-                      {/* {socialIcons.map((icons, index) => ( */}
-                      <Link href={node?.twitter} className="cursor-pointer">
-                        <ImageView
-                          alt="twitter"
-                          src={twitter}
-                          width={18}
-                          height={18}
-                        />
-                      </Link>
-                      <Link href={node?.linkedin} className="cursor-pointer">
-                        <ImageView
-                          alt="linkedin"
-                          src={linkedin}
-                          width={18}
-                          height={18}
-                        />
-                      </Link>
-                      <Link
-                        href={node?.companyWebsite}
-                        className="cursor-pointer"
-                      >
-                        <ImageView
-                          alt="website"
-                          src={website}
-                          width={18}
-                          height={18}
-                        />
-                      </Link>
-                      {/* ))} */}
+          <div className="flex w-full items-center justify-center flex-col gap-6">
+            {nodeList && nodeList.length ? (
+              nodeList.map((node, index) => (
+                <div className="flex gap-3 justify-center w-full" key={index}>
+                  <div className="p-6 h-fit flex flex-col max-w-[40rem] w-full items-center sm:items-start sm:flex-row border border-[#EAECF0] rounded-xl gap-5">
+                    <ImageView
+                      src={node?.image}
+                      alt="node"
+                      width={90}
+                      height={90}
+                      className="h-[9rem] w-[9rem] object-cover"
+                    />
+                    <div className="flex flex-col items-center sm:items-start gap-2">
+                      <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
+                        {node?.country}
+                      </p>
+                      <p className="text-[#101828] font-inter font-semibold text-[16px]">
+                        {node?.name}
+                      </p>
+                      <p className="text-[#475467] w-full sm:w-[65%] text-center sm:text-left font-inter font-normal text-[14px]">
+                        {node?.description}
+                      </p>
+                      <div className="flex mt-1  gap-3">
+                        {/* {socialIcons.map((icons, index) => ( */}
+                        <Link href={node?.twitter} className="cursor-pointer">
+                          <ImageView
+                            alt="twitter"
+                            src={twitter}
+                            width={18}
+                            height={18}
+                          />
+                        </Link>
+                        <Link href={node?.linkedin} className="cursor-pointer">
+                          <ImageView
+                            alt="linkedin"
+                            src={linkedin}
+                            width={18}
+                            height={18}
+                          />
+                        </Link>
+                        <Link
+                          href={node?.companyWebsite}
+                          className="cursor-pointer"
+                        >
+                          <ImageView
+                            alt="website"
+                            src={website}
+                            width={18}
+                            height={18}
+                          />
+                        </Link>
+                        {/* ))} */}
+                      </div>
                     </div>
                   </div>
+                  <div className="p-6 px-8 flex flex-col max-w-[10rem] w-full items-center justify-between border border-[#EAECF0] rounded-xl gap-3">
+                    <p className="text-[#EC8000] font-inter text-center font-semibold text-[12px]">
+                      Wallet Balance
+                    </p>
+                    <p className="text-[#101828] font-inter font-semibold text-[30px] sm:text-[40px]">
+                      {node?.balance}
+                    </p>
+                    <p className="text-[#475467] font-inter font-normal text-[14px]">
+                      $EARTH
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6 px-8 flex flex-col max-w-[10rem] w-full items-center justify-between border border-[#EAECF0] rounded-xl gap-3">
-                  <p className="text-[#EC8000] font-inter text-center font-semibold text-[12px]">
-                    Wallet Balance
-                  </p>
-                  <p className="text-[#101828] font-inter font-semibold text-[30px] sm:text-[40px]">
-                    {node?.balance}
-                  </p>
-                  <p className="text-[#475467] font-inter font-normal text-[14px]">
-                    $EARTH
-                  </p>
-                </div>
+              ))
+            ) : (
+              <div className="h-[60vh] w-full flex items-center justify-center">
+                <Loader />
               </div>
-            ))
-          ) : (
-            <div className="h-[60vh] w-full flex items-center justify-center">
-              <Loader />
-            </div>
-          )}
+            )}
+          </div>
         </div>
-        <Minting />
+        <div className="flex sm:px-[6%]">
+          <Minting />
+        </div>
       </div>
-    </div >
+    </div>
   );
 }

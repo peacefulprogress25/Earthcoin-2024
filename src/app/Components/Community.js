@@ -1,25 +1,45 @@
 import ImageView from "./ImageView";
-function Community({ title, description }) {
+function Community({ title, description, img }) {
   const socialIcons = [
     {
-      icon: "/assets/icons/twitter.svg",
+      icon: img
+        ? "/assets/icons/twitter-white.svg"
+        : "/assets/icons/twitter.svg",
     },
     {
-      icon: "/assets/icons/linkedin.svg",
+      icon: img
+        ? "/assets/icons/linkedin-white.svg"
+        : "/assets/icons/linkedin.svg",
     },
     {
-      icon: "/assets/icons/facebook.svg",
+      icon: img
+        ? "/assets/icons/facebook-white.svg"
+        : "/assets/icons/facebook.svg",
     },
     {
-      icon: "/assets/icons/github.svg",
+      icon: img ? "/assets/icons/github-white.svg" : "/assets/icons/github.svg",
     },
   ];
   return (
-    <div className="flex flex-col w-full  mb-16 p-8 items-center rounded-md justify-center bg-[#F9FAFB]">
-      <p className="text-[#101828] font-syne text-center font-semibold text-[20px] sm:text-[26px]">
+    <div
+      className={`flex flex-col w-full  mb-16 p-8 items-center  justify-center ${
+        img
+          ? "bg-[url('/assets/images/Curious.png')] bg-cover bg-no-repeat rounded-b-2xl"
+          : "bg-[#F9FAFB] rounded-md"
+      } `}
+    >
+      <p
+        className={` ${
+          img ? "text-white" : "text-[#101828]"
+        } font-syne text-center font-semibold text-[20px] sm:text-[26px]`}
+      >
         {title}
       </p>
-      <p className="text-[#475467] font-inter mt-2 text-center font-normal text-[16px]">
+      <p
+        className={` ${
+          img ? "text-white" : "text-[#475467]"
+        } font-inter mt-2 text-center font-normal text-[16px]`}
+      >
         {description}
       </p>
       <div className="flex mt-6 gap-1">

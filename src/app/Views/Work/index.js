@@ -4,6 +4,8 @@ import Community from "../../Components/Community";
 const earth = "/assets/images/earth.png";
 const plan = "/assets/images/plan.png";
 const harvest = "/assets/images/Harvest.png";
+const vdLink = "https://solarpunkdao.earth/assets/tokenomics-video.mp4";
+import Video from "../../Components/Video";
 
 export default function Work() {
   const [editorLoaded, setEditorLoaded] = useState(false);
@@ -73,12 +75,21 @@ export default function Work() {
             The economic models behind $Earth driving our solarpunk vision home
           </p>
         </div>
-        <ImageView
+        {/* <ImageView
           src={earth}
           alt="earth"
           width={400}
           height={200}
           className="w-full mt-4 object-cover"
+        /> */}
+        <Video
+          src={vdLink}
+          controls={false}
+          // loop={false}
+          // autoPlay
+          // playsInline
+          // onEnded={() => handleVideoEnd()}
+          muted={true}
         />
         <div className="sm:px-[32px] px-4 flex flex-col w-full items-start">
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
@@ -122,13 +133,20 @@ export default function Work() {
           </div>
         </div>
         <div>
-          <p className="font-inter font-normal text-[18px] text-primary px-[80px]">The premium paid to $EARTH wrt to the value of assets backing each $EARTH (Intrinsic Value) allows the protocol to harvest $EARTH till the point it doesnt decrease the intrinsic value of assets backing each $EARTH. This Harvested $EARTH is then used for various activities like -</p>
+          <p className="font-inter font-normal text-[18px] text-primary px-[80px]">
+            The premium paid to $EARTH wrt to the value of assets backing each
+            $EARTH (Intrinsic Value) allows the protocol to harvest $EARTH till
+            the point it doesnt decrease the intrinsic value of assets backing
+            each $EARTH. This Harvested $EARTH is then used for various
+            activities like -
+          </p>
         </div>
+        <Community
+          img={true}
+          title="Still curious?"
+          description="Join our social community to understand further!"
+        />
       </div>
-      <Community
-        title="Still curious?"
-        description="Join our social community to understand further!"
-      />
     </>
   );
 }

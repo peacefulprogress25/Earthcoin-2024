@@ -96,7 +96,7 @@ export default function Projectdetails() {
               alt="coverpic"
               width={400}
               height={400}
-              className="w-full object-cover h-[25vh]"
+              className="w-full object-cover h-[18rem]"
             />
             <ProjectImpact details={details} />
             <div
@@ -171,7 +171,6 @@ export default function Projectdetails() {
             <ContractDetails details={details} />
             <FAQ details={details} />
             <GetInTouch />
-            <SeekingFund />
           </div>
         </>
       ) : (

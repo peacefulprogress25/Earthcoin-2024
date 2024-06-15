@@ -3,6 +3,7 @@ import Community from "../../Components/Community";
 
 const purpose = "/assets/images/purpose.png";
 const jungle = "/assets/images/jungle.png";
+const slogan = "/assets/images/slogan.png";
 const space = "/assets/images/space.png";
 const mountain = "/assets/images/mountain.png";
 const tree = "/assets/images/tree.png";
@@ -19,8 +20,7 @@ export default function Purpose() {
             PURPOSE
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
-            $Earth leverages crypto to fund climate solutions, backing a
-            currency with essential utility for humanity.
+            Why $EARTH
           </p>
         </div>
         <ImageView
@@ -30,7 +30,7 @@ export default function Purpose() {
           height={200}
           className="w-full mt-4 object-cover"
         />
-        <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
+        <div className="sm:px-[15%] px-4 flex flex-col w-full items-start">
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             Context before currency,
             <span className="text-[#EC8000]">Planet before profits</span>
@@ -51,29 +51,33 @@ export default function Purpose() {
               limitations and succeeded in hosting over 7 billion of us on
               earth. The sapiens design coupled with earth&apos;s resources and
               its presence in the goldilocks zone has created a realm of endless
-              possibilities where we are only limited by our imagination and
-              boundaries of science.
+              possibilities where we are only 
+              <span className="text-[#EC8000] font-semibold">
+                limited by our imagination and boundaries of science.
+              </span>
             </p>
           </div>
-          <div className="mt-12 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="mt-12 w-full justify-center flex flex-col sm:flex-row gap-2">
             <ImageView
               src={jungle}
               alt="jungle"
-              width={370}
+              width={270}
               height={200}
               className="object-cover"
             />
             <ImageView
               src={space}
               alt="space"
-              width={370}
+              width={270}
               height={200}
               className="object-cover"
             />
           </div>
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-            The recently experienced exponential advances although are
-            not decoupled from its tradeoffs -
+            The recently experienced exponential advances although are not 
+            <span className="text-[#EC8000] font-semibold">decoupled </span>from
+            its <span className="text-[#EC8000] font-semibold">tradeoffs</span>
+             -
           </p>
           <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
@@ -90,75 +94,58 @@ export default function Purpose() {
               till date that has wiped out between 75-90 percent of species
               every time. 4 of those have been climate change induced.
             </p>
-
+            <div className="mt-12 w-full justify-center flex">
+              <ImageView
+                src={slogan}
+                alt="slogan"
+                width={470}
+                height={200}
+                className="object-cover"
+              />
+            </div>
             <br />
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               The dissonance amongst humanity in recognizing the inter
-              connectedness of life and that we are all simply matter processing
-              information differently (whether we got the better bargain in this
-              only time can tell). What began with our departure from the
-              hunter/gatherer lifestyle has meandered its way to the pervasion
-              of neoliberal thought that is assumed for &apos;reality&apos; in
-              today&apos;s time. The quote that says it is easier to imagine the
-              end of world than capitalism has never been more true. It is
-              essential we understand that our current superiority is small
-              parts our effort and in large parts serendipity. Our perpetual
-              superiority will be large parts effort and small parts luck. Hence
-              tread carefully we must as we are yet to find sign of intelligent
-              life absolutely anywhere across the enormously chaotic universe we
-              exist in. Even if we do Life as we know it is a planetary
-              phenomenon, we will never feel completely at home anywhere else in
-              the universe.
+              connectedness of life and that 
+              <span className="text-[#000000] font-semibold">
+                we are all simply matter processing information differently
+              </span>
+               (whether we got the better bargain in this only time can tell).
+              What began with our departure from the hunter/gatherer lifestyle
+              has meandered its way to the pervasion of neoliberal thought that
+              is assumed for &apos;reality&apos; in today&apos;s time. The quote
+              that says it is easier to imagine the end of world than capitalism
+              has never been more true. It is essential we understand that 
+              <span className="text-[#000000] font-semibold">
+                our current superiority is small parts our effort and in large
+                parts serendipity.
+              </span>
+               
+              <span className="text-[#EC8000] font-semibold">
+                Our perpetual superiority will be large parts effort and small
+                parts luck.
+              </span>
+               Hence tread carefully we must as we are yet to find sign of
+              intelligent life absolutely anywhere across the enormously chaotic
+              universe we exist in. Even if we do Life as we know it is a
+              planetary phenomenon, we will never feel completely at home
+              anywhere else in the universe.
             </p>
           </div>
+          <ImageView
+            src={mountain}
+            alt="mountain"
+            width={200}
+            height={200}
+            className="w-full h-[12rem] mt-10 object-cover"
+          />
         </div>
-        <ImageView
-          src={mountain}
-          alt="mountain"
-          width={400}
-          height={200}
-          className="w-full mt-4 object-cover"
-        />
-        <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
+
+        <div className="sm:px-[15%] px-4 flex flex-col w-full items-start">
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-            The recently experienced exponential advances although are
-            not decoupled from its tradeoffs -
+            The aforementioned tradeoffs or shifts in perception have now come
+            seeking reparations. The Anthropocene era characterized by -
           </p>
-          <div className="mt-6">
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              We have sacrificed our connection to the natural world, perceiving
-              it as something that can be domesticated by human will (fairly
-              succeeded at that too).
-              <br />
-              <br />· Accepted incessant planning for the future as a given
-              since the advent of the agricultural revolution.
-              <br />
-              <br />· Assumed invincibility of our species which has been in
-              existence for over a couple million years on this earth. The same
-              earth which has had 5 mass extinctions from 450 million yrs back
-              till date that has wiped out between 75-90 percent of species
-              every time. 4 of those have been climate change induced.
-            </p>
-            <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              The dissonance amongst humanity in recognizing the inter
-              connectedness of life and that we are all simply matter processing
-              information differently (whether we got the better bargain in this
-              only time can tell). What began with our departure from the
-              hunter/gatherer lifestyle has meandered its way to the pervasion
-              of neoliberal thought that is assumed for &apos;reality&apos; in
-              today&apos;s time. The quote that says it is easier to imagine the
-              end of world than capitalism has never been more true. It is
-              essential we understand that our current superiority is small
-              parts our effort and in large parts serendipity. Our perpetual
-              superiority will be large parts effort and small parts luck. Hence
-              tread carefully we must as we are yet to find sign of intelligent
-              life absolutely anywhere across the enormously chaotic universe we
-              exist in. Even if we do Life as we know it is a planetary
-              phenomenon, we will never feel completely at home anywhere else in
-              the universe.
-            </p>
-          </div>
 
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             The aforementioned tradeoffs or shifts in perception have now come
@@ -181,24 +168,28 @@ export default function Purpose() {
               growth.
             </p>
           </div>
-          <div className="mt-6 w-full">
+          <div className="mt-6 flex justify-center w-full">
             <ImageView
               src={tree}
               alt="tree"
-              width={500}
+              width={600}
               height={240}
-              className="!w-full object-cover"
+              className="object-cover"
             />
           </div>
           <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               The massive rise in our standards of living at nature&apos;s
               expense has now come claiming the debt in the face of climate
-              change. A debt for which we are unable to come up the necessary
-              accounting standards to restructure it as we have done so for our
-              economies. A debt that is topped with air pollution, land
-              degradation, plastification of oceans, biodiversity loss, mounting
-              landfills and freshwater depletion.
+              change. 
+              <span className="text-black font-semibold">
+                A debt for which we are unable to come up the necessary
+                accounting standards to restructure it as we have done so for
+                our economies.
+              </span>
+               A debt that is topped with air pollution, land degradation,
+              plastification of oceans, biodiversity loss, mounting landfills
+              and freshwater depletion.
               <br />
               <br />
               The onslaught of major environmental issues is a reflection of the
@@ -214,19 +205,18 @@ export default function Purpose() {
               unbreathable air. These elements of chaos are fully capable of
               making the COVID pandemic feel like a ripple in a tsunami. Waves
               of which we have already begun witnessing and these consequences
-              are still simply what is within our scope of
-              comprehension, unforeseen feedback loops are the icing on the
-              proverbial multi layered climate change cake.
+              are still simply what is within our scope of comprehension, 
+              <span className="text-black font-semibold">
+                unforeseen feedback loops are the icing on the proverbial multi
+                layered climate change cake.
+              </span>
             </p>
           </div>
-          <div className="mt-8 border-l-2 flex flex-col items-start border-[#EC8000] pl-3">
+          <div className="mt-8 border-l-2 flex flex-col items-start border-[#EC8000] pl-5">
             <p className="text-[26px]  text-left font-medium text-[#101828] font-syne">
-              “In a world older and more complete than ours they move finished
-              and complete, gifted with extensions of the senses we have lost or
-              never attained, living by voices we shall never hear.”
-            </p>
-            <p className="text-[14px] mt-5 text-left font-normal text-[#475467] font-inter">
-              — Olivia Rhye, Product Designer
+              The onslaught of major environmental issues is a reflection of the
+              deep systemic fault lines that exist within our ideology of
+              sustaining life currently
             </p>
           </div>
           <div className="my-6">
@@ -252,14 +242,18 @@ export default function Purpose() {
               contributions towards the creation of this climate disaster we
               need to address the climate disaster also collectively (some more
               than others). Surely in retrospect we don&apos;t want to realize
-              that all the while we were focused on aiming for the sky that we
-              were actually digging our graves. Earth has provided more than our
-              wildest dreams could ask for it continues to do so but progress of
-              humanity on earth with deeper strides in technological innovation,
-              higher standards of living and becoming a multi planetary species
-              is truly only possible only when the environment is conducive
-              towards it. Not when every action undertaken to date by 21st
-              century humans is in direct detriment of the planet we inhabit.
+              that all the while we were 
+              <span className="text-black font-semibold">
+                focused on aiming for the sky that we were actually digging our
+                graves.
+              </span>
+               Earth has provided more than our wildest dreams could ask for it
+              continues to do so but progress of humanity on earth with deeper
+              strides in technological innovation, higher standards of living
+              and becoming a multi planetary species is truly only possible only
+              when the environment is conducive towards it. Not when every
+              action undertaken to date by 21st century humans is in direct
+              detriment of the planet we inhabit.
               <br />
               <br />
               Although we see governments and corporates try to take
@@ -272,17 +266,27 @@ export default function Purpose() {
               <br />
               <br />
               It is in the spirit of addressing the concerns holistically that
-              SolarpunkDao has conceptualized $Earth. Recognizing that the
-              problems have come from the separation of environment and economy
-              and that for Sapiens to thrive a synergistic relationship between
-              ecology and economy is essential. Given the systemic nature of the
-              climate change problem, addressing them also addresses several
-              other problems in our society
+              SolarpunkDao has conceptualized 
+              <span className="text-[#EC8000] font-semibold">$Earth.</span>
+               Recognizing that the problems have come from the separation of
+              environment and economy and that for Sapiens to thrive a 
+              <span className="text-[#EC8000] font-semibold">
+                synergistic relationship between ecology and economy is
+                essential.
+              </span>
+               Given the systemic nature of the climate change problem,
+              addressing them also addresses several other problems in our
+              society
               <br />
               <br />
-              While the economy is futile without ecology, ecology is absolutely
-              fine without the economy. Creating resonance between the two is
-              the only way forward.
+              <span className="text-[#EC8000] font-semibold">
+                While the economy is futile without ecology, ecology is
+                absolutely fine without the economy.
+              </span>
+               
+              <span className="text-black font-semibold">
+                Creating resonance between the two is the only way forward.
+              </span>
             </p>
           </div>
         </div>

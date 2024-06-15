@@ -120,7 +120,7 @@ export default function Footer() {
   ];
   return (
     <div className="h-fit flex flex-col justify-end w-full">
-      <div className="flex-col flex sm:flex-row my-6 items-center sm:items-start w-full max-w-screen-2xl mx-auto  gap-10 px-[6%] justify-between">
+      <div className="flex-col flex sm:flex-row my-10 mt-16 items-center sm:items-start w-full max-w-screen-2xl mx-auto  gap-10 px-[6%] justify-between">
         <div className="flex items-center w-full  sm:items-start sm:w-[50%] flex-col justify-between">
           <div className="flex flex-col items-center sm:items-start">
             <ImageView

@@ -58,7 +58,7 @@ export default function Faq() {
 }
 
 function FAQSection({ Question, Answer, i }) {
-  const [index, setIndex] = useState([]);
+  const [index, setIndex] = useState(0);
 
   const handleClick = (i) => {
     if (index === i) {

@@ -59,8 +59,8 @@ export default function Thesis() {
             THESIS
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
-            $Earth leverages crypto to fund climate solutions, backing a
-            currency with essential utility for humanity.
+            Every crisis comes with an opportunity, here we breakdown the thesis
+            driving $EARTH
           </p>
         </div>
         <ImageView
@@ -70,7 +70,7 @@ export default function Thesis() {
           height={200}
           className="w-full mt-4 object-cover"
         />
-        <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
+        <div className="sm:px-[8%] px-4 flex flex-col w-full items-start">
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             FUEL to our FIRE
           </p>
@@ -85,8 +85,8 @@ export default function Thesis() {
               <span className="text-[#101828] font-semibold">
                 50 GT of CO2 eqv has to become ZERO in the next 30 years
               </span>
-              and the only way that happens is all the infrastructure
-              supporting humanities core needs becomes
+              and the only way that happens is all the infrastructure supporting
+              humanities core needs becomes
               <span className="text-[#EC8000] font-semibold">
                 solarpunk in nature.
               </span>
@@ -102,10 +102,10 @@ export default function Thesis() {
         className="w-full object-cover"
       />
       <div className="w-full max-w-screen-2xl sm:mt-[-4rem] mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
-        <div className="sm:px-[20%] px-4 flex flex-col w-full items-start">
+        <div className="sm:px-[8%] px-4 flex flex-col w-full items-start">
           <p className="text-[#101828] font-semibold text-left  text-[20px] sm:text-[28px] mr-10 font-syne">
             This transition is no longer a IF but a
-            <span className="text-[#EC8000]">WHEN.</span>
+            <span className="text-[#EC8000]"> WHEN.</span>
           </p>
           <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
@@ -137,9 +137,11 @@ export default function Thesis() {
               </span>
             </p>
           </div>
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-            Sectors we are focusing on -
-          </p>
+          <div className="w-full flex justify-center">
+            <p className="text-[#101828] font-semibold text-center mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
+              Sectors we are focusing on -
+            </p>
+          </div>
         </div>
         <div className="px-[6%]">
           <div className="px-[6%]">
@@ -154,15 +156,16 @@ export default function Thesis() {
           <div className="rounded-md bg-[#F9FAFB] flex justify-between border border-[#F2F4F7] p-1">
             {earthPowerData.map((power, index) => (
               <button
-                className={` rounded-md p-1 px-2 text-[#667085]  text-[9px] sm:text-[13px] font-inter font-semibold ${index === 0 ? "bg-[#FFFFFF] shadow-md text-[#344054]" : ""
-                  }`}
+                className={` rounded-md p-1 px-2 text-[#667085]  text-[9px] sm:text-[13px] font-inter font-semibold ${
+                  index === 0 ? "bg-[#FFFFFF] shadow-md text-[#344054]" : ""
+                }`}
                 key={index}
               >
                 {power.title}
               </button>
             ))}
           </div>
-          <div className="bg-[#F9FAFB] border mt-2 border-[#F2F4F7] rounded-lg px-[10%] py-6">
+          <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
             <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
               Regenerative Agricuture
             </p>
@@ -195,16 +198,18 @@ export default function Thesis() {
                 required to make it happen.
               </p>
             </div>
-            <ImageView
-              src={agriculture}
-              alt="agriculture"
-              width={400}
-              height={600}
-              className="w-full mt-10 mb-5 object-cover"
-            />
+            <div className="w-full flex justify-center px-[8%]">
+              <ImageView
+                src={agriculture}
+                alt="agriculture"
+                width={500}
+                height={500}
+                className="mt-10 mb-5 object-cover"
+              />
+            </div>
           </div>
         </div>
-        <div className="sm:px-[20%] px-4 flex flex-col">
+        <div className="sm:px-[8%] px-4 flex flex-col">
           {/* <div className="flex flex-col gap-16 mt-3 w-full  items-center justify-between sm:flex-row">
             <ImageView
               src={pieChart}
@@ -257,9 +262,7 @@ export default function Thesis() {
             <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
                 They cater to humanities
-                <span className="text-[#EC8000] font-semibold">
-                  core needs
-                </span>
+                <span className="text-[#EC8000] font-semibold">core needs</span>
                 - energy, food, transport, materials and ecosystems to sustain
                 LIFE
               </p>

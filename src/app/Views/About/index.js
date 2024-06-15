@@ -4,15 +4,19 @@ import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
 import Link from "next/link";
 import { Loader } from "../../Components/Loader";
+import { LuArrowUpRight } from "react-icons/lu";
 
 const media = "/assets/images/media.png";
 const people = "/assets/images/people.png";
 const clock = "/assets/icons/clock.svg";
+const location = "/assets/icons/location.svg";
 const dollar = "/assets/icons/dollar-sign.svg";
 
 export default function About() {
   const [teams, setTeams] = useState([]);
   const [jobs, setJobs] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("View all");
+
   useEffect(() => {
     const getPageByID = async () => {
       const page = await nexaflowApi.getPageByID({
@@ -26,7 +30,24 @@ export default function About() {
 
     getPageByID();
   }, []);
-
+  const category = [
+    {
+      section: "View all",
+    },
+    {
+      section: "Design",
+    },
+    {
+      section: "Software Engineering",
+    },
+    {
+      section: "Marketing",
+    },
+  ];
+  const filteredPosts =
+    selectedCategory === "View all"
+      ? jobs
+      : jobs.filter((post) => jobs.category === selectedCategory);
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[8%] flex gap-10 flex-col items-center">
@@ -61,12 +82,13 @@ export default function About() {
             Open positions
           </p>
           <p className="text-[#101828] font-semibold text-center text-[25px] sm:text-[36px] font-syne">
-            We’re looking for talented people
+            Always looking for aligned, enthusiastic individuals
           </p>
           <p className="text-[#475467] text-center font-normal w-[80%] sm:w-[55%] text-[16px] font-inter">
-            Untitled is growing fast, and we are always looking for passionate,
-            dynamic, and talented individuals to join our distributed team all
-            around the world.
+            We have a bold mission and a very grand vision. If you feel you can
+            add value anywhere just get in touch with us anywhere in the
+            metaverse <br /> <br />
+            Besides that we have some positions we are hiring for right now
           </p>
         </div>
         <ImageView
@@ -76,28 +98,61 @@ export default function About() {
           height={400}
           className="w-full mt-4 object-cover h-[45vh]"
         />
+        <div className="w-full  cursor-pointer gap-4 sm:gap-12  flex px-2 items-center justify-center h-16">
+          {category.map((option, index) => (
+            <p
+              key={index}
+              onClick={() => setSelectedCategory(option?.section)}
+              className={`font-inter text-[14px] sm:text-[14px] px-1 sm:px-4 font-semibold text-[#475467] ${
+                selectedCategory === option.section
+                  ? " bg-[#FFFCF8] px-4 py-2 rounded-md text-[#EC8000]"
+                  : ""
+              }`}
+            >
+              {option.section}
+            </p>
+          ))}
+        </div>
+
         <div className="flex w-full items-center flex-col gap-6 ">
           {jobs && jobs.length ? (
             jobs?.map((position, index) => (
               <div className="flex flex-col items-start gap-6" key={index}>
-                <p className="text-[#101828] font-semibold text-left text-[18px] font-inter">
+                {/* <p className="text-[#101828] font-semibold text-left text-[18px] font-inter">
                   {position?.title}
-                </p>
+                </p> */}
                 <div className="flex w-full flex-col gap-8">
                   {position?.position?.map((option, index) => (
                     <Link
-                      className="flex flex-col !w-[20rem] sm:!w-[50rem] rounded-lg border border-[#EAECF0] items-start p-6"
+                      className="flex flex-col !w-[20rem] sm:!w-[50rem] rounded-lg border-2 border-[#EAECF0] items-start p-6"
                       key={index}
                       href={option?.link}
                       target="_blank"
                     >
-                      <p className="text-[#101828] font-semibold text-left text-[16px] font-inter">
+                      <div className="flex w-full justify-between">
+                        <p className="text-[#EC8000] font-semibold text-left text-[14px] font-inter">
+                          {position?.title}
+                        </p>
+                        <button className="flex cursor-pointer gap-2 text-[#EC8000] font-semibold text-left text-[14px] font-inter">
+                          View job <LuArrowUpRight size={18} color="#EC8000" />
+                        </button>
+                      </div>
+                      <p className="text-[#101828] mt-2 font-semibold text-left text-[16px] font-inter">
                         {option?.title}
                       </p>
-                      <p className="text-[#475467] mt-1 font-normal text-left text-[14px] font-inter">
-                        {option?.description}
-                      </p>
-                      <div className="flex mt-6 gap-3">
+                      <div className="flex mt-2 gap-3">
+                        <div className="flex items-center gap-1">
+                          <ImageView
+                            src={location}
+                            alt="location"
+                            width={40}
+                            height={40}
+                            className="w-4 object-cover h-4"
+                          />
+                          <p className="text-[#475467] font-medium text-left text-[14px] font-inter">
+                            Remote
+                          </p>
+                        </div>
                         <div className="flex items-center gap-1">
                           <ImageView
                             src={clock}
@@ -106,20 +161,8 @@ export default function About() {
                             height={40}
                             className="w-4 object-cover h-4"
                           />
-                          <p className="text-[#475467] font-normal text-left text-[14px] font-inter">
+                          <p className="text-[#475467] font-medium text-left text-[14px] font-inter">
                             {option?.type}
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <ImageView
-                            src={dollar}
-                            alt="dollar"
-                            width={40}
-                            height={40}
-                            className="w-4 object-cover h-4"
-                          />
-                          <p className="text-[#475467] font-normal text-left text-[14px] font-inter">
-                            {option?.salary}
                           </p>
                         </div>
                       </div>
@@ -135,7 +178,7 @@ export default function About() {
           )}
         </div>
       </div>
-      <div className="w-full flex flex-col mt-10 items-center justify-center py-20 px-4 bg-[#F9FAFB]">
+      <div className="w-full flex flex-col mt-20 items-center justify-center py-20 px-4 bg-[#F9FAFB]">
         <p className="text-[#101828] font-semibold text-center text-[32px] font-syne">
           Get notified when new roles open up
         </p>

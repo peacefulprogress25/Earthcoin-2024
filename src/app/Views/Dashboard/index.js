@@ -43,83 +43,98 @@ export default function Dashboard() {
   ];
   const cardData = [
     {
-      title: "Mint Price",
-      price: "10.00",
+      title: "Treasury",
+      price: "11,420",
       daiBalance: "true",
       increase: true,
-      percent: "3%",
+      percent: "40%",
       img: "/assets/icons/green-chart.svg",
     },
     {
-      title: "Mint Price",
-      price: "10.00",
+      title: "Token Holders",
+      price: "1,210",
       percent: "10%",
     },
     {
-      title: "Mint Price",
+      title: "$EARTH Mint Nodes",
       price: "316",
       increase: true,
-      percent: "10%",
+      percent: "20%",
     },
     {
-      title: "Mint Price",
+      title: "Percentage of $EARTH Staked",
       price: "27%",
     },
     {
-      title: "Mint Price",
-      price: "27%",
+      title: "Staking APY",
+      price: "25%",
     },
     {
-      title: "Mint Price",
-      price: "27%",
+      title: "Projects Funded",
+      price: "5",
     },
   ];
 
   const transactionList = [
     {
-      hash: "0xca22d59e5a4a9f8b1...",
-      method: "Claim Tokens",
+      hash: "DAI",
+      method: "ERC-20",
       block: "53738389",
-      age: "2 hrs 41 mins ago",
-      from: "0x0DBAd7...2a4dfE84",
-      to: "0xB0531A...725FB315",
-      quantity: "3.69",
+      quantity: "9629",
+      price: "$1.00",
+      change: "$1.00",
+      value: "$9620.00",
+      icon: "/assets/icons/Dai.svg",
+    },
+    {
+      hash: "Kekén Solar Project, 69kWp",
+      method: "ERC-721",
+      block: "0x1f09B16a...2aF61F0A4",
+      quantity: "9629",
+      price: "$1.00",
+      change: "$1.00",
+      value: "$9620.00",
+      icon: "/assets/icons/earth-black.svg",
+    },
+    {
+      hash: "Ethic Hub",
+      method: "ERC-721",
+      block: "0xdad9532C...17484634f",
+      quantity: "9629",
+      price: "$1.00",
+      change: "$1.00",
+      value: "$9620.00",
+      icon: "/assets/icons/earth-black.svg",
+    },
+    {
+      hash: "Traditional Dream Factory",
+      method: "ERC-721",
+      block: "0x44213c28...fA1456Aed",
+      quantity: "9629",
+      price: "$1.00",
+      change: "$1.00",
+      value: "$9620.00",
+      icon: "/assets/icons/earth-black.svg",
+    },
+    {
+      hash: "Kokonut Network",
+      method: "ERC-721",
+      block: "0x409700f8...d5FADDD5e",
+      quantity: "9629",
+      price: "$1.00",
+      change: "$1.00",
+      value: "$9620.00",
+      icon: "/assets/icons/earth-black.svg",
     },
     {
       hash: "0xca22d59e5a4a9f8b1...",
-      method: "Claim Tokens",
-      block: "53738389",
-      age: "2 hrs 41 mins ago",
-      from: "0x0DBAd7...2a4dfE84",
-      to: "0xB0531A...725FB315",
-      quantity: "3.69",
-    },
-    {
-      hash: "0xca22d59e5a4a9f8b1...",
-      method: "Claim Tokens",
-      block: "53738389",
-      age: "2 hrs 41 mins ago",
-      from: "0x0DBAd7...2a4dfE84",
-      to: "0xB0531A...725FB315",
-      quantity: "3.69",
-    },
-    {
-      hash: "0xca22d59e5a4a9f8b1...",
-      method: "Claim Tokens",
-      block: "53738389",
-      age: "2 hrs 41 mins ago",
-      from: "0x0DBAd7...2a4dfE84",
-      to: "0xB0531A...725FB315",
-      quantity: "3.69",
-    },
-    {
-      hash: "0xca22d59e5a4a9f8b1...",
-      method: "Claim Tokens",
-      block: "53738389",
-      age: "2 hrs 41 mins ago",
-      from: "0x0DBAd7...2a4dfE84",
-      to: "0xB0531A...725FB315",
-      quantity: "3.69",
+      method: "ERC-721",
+      block: "0x78C6D9b5...0e7e95723",
+      quantity: "9629",
+      price: "$1.00",
+      change: "$1.00",
+      value: "$9620.00",
+      icon: "/assets/icons/earth-black.svg",
     },
   ];
   return (
@@ -146,7 +161,7 @@ export default function Dashboard() {
             </p>
           </div>
           <div className="flex  items-center gap-2">
-            <button className="w-[80px] sm:w-[120px] gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm">
+            <button className="w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm">
               <ImageView
                 src={wallet}
                 alt="wallet"
@@ -154,7 +169,7 @@ export default function Dashboard() {
                 height={20}
                 className="w-4 h-4 object-contain"
               />
-              Learn More
+              Import $EARTH
             </button>
             <button className="w-[80px]  gap-1 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm">
               <FaPlus size={17} color="#fff" />
@@ -281,10 +296,10 @@ export default function Dashboard() {
               <p className="text-[#475467] text-[14px] text-left  font-normal font-inter">
                 Track, manage and forecast $EARTH trends.
               </p>
-              <div className="flex flex-col flex-wrap sm:flex-row mt-8 gap-6">
+              <div className="flex flex-col w-full sm:flex-row mt-8 gap-6">
                 {fundingData?.map((fund, index) => (
                   <div
-                    className="flex flex-col p-4 w-[15rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                    className="flex flex-col p-4 grow w-full rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
                     key={index}
                   >
                     <div className="flex justify-between">
@@ -307,7 +322,7 @@ export default function Dashboard() {
                 ))}
               </div>
               <p className="text-[#101828] text-[28px] text-left mt-8  font-semibold font-syne">
-                All transactions
+                Treasury Holdings
               </p>
               <div className="w-full border  my-8 sm:mb-0 flex gap-2 p-2 rounded-md border-[#D0D5DD] shadow-sm">
                 <IoSearchOutline size={22} color="#667085" />
@@ -322,25 +337,25 @@ export default function Dashboard() {
                   <thead className="bg-transparent border-b-2 border-[#EAECF0]  h-[40px] !w-full text-left font-inter font-medium text-[#475467] text-[12px]">
                     <tr className="">
                       <th className="bg-[#F9FAFB] flex-1  pl-4 rounded-tl-md">
-                        <p>Transaction Hash</p>
+                        <p>Asset</p>
                       </th>
                       <th className="bg-[#F9FAFB] flex-1">
-                        <p>Method</p>
+                        <p>Token Standard</p>
                       </th>
                       <th className="bg-[#F9FAFB] flex-1">
-                        <p>Block</p>
+                        <p>Contract Address</p>
                       </th>
                       <th className=" bg-[#F9FAFB] flex-1">
-                        <p>Age</p>
+                        <p>Quantity</p>
                       </th>
                       <th className=" bg-[#F9FAFB] flex-1">
-                        <p>From</p>
+                        <p>Price</p>
                       </th>
                       <th className=" bg-[#F9FAFB] flex-1">
-                        <p>To</p>
+                        <p>Change (24H)</p>
                       </th>
                       <th className=" bg-[#F9FAFB] w-[100px] flex-1 pr-2 rounded-tr-md ">
-                        <p>Quantity</p>
+                        <p>Value</p>
                       </th>
                     </tr>
                   </thead>
@@ -352,7 +367,16 @@ export default function Dashboard() {
                      text-[#101828]`}
                       >
                         <td>
-                          <p className="pl-4">{list.hash}</p>
+                          <div className="flex gap-2 pl-4 items-center">
+                            <ImageView
+                              src={list.icon}
+                              alt="asset"
+                              width={30}
+                              height={30}
+                              className="w-6 h-6"
+                            />
+                            <p className="">{list.hash}</p>
+                          </div>
                         </td>
                         <td>
                           <p className="rounded-full w-fit p-1 text-[#344054] bg-[#F2F4F7]">
@@ -363,16 +387,16 @@ export default function Dashboard() {
                           <p>{list.block}</p>
                         </td>
                         <td>
-                          <p>{list.age}</p>
-                        </td>
-                        <td>
-                          <p>{list.from}</p>
-                        </td>
-                        <td>
-                          <p>{list.to}</p>
-                        </td>
-                        <td>
                           <p>{list.quantity}</p>
+                        </td>
+                        <td>
+                          <p>{list.price}</p>
+                        </td>
+                        <td>
+                          <p>{list.change}</p>
+                        </td>
+                        <td>
+                          <p>{list.value}</p>
                         </td>
                       </tr>
                     ))}

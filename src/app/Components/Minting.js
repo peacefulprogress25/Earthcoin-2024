@@ -12,9 +12,9 @@ export default function Minting() {
         height={800}
         className="w-full h-[25vh] sm:h-[28vh] rounded-xl object-cover"
       />
-      <div className="flex w-full justify-between gap-6 items-center py-4 px-8 absolute top-2 sm:top-8">
-        <div className="flex flex-col gap-2 items-start">
-          <p className="text-[#EC8000] font-syne font-semibold text-[15px] sm:text-[28px]">
+      <div className="flex w-full justify-between gap-6 items-center py-4 px-8 sm:px-16 absolute top-2 sm:top-10">
+        <div className="flex flex-col gap-4 items-start">
+          <p className="text-[#EC8000] font-syne font-semibold text-[15px] sm:text-[26px]">
             Want minting rights?{" "}
             <span className="text-white">Become a node.</span>
           </p>

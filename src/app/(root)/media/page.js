@@ -1,4 +1,3 @@
-"use client";
 import Media from "../../Views/Media";
 
 export default function Mediapage() {

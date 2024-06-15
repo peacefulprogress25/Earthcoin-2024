@@ -33,7 +33,6 @@ export default function Media() {
         pageId: nexaflowPageObj.mediaPage,
         websiteId: nexaflowPageObj.website,
       });
-      console.log(page);
       const highlightedPosts = page?.Posts.filter(
         (post) => post.highlight === "true"
       );
