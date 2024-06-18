@@ -17,6 +17,11 @@ import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
 import { Loader } from "../../Components/Loader";
 import { useState, useEffect } from "react";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import StepContent from "@mui/material/StepContent";
+
 export default function Projectdetails() {
   const { id } = useParams();
   const [projects, setProjects] = useState([]);
@@ -111,6 +116,110 @@ export default function Projectdetails() {
                   className="custom-step font-inter text-[#101828] font-semibold"
                   items={details?.timeline}
                 />
+                {/* <Stepper
+                  sx={{
+                    "& .MuiStepConnector-line": {
+                      borderLeftWidth: "6px",
+                    },
+                    "& .MuiStepConnector-root": {
+                      marginLeft: "8px",
+                    },
+                    "& .MuiStepConnector-root.Mui-active .MuiStepConnector-line":
+                      {
+                        borderColor: "#EAECF0",
+                      },
+                    "& .MuiStepConnector-root.Mui-completed .MuiStepConnector-line":
+                      {
+                        borderColor: "#EC8000",
+                      },
+                    ".MuiStepContent-root": {
+                      borderLeft: "6px solid #EC8000", // Default border for all steps
+                      marginLeft: "8px",
+                    },
+                    // "&.Mui-completed .MuiStepContent-root": {
+                    //   borderLeft: "6px solid #EC8000 !important",
+                    // },
+                    // "&.Mui-active .MuiStepContent-root": {
+                    //   borderLeft: "6px solid #EAECF0 !important",
+                    // },
+                  }}
+                  active={true}
+                  activeStep={3}
+                  orientation="vertical"
+                >
+                  {details?.map((community, index) => (
+                    <Step
+                      key={index}
+                      className=" flex flex-col items-start"
+                      active={true}
+                      sx={{
+                        ".MuiStepLabel-root": {
+                          padding: "0px 0 !important",
+                        },
+                        ".Mui-completed .MuiStepContent-root": {
+                          borderLeft: "6px solid  #EC8000 !important",
+                        },
+                        ".Mui-active .MuiStepContent-root": {
+                          borderLeft: "6px solid  #EAECF0 !important",
+                        },
+                        ".Mui-completed .MuiStepIcon-root": {
+                          width: " 0.8em",
+                          height: "0.8em",
+                        },
+                        ".MuiSvgIcon-root-MuiStepIcon-root.Mui-completed": {
+                          color: "#EC8000",
+                        },
+                        ".MuiSvgIcon-root-MuiStepIcon-root.Mui-active": {
+                          width: " 0.8em",
+                          height: "0.8em",
+                          color: "#EC8000",
+                        },
+                        "& .Mui-active": {
+                          "&.MuiStepIcon-root": {
+                            fill: "#EC8000 !important",
+                            width: " 0.8em",
+                            height: "0.8em",
+                          },
+                          "& .MuiStepIcon-text": {
+                            fill: "#fff",
+                            fontSize: "12px",
+                          },
+                        },
+                        "& .MuiStepIcon-text": {
+                          fill: "white",
+                          fontSize: "12px",
+                        },
+                        "& .Mui-completed": {
+                          "&.MuiStepIcon-root": {
+                            fill: "#EC8000 !important",
+                            width: " 0.8em",
+                            height: "0.8em",
+                          },
+                          "& .MuiStepIcon-text": {
+                            fill: "#fff",
+                            fontSize: "12px",
+                          },
+                        },
+                      }}
+                    >
+                      <StepLabel>
+                        <p className="text-[#101828] font-semibold text-left text-[16px] font-inter">
+                          {community?.title}
+                        </p>
+                      </StepLabel>
+                      <StepContent className="pl-8 pb-20">
+                        <div className="flex gap-2">
+                          <p className="text-black text-left mt-2 font-normal  text-[16px] font-inter">
+                            {community?.description}
+                          </p>
+                          <p className="text-[#475467] text-left mt-2 font-normal  text-[16px] font-inter">
+                            {community?.subtitle}
+                          </p>
+                        </div>
+                      </StepContent>
+                    </Step>
+                  ))}
+                </Stepper> */}
               </div>
               <div className="flex items-start grow flex-col gap-6">
                 <div className="flex flex-col gap-1">

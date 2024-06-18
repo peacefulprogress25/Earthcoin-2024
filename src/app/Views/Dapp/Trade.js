@@ -1,14 +1,20 @@
 import { ImArrowDown } from "react-icons/im";
 import { RiArrowDownSFill } from "react-icons/ri";
+import { useState } from "react";
 
 export default function Trade() {
+  const [interchange, setInterchange] = useState(false);
   return (
     <div className="flex w-[73%] items-center flex-col gap-3">
       <p className="text-black text-center font-inter text-[28px] font-medium">
         Trade $Dai <br /> for $Earth
       </p>
-      <div className="relative w-full mt-2 items-center flex flex-col gap-2">
-        <div className="flex w-[95%] border items-center border-black justify-between p-1">
+      <div
+        className={`relative w-full mt-2 items-center flex ${
+          interchange ? "flex-col-reverse" : "flex-col"
+        }  gap-2`}
+      >
+        <div className="flex w-[95%] border  items-center border-black justify-between p-1">
           <div className="flex flex-col gap-2 items-start">
             <p className="text-black text-center font-inter text-[12px] font-medium">
               You pay
@@ -47,7 +53,10 @@ export default function Trade() {
             $Earth
           </button>
         </div>
-        <div className="border absolute top-11 bg-white flex z-10 justify-center items-center  p-2 border-black rounded-sm">
+        <div
+          onClick={() => setInterchange(!interchange)}
+          className="border cursor-pointer absolute top-11 bg-white flex z-10 justify-center items-center  p-2 border-black rounded-sm"
+        >
           <ImArrowDown color="#000" size={16} />
         </div>
       </div>

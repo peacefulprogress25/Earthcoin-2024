@@ -3,8 +3,10 @@ import Card from "./Card";
 import Community from "../../Components/Community";
 const tokenomics = "/assets/images/tokenomics.png";
 const curious = "/assets/images/Curious.png";
-const intrinsicGraph = "/assets/images/intrinsic-Graph.png";
-const pieChart = "/assets/images/Pie chart.png";
+const protocol = "/assets/images/protocol.png";
+const treasury = "/assets/images/treasury.png";
+const harvest = "/assets/images/harvest-treasury.png";
+
 export default function Mechanics() {
   const data = [
     {
@@ -84,181 +86,206 @@ export default function Mechanics() {
               how these concepts play out in action
             </p>
           </div>
-          <div className="mt-6 w-full flex gap-10 items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] font-semibold text-left   text-[20px]  font-syne">
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[20%] font-semibold text-left   text-[20px]  font-syne">
               $Earth token -
             </p>
 
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+            <p className="text-[#475467] text-center sm:text-left font-normal w-[80%] text-[16px] font-inter">
               Token that can be minted/created only when petro $$$ are purged at
               the protocol level by Earth Nodes.
             </p>
           </div>
+          <div className="mt-6 w-full flex flex-col sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[20%] font-semibold text-left   text-[20px]  font-syne">
+              Neoliberal Value -
+            </p>
+            <div className="flex flex-col gap-5 w-[80%] items-start">
+              <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                Price of real world assets backing each $EARTH in the existing
+                neoliberal paradigm. Value of this cannot go down,
+                <span className="tex-[#EC8000] font-semibold"> EVER!</span> This
+                is coded into the smart contracts.
+              </p>
+              <p className="text-[#101828] font-semibold text-left   text-[18px]  font-syne">
+                Treasury value in $ ÷ $EARTH in circulation
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[20%] font-semibold text-left   text-[20px]  font-syne">
+              Mint Multiple -
+            </p>
+
+            <p className="text-[#475467] text-center sm:text-left font-normal w-[80%]  text-[16px] font-inter">
+              The premium Earth Nodes pay to mint $EARTH on the neoliberal value
+              of assets in the treasury
+            </p>
+          </div>
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[20%] font-semibold text-left   text-[20px]  font-syne">
+              Harvest -
+            </p>
+
+            <p className="text-[#475467] text-center sm:text-left font-normal w-[80%]  text-[16px] font-inter">
+              Function that lets the protocol mint $EARTH to the extent that it
+              doesn&apos;t dilute the neoliberal value of assets backing each
+              $EARTH
+            </p>
+          </div>
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[20%] font-semibold text-left   text-[20px]  font-syne">
+              Mint price -
+            </p>
+
+            <p className="text-[#101828] font-semibold text-left  w-[80%] text-[18px]  font-syne">
+              Neoliberal value of assets backing each $EARTH x Mint multiple
+            </p>
+          </div>
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-            Intrinsic Value (IV)
+            Example
           </p>
           <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              Every $Earth token is backed by its treasury holdings in climate
-              solutions. These hard assets provide the Intrinsic Value of
-              $Earth. This value will serve as a reference point only and will
-              not be defended until the point the DAO is able to partly
-              liquidate its holdings to ensure the necessary liquidity to defend
-              the value.
+              Let&apos;s consider Jimi, who has become an
+              <span className="text-[#EC8000] font-semibold">$EARTH Node</span>.
+              He decides to purge $100,000 when the price of $EARTH at the
+              protocol level is $10.
+              <br />
+              1. In this scenario, Jimi{" "}
+              <span className="text-[#EC8000] font-semibold">purges</span>{" "}
+              $100,000 for 10,000 $EARTH tokens from the protocol.
             </p>
           </div>
           <ImageView
-            src={intrinsicGraph}
+            src={protocol}
             alt="graph"
             width={400}
             height={400}
             className="w-full mt-4 object-cover"
           />
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-            $Earth Premium
+          <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+            Breakdown of Events:
+            <br />
+            <br />
+            a. $EARTH is minted because dollars have been purged directly at the
+            protocol level.
+            <br />
+            <br />
+            b. Jimi pays a price for $EARTH ($10) derived from the formula:
+          </p>
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[20px] mr-10 font-syne">
+            Neoliberal Value of assets backing each $EARTH today ( $5 ) x Mint
+            Multiple (2) = $10
           </p>
           <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              Price at which the protocol lets Solarpunk Nft holders mint $Earth
-              is -
+              2. By paying a premium over the neoliberal value of assets in the
+              treasury, Jimi{" "}
+              <span className="text-[#EC8000] font-semibold">
+                {" "}
+                values the positive externalities{" "}
+              </span>{" "}
+              or ecosystem services generated by the assets in the treasury
+              proactively, rather than waiting for the free market to price the
+              value of healthy soil, thriving biodiversity, clean air and water,
+              a stable carbon cycle, habitable environments, nutrient-dense
+              food, well-being, etc.
             </p>
-            <p className="text-[#101828] font-semibold text-left mt-3 text-[16px] sm:text-[18px] mr-10 font-syne">
-              Intrinsic Value (IV) x Mint Multiple = Mint Price
+            <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[20px] mr-10 font-syne">
+              When Jimi pays this premium proactively, it funnels more capital
+              into projects that generate these positive externalities.
             </p>
             <p className="text-[#475467] text-center sm:text-left font-normal mt-2 text-[16px] font-inter">
-              Mint multiple starts at 2 and can be adjusted according to the
-              desired monetary policy outcomes. In effect this would translate
-              to Solarpunk NFT holders being able to always mint at this price
-              irrespective of the AMM price of $Earth. This has the following
-              advantages per our smol brain understanding -
+              3. So, with the additional 10,000 $EARTH minted via the Harvest
+              function, we now have 20,000 $EARTH in circulation (10,000 with
+              Jimi and 10,000 with the Harvest Treasury).
             </p>
             <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              · Whenever 
-              <span className="text-[#101828] font-semibold">
-                demand for $Earth on the AMM is
-              </span>
-               <span className="text-[#EC8000] font-semibold">high,</span> NFT
-              holders are incentivized to mint $Earth directly from the protocol
-              which contributes to growing the treasury size. Thereby also
-              disincentivizing speculators/short term holders benefitting from
-              temporary spikes and profit being captured by traders vs protocol.
+          </div>
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[30%] font-semibold   text-left   text-[20px]  font-syne">
+              Treasury -
             </p>
-            <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              · Whenever price of $Earth is cheaper on AMM than protocol, all
-              buys will be directed there until price 
-              <span className="text-[#101828] font-semibold">finds</span> 
-              <span className="text-[#EC8000] font-semibold"> parity </span> 
-              <span className="text-[#101828] font-semibold">
-                 with protocol price.
-              </span>
-            </p>
-            <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              · All NFT holders will be able to buy directly from the protocol
-              ensuring there is 
-              <span className="text-[#EC8000] font-semibold"> ZERO </span> 
-              <span className="text-[#101828] font-semibold">
-                 slippage while buying,
-              </span>
-              while sellers and buyers on AMM will always face slippage
-            </p>
-            <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              · This mechanic also ensures price of $Earth will tentatively
-              operate in a 
-              <span className="text-[#EC8000] font-semibold"> range </span> 
-              <span className="text-[#101828] font-semibold">
-                 of IV to a slight premium
-              </span>
-              on the protocol minting price. Aim of this is provide scope for
-              price discovery while ensuring price rise is correlated to
-              treasury growth.
+            <p className="text-[#101828] font-semibold text-left w-[50%]   text-[18px]  font-syne">
+              $100,000
             </p>
           </div>
+          <div className="mt-6 w-full flex justify-between flex-col sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
+              Total $EARTH in circulation -
+            </p>
+            <p className="text-[#101828] font-semibold text-left w-[50%]  text-[18px]  font-syne">
+              20,000 $EARTH
+            </p>
+          </div>
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
+              Neoliberal value of assets backing each $EARTH -
+            </p>
+            <p className="text-[#101828] font-semibold text-left w-[50%]   text-[18px]  font-syne">
+              $100,000 ÷ 20,000 = $5
+            </p>
+          </div>
+          <p className="text-[#475467] text-center mt-6 sm:text-left font-normal  text-[16px] font-inter">
+            The protocol ensures that minting $EARTH does not dilute the
+            neoliberal value of assets backing each $EARTH.
+            <br />
+            <br />
+            Once the funds purged by Jimi are transferred to the treasury, they
+            are allocated to projects chosen by $EARTH holders. These projects
+            then serve as assets backing each $EARTH in circulation.
+          </p>
+          <ul className="list-disc pl-4">
+            <li className="text-[#475467] text-center mt-6 sm:text-left font-normal  text-[16px] font-inter">
+              80% of the treasury funds are allocated to projects.
+            </li>
+            <li className="text-[#475467] text-center  sm:text-left font-normal  text-[16px] font-inter">
+              20% goes to the $EARTH/$DAI Liquidity Pool, owned by the protocol,
+              to ensure $EARTH holders can exit whenever they choose.
+            </li>
+          </ul>
+          <ImageView
+            src={treasury}
+            alt="treasury"
+            width={400}
+            height={400}
+            className="w-full mt-4 object-cover"
+          />
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
             $Earth Harvest
           </p>
           <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              This mechanic is to ensure that IV backing of $Earth never falls,
-              only can ever rise. Every time a Nft holders mints $Earth directly
-              from the protocol at a specific mint multiple to IV, the protocol
-              gets to harvest the remainder such that IV doesnt get diluted.
+              Once the protocol invokes the Harvest function and 10,000 $EARTH
+              are transferred to the Harvest Treasury, this $EARTH is allocated
+              as follows:
             </p>
-            <p className="text-[#101828] font-semibold text-left mt-3 text-[16px] sm:text-[18px] mr-10 font-syne">
-              Example -
-            </p>
-            <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              IV - $10
-            </p>
-            <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              Mint multiple - 2
-            </p>
-            <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              $Earth at protocol sold at $20
-            </p>
-            <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              Solarpunk NFT holder pays 20 $Dai for 1 $Earth, while IV of 1
-              $Earth is 10 $DAI.
-            </p>
-            <br />
-            <p className="text-[#EC8000] font-semibold text-center sm:text-left text-[16px] font-inter">
-              This lets protocol harvest 1 $Earth without diluting IV.
-            </p>
-            <br />
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              Higher Mint multiples allow us harvest more with each purchase of
-              $Earth directly from the protocol. The goal is to increase mint
-              multiple gradually as treasury size increases and confidence on
-              $Earth and Solarpunk Dao delivering increases
-            </p>
-          </div>
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px]  font-syne">
-            All $Earth harvested through this will be utilized for the following
-            -
-          </p>
-          <div className="flex flex-col gap-16 mt-3 w-full items-center justify-between sm:flex-row">
+            <ul className="list-disc pl-4">
+              <li className="text-[#475467] text-center mt-6 sm:text-left font-normal  text-[16px] font-inter">
+                Staking: $EARTH is used to provide an APY to stakers, currently
+                at 25%.
+              </li>
+              <li className="text-[#475467] text-center  sm:text-left font-normal  text-[16px] font-inter">
+                Liquidity Pool: $EARTH, combined with the 20% allocation of
+                $DAI, is used to build the $EARTH/$DAI Liquidity Pool for
+                holders.
+              </li>
+              <li className="text-[#475467] text-center  sm:text-left font-normal  text-[16px] font-inter">
+                Community: $EARTH to reward proactive community members.
+              </li>
+              <li className="text-[#475467] text-center  sm:text-left font-normal  text-[16px] font-inter">
+                Solarpunk DAO: Compensation for the work done by Solarpunk DAO
+                to run $EARTH.
+              </li>
+            </ul>
             <ImageView
-              src={pieChart}
-              alt="piechart"
-              width={250}
-              height={250}
-              className="mt-4 object-cover"
+              src={harvest}
+              alt="harvest"
+              width={400}
+              height={400}
+              className="w-full mt-4 object-cover"
             />
-            <div className="flex gap-2 w-full grow flex-col">
-              {chartData?.map((chart, index) => (
-                <div
-                  className="flex justify-between grow w-full gap-8 relative items-start"
-                  key={index}
-                >
-                  <div
-                    className={`${
-                      chart.title === "Liquidity Pool"
-                        ? "bg-[#F4AB1F]"
-                        : chart.title === "Partnerships / Rewards / IV"
-                        ? "bg-[#B2BC45]"
-                        : chart.title === "APY for Stakers"
-                        ? "bg-[#486D2F]"
-                        : chart.title === "DAO"
-                        ? "bg-[#EC8000]"
-                        : ""
-                    }w-[5px]  -left-3 top-[8px] absolute h-[5px] rounded-full`}
-                  ></div>
-                  <p className="text-[#475467] font-inter text-[14px] font-normal">
-                    {chart?.title}
-                  </p>
-                  <p className="text-[#475467] font-inter text-[14px] font-normal">
-                    {chart?.percent}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
         <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>

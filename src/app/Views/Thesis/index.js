@@ -1,5 +1,10 @@
 import ImageView from "../../Components/ImageView";
 import Community from "../../Components/Community";
+import { nexaflowPageObj } from "../../utils/constants";
+import nexaflowApi from "../../services/nexaflow";
+import Link from "next/link";
+import { Loader } from "../../Components/Loader";
+import { useState, useEffect } from "react";
 
 const thesis = "/assets/images/thesis.png";
 const funnel = "/assets/images/funnel.svg";
@@ -7,8 +12,29 @@ const agriculture = "/assets/images/agriculture.png";
 const pieChart = "/assets/images/Piechart-2.png";
 const exportImg = "/assets/images/Export.png";
 const earthPower = "/assets/images/Earthpowers.png";
+const clean = "/assets/images/clean-energy.png";
+const eco = "/assets/images/eco-system.png";
+const transport = "/assets/images/clean-transport.png";
+const solarpunk = "/assets/images/solarpunk.png";
 
 export default function Thesis() {
+  const [fundingData, setFundingData] = useState([]);
+  const [title, setTitle] = useState("Solarpunk");
+  useEffect(() => {
+    const getPageByID = async () => {
+      const page = await nexaflowApi.getPageByID({
+        pageId: nexaflowPageObj.dashboardPage,
+        websiteId: nexaflowPageObj.website,
+      });
+      console.log(page);
+      setFundingData(page?.FundingNeeds);
+    };
+
+    getPageByID();
+  }, []);
+  const handleClick = (title) => {
+    setTitle(title);
+  };
   const chartData = [
     {
       title: "Regenerative Agriculture",
@@ -153,61 +179,284 @@ export default function Thesis() {
               className="w-full object-cover"
             />
           </div>
-          <div className="rounded-md bg-[#F9FAFB] flex justify-between border border-[#F2F4F7] p-1">
-            {earthPowerData.map((power, index) => (
-              <button
-                className={` rounded-md p-1 px-2 text-[#667085]  text-[9px] sm:text-[13px] font-inter font-semibold ${
-                  index === 0 ? "bg-[#FFFFFF] shadow-md text-[#344054]" : ""
-                }`}
-                key={index}
-              >
-                {power.title}
-              </button>
-            ))}
+          <div className=" flex justify-between gap-6">
+            {fundingData && fundingData.length ? (
+              fundingData?.map((power, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleClick(power.title)}
+                  className="flex flex-col cursor-pointer gap-2 grow w-full rounded-lg overflow-hidden border border-[#EAECF0] justify-between"
+                >
+                  <div
+                    className={`rounded-md p-2 mt-2 flex justify-between  
+                `}
+                  >
+                    <p className="text-[#101828] w-[50%] text-[9px] sm:text-[18px] font-semibold font-inter">
+                      {power.title}
+                    </p>
+                    <ImageView
+                      src={power.icon}
+                      alt="chart"
+                      width={60}
+                      height={60}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div
+                    className={`w-full ${
+                      power.title === "Clean Energy"
+                        ? "bg-[#486D2F]"
+                        : power.title === "Agriculture"
+                        ? "bg-[#F4AB1F]"
+                        : power.title === "Ecosystem"
+                        ? "bg-[#B2BC45]"
+                        : power.title === "Clean Transport"
+                        ? "bg-[#EC8000]"
+                        : power.title === "Solarpunk"
+                        ? "bg-[#045047]"
+                        : ""
+                    } h-2`}
+                  ></div>
+                </div>
+              ))
+            ) : (
+              <div className="h-[60vh] w-full flex items-center justify-center">
+                <Loader />
+              </div>
+            )}
           </div>
-          <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
-            <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
-              Regenerative Agricuture
-            </p>
-            <div className="mt-6">
-              <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-                As of today less than 5% of our food production comes from
-                regenerative sources. Majority of farming in todays time is
-                chemical intensive using industrial inputs to produce highest
-                yields from land in order to maximize profit. This is highly
-                extractive in nature as it depletes the natural resources
-                required for nutrient rich food and makes no provision to
-                replenish instead pumps more chemicals to compensate.
-                <br />
-                <br />
-                This process also make the land a net carbon emitter where as if
-                the farmer shifts to more regenerative practices which
-                essentially translates to less tilling, more sustainable farming
-                methods to improve top soil health naturally, recycle waste
-                produce as inputs and maintain a robust ecosystem around the
-                farmland. This practice as an added benefit also is capable of
-                absorbing up to 8-9 tones of CO2/acre land annually in its top
-                soil. So not only does it
-                <span className="text-[#EC8000] font-semibold">
-                  provide nutrient rich food, ensures farming is sustainable in
-                  the long run, decreases external input dependency but also
-                  absorbs a lot of carbon.
-                </span>
-                We will be funding stewards looking to shift to these
-                regenerative agriculture practices plus the ancillary ecosystem
-                required to make it happen.
+          {title === "Agriculture" && (
+            <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
+              <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
+                Regenerative Agricuture
               </p>
+              <div className="mt-6">
+                <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                  As of today less than 5% of our food production comes from
+                  regenerative sources. Majority of farming in todays time is
+                  chemical intensive using industrial inputs to produce highest
+                  yields from land in order to maximize profit. This is highly
+                  extractive in nature as it depletes the natural resources
+                  required for nutrient rich food and makes no provision to
+                  replenish instead pumps more chemicals to compensate.
+                  <br />
+                  <br />
+                  This process also make the land a net carbon emitter where as
+                  if the farmer shifts to more regenerative practices which
+                  essentially translates to less tilling, more sustainable
+                  farming methods to improve top soil health naturally, recycle
+                  waste produce as inputs and maintain a robust ecosystem around
+                  the farmland. This practice as an added benefit also is
+                  capable of absorbing up to 8-9 tones of CO2/acre land annually
+                  in its top soil. So not only does it
+                  <span className="text-[#EC8000] font-semibold">
+                    provide nutrient rich food, ensures farming is sustainable
+                    in the long run, decreases external input dependency but
+                    also absorbs a lot of carbon.
+                  </span>
+                  We will be funding stewards looking to shift to these
+                  regenerative agriculture practices plus the ancillary
+                  ecosystem required to make it happen.
+                </p>
+              </div>
+              <div className="w-full flex justify-center px-[8%]">
+                <ImageView
+                  src={agriculture}
+                  alt="agriculture"
+                  width={500}
+                  height={500}
+                  className="mt-10 mb-5 object-cover"
+                />
+              </div>
             </div>
-            <div className="w-full flex justify-center px-[8%]">
-              <ImageView
-                src={agriculture}
-                alt="agriculture"
-                width={500}
-                height={500}
-                className="mt-10 mb-5 object-cover"
-              />
+          )}
+          {title === "Clean Energy" && (
+            <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
+              <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
+                Clean Energy
+              </p>
+              <div className="mt-6">
+                <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                  Currently clean electricity generation comprises of 35% market
+                  share of the total electricity consumed which in itself is
+                  less than 20% of total energy consumption. So in effect of the
+                  over 450 Exa Joules (10^18) produced annually for consumption
+                  across sectors, only 8% is from clean sources. This needs to
+                  get to over 90% in the next 30 yrs and for that we will need
+                  to fund inordinate amounts of wind/solar + battery storage and
+                  nuclear power plants.
+                  <span
+                    className="text-[#EC8000]
+                  font-semibold"
+                  >
+                    That’s over 100 Billion MWh of excess capacity that needs to
+                    be installed.
+                  </span>
+                  This is estimated to take an annual investment of $1.5 – 2
+                  Trillion for setting up plants + grid to accommodate clean
+                  energy production and disbursement, of which we aim to be an
+                  integral part of.
+                </p>
+              </div>
+              <div className="w-full flex justify-center px-[8%]">
+                <ImageView
+                  src={clean}
+                  alt="clean"
+                  width={500}
+                  height={500}
+                  className="mt-10 mb-5 object-cover"
+                />
+              </div>
             </div>
-          </div>
+          )}
+          {title === "Ecosystem" && (
+            <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
+              <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
+                Ecosystem Conservation
+              </p>
+              <div className="mt-6">
+                <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                  We have destroyed over 50% of our forest cover in the last 200
+                  yrs primarily because of urbanization, agriculture, resource
+                  demand and cattle grazing. On last count over 10 football
+                  fields of primary forest was being lost every minute. We are
+                  literally digging our own graves. These ecosystems are the
+                  only thing keeping
+                  <span
+                    className="text-[#EC8000]
+                  font-semibold"
+                  >
+                    LIFE
+                  </span>
+                  on earth habitable as we know it. Providing countless benefits
+                  we haven&apos;t even realized.
+                  <span
+                    className="text-[#EC8000]
+                  font-semibold"
+                  >
+                    Natural Ecosystems are truly the only scarce resource in
+                    this Solar System and it is high time we start valuing them
+                    as such.
+                  </span>
+                  We intend to deploy capital to be able to buy these natural
+                  ecosystems in alignment with indigenous communities in order
+                  to ensure they get compensated for not destroying these
+                  ecosystems and can choose to live harmoniously with them. In a
+                  world where between Gold and Bitcoin we have allocated over $8
+                  Trillion in wealth, surely we can find the necessary amount to
+                  protect ecosystems which sustain life on earth. Our goal is to
+                  ensure that we go from 25% land under conservation currently
+                  to 50% total area of Earth under conservation by 2050.
+                </p>
+              </div>
+              <div className="w-full flex justify-center px-[8%]">
+                <ImageView
+                  src={eco}
+                  alt="eco"
+                  width={500}
+                  height={500}
+                  className="mt-10 mb-5 object-cover"
+                />
+              </div>
+            </div>
+          )}
+          {title === "Clean Transport" && (
+            <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
+              <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
+                Clean Transport
+              </p>
+              <div className="mt-6">
+                <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                  Transportation contributes about 10-15% of the emission
+                  problem. We are already began witnessing the wave of
+                  transition forming towards electric vehicles. Right now, at
+                  less than 10% of market share, EVs + Hydrogen trucks will
+                  become 100% of private transport and EV buses + Metro will
+                  become 100% of public transport in the next 30 yrs. We will be
+                  funding
+                  <span
+                    className="text-[#EC8000]
+                  font-semibold"
+                  >
+                    EV taxis, charging infrastructure, battery manufacturing and
+                    its recycling plants, electric buses
+                  </span>
+                  for public transport to ensure a fully clean transportation
+                  system.
+                  <span
+                    className="text-[#EC8000]
+                  font-semibold"
+                  >
+                    Natural Ecosystems are truly the only scarce resource in
+                    this Solar System and it is high time we start valuing them
+                    as such.
+                  </span>
+                  We intend to deploy capital to be able to buy these natural
+                  ecosystems in alignment with indigenous communities in order
+                  to ensure they get compensated for not destroying these
+                  ecosystems and can choose to live harmoniously with them. In a
+                  world where between Gold and Bitcoin we have allocated over $8
+                  Trillion in wealth, surely we can find the necessary amount to
+                  protect ecosystems which sustain life on earth. Our goal is to
+                  ensure that we go from 25% land under conservation currently
+                  to 50% total area of Earth under conservation by 2050.
+                </p>
+              </div>
+              <div className="w-full flex justify-center px-[8%]">
+                <ImageView
+                  src={transport}
+                  alt="transport"
+                  width={500}
+                  height={500}
+                  className="mt-10 mb-5 object-cover"
+                />
+              </div>
+            </div>
+          )}
+          {title === "Solarpunk" && (
+            <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
+              <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
+                Climate Tech
+              </p>
+              <div className="mt-8">
+                <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                  We still do not have commercially viable technology to achieve
+                  complete decarbonization. A lot of research and innovation is
+                  still required to provide us with solutions for the same. In
+                  order to get this going we will be actively supporting
+                  startups and research organizations working on technological
+                  innovations for –
+                </p>
+                <ol className="list-decimal mt-4 pl-4 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                  <li>) Clean material manufacturing (steel, concrete etc.)</li>
+                  <br />
+                  <li>) Energy storage</li>
+                  <br />
+
+                  <li>) Recycling</li>
+                  <br />
+                  <li>) Energy Production</li>
+                  <br />
+                  <li>) Regenerative Agriculture ecosystem</li>
+                  <br />
+                  <li>) Energy Efficiency</li>
+                  <br />
+                  <li>) Clean Public transport</li>
+                  <br />
+                  <li>) Tech for Solarpunk paradigm</li>
+                </ol>
+              </div>
+              <div className="w-full flex justify-center px-[8%]">
+                <ImageView
+                  src={solarpunk}
+                  alt="solarpunk"
+                  width={500}
+                  height={500}
+                  className="mt-10 mb-5 object-cover"
+                />
+              </div>
+            </div>
+          )}
         </div>
         <div className="sm:px-[8%] px-4 flex flex-col">
           {/* <div className="flex flex-col gap-16 mt-3 w-full  items-center justify-between sm:flex-row">

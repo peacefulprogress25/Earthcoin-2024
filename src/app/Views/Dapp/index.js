@@ -94,7 +94,7 @@ export default function Dapp() {
   };
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 w-full">
       {/* <button
         className="border border-black rouned-md"
         onClick={() => setShowPopup(true)}
@@ -103,17 +103,17 @@ export default function Dapp() {
       </button>
       {showPopup && <TransactionPopup setShowPopup={setShowPopup} />} */}
 
-      <div className="relative w-full h-full flex">
+      <div className="relative w-full h-screen flex">
         <ImageView
           src={GradientBg}
           alt="GradientBg"
           width={800}
           height={800}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute h-full w-full flex items-center justify-around px-10 py-14">
-          <div className="flex flex-col bg-[#1d7645]">
-            <div className="border-b-2 border-[#31a560]">
+        <div className="absolute h-full w-full flex items-center justify-around px-10 py-12">
+          <div className="flex flex-col bg-white/20">
+            <div className="border-b-2 border-[white] border-opacity-30">
               <div className="flex flex-col  items-center justify-center p-5">
                 <ImageView src={wallet} alt="wallet" width={40} height={40} />
                 <p className="text-white font-inter text-center mt-1 font-light text-[16px]">
@@ -279,8 +279,8 @@ export default function Dapp() {
               <Sbt />
             )}
           </div> */}
-          <div className="flex flex-col bg-[#1d7645]">
-            <div className="border-b-2 border-[#31a560]">
+          <div className="flex flex-col bg-white/20 ">
+            <div className="border-b-2 border-[white] border-opacity-30">
               <div className="flex flex-col  items-center justify-center p-4">
                 <p className="text-white font-inter text-center  font-light text-[20px]">
                   $Earth

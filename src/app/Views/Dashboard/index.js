@@ -1,3 +1,4 @@
+"use client";
 import ImageView from "../../Components/ImageView";
 import { FaPlus } from "react-icons/fa6";
 import { GoArrowUp } from "react-icons/go";
@@ -9,10 +10,111 @@ import nexaflowApi from "../../services/nexaflow";
 import Link from "next/link";
 import { Loader } from "../../Components/Loader";
 import { useEffect, useState } from "react";
+import { Line } from "react-chartjs-2";
+import { Chart, registerables } from "chart.js";
 
 const wallet = "/assets/icons/wallet.svg";
 const chart = "/assets/images/Line and bar chart.png";
 export default function Dashboard() {
+  Chart.register(...registerables);
+
+  const dataObj = {
+    label: [
+      "jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "July",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    values: [
+      4000, 3000, 3000, 2000, 3000, 2000, 4000, 2000, 3000, 2000, 2000, 3000,
+    ],
+  };
+  const labels = dataObj?.label;
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Mint",
+        data: [
+          2000, 2000, 3000, 2000, 1000, 2000, 1000, 2000, 1000, 2000, 2000,
+          2000,
+        ],
+        fill: true,
+        backgroundColor: "white",
+        borderColor: "#fccc72",
+        pointBorderColor: "#fccc72",
+        pointBorderWidth: 3,
+        pointRadius: 5,
+        tension: 0.4,
+      },
+      {
+        label: "Price on Dex",
+        data: dataObj?.values,
+        fill: true,
+        backgroundColor: (context) => {
+          const gradient = context.chart.ctx.createLinearGradient(0, 0, 0, 400);
+          gradient.addColorStop(0, "#fbf5f0");
+          gradient.addColorStop(1, "#fbf5f0");
+          return gradient;
+        },
+        borderColor: "#EC8000",
+        pointBorderColor: "#EC8000",
+        pointBorderWidth: 3,
+        pointRadius: 5,
+        tension: 0.4,
+      },
+    ],
+  };
+
+  const options = {
+    plugins: { legend: { display: false } },
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        ticks: {
+          color: "white",
+          font: {
+            size: 12,
+          },
+        },
+        grid: {
+          color: "#EAECF0",
+        },
+        border: {
+          width: 1,
+          color: "transparent",
+        },
+      },
+      x: {
+        ticks: {
+          font: {
+            size: 12,
+          },
+        },
+        border: {
+          width: 1,
+          color: "#EAECF0",
+        },
+        grid: {
+          color: "transparent",
+          // tickColor: "#02B69C",
+
+          tickLength: 9,
+          tickWidth: 2,
+          offset: true,
+        },
+      },
+    },
+  };
   const [fundingData, setFundingData] = useState([]);
   useEffect(() => {
     const getPageByID = async () => {
@@ -177,23 +279,97 @@ export default function Dashboard() {
             </button>
           </div>
         </div>
-        {fundingData && fundingData.length ? (
-          <>
-            <div className="flex w-full flex-col sm:flex-row gap-6">
-              {priceData?.map((price, index) => (
-                <div
-                  className="flex flex-col p-6 w-[18rem] sm:w-[41rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
-                  key={index}
-                >
-                  <p className="text-[#101828] text-[14px] font-semibold font-inter">
-                    {price?.title}
-                  </p>
-                  <div className="flex justify-between gap-2 items-end">
-                    <div className="flex flex-col items-start">
-                      <p className="text-[#101828] text-[40px] font-semibold font-syne">
-                        {price?.price}
-                        <span className="text-[22px]">$DAI</span>
+        {/* {fundingData && fundingData.length ? ( */}
+        <>
+          <div className="flex w-full flex-col sm:flex-row gap-6">
+            {priceData?.map((price, index) => (
+              <div
+                className="flex flex-col p-6 w-[18rem] sm:w-[41rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                key={index}
+              >
+                <p className="text-[#101828] text-[14px] font-semibold font-inter">
+                  {price?.title}
+                </p>
+                <div className="flex justify-between gap-2 items-end">
+                  <div className="flex flex-col items-start">
+                    <p className="text-[#101828] text-[40px] font-semibold font-syne">
+                      {price?.price}
+                      <span className="text-[22px]">$DAI</span>
+                    </p>
+                    <div className="flex gap-1">
+                      <button
+                        className={`flex font-inter font-medium text-[12px] ${
+                          price?.increase ? "text-[#027A48]" : "text-[#B42318]"
+                        }`}
+                      >
+                        {price?.increase ? (
+                          <GoArrowUp size={15} color="#027A48" />
+                        ) : (
+                          <GoArrowDown size={15} color="#B42318" />
+                        )}
+                        {price?.percent}
+                      </button>
+                      <p className="text-[#475467] text-[12px] font-medium font-inter">
+                        vs last month
                       </p>
+                    </div>
+                  </div>
+                  <ImageView
+                    src={price?.img}
+                    alt="chart"
+                    width={100}
+                    height={100}
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-[#101828] w-full pb-3 border-b border-[#EAECF0] font-inter text-left font-semibold text-[14px]">
+            Price chart
+          </p>
+          <div className="flex w-full justify-start gap-4">
+            <div className="flex gap-2 items-center">
+              <div className="rounded-full w-[8px] h-[8px] bg-[#EC8000]"></div>
+              <p className="text-[#475467] text-center font-normal  text-[14px] font-inter">
+                Price on Dex
+              </p>
+            </div>
+            <div className="flex gap-2 items-center">
+              <div className="rounded-full w-[8px] h-[8px] bg-[#fccc72]"></div>
+              <p className="text-[#475467] text-center font-normal  text-[14px] font-inter">
+                Mint
+              </p>
+            </div>
+          </div>
+          {/* <ImageView
+            src={chart}
+            alt="chart"
+            width={1000}
+            height={1000}
+            className="w-full h-[35vh] object-cover"
+          /> */}
+          <div className="w-full h-[35vh]">
+            <Line data={data} width="400" height="300" options={options} />
+          </div>
+          <div className="grid w-full items-center grid-cols-1  sm:grid-cols-3 gap-6">
+            {cardData?.map((price, index) => (
+              <div
+                className="flex flex-col p-6 w-[18rem] lg:w-[18rem] xl:w-[24rem]  rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                key={index}
+              >
+                <p className="text-[#101828] text-[14px] font-semibold font-inter">
+                  {price?.title}
+                </p>
+                <div className="flex justify-between gap-2 items-end">
+                  <div className="flex flex-col items-start">
+                    <p className="text-[#101828] text-[40px] font-semibold font-syne">
+                      {price?.price}
+                      {price?.daiBalance && (
+                        <span className="text-[22px]">$DAI</span>
+                      )}
+                    </p>
+                    {price?.percent ? (
                       <div className="flex gap-1">
                         <button
                           className={`flex font-inter font-medium text-[12px] ${
@@ -213,7 +389,9 @@ export default function Dashboard() {
                           vs last month
                         </p>
                       </div>
-                    </div>
+                    ) : null}
+                  </div>
+                  {price?.img ? (
                     <ImageView
                       src={price?.img}
                       alt="chart"
@@ -221,207 +399,146 @@ export default function Dashboard() {
                       height={100}
                       className="object-cover"
                     />
-                  </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
-              ))}
-            </div>
-            <p className="text-[#101828] w-full pb-3 border-b border-[#EAECF0] font-inter text-left font-semibold text-[14px]">
-              Price chart
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col w-full items-center sm:items-start">
+            <p className="text-[#101828] text-[28px] text-left  font-semibold font-syne">
+              Sector wise funding breakdown
             </p>
-            <ImageView
-              src={chart}
-              alt="chart"
-              width={1000}
-              height={1000}
-              className="w-full h-[35vh] object-cover"
-            />
-            <div className="grid w-full items-center grid-cols-1  sm:grid-cols-3 gap-6">
-              {cardData?.map((price, index) => (
+            <p className="text-[#475467] text-[14px] text-left  font-normal font-inter">
+              Track, manage and forecast $EARTH trends.
+            </p>
+            <div className="flex flex-col w-full sm:flex-row mt-8 gap-6">
+              {fundingData?.map((fund, index) => (
                 <div
-                  className="flex flex-col p-6 w-[18rem] lg:w-[18rem] xl:w-[24rem]  rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                  className="flex flex-col p-4 grow w-full rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
                   key={index}
                 >
-                  <p className="text-[#101828] text-[14px] font-semibold font-inter">
-                    {price?.title}
-                  </p>
-                  <div className="flex justify-between gap-2 items-end">
-                    <div className="flex flex-col items-start">
-                      <p className="text-[#101828] text-[40px] font-semibold font-syne">
-                        {price?.price}
-                        {price?.daiBalance && (
-                          <span className="text-[22px]">$DAI</span>
-                        )}
-                      </p>
-                      {price?.percent ? (
-                        <div className="flex gap-1">
-                          <button
-                            className={`flex font-inter font-medium text-[12px] ${
-                              price?.increase
-                                ? "text-[#027A48]"
-                                : "text-[#B42318]"
-                            }`}
-                          >
-                            {price?.increase ? (
-                              <GoArrowUp size={15} color="#027A48" />
-                            ) : (
-                              <GoArrowDown size={15} color="#B42318" />
-                            )}
-                            {price?.percent}
-                          </button>
-                          <p className="text-[#475467] text-[12px] font-medium font-inter">
-                            vs last month
-                          </p>
-                        </div>
-                      ) : null}
-                    </div>
-                    {price?.img ? (
-                      <ImageView
-                        src={price?.img}
-                        alt="chart"
-                        width={100}
-                        height={100}
-                        className="object-cover"
-                      />
-                    ) : (
-                      ""
-                    )}
+                  <div className="flex justify-between">
+                    <p className="text-[#101828] w-[50%] text-[14px] font-semibold font-inter">
+                      {fund?.title}
+                    </p>
+                    <ImageView
+                      src={fund?.icon}
+                      alt="chart"
+                      width={40}
+                      height={40}
+                      className="object-contain"
+                    />
                   </div>
+                  <p className="text-[#101828]  text-[40px] font-semibold font-syne">
+                    {fund?.price}
+                    <span className="text-[22px]">$DAI</span>
+                  </p>
                 </div>
               ))}
             </div>
-            <div className="flex flex-col w-full items-center sm:items-start">
-              <p className="text-[#101828] text-[28px] text-left  font-semibold font-syne">
-                Sector wise funding breakdown
-              </p>
-              <p className="text-[#475467] text-[14px] text-left  font-normal font-inter">
-                Track, manage and forecast $EARTH trends.
-              </p>
-              <div className="flex flex-col w-full sm:flex-row mt-8 gap-6">
-                {fundingData?.map((fund, index) => (
-                  <div
-                    className="flex flex-col p-4 grow w-full rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
-                    key={index}
-                  >
-                    <div className="flex justify-between">
-                      <p className="text-[#101828] w-[50%] text-[14px] font-semibold font-inter">
-                        {fund?.title}
-                      </p>
-                      <ImageView
-                        src={fund?.icon}
-                        alt="chart"
-                        width={40}
-                        height={40}
-                        className="object-contain"
-                      />
-                    </div>
-                    <p className="text-[#101828]  text-[40px] font-semibold font-syne">
-                      {fund?.price}
-                      <span className="text-[22px]">$DAI</span>
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-[#101828] text-[28px] text-left mt-8  font-semibold font-syne">
-                Treasury Holdings
-              </p>
-              <div className="w-full border  my-8 sm:mb-0 flex gap-2 p-2 rounded-md border-[#D0D5DD] shadow-sm">
-                <IoSearchOutline size={22} color="#667085" />
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="text-[#667085] font-inter text-[14px] font-normal"
-                />
-              </div>
-              <div className="w-full hidden sm:flex border-2 rounded-md mt-6 border-[#EAECF0] mb-6 flex-col">
-                <table className="table-auto">
-                  <thead className="bg-transparent border-b-2 border-[#EAECF0]  h-[40px] !w-full text-left font-inter font-medium text-[#475467] text-[12px]">
-                    <tr className="">
-                      <th className="bg-[#F9FAFB] flex-1  pl-4 rounded-tl-md">
-                        <p>Asset</p>
-                      </th>
-                      <th className="bg-[#F9FAFB] flex-1">
-                        <p>Token Standard</p>
-                      </th>
-                      <th className="bg-[#F9FAFB] flex-1">
-                        <p>Contract Address</p>
-                      </th>
-                      <th className=" bg-[#F9FAFB] flex-1">
-                        <p>Quantity</p>
-                      </th>
-                      <th className=" bg-[#F9FAFB] flex-1">
-                        <p>Price</p>
-                      </th>
-                      <th className=" bg-[#F9FAFB] flex-1">
-                        <p>Change (24H)</p>
-                      </th>
-                      <th className=" bg-[#F9FAFB] w-[100px] flex-1 pr-2 rounded-tr-md ">
-                        <p>Value</p>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-transparent text-[#101828]    !w-full text-[12px] font-semibold">
-                    {transactionList.map((list, index) => (
-                      <tr
-                        key={index}
-                        className={`h-[60px]  border-b-2  border-[#EAECF0] font-inter font-medium 
+            <p className="text-[#101828] text-[28px] text-left mt-8  font-semibold font-syne">
+              Treasury Holdings
+            </p>
+            <div className="w-full border  my-8 sm:mb-0 flex gap-2 p-2 rounded-md border-[#D0D5DD] shadow-sm">
+              <IoSearchOutline size={22} color="#667085" />
+              <input
+                type="text"
+                placeholder="Search"
+                className="text-[#667085] font-inter text-[14px] font-normal"
+              />
+            </div>
+            <div className="w-full hidden sm:flex border-2 rounded-md mt-6 border-[#EAECF0] mb-6 flex-col">
+              <table className="table-auto">
+                <thead className="bg-transparent border-b-2 border-[#EAECF0]  h-[40px] !w-full text-left font-inter font-medium text-[#475467] text-[12px]">
+                  <tr className="">
+                    <th className="bg-[#F9FAFB] flex-1  pl-4 rounded-tl-md">
+                      <p>Asset</p>
+                    </th>
+                    <th className="bg-[#F9FAFB] flex-1">
+                      <p>Token Standard</p>
+                    </th>
+                    <th className="bg-[#F9FAFB] flex-1">
+                      <p>Contract Address</p>
+                    </th>
+                    <th className=" bg-[#F9FAFB] flex-1">
+                      <p>Quantity</p>
+                    </th>
+                    <th className=" bg-[#F9FAFB] flex-1">
+                      <p>Price</p>
+                    </th>
+                    <th className=" bg-[#F9FAFB] flex-1">
+                      <p>Change (24H)</p>
+                    </th>
+                    <th className=" bg-[#F9FAFB] w-[100px] flex-1 pr-2 rounded-tr-md ">
+                      <p>Value</p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-transparent text-[#101828]    !w-full text-[12px] font-semibold">
+                  {transactionList.map((list, index) => (
+                    <tr
+                      key={index}
+                      className={`h-[60px]  border-b-2  border-[#EAECF0] font-inter font-medium 
                      text-[#101828]`}
-                      >
-                        <td>
-                          <div className="flex gap-2 pl-4 items-center">
-                            <ImageView
-                              src={list.icon}
-                              alt="asset"
-                              width={30}
-                              height={30}
-                              className="w-6 h-6"
-                            />
-                            <p className="">{list.hash}</p>
-                          </div>
-                        </td>
-                        <td>
-                          <p className="rounded-full w-fit p-1 text-[#344054] bg-[#F2F4F7]">
-                            {list.method}
-                          </p>
-                        </td>
-                        <td>
-                          <p>{list.block}</p>
-                        </td>
-                        <td>
-                          <p>{list.quantity}</p>
-                        </td>
-                        <td>
-                          <p>{list.price}</p>
-                        </td>
-                        <td>
-                          <p>{list.change}</p>
-                        </td>
-                        <td>
-                          <p>{list.value}</p>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <div className="flex justify-between items-center w-full p-4   h-[50px]">
-                  <button className="p-1 cursor-pointer w-fit h-fit border-2 font-medium border-[#D0D5DD] font-inter rounded-md text-[#344054] text-[12px]">
-                    Previous
-                  </button>
-                  <p className="text-[#344054] font-medium font-inter text-[12px]">
-                    Page 1 of 10
-                  </p>
-                  <button className="p-1 w-fit h-fit cursor-pointer font-medium border-2 font-inter border-[#D0D5DD] rounded-md text-[#344054] text-[12px]">
-                    Next
-                  </button>
-                </div>
+                    >
+                      <td>
+                        <div className="flex gap-2 pl-4 items-center">
+                          <ImageView
+                            src={list.icon}
+                            alt="asset"
+                            width={30}
+                            height={30}
+                            className="w-6 h-6"
+                          />
+                          <p className="">{list.hash}</p>
+                        </div>
+                      </td>
+                      <td>
+                        <p className="rounded-full w-fit p-1 text-[#344054] bg-[#F2F4F7]">
+                          {list.method}
+                        </p>
+                      </td>
+                      <td>
+                        <p>{list.block}</p>
+                      </td>
+                      <td>
+                        <p>{list.quantity}</p>
+                      </td>
+                      <td>
+                        <p>{list.price}</p>
+                      </td>
+                      <td>
+                        <p>{list.change}</p>
+                      </td>
+                      <td>
+                        <p>{list.value}</p>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="flex justify-between items-center w-full p-4   h-[50px]">
+                <button className="p-1 cursor-pointer w-fit h-fit border-2 font-medium border-[#D0D5DD] font-inter rounded-md text-[#344054] text-[12px]">
+                  Previous
+                </button>
+                <p className="text-[#344054] font-medium font-inter text-[12px]">
+                  Page 1 of 10
+                </p>
+                <button className="p-1 w-fit h-fit cursor-pointer font-medium border-2 font-inter border-[#D0D5DD] rounded-md text-[#344054] text-[12px]">
+                  Next
+                </button>
               </div>
-              <Minting />
-            </div>{" "}
-          </>
-        ) : (
+            </div>
+            <Minting />
+          </div>{" "}
+        </>
+        {/* ) : (
           <div className="h-[60vh] w-full flex items-center justify-center">
             <Loader />
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

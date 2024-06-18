@@ -3,13 +3,16 @@ import ImageView from "../../Components/ImageView";
 const community = "/assets/images/community.png";
 const misson = "/assets/images/Mission-Vission.png";
 const purge = "/assets/images/purge.png";
+const partnership = "/assets/images/partnership.png";
+const projects = "/assets/images/projects.png";
+const policy = "/assets/images/policy.png";
 
 export default function Network() {
   return (
     <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
       <div className="flex flex-col gap-2 items-center">
         <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
-          Community
+          Network
         </p>
         <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
           Become an $Earth Node
@@ -137,7 +140,7 @@ export default function Network() {
           Once you become a Node, you can take one or more of these
           responsibilities to GROW $EARTH -
         </p>
-        <div className="relative w-full flex items-center justify-center">
+        <div className="relative w-full flex mt-6 items-center justify-center">
           <ImageView
             src={purge}
             alt="purpose"
@@ -149,6 +152,133 @@ export default function Network() {
             #1 Purge
           </p>
         </div>
+        <p className="text-[#475467] text-left mt-6 font-normal  text-[16px] font-inter">
+          We envision $EARTH treasury to be a source of patient, aligned $$$
+          waiting to deployed towards projects that are building net zero
+          infrastructure. Addressing climate change is no longer a technology,
+          knowledge or feasibility problem but a finance problem. An absolute
+          zero emission future is a function of millions of climate solutions
+          (link) being deployed as quickly as possible. For this to be a reality
+          we need ginormous amounts of capital. ($3-4 Trillion/Yr climate
+          finance gap)
+          <br />
+          <br />
+          Since Nodes are the only ones with permission to mint $EARTH and only
+          when $EARTH is minted directly at the protocol do the $ flow into the
+          treasury, it will be up to all the Nodes combined to ensure the
+          treasury is equipped to do what&apos;s necessary at all times. We see
+          this as a function of nodes personally purging their petro $ at
+          regular intervals + seeking aligned capital from within their network.
+          <br />
+          <br />
+          For this
+          <span className="text-[#EC8000] font-semibold">
+            each Node will be eligible to earn 5% of $EARTH
+          </span>
+          over and above the APY their staked $EARTH is earning. This 5% will be
+          calculated on the total no of $EARTH that is minted via that
+          particular SBT every month and will vest over a period of 6 months.
+          <span className="text-[#EC8000] font-semibold">
+            Nodes will also earn 2.5% of the total value of $EARTH mints in form
+            of $SLRPNK (Solarpunk Dao governance token).
+          </span>
+        </p>
+        <div className="relative w-full flex mt-6 items-center justify-center">
+          <ImageView
+            src={partnership}
+            alt="partnership"
+            width={400}
+            height={300}
+            className="w-full h-[12rem]  mt-7 object-cover"
+          />
+          <p className="text-white absolute font-semibold text-center text-[30px]  font-syne">
+            #2 Partnerships
+          </p>
+        </div>
+        <p className="text-[#475467] text-left mt-6 font-normal  text-[16px] font-inter">
+          Warm introductions or complete coordination with any organization or
+          individual that can contribute to $EARTH mission/vision. This can take
+          the form of: a) Onboarding new Nodes b) Onboarding merchants who
+          accept payments in $EARTH c) Onboarding organizations or individuals
+          who in any way shape or form can further our mission/vision.
+          <br />
+          <br />
+          <span className="text-[#EC8000] font-semibold">
+            Reward - Combination of $EARTH and $SLRPNK (Amount not decided yet)
+          </span>
+        </p>
+        <div className="relative w-full flex mt-6 items-center justify-center">
+          <ImageView
+            src={projects}
+            alt="projects"
+            width={400}
+            height={300}
+            className="w-full h-[12rem]  mt-7 object-cover"
+          />
+          <p className="text-white absolute font-semibold text-center text-[30px]  font-syne">
+            #3 Projects
+          </p>
+        </div>
+        <p className="text-[#475467] text-left mt-6 font-normal  text-[16px] font-inter">
+          Connecting Dao to economically/ecologically viable projects that can
+          be potentially funded by $EARTH treasury ( from the 5 sectors we are
+          focusing on).
+          <br />
+          <br />
+          <span className="text-[#EC8000] font-semibold">
+            Reward - SLRPNK (Amount not decided yet)
+          </span>
+          <br />
+          <br />
+          Projects should transparently communicate their impact funded with
+          $EARTH to the DAO to validate their activity and earn rewards by
+          accomplishing milestones and impact projections
+          <br />
+          <br />
+          Projects should have an impact report manual so the DAO could have
+          community events to evaluate the different projects trajectory backed
+          by $EARTH
+        </p>
+        <div className="relative w-full flex mt-6 items-center justify-center">
+          <ImageView
+            src={policy}
+            alt="policy"
+            width={400}
+            height={300}
+            className="w-full h-[12rem]  mt-7 object-cover"
+          />
+          <p className="text-white absolute font-semibold text-center text-[30px]  font-syne">
+            #4 Policy
+          </p>
+        </div>
+        <p className="text-[#475467] text-left mt-6 font-normal  text-[16px] font-inter">
+          Coordinating on monetary and fiscal policy for $EARTH to achieve its
+          goals.
+          <br />
+          <br />
+          Monetary policy will involve deciding on the premium $EARTH commands
+          over the $ value of assets in our treasury to fulfil our goals.
+          Controlling the supply of $EARTH in the secondary market for
+          maintaining desired price levels.
+          <br />
+          <br />
+          Fiscal policy would involve deciding how best to deploy $EARTH that is
+          in the treasury. Current usage is for APY, LP, DAO, Rewarding
+          community, rewarding projects and partners.
+          <br />
+          <br />
+          <span className="text-[#EC8000] font-semibold">
+            Reward - Combination of $EARTH and $SLRPNK (Amount not decided yet)
+          </span>
+          <br />
+          <br />
+          Given the way $EARTH is designed it is our sincere belief that by
+          simply undertaking one or more responsibilities as stated above there
+          is no reason that this tribe of Degens, Regens, Treegens, Beegens,
+          Seagens, Lunarpunks, Mycopunks, Junglepunks and Solarpunks cannot come
+          together and address one of the biggest existential challenges of our
+          time.
+        </p>
       </div>
     </div>
   );
