@@ -47,7 +47,7 @@ export default function About() {
   const filteredPosts =
     selectedCategory === "View all"
       ? jobs
-      : jobs.filter((post) => jobs.category === selectedCategory);
+      : jobs.filter((post) => post.title === selectedCategory);
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[8%] flex gap-10 flex-col items-center">
@@ -115,8 +115,8 @@ export default function About() {
         </div>
 
         <div className="flex w-full items-center flex-col gap-6 ">
-          {jobs && jobs.length ? (
-            jobs?.map((position, index) => (
+          {filteredPosts && filteredPosts.length ? (
+            filteredPosts?.map((position, index) => (
               <div className="flex flex-col items-start gap-6" key={index}>
                 {/* <p className="text-[#101828] font-semibold text-left text-[18px] font-inter">
                   {position?.title}

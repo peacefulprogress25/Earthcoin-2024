@@ -1,10 +1,36 @@
 .custom-step {
+  .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail {
+    background-color: #ec8000 !important;
+    width: 4px !important;
+    left: 4px !important;
+  }
+  .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .ant-steps-item-wait > .ant-steps-item-container > .ant-steps-item-tail {
+    background-color: #f2f4f7 !important;
+    width: 4px !important;
+    left: 3px !important;
+  }
   .ant-steps-item-finish
     > .ant-steps-item-container
     > .ant-steps-item-tail::after {
-    background-color: #ec8000 !important;
-    width: 2px !important;
+    background-color: transparent !important;
+    width: 0px !important;
   }
+  .ant-steps-item-wait
+    > .ant-steps-item-container
+    > .ant-steps-item-tail::after {
+    background-color: transparent !important;
+    width: 0px !important;
+  }
+  .ant-steps-item .ant-steps-item-content {
+    min-height: 78px !important;
+  }
+  /* .ant-steps-item-wait > .ant-steps-item-content {
+    min-height: 68px !important;
+  } */
   .ant-steps-item-finish
     .ant-steps-item-icon
     > .ant-steps-icon
@@ -18,7 +44,10 @@
     width: 2px !important;
     height: 100%;
   }
-
+  .ant-steps-vertical .ant-steps-dot .ant-steps-item-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
   .ant-steps-item-process
     .ant-steps-item-icon
     > .ant-steps-icon
@@ -49,8 +78,8 @@
     > .ant-steps-icon
     .ant-steps-icon-dot {
     background: white !important;
-    width: 10px !important;
-    height: 10px !important;
+    width: 12px !important;
+    height: 12px !important;
     border: 3px solid #ec8000 !important;
   }
 

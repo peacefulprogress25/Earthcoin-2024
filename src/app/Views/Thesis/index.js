@@ -197,25 +197,25 @@ export default function Thesis() {
                     <ImageView
                       src={power.icon}
                       alt="chart"
-                      width={60}
-                      height={60}
-                      className="object-contain"
+                      width={55}
+                      height={55}
+                      className=" w-12 h-12 object-contain"
                     />
                   </div>
                   <div
-                    className={`w-full ${
+                    className={`w-full h-2 ${
                       power.title === "Clean Energy"
                         ? "bg-[#486D2F]"
-                        : power.title === "Agriculture"
+                        : power.title === "Regenerative Agriculture"
                         ? "bg-[#F4AB1F]"
-                        : power.title === "Ecosystem"
+                        : power.title === "Ecosystem Conservation"
                         ? "bg-[#B2BC45]"
                         : power.title === "Clean Transport"
                         ? "bg-[#EC8000]"
-                        : power.title === "Solarpunk"
+                        : power.title === "Solarpunk Spaces"
                         ? "bg-[#045047]"
                         : ""
-                    } h-2`}
+                    }`}
                   ></div>
                 </div>
               ))
@@ -225,7 +225,7 @@ export default function Thesis() {
               </div>
             )}
           </div>
-          {title === "Agriculture" && (
+          {title === "Regenerative Agriculture" && (
             <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
               <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
                 Regenerative Agricuture
@@ -309,7 +309,7 @@ export default function Thesis() {
               </div>
             </div>
           )}
-          {title === "Ecosystem" && (
+          {title === "Ecosystem Conservation" && (
             <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
               <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
                 Ecosystem Conservation
@@ -413,7 +413,7 @@ export default function Thesis() {
               </div>
             </div>
           )}
-          {title === "Solarpunk" && (
+          {title === "Solarpunk Spaces" && (
             <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
               <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
                 Climate Tech
