@@ -19,7 +19,7 @@ const solarpunk = "/assets/images/solarpunk.png";
 
 export default function Thesis() {
   const [fundingData, setFundingData] = useState([]);
-  const [title, setTitle] = useState("Solarpunk");
+  const [title, setTitle] = useState("Clean Energy");
   useEffect(() => {
     const getPageByID = async () => {
       const page = await nexaflowApi.getPageByID({
@@ -500,7 +500,7 @@ export default function Thesis() {
           <p className="text-[#101828] font-semibold text-left mt-8 text-[20px] sm:text-[28px] mr-10 font-syne">
             Rationale behind sector selection -
           </p>
-          <ol className="mt-6 list-decimal">
+          <ol className="mt-6 list-decimal pl-6">
             <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               <p className="">
                 They directly address

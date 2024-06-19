@@ -172,18 +172,19 @@ export default function Community() {
                   },
                   "& .Mui-active": {
                     "&.MuiStepIcon-root": {
-                      fill: "#EC8000 !important",
+                      fill: "#EAECF0 !important",
                       width: " 0.8em",
                       height: "0.8em",
                     },
                     "& .MuiStepIcon-text": {
-                      fill: "#fff",
+                      fill: "#000",
                       fontSize: "12px",
                     },
                   },
                   "& .MuiStepIcon-text": {
                     fill: "white",
-                    fontSize: "12px",
+                    fontSize: "14px",
+                    fontWeight: "600",
                   },
                   "& .Mui-completed": {
                     "&.MuiStepIcon-root": {
