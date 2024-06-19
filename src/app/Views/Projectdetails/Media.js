@@ -31,7 +31,7 @@ export default function Media({ details }) {
   return (
     <div className="flex flex-col  items-start px-[5%]">
       <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
-        Media
+        Project Updates
       </p>
       {/* <p className="text-[16px] mt-4 text-left font-normal text-[#475467] font-inter">
         Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam

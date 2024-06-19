@@ -147,11 +147,6 @@ export default function Purpose() {
             seeking reparations. The Anthropocene era characterized by -
           </p>
 
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-            The aforementioned tradeoffs or shifts in perception have now come
-            seeking reparations. The Anthropocene era characterized by -
-          </p>
-
           <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               · Our unrestrained extraction of the decayed plant and animal
