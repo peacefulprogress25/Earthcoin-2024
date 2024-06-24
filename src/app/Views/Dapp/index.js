@@ -11,6 +11,9 @@ import "./dapp.css";
 import Chart from "./Chart";
 
 const GradientBg = "/assets/images/dapp-bg.png";
+const rays = "/assets/images/Background rays.png";
+const disconnect = "/assets/images/Disconnect Wallet.png";
+const connect = "/assets/images/Connect Wallet.png";
 const wallet = "/assets/icons/wallet-white.svg";
 export default function Dapp() {
   const [showPopup, setShowPopup] = useState(false);
@@ -123,7 +126,7 @@ export default function Dapp() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-4 items-center justify-center p-5">
+            <div className="flex flex-col gap-4 items-center justify-center  p-5">
               {balance?.map((value, index) => (
                 <div className="flex flex-col  items-center" key={index}>
                   <p className="text-white font-inter text-center  font-light text-[20px]">
@@ -136,82 +139,18 @@ export default function Dapp() {
               ))}
             </div>
           </div>
-          <div className="relative">
-            {/* <div className="rounded-full relative border-2 flex items-center shadow-lg bg-white justify-center border-black w-[28rem] h-[28rem]">
-            <div className="divider2 absolute -top-2   bg-black w-[2px] h-[2.4rem]"></div>
-            <div
-              onClick={() => handleBtnClick("STAKE")}
-              className="text-[18px] h-[2.3rem] cursor-pointer z-10 absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-center"
-            >
-              <span>S</span>
-              <span>T</span>
-              <span>A</span>
-              <span>K</span>
-              <span>E</span>
-            </div>
-            <div className="divider1 absolute -top-2   bg-black w-[2px] h-[2.4rem]"></div>
-            <div
-              onClick={() => handleBtnClick("TRADE")}
-              className="text-[18px] h-[2.3rem] cursor-pointer absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-center"
-            >
-              <span className="t1">T</span>
-              <span className="r1">R</span>
-              <span className="a1">A</span>
-              <span className="d1">D</span>
-              <span className="e2">E</span>
-            </div>
-            <div className="divider3 absolute -top-2   bg-black w-[2px] h-[2.4rem]"></div>
-            <div
-              onClick={() => handleBtnClick("MINT")}
-              className="text-[18px] h-[2.3rem] cursor-pointer absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-center"
-            >
-              <span className="m1">M</span>
-              <span className="i1">I</span>
-              <span className="n1">N</span>
-              <span className="t2">T</span>
-            </div>
-            <div className="divider4 absolute -top-2   bg-black w-[2px] h-[2.4rem]"></div>
-            <div
-              onClick={() => handleBtnClick("SBT")}
-              className="text-[18px] h-[2.3rem] cursor-pointer absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-center"
-            >
-              <span className="s2">S</span>
-              <span className="b1">B</span>
-              <span className="t3">T</span>
-            </div>
-            <div className="divider5 absolute -top-2   bg-black w-[2px] h-[2.4rem]"></div>
-            <div
-              onClick={() => handleBtnClick("CLAIM")}
-              className="text-[18px] h-[2.3rem] cursor-pointer absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-center"
-            >
-              <span className="c2">C</span>
-              <span className="l1">L</span>
-              <span className="a3">A</span>
-              <span className="i3">I</span>
-              <span className="m2">M</span>
-            </div>
-            <div className="divider6 absolute -top-2 translate-y-[114px] translate-x-[380px] rotate-[-35deg]  bg-black w-[2px] h-[2.4rem]"></div>
-
-            <div className="text-[18px] h-[2.3rem]  absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-center">
-              <span className="dis1">D</span>
-              <span className="dis2">I</span>
-              <span className="dis3">S</span>
-              <span className="dis4">C</span>
-              <span className="dis5">O</span>
-              <span className="dis6">N</span>
-              <span className="dis7">N</span>
-              <span className="dis8">E</span>
-              <span className="dis9">C</span>
-              <span className="dis10">T</span>
-              <span className="dis11">W</span>
-              <span className="dis12">A</span>
-              <span className="dis13">L</span>
-              <span className="dis14">L</span>
-              <span className="dis15">E</span>
-              <span className="dis16">T</span>
-            </div>
-
-            <div className="rounded-full border-2 p-4 flex items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]">
+          <div className="relative flex justify-center w-[45rem]">
+            <ImageView
+              src={rays}
+              alt="rays"
+              width={800}
+              height={800}
+              className="w-full  z-[1] -left-[1rem] -top-[5rem] absolute"
+            />
+            <Chart setScreen={setScreen} screen={screen}>
+              {" "}
+            </Chart>
+            <div className="rounded-full border-2 z-[6] flex absolute overflow-hidden top-[5.1rem] left-[9.3rem]  xl:left-[11rem] items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]">
               {screen === "SBT" ? (
                 <Sbt />
               ) : screen === "TRADE" ? (
@@ -219,26 +158,25 @@ export default function Dapp() {
               ) : screen === "STAKE" ? (
                 <Stake />
               ) : screen === "CLAIM" ? (
-                <Claim />
+                <Claim setScreen={setScreen} />
               ) : screen === "MINT" ? (
                 <Mint />
-              ) : (
-                <Sbt />
-              )}
-            </div>
-          </div> */}
-            <Chart setScreen={setScreen}> </Chart>
-            <div className="rounded-full border-2 z-[5] flex absolute top-[5.1rem] left-[5.1rem] items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]">
-              {screen === "SBT" ? (
-                <Sbt />
-              ) : screen === "TRADE" ? (
-                <Trade />
-              ) : screen === "STAKE" ? (
-                <Stake />
-              ) : screen === "CLAIM" ? (
-                <Claim />
-              ) : screen === "MINT" ? (
-                <Mint />
+              ) : screen === "DISCONNECT WALLET" ? (
+                <ImageView
+                  src={disconnect}
+                  width={200}
+                  height={200}
+                  alt="disconnect wallet"
+                  className="w-full h-full"
+                />
+              ) : screen === "CONNECT WALLET" ? (
+                <ImageView
+                  src={connect}
+                  width={200}
+                  height={200}
+                  alt="disconnect wallet"
+                  className="w-full h-full"
+                />
               ) : (
                 <Sbt />
               )}

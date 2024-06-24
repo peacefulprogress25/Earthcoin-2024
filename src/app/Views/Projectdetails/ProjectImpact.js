@@ -50,13 +50,15 @@ export default function ProjectImpact({ details }) {
       <p className=" text-[20px] sm:text-[28px] text-left font-semibold text-[#101828] font-syne">
         Project Impact
       </p>
-      <Editor
-        editorState={editorState}
-        wrapperClassName="demo-wrapper"
-        editorClassName="richText-editor"
-        toolbarHidden={true}
-        readOnly={true}
-      />
+      <div className="text-[14px] sm:text-[16px]  font-inter text-[#475467]">
+        <Editor
+          editorState={editorState}
+          wrapperClassName="demo-wrapper"
+          editorClassName="richText-editor"
+          toolbarHidden={true}
+          readOnly={true}
+        />
+      </div>
       <div className="flex sm:flex-row flex-col justify-center items-center w-full">
         {details?.positiveExternalities.map((impact, index) => (
           <div
