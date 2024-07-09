@@ -8,19 +8,19 @@ import nexaflowApi from "../../services/nexaflow";
 import { useState, useEffect } from "react";
 import { Loader } from "../../Components/Loader";
 import Link from "next/link";
+import Video from "../../Components/Video";
 
-const main = "/assets/images/main.png";
-const groot = "/assets/images/groot.png";
+// const main = "/assets/Earth Video.mp4";
+const groot = "/assets/images/groot1.png";
 const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
-const asset = "/assets/images/asset.png";
-const govern = "/assets/images/community-governed.png";
-const range = "/assets/images/range.png";
-const pool = "/assets/images/pool.png";
+const asset = "/assets/images/Climate solutions.png";
+const govern = "/assets/images/community governed.png";
+const range = "/assets/images/Range bound.png";
+const pool = "/assets/images/liquidity pool.png";
+const highlight = "/assets/images/highlightText.png";
 const graph = "/assets/icons/graph.svg";
-const grBg = "/assets/images/highlightText.png";
-const climateEnvironmentCrisis =
-  "/assets/images/climate-environment-crisis.png";
+const climateEnvironmentCrisis = "/assets/images/climate-environment.png";
 const mainBottomSection = "/assets/images/main-bottom-section.png";
 
 export default function Main() {
@@ -124,26 +124,26 @@ export default function Main() {
   const cardData = [
     {
       title: "What is $EARTH?",
-      description: "Learn $EARTH mechanics",
-      img: "/assets/images/card-bg.png",
+      description: "Learn more about the digital currency",
+      img: "/assets/images/Card1.png",
       link: "/resources",
     },
     {
       title: "How $EARTH works",
-      description: "Read about the tokenomics of $EARTH",
-      img: "/assets/images/card-bg-2.png",
+      description: "Read about the mechanics and flow of $EARTH",
+      img: "/assets/images/Card2.png",
       link: "/works",
     },
     {
       title: "Buy $EARTH",
       description: "Trade on Uniswap",
-      img: "/assets/images/card-bg-3.png",
+      img: "/assets/images/Card3.png",
       link: "/earth",
     },
     {
-      title: "Become a node.",
-      description: "Obtain rights to mint $Earth",
-      img: "/assets/images/card-bg-4.png",
+      title: "Become an $EARTH Node.",
+      description: "Learn about how to become a node",
+      img: "/assets/images/Card4.png",
       link: "/community",
     },
   ];
@@ -240,17 +240,33 @@ export default function Main() {
     },
   ];
   return (
-    <div className="mt-20">
+    <div className='mt-20'>
       {" "}
-      <ImageView
+      <div className='relative '>
+        <Video
+          src='/assets/video/Earth Video.mp4'
+          alt='earthcoin'
+          className='w-full h-full lg:h-[32rem] object-cover'
+        />
+        {/* <video src={"/assets/Earth Video.mp4"} controls={false}  autoPlay playsInline loop  className="w-[100%] h-[50%] object-cover">
+      <source src={"/assets/Earth Video.mp4"} type="video/mp4" />
+    </video> */}
+        <div className='absolute text-[#FFFFFF] lg:text-3xl xl:text-4xl text-4xl font-syne w-9/12 text-center font-normal -mt-32 ml-32'>
+          <p>
+            Digital currency backed by real world climate solutions / ecosystem
+            services / solarpunk values
+          </p>
+        </div>
+      </div>
+      {/* <ImageView
         src={main}
         alt="main"
         width={600}
         height={600}
-        className="w-full object-cover"
-      />
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full">
-        <div className="flex sm:flex-row flex-col pb-10 justify-center items-center w-full">
+        className="object-cover w-full"
+      /> */}
+      <div className='mx-auto  pt-16 px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full'>
+        <div className='flex flex-col items-center justify-center w-full pb-10 sm:flex-row'>
           {funding.map((impact, index) => (
             <div
               className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${
@@ -260,57 +276,66 @@ export default function Main() {
               }`}
               key={index}
             >
-              <p className="font-syne font-semibold text-[20px] text-center sm:text-[52px] text-[#EC8000]">
+              <p className='font-syne font-semibold text-[20px] text-center sm:text-[52px] text-[#EC8000]'>
                 {impact.balance}
               </p>
-              <p className="text-[#101828] text-center text-[16px]  font-medium font-inter">
+              <p className='text-[#101828] text-center text-[16px]  font-medium font-inter'>
                 {impact.impact}
               </p>
             </div>
           ))}
         </div>
-        <div className="flex sm:px-[15%] items-center pt-10 px-4 flex-col w-full gap-1">
-          <p className="text-[#101828]  text-[24px] sm:text-[34px] leading-[42px] font-syne text-center font-semibold">
-            Here to make anthropogenic climate change history & seeding the
-          </p>
-          <div className="text-[#101828] text-[24px] sm:text-[34px] leading-[42px] font-syne flex font-semibold text-center">
-            <ImageView
-              src={grBg}
-              alt="highlight"
-              width={30}
-              height={30}
-              className="w-[10rem] h-10"
-            />
-            paradigm
+        <div className='flex sm:flex-col sm:px-[20%] items-center pt-10 px-4 flex-col w-full gap-3'>
+          <div className='text-[#101828] flex items-center 2xl:ml-[65%] xl:ml-[15%]  font-semibold w-[125%]  text-[24px] sm:text-[34px] leading-[42px] font-syne'>
+            Here to make anthropogenic climate change history &
+          </div>
+          <div>
+            <div className='text-[#101828] flex items-center font-semibold text-center w-[140%] text-[24px] sm:text-[34px] leading-[42px] font-syne'>
+              <div>
+                <p>seed the</p>
+              </div>
+              <div>
+                <ImageView
+                  src={highlight}
+                  alt='hightlight'
+                  width={190}
+                  height={30}
+                  className='w-52 h-11'
+                />{" "}
+              </div>
+              <div>
+                <p>paradigm</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="grid w-full grid-cols-1 mt-28 items-center sm:grid-cols-2 gap-8">
+        <div className='grid items-center w-full grid-cols-1 gap-8 mt-28 sm:grid-cols-2'>
           {cardData?.map((data, index) => (
             <div
-              className="relative w-full grow cursor-pointer"
+              className='relative w-full cursor-pointer grow'
               key={index}
               onClick={() => router.push(data?.link)}
             >
               <ImageView
                 src={data?.img}
-                alt="main"
+                alt='main'
                 width={600}
                 height={600}
-                className="rounded-xl w-full h-[14rem]  object-cover"
+                className='rounded-xl w-full h-[14rem]  object-cover'
               />
               <Link
                 href={data.link}
-                className="flex flex-col w-full absolute p-[2rem] pb-[4rem] sm:p-[3rem] top-[0rem]"
+                className='flex flex-col w-full absolute p-[2rem] pb-[4rem] sm:p-[3rem] top-[0rem]'
               >
-                <div className="flex justify-between items-center">
+                <div className='flex items-center justify-between'>
                   <p
                     className={`text-white  font-syne font-semibold text-[26px]`}
                   >
                     {data?.title}
                   </p>
-                  <LuArrowUpRight size={22} color="#fff" />
+                  <LuArrowUpRight size={22} color='#fff' />
                 </div>
-                <p className="text-white font-inter mt-2  font-normal text-[16px]">
+                <p className='text-white font-inter mt-2  font-normal text-[16px]'>
                   {data?.description}
                 </p>
               </Link>
@@ -335,53 +360,57 @@ export default function Main() {
             </div>
           ))}
         </div> */}
-        <div className="flex flex-col mt-3 gap-8">
-          <div className="flex flex-col shadow gap-4 sm:flex-row p-10 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg">
-            <div className="flex flex-col w-full sm:w-[60%] justify-center items-center sm:items-start ">
-              <p className="font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black">
+        <div className='flex flex-col gap-8 mt-3'>
+          <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
+            <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
+              <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
                 Backed by{" "}
-                <span className="text-[#EC8000]"> Climate Solutions</span>
+                <span className='text-[#EC8000]'> Climate Solutions</span>
               </p>
-              <p className="text-[#475467]  text-center sm:text-left text-[16px]  font-normal font-inter">
+              <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5 font-normal font-inter'>
                 Each $EARTH is backed by a variety of on ground projects that
                 are directly addressing the climate / environmental crisis while
                 catering to humanities core needs
               </p>
             </div>
-            <ImageView
-              src={asset}
-              alt="service"
-              width={600}
-              height={300}
-              className={` w-48 h-44 object-contain `}
-            />
+            <div className='p-5'>
+              <ImageView
+                src={asset}
+                alt='service'
+                width={600}
+                height={300}
+                className={` w-48 h-44 object-contain `}
+              />
+            </div>
           </div>
-          <div className="flex flex-col shadow gap-4 sm:flex-row p-10 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg">
-            <div className="flex flex-col w-full sm:w-[60%] justify-center items-center sm:items-start ">
-              <p className="font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-[#EC8000]">
+          <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
+            <div className='flex flex-col w-full sm:w-[60%] justify-center p-10 items-center sm:items-start '>
+              <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-[#EC8000]'>
                 Community
-                <span className="text-black"> Governed</span>
+                <span className='text-black'> Governed</span>
               </p>
-              <p className="text-[#475467]  text-center sm:text-left text-[16px]  font-normal font-inter">
+              <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5  font-normal font-inter'>
                 Monetary policy of $EARTH will be governed by Nodes of $EARTH
                 with goal of achieving our mission/vision
               </p>
             </div>
-            <ImageView
-              src={govern}
-              alt="service"
-              width={600}
-              height={300}
-              className={` w-48 h-44 object-contain `}
-            />
+            <div className='p-5'>
+              <ImageView
+                src={govern}
+                alt='service'
+                width={600}
+                height={300}
+                className={` w-48 h-44 object-contain `}
+              />
+            </div>
           </div>
-          <div className="flex flex-col shadow gap-4 sm:flex-row p-10 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg">
-            <div className="flex flex-col w-full sm:w-[60%] justify-center items-center sm:items-start ">
-              <p className="font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-[#EC8000]">
+          <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
+            <div className='flex flex-col w-full sm:w-[60%] justify-center p-10 items-center sm:items-start '>
+              <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-[#EC8000]'>
                 Range
-                <span className="text-black"> Bound</span>
+                <span className='text-black'> Bound</span>
               </p>
-              <p className="text-[#475467]  text-center sm:text-left text-[16px]  font-normal font-inter">
+              <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5  font-normal font-inter'>
                 $EARTH is a new unit of value, not pegged to any currency.
                 Designed to be loosely range bound, assets backing each token
                 serve as the floor while valuing positive externalities created
@@ -389,169 +418,177 @@ export default function Main() {
                 ceiling.
               </p>
             </div>
-            <ImageView
-              src={range}
-              alt="service"
-              width={600}
-              height={300}
-              className={` w-48 h-44 object-contain `}
-            />
+            <div className='p-5'>
+              <ImageView
+                src={range}
+                alt='service'
+                width={600}
+                height={300}
+                className={` w-48 h-44 object-contain `}
+              />
+            </div>
           </div>
-          <div className="flex flex-col shadow gap-4 sm:flex-row p-10 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg">
-            <div className="flex flex-col w-full sm:w-[60%] justify-center items-center sm:items-start ">
-              <p className="font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black ">
+          <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
+            <div className='flex flex-col w-full sm:w-[60%] justify-center p-10 items-center sm:items-start '>
+              <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black '>
                 Protocol Owned
-                <span className="text-[#EC8000]"> Liquidity</span>
+                <span className='text-[#EC8000]'> Liquidity</span>
               </p>
-              <p className="text-[#475467]  text-center sm:text-left text-[16px]  font-normal font-inter">
+              <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5  font-normal font-inter'>
                 Perpetual liquidity for you to swap your $EARTH for $DAI
                 whenever you choose to irrespective of market conditions. This
                 LP is owned by the treasury as a service to currency holders.
               </p>
             </div>
-            <ImageView
-              src={pool}
-              alt="service"
-              width={600}
-              height={300}
-              className={` w-48 h-44 object-contain `}
-            />
-          </div>
-        </div>
-        <div className="flex flex-col mt-28 gap-4 items-center">
-          <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
-            Projects
-          </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
-            Borderless, capital efficient funnel mobilizing climate finance
-          </p>
-          <p className="text-[#475467] text-center font-normal   text-[16px] font-inter">
-            Verified projects that are eligible to seek funding from $EARTH
-            treasury.
-          </p>
-        </div>
-      </div>
-      <ImageView
-        src={climateEnvironmentCrisis}
-        className="py-[30px] mt-8 w-full"
-        alt="check"
-        width={1440}
-        height={2709}
-      />
-      <div
-        className={`my-16 max-w-screen-2xl  mx-auto pl-[6%] hide-scrollbar overflow-x-auto `}
-      >
-        <div className="flex flex-col w-full sm:flex-row justify-between lg:gap-[1rem] xl:gap-[15rem] 2xl:gap-[25rem]">
-          <div className="flex justify-center min-w-[30rem] w-[30rem] flex-col gap-2">
-            <ImageView src={graph} alt="graph" width={50} height={50} />
-            <p className="text-[#101828] font-semibold text-left text-[20px] sm:text-[28px] font-syne">
-              Climate Solutions backing $Earth
-            </p>
-            <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
-              For projects building infrastructure for a net zero future
-            </p>
-            <div className="flex pl-4 flex-col my-4 gap-4">
-              {features?.map((feature, i) => (
-                <div className="flex gap-2" key={i}>
-                  <ImageView src={check} alt="check" width={20} height={20} />
-                  <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
-                    {feature}
-                  </p>
-                </div>
-              ))}
+            <div className='p-5'>
+              <ImageView
+                src={pool}
+                alt='service'
+                width={600}
+                height={300}
+                className={` w-48 h-44 object-contain `}
+              />
             </div>
           </div>
-          <div className="ml-auto flex gap-8">
-            {project && project.length ? (
-              project?.map((data, index) => (
-                <div
-                  className="rounded-lg border-4 w-[40rem] h-fit overflow-hidden cursor-pointer   flex flex-col border-[#101828]"
-                  key={index}
-                  onClick={() => router.push(`/projects/${data.projectId}`)}
-                >
-                  <div className="justify-center items-center flex flex-col px-3 sm:px-6">
-                    <div className="flex w-full justify-center pt-3 sm:pt-6 gap-2 items-center">
-                      <ImageView
-                        src={data.icon}
-                        alt="avatar"
-                        width={50}
-                        height={50}
-                      />
-                      <p className="text-black font-inter font-semibold text-[16px]">
-                        {data.subText}
-                      </p>
-                    </div>
-                    <p className="pt-1 sm:pt-2 font-syne text-center font-semibold text-[20px] sm:text-[24px] text-black">
-                      {data.projectName}
-                    </p>
-                    <p className="pt-1 sm:pt-2 font-inter font-semibold text-[12px] text-[#EC8000]">
-                      {data.category}
-                    </p>
-                    <p className="py-1 sm:py-2 h-[3.5rem] font-inter text-center font-normal text-[13px] text-black">
-                      {data.subtitle}
+        </div>
+      </div>
+      <div>
+        <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
+          <div className='flex items-center flex-col w-[80%] px-20 mt-28 gap-4 '>
+            <p className='text-[#EC8000] font-semibold text-center text-[14px] font-inter'>
+              What is $EARTH
+            </p>
+            <p className='text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne'>
+              Borderless, capital efficient funnel mobilizing climate finance
+            </p>
+            <p className='text-[#475467] text-center font-normal   text-[16px] font-inter'>
+              Giving the power to anyone, anywhere in the world to fund climate
+              action via $EARTH
+            </p>
+          </div>
+        </div>
+        <ImageView
+          src={climateEnvironmentCrisis}
+          className='py-[30px] mt-8 w-full'
+          alt='check'
+          width={1440}
+          height={2709}
+        />
+        <div
+          className={`my-16  mx-auto pl-[6%] hide-scrollbar overflow-x-auto `}
+        >
+          <div className='flex flex-col w-full sm:flex-row justify-between lg:gap-[1rem] xl:gap-[15rem] 2xl:gap-[25rem]'>
+            <div className='flex justify-center min-w-[32rem] w-[30rem] flex-col gap-2'>
+              {/* <ImageView src={graph} alt="graph" width={50} height={50} /> */}
+              <p className='text-[#101828] font-semibold text-left text-[20px] sm:text-[28px] font-syne'>
+                Every Real World Asset funded via $EARTH treasury is -
+              </p>
+              {/* <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
+              For projects building infrastructure for a net zero future
+            </p> */}
+              <div className='flex flex-col gap-4 pl-4 my-4'>
+                {features?.map((feature, i) => (
+                  <div className='flex gap-2' key={i}>
+                    <ImageView src={check} alt='check' width={20} height={20} />
+                    <p className='text-[#475467] text-left font-normal  text-[14px] font-inter'>
+                      {feature}
                     </p>
                   </div>
-                  <div className="flex border-t-2 mt-4 w-full border-[#EAECF0]">
-                    <div className="flex items-center px-1 grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col">
-                      <p className="font-syne font-semibold text-center text-[18px] sm:text-[30px] text-[#EC8000]">
-                        {data.projectValue}
-                      </p>
-                      <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
-                        Total project value
-                      </p>
-                    </div>
-                    <div className="flex items-center  px-1 py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col">
-                      <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
-                        {data.fundingNeeded}
-                      </p>
-                      <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
-                        Funding needed
-                      </p>
-                    </div>
-                    <div className="flex items-center py-2 pb-3 px-1  grow justify-center flex-col">
-                      <p className="font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]">
-                        {data.Irr}
-                      </p>
-                      <p className="font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]">
-                        Internal rate of return
-                      </p>
-                    </div>
-                  </div>
-                  <ImageView
-                    src={data.coverPic}
-                    alt="coverpic"
-                    width={350}
-                    height={480}
-                    className="w-full object-cover rounded-b-sm"
-                  />
-                </div>
-              ))
-            ) : (
-              <div className="w-[50%] h-[30vh] flex items-center justify-center">
-                <Loader />
+                ))}
               </div>
-            )}
+            </div>
+            <div className='flex gap-8 ml-auto'>
+              {project && project.length ? (
+                project?.map((data, index) => (
+                  <div
+                    className='rounded-lg border-4 w-[40rem] h-fit overflow-hidden cursor-pointer   flex flex-col border-[#101828]'
+                    key={index}
+                    onClick={() => router.push(`/projects/${data.projectId}`)}
+                  >
+                    <div className='flex flex-col items-center justify-center px-3 sm:px-6'>
+                      <div className='flex items-center justify-center w-full gap-2 pt-3 sm:pt-6'>
+                        <ImageView
+                          src={data.icon}
+                          alt='avatar'
+                          width={50}
+                          height={50}
+                        />
+                        <p className='text-black font-inter font-semibold text-[16px]'>
+                          {data.subText}
+                        </p>
+                      </div>
+                      <p className='pt-1 sm:pt-2 font-syne text-center font-semibold text-[20px] sm:text-[24px] text-black'>
+                        {data.projectName}
+                      </p>
+                      <p className='pt-1 sm:pt-2 font-inter font-semibold text-[12px] text-[#EC8000]'>
+                        {data.category}
+                      </p>
+                      <p className='py-1 sm:py-2 h-[3.5rem] font-inter text-center font-normal text-[13px] text-black'>
+                        {data.subtitle}
+                      </p>
+                    </div>
+                    <div className='flex border-t-2 mt-4 w-full border-[#EAECF0]'>
+                      <div className='flex items-center px-1 grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col'>
+                        <p className='font-syne font-semibold text-center text-[18px] sm:text-[30px] text-[#EC8000]'>
+                          {data.projectValue}
+                        </p>
+                        <p className='font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]'>
+                          Total project value
+                        </p>
+                      </div>
+                      <div className='flex items-center  px-1 py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col'>
+                        <p className='font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]'>
+                          {data.fundingNeeded}
+                        </p>
+                        <p className='font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]'>
+                          Funding needed
+                        </p>
+                      </div>
+                      <div className='flex flex-col items-center justify-center px-1 py-2 pb-3 grow'>
+                        <p className='font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]'>
+                          {data.Irr}
+                        </p>
+                        <p className='font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]'>
+                          Internal rate of return
+                        </p>
+                      </div>
+                    </div>
+                    <ImageView
+                      src={data.coverPic}
+                      alt='coverpic'
+                      width={350}
+                      height={480}
+                      className='object-cover w-full rounded-b-sm'
+                    />
+                  </div>
+                ))
+              ) : (
+                <div className='w-[50%] h-[30vh] flex items-center justify-center'>
+                  <Loader />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
-      <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
-        <div className="flex flex-col gap-2 items-center">
-          <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
+      <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
+        <div className='flex flex-col items-center gap-2'>
+          <p className='text-[#EC8000] font-semibold text-center text-[14px] font-inter'>
             Partners
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
+          <p className='text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne'>
             Agents of Change
           </p>
-          <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
+          <p className='text-[#475467] text-center font-normal  text-[16px] font-inter'>
             Projects collaborating with $EARTH to fulfil its mission/vision
           </p>
         </div>
-        <div className="flex flex-wrap  sm:px-[32%] justify-center mt-6 gap-1 sm:gap-5">
+        <div className='flex flex-wrap  sm:px-[32%] justify-center mt-6 gap-1 sm:gap-5'>
           {partners && partners?.length ? (
             partners.map((partner, index) => (
-              <Link href={partner?.link} className="cursor-pointer" key={index}>
+              <Link href={partner?.link} className='cursor-pointer' key={index}>
                 <ImageView
-                  alt="social"
+                  alt='social'
                   src={partner.icon}
                   width={60}
                   height={60}
@@ -559,126 +596,125 @@ export default function Main() {
               </Link>
             ))
           ) : (
-            <div className="w-full h-[6rem]">
+            <div className='w-full h-[6rem]'>
               <Loader />
             </div>
           )}
         </div>
-        <button className="w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
+        <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
           View Partners
         </button>
       </div>
       <div>
         <ImageView
-          alt="social"
+          alt='social'
           src={mainBottomSection}
           width={1440}
           height={430}
-          className="w-full h-[30rem] object-cover mt-20"
+          className='w-full h-[30rem] object-cover mt-20'
         />
       </div>
-      <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
-        <div className="flex flex-col gap-2 items-center">
-          <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
+      <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
+        <div className='flex flex-col items-center gap-2'>
+          <p className='text-[#EC8000] font-semibold text-center text-[14px] font-inter'>
             News
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
+          <p className='text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne'>
             Latest updates
           </p>
-          <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
+          <p className='text-[#475467] text-center font-normal  text-[16px] font-inter'>
             Stay updated with the latest progress on $Earth
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 mt-8 gap-x-6 gap-y-3 px-[112px]">
-          {updates.map((card, index) => (
-            <div
-              className={`flex cursor-pointer items-start ${
+      </div>
+      <div className='grid w-full grid-cols-1 px-20 mt-8 sm:grid-cols-2 gap-x-6 gap-y-5'>
+        {updates.map((card, index) => (
+          <div
+            className={`flex cursor-pointer w-full items-start ${
+              index === 0
+                ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
+                : "col-span-1 flex-row sm:col-span-1 "
+            }`}
+            key={index}
+          >
+            <ImageView
+              src={card.img}
+              alt={card.name}
+              width={200}
+              height={200}
+              className={`${
                 index === 0
-                  ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
-                  : "col-span-1 flex-row sm:col-span-1 "
+                  ? "w-full h-[20rem] object-cover"
+                  : "w-full h-40 sm:w-full object-cover"
               }`}
-              key={index}
+            />
+            <div
+              className={`${index === 0 ? "mt-4" : "flex flex-col gap-2 px-4"}`}
             >
-              <ImageView
-                src={card.img}
-                alt={card.name}
-                width={200}
-                height={200}
-                className={`${
-                  index === 0
-                    ? "w-full h-[20rem] object-cover"
-                    : "w-full h-40 sm:w-full object-cover"
-                }`}
-              />
-              <div
-                className={`${
-                  index === 0 ? "mt-4" : "flex flex-col gap-2 px-4"
-                }`}
-              >
-                <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
-                  {card?.name}
-                </p>
-                <div className="flex mt-2 justify-between items-start">
-                  <p
-                    className={`text-[#101828] font-inter font-semibold text-[16px] ${
-                      index === 0 ? "font-syne text-[22px]" : ""
-                    }`}
-                  >
-                    {card?.title}
-                  </p>
-                  {card?.link && <LuArrowUpRight size={22} color="#101828" />}
-                </div>
+              <p className='text-[#EC8000] font-inter font-semibold text-[12px]'>
+                {card?.name}
+              </p>
+              <div className='flex items-start justify-between mt-2'>
                 <p
-                  className={`text-[#475467] ${
-                    index === 0 ? "mt-2" : ""
-                  } font-inter w-[90%] font-normal text-[14px]`}
+                  className={`text-[#101828] font-inter font-semibold text-[16px] ${
+                    index === 0 ? "font-syne text-[22px]" : ""
+                  }`}
                 >
-                  {card?.description}
+                  {card?.title}
                 </p>
-                <div
-                  className={`flex items-center ${
-                    index === 0 ? "mt-4" : "mt-2"
-                  }  gap-2`}
-                >
-                  {card?.tags.map((tag, i) => (
-                    <p
-                      className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${
-                        tag === "Design"
-                          ? "text-[#EC8000] bg-[#FFFCF8]"
-                          : tag === "Research"
-                          ? "bg-[#EEF4FF] text-[#3538CD]"
-                          : tag === "Presentation"
-                          ? "bg-[#FDF2FA] text-[#C11574]"
-                          : ""
-                      }`}
-                      key={i}
-                    >
-                      {tag}
-                    </p>
-                  ))}
-                </div>
+                {card?.link && <LuArrowUpRight size={22} color='#101828' />}
+              </div>
+              <p
+                className={`text-[#475467] ${
+                  index === 0 ? "mt-2" : ""
+                } font-inter w-[100%] font-normal text-[14px]`}
+              >
+                {card?.description}
+              </p>
+              <div
+                className={`flex items-center ${
+                  index === 0 ? "mt-4" : "mt-0"
+                }  gap-2`}
+              >
+                {card?.tags.map((tag, i) => (
+                  <p
+                    className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${
+                      tag === "Design"
+                        ? "text-[#EC8000] bg-[#FFFCF8]"
+                        : tag === "Research"
+                        ? "bg-[#EEF4FF] text-[#3538CD]"
+                        : tag === "Presentation"
+                        ? "bg-[#FDF2FA] text-[#C11574]"
+                        : ""
+                    }`}
+                    key={i}
+                  >
+                    {tag}
+                  </p>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-
-        <div className="relative mt-0 sm:mt-28 sm:mb-8 w-full">
+          </div>
+        ))}
+      </div>
+      <div className=' pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
+        <div className='relative w-full mt-0 sm:mt-28 sm:mb-8'>
           <ImageView
             src={groot}
-            alt="groot"
+            alt='groot'
             width={1216}
-            height={350}
-            className="w-full h-[300px] rounded-lg object-cover"
+            height={300}
+            className='w-full h-[450px] rounded-lg object-cover'
           />
-          <div className="flex flex-col w-full justify-end items-center p-4 absolute bottom-[1.5rem]">
-            <p className="text-white font-inter text-center mt-3 font-medium text-[18px]">
+          <div className='flex flex-col w-full justify-end items-center p-4 absolute bottom-[1.5rem]'>
+            <p className='text-white font-inter text-center mt-3 font-medium text-[18px]'>
               Still have questions?
             </p>
-            <p className="text-white font-inter text-center mt-1 font-light text-[16px]">
+            <p className='text-white font-inter text-center mt-1 font-light text-[16px]'>
               Can’t find the answer you’re looking for? Please drop a message to
               our team.
             </p>
-            <button className="w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm">
+            <button className='w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm'>
               $Earth GPT
             </button>
           </div>

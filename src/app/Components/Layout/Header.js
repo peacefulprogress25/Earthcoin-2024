@@ -45,7 +45,7 @@ export default function Header() {
     {
       title: "How to get $EARTH?",
       subtitle: "Mint and Trade ",
-      icon: "/assets/icons/cross.svg",
+      icon: "/assets/icons/earth.svg",
       link: "/earth",
     },
     {
@@ -54,12 +54,12 @@ export default function Header() {
       icon: "/assets/icons/cross.svg",
       link: "/tokenomics",
     },
-    {
-      title: "$EARTH nodes",
-      subtitle: "",
-      icon: "/assets/icons/node.svg",
-      link: "/node",
-    },
+    // {
+    //   title: "$EARTH nodes",
+    //   subtitle: "",
+    //   icon: "/assets/icons/node.svg",
+    //   link: "/node",
+    // },
     {
       title: "What are nodes of $EARTH?",
       subtitle: "Roles and responsibilities",
@@ -81,7 +81,7 @@ export default function Header() {
   ];
   return (
     <nav className="fixed hidden sm:block left-0 top-0 z-10 right-0 bg-white">
-      <div className="flex h-20 w-full max-w-screen-2xl mx-auto border-b border-[#F2F4F7] gap-2 items-center px-4 sm:px-[6%]">
+      <div className="flex h-20 w-full mx-auto border-b border-[#F2F4F7] gap-2 items-center px-4 sm:px-[6%]">
         <Link href="/">
           <ImageView
             alt="logo"
@@ -92,7 +92,6 @@ export default function Header() {
           />
         </Link>
         <div className="items-center h-full ml-2 sm:ml-8 flex gap-2 sm:gap-9 font-inter text-[#475467] font-semibold text-sm">
-          <Link href="/projects">Projects</Link>
           <Link
             className="flex items-center gap-1 h-full relative"
             href="/"
@@ -135,7 +134,7 @@ export default function Header() {
           >
             Resources <IoIosArrowDown />{" "}
             {showresourceMenu && (
-              <div className="absolute w-[18rem]  flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[3.5rem] rounded-lg bg-white">
+              <div className="absolute w-[18rem] h-[28rem] overflow-y-auto flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[3.5rem] rounded-lg bg-white">
                 {resourceMenu?.map((menu, index) => (
                   <Link
                     className="flex gap-4 items-start justify-start"
@@ -161,9 +160,10 @@ export default function Header() {
               </div>
             )}
           </Link>
-          <Link href="/tokenomics">Tokenomics</Link>
-          <Link href="/updates">$EARTH Updates </Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/node">NODES</Link>
           <Link href="/media">Media</Link>
+          <Link href="/updates">Dashboard</Link>
         </div>
         <>
           <Link
