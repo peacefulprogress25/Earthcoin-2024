@@ -4,6 +4,9 @@ import Community from "../../Components/Community";
 const tokenomics = "/assets/images/tokenomics.png";
 const curious = "/assets/images/Curious.png";
 const protocol = "/assets/images/protocol.png";
+const treasury1 = "/assets/images/treasury1.gif";
+const treasury2 = "/assets/images/treasury2.gif";
+const treasury3 = "/assets/images/treasury3.gif";
 const treasury = "/assets/images/treasury.png";
 const harvest = "/assets/images/harvest-treasury.png";
 
@@ -59,7 +62,7 @@ export default function Mechanics() {
             TOKENOMICS
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
-            The economic models behind $Earth driving our solarpunk vision home
+          The economic models behind $Earth funding climate solutions and putting Eco in Economy
           </p>
         </div>
         <ImageView
@@ -69,6 +72,13 @@ export default function Mechanics() {
           height={400}
           className="w-full mt-4 object-cover"
         />
+        <div className="sm:px-[13%] px-4 flex flex-col w-full items-start">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px]  font-syne">
+          $EARTH is designed to -
+          </p>
+           </div>
+       
+       
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-3 mt-6">
           {data.map((option, index) => (
             <Card key={index} option={option} />
@@ -158,7 +168,7 @@ export default function Mechanics() {
             </p>
           </div>
           <ImageView
-            src={protocol}
+            src={treasury1}
             alt="graph"
             width={400}
             height={400}
@@ -246,7 +256,7 @@ export default function Mechanics() {
             </li>
           </ul>
           <ImageView
-            src={treasury}
+            src={treasury2}
             alt="treasury"
             width={400}
             height={400}
@@ -280,7 +290,7 @@ export default function Mechanics() {
               </li>
             </ul>
             <ImageView
-              src={harvest}
+              src={treasury3}
               alt="harvest"
               width={400}
               height={400}
