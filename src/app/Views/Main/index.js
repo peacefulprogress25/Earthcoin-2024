@@ -10,7 +10,6 @@ import { Loader } from "../../Components/Loader";
 import Link from "next/link";
 import Video from "../../Components/Video";
 
-// const main = "/assets/Earth Video.mp4";
 const groot = "/assets/images/groot1.png";
 const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
