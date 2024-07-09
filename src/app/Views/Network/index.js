@@ -1,11 +1,13 @@
 import ImageView from "../../Components/ImageView";
-
 const community = "/assets/images/community.png";
-const misson = "/assets/images/Mission-Vission.png";
+const nature = "/assets/images/nature1.png";
 const purge = "/assets/images/purge.png";
 const partnership = "/assets/images/partnership.png";
 const projects = "/assets/images/projects.png";
 const policy = "/assets/images/policy.png";
+import Video from '../../Components/Video'
+
+
 
 export default function Network() {
   return (
@@ -23,7 +25,7 @@ export default function Network() {
         </p>
       </div>
       <ImageView
-        src={community}
+        src={nature}
         alt="purpose"
         width={400}
         height={300}
@@ -126,12 +128,12 @@ export default function Network() {
             fulfil our mission & vision -
           </p>
         </div>
-        <ImageView
-          src={misson}
+        <Video
+          src="/assets/What are Earth Nodes.mp4"
           alt="purpose"
           width={400}
           height={300}
-          className="w-full h-[28rem]  mt-7 object-cover"
+          className="w-full h-[28rem] mt-7 object-cover"
         />
         <p className="text-[#101828] mt-12 font-semibold text-center text-[30px] sm:text-[40px] font-syne">
           Responsibilities of a node
@@ -203,9 +205,7 @@ export default function Network() {
           who in any way shape or form can further our mission/vision.
           <br />
           <br />
-          <span className="text-[#EC8000] font-semibold">
-            Reward - Combination of $EARTH and $SLRPNK (Amount not decided yet)
-          </span>
+         
         </p>
         <div className="relative w-full flex mt-6 items-center justify-center">
           <ImageView
@@ -225,9 +225,7 @@ export default function Network() {
           focusing on).
           <br />
           <br />
-          <span className="text-[#EC8000] font-semibold">
-            Reward - SLRPNK (Amount not decided yet)
-          </span>
+         
           <br />
           <br />
           Projects should transparently communicate their impact funded with
@@ -267,9 +265,7 @@ export default function Network() {
           community, rewarding projects and partners.
           <br />
           <br />
-          <span className="text-[#EC8000] font-semibold">
-            Reward - Combination of $EARTH and $SLRPNK (Amount not decided yet)
-          </span>
+        
           <br />
           <br />
           Given the way $EARTH is designed it is our sincere belief that by
