@@ -27,7 +27,7 @@ export default function TermsofFunding({ details }) {
       <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
         Terms of funding
       </p>
-      <div className="border-b-2 w-full border-[#EAECF0] pb-8">
+      <div className="border-b-2 w-full border-[#EAECF0] pb-8 text-[14px] sm:text-[16px]  font-inter text-[#475467]">
         <Editor
           editorState={editorState}
           wrapperClassName="demo-wrapper"

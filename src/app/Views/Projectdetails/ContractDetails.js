@@ -27,13 +27,15 @@ export default function ContractDetails({ details }) {
       <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
         Contract Details
       </p>
-      <Editor
-        editorState={editorState}
-        wrapperClassName="demo-wrapper"
-        editorClassName="richText-editor"
-        toolbarHidden={true}
-        readOnly={true}
-      />
+      <div className="border-b-2 w-full border-[#EAECF0] pb-8 text-[14px] sm:text-[16px]  font-inter text-[#475467]">
+        <Editor
+          editorState={editorState}
+          wrapperClassName="demo-wrapper"
+          editorClassName="richText-editor"
+          toolbarHidden={true}
+          readOnly={true}
+        />
+      </div>
       <div className="flex w-full flex-col border-b-2 px-2 border-[#EAECF0] pb-8">
         <p className="font-inter mt-3 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
           Contract Address - 

@@ -18,6 +18,7 @@ const govern = "/assets/images/community-governed.png";
 const range = "/assets/images/range.png";
 const pool = "/assets/images/pool.png";
 const graph = "/assets/icons/graph.svg";
+const grBg = "/assets/images/highlightText.png";
 const climateEnvironmentCrisis =
   "/assets/images/climate-environment-crisis.png";
 const mainBottomSection = "/assets/images/main-bottom-section.png";
@@ -268,16 +269,18 @@ export default function Main() {
             </div>
           ))}
         </div>
-        <div className="flex sm:px-[20%] items-center pt-10 px-4 flex-col w-full gap-3">
-          <div className="text-[#101828] flex font-semibold text-center text-[24px] sm:text-[34px] leading-[42px] font-syne">
+        <div className="flex sm:px-[15%] items-center pt-10 px-4 flex-col w-full gap-1">
+          <p className="text-[#101828]  text-[24px] sm:text-[34px] leading-[42px] font-syne text-center font-semibold">
             Here to make anthropogenic climate change history & seeding the
-            {/* <ImageView
-              src={solar}
-              alt="hightlight"
+          </p>
+          <div className="text-[#101828] text-[24px] sm:text-[34px] leading-[42px] font-syne flex font-semibold text-center">
+            <ImageView
+              src={grBg}
+              alt="highlight"
               width={30}
               height={30}
-              className="w-8 h-8"
-            />{" "} */}
+              className="w-[10rem] h-10"
+            />
             paradigm
           </div>
         </div>

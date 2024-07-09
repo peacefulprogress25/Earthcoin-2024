@@ -80,7 +80,7 @@ function FAQSection({ Question, Answer, i }) {
         </button>
       </div>
       {index === i ? (
-        <div className="">
+        <div className="text-[14px] sm:text-[16px]  font-inter text-[#475467]">
           <Editor
             editorState={editorState}
             wrapperClassName="demo-wrapper"

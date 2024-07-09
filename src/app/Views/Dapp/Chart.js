@@ -1,8 +1,30 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 
-const Chart = ({ setScreen }) => {
+const Chart = ({ setScreen, screen }) => {
   const chartRef = useRef();
+  const [donutData, setDonutData] = useState([
+    { name: "MINT", value: 200, color: "#adb745" },
+    { name: "STAKE", value: 200, color: "#adb745" },
+    { name: "TRADE", value: 200, color: "#adb745" },
+    { name: "CLAIM", value: 170, color: "#adb745" },
+    {
+      name: "DISCONNECT WALLET",
+      value: 270,
+      color: "#c1272d",
+    },
+    { name: "SBT", value: 170, color: "#adb745" },
+  ]);
+
+  useEffect(() => {
+    if (screen === "CONNECT WALLET") {
+      setDonutData((prevData) =>
+        prevData.map((d) =>
+          d.name === "CONNECT WALLET" ? { ...d, color: "#045047" } : d
+        )
+      );
+    }
+  }, [screen]);
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
@@ -27,14 +49,14 @@ const Chart = ({ setScreen }) => {
         );
     }
 
-    const donutData = [
-      { name: "MINT", value: 200, color: "#adb745" },
-      { name: "STAKE", value: 200, color: "#adb745" },
-      { name: "TRADE", value: 200, color: "#adb745" },
-      { name: "CLAIM", value: 170, color: "#adb745" },
-      { name: "DISCONNECT WALLET", value: 270, color: "#c1272d" },
-      { name: "SBT", value: 170, color: "#adb745" },
-    ];
+    // const donutData = [
+    //   { name: "MINT", value: 200, color: "#adb745" },
+    //   { name: "STAKE", value: 200, color: "#adb745" },
+    //   { name: "TRADE", value: 200, color: "#adb745" },
+    //   { name: "CLAIM", value: 170, color: "#adb745" },
+    //   { name: "DISCONNECT WALLET", value: 270, color: "#c1272d" },
+    //   { name: "SBT", value: 170, color: "#adb745" },
+    // ];
 
     const colorScale = d3
       ?.scaleLinear()
@@ -83,7 +105,11 @@ const Chart = ({ setScreen }) => {
 
         // Update the screen with the clicked slice's name
 
-        setScreen(d.data.name);
+        if (screen === "DISCONNECT WALLET") {
+          setScreen("DISCONNECT WALLET");
+        } else {
+          setScreen(d.data.name);
+        }
       })
       //Create the new invisible arcs and flip the direction for the bottom half labels
       .each(function (d, i) {
@@ -164,7 +190,7 @@ const Chart = ({ setScreen }) => {
   return (
     <div
       ref={chartRef}
-      className="cursor-pointer chart text-center text-[16px] font-semibold font-inter z-[10]"
+      className="cursor-pointer chart text-center relative text-[16px] font-semibold font-inter z-[3]"
     ></div>
   );
 };
