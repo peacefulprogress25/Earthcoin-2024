@@ -14,77 +14,17 @@ const markerIcon = new L.Icon({
   iconUrl: "/assets/icons/marker.svg",
   iconSize: MarkerIconSize,
 });
+
 export default function WorldMap({ projects }) {
   const position = [20, 100];
   const [loading, setLoading] = useState(true);
-  // const Popupdata = [
-  //   {
-  //     title: "Index",
-  //     logo: "/assets/icons/polygon.svg",
-  //     subtitle: "Ethic Hub",
-  //     coordinates: { latitude: "46.51802000", longitude: "-95.37615000" },
-  //   },
-  //   {
-  //     logo: "/assets/icons/polygon.svg",
-  //     title: "Index",
-  //     subtitle: "Ethic Hub",
-  //     coordinates: { latitude: "-33.64656000", longitude: "150.73515000" },
-  //   },
-  //   {
-  //     logo: "/assets/icons/polygon.svg",
-  //     title: "Index",
-  //     subtitle: "Ethic Hub",
-  //     coordinates: { latitude: "46.51802000", longitude: "-95.37615000" },
-  //   },
-  //   {
-  //     logo: "/assets/icons/polygon.svg",
-  //     title: "Index",
-  //     subtitle: "Ethic Hub",
-  //     coordinates: { latitude: "-39.64656000", longitude: "150.73515000" },
-  //   },
-  //   {
-  //     logo: "/assets/icons/polygon.svg",
-  //     title: "Index",
-  //     subtitle: "Ethic Hub",
 
-  //     coordinates: { latitude: "56.13068000", longitude: "68.70829000" },
-  //   },
-  //   {
-  //     logo: "/assets/icons/polygon.svg",
-  //     subtitle: "Ethic Hub",
-  //     title: "Index",
-  //     coordinates: { latitude: "36.95127000", longitude: "72.31800000" },
-  //   },
-  //   {
-  //     logo: "/assets/icons/polygon.svg",
-  //     subtitle: "Ethic Hub",
-  //     title: "Index",
-  //     coordinates: { latitude: "13.08784000", longitude: "80.27847000" },
-  //   },
-  //   {
-  //     logo: "/assets/icons/polygon.svg",
-  //     subtitle: "Ethic Hub",
-  //     title: "Index",
-  //     coordinates: { latitude: "36.95127000", longitude: "72.31800000" },
-  //   },
-  //   {
-  //     logo: "/assets/icons/polygon.svg",
-  //     subtitle: "Ethic Hub",
-  //     title: "Index",
-  //     coordinates: { latitude: "35.90617000", longitude: "68.48869000" },
-  //   },
-  //   {
-  //     logo: "/assets/icons/polygon.svg",
-  //     subtitle: "Ethic Hub",
-  //     title: "Index",
-  //     coordinates: { latitude: "34.98735000", longitude: "63.12891000" },
-  //   },
-  // ];
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
   }, []);
+
   const renderIcons = () => {
     return projects && projects.length
       ? projects.map((map, index) => (
@@ -101,10 +41,7 @@ export default function WorldMap({ projects }) {
                 event.target.openPopup();
               },
               mouseout: (event) => {
-                // setTimeout(() => {
-                //   console.log("close");
                 event.target.closePopup();
-                // }, 30000);
               },
             }}
           >
@@ -113,9 +50,9 @@ export default function WorldMap({ projects }) {
         ))
       : null;
   };
+
   return (
     <div className="w-full flex flex-col relative">
-      {" "}
       <ImageView
         src={map}
         alt="map"
@@ -130,20 +67,22 @@ export default function WorldMap({ projects }) {
         <p className="text-white font-semibold text-center text-[30px] !font-syne">
           Climate Solutions backing $EARTH
         </p>
-        <p className="text-white text-center font-light  text-[16px] font-inter">
+        <p className="text-white text-center font-light text-[16px] font-inter">
           $Earth treasury funds the following climate action projects
         </p>
       </div>
       <MapContainer
         center={position}
-        zoom={2}
+        zoom={1}
         zoomControl={false}
-        scrollWheelZoom={true}
+        scrollWheelZoom={false}
+        doubleClickZoom={false}
+        dragging={false}
         attributionControl={false}
-        className="leaflet-Map"
+        className="leaflet-Map h-[100vh] sm:h-[150px] w-full sm:w-[60vw] mt-0 sm:mt-[-12rem] ml-0 sm:ml-[-8rem] object-cover"
       >
         {loading ? (
-          <div className="h-[60vh] w-full flex items-center justify-center">
+          <div className="h-[60vh] w-full flex items-center ml-0 sm:ml-[8rem] mt-0 sm:mt-[8rem] justify-center">
             <Loader />
           </div>
         ) : (
@@ -156,13 +95,12 @@ export default function WorldMap({ projects }) {
     </div>
   );
 }
+
 function PopoverHandler({ map, id }) {
   return (
     <Popup className="map_popup" key={map.subText}>
       <ImageView src={map.icon} alt="alt" width={20} height={20} />
-      <p className="text-[#344054] font-semibold  font-inter ">
-        {map?.subText}
-      </p>
+      <p className="text-[#344054] font-semibold font-inter">{map?.subText}</p>
       <p className="text-[#667085] font-normal mt-2 font-inter text-center">
         {map?.projectName}
       </p>

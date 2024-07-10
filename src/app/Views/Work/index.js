@@ -1,8 +1,8 @@
 import ImageView from "../../Components/ImageView";
 import { useState, useEffect } from "react";
 import Community from "../../Components/Community";
-const earth = "/assets/images/earth.png";
-const plan = "/assets/images/plan.png";
+const earth = "/assets/images/earthclimate.png";
+const plan = "/assets/images/plan1.png";
 const harvest = "/assets/images/Harvest.png";
 const vdLink = "https://solarpunkdao.earth/assets/tokenomics-video.mp4";
 import Video from "../../Components/Video";
@@ -39,22 +39,11 @@ export default function Work() {
     return editorState;
   };
   const earthValues = [
-    "You earn your SBT that makes you a Node. (Link on SBT - Become a Node)",
+    "Solarpunk Dao  issues yol mint SEARTH Coul Bound NFT that makes you a NODE and lets you ",
     "Node purges petro $ directly at the protocol to mint $EARTH",
-    "Protocol sends those $$$ to $EARTH treasury",
-    "$EARTH holders use quadratic voting to determine which projects get funds from $EARTH treasury",
-    "An NFT is minted to represent that particular projects investment.",
-    "$EARTH treasury transfers funds for that project into that NFT",
-    "Crypto $ are transferred from that NFT to our Foundations wallet",
-    "Foundation converts the crypto $ to fiat $",
-    "Fiat $ is transferred to real world entities Bank Account",
-    "Real world entity uses those fiat $ to fund projects",
-    "Once the project executes, they start sending Principal + Interest or Dividends ( depending on debt or equity ) to the Real World entities bank account",
-    "Fiat $ are then converted to crypto $ and send to Foundations wallet",
-    "Foundations wallet then transfers the said funds to the NFT of that particular project",
-    "From the funds transferred by the Foundation, principal amount is trasferred back to the treasury and the interest portion is used to mint $EARTH",
-    "$EARTH minted above is transferred to the Staking contract",
-    "$EARTH stakers earn this as yield as per on going APY.",
+   "Protocol sends those $$$ to $EARTH treasury",
+   "SEARTH treasury transfers $$$ to projects addressing climate change",
+   "Project returns $$$ in form of Yields back to the treasury to fund other projects",
   ];
   const protocolValues = [
     "APY - Providing yield to $EARTH stakers",
@@ -82,31 +71,29 @@ export default function Work() {
           height={200}
           className="w-full mt-4 object-cover"
         /> */}
-        <Video
+        <div className='relative '>
+          <Video
           src={vdLink}
           controls={false}
           // loop={false}
           // autoPlay
           // playsInline
           // onEnded={() => handleVideoEnd()}
+          className="w-full h-full  object-cover"
           muted={true}
         />
-        <div className="sm:px-[32px] px-4 flex flex-col w-full items-start">
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-            $EARTH is designed to serve as a capital efficient funnel
-          </p>
-          <div className="mt-6">
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              $EARTH is designed to serve as a capital efficient funnel that
-              incentivizes, mobilizes and allocates petro $ to be projects
-              directly addressing climate change and solving the environmental
-              crisis.
-              <br />
-              Here we provide an overview of each step that takes place to make
-              this happen -
-            </p>
-          </div>
+         <div className='absolute'>
+           <ImageView
+          src={earth}
+          alt="earth"
+          width={400}
+          height={200}
+          className="w-full -mt-[56.4%] opacity-60 h-full lg:h-[105.8vh] lg:w-[200vh]  object-cover"
+        />
         </div>
+        </div>
+        
+        
         <div className="flex justify-center items-center px-[100px]">
           <div className="">
             <ImageView
@@ -118,12 +105,29 @@ export default function Work() {
             />
           </div>
           <div className="flex flex-col w-full items-start pl-[64px]">
-            <div className="mt-6">
+          <div>
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
+          $EARTH - Blackhole for Climate Finance
+          </p>
+          <div className="mt-6">
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              $EARTH is designed to serve as a capital efficient funnel that
+              incentivizes, mobilizes and allocates petro $ to be projects
+              directly addressing climate change and solving the environmental
+              crisis.
+             </p>
+             <p className="text-[#475467] mt-6 text-center sm:text-left font-normal  text-[16px] font-inter">
+              Here we provide an overview of each step that takes place to make
+              this happen -
+            </p>
+          </div>
+        
+            <div className="mt-16 ml-6">
               <ol className="list-decimal">
                 {earthValues.map((value, index) => (
                   <li
                     key={index}
-                    className="text-[#475467] text-center mb-4 sm:text-left font-normal text-[16px] font-inter"
+                    className="text-[#475467] text-center mb-4 sm:text-left mt-8 font-normal text-[16px] font-inter"
                   >
                     {value}
                   </li>
@@ -132,7 +136,8 @@ export default function Work() {
             </div>
           </div>
         </div>
-        <div>
+        </div>
+        {/* <div>
           <p className="font-inter font-normal text-[18px] text-primary px-[80px]">
             The premium paid to $EARTH wrt to the value of assets backing each
             $EARTH (Intrinsic Value) allows the protocol to harvest $EARTH till
@@ -140,7 +145,7 @@ export default function Work() {
             each $EARTH. This Harvested $EARTH is then used for various
             activities like -
           </p>
-        </div>
+        </div> */}
         <Community
           img={true}
           title="Still curious?"

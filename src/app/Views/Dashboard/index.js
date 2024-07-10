@@ -156,12 +156,14 @@ export default function Dashboard() {
       title: "Token Holders",
       price: "1,210",
       percent: "10%",
+      img: "/assets/icons/red-chart.svg",
     },
     {
       title: "$EARTH Mint Nodes",
       price: "316",
       increase: true,
       percent: "20%",
+      img: "/assets/icons/green-chart.svg",
     },
     {
       title: "Percentage of $EARTH Staked",
@@ -349,10 +351,12 @@ export default function Dashboard() {
             height={1000}
             className="w-full h-[35vh] object-cover"
           /> */}
-          <div className="w-full h-[35vh]">
-            <Line data={data} width="400" height="300" options={options} />
+        
+          <div className="w-[100%] h-[35vh]" >
+            <Line data={data} width="400" height="300" options={options}  />
           </div>
-          <div className="grid w-full items-center grid-cols-1  sm:grid-cols-3 gap-6">
+          
+          <div className="grid w-full items-center grid-cols-1  sm:grid-cols-3 gap-3">
             {cardData?.map((price, index) => (
               <div
                 className="flex flex-col p-6 w-[18rem] lg:w-[18rem] xl:w-[24rem]  rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
@@ -413,14 +417,14 @@ export default function Dashboard() {
             <p className="text-[#475467] text-[14px] text-left  font-normal font-inter">
               Track, manage and forecast $EARTH trends.
             </p>
-            <div className="flex flex-col w-full sm:flex-row mt-8 gap-6">
+            <div className="flex flex-col w-full sm:flex-row mt-8 gap-4">
               {fundingData?.map((fund, index) => (
                 <div
                   className="flex flex-col p-4 grow w-full rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
                   key={index}
                 >
                   <div className="flex justify-between">
-                    <p className="text-[#101828] w-[50%] text-[14px] font-semibold font-inter">
+                    <p className="text-[#101828] w-[50%] text-[16px] font-semibold font-inter">
                       {fund?.title}
                     </p>
                     <ImageView

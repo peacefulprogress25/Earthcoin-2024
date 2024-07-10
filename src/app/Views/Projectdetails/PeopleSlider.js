@@ -159,13 +159,13 @@ export function PeopleCard({ people }) {
         height={400}
         className="w-full h-[12rem]"
       />
-      <p className="font-inter text-[#101828] font-semibold text-[16px]">
+      <p className="font-Inter text-[#101828] font-semibold text-[16px]">
         {people?.name}
       </p>
-      <p className="font-inter text-[#EC8000] font-normal text-[14px]">
+      <p className="font-Inter text-[#EC8000] font-normal text-[14px]">
         {people?.position}
       </p>
-      <p className="font-inter text-[#475467] font-normal text-[13px]">
+      <p className="font-Inter text-[#475467] font-normal text-[13px]">
         {people?.description}
       </p>
       <div className="flex gap-3">

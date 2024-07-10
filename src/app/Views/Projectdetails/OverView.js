@@ -41,10 +41,10 @@ export default function OverView({ details }) {
     editorState = EditorState.createWithContent(contentState);
   }
   return (
-    <div id="overview" className="flex w-full flex-col gap-8 px-[5%] mt-12">
-      <div className="flex flex-col sm:flex-row !items-start gap-16">
+    <div id="overview" className="flex w-full flex-col gap-8  mt-12">
+      <div className="flex flex-col sm:flex-row px-[5%] !items-start gap-28">
         <div className="flex flex-col gap-2">
-          <div className="flex max-w-44 sm:max-w-52 w-full flex-col border-y-2 font-inter py-3 border-[#EAECF0] items-start gap-3">
+          <div className="flex max-w-44 sm:max-w-52 w-full flex-col border-y-2 font-Inter py-3 border-[#EAECF0] items-start gap-3">
             <p className="text-[#EC8000] font-semibold text-[14px]">
               Priority Rank
             </p>
@@ -86,7 +86,7 @@ export default function OverView({ details }) {
           <p className="text-[#101828] font-semibold font-syne text-[30px]">
             Overview
           </p>
-          <div className="text-[14px] sm:text-[16px]  font-inter text-[#475467]">
+          <div className="text-[14px] sm:text-[16px]  font-Inter text-[#475467]">
             <Editor
               editorState={editorState}
               wrapperClassName="demo-wrapper"
@@ -108,12 +108,13 @@ export default function OverView({ details }) {
           </div>
         </div>
       </div>
-      <div className="flex sm:flex-row flex-col gap-3 sm:gap-8 mt-2 w-full items-center justify-center border-[#EAECF0]">
+    
+      <div className="flex sm:flex-row flex-col gap-3 sm:gap-8 mt-2 items-center justify-center border-[#EAECF0]">
         <div className="flex items-center w-[14rem] sm:w-[22rem]  px-4  py-6  border-2 rounded-lg shadow-lg border-[#EAECF0] justify-center flex-col">
           <p className="font-syne font-semibold text-center text-[20px] sm:text-[32px] text-[#EC8000]">
             {details.projectValue}
           </p>
-          <p className="font-inter font-semibold text-center text-[14px] text-[#101828]">
+          <p className="font-Inter font-semibold text-center text-[14px] text-[#101828]">
             Total project value
           </p>
         </div>
@@ -121,7 +122,7 @@ export default function OverView({ details }) {
           <p className="font-syne font-semibold text-[20px] text-center sm:text-[32px] text-[#EC8000]">
             {details.fundingNeeded}
           </p>
-          <p className="font-inter font-semibold text-center text-[14px] text-[#101828]">
+          <p className="font-Inter font-semibold text-center text-[14px] text-[#101828]">
             Funding needed
           </p>
         </div>
@@ -129,11 +130,12 @@ export default function OverView({ details }) {
           <p className="font-syne font-semibold text-[20px] text-center sm:text-[32px] text-[#EC8000]">
             {details.Irr}
           </p>
-          <p className="font-inter font-semibold text-center text-[14px] text-[#101828]">
+          <p className="font-Inter font-semibold text-center text-[14px] text-[#101828]">
             Internal rate of return
           </p>
         </div>
       </div>
-    </div>
+      </div>
+  
   );
 }

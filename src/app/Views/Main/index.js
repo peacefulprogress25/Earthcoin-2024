@@ -10,13 +10,14 @@ import { Loader } from "../../Components/Loader";
 import Link from "next/link";
 import Video from "../../Components/Video";
 
+const earth = "/assets/video/Earth Video.mp4"
 const groot = "/assets/images/groot1.png";
 const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
-const asset = "/assets/images/Climate solutions.png";
-const govern = "/assets/images/community governed.png";
-const range = "/assets/images/Range bound.png";
-const pool = "/assets/images/liquidity pool.png";
+const asset = "/assets/images/Climatesolutions.png";
+const govern = "/assets/images/communitygoverned.png";
+const range = "/assets/images/Rangebound.png";
+const pool = "/assets/images/liquiditypool.png";
 const highlight = "/assets/images/highlightText.png";
 const graph = "/assets/icons/graph.svg";
 const climateEnvironmentCrisis = "/assets/images/climate-environment.png";
@@ -243,14 +244,14 @@ export default function Main() {
       {" "}
       <div className='relative '>
         <Video
-          src='/assets/video/Earth Video.mp4'
+          src={earth}
           alt='earthcoin'
-          className='w-full h-full lg:h-[32rem] object-cover'
+          className='w-full h-full lg:h-[89vh] object-cover'
         />
         {/* <video src={"/assets/Earth Video.mp4"} controls={false}  autoPlay playsInline loop  className="w-[100%] h-[50%] object-cover">
       <source src={"/assets/Earth Video.mp4"} type="video/mp4" />
     </video> */}
-        <div className='absolute text-[#FFFFFF] lg:text-3xl xl:text-4xl text-4xl font-syne w-9/12 text-center font-normal -mt-32 ml-32'>
+        <div className='absolute text-[#FFFFFF] lg:text-2xl xl:text-4xl text-4xl font-syne w-9/12 text-center font-normal -mt-32 ml-40'>
           <p>
             Digital currency backed by real world climate solutions / ecosystem
             services / solarpunk values
@@ -284,12 +285,14 @@ export default function Main() {
             </div>
           ))}
         </div>
-        <div className='flex sm:flex-col sm:px-[20%] items-center pt-10 px-4 flex-col w-full gap-3'>
-          <div className='text-[#101828] flex items-center 2xl:ml-[65%] xl:ml-[15%]  font-semibold w-[125%]  text-[24px] sm:text-[34px] leading-[42px] font-syne'>
-            Here to make anthropogenic climate change history &
+        <div className='flex sm:flex-col  items-center pt-10 px-4 flex-col w-full gap-3'>
+        <div className='text-[#101828] px-10 flex items-center font-semibold w-full  text-[28px] sm:text-[36px] leading-[42px] font-syne'>
+           <p> Here to make anthropogenic climate change history &</p>
           </div>
-          <div>
-            <div className='text-[#101828] flex items-center font-semibold text-center w-[140%] text-[24px] sm:text-[34px] leading-[42px] font-syne'>
+          </div>
+        <div className='flex sm:flex-col sm:px-[20%] items-center pt-10 px-4 flex-col w-full gap-3'>
+          <div className="-mt-[10%]">
+            <div className='text-[#101828] flex items-center font-semibold text-center w-[140%] text-[28px] sm:text-[36px] leading-[42px] font-syne'>
               <div>
                 <p>seed the</p>
               </div>
@@ -590,7 +593,8 @@ export default function Main() {
                   alt='social'
                   src={partner.icon}
                   width={60}
-                  height={60}
+                  height={40}
+                  className=" w-full h-[6rem]"
                 />
               </Link>
             ))
@@ -703,7 +707,7 @@ export default function Main() {
             alt='groot'
             width={1216}
             height={300}
-            className='w-full h-[450px] rounded-lg object-cover'
+            className='w-full h-[350px] rounded-lg object-cover'
           />
           <div className='flex flex-col w-full justify-end items-center p-4 absolute bottom-[1.5rem]'>
             <p className='text-white font-inter text-center mt-3 font-medium text-[18px]'>

@@ -46,11 +46,12 @@ export default function ProjectImpact({ details }) {
     },
   ];
   return (
-    <div id="impact" className="flex flex-col items-start px-[5%]">
+    <div id="impact" className="flex flex-col items-start w-full">
+      <div className="px-[5%]">
       <p className=" text-[20px] sm:text-[28px] text-left font-semibold text-[#101828] font-syne">
         Project Impact
       </p>
-      <div className="text-[14px] sm:text-[16px]  font-inter text-[#475467]">
+      <div className="text-[14px] sm:text-[16px]  font-Inter text-[#475467]">
         <Editor
           editorState={editorState}
           wrapperClassName="demo-wrapper"
@@ -59,10 +60,12 @@ export default function ProjectImpact({ details }) {
           readOnly={true}
         />
       </div>
-      <div className="flex sm:flex-row flex-col justify-center items-center w-full">
+      </div>
+      
+      <div className="flex sm:flex-row flex-col gap-24 justify-center items-center w-full">
         {details?.positiveExternalities.map((impact, index) => (
           <div
-            className={`flex flex-col p-4 items-center  justify-center w-[18rem] ${
+            className={`flex flex-col px-4 items-center  justify-center w-[18rem] ${
               index !== details?.positiveExternalities.length - 1
                 ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
                 : ""
@@ -76,12 +79,12 @@ export default function ProjectImpact({ details }) {
               height={100}
               className="w-12 h-12 sm:w-20 sm:h-20 object-contain"
             />
-            <p className="text-[#101828] text-center text-[16px] mt-2 font-semibold font-inter">
+            <p className="text-[#101828] text-center text-[16px] mt-2 font-semibold font-Inter">
               {impact.title}
             </p>
           </div>
         ))}
       </div>
-    </div>
+      </div>
   );
 }

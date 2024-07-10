@@ -88,7 +88,7 @@ export default function Projectdetails() {
                 key={index}
                 href={option?.link}
                 passHref
-                className="font-inter text-[14px] sm:text-[14px] px-1 sm:px-5 font-semibold text-[#475467]"
+                className="font-Inter text-[18px] sm:text-[18px] px-1 sm:px-5 font-semibold text-[#475467]"
               >
                 {option.section}
               </Link>
@@ -106,14 +106,14 @@ export default function Projectdetails() {
             <ProjectImpact details={details} />
             <div
               id="details"
-              className="flex gap-8 border w-full border-[#FCCA6B] rounded-md p-4"
+              className="flex gap-4 border px-10  w-full border-[#FCCA6B] rounded-md"
             >
-              <div className="border-[#EAECF0] grow border-r">
+              <div className="border-[#EAECF0] mt-10 grow border-r">
                 <Steps
                   progressDot
                   current={details?.timelineCurrentState}
                   direction="vertical"
-                  className="custom-step font-inter text-[#101828] font-semibold"
+                  className="custom-step align-middle font-Inter text-[#101828] font-semibold"
                   items={details?.timeline}
                 />
                 {/* <Stepper
@@ -221,7 +221,7 @@ export default function Projectdetails() {
                   ))}
                 </Stepper> */}
               </div>
-              <div className="flex items-start grow flex-col gap-6">
+              <div className="flex items-start p-10 grow flex-col gap-10">
                 <div className="flex flex-col gap-1">
                   <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[14px] sm:text-[16px]">
                     REIGON
@@ -252,7 +252,7 @@ export default function Projectdetails() {
               id="contact"
               className="flex flex-col w-full items-start gap-2"
             >
-              <p className="font-inter text-[#EC8000] font-medium text-[14px]">
+              <p className="font-Inter text-[#EC8000] font-medium text-[14px]">
                 ACCREDITED ENTITY
               </p>
               <div className="flex w-full justify-between gap-2 items-center">
@@ -261,12 +261,12 @@ export default function Projectdetails() {
                 </p>
                 <Link
                   href={details?.companyWebsite}
-                  className="sm:w-[180px] w-[150px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs  sm:text-sm"
+                  className="sm:w-[180px] w-[150px]  text-white font-Inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs  sm:text-sm"
                 >
                   Visit company website
                 </Link>
               </div>
-              <p className="font-inter text-[#475467] font-normal text-[14px]">
+              <p className="font-Inter text-[#475467] font-normal text-[14px]">
                 Principal Climate and Environment Finance Officer <br />
                 African Development Bank Climate Change and Green Growth
                 Department CCIA.
@@ -275,9 +275,9 @@ export default function Projectdetails() {
               </p>
             </div>
             <PeopleSlider details={details} />
-            <Media details={details} />
             <TermsofFunding details={details} />
             <ContractDetails details={details} />
+            <Media details={details} />
             <FAQ details={details} />
             <GetInTouch />
           </div>

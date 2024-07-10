@@ -27,7 +27,7 @@ export default function ContractDetails({ details }) {
       <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
         Contract Details
       </p>
-      <div className="border-b-2 w-full border-[#EAECF0] pb-8 text-[14px] sm:text-[16px]  font-inter text-[#475467]">
+      <div className="border-b-2 w-full border-[#EAECF0] pb-8 text-[14px] sm:text-[16px]  font-Inter text-[#475467]">
         <Editor
           editorState={editorState}
           wrapperClassName="demo-wrapper"
@@ -37,13 +37,13 @@ export default function ContractDetails({ details }) {
         />
       </div>
       <div className="flex w-full flex-col border-b-2 px-2 border-[#EAECF0] pb-8">
-        <p className="font-inter mt-3 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
+        <p className="font-Inter mt-3 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
           Contract Address - 
           <span className="text-[#101828] inline-block">
             {details?.contractDetails?.contractAddress}
           </span>
         </p>
-        <p className="font-inter mt-1 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
+        <p className="font-Syne mt-1 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
           $Earth - 
           <span className="text-[#101828] inline-block">
             {details?.contractDetails?.earth}

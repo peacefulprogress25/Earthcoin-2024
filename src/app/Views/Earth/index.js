@@ -14,7 +14,7 @@ export default function Earth() {
         "Increases treasury size",
         "Zero slippage",
       ],
-      sbt: "How to get an SBT token",
+      sbt: "Become a NODE",
       link: "Go to DAPP",
       img: "/assets/images/earth-protocol.png",
     },
@@ -33,7 +33,7 @@ export default function Earth() {
   ];
   return (
     <div>
-      <div className="mt-20 w-full max-w-screen-2xl mx-auto flex gap-10 flex-col items-center pb-10">
+      <div className="mt-20 w-[100%] max-w-screen-2xl mx-auto flex gap-10 flex-col items-center pb-10">
         <ImageView
           src={solarchakra}
           alt="solarchakra"
@@ -77,14 +77,20 @@ export default function Earth() {
                   </div>
                 ))}
               </div>
+              <div className="flex gap-5">
+                <div>
               {data?.sbt && (
-                <p className="text-[#EC8000] font-normal pb-2 text-left text-[14px] font-inter">
+                <button className="bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter">
                   {data?.sbt}
-                </p>
+                </button> 
               )}
-              <p className="text-[#EC8000] cursor-pointer font-normal text-left text-[14px] font-inter">
+             </div>
+              <div>
+              <button className="bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter">
                 {data.link}
-              </p>
+              </button>
+           </div>
+            </div>
             </div>
             <ImageView
               src={data?.img}

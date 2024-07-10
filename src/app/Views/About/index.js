@@ -64,18 +64,19 @@ export default function About() {
             remote ream!
           </p>
         </div>
-        {teams && teams.length ? (
-          <div className="grid grid-cols-1 mb-10 sm:grid-cols-3 mt-10 gap-x-6 gap-y-12">
-            {teams?.map((people, index) => (
-              <PeopleCard people={people} key={index} />
-            ))}
-          </div>
-        ) : (
-          <div className="h-[60vh] w-full flex items-center justify-center">
-            <Loader />
-          </div>
-        )}
-
+        <div className="w-[90%]">
+          {teams && teams.length ? (
+            <div className="grid grid-cols-1 mb-10 sm:grid-cols-3 mt-10 gap-x-6 gap-y-12">
+              {teams?.map((people, index) => (
+                <PeopleCard people={people} key={index} />
+              ))}
+            </div>
+          ) : (
+            <div className="h-[60vh] w-full flex items-center justify-center">
+              <Loader />
+            </div>
+          )}
+        </div>
         <div className="w-full h-[1px] bg-[#F2F4F7]"></div>
         <div className="flex mt-10 flex-col gap-2 items-center">
           <p className="text-[#EC8000] p-1 px-2 rounded-full bg-[#FFFCF8] font-semibold text-center text-[12px] font-inter">
@@ -103,11 +104,10 @@ export default function About() {
             <p
               key={index}
               onClick={() => setSelectedCategory(option?.section)}
-              className={`font-inter text-[14px] sm:text-[14px] px-1 sm:px-4 font-semibold text-[#475467] ${
-                selectedCategory === option.section
+              className={`font-inter text-[14px] sm:text-[14px] px-1 sm:px-4 font-semibold text-[#475467] ${selectedCategory === option.section
                   ? " bg-[#FFFCF8] px-4 py-2 rounded-md text-[#EC8000]"
                   : ""
-              }`}
+                }`}
             >
               {option.section}
             </p>

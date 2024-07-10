@@ -163,7 +163,7 @@ export default function Header() {
           <Link href="/projects">Projects</Link>
           <Link href="/node">NODES</Link>
           <Link href="/media">Media</Link>
-          <Link href="/updates">Dashboard</Link>
+          <Link href="/dashboard">Dashboard</Link>
         </div>
         <>
           <Link

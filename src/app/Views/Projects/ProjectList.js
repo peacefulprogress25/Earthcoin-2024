@@ -239,7 +239,7 @@ export default function ProjectList({ projects }) {
       {sortedProjects && sortedProjects?.length ? (
         sortedProjects.map((project, index) => (
           <div
-            className="rounded-lg border-4 max-w-[44rem] cursor-pointer w-full h-fit flex flex-col border-[#101828]"
+            className="rounded-lg border-4 max-w-[1080px] cursor-pointer w-full h-fit flex flex-col border-[#101828]"
             key={index}
             onClick={() => router.push(`/projects/${project.projectId}`)}
           >

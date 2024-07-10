@@ -24,7 +24,7 @@ export default function Project() {
       section: "Ecosystem Conservation",
     },
     {
-      section: "Solarpunk Tech",
+      section: "Solarpunk  Spaces",
     },
   ];
   const [projects, setProjects] = useState([]);
@@ -57,7 +57,7 @@ export default function Project() {
       </div>
       <ProjectList projects={projects} />
       <div className="max-w-screen-2xl mx-auto  w-full px-[6%]">
-        <Faq faq={faq} />
+        {/* <Faq faq={faq} /> */}
         <Gpt />
       </div>
     </div>

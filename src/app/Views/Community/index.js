@@ -204,16 +204,18 @@ export default function Community() {
                     {community?.title}
                   </p>
                 </StepLabel>
-                <StepContent className="pl-16 pb-20">
-                  <p className="text-[#475467]  text-left mt-2 font-normal  text-[16px] font-inter">
+                <StepContent className="pl-12 pb-20">
+                  <p className="text-[#475467] px-10  text-left mt-2 font-normal  text-[16px] font-inter">
                     {community?.description}
                   </p>
                   {community?.btntext ? (
+                    <div className="px-10">
                     <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
                       {community?.btntext}
                     </button>
+                    </div>
                   ) : (
-                    <div className="flex mt-6  gap-1 sm:gap-3">
+                    <div className="flex mt-6 px-10  gap-1 sm:gap-3">
                       {socialIcons.map((icons, index) => (
                         <button
                           className="cursor-pointer w-10 h-10"
