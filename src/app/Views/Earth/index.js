@@ -37,9 +37,10 @@ export default function Earth() {
         <ImageView
           src={solarchakra}
           alt="solarchakra"
-          className="w-screen"
+          className='w-full h-full lg:h-[89vh] object-cover'
           width={1440}
           height={500}
+          
         />
         {/* <div className="flex flex-col gap-2 items-center">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
