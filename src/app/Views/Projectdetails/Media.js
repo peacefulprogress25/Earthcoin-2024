@@ -34,7 +34,7 @@ export default function Media({ details }) {
       <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
         Project Updates
       </p>
-      <div className="flex flex-col h-fit">
+      <div className="flex flex-col w-[50%] h-fit">
           <Updates/>
         </div>
       {/* <p className="text-[16px] mt-4 text-left font-normal text-[#475467] font-inter">

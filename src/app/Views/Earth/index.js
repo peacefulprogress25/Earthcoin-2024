@@ -85,7 +85,7 @@ export default function Earth() {
                 </button> 
               )}
              </div>
-              <div>
+              <div className="text-start">
               <button className="bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter">
                 {data.link}
               </button>
