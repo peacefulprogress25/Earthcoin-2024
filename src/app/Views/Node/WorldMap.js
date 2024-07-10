@@ -76,14 +76,16 @@ export default function WorldMap({ nodeList }) {
       </div>
       <MapContainer
         center={position}
-        zoom={2}
+        zoom={1}
         zoomControl={false}
-        scrollWheelZoom={true}
+        scrollWheelZoom={false}
+        doubleClickZoom={false}
+        dragging={false}
         attributionControl={false}
-        className="leaflet-Map"
+        className="leaflet-Map h-[100vh] sm:h-[150px] w-full sm:w-[60vw] mt-0 sm:mt-[-12rem] ml-0 sm:ml-[-8rem] object-cover"
       >
         {loading ? (
-          <div className="h-[60vh] w-full flex items-center justify-center">
+          <div className="h-[60vh] w-full flex items-center ml-0 sm:ml-[8rem] mt-0 sm:mt-[8rem] justify-center">
             <Loader />
           </div>
         ) : (
