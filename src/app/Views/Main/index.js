@@ -251,11 +251,13 @@ export default function Main() {
         {/* <video src={"/assets/Earth Video.mp4"} controls={false}  autoPlay playsInline loop  className="w-[100%] h-[50%] object-cover">
       <source src={"/assets/Earth Video.mp4"} type="video/mp4" />
     </video> */}
-        <div className='absolute text-[#FFFFFF] lg:text-2xl xl:text-4xl text-4xl font-syne w-9/12 text-center font-normal -mt-32 ml-40'>
+    
+        <div className='absolute text-[#FFFFFF] lg:text-2xl xl:text-4xl text-4xl font-syne w-[75%] text-center font-normal -mt-32 ml-40'>
           <p>
             Digital currency backed by real world climate solutions / ecosystem
             services / solarpunk values
           </p>
+        
         </div>
       </div>
       {/* <ImageView
@@ -286,13 +288,14 @@ export default function Main() {
           ))}
         </div>
         <div className='flex sm:flex-col  items-center pt-10 px-4 flex-col w-full gap-3'>
-        <div className='text-[#101828] px-10 flex items-center font-semibold w-full  text-[28px] sm:text-[36px] leading-[42px] font-syne'>
+        <div>
+        <div className='text-[#101828] flex items-center font-semibold w-full text-[28px] sm:text-[36px] leading-[42px] font-syne'>
            <p> Here to make anthropogenic climate change history &</p>
           </div>
           </div>
-        <div className='flex sm:flex-col sm:px-[20%] items-center pt-10 px-4 flex-col w-full gap-3'>
-          <div className="-mt-[10%]">
-            <div className='text-[#101828] flex items-center font-semibold text-center w-[140%] text-[28px] sm:text-[36px] leading-[42px] font-syne'>
+        <div className='flex sm:px-[20%] items-center pt-10 px-4 flex-col w-full gap-3'>
+          <div className="-mt-12">
+            <div className='text-[#101828] flex items-center font-semibold text-center w-[100%] text-[28px] sm:text-[36px] leading-[42px] font-syne'>
               <div>
                 <p>seed the</p>
               </div>
@@ -310,6 +313,7 @@ export default function Main() {
               </div>
             </div>
           </div>
+        </div>
         </div>
         <div className='grid items-center w-full grid-cols-1 gap-8 mt-28 sm:grid-cols-2'>
           {cardData?.map((data, index) => (

@@ -21,7 +21,23 @@ export default function Resources() {
           {/* <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
             The economic models behind $Earth driving our solarpunk vision home
           </p> */}
-        </div>
+
+        
+        <div className="sm:px-[5%] px-4 flex mt-6 flex-col w-full items-center">
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+            Digital currency backed by climate solutions, ecosystem services and solarpunk values.
+              <br />
+              <br />
+              </p>
+              <div className="w-[95%]">
+              <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+              $EARTH is a fairly multi faceted token/currency/tool. Here we shed light on various aspects of $EARTH and how it each parts contributes to our objective of making anthropogenic climate change history and seeding the solarpunk paradigm.
+              <br />
+            </p>
+            </div>
+          </div>
+          </div>
+        
         <ImageView
           src={resources}
           alt="resources"
@@ -30,7 +46,7 @@ export default function Resources() {
           className="w-full mt-4 object-cover"
         />
 
-        <div className="sm:px-[20%] px-4 flex mt-6 flex-col w-full items-start">
+        {/* <div className="sm:px-[20%] px-4 flex mt-6 flex-col w-full items-start">
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
             $EARTH is a fairly multi faceted token/currency/tool and while our
             tagline is -
@@ -58,9 +74,9 @@ export default function Resources() {
               <br />
             </p>
           </div>
-        </div>
+        </div> */}
         <div className="sm:px-[8%] px-4 flex mt-6 gap-8 flex-col w-full items-start">
-          <div className="w-full h-[1.5px] my-8  bg-[#F2F4F7]"></div>
+          {/* <div className="w-full h-[1.5px] my-8  bg-[#F2F4F7]"></div> */}
 
           <Community
             title="Still curious?"
