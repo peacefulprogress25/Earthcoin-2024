@@ -60,7 +60,7 @@ export default function WorldMap({ nodeList }) {
         src={map}
         alt="map"
         width={600}
-        height={800}
+        height={600}
         className="!w-full z-[-1] h-[50rem] object-cover"
       />
       <div className="flex flex-col pt-[1rem] absolute top-0 w-full gap-1 items-center">

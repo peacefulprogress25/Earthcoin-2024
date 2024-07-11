@@ -60,7 +60,7 @@ export default function WorldMap({ projects }) {
         height={600}
         className="z-[-1] w-full h-[50rem] object-cover"
       />
-      <div className="flex flex-col pt-[1rem] absolute top-0 w-full gap-1 items-center">
+      <div className="flex flex-col pt-[1rem] absolute mb-10 top-0 w-full gap-1 items-center">
         <p className="text-white font-light text-center text-[14px] font-inter">
           PROJECTS
         </p>

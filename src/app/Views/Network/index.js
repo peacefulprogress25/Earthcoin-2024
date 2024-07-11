@@ -150,9 +150,11 @@ export default function Network() {
             height={300}
             className="w-full h-[12rem]  mt-7 object-cover"
           />
-          <p className="text-white absolute font-semibold text-center text-[30px]  font-syne">
+          <div className=" absolute mt-5 text-center">
+          <p className="text-white font-semibold text-center text-[30px]  font-syne">
             #1 Purge
           </p>
+          </div>
         </div>
         <p className="text-[#475467] text-left mt-6 font-normal  text-[16px] font-inter">
           We envision $EARTH treasury to be a source of patient, aligned $$$
@@ -173,7 +175,7 @@ export default function Network() {
           regular intervals + seeking aligned capital from within their network.
           <br />
           <br />
-          For this
+          {/* For this
           <span className="text-[#EC8000] font-semibold">
             each Node will be eligible to earn 5% of $EARTH
           </span>
@@ -183,7 +185,7 @@ export default function Network() {
           <span className="text-[#EC8000] font-semibold">
             Nodes will also earn 2.5% of the total value of $EARTH mints in form
             of $SLRPNK (Solarpunk Dao governance token).
-          </span>
+          </span> */}
         </p>
         <div className="relative w-full flex mt-6 items-center justify-center">
           <ImageView
@@ -193,7 +195,7 @@ export default function Network() {
             height={300}
             className="w-full h-[12rem]  mt-7 object-cover"
           />
-          <p className="text-white absolute font-semibold text-center text-[30px]  font-syne">
+          <p className="text-white  mt-5 absolute font-semibold text-center text-[30px]  font-syne">
             #2 Partnerships
           </p>
         </div>
@@ -215,7 +217,7 @@ export default function Network() {
             height={300}
             className="w-full h-[12rem]  mt-7 object-cover"
           />
-          <p className="text-white absolute font-semibold text-center text-[30px]  font-syne">
+          <p className="text-white  mt-5 absolute font-semibold text-center text-[30px]  font-syne">
             #3 Projects
           </p>
         </div>
@@ -223,9 +225,6 @@ export default function Network() {
           Connecting Dao to economically/ecologically viable projects that can
           be potentially funded by $EARTH treasury ( from the 5 sectors we are
           focusing on).
-          <br />
-          <br />
-         
           <br />
           <br />
           Projects should transparently communicate their impact funded with
@@ -245,7 +244,7 @@ export default function Network() {
             height={300}
             className="w-full h-[12rem]  mt-7 object-cover"
           />
-          <p className="text-white absolute font-semibold text-center text-[30px]  font-syne">
+          <p className="text-white  mt-5 absolute font-semibold text-center text-[30px]  font-syne">
             #4 Policy
           </p>
         </div>

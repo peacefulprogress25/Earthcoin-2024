@@ -5,8 +5,9 @@ import useNotification from "../../Hooks/useNotification";
 import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
 import { BtnLoader } from "../../Components/Loader";
+import Video from "../../Components/Video";
 
-const form = "/assets/images/form.png";
+const form = "/assets/video/WindmillVideo.mp4";
 const fields = {
   name: "",
   email: "",
@@ -124,13 +125,18 @@ export default function Form() {
   return (
     <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
       <div className="w-full sm:w-[64rem] h-fit sm:h-[65rem] shadow-md flex-col sm:flex-row flex">
-        <ImageView
+      <Video
+          src={form}
+          alt='wind'
+          className="h-[50%] sm:h-[100%] w-full sm:w-[50%] object-cover"
+        />
+        {/* <ImageView
           src={form}
           alt="form"
           width={900}
           height={1000}
           className="h-[50%] sm:h-[100%] w-full sm:w-[50%] object-cover"
-        />
+        /> */}
         <div className="flex flex-col w-full gap-1 p-4 sm:p-14">
           <p className="font-syne text-center sm:text-left font-semibold text-[#101828] leading-[2.5rem] text-[34px]">
             Are you a climate <br /> project seeking <br /> funds?
