@@ -10,7 +10,7 @@ import { Loader } from "../../Components/Loader";
 import Link from "next/link";
 import Video from "../../Components/Video";
 
-const earth = "/assets/video/EarthVideo.mp4"
+const earth = "/assets/video/EarthVideo.mp4";
 const groot = "/assets/images/groot1.png";
 const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
@@ -242,31 +242,21 @@ export default function Main() {
   return (
     <div className='mt-20'>
       {" "}
-      <div className='relative '>
+      <div className='relative h-[89vh] 2xl:h-[95vh] '>
         <Video
           src={earth}
           alt='earthcoin'
-          className='w-full h-full lg:h-[89vh] object-cover'
+          className='object-cover w-full h-full'
         />
-        {/* <video src={"/assets/Earth Video.mp4"} controls={false}  autoPlay playsInline loop  className="w-[100%] h-[50%] object-cover">
-      <source src={"/assets/Earth Video.mp4"} type="video/mp4" />
-    </video> */}
-    
-        <div className='absolute text-[#FFFFFF] lg:text-2xl xl:text-4xl text-4xl font-syne w-[75%] text-center font-normal -mt-32 ml-40'>
+
+        <div className='absolute bottom-8  text-[#FFFFFF] lg:text-2xl xl:text-4xl text-4xl font-syne w-full text-center font-normal'>
           <p>
-            Digital currency backed by real world climate solutions / ecosystem
+            Digital currency backed by real world climate solutions / ecosystem{" "}
+            <br />
             services / solarpunk values
           </p>
-        
         </div>
       </div>
-      {/* <ImageView
-        src={main}
-        alt="main"
-        width={600}
-        height={600}
-        className="object-cover w-full"
-      /> */}
       <div className='mx-auto  pt-16 px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full'>
         <div className='flex flex-col items-center justify-center w-full pb-10 sm:flex-row'>
           {funding.map((impact, index) => (
@@ -287,33 +277,33 @@ export default function Main() {
             </div>
           ))}
         </div>
-        <div className='flex sm:flex-col  items-center pt-10 px-4 flex-col w-full gap-3'>
-        <div>
-        <div className='text-[#101828] flex items-center font-semibold w-full text-[28px] sm:text-[36px] leading-[42px] font-syne'>
-           <p> Here to make anthropogenic climate change history &</p>
+        <div className='flex flex-col items-center w-full gap-3 px-4 pt-10 sm:flex-col'>
+          <div>
+            <div className='text-[#101828] flex items-center font-semibold w-full text-[28px] sm:text-[36px] leading-[42px] font-syne'>
+              <p> Here to make anthropogenic climate change history &</p>
+            </div>
           </div>
-          </div>
-        <div className='flex sm:px-[20%] items-center pt-10 px-4 flex-col w-full gap-3'>
-          <div className="-mt-12">
-            <div className='text-[#101828] flex items-center font-semibold text-center w-[100%] text-[28px] sm:text-[36px] leading-[42px] font-syne'>
-              <div>
-                <p>seed the</p>
-              </div>
-              <div>
-                <ImageView
-                  src={highlight}
-                  alt='hightlight'
-                  width={190}
-                  height={30}
-                  className='w-52 h-11'
-                />{" "}
-              </div>
-              <div>
-                <p>paradigm</p>
+          <div className='flex sm:px-[20%] items-center pt-10 px-4 flex-col w-full gap-3'>
+            <div className='-mt-12'>
+              <div className='text-[#101828] flex items-center font-semibold text-center w-[100%] text-[28px] sm:text-[36px] leading-[42px] font-syne'>
+                <div>
+                  <p>seed the</p>
+                </div>
+                <div>
+                  <ImageView
+                    src={highlight}
+                    alt='hightlight'
+                    width={190}
+                    height={30}
+                    className='w-52 h-11'
+                  />{" "}
+                </div>
+                <div>
+                  <p>paradigm</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
         <div className='grid items-center w-full grid-cols-1 gap-8 mt-28 sm:grid-cols-2'>
           {cardData?.map((data, index) => (
@@ -598,7 +588,7 @@ export default function Main() {
                   src={partner.icon}
                   width={60}
                   height={40}
-                  className=" w-full h-[6rem]"
+                  className=' w-full h-[6rem]'
                 />
               </Link>
             ))

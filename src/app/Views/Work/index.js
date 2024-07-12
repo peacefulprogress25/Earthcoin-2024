@@ -4,11 +4,13 @@ import Community from "../../Components/Community";
 const earth = "/assets/images/earthclimate.png";
 const plan = "/assets/images/plan1.png";
 const harvest = "/assets/images/Harvest.png";
-const vdLink = "https://solarpunkdao.earth/assets/tokenomics-video.mp4";
+const vdLink = "/assets/video/earthWorks.mp4";
 import Video from "../../Components/Video";
+import { Loader } from "../../Components/Loader";
 
 export default function Work() {
   const [editorLoaded, setEditorLoaded] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const Editordata = [
     {
@@ -41,9 +43,9 @@ export default function Work() {
   const earthValues = [
     "Solarpunk Dao  issues yol mint SEARTH Coul Bound NFT that makes you a NODE and lets you ",
     "Node purges petro $ directly at the protocol to mint $EARTH",
-   "Protocol sends those $$$ to $EARTH treasury",
-   "SEARTH treasury transfers $$$ to projects addressing climate change",
-   "Project returns $$$ in form of Yields back to the treasury to fund other projects",
+    "Protocol sends those $$$ to $EARTH treasury",
+    "SEARTH treasury transfers $$$ to projects addressing climate change",
+    "Project returns $$$ in form of Yields back to the treasury to fund other projects",
   ];
   const protocolValues = [
     "APY - Providing yield to $EARTH stakers",
@@ -55,12 +57,12 @@ export default function Work() {
   ];
   return (
     <>
-      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
-        <div className="flex flex-col gap-2 items-center">
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
+      <div className='mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10'>
+        <div className='flex flex-col items-center gap-2'>
+          <p className='text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne'>
             How $EARTH works?
           </p>
-          <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
+          <p className='text-[#475467] text-center font-normal  text-[16px] font-inter'>
             The economic models behind $Earth driving our solarpunk vision home
           </p>
         </div>
@@ -69,73 +71,80 @@ export default function Work() {
           alt="earth"
           width={400}
           height={200}
-          className="w-full mt-4 object-cover"
+          className="object-cover w-full mt-4"
         /> */}
-        <div className='relative '>
+        <div className='relative  h-[89vh] w-full flex items-center justify-center '>
+          {loading ? (
+            <section className='absolute '>
+              <Loader />{" "}
+            </section>
+          ) : null}
           <Video
-          src={vdLink}
-          controls={false}
-          // loop={false}
-          // autoPlay
-          // playsInline
-          // onEnded={() => handleVideoEnd()}
-          className="w-full h-full  object-cover"
-          muted={true}
-        />
-         <div className='absolute'>
-           <ImageView
-          src={earth}
-          alt="earth"
-          width={400}
-          height={200}
-          className="w-full -mt-[56.4%] opacity-60 h-full lg:h-[105.8vh] lg:w-[200vh]  object-cover"
-        />
-        </div>
-        </div>
-        
-        
-        <div className="flex justify-center items-center px-[100px]">
-          <div className="">
+            src={vdLink}
+            onLoadedData={() => {
+              setLoading(false);
+            }}
+            className={`object-cover w-full h-full  ${
+              loading ? "none" : "block"
+            } `}
+          />
+          <div
+            className={`absolute top-0 w-full h-full ${
+              loading ? "none" : "block"
+            } `}
+          >
             <ImageView
-              src={plan}
-              alt="plan"
-              width={261.13}
-              height={682}
-              className="mt-4 object-cover"
+              src={earth}
+              alt='earth'
+              width={400}
+              height={200}
+              className='object-cover w-full h-full mix-blend-overlay'
             />
           </div>
-          <div className="flex flex-col w-full items-start pl-[64px]">
-          <div>
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-          $EARTH - Blackhole for Climate Finance
-          </p>
-          <div className="mt-6">
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              $EARTH is designed to serve as a capital efficient funnel that
-              incentivizes, mobilizes and allocates petro $ to be projects
-              directly addressing climate change and solving the environmental
-              crisis.
-             </p>
-             <p className="text-[#475467] mt-6 text-center sm:text-left font-normal  text-[16px] font-inter">
-              Here we provide an overview of each step that takes place to make
-              this happen -
-            </p>
+        </div>
+
+        <div className='flex justify-center items-center px-[100px]'>
+          <div className=''>
+            <ImageView
+              src={plan}
+              alt='plan'
+              width={261.13}
+              height={682}
+              className='object-cover mt-4'
+            />
           </div>
-        
-            <div className="mt-16 ml-6">
-              <ol className="list-decimal">
-                {earthValues.map((value, index) => (
-                  <li
-                    key={index}
-                    className="text-[#475467] text-center mb-4 sm:text-left mt-8 font-normal text-[16px] font-inter"
-                  >
-                    {value}
-                  </li>
-                ))}
-              </ol>
+          <div className='flex flex-col w-full items-start pl-[64px]'>
+            <div>
+              <p className='text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne'>
+                $EARTH - Blackhole for Climate Finance
+              </p>
+              <div className='mt-6'>
+                <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter'>
+                  $EARTH is designed to serve as a capital efficient funnel that
+                  incentivizes, mobilizes and allocates petro $ to be projects
+                  directly addressing climate change and solving the
+                  environmental crisis.
+                </p>
+                <p className='text-[#475467] mt-6 text-center sm:text-left font-normal  text-[16px] font-inter'>
+                  Here we provide an overview of each step that takes place to
+                  make this happen -
+                </p>
+              </div>
+
+              <div className='mt-16 ml-6'>
+                <ol className='list-decimal'>
+                  {earthValues.map((value, index) => (
+                    <li
+                      key={index}
+                      className='text-[#475467] text-center mb-4 sm:text-left mt-8 font-normal text-[16px] font-inter'
+                    >
+                      {value}
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
           </div>
-        </div>
         </div>
         {/* <div>
           <p className="font-inter font-normal text-[18px] text-primary px-[80px]">
@@ -148,8 +157,8 @@ export default function Work() {
         </div> */}
         <Community
           img={true}
-          title="Still curious?"
-          description="Join our social community to understand further!"
+          title='Still curious?'
+          description='Join our social community to understand further!'
         />
       </div>
     </>

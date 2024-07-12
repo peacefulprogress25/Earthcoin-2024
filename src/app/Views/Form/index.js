@@ -123,122 +123,115 @@ export default function Form() {
     },
   ];
   return (
-    <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
-      <div className="w-full sm:w-[64rem] h-fit sm:h-[65rem] shadow-md flex-col sm:flex-row flex">
-      <Video
+    <div className='flex flex-col items-center overflow-hidden w-full h-[89vh] mt-20 gap-10 mx-auto '>
+      <div className='flex flex-col w-full h-[89vh] sm:flex-row'>
+        <Video
           src={form}
           alt='wind'
-          className="h-[50%] sm:h-[100%] w-full sm:w-[50%] object-cover"
+          className='h-[50%] sm:h-[100%] w-full sm:w-[40%] object-cover'
         />
-        {/* <ImageView
-          src={form}
-          alt="form"
-          width={900}
-          height={1000}
-          className="h-[50%] sm:h-[100%] w-full sm:w-[50%] object-cover"
-        /> */}
-        <div className="flex flex-col w-full gap-1 p-4 sm:p-14">
-          <p className="font-syne text-center sm:text-left font-semibold text-[#101828] leading-[2.5rem] text-[34px]">
+        <div className='flex flex-col w-full h-[89vh] gap-1  overflow-auto sm:p-14'>
+          <p className='font-syne text-center sm:text-left font-semibold text-[#101828] leading-[2.5rem] text-[34px]'>
             Are you a climate <br /> project seeking <br /> funds?
           </p>
-          <p className="font-inter text-center sm:text-left font-normal mt-3 text-[#475467] text-[14px]">
+          <p className='font-inter text-center sm:text-left font-normal mt-3 text-[#475467] text-[14px]'>
             Fill this form or email us at{" "}
-            <span className="font-medium text-[#EC8000]">
+            <span className='font-medium text-[#EC8000]'>
               hi@solarpunkdao.earth
             </span>
           </p>
 
-          <label className="text-[#344054] mt-6 font-inter text-[12px] font-medium">
+          <label className='text-[#344054] mt-6 font-inter text-[12px] font-medium'>
             Your Name*
           </label>
           <input
-            type="text"
-            placeholder="Your name"
-            name="name"
-            className="text-[#667085] font-inter p-2  shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal"
+            type='text'
+            placeholder='Your name'
+            name='name'
+            className='text-[#667085] font-inter p-2  shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal'
             onChange={handleChange}
             value={formData?.name}
           />
-          <label className="text-[#344054] mt-3 font-inter text-[12px] font-medium">
+          <label className='text-[#344054] mt-3 font-inter text-[12px] font-medium'>
             Your Email*
           </label>
           <input
-            type="text"
-            placeholder="you@company.com"
-            name="email"
-            className="text-[#667085] font-inter p-2 shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal"
+            type='text'
+            placeholder='you@company.com'
+            name='email'
+            className='text-[#667085] font-inter p-2 shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal'
             onChange={handleChange}
             value={formData?.email}
           />
-          <label className="text-[#344054] mt-3 font-inter text-[12px] font-medium">
+          <label className='text-[#344054] mt-3 font-inter text-[12px] font-medium'>
             Company Website*
           </label>
           <input
-            type="text"
-            placeholder="Company Website"
-            className="text-[#667085] font-inter p-2 shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal"
+            type='text'
+            placeholder='Company Website'
+            className='text-[#667085] font-inter p-2 shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal'
             onChange={handleChange}
-            name="companyName"
+            name='companyName'
             value={formData?.companyName}
           />
-          <label className="text-[#344054] mt-3 font-inter text-[12px] font-medium">
+          <label className='text-[#344054] mt-3 font-inter text-[12px] font-medium'>
             Social Contact
           </label>
-          <div className="flex p-2 rounded-md border shadow-sm border-[#D0D5DD]">
+          <div className='flex p-2 rounded-md border shadow-sm border-[#D0D5DD]'>
             <select
               onChange={handleChange}
-              name="socialContact"
+              name='socialContact'
               value={formData.socialContact}
-              className="w-[90px] font-inter font-normal text-[14px] bg-white outline-none text-[#101828]"
+              className='w-[90px] font-inter font-normal text-[14px] bg-white outline-none text-[#101828]'
             >
-              <option value="Linkedin">Linkedin</option>
-              <option value="Option 1">Option 1</option>
-              <option value="Option 2">Option 2</option>
+              <option value='Linkedin'>Linkedin</option>
+              <option value='Option 1'>Option 1</option>
+              <option value='Option 2'>Option 2</option>
             </select>
-            <p className="text-[#667085] pl-2 font-inter  text-[12px] font-normal">
+            <p className='text-[#667085] pl-2 font-inter  text-[12px] font-normal'>
               /company/earth-solarpunkdao/
             </p>
           </div>
-          <label className="text-[#344054] mt-6 font-inter text-[12px] font-medium">
+          <label className='text-[#344054] mt-6 font-inter text-[12px] font-medium'>
             Sector*
           </label>
-          <div className="grid justify-between items-center gap-2 sm:gap-4 grid-cols-2">
+          <div className='grid items-center justify-between grid-cols-2 gap-2 sm:gap-4'>
             {sectorList?.map((sectors, index) => (
               <label
-                className="cursor-pointer flex items-center gap-2 text-[#344054] text-[12px] text-left sm:text-[14px] font-medium font-inter"
+                className='cursor-pointer flex items-center gap-2 text-[#344054] text-[12px] text-left sm:text-[14px] font-medium font-inter'
                 key={index}
                 htmlFor={sectors.sector}
               >
                 <input
-                  type="checkbox"
+                  type='checkbox'
                   id={sectors.sector}
                   name={sectors.sector}
                   value={sectors.sector}
                   checked={formData.sector.includes(sectors.sector)}
                   onChange={handleChange}
-                  className="!w-[1rem] !h-[1rem] form-checkbox cursor-pointer border-2"
+                  className='!w-[1rem] !h-[1rem] form-checkbox cursor-pointer border-2'
                 />
                 {sectors?.sector}
               </label>
             ))}
           </div>
-          <label className="text-[#344054] mt-6 font-inter text-[12px] font-medium">
+          <label className='text-[#344054] mt-6 font-inter text-[12px] font-medium'>
             How can we help?
           </label>
           <textarea
-            type="text"
-            placeholder="Tell us a little about the project..."
-            className="text-[#667085] font-inter outline-none  resize-none p-2 h-[110px] shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal"
+            type='text'
+            placeholder='Tell us a little about the project...'
+            className='text-[#667085] font-inter outline-none min-h-28 max-h-28 resize-none p-2  shadow-sm rounded-md border border-[#D0D5DD] text-[12px] font-normal'
             onChange={handleChange}
             value={formData?.about}
-            name="about"
+            name='about'
           />
-          <button className="w-full rounded-md bg-[#000000] text-white mt-3 font-semibold font-inter p-2 shadow-sm text-[14px]">
+          <button className='w-full rounded-md bg-[#000000] text-white mt-3 font-semibold font-inter p-2 shadow-sm text-[14px]'>
             Upload File
           </button>
           <button
             onClick={submitForm}
-            className="w-full rounded-md gap-2 flex justify-center items-center bg-[#EC8000] text-white mt-4 font-semibold font-inter p-2 shadow-sm text-[14px]"
+            className='w-full rounded-md gap-2 flex justify-center items-center bg-[#EC8000] text-white mt-4 font-semibold font-inter p-2 shadow-sm text-[14px]'
           >
             Submit
             {loading ? <BtnLoader /> : ""}

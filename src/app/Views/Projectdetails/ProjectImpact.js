@@ -46,23 +46,23 @@ export default function ProjectImpact({ details }) {
     },
   ];
   return (
-    <div id="impact" className="flex flex-col items-start w-full">
-      <div className="px-[5%]">
-      <p className=" text-[20px] sm:text-[28px] text-left font-semibold text-[#101828] font-syne">
-        Project Impact
-      </p>
-      <div className="text-[14px] sm:text-[16px]  font-Inter text-[#475467]">
-        <Editor
-          editorState={editorState}
-          wrapperClassName="demo-wrapper"
-          editorClassName="richText-editor"
-          toolbarHidden={true}
-          readOnly={true}
-        />
+    <div id='impact' className='flex flex-col items-start w-full'>
+      <div className='px-[5%]'>
+        <p className=' text-[20px] sm:text-[28px] text-left font-semibold text-[#101828] font-syne'>
+          Project Impact
+        </p>
+        <div className='text-[14px] sm:text-[16px] font-syne font-Inter text-[#475467]'>
+          <Editor
+            editorState={editorState}
+            wrapperClassName='demo-wrapper'
+            editorClassName='richText-editor'
+            toolbarHidden={true}
+            readOnly={true}
+          />
+        </div>
       </div>
-      </div>
-      
-      <div className="flex sm:flex-row flex-col gap-24 justify-center items-center w-full">
+
+      <div className='flex flex-col items-center justify-center w-full gap-24 sm:flex-row'>
         {details?.positiveExternalities.map((impact, index) => (
           <div
             className={`flex flex-col px-4 items-center  justify-center w-[18rem] ${
@@ -77,14 +77,14 @@ export default function ProjectImpact({ details }) {
               src={impact.icon}
               width={100}
               height={100}
-              className="w-12 h-12 sm:w-20 sm:h-20 object-contain"
+              className='object-contain w-12 h-12 sm:w-20 sm:h-20'
             />
-            <p className="text-[#101828] text-center text-[16px] mt-2 font-semibold font-Inter">
+            <p className='text-[#101828] text-center text-[16px] mt-2 font-semibold font-Inter'>
               {impact.title}
             </p>
           </div>
         ))}
       </div>
-      </div>
+    </div>
   );
 }

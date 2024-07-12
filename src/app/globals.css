@@ -10,3 +10,8 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+.public-DraftStyleDefault-block span {
+  font-family: var(--primary-font) !important;
+}

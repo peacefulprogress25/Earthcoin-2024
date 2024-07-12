@@ -243,103 +243,103 @@ export default function Dashboard() {
   ];
   return (
     <div>
-      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
-        <div className="flex flex-col gap-2 items-center">
-          <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
+      <div className='mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10'>
+        <div className='flex flex-col items-center gap-2'>
+          <p className='text-[#EC8000] font-semibold text-center text-[14px] font-inter'>
             Dashboard
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
+          <p className='text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne'>
             $EARTH Summary
           </p>
-          <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
+          <p className='text-[#475467] text-center font-normal  text-[16px] font-inter'>
             Track, manage and forecast $EARTH trends.
           </p>
         </div>
-        <div className="flex flex-col sm:flex-row w-full gap-4 justify-between items-center">
-          <div className="flex flex-col w-full items-center sm:items-start gap-1">
-            <p className="text-[#101828] font-inter text-left font-semibold text-[14px]">
+        <div className='flex flex-col items-center justify-between w-full gap-4 sm:flex-row'>
+          <div className='flex flex-col items-center w-full gap-1 sm:items-start'>
+            <p className='text-[#101828] font-inter text-left font-semibold text-[14px]'>
               Token Contract
             </p>
-            <p className="text-[#475467] font-inter text-left font-normal text-[14px]">
+            <p className='text-[#475467] font-inter text-left font-normal text-[14px]'>
               0x9F9f149a02Cddc9a8251207cef
             </p>
           </div>
-          <div className="flex  items-center gap-2">
-            <button className="w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm">
+          <div className='flex items-center gap-2'>
+            <button className='w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm'>
               <ImageView
                 src={wallet}
-                alt="wallet"
+                alt='wallet'
                 width={20}
                 height={20}
-                className="w-4 h-4 object-contain"
+                className='object-contain w-4 h-4'
               />
               Import $EARTH
             </button>
-            <button className="w-[80px]  gap-1 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm">
-              <FaPlus size={17} color="#fff" />
+            <button className='w-[80px]  gap-1 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm'>
+              <FaPlus size={17} color='#fff' />
               Add
             </button>
           </div>
         </div>
         {/* {fundingData && fundingData.length ? ( */}
         <>
-          <div className="flex w-full flex-col sm:flex-row gap-6">
+          <div className='flex flex-col w-full gap-6 sm:flex-row'>
             {priceData?.map((price, index) => (
               <div
-                className="flex flex-col p-6 w-[18rem] sm:w-[41rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                className='flex flex-col p-6 w-[18rem] sm:w-[41rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]'
                 key={index}
               >
-                <p className="text-[#101828] text-[14px] font-semibold font-inter">
+                <p className='text-[#101828] text-[14px] font-semibold font-inter'>
                   {price?.title}
                 </p>
-                <div className="flex justify-between gap-2 items-end">
-                  <div className="flex flex-col items-start">
-                    <p className="text-[#101828] text-[40px] font-semibold font-syne">
+                <div className='flex items-end justify-between gap-2'>
+                  <div className='flex flex-col items-start'>
+                    <p className='text-[#101828] text-[40px] font-semibold font-syne'>
                       {price?.price}
-                      <span className="text-[22px]">$DAI</span>
+                      <span className='text-[22px]'>$DAI</span>
                     </p>
-                    <div className="flex gap-1">
+                    <div className='flex gap-1'>
                       <button
                         className={`flex font-inter font-medium text-[12px] ${
                           price?.increase ? "text-[#027A48]" : "text-[#B42318]"
                         }`}
                       >
                         {price?.increase ? (
-                          <GoArrowUp size={15} color="#027A48" />
+                          <GoArrowUp size={15} color='#027A48' />
                         ) : (
-                          <GoArrowDown size={15} color="#B42318" />
+                          <GoArrowDown size={15} color='#B42318' />
                         )}
                         {price?.percent}
                       </button>
-                      <p className="text-[#475467] text-[12px] font-medium font-inter">
+                      <p className='text-[#475467] text-[12px] font-medium font-inter'>
                         vs last month
                       </p>
                     </div>
                   </div>
                   <ImageView
                     src={price?.img}
-                    alt="chart"
+                    alt='chart'
                     width={100}
                     height={100}
-                    className="object-cover"
+                    className='object-cover'
                   />
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-[#101828] w-full pb-3 border-b border-[#EAECF0] font-inter text-left font-semibold text-[14px]">
+          <p className='text-[#101828] w-full pb-3 border-b border-[#EAECF0] font-inter text-left font-semibold text-[14px]'>
             Price chart
           </p>
-          <div className="flex w-full justify-start gap-4">
-            <div className="flex gap-2 items-center">
-              <div className="rounded-full w-[8px] h-[8px] bg-[#EC8000]"></div>
-              <p className="text-[#475467] text-center font-normal  text-[14px] font-inter">
+          <div className='flex justify-start w-full gap-4'>
+            <div className='flex items-center gap-2'>
+              <div className='rounded-full w-[8px] h-[8px] bg-[#EC8000]'></div>
+              <p className='text-[#475467] text-center font-normal  text-[14px] font-inter'>
                 Price on Dex
               </p>
             </div>
-            <div className="flex gap-2 items-center">
-              <div className="rounded-full w-[8px] h-[8px] bg-[#fccc72]"></div>
-              <p className="text-[#475467] text-center font-normal  text-[14px] font-inter">
+            <div className='flex items-center gap-2'>
+              <div className='rounded-full w-[8px] h-[8px] bg-[#fccc72]'></div>
+              <p className='text-[#475467] text-center font-normal  text-[14px] font-inter'>
                 Mint
               </p>
             </div>
@@ -351,30 +351,28 @@ export default function Dashboard() {
             height={1000}
             className="w-full h-[35vh] object-cover"
           /> */}
-        
-          <div className="w-[100%] h-[35vh]" >
-            <Line data={data} width="400" height="300" options={options}  />
+          <div className='w-[100%] h-[35vh]'>
+            <Line data={data} width='400' height='300' options={options} />
           </div>
-          
-          <div className="grid w-full items-center grid-cols-1  sm:grid-cols-3 gap-3">
+          <div className='grid items-center w-full grid-cols-1 gap-3 sm:grid-cols-3'>
             {cardData?.map((price, index) => (
               <div
-                className="flex flex-col p-6 w-[18rem] lg:w-[18rem] xl:w-[24rem]  rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                className='flex flex-col p-6 w-[18rem] lg:w-[18rem] xl:w-[24rem]  rounded-lg shadow-sm gap-3 border border-[#EAECF0]'
                 key={index}
               >
-                <p className="text-[#101828] text-[14px] font-semibold font-inter">
+                <p className='text-[#101828] text-[14px] font-semibold font-inter'>
                   {price?.title}
                 </p>
-                <div className="flex justify-between gap-2 items-end">
-                  <div className="flex flex-col items-start">
-                    <p className="text-[#101828] text-[40px] font-semibold font-syne">
+                <div className='flex items-end justify-between gap-2'>
+                  <div className='flex flex-col items-start'>
+                    <p className='text-[#101828] text-[40px] font-semibold font-syne'>
                       {price?.price}
                       {price?.daiBalance && (
-                        <span className="text-[22px]">$DAI</span>
+                        <span className='text-[22px]'>$DAI</span>
                       )}
                     </p>
                     {price?.percent ? (
-                      <div className="flex gap-1">
+                      <div className='flex gap-1'>
                         <button
                           className={`flex font-inter font-medium text-[12px] ${
                             price?.increase
@@ -383,13 +381,13 @@ export default function Dashboard() {
                           }`}
                         >
                           {price?.increase ? (
-                            <GoArrowUp size={15} color="#027A48" />
+                            <GoArrowUp size={15} color='#027A48' />
                           ) : (
-                            <GoArrowDown size={15} color="#B42318" />
+                            <GoArrowDown size={15} color='#B42318' />
                           )}
                           {price?.percent}
                         </button>
-                        <p className="text-[#475467] text-[12px] font-medium font-inter">
+                        <p className='text-[#475467] text-[12px] font-medium font-inter'>
                           vs last month
                         </p>
                       </div>
@@ -398,10 +396,10 @@ export default function Dashboard() {
                   {price?.img ? (
                     <ImageView
                       src={price?.img}
-                      alt="chart"
+                      alt='chart'
                       width={100}
                       height={100}
-                      className="object-cover"
+                      className='object-cover'
                     />
                   ) : (
                     ""
@@ -410,77 +408,81 @@ export default function Dashboard() {
               </div>
             ))}
           </div>
-          <div className="flex flex-col w-full items-center sm:items-start">
-            <p className="text-[#101828] text-[28px] text-left  font-semibold font-syne">
+          <div className='flex flex-col items-center w-full sm:items-start'>
+            <p className='text-[#101828] text-[28px] text-left  font-semibold font-syne'>
               Sector wise funding breakdown
             </p>
-            <p className="text-[#475467] text-[14px] text-left  font-normal font-inter">
+            <p className='text-[#475467] text-[14px] text-left  font-normal font-inter'>
               Track, manage and forecast $EARTH trends.
             </p>
-            <div className="flex flex-col w-full sm:flex-row mt-8 gap-4">
-              {fundingData?.map((fund, index) => (
-                <div
-                  className="flex flex-col p-4 grow w-full rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
-                  key={index}
-                >
-                  <div className="flex justify-between">
-                    <p className="text-[#101828] w-[50%] text-[16px] font-semibold font-inter">
-                      {fund?.title}
+            <div className='flex flex-col w-full gap-4 mt-8 sm:flex-row'>
+              {fundingData?.map((fund, index) => {
+                const title = fund.title?.split(" ");
+
+                return (
+                  <div
+                    className='flex flex-col p-4 grow w-full rounded-lg shadow-sm gap-3 border border-[#EAECF0]'
+                    key={index}
+                  >
+                    <div className='flex justify-between'>
+                      <p className='text-[#101828] w-[50%] text-[16px] font-semibold font-inter'>
+                        {title[0]} <br /> {title[1]}
+                      </p>
+                      <ImageView
+                        src={fund?.icon}
+                        alt='chart'
+                        width={40}
+                        height={40}
+                        className='object-contain'
+                      />
+                    </div>
+                    <p className='text-[#101828]  text-[40px] font-semibold font-syne'>
+                      {fund?.price}
+                      <span className='text-[22px]'>$DAI</span>
                     </p>
-                    <ImageView
-                      src={fund?.icon}
-                      alt="chart"
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
                   </div>
-                  <p className="text-[#101828]  text-[40px] font-semibold font-syne">
-                    {fund?.price}
-                    <span className="text-[22px]">$DAI</span>
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
-            <p className="text-[#101828] text-[28px] text-left mt-8  font-semibold font-syne">
+            <p className='text-[#101828] text-[28px] text-left mt-8  font-semibold font-syne'>
               Treasury Holdings
             </p>
-            <div className="w-full border  my-8 sm:mb-0 flex gap-2 p-2 rounded-md border-[#D0D5DD] shadow-sm">
-              <IoSearchOutline size={22} color="#667085" />
+            <div className='w-full border  my-8 sm:mb-0 flex gap-2 p-2 rounded-md border-[#D0D5DD] shadow-sm'>
+              <IoSearchOutline size={22} color='#667085' />
               <input
-                type="text"
-                placeholder="Search"
-                className="text-[#667085] font-inter text-[14px] font-normal"
+                type='text'
+                placeholder='Search'
+                className='text-[#667085] font-inter text-[14px] font-normal'
               />
             </div>
-            <div className="w-full hidden sm:flex border-2 rounded-md mt-6 border-[#EAECF0] mb-6 flex-col">
-              <table className="table-auto">
-                <thead className="bg-transparent border-b-2 border-[#EAECF0]  h-[40px] !w-full text-left font-inter font-medium text-[#475467] text-[12px]">
-                  <tr className="">
-                    <th className="bg-[#F9FAFB] flex-1  pl-4 rounded-tl-md">
+            <div className='w-full hidden sm:flex border-2 rounded-md mt-6 border-[#EAECF0] mb-6 flex-col'>
+              <table className='table-auto'>
+                <thead className='bg-transparent border-b-2 border-[#EAECF0]  h-[40px] !w-full text-left font-inter font-medium text-[#475467] text-[12px]'>
+                  <tr className=''>
+                    <th className='bg-[#F9FAFB] flex-1  pl-4 rounded-tl-md'>
                       <p>Asset</p>
                     </th>
-                    <th className="bg-[#F9FAFB] flex-1">
+                    <th className='bg-[#F9FAFB] flex-1'>
                       <p>Token Standard</p>
                     </th>
-                    <th className="bg-[#F9FAFB] flex-1">
+                    <th className='bg-[#F9FAFB] flex-1'>
                       <p>Contract Address</p>
                     </th>
-                    <th className=" bg-[#F9FAFB] flex-1">
+                    <th className=' bg-[#F9FAFB] flex-1'>
                       <p>Quantity</p>
                     </th>
-                    <th className=" bg-[#F9FAFB] flex-1">
+                    <th className=' bg-[#F9FAFB] flex-1'>
                       <p>Price</p>
                     </th>
-                    <th className=" bg-[#F9FAFB] flex-1">
+                    <th className=' bg-[#F9FAFB] flex-1'>
                       <p>Change (24H)</p>
                     </th>
-                    <th className=" bg-[#F9FAFB] w-[100px] flex-1 pr-2 rounded-tr-md ">
+                    <th className=' bg-[#F9FAFB] w-[100px] flex-1 pr-2 rounded-tr-md '>
                       <p>Value</p>
                     </th>
                   </tr>
                 </thead>
-                <tbody className="bg-transparent text-[#101828]    !w-full text-[12px] font-semibold">
+                <tbody className='bg-transparent text-[#101828]    !w-full text-[12px] font-semibold'>
                   {transactionList.map((list, index) => (
                     <tr
                       key={index}
@@ -488,19 +490,19 @@ export default function Dashboard() {
                      text-[#101828]`}
                     >
                       <td>
-                        <div className="flex gap-2 pl-4 items-center">
+                        <div className='flex items-center gap-2 pl-4'>
                           <ImageView
                             src={list.icon}
-                            alt="asset"
+                            alt='asset'
                             width={30}
                             height={30}
-                            className="w-6 h-6"
+                            className='w-6 h-6'
                           />
-                          <p className="">{list.hash}</p>
+                          <p className=''>{list.hash}</p>
                         </div>
                       </td>
                       <td>
-                        <p className="rounded-full w-fit p-1 text-[#344054] bg-[#F2F4F7]">
+                        <p className='rounded-full w-fit p-1 text-[#344054] bg-[#F2F4F7]'>
                           {list.method}
                         </p>
                       </td>
@@ -523,14 +525,14 @@ export default function Dashboard() {
                   ))}
                 </tbody>
               </table>
-              <div className="flex justify-between items-center w-full p-4   h-[50px]">
-                <button className="p-1 cursor-pointer w-fit h-fit border-2 font-medium border-[#D0D5DD] font-inter rounded-md text-[#344054] text-[12px]">
+              <div className='flex justify-between items-center w-full p-4   h-[50px]'>
+                <button className='p-1 cursor-pointer w-fit h-fit border-2 font-medium border-[#D0D5DD] font-inter rounded-md text-[#344054] text-[12px]'>
                   Previous
                 </button>
-                <p className="text-[#344054] font-medium font-inter text-[12px]">
+                <p className='text-[#344054] font-medium font-inter text-[12px]'>
                   Page 1 of 10
                 </p>
-                <button className="p-1 w-fit h-fit cursor-pointer font-medium border-2 font-inter border-[#D0D5DD] rounded-md text-[#344054] text-[12px]">
+                <button className='p-1 w-fit h-fit cursor-pointer font-medium border-2 font-inter border-[#D0D5DD] rounded-md text-[#344054] text-[12px]'>
                   Next
                 </button>
               </div>
