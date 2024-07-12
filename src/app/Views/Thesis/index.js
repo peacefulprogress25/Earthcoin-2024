@@ -7,7 +7,7 @@ import { Loader } from "../../Components/Loader";
 import { useState, useEffect } from "react";
 
 const thesis = "/assets/images/thesis.png";
-const funnel = "/assets/images/funnel.svg";
+const funnel = "/assets/images/funnel1.png";
 const agriculture = "/assets/images/agriculture.png";
 const pieChart = "/assets/images/Piechart-2.png";
 const exportImg = "/assets/images/Export.png";
@@ -102,18 +102,13 @@ export default function Thesis() {
           </p>
           <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-              Addressing climate change is truly one of those
-              <span className="text-[#EC8000] font-semibold">
+              Addressing climate change is truly one of those <span className="text-[#EC8000] font-semibold">
                 once in a generation opportunity.
-              </span>
-              The world as we know it will have to change completely if we are
-              to address climate change holistically.
-              <span className="text-[#101828] font-semibold">
+              </span> The world as we know it will have to change completely if we are
+              to address climate change holistically. <span className="text-[#101828] font-semibold">
                 50 GT of CO2 eqv has to become ZERO in the next 30 years
-              </span>
-              and the only way that happens is all the infrastructure supporting
-              humanities core needs becomes
-              <span className="text-[#EC8000] font-semibold">
+              </span> and the only way that happens is all the infrastructure supporting
+              humanities core needs becomes <span className="text-[#EC8000] font-semibold">
                 solarpunk in nature.
               </span>
             </p>
@@ -127,7 +122,7 @@ export default function Thesis() {
         height={500}
         className="w-full object-cover"
       />
-      <div className="w-full max-w-screen-2xl sm:mt-[-4rem] mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+      <div className="w-full max-w-screen-2xl sm:mt-10 mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="sm:px-[8%] px-4 flex flex-col w-full items-start">
           <p className="text-[#101828] font-semibold text-left  text-[20px] sm:text-[28px] mr-10 font-syne">
             This transition is no longer a IF but a
@@ -142,11 +137,9 @@ export default function Thesis() {
               <br />
               <br />
               We believe that the biggest impediment towards scaling climate
-              action globally is capital. $Earth leverages the best of
-              <span className="text-[#EC8000] font-semibold">
+              action globally is capital. $Earth leverages the best of <span className="text-[#EC8000] font-semibold">
                 crypto economics to incentivize blockchain to mobilize
-              </span>
-              capital globally in a capital efficient manner.
+              </span> capital globally in a capital efficient manner.
               <br />
               <br />
               Our priority with $Earth is to ensure that viable projects
@@ -154,14 +147,13 @@ export default function Thesis() {
               constraints. To this effect we intend to be {" "}
               <span className="text-[#EC8000] font-semibold">
                 perpetual holding partners
-              </span>
-              in these projects to the maximum extent possible, structuring
+              </span> in these projects to the maximum extent possible, structuring
               deals in a way that we always earn pro rata of the projects
-              earnings and are
-              <span className="text-[#EC8000] font-semibold">
+              earnings and are <span className="text-[#EC8000] font-semibold">
                 equal partners in wins and loses.
               </span>
             </p>
+          </div>
           </div>
           <div className="w-full flex justify-center">
             <p className="text-[#101828] font-semibold text-center mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
@@ -170,7 +162,7 @@ export default function Thesis() {
           </div>
         </div>
         <div className="px-[6%]">
-          <div className="px-[6%]">
+          
             <ImageView
               src={earthPower}
               alt="earthPower"
@@ -178,7 +170,7 @@ export default function Thesis() {
               height={600}
               className="w-full object-cover"
             />
-          </div>
+          
           <div className=" flex justify-between gap-6">
             {fundingData && fundingData.length ? (
               fundingData?.map((power, index) => (
@@ -212,7 +204,7 @@ export default function Thesis() {
                         ? "bg-[#B2BC45]"
                         : power.title === "Clean Transport"
                         ? "bg-[#EC8000]"
-                        : power.title === "Solarpunk Spaces"
+                        : power.title === "Solarpunk Spaces"
                         ? "bg-[#045047]"
                         : ""
                     }`}
@@ -248,13 +240,11 @@ export default function Thesis() {
                   waste produce as inputs and maintain a robust ecosystem around
                   the farmland. This practice as an added benefit also is
                   capable of absorbing up to 8-9 tones of CO2/acre land annually
-                  in its top soil. So not only does it
-                  <span className="text-[#EC8000] font-semibold">
+                  in its top soil. So not only does it <span className="text-[#EC8000] font-semibold">
                     provide nutrient rich food, ensures farming is sustainable
                     in the long run, decreases external input dependency but
                     also absorbs a lot of carbon.
-                  </span>
-                  We will be funding stewards looking to shift to these
+                  </span> We will be funding stewards looking to shift to these
                   regenerative agriculture practices plus the ancillary
                   ecosystem required to make it happen.
                 </p>
@@ -284,15 +274,10 @@ export default function Thesis() {
                   across sectors, only 8% is from clean sources. This needs to
                   get to over 90% in the next 30 yrs and for that we will need
                   to fund inordinate amounts of wind/solar + battery storage and
-                  nuclear power plants.
-                  <span
-                    className="text-[#EC8000]
-                  font-semibold"
-                  >
+                  nuclear power plants. <span className="text-[#EC8000] font-semibold">
                     That’s over 100 Billion MWh of excess capacity that needs to
                     be installed.
-                  </span>
-                  This is estimated to take an annual investment of $1.5 – 2
+                  </span> This is estimated to take an annual investment of $1.5 – 2
                   Trillion for setting up plants + grid to accommodate clean
                   energy production and disbursement, of which we aim to be an
                   integral part of.
@@ -321,24 +306,20 @@ export default function Thesis() {
                   demand and cattle grazing. On last count over 10 football
                   fields of primary forest was being lost every minute. We are
                   literally digging our own graves. These ecosystems are the
-                  only thing keeping
-                  <span
-                    className="text-[#EC8000]
+                  only thing keeping <span
+                  className="text-[#EC8000]
                   font-semibold"
                   >
                     LIFE
-                  </span>
-                  on earth habitable as we know it. Providing countless benefits
-                  we haven&apos;t even realized.
-                  <span
+                  </span> on earth habitable as we know it. Providing countless benefits
+                  we haven&apos;t even realized. <span
                     className="text-[#EC8000]
                   font-semibold"
                   >
                     Natural Ecosystems are truly the only scarce resource in
                     this Solar System and it is high time we start valuing them
                     as such.
-                  </span>
-                  We intend to deploy capital to be able to buy these natural
+                  </span> We intend to deploy capital to be able to buy these natural
                   ecosystems in alignment with indigenous communities in order
                   to ensure they get compensated for not destroying these
                   ecosystems and can choose to live harmoniously with them. In a
@@ -373,25 +354,21 @@ export default function Thesis() {
                   less than 10% of market share, EVs + Hydrogen trucks will
                   become 100% of private transport and EV buses + Metro will
                   become 100% of public transport in the next 30 yrs. We will be
-                  funding
-                  <span
+                  funding <span
                     className="text-[#EC8000]
                   font-semibold"
                   >
                     EV taxis, charging infrastructure, battery manufacturing and
                     its recycling plants, electric buses
-                  </span>
-                  for public transport to ensure a fully clean transportation
-                  system.
-                  <span
+                  </span> for public transport to ensure a fully clean transportation
+                  system. <span
                     className="text-[#EC8000]
                   font-semibold"
                   >
                     Natural Ecosystems are truly the only scarce resource in
                     this Solar System and it is high time we start valuing them
                     as such.
-                  </span>
-                  We intend to deploy capital to be able to buy these natural
+                  </span> We intend to deploy capital to be able to buy these natural
                   ecosystems in alignment with indigenous communities in order
                   to ensure they get compensated for not destroying these
                   ecosystems and can choose to live harmoniously with them. In a
@@ -413,21 +390,21 @@ export default function Thesis() {
               </div>
             </div>
           )}
-          {title === "Solarpunk Spaces" && (
+          {title === "Solarpunk Spaces" && (
             <div className="border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6">
               <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
-                Climate Tech
+              Solarpunk Spaces
               </p>
               <div className="mt-8">
                 <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-                  We still do not have commercially viable technology to achieve
-                  complete decarbonization. A lot of research and innovation is
-                  still required to provide us with solutions for the same. In
-                  order to get this going we will be actively supporting
-                  startups and research organizations working on technological
-                  innovations for –
+                Built environment is a major contributor to GHG emissions. The construction process itself is energy-intensive with production of materials like cement, steel, and glass that involves high emissions of C02. Construction activities, including the operation of machinery and transportation of materials, also contribute to greenhouse gas emissions. Buildings consume a substantial amount of energy for heating, cooling, lighting, and other operations. This energy is often sourced from fossil fuels, leading to greenhouse gas emissions. According to the International Energy Agency (IEA), buildings and their construction account for 36% of global energy use and 39% of energy-related C02 emissions annually.
                 </p>
-                <ol className="list-decimal mt-4 pl-4 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                <br />
+                <br />
+                <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                Shelter being a core human need we dont anticipate the demand tapering anytime soon so $EARTH treasury will be funding construction that lis energy effecient, using renewable energy, using low carbon materials such as recycled steel or low emission concrete, designed keeping bioregion dynamics in mind, having effective waste management, aiming to become self sustainable entities.
+                </p>
+                {/* <ol className="list-decimal mt-4 pl-4 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
                   <li>) Clean material manufacturing (steel, concrete etc.)</li>
                   <br />
                   <li>) Energy storage</li>
@@ -444,7 +421,7 @@ export default function Thesis() {
                   <li>) Clean Public transport</li>
                   <br />
                   <li>) Tech for Solarpunk paradigm</li>
-                </ol>
+                </ol> */}
               </div>
               <div className="w-full flex justify-center px-[8%]">
                 <ImageView
@@ -503,26 +480,20 @@ export default function Thesis() {
           <ol className="mt-6 list-decimal pl-6">
             <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               <p className="">
-                They directly address
-                <span className="text-[#EC8000] font-semibold">all causes</span>
-                of climate change.
+                They directly address <span className="text-[#EC8000] font-semibold">all causes</span> of climate change.
               </p>
             </li>
             <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-                They cater to humanities
-                <span className="text-[#EC8000] font-semibold">core needs</span>
-                - energy, food, transport, materials and ecosystems to sustain
+                They cater to humanities <span className="text-[#EC8000] font-semibold">core needs</span> - energy, food, transport, materials and ecosystems to sustain
                 LIFE
               </p>
             </li>
             <li className="mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-                All these climate solutions generate tremendous amounts of
-                <span className="text-[#EC8000] font-semibold">
+                All these climate solutions generate tremendous amounts of <span className="text-[#EC8000] font-semibold">
                   positive externalities
-                </span>
-                - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient
+                </span> - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient
                 rich food, Clean Water, Energy Independence, reducing pollution
                 etc.
               </p>
@@ -530,11 +501,9 @@ export default function Thesis() {
             <li className="mb-2 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
                 These real world solutions have undisputed long term value which
-                also provide
-                <span className="text-[#EC8000] font-semibold">
+                also provide <span className="text-[#EC8000] font-semibold">
                   monetary yields
-                </span>
-                uncorrelated to crypto sentiment which ensures strong floor
+                </span> uncorrelated to crypto sentiment which ensures strong floor
                 value for $Earth.
               </p>
             </li>
@@ -553,11 +522,9 @@ export default function Thesis() {
               Unlike BTC or ETH which are minted as block rewards for validating
               transactions on the blockchain, $Earth is only minted against
               purged $$$ which are used to fund climate solutions. For the first
-              time we will have a
-              <span className="text-[#EC8000] font-semibold">
+              time we will have a <span className="text-[#EC8000] font-semibold">
                 currency that is backed by climate solutions
-              </span>
-              which provide essential utility for humanity and not by a shiny
+              </span> which provide essential utility for humanity and not by a shiny
               metal or military forces.
             </p>
           </div>
@@ -575,7 +542,5 @@ export default function Thesis() {
           title="Ready to go down the rabbit hole?"
           description="Join our social community!"
         />
-      </div>
-    </div>
-  );
+      </div> );
 }
