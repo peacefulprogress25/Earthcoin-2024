@@ -400,7 +400,6 @@ export default function Thesis() {
                 Built environment is a major contributor to GHG emissions. The construction process itself is energy-intensive with production of materials like cement, steel, and glass that involves high emissions of C02. Construction activities, including the operation of machinery and transportation of materials, also contribute to greenhouse gas emissions. Buildings consume a substantial amount of energy for heating, cooling, lighting, and other operations. This energy is often sourced from fossil fuels, leading to greenhouse gas emissions. According to the International Energy Agency (IEA), buildings and their construction account for 36% of global energy use and 39% of energy-related C02 emissions annually.
                 </p>
                 <br />
-                <br />
                 <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
                 Shelter being a core human need we dont anticipate the demand tapering anytime soon so $EARTH treasury will be funding construction that lis energy effecient, using renewable energy, using low carbon materials such as recycled steel or low emission concrete, designed keeping bioregion dynamics in mind, having effective waste management, aiming to become self sustainable entities.
                 </p>
@@ -423,7 +422,7 @@ export default function Thesis() {
                   <li>) Tech for Solarpunk paradigm</li>
                 </ol> */}
               </div>
-              <div className="w-full flex justify-center px-[8%]">
+              {/* <div className="w-full flex justify-center px-[8%]">
                 <ImageView
                   src={solarpunk}
                   alt="solarpunk"
@@ -431,7 +430,7 @@ export default function Thesis() {
                   height={500}
                   className="mt-10 mb-5 object-cover"
                 />
-              </div>
+              </div> */}
             </div>
           )}
         </div>
