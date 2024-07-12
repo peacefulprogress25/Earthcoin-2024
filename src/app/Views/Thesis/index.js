@@ -463,15 +463,15 @@ export default function Thesis() {
                   <li>) Tech for Solarpunk paradigm</li>
                 </ol> */}
             </div>
-            <div className='w-full flex justify-center px-[8%]'>
-              <ImageView
-                src={solarpunk}
-                alt='solarpunk'
-                width={500}
-                height={500}
-                className='object-cover mt-10 mb-5'
-              />
-            </div>
+            {/* <div className="w-full flex justify-center px-[8%]">
+                <ImageView
+                  src={solarpunk}
+                  alt="solarpunk"
+                  width={500}
+                  height={500}
+                  className="object-cover mt-10 mb-5"
+                />
+              </div> */}
           </div>
         )}
       </div>
