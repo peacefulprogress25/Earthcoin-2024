@@ -1,5 +1,5 @@
 export const nexaflowPageObj = {
-  website: "66729237c4843fadfbfa2a42",
+  website: "669127bbc4843fadfbfa8127",
   projectsPage: "6614dcd9e22f7fb0bb64aa53",
   faqsPage: "6613dba2e22f7fb0bb64a8d7",
   mediaPage: "66163b5ee22f7fb0bb64b68c",
@@ -8,7 +8,7 @@ export const nexaflowPageObj = {
   dashboardPage: "661698cde22f7fb0bb64bcd9",
   submitForm: "6618db11e22f7fb0bb64c1a2",
   landingPage: "661a2ad6e22f7fb0bb64c634",
-  updatePage:"6691051ac4843fadfbfa80ae",
+  updatePage: "6691051ac4843fadfbfa80ae",
   // googleSheetId: "656714a70d487853ac0ce9fc",
   teamPage: "6613c142e22f7fb0bb64a7f7",
   privacyPolicyPage: "6613d35ee22f7fb0bb64a88b",
