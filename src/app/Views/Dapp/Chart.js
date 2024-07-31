@@ -24,6 +24,17 @@ const Chart = ({ setScreen, screen, callBack }) => {
   const [donutData, setDonutData] = useState(init);
 
   useEffect(() => {
+    setDonutData((data) => {
+      data[4] = {
+        name: wallet ? "DISCONNECT WALLET" : "CONNECT WALLET",
+        value: 270,
+        color: wallet ? "#c1272d" : "#045047",
+      };
+      return data;
+    });
+  }, []);
+
+  useEffect(() => {
     if (screen === "CONNECT WALLET" || screen === "DISCONNECT WALLET") {
       setDisconnect(true);
       connectWallet({ wallet });
