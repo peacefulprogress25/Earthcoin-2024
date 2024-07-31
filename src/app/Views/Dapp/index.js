@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import * as d3 from "d3";
 import TransactionPopup from "./TransactionPopup";
+
 import ImageView from "../../Components/ImageView";
 import Sbt from "./Sbt";
 import Trade from "./Trade";

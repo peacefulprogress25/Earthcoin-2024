@@ -9,7 +9,6 @@ import { profileState } from "../../redux/profileSlice";
 import useNotification from "../../Hooks/useNotification";
 import { BtnLoader, Loader } from "../../Components/Loader";
 import { nexaflowPageObj } from "../../utils/constants";
-import Persona from "persona";
 
 const soulboundAddress = envObj.soulboundAddress;
 const templateId = envObj.personaTemplateId;
@@ -427,6 +426,7 @@ const Verifier = ({
   // setShowBalance,
 }) => {
   const [referenceId, setReferenceId] = useState("");
+  const Persona = require("persona");
 
   return (
     <div className='persona-auth-overlay '>
