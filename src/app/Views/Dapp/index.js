@@ -9,45 +9,161 @@ import Claim from "./Claim";
 import Mint from "./Mint";
 import "./dapp.css";
 import Chart from "./Chart";
+import { ethers } from "ethers";
+import useNotification from "../../Hooks/useNotification";
+import { envObj } from "../../utils/env";
+import {
+  PresaleAllocation as PresaleAllocationJSON,
+  Presale as PresaleJSON,
+  StableCoin as StableCoinJSON,
+  EarthTreasury as EarthTreasuryJSON,
+  LockedFruit as LockedFruitJSON,
+  EarthStaking as EarthStakingJSON,
+} from "./abi";
+import Soulbound from "./abi/SoulBound.json";
+import { useSelector } from "react-redux";
+import { connectWalletFn, profileState } from "../../redux/profileSlice";
+import {
+  getBalance,
+  allowance,
+  earthAmount,
+  totalEarth,
+  fetchDexPrice,
+} from "./balance";
 
 const GradientBg = "/assets/images/dapp-bg.png";
 const rays = "/assets/images/Background rays.png";
 const disconnect = "/assets/images/Disconnect Wallet.png";
 const connect = "/assets/images/Connect Wallet.png";
 const wallet = "/assets/icons/wallet-white.svg";
+
+const soulboundAddress = envObj.soulboundAddress;
+const EarthTreasuryAddress = envObj.EarthTreasuryAddress;
+const PresaleAddress = envObj.presaleAddress;
+const EarthStakingAddress = envObj.earthstakingAddress;
+
 export default function Dapp() {
   const [showPopup, setShowPopup] = useState(false);
+  const { showMessage } = useNotification();
+
   const [screen, setScreen] = useState("SBT");
+  const {
+    wallet: account,
+    balance: balanceObj,
+    earthBalance,
+  } = useSelector(profileState);
+  const [showContent, setShowContent] = useState(true);
+
+  const walletCallBack = () => {
+    setShowContent(false);
+    setTimeout(() => {
+      setShowContent(true);
+    }, 500);
+  };
   const balance = [
     {
-      balance: "158.68",
+      balance: balanceObj?.earth,
       title: "$Earth Balance",
     },
     {
-      balance: "158.68",
+      balance: balanceObj?.fruit,
       title: "$Fruit Balance",
     },
     {
-      balance: "158.68",
+      balance: balanceObj?.dai,
       title: "$DAI Balance",
     },
   ];
   const price = [
     {
-      balance: "$10",
+      balance: earthBalance?.earth,
       title: "$Earth Price",
     },
     {
-      balance: "158.68",
+      balance: earthBalance?.dex,
       title: "$Earth Price on Dex",
     },
     {
-      balance: "158.68",
+      balance: earthBalance?.treasury,
       title: "Treasury Size",
     },
   ];
 
+  const [userData, setUserData] = useState({
+    earth: "",
+    fruit: "",
+  });
+  const [earth, setEarth] = useState();
+
+  const [currentNetwork, setcurrentNetwork] = useState("");
+
+  const networkChanged = async (chainId) => {
+    if (typeof window.ethereum !== undefined) {
+      let provider = new ethers.providers.Web3Provider(window.ethereum);
+      provider = await provider.getNetwork();
+      provider.name = provider.name === "unknown" ? "localhost" : provider.name;
+      setcurrentNetwork(provider.name);
+      showMessage({
+        type: "success",
+        value: `Chain-id: ${provider.chainId} \n Network name: ${provider.name}`,
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.ethereum.on("chainChanged", networkChanged);
+
+    // return () => {
+    //   window.ethereum.removeListener("chainChanged", networkChanged);
+    // };
+  }, []);
+
+  const handleAccountChange = (...args) => {
+    connectWalletFn({
+      wallet: "",
+      setShowMenu: "",
+      value: "Account Changed",
+    });
+  };
+
+  useEffect(() => {
+    window.ethereum?.on("accountsChanged", handleAccountChange);
+    return () => {
+      window.ethereum?.removeListener("accountsChanged", handleAccountChange);
+    };
+  }, []);
+
+  const isMinted = async (account) => {
+    if (typeof window.ethereum !== undefined) {
+      try {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        let contract = new ethers.Contract(
+          soulboundAddress,
+          Soulbound.abi,
+          signer
+        );
+
+        let minted = await contract.tokenMintedAddress(account);
+
+        if (minted) {
+          setScreen((items) => items.filter((heading) => heading !== "SBT"));
+        } else {
+          setScreen(label);
+        }
+      } catch (e) {
+        console.log(e);
+        //  showMessage({ type: "error", value: e.code });
+      }
+    }
+  };
+
+  useEffect(() => {
+    account && isMinted(account);
+  }, [account]);
+
   // const data = ["STAKE", "TRADE", "CLAIM", "DISCONNECT WALLET", "SBT", "MINT"];
+
   const handleBtnClick = (content) => {
     console.log(content);
     setScreen(content);
@@ -96,8 +212,19 @@ export default function Dapp() {
     return parts;
   };
 
+  console.log(screen);
+
+  useEffect(() => {
+    if (wallet) {
+      earthAmount();
+      allowance();
+      getBalance();
+      totalEarth();
+    }
+  }, [wallet, screen]);
+
   return (
-    <div className="mt-20 w-full">
+    <div className='w-full mt-20'>
       {/* <button
         className="border border-black rouned-md"
         onClick={() => setShowPopup(true)}
@@ -106,81 +233,101 @@ export default function Dapp() {
       </button>
       {showPopup && <TransactionPopup setShowPopup={setShowPopup} />} */}
 
-      <div className="relative w-full h-screen flex">
+      <div className='relative flex w-full h-screen'>
         <ImageView
           src={GradientBg}
-          alt="GradientBg"
+          alt='GradientBg'
           width={800}
           height={800}
-          className="w-full h-full object-cover"
+          className='object-cover w-full h-full'
         />
-        <div className="absolute h-full w-full flex items-center justify-around px-10 py-12">
-          <div className="flex flex-col bg-white/20">
-            <div className="border-b-2 border-[white] border-opacity-30">
-              <div className="flex flex-col  items-center justify-center p-5">
-                <ImageView src={wallet} alt="wallet" width={40} height={40} />
-                <p className="text-white font-inter text-center mt-1 font-light text-[16px]">
-                  {formatAddress(
-                    "0xfa0911850b5b43c8xcxczsC7c70a5fc7194762ad52e47aa"
-                  )}
+        <div className='absolute flex items-center justify-around w-full h-full px-10 py-12'>
+          <div className='flex flex-col bg-white/20'>
+            <div className='border-b-2 border-[white] border-opacity-30'>
+              <div className='flex flex-col items-center justify-center p-5'>
+                <ImageView src={wallet} alt='wallet' width={40} height={40} />
+                <p className='text-white font-inter text-center mt-1 font-light text-[16px]'>
+                  {formatAddress(account)}
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-4 items-center justify-center  p-5">
-              {balance?.map((value, index) => (
-                <div className="flex flex-col  items-center" key={index}>
-                  <p className="text-white font-inter text-center  font-light text-[20px]">
-                    {formatToTwoDecimalPlaces(value?.balance)}
-                  </p>
-                  <p className="text-white font-inter text-center  font-light text-[12px]">
-                    {value?.title}
-                  </p>
-                </div>
-              ))}
+            <div className='flex flex-col items-center justify-center gap-4 p-5'>
+              {balance?.map((value, index) => {
+                const current = value?.balance
+                  ? formatToTwoDecimalPlaces(value?.balance)
+                  : 0;
+
+                return (
+                  <div className='flex flex-col items-center' key={index}>
+                    <p className='text-white font-inter text-center  font-light text-[20px]'>
+                      {current}
+                    </p>
+                    <p className='text-white font-inter text-center  font-light text-[12px]'>
+                      {value?.title}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
-          <div className="relative flex justify-center w-[45rem]">
-            <ImageView
-              src={rays}
-              alt="rays"
-              width={800}
-              height={800}
-              className="w-full  z-[1] -left-[1rem] -top-[5rem] absolute"
-            />
-            <Chart setScreen={setScreen} screen={screen}>
+          <div className='relative flex justify-center w-[45rem]'>
+            {showContent ? (
+              <ImageView
+                src={rays}
+                alt='rays'
+                width={800}
+                height={800}
+                className='w-full  z-[1] -left-[1rem] -top-[5rem] absolute'
+              />
+            ) : null}
+            <Chart
+              setScreen={setScreen}
+              screen={screen}
+              callBack={walletCallBack}
+            >
               {" "}
             </Chart>
-            <div className="rounded-full border-2 z-[6] flex absolute overflow-hidden top-[5.1rem] left-[9.3rem]  xl:left-[11rem] items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]">
-              {screen === "SBT" ? (
-                <Sbt />
-              ) : screen === "TRADE" ? (
-                <Trade />
-              ) : screen === "STAKE" ? (
-                <Stake />
-              ) : screen === "CLAIM" ? (
-                <Claim setScreen={setScreen} />
-              ) : screen === "MINT" ? (
-                <Mint />
-              ) : screen === "DISCONNECT WALLET" ? (
-                <ImageView
-                  src={disconnect}
-                  width={200}
-                  height={200}
-                  alt="disconnect wallet"
-                  className="w-full h-full"
-                />
-              ) : screen === "CONNECT WALLET" ? (
-                <ImageView
-                  src={connect}
-                  width={200}
-                  height={200}
-                  alt="disconnect wallet"
-                  className="w-full h-full"
-                />
-              ) : (
-                <Sbt />
-              )}
-            </div>{" "}
+            {showContent ? (
+              <div className='rounded-full border-2 z-[6] flex absolute overflow-hidden top-[5.1rem] left-[9.3rem]  xl:left-[11rem] items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]'>
+                {account && screen === "DISCONNECT WALLET" ? (
+                  <ImageView
+                    src={disconnect}
+                    width={200}
+                    height={200}
+                    alt='disconnect wallet'
+                    className='w-full h-full'
+                  />
+                ) : null}
+
+                {!account ? (
+                  <ImageView
+                    src={connect}
+                    width={200}
+                    height={200}
+                    alt='disconnect wallet'
+                    className='w-full h-full'
+                  />
+                ) : null}
+
+                {screen === "SBT" && account ? (
+                  <Sbt />
+                ) : screen === "TRADE" && account ? (
+                  <Trade />
+                ) : screen === "STAKE" && account ? (
+                  <Stake totalEarth={totalEarth} />
+                ) : screen === "CLAIM" && account ? (
+                  <Claim setScreen={setScreen} />
+                ) : screen === "MINT" && account ? (
+                  <Mint
+                    earth={earth}
+                    totalEarth={totalEarth}
+                    setHeading={setScreen}
+                  />
+                ) : account ? (
+                  <Sbt />
+                ) : null}
+              </div>
+            ) : null}{" "}
           </div>
           {/* <div className="relative">
             <div
@@ -217,24 +364,24 @@ export default function Dapp() {
               <Sbt />
             )}
           </div> */}
-          <div className="flex flex-col bg-white/20 ">
-            <div className="border-b-2 border-[white] border-opacity-30">
-              <div className="flex flex-col  items-center justify-center p-4">
-                <p className="text-white font-inter text-center  font-light text-[20px]">
+          <div className='flex flex-col bg-white/20 '>
+            <div className='border-b-2 border-[white] border-opacity-30'>
+              <div className='flex flex-col items-center justify-center p-4'>
+                <p className='text-white font-inter text-center  font-light text-[20px]'>
                   $Earth
                 </p>
-                <p className="text-white font-inter text-center  font-light text-[14px]">
+                <p className='text-white font-inter text-center  font-light text-[14px]'>
                   Summary
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-4 items-center justify-center p-4">
+            <div className='flex flex-col items-center justify-center gap-4 p-4'>
               {price?.map((value, index) => (
-                <div className="flex flex-col  items-center" key={index}>
-                  <p className="text-white font-inter text-center  font-light text-[20px]">
-                    {value?.balance}
+                <div className='flex flex-col items-center' key={index}>
+                  <p className='text-white font-inter text-center  font-light text-[20px]'>
+                    {value?.balance ? value?.balance : 0}
                   </p>
-                  <p className="text-white font-inter text-center  font-light text-[12px]">
+                  <p className='text-white font-inter text-center  font-light text-[12px]'>
                     {value?.title}
                   </p>
                 </div>

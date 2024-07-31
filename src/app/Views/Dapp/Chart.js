@@ -1,30 +1,51 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
+import { connectWallet } from "./utils";
+import { useSelector } from "react-redux";
+import { profileState } from "../../redux/profileSlice";
 
-const Chart = ({ setScreen, screen }) => {
+const Chart = ({ setScreen, screen, callBack }) => {
   const chartRef = useRef();
-  const [donutData, setDonutData] = useState([
+  const [disconnect, setDisconnect] = useState(false);
+  const { wallet } = useSelector(profileState);
+
+  const init = [
     { name: "MINT", value: 200, color: "#adb745" },
     { name: "STAKE", value: 200, color: "#adb745" },
     { name: "TRADE", value: 200, color: "#adb745" },
     { name: "CLAIM", value: 170, color: "#adb745" },
     {
-      name: "DISCONNECT WALLET",
+      name: "CONNECT WALLET",
       value: 270,
-      color: "#c1272d",
+      color: wallet ? "#c1272d" : "#045047",
     },
     { name: "SBT", value: 170, color: "#adb745" },
-  ]);
+  ];
+  const [donutData, setDonutData] = useState(init);
 
   useEffect(() => {
-    if (screen === "CONNECT WALLET") {
-      setDonutData((prevData) =>
-        prevData.map((d) =>
-          d.name === "CONNECT WALLET" ? { ...d, color: "#045047" } : d
-        )
-      );
+    if (screen === "CONNECT WALLET" || screen === "DISCONNECT WALLET") {
+      setDisconnect(true);
+      connectWallet({ wallet });
+      if (screen === "CONNECT WALLET") {
+        setDonutData((prevData) =>
+          prevData.map((d) =>
+            d.name === "CONNECT WALLET"
+              ? { ...d, name: "DISCONNECT WALLET", color: "#045047" }
+              : d
+          )
+        );
+      } else {
+        setDonutData(init);
+      }
+      setInterval(() => {
+        setDisconnect(false);
+      }, 500);
+      callBack();
     }
   }, [screen]);
+
+  console.log(donutData);
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
@@ -108,6 +129,7 @@ const Chart = ({ setScreen, screen }) => {
         if (screen === "DISCONNECT WALLET") {
           setScreen("DISCONNECT WALLET");
         } else {
+          console.log(d.data.name);
           setScreen(d.data.name);
         }
       })
@@ -175,6 +197,7 @@ const Chart = ({ setScreen, screen }) => {
 
         // Update the screen with the clicked slice's name
         setScreen(d.name);
+        console.log(d.name);
       })
       .append("textPath")
       .attr("startOffset", "50%")
@@ -185,14 +208,14 @@ const Chart = ({ setScreen, screen }) => {
       .text(function (d) {
         return d.name;
       });
-  }, [setScreen]);
+  }, [setScreen, donutData, disconnect]);
 
-  return (
+  return !disconnect ? (
     <div
       ref={chartRef}
-      className="cursor-pointer chart text-center relative text-[16px] font-semibold font-inter z-[3]"
+      className='cursor-pointer chart text-center relative text-[16px] font-semibold font-inter z-[3]'
     ></div>
-  );
+  ) : null;
 };
 
 export default Chart;
