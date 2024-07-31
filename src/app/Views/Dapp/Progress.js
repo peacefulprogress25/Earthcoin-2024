@@ -17,6 +17,7 @@ function Progress({ data, progress, loading, failed }) {
             className={`flex items-center gap-2 text-[${
               completed ? "#12B76A" : "#475467"
             }] font-inter  `}
+            key={obj.title}
           >
             {obj?.text}{" "}
             {underProgress ? (
