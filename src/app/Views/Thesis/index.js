@@ -8,9 +8,15 @@ import { useState, useEffect } from "react";
 
 const thesis = "/assets/images/thesis.png";
 const funnel = "/assets/images/funnel1.png";
+const skeleton = "/assets/images/skeleton.png";
+const thesisbg1 = "/assets/images/thesisbg.png";
+const thesisbg2 = "/assets/images/thesisbg2.png";
+const thesisbg3 = "/assets/images/thesisbg3.png";
+const thesisbg4 = "/assets/images/thesisbg4.png";
 const agriculture = "/assets/images/agriculture.png";
 const pieChart = "/assets/images/Piechart-2.png";
 const exportImg = "/assets/images/Export.png";
+const assetthesis = "/assets/images/assetthesis.png"
 const earthPower = "/assets/images/Earthpowers.png";
 const clean = "/assets/images/clean-energy.png";
 const eco = "/assets/images/eco-system.png";
@@ -96,12 +102,12 @@ export default function Thesis() {
           height={200}
           className='object-cover w-full mt-4'
         />
-        <div className='sm:px-[8%] px-4 flex flex-col w-full items-start'>
-          <p className='text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne'>
+        <div className='sm:px-[8%]  px-4 flex flex-col w-full items-start'>
+          <p className='text-[#101828] font-semibold text-center w-full mt-6 text-[20px] sm:text-[28px] mr-10 font-syne'>
             FUEL to our FIRE
           </p>
           <div className='mt-6'>
-            <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter'>
+            <p className='text-[#475467] text-center w-full font-normal  text-[15px] font-inter'>
               Addressing climate change is truly one of those{" "}
               <span className='text-[#EC8000] font-semibold'>
                 once in a generation opportunity.
@@ -127,8 +133,8 @@ export default function Thesis() {
         height={500}
         className='object-cover w-full'
       />
-      <div className='w-full max-w-screen-2xl sm:mt-10 mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10'>
-        <div className='sm:px-[8%] px-4 flex flex-col w-full items-start'>
+      <div className='w-full max-w-screen-2xl md:flex-row sm:mt-10 mx-auto px-4 sm:px-[5%] flex gap-10 flex-col items-center pb-10'>
+        <div className=' px-4 flex flex-col w-full items-start'>
           <p className='text-[#101828] font-semibold text-left  text-[20px] sm:text-[28px] mr-10 font-syne'>
             This transition is no longer a IF but a
             <span className='text-[#EC8000]'> WHEN.</span>
@@ -164,22 +170,32 @@ export default function Thesis() {
             </p>
           </div>
         </div>
-        <div className='flex justify-center w-full'>
-          <p className='text-[#101828] font-semibold text-center mt-6 text-[20px] sm:text-[28px] mr-10 font-syne'>
+        <div>
+        <ImageView
+        src={skeleton}
+        alt='skeleton'
+        width={200}
+        height={200}
+        className='object-contain w-[400px] h-[300px]'
+      />
+        </div>
+        
+      </div>
+      <div className='flex justify-center w-full'>
+          <p className='text-[#101828] font-semibold text-center mt-6 text-[20px] sm:text-[28px] mr-10 lg:mr-0 lg:mt-[5rem] font-syne'>
             Sectors we are focusing on -
           </p>
         </div>
-      </div>
-      <div className='px-[6%]'>
-        <ImageView
+      <div className='px-[6%] flex gap-8 py-[4%] justify-between'>
+        {/* <ImageView
           src={earthPower}
           alt='earthPower'
           width={400}
           height={600}
           className='object-cover w-full'
-        />
+        /> */}
 
-        <div className='flex justify-between gap-6 '>
+        <div className='flex flex-col justify-between  w-[25%] gap-6 '>
           {fundingData && fundingData.length ? (
             fundingData?.map((power, index) => {
               const title = power.title?.split(" ");
@@ -188,13 +204,13 @@ export default function Thesis() {
                 <div
                   key={index}
                   onClick={() => handleClick(power.title)}
-                  className='flex flex-col cursor-pointer gap-2 grow w-full rounded-lg overflow-hidden border border-[#EAECF0] justify-between'
+                  className='flex flex-col cursor-pointer gap-2 grow w-full  rounded-lg overflow-hidden border border-[#EAECF0] justify-between'
                 >
                   <div
                     className={`rounded-md p-2 mt-2 flex justify-between  
                 `}
                   >
-                    <p className='text-[#101828] w-[50%] text-[9px] sm:text-[18px] font-semibold font-inter'>
+                    <p className='text-[#101828] w-[50%] md:px-5 text-[9px] sm:text-[15px] font-semibold font-inter'>
                       {title[0]} <br /> {title[1]}
                     </p>
                     <ImageView
@@ -229,13 +245,15 @@ export default function Thesis() {
             </div>
           )}
         </div>
+        <div className="w-[75%]">
         {title === "Regenerative Agriculture" && (
-          <div className='border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
-            <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter'>
+          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+            <div className="lg:w-[60%]">
+            <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 lg:mr-0 font-inter'>
               Regenerative Agricuture
             </p>
             <div className='mt-6'>
-              <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter'>
+              <p className='text-[#475467] text-center sm:text-left font-normal lg:text-[14px]  text-[16px] font-inter'>
                 As of today less than 5% of our food production comes from
                 regenerative sources. Majority of farming in todays time is
                 chemical intensive using industrial inputs to produce highest
@@ -263,7 +281,8 @@ export default function Thesis() {
                 required to make it happen.
               </p>
             </div>
-            <div className='w-full flex justify-center px-[8%]'>
+            </div>
+            <div className='w-full lg:w-[40%] lg:px-0 flex justify-center px-[8%]'>
               <ImageView
                 src={agriculture}
                 alt='agriculture'
@@ -275,12 +294,13 @@ export default function Thesis() {
           </div>
         )}
         {title === "Clean Energy" && (
-          <div className='border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+             <div className="lg:w-[60%]">
             <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter'>
               Clean Energy
             </p>
             <div className='mt-6'>
-              <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter'>
+              <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] lg:text-[14px] font-inter'>
                 Currently clean electricity generation comprises of 35% market
                 share of the total electricity consumed which in itself is less
                 than 20% of total energy consumption. So in effect of the over
@@ -299,7 +319,8 @@ export default function Thesis() {
                 integral part of.
               </p>
             </div>
-            <div className='w-full flex justify-center px-[8%]'>
+            </div>
+            <div className='w-full lg:w-[40%] lg:px-0 flex justify-center px-[8%]'>
               <ImageView
                 src={clean}
                 alt='clean'
@@ -311,12 +332,13 @@ export default function Thesis() {
           </div>
         )}
         {title === "Ecosystem Conservation" && (
-          <div className='border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+             <div className="lg:w-[60%]">
             <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter'>
               Ecosystem Conservation
             </p>
             <div className='mt-6'>
-              <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter'>
+              <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] lg:text-[14px] font-inter'>
                 We have destroyed over 50% of our forest cover in the last 200
                 yrs primarily because of urbanization, agriculture, resource
                 demand and cattle grazing. On last count over 10 football fields
@@ -350,7 +372,8 @@ export default function Thesis() {
                 total area of Earth under conservation by 2050.
               </p>
             </div>
-            <div className='w-full flex justify-center px-[8%]'>
+            </div>
+            <div className='w-full lg:w-[40%] lg:px-0 flex justify-center px-[8%]'>
               <ImageView
                 src={eco}
                 alt='eco'
@@ -362,12 +385,13 @@ export default function Thesis() {
           </div>
         )}
         {title === "Clean Transport" && (
-          <div className='border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+             <div className="lg:w-[60%]">
             <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter'>
               Clean Transport
             </p>
             <div className='mt-6'>
-              <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter'>
+              <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] lg:text-[14px] font-inter'>
                 Transportation contributes about 10-15% of the emission problem.
                 We are already began witnessing the wave of transition forming
                 towards electric vehicles. Right now, at less than 10% of market
@@ -402,7 +426,8 @@ export default function Thesis() {
                 total area of Earth under conservation by 2050.
               </p>
             </div>
-            <div className='w-full flex justify-center px-[8%]'>
+            </div>
+            <div className='w-full lg:w-[40%] lg:px-0 flex justify-center px-[8%]'>
               <ImageView
                 src={transport}
                 alt='transport'
@@ -414,12 +439,13 @@ export default function Thesis() {
           </div>
         )}
         {title === "Solarpunk Spaces" && (
-          <div className='border-2 mt-6 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+             <div className="lg:w-[100%]">
             <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter'>
               Solarpunk Spaces
             </p>
             <div className='mt-8'>
-              <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter'>
+              <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] lg:text-[14px] font-inter'>
                 Built environment is a major contributor to GHG emissions. The
                 construction process itself is energy-intensive with production
                 of materials like cement, steel, and glass that involves high
@@ -463,6 +489,7 @@ export default function Thesis() {
                   <li>) Tech for Solarpunk paradigm</li>
                 </ol> */}
             </div>
+            </div>
             {/* <div className="w-full flex justify-center px-[8%]">
                 <ImageView
                   src={solarpunk}
@@ -474,7 +501,9 @@ export default function Thesis() {
               </div> */}
           </div>
         )}
+        </div>
       </div>
+      
       <div className='sm:px-[8%] px-4 flex flex-col'>
         {/* <div className="flex flex-col items-center justify-between w-full gap-16 mt-3 sm:flex-row">
             <ImageView
@@ -514,10 +543,73 @@ export default function Thesis() {
               ))}
             </div>
           </div> */}
-        <p className='text-[#101828] font-semibold text-left mt-8 text-[20px] sm:text-[28px] mr-10 font-syne'>
+        <p className='text-[#101828] font-semibold text-center mt-16 text-[20px] sm:text-[28px] mr-10 font-syne'>
           Rationale behind sector selection -
         </p>
-        <ol className='pl-6 mt-6 list-decimal'>
+
+        <div className="relative mt-5">
+              <div className="absolute  md:top-12 md:left-[8rem] lg:top-16 lg:left-[12rem] xl:top-20 xl:left-[16rem] ">
+              <p className='mb-3 text-center sm:text-left font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
+              They <span className='text-white '> directly address</span>{" "} all causes of climate change
+            </p>
+              </div>
+            <ImageView
+              src={thesisbg1}
+              alt="graph"
+              width={600}
+              height={600}
+              className=" w-full object-contain"
+            />
+            </div>
+
+            <div className="relative mt-5">
+              <div className="absolute md:top-12 md:left-[6rem] lg:top-16 lg:left-[10rem] xl:top-20 xl:left-[12rem] ">
+              <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
+              They cater to humanities <span className='text-white '> core needs</span>{" "} - energy, food, transport, <br /> materials and ecosystems to sustain LIFE
+            </p>
+              </div>
+            <ImageView
+              src={thesisbg2}
+              alt="graph"
+              width={200}
+              height={200}
+              className=" w-full object-contain"
+            />
+            </div>
+
+            <div className="relative mt-5">
+              <div className="absolute md:top-10 md:left-[4rem] lg:top-16 lg:left-[8rem] xl:top-18 xl:left-[10rem]  ">
+              <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
+              All these climate solutions generate tremendous amounts of  <span className='text-white '> positive <br /> externalities </span>{" "}- Clean Air, Healthy soil, Increasing Biodiversity, Nutrient rich <br /> food, Clean Water, Energy Independence, reducing pollution etc.
+            </p>
+              </div>
+            <ImageView
+              src={thesisbg3}
+              alt="graph"
+              width={200}
+              height={200}
+              className=" w-full object-contain"
+            />
+            </div>
+
+            <div className="relative mt-5">
+              <div className="absolute md:top-10 md:left-[6rem] lg:top-16 lg:left-[10rem] xl:top-18 xl:left-[12rem] ">
+              <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
+              These real world solutions have undisputed long term value which <br /> also provide  <span className='text-white '> monetary yields </span>{" "} uncorrelated to crypto sentiment <br /> which ensures strong floor value for $Earth.
+            </p>
+              </div>
+            <ImageView
+              src={thesisbg4}
+              alt="graph"
+              width={600}
+              height={600}
+              className=" w-full object-contain"
+            />
+            </div>
+
+
+
+        {/* <ol className='pl-6 mt-6 list-decimal'>
           <li className='mb-3 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter'>
             <p className=''>
               They directly address{" "}
@@ -553,12 +645,14 @@ export default function Thesis() {
               for $Earth.
             </p>
           </li>
-        </ol>
-        <p className='text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne'>
+        </ol> */}
+        <div className="flex justify-between mt-32 mb-24 gap-10">
+        <div className="md:w-[70%] lg:w-[50%]">
+        <p className='text-[#101828] font-semibold text-left mt-6 md:text-[16px] lg:text-[28px] mr-10 font-syne'>
           How?
         </p>
         <div className='w-full mt-6'>
-          <p className='text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter'>
+          <p className='text-[#475467] text-center sm:text-left font-normal  md:text-[10px] lg:text-[14px] xl:text-[16px] font-inter'>
             We have tried to make it as easy and rewarding for anyone across the
             planet to take constructive climate action by simply buying $Earth
             and using it eventually to build a sustainable, circular, solarpunky
@@ -569,23 +663,26 @@ export default function Thesis() {
             transactions on the blockchain, $Earth is only minted against purged
             $$$ which are used to fund climate solutions. For the first time we
             will have a{" "}
-            <span className='text-[#EC8000] font-semibold'>
+            <span className='text-[#EC8000]md:text-[10px] lg:text-[14px] xl:text-[16px] font-semibold'>
               currency that is backed by climate solutions
             </span>{" "}
             which provide essential utility for humanity and not by a shiny
             metal or military forces.
           </p>
         </div>
-      </div>
-      <div className='sm:px-[20%] w-full px-4'>
+        </div>
+        <div>
         <ImageView
-          src={exportImg}
-          alt='export'
-          width={550}
-          height={600}
-          className='!w-full mt-6 object-cover'
-        />
+        src={assetthesis}
+        alt='asset'
+        width={500}
+        height={500}
+        className='object-cover'
+      />
+        </div>
       </div>
+      </div>
+     
       <Community
         title='Ready to go down the rabbit hole?'
         description='Join our social community!'

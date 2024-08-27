@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { Loader } from "../../Components/Loader";
 import Link from "next/link";
 import Video from "../../Components/Video";
+import Treasury from "../../Components/EarthTreasury";
 import Nodes from "./Nodes";
 import Features from "./Features";
 import Projects from "./Projects";
@@ -395,6 +396,7 @@ export default function Main() {
           height={2709}
         /> */}
       </div>
+      {/* <Treasury /> */}
       <Nodes />
       <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] '>
         <ImageView

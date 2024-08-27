@@ -5,6 +5,11 @@ const tokenomics = "/assets/images/tokenomics.png";
 const curious = "/assets/images/Curious.png";
 const protocol = "/assets/images/protocol.png";
 const treasury1 = "/assets/images/treasury1.gif";
+const treasurybg = "/assets/images/treasurybg.png";
+const treasuryflow1 = "/assets/images/treasury-flow1.png";
+const treasuryflow2 = "/assets/images/treasury-flow2.png";
+const treasuryflow3 = "/assets/images/treasury-flow3.png";
+const treasuryflow4 = "/assets/images/treasury-flow4.png";
 const treasury2 = "/assets/images/treasury2.gif";
 const treasury3 = "/assets/images/treasury3.gif";
 const treasury = "/assets/images/treasury.png";
@@ -85,7 +90,7 @@ export default function Mechanics() {
           ))}
         </div>
         <div className="sm:px-[13%] px-4 flex flex-col w-full items-start">
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px]  font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[25px]  font-syne">
             Here we look at how tokenomics have been designed to achieve these
             objectives
           </p>
@@ -96,25 +101,25 @@ export default function Mechanics() {
               how these concepts play out in action
             </p>
           </div>
-          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] w-[20%] font-semibold text-left   text-[20px]  font-syne">
-              $Earth token -
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
+              $Earth -
             </p>
 
-            <p className="text-[#475467] text-center sm:text-left font-normal w-[80%] text-[16px] font-inter">
+            <p className="text-[#475467] text-center sm:text-left font-normal w-[70%] text-[16px] font-inter">
               Token that can be minted/created only when petro $$$ are purged at
               the protocol level by Earth Nodes.
             </p>
           </div>
-          <div className="mt-6 w-full flex flex-col sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] w-[20%] font-semibold text-left   text-[20px]  font-syne">
+          <div className="mt-6 w-full flex flex-col sm:flex-row gap-15 justify-between items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
               Neoliberal Value -
             </p>
-            <div className="flex flex-col gap-5 w-[80%] items-start">
+            <div className="flex flex-col gap-5 w-[70%] items-start">
               <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
                 Price of real world assets backing each $EARTH in the existing
                 neoliberal paradigm. Value of this cannot go down,
-                <span className="tex-[#EC8000] font-semibold"> EVER!</span> This
+                <span className="text-[#EC8000] font-semibold"> EVER!</span> This
                 is coded into the smart contracts.
               </p>
               <p className="text-[#101828] font-semibold text-left   text-[18px]  font-syne">
@@ -122,59 +127,69 @@ export default function Mechanics() {
               </p>
             </div>
           </div>
-          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] w-[20%] font-semibold text-left   text-[20px]  font-syne">
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
               Mint Multiple -
             </p>
 
-            <p className="text-[#475467] text-center sm:text-left font-normal w-[80%]  text-[16px] font-inter">
+            <p className="text-[#475467] text-center sm:text-left font-normal w-[70%]  text-[16px] font-inter">
               The premium Earth Nodes pay to mint $EARTH on the neoliberal value
               of assets in the treasury
             </p>
           </div>
-          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] w-[20%] font-semibold text-left   text-[20px]  font-syne">
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
               Harvest -
             </p>
 
-            <p className="text-[#475467] text-center sm:text-left font-normal w-[80%]  text-[16px] font-inter">
+            <p className="text-[#475467] text-center sm:text-left font-normal w-[70%]  text-[16px] font-inter">
               Function that lets the protocol mint $EARTH to the extent that it
               doesn&apos;t dilute the neoliberal value of assets backing each
               $EARTH
             </p>
           </div>
-          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] w-[20%] font-semibold text-left   text-[20px]  font-syne">
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
               Mint price -
             </p>
 
-            <p className="text-[#101828] font-semibold text-left  w-[80%] text-[18px]  font-syne">
+            <p className="text-[#101828] font-semibold text-left  w-[70%] text-[18px]  font-syne">
               Neoliberal value of assets backing each $EARTH x Mint multiple
             </p>
           </div>
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
+          </div>
+
+
+
+         
+          <div className="flex justify-between md:gap-10 xl:gap-16 w-full mt-[5rem]">
+            
+          <div className="md:w-[80%] lg:w-[50%]  border-t-2 pb-10  border-[#EAECF0] ">
+          <p className="text-[#101828] font-semibold text-left mt-4 lg:mt-10 text-[20px] sm:text-[28px] mr-10 lg:mr-0 font-syne">
             Example
           </p>
-          <div className="mt-6">
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+            <p className="text-[#475467] text-center sm:text-left font-normal mt-2 lg:mt-8 text-[10px]  lg:text-[14px] xl:text-[16px] font-inter">
               Let&apos;s consider Jimi, who has become an
               <span className="text-[#EC8000] font-semibold">$EARTH Node</span>.
+              </p>
+              <br />
+              <p className="text-[#475467] text-center sm:text-left font-normal text-[10px] lg:text-[14px] xl:text-[16px] font-inter">
               He decides to purge $100,000 when the price of $EARTH at the
               protocol level is $10.
+              </p>
               <br />
-              1. In this scenario, Jimi{" "}
+              <div className="flex gap-2">
+              
+                <p className="text-[#475467] text-center sm:text-left font-normal text-[10px] lg:text-[14px] xl:text-[16px] font-inter">1.</p>
+              
+              <div>
+              <p className="text-[#475467] text-center sm:text-left font-normal text-[10px] lg:text-[14px] xl:text-[16px] font-inter">
+               In this scenario, Jimi{" "}
               <span className="text-[#EC8000] font-semibold">purges</span>{" "}
               $100,000 for 10,000 $EARTH tokens from the protocol.
             </p>
-          </div>
-          <ImageView
-            src={treasury1}
-            alt="graph"
-            width={400}
-            height={400}
-            className="w-full mt-4 object-cover"
-          />
-          <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+            <br/>
+            <p className="text-[#475467] text-center sm:text-left font-normal text-[10px] lg:text-[14px] xl:text-[16px] font-inter">
             Breakdown of Events:
             <br />
             <br />
@@ -184,11 +199,217 @@ export default function Mechanics() {
             <br />
             b. Jimi pays a price for $EARTH ($10) derived from the formula:
           </p>
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[20px] mr-10 font-syne">
+          </div>
+          </div>
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[10px] lg:text-[14px] xl:text-[18px] mr-10 lg:mr-0 font-syne">
             Neoliberal Value of assets backing each $EARTH today ( $5 ) x Mint
             Multiple (2) = $10
           </p>
-          <div className="mt-6">
+          </div>
+          <div className="relative">
+            <div className="absolute top-5 left-5 lg:top-10 lg:left-6">
+            <ImageView
+            src={treasuryflow1}
+            alt="graph"
+            width={500}
+            height={500}
+            className="mt-4 object-cover"
+          />
+            </div>
+          <ImageView
+            src={treasurybg}
+            alt="graph"
+            width={600}
+            height={600}
+            className=" object-cover"
+          />
+          </div>
+          </div>
+
+          <div className="flex justify-between md:gap-10 xl:gap-16 w-full mt-[5rem]">
+            
+            <div className="md:w-[80%] lg:w-[50%]  border-t-2 pb-10  border-[#EAECF0] ">
+            <p className="text-[#101828] font-semibold text-left mt-4 lg:mt-10 text-[20px] sm:text-[28px] mr-10 lg:mr-0 font-syne">
+              Example
+            </p>
+              
+                <div className="flex gap-2 mt-2 lg:mt-8">
+                
+                  <p className="text-[#475467] text-center sm:text-left font-normal text-[10px] lg:text-[14px] xl:text-[16px] font-inter">2.</p>
+                
+                <div>
+                <p className="text-[#475467] text-center sm:text-left font-normal text-[10px] lg:text-[14px] xl:text-[16px] font-inter">
+                By paying a premium over the neoliberal value of assets in the treasury, Jimi <span className="text-[#EC8000] font-semibold">values the positive 
+                  externalities</span> or ecosystem services generated by the assets in the treasury proactively, rather than waiting for the free market to price the value of healthy soil, thriving biodiversity, clean air and water, a stable carbon cycle, habitable environments, nutrient-dense food, well-being, etc
+               
+                
+              </p>
+              <br/>
+             
+            </div>
+            </div>
+            <p className="text-[#101828] font-semibold text-left mt-6 text-[10px] lg:text-[14px] xl:text-[18px] mr-10 lg:mr-0 font-syne">
+            When Jimi pays this premium proactively, it funnels more capital into projects that generate these positive externalities.
+            </p>
+            </div>
+            <div className="relative">
+              <div className="absolute top-0 left-16 lg:-top-3 lg:left-6">
+              <ImageView
+              src={treasuryflow2}
+              alt="graph"
+              width={200}
+              height={200}
+              className="mt-4 lg:w-[36rem] md:h-[21rem] lg:h-[32rem] xl:h-[36rem] object-cover"
+            />
+              </div>
+            <ImageView
+              src={treasurybg}
+              alt="graph"
+              width={600}
+              height={600}
+              className=" object-cover"
+            />
+            </div>
+            </div>
+
+
+            <div className="flex justify-between md:gap-10 xl:gap-16 w-full mt-[5rem]">
+            
+            <div className="md:w-[80%] lg:w-[50%]  border-t-2 pb-10  border-[#EAECF0] ">
+            <p className="text-[#101828] font-semibold text-left mt-4 lg:mt-10 text-[20px] sm:text-[28px] mr-10 lg:mr-0 font-syne">
+              Example
+            </p>
+              
+                <div className="flex gap-2 mt-2 lg:mt-8">
+                
+                  <p className="text-[#475467] text-center sm:text-left font-normal text-[10px] lg:text-[14px] xl:text-[16px] font-inter">3.</p>
+                
+                <div>
+                <p className="text-[#475467] text-center sm:text-left font-normal text-[10px] lg:text-[14px] xl:text-[16px] font-inter">
+                So, with the additional 10,000 $EARTH minted via the Harvest function, we now have 20,000 $EARTH in circulation (10,000 with Jimi and 10,000 with the Harvest Treasury).
+
+               
+                
+              </p>
+              <br/>
+             
+            </div>
+            </div>
+            <div className="mt-2 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-1 lg:pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[60%] font-semibold   text-left   text-[10px] lg:text-[14px] xl:text-[16px]  font-syne">
+              Treasury -
+            </p>
+            <p className="text-[#101828] font-semibold text-left w-[50%]   text-[10px] lg:text-[14px] xl:text-[16px]  font-syne">
+              $100,000
+            </p>
+          </div>
+          <div className="mt-6 w-full flex justify-between flex-col sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-1 lg:pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[60%] font-semibold text-left   text-[10px] lg:text-[14px] xl:text-[16px]  font-syne">
+              Total $EARTH in circulation -
+            </p>
+            <p className="text-[#101828] font-semibold text-left w-[50%]  text-[10px] lg:text-[14px] xl:text-[16px]  font-syne">
+              20,000 $EARTH
+            </p>
+          </div>
+          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-10 items-start sm:items-center border-b-2 pb-1 lg:pb-8 border-[#EAECF0] space-between">
+            <p className="text-[#101828] w-[60%] font-semibold text-left   text-[10px] lg:text-[14px] xl:text-[16px]  font-syne">
+            Assets backing each $EARTH -
+            </p>
+            <p className="text-[#101828] font-semibold text-left w-[50%]   text-[10px] lg:text-[14px] xl:text-[16px]  font-syne">
+              $100,000 ÷ 20,000 = $5
+            </p>
+          </div>
+          <p className="text-[#475467] text-center mt-6 sm:text-left font-normal  text-[10px] lg:text-[14px] xl:text-[18px] font-inter">
+            The protocol ensures that minting $EARTH does not dilute the
+            neoliberal value of assets backing each $EARTH.
+            <br />
+            <br />
+            Once the funds purged by Jimi are transferred to the treasury, they
+            are allocated to projects chosen by $EARTH holders.
+          </p>
+            </div>
+            <div className="relative">
+              <div className="absolute top-0 left-0 lg:-top-3 lg:left-0">
+              <ImageView
+              src={treasuryflow3}
+              alt="graph"
+              width={200}
+              height={200}
+              className="mt-4 lg:w-[36rem] md:h-[21rem] lg:h-[32rem] xl:h-[36rem] object-cover"
+            />
+              </div>
+            <ImageView
+              src={treasurybg}
+              alt="graph"
+              width={600}
+              height={600}
+              className=" object-cover"
+            />
+            </div>
+            </div>
+
+            <div className="flex justify-between md:gap-10 xl:gap-16 w-full mt-[5rem]">
+            
+            <div className="md:w-[80%] lg:w-[50%]  border-t-2 pb-10  border-[#EAECF0] ">
+            <p className="text-[#101828] font-semibold text-left mt-4 lg:mt-10 text-[20px] sm:text-[28px] mr-10 lg:mr-0 font-syne">
+              Example
+            </p>
+              <p className="text-[#475467] text-center sm:text-left font-normal mt-2 lg:mt-8 text-[10px]  lg:text-[14px] xl:text-[16px] font-inter">
+              Once the protocol invokes the Harvest function and 10,000 $EARTH
+              are transferred to the Harvest Treasury, this $EARTH is allocated
+              as follows:
+                </p>
+                <br />
+                
+                <div className="p-5">
+                <ul className="list-disc pl-4">
+              <li className="text-[#475467] text-center mt-2 sm:text-left font-normal  text-[10px] lg:text-[14px] xl:text-[18px] font-inter">
+                Staking: $EARTH is used to provide an APY to stakers, currently
+                at 25%.
+              </li>
+              <br />
+              <li className="text-[#475467] text-center  sm:text-left font-normal  text-[10px] lg:text-[14px] xl:text-[18px] font-inter">
+                Liquidity Pool: $EARTH, combined with the 20% allocation of
+                $DAI, is used to build the $EARTH/$DAI Liquidity Pool for
+                holders.
+              </li>
+              <br />
+              <li className="text-[#475467] text-center  sm:text-left font-normal  text-[10px] lg:text-[14px] xl:text-[18px] font-inter">
+                Community: $EARTH to reward proactive community members.
+              </li>
+              <br />
+              <li className="text-[#475467] text-center  sm:text-left font-normal  text-[10px] lg:text-[14px] xl:text-[18px] font-inter">
+                Solarpunk DAO: Compensation for the work done by Solarpunk DAO
+                to run $EARTH.
+              </li>
+            </ul>
+            </div>
+            </div>
+            <div className="relative">
+              <div className="absolute top-0 left-16 lg:-top-3 lg:left-6">
+              <ImageView
+              src={treasuryflow4}
+              alt="graph"
+              width={200}
+              height={200}
+              className="mt-4 lg:w-[36rem] md:h-[21rem] lg:h-[32rem] xl:h-[36rem] object-cover"
+            />
+              </div>
+            <ImageView
+              src={treasurybg}
+              alt="graph"
+              width={600}
+              height={600}
+              className=" object-cover"
+            />
+            </div>
+            </div>
+          
+          
+
+
+         
+          {/* <div className="mt-6">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
               2. By paying a premium over the neoliberal value of assets in the
               treasury, Jimi{" "}
@@ -246,6 +467,7 @@ export default function Mechanics() {
             are allocated to projects chosen by $EARTH holders. These projects
             then serve as assets backing each $EARTH in circulation.
           </p>
+
           <ul className="list-disc pl-4">
             <li className="text-[#475467] text-center mt-6 sm:text-left font-normal  text-[16px] font-inter">
               80% of the treasury funds are allocated to projects.
@@ -296,8 +518,8 @@ export default function Mechanics() {
               height={400}
               className="w-full mt-4 object-cover"
             />
-          </div>
-        </div>
+          </div> */}
+      
         <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
 
         <Community
