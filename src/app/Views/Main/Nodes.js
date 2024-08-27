@@ -35,7 +35,7 @@ function Nodes() {
           <section className='flex flex-col gap-3 my-4'>
             {list.map((item) => {
               return (
-                <section className='flex items-center gap-3'>
+                <section key={item} className='flex items-center gap-3'>
                   <Image src={checkIcon} width={25} height={25} />
                   <p className='m-0 text-xl font-medium font-syne'>{item}</p>
                 </section>
