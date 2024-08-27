@@ -9,6 +9,9 @@ import { useState, useEffect } from "react";
 import { Loader } from "../../Components/Loader";
 import Link from "next/link";
 import Video from "../../Components/Video";
+import Nodes from "./Nodes";
+import Features from "./Features";
+import Projects from "./Projects";
 
 const earth = "/assets/video/EarthVideo.mp4";
 const groot = "/assets/images/groot1.png";
@@ -25,29 +28,8 @@ const mainBottomSection = "/assets/images/main-bottom-section.png";
 
 export default function Main() {
   const router = useRouter();
-  const [project, setProject] = useState();
   const [partners, setPartners] = useState([]);
-  useEffect(() => {
-    const getPageByID = async () => {
-      const page = await nexaflowApi.getPageByID({
-        pageId: nexaflowPageObj.projectsPage,
-        websiteId: nexaflowPageObj.website,
-      });
-      const reversedProjects = [...page?.Projects].reverse();
-      const hasOrder = page?.Projects.some(
-        (project) => project.order !== undefined
-      );
-      let sortedProjects;
-      if (hasOrder) {
-        sortedProjects = reversedProjects.sort((a, b) => a.order - b.order);
-      } else {
-        sortedProjects = reversedProjects;
-      }
-      setProject(sortedProjects);
-    };
 
-    getPageByID();
-  }, []);
   useEffect(() => {
     const getPageByID = async () => {
       const page = await nexaflowApi.getPageByID({
@@ -277,67 +259,7 @@ export default function Main() {
             </div>
           ))}
         </div>
-        <div className='flex flex-col items-center w-full gap-3 px-4 pt-10 sm:flex-col'>
-          <div>
-            <div className='text-[#101828] flex items-center font-semibold w-full text-[28px] sm:text-[36px] leading-[42px] font-syne'>
-              <p> Here to make anthropogenic climate change history &</p>
-            </div>
-          </div>
-          <div className='flex sm:px-[20%] items-center pt-10 px-4 flex-col w-full gap-3'>
-            <div className='-mt-12'>
-              <div className='text-[#101828] flex items-center font-semibold text-center w-[100%] text-[28px] sm:text-[36px] leading-[42px] font-syne'>
-                <div>
-                  <p>seed the</p>
-                </div>
-                <div>
-                  <ImageView
-                    src={highlight}
-                    alt='hightlight'
-                    width={190}
-                    height={30}
-                    className='w-52 h-11'
-                  />{" "}
-                </div>
-                <div>
-                  <p>paradigm</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='grid items-center w-full grid-cols-1 gap-8 mt-28 sm:grid-cols-2'>
-          {cardData?.map((data, index) => (
-            <div
-              className='relative w-full cursor-pointer grow'
-              key={index}
-              onClick={() => router.push(data?.link)}
-            >
-              <ImageView
-                src={data?.img}
-                alt='main'
-                width={600}
-                height={600}
-                className='rounded-xl w-full h-[14rem]  object-cover'
-              />
-              <Link
-                href={data.link}
-                className='flex flex-col w-full absolute p-[2rem] pb-[4rem] sm:p-[3rem] top-[0rem]'
-              >
-                <div className='flex items-center justify-between'>
-                  <p
-                    className={`text-white  font-syne font-semibold text-[26px]`}
-                  >
-                    {data?.title}
-                  </p>
-                  <LuArrowUpRight size={22} color='#fff' />
-                </div>
-                <p className='text-white font-inter mt-2  font-normal text-[16px]'>
-                  {data?.description}
-                </p>
-              </Link>
-            </div>
-          ))}
-        </div>
+
         {/* <div className="flex gap-x-[32px] py-[55px]">
           {keys.map((data) => (
             <div
@@ -356,7 +278,9 @@ export default function Main() {
             </div>
           ))}
         </div> */}
-        <div className='flex flex-col gap-8 mt-3'>
+        <Features />
+        {/* <Projects /> */}
+        {/* <div className='flex flex-col gap-8 mt-3'>
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
               <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
@@ -446,10 +370,10 @@ export default function Main() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div>
-        <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
+        {/* <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
           <div className='flex items-center flex-col w-[80%] px-20 mt-28 gap-4 '>
             <p className='text-[#EC8000] font-semibold text-center text-[14px] font-inter'>
               What is $EARTH
@@ -469,140 +393,10 @@ export default function Main() {
           alt='check'
           width={1440}
           height={2709}
-        />
-        <div
-          className={`my-16  mx-auto pl-[6%] hide-scrollbar overflow-x-auto `}
-        >
-          <div className='flex flex-col w-full sm:flex-row justify-between lg:gap-[1rem] xl:gap-[15rem] 2xl:gap-[25rem]'>
-            <div className='flex justify-center min-w-[32rem] w-[30rem] flex-col gap-2'>
-              {/* <ImageView src={graph} alt="graph" width={50} height={50} /> */}
-              <p className='text-[#101828] font-semibold text-left text-[20px] sm:text-[28px] font-syne'>
-                Every Real World Asset funded via $EARTH treasury is -
-              </p>
-              {/* <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
-              For projects building infrastructure for a net zero future
-            </p> */}
-              <div className='flex flex-col gap-4 pl-4 my-4'>
-                {features?.map((feature, i) => (
-                  <div className='flex gap-2' key={i}>
-                    <ImageView src={check} alt='check' width={20} height={20} />
-                    <p className='text-[#475467] text-left font-normal  text-[14px] font-inter'>
-                      {feature}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className='flex gap-8 ml-auto'>
-              {project && project.length ? (
-                project?.map((data, index) => (
-                  <div
-                    className='rounded-lg border-4 w-[40rem] h-fit overflow-hidden cursor-pointer   flex flex-col border-[#101828]'
-                    key={index}
-                    onClick={() => router.push(`/projects/${data.projectId}`)}
-                  >
-                    <div className='flex flex-col items-center justify-center px-3 sm:px-6'>
-                      <div className='flex items-center justify-center w-full gap-2 pt-3 sm:pt-6'>
-                        <ImageView
-                          src={data.icon}
-                          alt='avatar'
-                          width={50}
-                          height={50}
-                        />
-                        <p className='text-black font-inter font-semibold text-[16px]'>
-                          {data.subText}
-                        </p>
-                      </div>
-                      <p className='pt-1 sm:pt-2 font-syne text-center font-semibold text-[20px] sm:text-[24px] text-black'>
-                        {data.projectName}
-                      </p>
-                      <p className='pt-1 sm:pt-2 font-inter font-semibold text-[12px] text-[#EC8000]'>
-                        {data.category}
-                      </p>
-                      <p className='py-1 sm:py-2 h-[3.5rem] font-inter text-center font-normal text-[13px] text-black'>
-                        {data.subtitle}
-                      </p>
-                    </div>
-                    <div className='flex border-t-2 mt-4 w-full border-[#EAECF0]'>
-                      <div className='flex items-center px-1 grow pt-2 pb-4 border-r-2 border-[#EAECF0] justify-center flex-col'>
-                        <p className='font-syne font-semibold text-center text-[18px] sm:text-[30px] text-[#EC8000]'>
-                          {data.projectValue}
-                        </p>
-                        <p className='font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]'>
-                          Total project value
-                        </p>
-                      </div>
-                      <div className='flex items-center  px-1 py-2 pb-3 grow border-r-2 border-[#EAECF0] justify-center flex-col'>
-                        <p className='font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]'>
-                          {data.fundingNeeded}
-                        </p>
-                        <p className='font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]'>
-                          Funding needed
-                        </p>
-                      </div>
-                      <div className='flex flex-col items-center justify-center px-1 py-2 pb-3 grow'>
-                        <p className='font-syne font-semibold text-[18px] text-center sm:text-[30px] text-[#EC8000]'>
-                          {data.Irr}
-                        </p>
-                        <p className='font-inter font-semibold text-center text-[12px]  sm:text-[14px] text-[#101828]'>
-                          Internal rate of return
-                        </p>
-                      </div>
-                    </div>
-                    <ImageView
-                      src={data.coverPic}
-                      alt='coverpic'
-                      width={350}
-                      height={480}
-                      className='object-cover w-full rounded-b-sm'
-                    />
-                  </div>
-                ))
-              ) : (
-                <div className='w-[50%] h-[30vh] flex items-center justify-center'>
-                  <Loader />
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
+        /> */}
       </div>
-      <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
-        <div className='flex flex-col items-center gap-2'>
-          <p className='text-[#EC8000] font-semibold text-center text-[14px] font-inter'>
-            Partners
-          </p>
-          <p className='text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne'>
-            Agents of Change
-          </p>
-          <p className='text-[#475467] text-center font-normal  text-[16px] font-inter'>
-            Projects collaborating with $EARTH to fulfil its mission/vision
-          </p>
-        </div>
-        <div className='flex flex-wrap  sm:px-[32%] justify-center mt-6 gap-1 sm:gap-5'>
-          {partners && partners?.length ? (
-            partners.map((partner, index) => (
-              <Link href={partner?.link} className='cursor-pointer' key={index}>
-                <ImageView
-                  alt='social'
-                  src={partner.icon}
-                  width={60}
-                  height={40}
-                  className=' w-full h-[6rem]'
-                />
-              </Link>
-            ))
-          ) : (
-            <div className='w-full h-[6rem]'>
-              <Loader />
-            </div>
-          )}
-        </div>
-        <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
-          View Partners
-        </button>
-      </div>
-      <div>
+      <Nodes />
+      <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] '>
         <ImageView
           alt='social'
           src={mainBottomSection}
@@ -610,6 +404,38 @@ export default function Main() {
           height={430}
           className='w-full h-[30rem] object-cover mt-20'
         />
+      </div>
+      <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
+        <div className='flex flex-wrap justify-center gap-1 mt-6 sm:gap-4'>
+          {partners && partners?.length ? (
+            partners.map((partner, index) => (
+              <a
+                href={partner?.link}
+                target='_blank'
+                className='cursor-pointer'
+                key={index}
+              >
+                <ImageView
+                  alt='social'
+                  src={partner.icon}
+                  width={40}
+                  height={40}
+                  className='w-full h-14 '
+                />
+              </a>
+            ))
+          ) : (
+            <div className='w-full h-[6rem]'>
+              <Loader />
+            </div>
+          )}
+        </div>
+
+        <p className='text-3xl font-medium font-syne '>Join us!</p>
+
+        {/* <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
+          View Partners
+        </button> */}
       </div>
       <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
         <div className='flex flex-col items-center gap-2'>
@@ -691,6 +517,39 @@ export default function Main() {
                 ))}
               </div>
             </div>
+          </div>
+        ))}
+      </div>
+      <div className='grid items-center justify-center sm:px-[6%] w-full grid-cols-1 gap-8 px-4 mx-auto mt-28 sm:grid-cols-2'>
+        {cardData?.map((data, index) => (
+          <div
+            className='relative w-full cursor-pointer grow'
+            key={index}
+            onClick={() => router.push(data?.link)}
+          >
+            <ImageView
+              src={data?.img}
+              alt='main'
+              width={600}
+              height={600}
+              className='rounded-xl w-full h-[14rem]  object-cover'
+            />
+            <Link
+              href={data.link}
+              className='flex flex-col w-full absolute p-[2rem] pb-[4rem] sm:p-[3rem] top-[0rem]'
+            >
+              <div className='flex items-center justify-between'>
+                <p
+                  className={`text-white  font-syne font-semibold text-[26px]`}
+                >
+                  {data?.title}
+                </p>
+                <LuArrowUpRight size={22} color='#fff' />
+              </div>
+              <p className='text-white font-inter mt-2  font-normal text-[16px]'>
+                {data?.description}
+              </p>
+            </Link>
           </div>
         ))}
       </div>
