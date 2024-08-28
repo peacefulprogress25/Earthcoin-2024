@@ -6,6 +6,7 @@ import { Keyboard, Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "../Main/features.css";
+import StepperMui from "../../Components/StepperMui";
 const tokenomics = "/assets/images/tokenomics.png";
 const curious = "/assets/images/Curious.png";
 const protocol = "/assets/images/protocol.png";
@@ -208,6 +209,14 @@ export default function Mechanics() {
     },
   ]
 
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + '</span>';
+    },
+  };
+
+
   const chartData = [
     {
       title: "Liquidity Pool",
@@ -330,31 +339,18 @@ export default function Mechanics() {
           </div>
         </div>
 
-        <div className='h-[100vh] my-3 w-full'>
-      <Swiper
-        modules={[Keyboard, Pagination, Navigation,Autoplay]}
-        className='w-full mySwiper'
-        slidesPerView={1}
-        navigation={true}
-        spaceBetween={100}
-        loop={true}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
-        keyboard={{
-          enabled: true,
-        }}
-        pagination={{
-          clickable: true,
-        }}
+        <div className='h-[38rem] lg:h-[42rem] xl:h-[45rem]'>
+        <Swiper
+        pagination={pagination}
+        modules={[Pagination]}
+        className="mySwiper"
       >
          {tokenomicsdata.map((obj, i) => {
           return (
             <SwiperSlide key={i}>
         <div className="flex justify-between md:gap-10 xl:gap-16 w-full mt-[5rem]">
 
-          <div className="md:w-[80%] lg:w-[50%]  border-t-2 pb-10  border-[#EAECF0] ">
+          <div className="md:w-[50%] lg:w-[50%]  border-t-2  border-[#EAECF0] ">
             <p className="text-[#101828] font-semibold text-left mt-4 lg:mt-10 text-[20px] sm:text-[28px] mr-10 lg:mr-0 font-syne">
               Example
             </p>
@@ -387,7 +383,7 @@ export default function Mechanics() {
                 alt="graph"
                 width={200}
                 height={200}
-                className="mt-4 lg:w-[36rem] md:h-[21rem] lg:h-[32rem] xl:h-[36rem] object-cover"
+                className="mt-4 w-[30rem] lg:w-[36rem] md:h-[21rem] lg:h-[28rem] xl:h-[32rem] object-cover"
               />
             </div>
             <ImageView
@@ -406,9 +402,7 @@ export default function Mechanics() {
         </Swiper>
         </div>
 
-
-
-
+        {/* <StepperMui /> */}
 
         {/* <div className="flex justify-between md:gap-10 xl:gap-16 w-full mt-[5rem]">
 
