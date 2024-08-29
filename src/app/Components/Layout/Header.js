@@ -9,6 +9,7 @@ const logo = "/assets/images/logo.png";
 export default function Header() {
   const [showaboutMenu, setShowaboutMenu] = useState(false);
   const [showresourceMenu, setShowresourceMenu] = useState(false);
+  const [showNodes, setShowNodes] = useState(false)
   const aboutMenu = [
     {
       title: "Thesis",
@@ -29,6 +30,26 @@ export default function Header() {
       link: "/about",
     },
   ];
+  const nodes = [
+    {
+      title: "What are nodes of $EARTH?",
+      subtitle: "Roles and responsibilities",
+      icon: "/assets/icons/faq.svg",
+      link: "/network",
+    },
+    {
+      title: "Become an $EARTH node",
+      subtitle: "Steps to follow ",
+      icon: "/assets/icons/life-buoy.svg",
+      link: "/community",
+    },
+    {
+      title: "$EARTH Mycelium Network",
+      subtitle: "Steps to follow ",
+      icon: "/assets/icons/life-buoy.svg",
+      link: "/node",
+    },
+  ]
   const resourceMenu = [
     {
       title: "What is $EARTH?",
@@ -36,12 +57,12 @@ export default function Header() {
       icon: "/assets/icons/earth.svg",
       link: "/resources",
     },
-    {
-      title: "How $EARTH works?",
-      subtitle: "Mechanics and flow of $EARTH",
-      icon: "/assets/icons/thunder.svg",
-      link: "/works",
-    },
+    // {
+    //   title: "How $EARTH works?",
+    //   subtitle: "Mechanics and flow of $EARTH",
+    //   icon: "/assets/icons/thunder.svg",
+    //   link: "/works",
+    // },
     {
       title: "How to get $EARTH?",
       subtitle: "Mint and Trade ",
@@ -60,18 +81,8 @@ export default function Header() {
     //   icon: "/assets/icons/node.svg",
     //   link: "/node",
     // },
-    {
-      title: "What are nodes of $EARTH?",
-      subtitle: "Roles and responsibilities",
-      icon: "/assets/icons/faq.svg",
-      link: "/network",
-    },
-    {
-      title: "Become an $EARTH node",
-      subtitle: "Steps to follow ",
-      icon: "/assets/icons/life-buoy.svg",
-      link: "/community",
-    },
+    
+   
     {
       title: "FAQ",
       subtitle: "Answers to your $Earth curiosities.",
@@ -134,7 +145,7 @@ export default function Header() {
           >
             Resources <IoIosArrowDown />{" "}
             {showresourceMenu && (
-              <div className="absolute w-[18rem] h-[28rem] overflow-y-auto flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[3.5rem] rounded-lg bg-white">
+              <div className="absolute w-[18rem] h-[24rem] overflow-y-auto flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[3.5rem] rounded-lg bg-white">
                 {resourceMenu?.map((menu, index) => (
                   <Link
                     className="flex gap-4 items-start justify-start"
@@ -161,7 +172,41 @@ export default function Header() {
             )}
           </Link>
           <Link href="/projects">Projects</Link>
-          <Link href="/node">NODES</Link>
+          <Link
+            className="flex items-center h-full relative gap-1"
+            href="/node"
+            onMouseEnter={() => setShowNodes(true)}
+            onMouseLeave={() => setShowNodes(false)}
+          >
+            Nodes <IoIosArrowDown />{" "}
+            {showNodes && (
+              <div className="absolute w-[18rem] h-[18rem] overflow-y-auto flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[3.5rem] rounded-lg bg-white">
+                {nodes?.map((menu, index) => (
+                  <Link
+                    className="flex gap-4 items-start justify-start"
+                    key={index}
+                    href={menu?.link}
+                  >
+                    <ImageView
+                      src={menu?.icon}
+                      alt="icon"
+                      width={30}
+                      height={30}
+                    />
+                    <div className="flex flex-col gap-1">
+                      <p className="text-[#101828] font-semibold text-[14px] font-inter">
+                        {menu?.title}
+                      </p>
+                      <p className="text-[#475467] font-normal text-[14px] font-inter">
+                        {menu?.subtitle}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </Link>
+          {/* <Link href="/node">NODES</Link> */}
           <Link href="/media">Media</Link>
           <Link href="/dashboard">Dashboard</Link>
         </div>

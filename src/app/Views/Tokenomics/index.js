@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "../Main/features.css";
 import StepperMui from "../../Components/StepperMui";
+
 const tokenomics = "/assets/images/tokenomics.png";
 const curious = "/assets/images/Curious.png";
 const protocol = "/assets/images/protocol.png";
@@ -403,6 +404,9 @@ export default function Mechanics() {
         </div>
 
         {/* <StepperMui /> */}
+
+        
+        
 
         {/* <div className="flex justify-between md:gap-10 xl:gap-16 w-full mt-[5rem]">
 

@@ -6,6 +6,7 @@ const partnership = "/assets/images/partnership.png";
 const projects = "/assets/images/projects.png";
 const policy = "/assets/images/policy.png";
 import Video from '../../Components/Video'
+import ResponsibilitiesOfNode from "../../Components/NodeResponsibilities";
 
 
 
@@ -135,7 +136,9 @@ export default function Network() {
           height={300}
           className="w-full h-[28rem] mt-7 object-cover"
         />
-        <p className="text-[#101828] mt-12 font-semibold text-center text-[30px] sm:text-[40px] font-syne">
+
+
+        {/* <p className="text-[#101828] mt-12 font-semibold text-center text-[30px] sm:text-[40px] font-syne">
           Responsibilities of a node
         </p>
         <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
@@ -175,7 +178,7 @@ export default function Network() {
           regular intervals + seeking aligned capital from within their network.
           <br />
           <br />
-          {/* For this
+          For this
           <span className="text-[#EC8000] font-semibold">
             each Node will be eligible to earn 5% of $EARTH
           </span>
@@ -185,7 +188,7 @@ export default function Network() {
           <span className="text-[#EC8000] font-semibold">
             Nodes will also earn 2.5% of the total value of $EARTH mints in form
             of $SLRPNK (Solarpunk Dao governance token).
-          </span> */}
+          </span>
         </p>
         <div className="relative w-full flex mt-6 items-center justify-center">
           <ImageView
@@ -273,8 +276,9 @@ export default function Network() {
           Seagens, Lunarpunks, Mycopunks, Junglepunks and Solarpunks cannot come
           together and address one of the biggest existential challenges of our
           time.
-        </p>
+        </p> */}
       </div>
+      <ResponsibilitiesOfNode />
     </div>
   );
 }

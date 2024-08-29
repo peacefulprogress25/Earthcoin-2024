@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "./features.css";
+import 'swiper/css/navigation';
 
 function Features() {
   const data = [
@@ -94,7 +95,7 @@ function Features() {
         spaceBetween={100}
         loop={true}
         autoplay={{
-          delay: 2500,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         keyboard={{

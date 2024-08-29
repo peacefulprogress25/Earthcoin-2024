@@ -12,31 +12,31 @@ const community = "/assets/images/community.png";
 const nature = "/assets/images/nature.png";
 export default function Community() {
   const communityList = [
+    // {
+    //   title: "1. Get your bespoke PFP",
+    //   description:
+    //     "Obtain your personalized Solarpunk profile picture by completing our form, expressing your vibe and views on the solarpunk movement.",
+    //   btntext: "PFP Form",
+    // },
     {
-      title: "1. Get your bespoke PFP",
-      description:
-        "Obtain your personalized Solarpunk profile picture by completing our form, expressing your vibe and views on the solarpunk movement.",
-      btntext: "PFP Form",
-    },
-    {
-      title: "2. Participate in our community",
+      title: "1. Participate in our community",
       description:
         "Engage in our community by joining our Telegram group, supporting us on Twitter, and following our social media channels.",
     },
     {
-      title: "3. Get your bespoke PFP",
+      title: "2. Get your bespoke PFP",
       description:
         "Obtain your personalized Solarpunk profile picture by completing our form, expressing your vibe and views on the solarpunk movement.",
       btntext: "Book a slot",
     },
     {
-      title: "4. Get your bespoke PFP",
+      title: "3. Get your bespoke PFP",
       description:
         "Obtain your personalized Solarpunk profile picture by completing our form, expressing your vibe and views on the solarpunk movement.",
       btntext: "Get KYC verified",
     },
     {
-      title: "5. Get your bespoke PFP",
+      title: "4. Get your bespoke PFP",
       description:
         "Obtain your personalized Solarpunk profile picture by completing our form, expressing your vibe and views on the solarpunk movement.",
       btntext: "Go to DAPP",
@@ -109,8 +109,7 @@ export default function Community() {
               perpetual holding partners
             </span>
              in these projects to the maximum extent possible, structuring deals
-            in a way that we always earn pro rata of the projects earnings and
-            <span className="text-[#EC8000] font-semibold">
+            in a way that we always earn pro rata of the projects earnings and <span className="text-[#EC8000] font-semibold">
               are equal partners in wins and loses.
             </span>
           </p>

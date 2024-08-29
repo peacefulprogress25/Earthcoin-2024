@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const img = "/assets/images/landing-page-node.png";
+const img = "/assets/images/landing-page-node1.png";
 const checkIcon = "/assets/icons/check-icon.png";
 
 function Nodes() {

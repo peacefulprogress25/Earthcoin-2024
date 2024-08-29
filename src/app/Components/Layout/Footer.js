@@ -74,29 +74,29 @@ export default function Footer() {
         },
       ],
     },
-    {
-      title: "Social",
-      options: [
-        {
-          option: "Telegram",
-        },
-        {
-          option: "X",
-        },
-        {
-          option: "Linkedin",
-        },
-        {
-          option: "Instagram",
-        },
-        {
-          option: "Discord",
-        },
-        {
-          option: "Lens",
-        },
-      ],
-    },
+    // {
+    //   title: "Social",
+    //   options: [
+    //     {
+    //       option: "Telegram",
+    //     },
+    //     {
+    //       option: "X",
+    //     },
+    //     {
+    //       option: "Linkedin",
+    //     },
+    //     {
+    //       option: "Instagram",
+    //     },
+    //     {
+    //       option: "Discord",
+    //     },
+    //     {
+    //       option: "Lens",
+    //     },
+    //   ],
+    // },
   ];
   const socialIcons = [
     {

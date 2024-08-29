@@ -7,6 +7,10 @@ export default function Resources() {
   const section = "/assets/images/section.png";
   const bottomSection = "/assets/images/below-section.png";
   const economy = "/assets/images/economy.png";
+  const asset = "/assets/images/Climatesolutions.png";
+const govern = "/assets/images/Communitygoverned.png";
+const range = "/assets/images/Rangebound.png";
+const pool = "/assets/images/Liquiditypool.png";
 
   return (
     <div>
@@ -37,6 +41,7 @@ export default function Resources() {
             </div>
           </div>
           </div>
+          
         
         <ImageView
           src={resources}
@@ -45,6 +50,98 @@ export default function Resources() {
           height={200}
           className="w-full mt-4 object-cover"
         />
+         <div className='flex flex-col gap-8 mt-3'>
+          <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
+            <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
+              <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
+                Backed by{" "}
+                <span className='text-[#EC8000]'> Climate Solutions</span>
+              </p>
+              <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5 font-normal font-inter'>
+                Each $EARTH is backed by a variety of on ground projects that
+                are directly addressing the climate / environmental crisis while
+                catering to humanities core needs
+              </p>
+            </div>
+            <div className='p-5'>
+              <ImageView
+                src={asset}
+                alt='service'
+                width={600}
+                height={300}
+                className={` w-48 h-44 object-contain `}
+              />
+            </div>
+          </div>
+          <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
+            <div className='flex flex-col w-full sm:w-[60%] justify-center p-10 items-center sm:items-start '>
+              <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-[#EC8000]'>
+                Community
+                <span className='text-black'> Governed</span>
+              </p>
+              <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5  font-normal font-inter'>
+                Monetary policy of $EARTH will be governed by Nodes of $EARTH
+                with goal of achieving our mission/vision
+              </p>
+            </div>
+            <div className='p-5'>
+              <ImageView
+                src={govern}
+                alt='service'
+                width={600}
+                height={300}
+                className={` w-48 h-44 object-contain `}
+              />
+            </div>
+          </div>
+          <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
+            <div className='flex flex-col w-full sm:w-[60%] justify-center p-10 items-center sm:items-start '>
+              <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-[#EC8000]'>
+                Range
+                <span className='text-black'> Bound</span>
+              </p>
+              <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5  font-normal font-inter'>
+                $EARTH is a new unit of value, not pegged to any currency.
+                Designed to be loosely range bound, assets backing each token
+                serve as the floor while valuing positive externalities created
+                by those assets and the utility of the currency create a soft
+                ceiling.
+              </p>
+            </div>
+            <div className='p-5'>
+              <ImageView
+                src={range}
+                alt='service'
+                width={600}
+                height={300}
+                className={` w-48 h-44 object-contain `}
+              />
+            </div>
+          </div>
+          <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
+            <div className='flex flex-col w-full sm:w-[60%] justify-center p-10 items-center sm:items-start '>
+              <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black '>
+                Protocol Owned
+                <span className='text-[#EC8000]'> Liquidity</span>
+              </p>
+              <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5  font-normal font-inter'>
+                Perpetual liquidity for you to swap your $EARTH for $DAI
+                whenever you choose to irrespective of market conditions. This
+                LP is owned by the treasury as a service to currency holders.
+              </p>
+            </div>
+            <div className='p-5'>
+              <ImageView
+                src={pool}
+                alt='service'
+                width={600}
+                height={300}
+                className={` w-48 h-44 object-contain `}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
         {/* <div className="sm:px-[20%] px-4 flex mt-6 flex-col w-full items-start">
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
@@ -84,6 +181,5 @@ export default function Resources() {
           />
         </div>
       </div>
-    </div>
   );
 }
