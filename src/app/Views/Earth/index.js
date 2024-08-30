@@ -33,7 +33,7 @@ export default function Earth() {
   ];
   return (
     <div>
-      <div className="mt-20 w-[100%] max-w-screen-2xl mx-auto flex gap-10 flex-col items-center pb-10">
+      <div className="relative mt-20 w-[100%] max-w-screen-2xl mx-auto flex gap-10 flex-col items-center pb-10">
         <ImageView
           src={solarchakra}
           alt="solarchakra"
@@ -42,17 +42,17 @@ export default function Earth() {
           height={500}
           
         />
-        {/* <div className="flex flex-col gap-2 items-center">
-          <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
+        <div className="absolute md:top-[5rem] lg:top-[15rem] xl:top-[12rem] flex flex-col gap-2 items-center">
+          <p className="text-[#FFFFFF] font-semibold text-center text-[14px] font-inter">
             About
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
+          <p className="text-[#FFFFFF] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
             How to get $EARTH
           </p>
-          <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
+          <p className="text-[#FFFFFF] text-center font-normal  text-[20px] font-inter">
             What is $EARTH and how to get $EARTH
           </p>
-        </div> */}
+        </div>
       </div>
       <div className="flex  max-w-screen-2xl mx-auto flex-col">
         {earthData?.map((data, index) => (

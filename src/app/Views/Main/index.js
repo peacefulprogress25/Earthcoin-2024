@@ -30,6 +30,8 @@ const mainBottomSection = "/assets/images/main-bottom-section.png";
 export default function Main() {
   const router = useRouter();
   const [partners, setPartners] = useState([]);
+  const [social, setSocial] = useState([]);
+  const [updates, setUpdates] = useState([]);
 
   useEffect(() => {
     const getPageByID = async () => {
@@ -37,7 +39,9 @@ export default function Main() {
         pageId: nexaflowPageObj.landingPage,
         websiteId: nexaflowPageObj.website,
       });
+      setSocial(page?.Social);
       setPartners(page?.Partners);
+      setUpdates(page?.Updates);
     };
 
     getPageByID();
@@ -187,41 +191,41 @@ export default function Main() {
       icon: "/assets/icons/bitbucket.svg",
     },
   ];
-  const updates = [
-    {
-      name: "Olivia Rhye • 20 Jan 2022",
-      title: "UX review presentations",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      img: "/assets/images/refi.png",
-      link: true,
-      tags: ["Design", "Research", "Presentation"],
-    },
-    {
-      name: "Solarpunkmaxi • 19 Jan 2022",
-      title: "What is solarpunk?",
-      description:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "TreegensDAO • 18 Jan 2022",
-      title: "A new unit of value",
-      description:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-      img: "/assets/images/steiner.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "TreegensDAO • 18 Jan 2022",
-      title: "Real world impact",
-      description:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-      img: "/assets/images/real-world.png",
-      tags: ["Design", "Research"],
-    },
-  ];
+  // const updates = [
+  //   {
+  //     name: "Olivia Rhye • 20 Jan 2022",
+  //     title: "UX review presentations",
+  //     description:
+  //       "How do you create compelling presentations that wow your colleagues and impress your managers?",
+  //     img: "/assets/images/refi.png",
+  //     link: true,
+  //     tags: ["Design", "Research", "Presentation"],
+  //   },
+  //   {
+  //     name: "Solarpunkmaxi • 19 Jan 2022",
+  //     title: "What is solarpunk?",
+  //     description:
+  //       "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
+  //     img: "/assets/images/baker.png",
+  //     tags: ["Design", "Research"],
+  //   },
+  //   {
+  //     name: "TreegensDAO • 18 Jan 2022",
+  //     title: "A new unit of value",
+  //     description:
+  //       "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
+  //     img: "/assets/images/steiner.png",
+  //     tags: ["Design", "Research"],
+  //   },
+  //   {
+  //     name: "TreegensDAO • 18 Jan 2022",
+  //     title: "Real world impact",
+  //     description:
+  //       "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
+  //     img: "/assets/images/real-world.png",
+  //     tags: ["Design", "Research"],
+  //   },
+  // ];
   return (
     <div className='mt-20'>
       {" "}
@@ -244,11 +248,10 @@ export default function Main() {
         <div className='flex flex-col items-center justify-center w-full pb-10 sm:flex-row'>
           {funding.map((impact, index) => (
             <div
-              className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${
-                index !== funding.length - 1
+              className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${index !== funding.length - 1
                   ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
                   : ""
-              }`}
+                }`}
               key={index}
             >
               <p className='font-syne font-semibold text-[20px] text-center sm:text-[52px] text-[#EC8000]'>
@@ -398,33 +401,29 @@ export default function Main() {
       </div>
       {/* <Treasury /> */}
       <Nodes />
-      <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] '>
-        <ImageView
-          alt='social'
-          src={mainBottomSection}
-          width={1440}
-          height={430}
-          className='w-full h-[30rem] object-cover mt-20'
-        />
-      </div>
       <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
-        <div className='flex flex-wrap justify-center gap-1 mt-6 sm:gap-4'>
+        <div className='flex flex-col items-center gap-2'>
+          <p className='text-[#EC8000] font-semibold text-center text-[14px] font-inter'>
+            Partners
+          </p>
+          <p className='text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne'>
+            Agents of Change
+          </p>
+          <p className='text-[#475467] text-center font-normal  text-[16px] font-inter'>
+            Projects collaborating with $EARTH to fulfil its mission/vision
+          </p>
+        </div>
+        <div className='flex flex-wrap  sm:px-[32%] justify-center mt-6 gap-1 sm:gap-5'>
           {partners && partners?.length ? (
             partners.map((partner, index) => (
-              <a
-                href={partner?.link}
-                target='_blank'
-                className='cursor-pointer'
-                key={index}
-              >
+              <Link href={partner?.link} className='cursor-pointer' key={index}>
                 <ImageView
                   alt='social'
                   src={partner.icon}
-                  width={40}
-                  height={40}
-                  className='w-full h-14 '
+                  width={60}
+                  height={60}
                 />
-              </a>
+              </Link>
             ))
           ) : (
             <div className='w-full h-[6rem]'>
@@ -432,13 +431,23 @@ export default function Main() {
             </div>
           )}
         </div>
-
-        <p className='text-3xl font-medium font-syne '>Join us!</p>
-
-        {/* <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
+        <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
           View Partners
-        </button> */}
+        </button>
       </div>
+      <div className=' relative max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] '>
+        <ImageView
+          alt='social'
+          src={mainBottomSection}
+          width={1440}
+          height={430}
+          className='w-full rounded-lg h-[24rem] object-cover mt-20'
+        />
+        <div className='absolute top-[16rem] md:left-[6rem] lg:left-[12rem] xl:left-[18rem]  text-[#FFFFFF] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold'>
+          <p>We do not inherit this world from our parents <br />We borrow it from our children <br />Let's leave it better than we found it</p>
+        </div>
+      </div>
+      
       <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
         <div className='flex flex-col items-center gap-2'>
           <p className='text-[#EC8000] font-semibold text-center text-[14px] font-inter'>
@@ -453,7 +462,74 @@ export default function Main() {
         </div>
       </div>
       <div className='grid w-full grid-cols-1 px-20 mt-8 sm:grid-cols-2 gap-x-6 gap-y-5'>
-        {updates.map((card, index) => (
+        {updates && updates?.length ? (
+          updates.map((card, index) => (
+            <div
+              className={`flex cursor-pointer w-full items-start ${index === 0
+                  ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
+                  : "col-span-1 flex-row sm:col-span-1"
+                }`}
+              key={index}
+            >
+              <ImageView
+                src={card.image}
+                alt={card.name}
+                width={200}
+                height={200}
+                className={`${index === 0
+                    ? "w-full h-[20rem] object-cover"
+                    : "w-full h-40 sm:w-full object-cover"
+                  }`}
+              />
+              <div className={`${index === 0 ? "mt-4" : "flex flex-col gap-2 px-4"}`}>
+                <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
+                  {card?.name} • {card?.date}
+                </p>
+                <div className="flex items-start justify-between mt-2">
+                  <p
+                    className={`text-[#101828] font-inter font-semibold text-[16px] ${index === 0 ? "font-syne text-[22px]" : ""
+                      }`}
+                  >
+                    {card?.title} 
+                  </p>
+                  {index === 0 ? <LuArrowUpRight size={22} color="#101828" /> : ""}
+                </div>
+                <p
+                  className={`text-[#475467] ${index === 0 ? "mt-2" : ""
+                    } font-inter w-[100%] font-normal text-[14px]`}
+                >
+                  {card?.description}
+                </p>
+                <div
+                  className={`flex items-center ${index === 0 ? "mt-4" : "mt-0"
+                    } gap-2`}
+                >
+                  {card && card?.length ? (
+                    card?.tags.map((tag, i) => (
+                    <p
+                      className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${tag === "Design"
+                          ? "text-[#EC8000] bg-[#FFFCF8]"
+                          : tag === "Research"
+                            ? "bg-[#EEF4FF] text-[#3538CD]"
+                            : tag === "Presentation"
+                              ? "bg-[#FDF2FA] text-[#C11574]"
+                              : ""
+                        }`}
+                      key={i}
+                    >
+                      {tag}
+                    </p>
+                  ))
+                ): null}
+                </div>
+              </div>
+            </div>
+          ))
+        ) : null}
+
+        {/* {social && social?.length ? (
+            social.map((partner, index) => (
+          
           <div
             className={`flex cursor-pointer w-full items-start ${
               index === 0
@@ -463,7 +539,7 @@ export default function Main() {
             key={index}
           >
             <ImageView
-              src={card.img}
+              src={card.image}
               alt={card.name}
               width={200}
               height={200}
@@ -520,8 +596,13 @@ export default function Main() {
               </div>
             </div>
           </div>
-        ))}
+        ))
+      )
+    } */}
       </div>
+
+    
+
       <div className='grid items-center justify-center sm:px-[6%] w-full grid-cols-1 gap-8 px-4 mx-auto mt-28 sm:grid-cols-2'>
         {cardData?.map((data, index) => (
           <div
@@ -555,7 +636,39 @@ export default function Main() {
           </div>
         ))}
       </div>
-      <div className=' pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
+      <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
+        <div className='flex flex-wrap justify-center gap-1 mt-6 sm:gap-4'>
+          {social && social?.length ? (
+            social.map((partner, index) => (
+              <a
+                href={partner?.link}
+                target='_blank'
+                className='cursor-pointer'
+                key={index}
+              >
+                <ImageView
+                  alt='social'
+                  src={partner.icon}
+                  width={40}
+                  height={40}
+                  className='w-full h-14 '
+                />
+              </a>
+            ))
+          ) : (
+            <div className='w-full h-[6rem]'>
+              <Loader />
+            </div>
+          )}
+        </div>
+
+        <p className='text-3xl font-medium font-syne '>Join us!</p>
+
+        {/* <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
+          View Partners
+        </button> */}
+      </div>
+      <div className=' pt-0 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
         <div className='relative w-full mt-0 sm:mt-28 sm:mb-8'>
           <ImageView
             src={groot}

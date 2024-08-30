@@ -20,7 +20,7 @@ function Nodes() {
           the solarpunk paradigm
         </p>
       </section>
-      <div className='flex items-center justify-between w-full mt-12'>
+      <div className='flex items-center justify-around w-full mt-12'>
         <section className='flex flex-col w-1/2 gap-6'>
           <section className='flex flex-col gap-5'>
             <p className='text-[#475467] font-inter text-sm font-light'>
