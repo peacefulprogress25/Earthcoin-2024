@@ -11,8 +11,7 @@ module.exports = {
         primary: "#EC8000",
         darkGray: "#101828",
         lightGray: "#475467",
-        lightestGray: "#EAECF0"
-
+        lightestGray: "#EAECF0",
       },
       boxShadow: {
         cardShadow: "0 12px 16px -4px rgba(16, 24, 40, 0.08)",
@@ -25,6 +24,9 @@ module.exports = {
       fontFamily: {
         inter: ["var(--secondary-font)"],
         syne: ["var(--primary-font)"],
+        inknutAntiqua: ["var(--bookFont3)"],
+        "apercu-pro": ["var(--bookFont2)"],
+        "book-antiqua": ["var(--bookFont1)"],
       },
     },
   },

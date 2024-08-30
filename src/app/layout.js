@@ -1,5 +1,5 @@
 import BaseLayout from "./Components/Layout";
-import { inter, syne } from "./font";
+import { inter, syne, inknutAntiqua } from "./font";
 import "./globals.css";
 import Providers from "./Providers";
 
@@ -12,7 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={`${inter.variable} ${syne.variable}`}>
+      <body
+        className={`${inter.variable} ${syne.variable} ${inknutAntiqua.variable}`}
+      >
         <Providers>
           <BaseLayout>{children}</BaseLayout>
         </Providers>
