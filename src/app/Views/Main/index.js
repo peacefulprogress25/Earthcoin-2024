@@ -248,10 +248,11 @@ export default function Main() {
         <div className='flex flex-col items-center justify-center w-full pb-10 sm:flex-row'>
           {funding.map((impact, index) => (
             <div
-              className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${index !== funding.length - 1
+              className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${
+                index !== funding.length - 1
                   ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
                   : ""
-                }`}
+              }`}
               key={index}
             >
               <p className='font-syne font-semibold text-[20px] text-center sm:text-[52px] text-[#EC8000]'>
@@ -444,10 +445,13 @@ export default function Main() {
           className='w-full rounded-lg h-[24rem] object-cover mt-20'
         />
         <div className='absolute top-[16rem] md:left-[6rem] lg:left-[12rem] xl:left-[18rem]  text-[#FFFFFF] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold'>
-          <p>We do not inherit this world from our parents <br />We borrow it from our children <br />Let's leave it better than we found it</p>
+          <p>
+            We do not inherit this world from our parents <br />
+            We borrow it from our children <br />
+            Let&apos;s leave it better than we found it
+          </p>
         </div>
       </div>
-      
       <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
         <div className='flex flex-col items-center gap-2'>
           <p className='text-[#EC8000] font-semibold text-center text-[14px] font-inter'>
@@ -462,70 +466,84 @@ export default function Main() {
         </div>
       </div>
       <div className='grid w-full grid-cols-1 px-20 mt-8 sm:grid-cols-2 gap-x-6 gap-y-5'>
-        {updates && updates?.length ? (
-          updates.map((card, index) => (
-            <div
-              className={`flex cursor-pointer w-full items-start ${index === 0
-                  ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
-                  : "col-span-1 flex-row sm:col-span-1"
+        {updates && updates?.length
+          ? updates.map((card, index) => (
+              <div
+                className={`flex cursor-pointer w-full items-start ${
+                  index === 0
+                    ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
+                    : "col-span-1 flex-row sm:col-span-1"
                 }`}
-              key={index}
-            >
-              <ImageView
-                src={card.image}
-                alt={card.name}
-                width={200}
-                height={200}
-                className={`${index === 0
-                    ? "w-full h-[20rem] object-cover"
-                    : "w-full h-40 sm:w-full object-cover"
+                key={index}
+              >
+                <ImageView
+                  src={card.image}
+                  alt={card.name}
+                  width={200}
+                  height={200}
+                  className={`${
+                    index === 0
+                      ? "w-full h-[20rem] object-cover"
+                      : "w-full h-40 sm:w-full object-cover"
                   }`}
-              />
-              <div className={`${index === 0 ? "mt-4" : "flex flex-col gap-2 px-4"}`}>
-                <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
-                  {card?.name} • {card?.date}
-                </p>
-                <div className="flex items-start justify-between mt-2">
-                  <p
-                    className={`text-[#101828] font-inter font-semibold text-[16px] ${index === 0 ? "font-syne text-[22px]" : ""
-                      }`}
-                  >
-                    {card?.title} 
-                  </p>
-                  {index === 0 ? <LuArrowUpRight size={22} color="#101828" /> : ""}
-                </div>
-                <p
-                  className={`text-[#475467] ${index === 0 ? "mt-2" : ""
-                    } font-inter w-[100%] font-normal text-[14px]`}
-                >
-                  {card?.description}
-                </p>
+                />
                 <div
-                  className={`flex items-center ${index === 0 ? "mt-4" : "mt-0"
-                    } gap-2`}
+                  className={`${
+                    index === 0 ? "mt-4" : "flex flex-col gap-2 px-4"
+                  }`}
                 >
-                  {card && card?.length ? (
-                    card?.tags.map((tag, i) => (
+                  <p className='text-[#EC8000] font-inter font-semibold text-[12px]'>
+                    {card?.name} • {card?.date}
+                  </p>
+                  <div className='flex items-start justify-between mt-2'>
                     <p
-                      className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${tag === "Design"
-                          ? "text-[#EC8000] bg-[#FFFCF8]"
-                          : tag === "Research"
-                            ? "bg-[#EEF4FF] text-[#3538CD]"
-                            : tag === "Presentation"
-                              ? "bg-[#FDF2FA] text-[#C11574]"
-                              : ""
-                        }`}
-                      key={i}
+                      className={`text-[#101828] font-inter font-semibold text-[16px] ${
+                        index === 0 ? "font-syne text-[22px]" : ""
+                      }`}
                     >
-                      {tag}
+                      {card?.title}
                     </p>
-                  ))
-                ): null}
+                    {index === 0 ? (
+                      <LuArrowUpRight size={22} color='#101828' />
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                  <p
+                    className={`text-[#475467] ${
+                      index === 0 ? "mt-2" : ""
+                    } font-inter w-[100%] font-normal text-[14px]`}
+                  >
+                    {card?.description}
+                  </p>
+                  <div
+                    className={`flex items-center ${
+                      index === 0 ? "mt-4" : "mt-0"
+                    } gap-2`}
+                  >
+                    {card && card?.length
+                      ? card?.tags.map((tag, i) => (
+                          <p
+                            className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${
+                              tag === "Design"
+                                ? "text-[#EC8000] bg-[#FFFCF8]"
+                                : tag === "Research"
+                                ? "bg-[#EEF4FF] text-[#3538CD]"
+                                : tag === "Presentation"
+                                ? "bg-[#FDF2FA] text-[#C11574]"
+                                : ""
+                            }`}
+                            key={i}
+                          >
+                            {tag}
+                          </p>
+                        ))
+                      : null}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
-        ) : null}
+            ))
+          : null}
 
         {/* {social && social?.length ? (
             social.map((partner, index) => (
@@ -600,9 +618,6 @@ export default function Main() {
       )
     } */}
       </div>
-
-    
-
       <div className='grid items-center justify-center sm:px-[6%] w-full grid-cols-1 gap-8 px-4 mx-auto mt-28 sm:grid-cols-2'>
         {cardData?.map((data, index) => (
           <div
