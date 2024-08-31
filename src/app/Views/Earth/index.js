@@ -39,6 +39,7 @@ export default function Earth() {
         "Increased demand on dex instigates $EARTH mints",
       ],
       link: "Go to Uniswap",
+      buttonLink :"https://app.uniswap.org/swap?inputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063&outputCurrency=0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
       img: "/assets/images/uniswap.png",
     },
   ];
@@ -83,7 +84,7 @@ export default function Earth() {
                 {data?.token}
               </p>
               <div className="flex gap-2">
-                <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
+                <p className="text-[#475467] text-left font-normal  text-[12px] font-inter">
                   {data?.address}
                 </p>
                 {data?.address ? 
@@ -113,7 +114,7 @@ export default function Earth() {
                 </div>
                 <div className="text-start">
                   <button className="bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter">
-                    {data.link}
+                    <a href={data.buttonLink} target="_blank">{data.link}</a>
                   </button>
                 </div>
               </div>

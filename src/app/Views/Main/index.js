@@ -15,6 +15,7 @@ import Features from "./Features";
 import Projects from "./Projects";
 
 const earth = "/assets/video/EarthVideo.mp4";
+const earthHome = "/assets/images/earth-home.png";
 const groot = "/assets/images/groot1.png";
 const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
@@ -229,19 +230,29 @@ export default function Main() {
   return (
     <div className='mt-20'>
       {" "}
-      <div className='relative h-[89vh] 2xl:h-[95vh] '>
-        <Video
+      <div className='relative h-[100vh] 2xl:h-[95vh] '>
+      <ImageView
+            src={earthHome}
+            alt='earthcoin'
+            width={500}
+            height={500}
+            className='object-cover w-full h-full'
+          />
+        {/* <Video
           src={earth}
           alt='earthcoin'
           className='object-cover w-full h-full'
-        />
+        /> */}
 
-        <div className='absolute bottom-8  text-[#FFFFFF] lg:text-2xl xl:text-4xl text-4xl font-syne w-full text-center font-normal'>
-          <p>
-            Digital currency backed by real world climate solutions / ecosystem{" "}
+        <div className='absolute md:top-[15rem] lg:top-[15rem] xl:top-[12rem]  text-[#000000] text-xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne w-full text-center font-medium'>
+          <p className="leading-none">
+          Digital currency funding{" "}
             <br />
-            services / solarpunk values
+            climate solutions.
           </p>
+          <button className='  text-white mt-5 xl:mt-10 font-inter font-semibold px-4 py-2 rounded-md bg-[#101323] border-[1px] border-[#EC8000] text-[16px]'>
+          GET $EARTH
+            </button>
         </div>
       </div>
       <div className='mx-auto  pt-16 px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full'>

@@ -15,7 +15,21 @@ const dollar = "/assets/icons/dollar-sign.svg";
 export default function About() {
   const [teams, setTeams] = useState([]);
   const [jobs, setJobs] = useState([]);
+  const [email, setEmail] = useState({
+    email:"",
+  });
   const [selectedCategory, setSelectedCategory] = useState("View all");
+    
+  const handlechange = (e) =>{
+    const {name,value} = e.target;
+    setEmail( (prev) => ({
+      ...prev,[name] :value}))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(email)
+  };
 
   useEffect(() => {
     const getPageByID = async () => {
@@ -38,7 +52,7 @@ export default function About() {
       section: "Design",
     },
     {
-      section: "Software Engineering",
+      section: "Software Development",
     },
     {
       section: "Marketing",
@@ -185,14 +199,18 @@ export default function About() {
         <p className="text-[#475467] mt-3 font-normal  text-center text-[16px] font-inter">
           Be the first to know when new jobs are posted!
         </p>
+        <form onSubmit={handleSubmit}>
         <div className="flex flex-col items-center sm:items-start">
           <div className="flex-col mt-8 flex sm:flex-row gap-3 items-start sm:items-center">
             <input
               type="email"
+              name="email"
+              value={email.email}
+              onChange={handlechange}
               placeholder="Enter your email"
               className="border-2 border-[#EAECF0] w-[350px] h-10 outline-none rounded-md p-3"
             />
-            <button className="w-[80px] sm:w-[100px] font-inter flex text-white items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
+            <button type="submit" className="w-[80px] sm:w-[100px] font-inter flex text-white items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
               Subscribe
             </button>
           </div>
@@ -203,6 +221,7 @@ export default function About() {
             </span>
           </p>
         </div>
+        </form>
       </div>
     </div>
   );

@@ -150,7 +150,7 @@ export default function Thesis() {
               We believe that the biggest impediment towards scaling climate
               action globally is capital. $Earth leverages the best of{" "}
               <span className='text-[#EC8000] font-semibold'>
-                crypto economics to incentivize blockchain to mobilize
+                crypto economics to incentivize and blockchain to mobilize
               </span>{" "}
               capital globally in a capital efficient manner.
               <br />
@@ -407,7 +407,7 @@ export default function Thesis() {
                 </span>{" "}
                 for public transport to ensure a fully clean transportation
                 system.{" "}
-                <span
+                {/* <span
                   className='text-[#EC8000]
                   font-semibold'
                 >
@@ -423,7 +423,7 @@ export default function Thesis() {
                 wealth, surely we can find the necessary amount to protect
                 ecosystems which sustain life on earth. Our goal is to ensure
                 that we go from 25% land under conservation currently to 50%
-                total area of Earth under conservation by 2050.
+                total area of Earth under conservation by 2050. */}
               </p>
             </div>
             </div>

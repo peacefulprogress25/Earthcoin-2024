@@ -27,4 +27,11 @@ export default {
     external: false,
     link: "",
   },
+  nodes_earth: {
+    title: "Go to Uniswap",
+    position: "Nodes",
+    page: "/",
+    external: false,
+    link: "https://app.uniswap.org/swap?inputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063&outputCurrency=0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
+  },
 };

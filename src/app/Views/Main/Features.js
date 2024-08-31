@@ -10,64 +10,57 @@ function Features() {
     {
       title: (
         <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
-          Backed by <span className='text-[#EC8000]'> Climate Solutions</span>
+          New Unit of <span className='text-[#EC8000]'>Value</span>
         </p>
       ),
       description: (
         <span>
-          Each $EARTH is backed by a variety of on ground projects that are
-          directly addressing the <br /> climate / environmental crisis while
-          catering to humanities core needs
+         $EARTH is a new unit of value, not pegged to any currency. Designed to be loosely range bound, <br /> assets backing each token serve as the floor while valuing positive externalities created by those <br /> assets and the utility of the currency create a soft ceiling. 
         </span>
       ),
-      img: "/assets/images/Climatesolutions.png",
+      img: "/assets/images/New-unit-of-value.png",
     },
     {
       title: (
         <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
-          <span className='text-[#EC8000]'> Range</span> Bound
+          Putting the Eco in <span className='text-[#EC8000]'>Economy</span>
         </p>
       ),
       description: (
         <span>
-          $EARTH is a new unit of value, not pegged to any currency. Designed to
-          be loosely range bound,
-          <br /> assets backing each token serve as the floor while valuing
-          positive externalities created by those <br /> assets and the utility
-          of the currency create a soft ceiling.
+         When you pay a premium over the base value of $EARTH it represents <br /> the economic value placed on ecosystems and it services. This helps us <br /> reward projects creating more of this
         </span>
       ),
-      img: "/assets/images/Rangebound.png",
+      img: "/assets/images/Economy-home.png",
     },
     {
       title: (
         <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
-          <span className='text-[#EC8000]'> Community </span>Governed
+          Program <span className='text-[#EC8000]'>Solarpunk Values</span> into Money
         </p>
       ),
       description: (
         <span>
-          Monetary policy of $EARTH will be governed by Nodes of <br /> $EARTH
-          with goal of achieving our mission/vision{" "}
+          $EARTH utility will be designed to acknowledge and reward people & merchants that <br /> are imbibing these above mentioned values. 
         </span>
       ),
-      img: "/assets/images/Communitygoverned.png",
+      img: "/assets/images/Solarpunk-Values.png",
     },
-    {
-      title: (
-        <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
-          Protocol Owned <span className='text-[#EC8000]'> Liquidity</span>{" "}
-        </p>
-      ),
-      description: (
-        <span>
-          Perpetual liquidity for you to swap your $EARTH for $DAI whenever{" "}
-          <br /> you choose to irrespective of market conditions. This LP is
-          owned by <br /> the treasury as a service to currency holders.
-        </span>
-      ),
-      img: "/assets/images/Liquiditypool.png",
-    },
+    // {
+    //   title: (
+    //     <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
+    //       Protocol Owned <span className='text-[#EC8000]'> Liquidity</span>{" "}
+    //     </p>
+    //   ),
+    //   description: (
+    //     <span>
+    //       Perpetual liquidity for you to swap your $EARTH for $DAI whenever{" "}
+    //       <br /> you choose to irrespective of market conditions. This LP is
+    //       owned by <br /> the treasury as a service to currency holders.
+    //     </span>
+    //   ),
+    //   img: "/assets/images/Liquiditypool.png",
+    // },
     {
       title: (
         <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
@@ -76,9 +69,7 @@ function Features() {
       ),
       description: (
         <span>
-          Perpetual liquidity for you to swap your $EARTH for $DAI whenever{" "}
-          <br /> you choose to irrespective of market conditions. This LP is
-          owned by <br /> the treasury as a service to currency holders.
+         $Earth acts as a borderless, capital efficient funnel <br />to incentivize, mobilize & allocate capital <br />towards climate solutions.
         </span>
       ),
       img: "/assets/images/climate-environment.png",
@@ -109,7 +100,7 @@ function Features() {
                 <Image
                   width={250}
                   height={250}
-                  className={i === 4 ? "w-full" : "w-1/4"}
+                  className={i === 3 ? "w-full" : "w-1/4"}
                   src={obj.img}
                   alt={obj.title}
                 />

@@ -145,7 +145,7 @@ export default function Header() {
           >
             Resources <IoIosArrowDown />{" "}
             {showresourceMenu && (
-              <div className="absolute w-[18rem] h-[24rem] overflow-y-auto flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[3.5rem] rounded-lg bg-white">
+              <div className="absolute w-[18rem] h-[23rem] flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[3.5rem] rounded-lg bg-white">
                 {resourceMenu?.map((menu, index) => (
                   <Link
                     className="flex gap-4 items-start justify-start"
@@ -180,7 +180,7 @@ export default function Header() {
           >
             Nodes <IoIosArrowDown />{" "}
             {showNodes && (
-              <div className="absolute w-[18rem] h-[18rem] overflow-y-auto flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[3.5rem] rounded-lg bg-white">
+              <div className="absolute w-[18rem] h-[15rem] flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[3.5rem] rounded-lg bg-white">
                 {nodes?.map((menu, index) => (
                   <Link
                     className="flex gap-4 items-start justify-start"
