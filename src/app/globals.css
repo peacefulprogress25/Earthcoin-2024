@@ -18,7 +18,6 @@
 :root {
   --bookFont1: "BookAntiqua";
   --bookFont2: "ApercuPro";
-
 }
 
 .hide-scrollbar::-webkit-scrollbar {
