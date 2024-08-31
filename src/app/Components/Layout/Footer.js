@@ -10,21 +10,27 @@ export default function Footer() {
       options: [
         {
           option: "DAPP",
+          link:"/dapp",
         },
         {
           option: "Projects",
+          link:"/projects",
         },
         {
           option: "Tokenomics",
+          link:"/tokenomics",
         },
         {
           option: "$EARTH Updates",
+           link:"",
         },
         {
           option: "$EARTH Summary",
+           link:"",
         },
         {
           option: "$EARTH Contracts",
+           link:"",
         },
       ],
     },
@@ -33,21 +39,27 @@ export default function Footer() {
       options: [
         {
           option: "Thesis",
+           link:"/thesis",
         },
         {
           option: "Purpose",
+           link:"/purpose",
         },
         {
           option: "Team",
+           link:"/about",
         },
         {
           option: "News",
+           link:"",
         },
         {
           option: "Media kit",
+           link:"",
         },
         {
           option: "Contact",
+           link:"",
         },
       ],
     },
@@ -56,21 +68,27 @@ export default function Footer() {
       options: [
         {
           option: "What is $EARTH?",
+           link:"/resources",
         },
         {
           option: "How $EARTH works?",
+           link:"",
         },
         {
           option: "How to get $EARTH?",
+           link:"/earth",
         },
         {
           option: "$EARTH Nodes",
+           link:"/network",
         },
         {
           option: "Become a node",
+           link:"/community",
         },
         {
           option: "FAQ",
+           link:"/faq",
         },
       ],
     },
@@ -151,7 +169,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="  items-center flex flex-col sm:ml-10 sm:flex-row sm:gap-2 gap-x-2 gap-y-4 w-full justify-center sm:justify-between">
+        <div style={{cursor:"pointer"}} className="  items-center flex flex-col sm:ml-10 sm:flex-row sm:gap-2 gap-x-2 gap-y-4 w-full justify-center sm:justify-between">
           {Footerdata?.map((option, index) => (
             <div
               className="flex items-center  sm:items-start gap-3 flex-col"
@@ -165,8 +183,12 @@ export default function Footer() {
                   className="text-[#475467] font-inter font-semibold text-[14px]"
                   key={index}
                 >
-                  {option.option}{" "}
+                  <Link
+                href={option.link}
+              >{option.option}{" "}</Link> 
                 </p>
+            
+               
               ))}
             </div>
           ))}

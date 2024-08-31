@@ -1,9 +1,18 @@
+"use client";
 import ImageView from "../../Components/ImageView";
 import Minting from "../../Components/Minting";
+import { FaCopy } from "react-icons/fa";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { useState } from "react";
 
 const solarchakra = "/assets/images/solar-chakra.png";
 const check = "/assets/icons/Check_icon.svg";
 export default function Earth() {
+  const [copied, setCopied] = useState(false);
+
+  const onCopy = () =>{
+    setCopied(true)
+  }
   const earthData = [
     {
       title: "$EARTH Protocol",
@@ -22,6 +31,8 @@ export default function Earth() {
       title: "Uniswap",
       description:
         "Decentralized exchange on Ethereum, enabling trustless token swaps, liquidity provision, and automated market making for DeFi participants",
+      token: "Token Contract",
+      address: "0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
       features: [
         "Protocol owned liquidity pool rewards stakers",
         "Transaction fees grow the treasury",
@@ -40,7 +51,7 @@ export default function Earth() {
           className='w-full h-full lg:h-[89vh] object-cover'
           width={1440}
           height={500}
-          
+
         />
         <div className="absolute md:top-[5rem] lg:top-[15rem] xl:top-[12rem] flex flex-col gap-2 items-center">
           <p className="text-[#FFFFFF] font-semibold text-center text-[14px] font-inter">
@@ -68,6 +79,20 @@ export default function Earth() {
               <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
                 {data?.description}
               </p>
+              <p className="text-[#101828] mt-2 font-semibold text-left text-[14px] sm:text-[16px] font-inter">
+                {data?.token}
+              </p>
+              <div className="flex gap-2">
+                <p className="text-[#475467] text-left font-normal  text-[14px] font-inter">
+                  {data?.address}
+                </p>
+                {data?.address ? 
+                <div style={{cursor:"pointer"}}>
+                  <CopyToClipboard onCopy={onCopy} text={data?.address}>
+                    <FaCopy style={copied ? {color:"#EC8000 "} : ""} />
+                  </CopyToClipboard>
+                </div> : " "}
+              </div>
               <div className="flex pl-4 flex-col my-4 gap-2">
                 {data?.features?.map((feature, i) => (
                   <div className="flex gap-2" key={i}>
@@ -80,18 +105,18 @@ export default function Earth() {
               </div>
               <div className="flex gap-5">
                 <div>
-              {data?.sbt && (
-                <button className="bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter">
-                  {data?.sbt}
-                </button> 
-              )}
-             </div>
-              <div className="text-start">
-              <button className="bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter">
-                {data.link}
-              </button>
-           </div>
-            </div>
+                  {data?.sbt && (
+                    <button className="bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter">
+                      {data?.sbt}
+                    </button>
+                  )}
+                </div>
+                <div className="text-start">
+                  <button className="bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter">
+                    {data.link}
+                  </button>
+                </div>
+              </div>
             </div>
             <ImageView
               src={data?.img}
