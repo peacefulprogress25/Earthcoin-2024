@@ -5,6 +5,7 @@ import nexaflowApi from "../../services/nexaflow";
 import Link from "next/link";
 import { Loader } from "../../Components/Loader";
 import { LuArrowUpRight } from "react-icons/lu";
+import useNotification from "../../Hooks/useNotification";
 
 const media = "/assets/images/media.png";
 const people = "/assets/images/people.png";
@@ -12,23 +13,119 @@ const clock = "/assets/icons/clock.svg";
 const location = "/assets/icons/location.svg";
 const dollar = "/assets/icons/dollar-sign.svg";
 
+const fields = {
+  email: "",
+};
+
 export default function About() {
   const [teams, setTeams] = useState([]);
   const [jobs, setJobs] = useState([]);
-  const [email, setEmail] = useState({
-    email:"",
-  });
+  const [formData, setFormData] = useState(fields);
+  const [loading, setLoading] = useState(false);
+  const { showMessage } = useNotification();
+  const [isPlaceholderVisible, setIsPlaceholderVisible] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("View all");
-    
-  const handlechange = (e) =>{
-    const {name,value} = e.target;
-    setEmail( (prev) => ({
-      ...prev,[name] :value}))
-  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email)
+  const emailValidation = (data) => {
+    const emailRegex =
+      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return emailRegex.test(data);
+  };
+    
+  // const handlechange = (e) =>{
+  //   const {name,value} = e.target;
+  //   setEmail( (prev) => ({
+  //     ...prev,[name] :value}))
+  // }
+  const handleChange = (e) => {
+    if (e.target.value.length === 0) {
+      setIsPlaceholderVisible(true);
+    } else {
+      setIsPlaceholderVisible(false);
+    }
+    const { name, value } = e.target;
+
+    setFormData((formData) => ({
+      ...formData,
+      [name]: value,
+    }));
+  };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(email)
+  // };
+
+  const handleSubmit = async () => {
+    console.log(formData)
+    if (!formData.email) {
+      showMessage({
+        type: "error",
+        value: "Email field is required",
+      });
+      return;
+    }
+
+    if (!emailValidation(formData.email)) {
+      showMessage({
+        type: "error",
+        value: "Invalid Email",
+      });
+      return;
+    }
+   
+    setLoading(true);
+    const getEmailData = await nexaflowApi.getGoogleSheetData({
+      googleSheetId: nexaflowPageObj.subscribeButtonSheet1,
+    });
+
+    if (!getEmailData) {
+      setLoading(false);
+      showMessage({ value: "Error Occurred", type: "error" });
+      return;
+    }
+
+    const emailArray = getEmailData.slice(1).map((innerArray) => innerArray[0]);
+
+    if (emailArray.includes(formData.email)) {
+      showMessage({ value: "Email already added", type: "error" });
+
+      setLoading(false);
+      return;
+    }
+    const response = await nexaflowApi.postGoogleSheetData({
+      googleSheetId: nexaflowPageObj.subscribeButtonSheet1,
+      data: [formData.email],
+    });
+
+    if (!response) {
+      showMessage({ value: "Error Occurred", type: "error" });
+
+      setLoading(false);
+
+      return;
+    }
+    showMessage({
+      value: "Done! you will get early access soon.",
+      type: "success",
+    });
+
+    setLoading(false);
+
+    setFormData(fields);
+   
+  };
+
+  const handleFocus = (event) => {
+    if (event.target.value.length === 0) {
+      setIsPlaceholderVisible(true);
+    }
+  };
+
+  const handleBlur = (event) => {
+    if (event.target.value.length === 0) {
+      setIsPlaceholderVisible(true);
+    }
   };
 
   useEffect(() => {
@@ -199,18 +296,23 @@ export default function About() {
         <p className="text-[#475467] mt-3 font-normal  text-center text-[16px] font-inter">
           Be the first to know when new jobs are posted!
         </p>
-        <form onSubmit={handleSubmit}>
+        <form>
         <div className="flex flex-col items-center sm:items-start">
           <div className="flex-col mt-8 flex sm:flex-row gap-3 items-start sm:items-center">
             <input
-              type="email"
               name="email"
-              value={email.email}
-              onChange={handlechange}
+              onChange={handleChange}
+              value={formData?.email}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
               placeholder="Enter your email"
               className="border-2 border-[#EAECF0] w-[350px] h-10 outline-none rounded-md p-3"
             />
-            <button type="submit" className="w-[80px] sm:w-[100px] font-inter flex text-white items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
+            <button type="button" 
+             onClick={() => {
+              handleSubmit();
+            }}
+            className="w-[80px] sm:w-[100px] font-inter flex text-white items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
               Subscribe
             </button>
           </div>

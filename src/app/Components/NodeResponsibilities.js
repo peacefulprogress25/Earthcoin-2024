@@ -1,25 +1,68 @@
+"use client"
+import { type } from "os";
+import { useState } from "react";
+
 const nodeResponsibilities = "/assets/images/Responsibilities-Node.png";
 const nodeResponsibilities1 = "/assets/images/Responsibilities-Node1.png";
 const nodeResponsibilities2 = "/assets/images/Responsibilities-Node2.png";
 const nodeResponsibilities3 = "/assets/images/Responsibilities-Node3.png";
 const nodeResponsibilities4 = "/assets/images/Responsibilities-Node4.png";
+
+const responsibilitiesNodes = [
+    {
+        title: "Purge",
+    },
+    {
+        title: "Partnerships",
+    },
+    {
+        title: "Projects",
+    },
+    {
+        title: "Policy",
+    },
+];
+
 export default function ResponsibilitiesOfNode() {
+    const [title, setTitle] = useState("Responsibilities Of Node");
+    const [title1, setTitle1] = useState("Purge");
+    const [title2, setTitle2] = useState("Partnerships");
+    const [title3, setTitle3] = useState("Projects");
+    const [title4, setTitle4] = useState("Policy");
+    const handleClick = (title) => {
+        setTitle(title);
+        setTitle1(title1);
+        setTitle2(title2)
+        setTitle3(title3)
+        setTitle4(title4)
+    };
     return (
         <div className=" px-4 sm:px-[6%]">
-            <div className="flex justify-between shadow-lg w-full">
-                <div className="relative w-full">
-                    <img className="object-contain" src={nodeResponsibilities} alt="node" />
-                    <div className="absolute top-10 left-10">
-                        <p className="font-syne text-white font-semibold text-[35px]">Responsibilities<br />
-                            of a Node</p>
+            {title === "Responsibilities Of Node" && (
+                <div className="flex justify-between shadow-lg w-full">
+                    <div className="relative w-full">
+                        <img className="object-contain" src={nodeResponsibilities} alt="node" />
+                        <div className="absolute top-10 left-10">
+                            <p className="font-syne text-white font-semibold text-[35px]">Responsibilities<br />
+                                of a Node</p>
+                        </div>
                     </div>
-                </div>
-                <div className="flex flex-col justify-between w-[100%]  border-b-[1px]  border-r-[1px] border-[#D0D5DD]">
-                    <div style={{ cursor: "pointer" }} className=" flex justify-center items-center border-t-[1px] h-[25%]  border-[#D0D5DD]">
-                        <a><p className="font-syne h-full text-center   text-[#000000] font-semibold text-[26px]">Purge</p></a>
-                    </div>
+                    <div className="flex flex-col justify-between w-[100%]  border-b-[1px]  border-r-[1px] border-[#D0D5DD]">
+                        {responsibilitiesNodes && responsibilitiesNodes.length ? (
+                            responsibilitiesNodes?.map((item, index) => {
+                               
+                                return (
 
-                    <div style={{ cursor: "pointer" }} className=" flex justify-center items-center border-t-[1px] h-[25%] border-[#D0D5DD]">
+                                    <div key={index}
+                                        onClick={() => handleClick(item.title)} style={{ cursor: "pointer" }} className=" flex justify-center items-center border-t-[1px] h-[25%]  border-[#D0D5DD]">
+                                        <p className="font-syne h-full flex flex-col justify-center items-center   text-[#000000] font-semibold text-[26px]">{item.title}</p>
+                                    </div>
+
+                                );
+                            })
+                        ) : null}
+
+                        {/* <div style={{ cursor: "pointer" }} className=" flex justify-center items-center border-t-[1px] h-[25%] border-[#D0D5DD]">
                         <a > <p className="font-syne text-center   text-[#000000] font-semibold text-[26px]">Partnerships</p></a>
                     </div>
                     <div style={{ cursor: "pointer" }} className=" flex justify-center items-center border-t-[1px] h-[25%] border-[#D0D5DD]">
@@ -27,14 +70,15 @@ export default function ResponsibilitiesOfNode() {
                     </div>
                     <div style={{ cursor: "pointer" }} className=" flex justify-center items-center border-t-[1px] h-[25%] mt- border-[#D0D5DD]">
                         <a><p className="font-syne text-center    text-[#000000] font-semibold text-[26px]">Policy</p></a>
+                    </div> */}
+
                     </div>
 
                 </div>
+            )}
 
-            </div>
+            {title === "Purge" && (
 
-
-            {/* <div className=" mt-10">
                 <div className="flex justify-between shadow-lg w-full">
                     <div className="relative w-full">
                         <img className="object-contain" src={nodeResponsibilities1} alt="node" />
@@ -53,24 +97,25 @@ export default function ResponsibilitiesOfNode() {
 
                         </div>
 
-                        <div style={{ cursor: "pointer" }} className=" border-t-[1px] border-[#D0D5DD]">
-                            <a ><p className="font-syne px-10 py-3 text-[#000000] font-semibold text-[26px]">Partnerships</p></a>
+                        <div onClick={() => handleClick(title2)}  style={{ cursor: "pointer" }} className=" border-t-[1px] border-[#D0D5DD]">
+                            <p className="font-syne px-10 py-3 text-[#000000] font-semibold text-[26px]">Partnerships</p>
 
                         </div>
-                        <div style={{ cursor: "pointer" }} className=" border-t-[1px] border-[#D0D5DD]">
-                            <a ><p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Projects</p></a>
+                        <div onClick={() => handleClick(title3)} style={{ cursor: "pointer" }} className=" border-t-[1px] border-[#D0D5DD]">
+                            <p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Projects</p>
                         </div>
-                        <div style={{ cursor: "pointer" }} className=" border-t-[1px] border-[#D0D5DD]">
-                            <a><p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Policy</p></a>
+                        <div onClick={() => handleClick(title4)} style={{ cursor: "pointer" }} className=" border-t-[1px] border-[#D0D5DD]">
+                            <p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Policy</p>
                         </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
-            <div className=" mt-10">
+            )}
+
+            {title === "Partnerships" && (
                 <div className="flex justify-between shadow-lg w-full">
                     <div className="relative w-full">
                         <img className="object-contain" src={nodeResponsibilities2} alt="node" />
@@ -80,8 +125,8 @@ export default function ResponsibilitiesOfNode() {
                         </div>
                     </div>
                     <div className="flex flex-col w-[100%]  border-b-[1px] border-[#D0D5DD]">
-                        <div style={{ cursor: "pointer" }} className=" border-b-[1px] border-t-[1px] border-[#D0D5DD]">
-                            <a ><p className="font-syne px-10 py-3 text-[#000000] font-semibold text-[26px]">Purge</p></a>
+                        <div onClick={() => handleClick(title1)} style={{ cursor: "pointer" }} className=" border-b-[1px] border-t-[1px] border-[#D0D5DD]">
+                            <p className="font-syne px-10 py-3 text-[#000000] font-semibold text-[26px]">Purge</p>
                         </div>
                         <div className="flex px-10 py-5 flex-col ">
                             <p className="font-syne text-[#000000] font-semibold text-[30px]">Partnerships</p>
@@ -97,21 +142,21 @@ export default function ResponsibilitiesOfNode() {
                         </div>
 
 
-                        <div style={{ cursor: "pointer" }} className=" border-t-[1px] border-[#D0D5DD]">
-                            <a ><p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Projects</p></a>
+                        <div onClick={() => handleClick(title3)} style={{ cursor: "pointer" }} className=" border-t-[1px] border-[#D0D5DD]">
+                            <p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Projects</p>
                         </div>
-                        <div style={{ cursor: "pointer" }} className=" border-t-[1px] border-[#D0D5DD]">
-                            <a ><p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Policy</p></a>
+                        <div onClick={() => handleClick(title4)} style={{ cursor: "pointer" }} className=" border-t-[1px] border-[#D0D5DD]">
+                            <p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Policy</p>
                         </div>
 
                     </div>
 
                 </div>
+            )}
 
-            </div>
 
 
-            <div className=" mt-10">
+            {title === "Projects" && (
                 <div className="flex justify-between shadow-lg w-full">
                     <div className="relative w-full">
                         <img className="object-contain" src={nodeResponsibilities3} alt="node" />
@@ -121,11 +166,11 @@ export default function ResponsibilitiesOfNode() {
                         </div>
                     </div>
                     <div className="flex flex-col w-[100%]  border-b-[1px] border-[#D0D5DD]">
-                        <div style={{ cursor: "pointer" }} className=" border-b-[1px] border-t-[1px] border-[#D0D5DD]">
-                            <a ><p className="font-syne px-10 py-3 text-[#000000] font-semibold text-[26px]">Purge</p></a>
+                        <div onClick={() => handleClick(title1)} style={{ cursor: "pointer" }} className=" border-b-[1px] border-t-[1px] border-[#D0D5DD]">
+                            <p className="font-syne px-10 py-3 text-[#000000] font-semibold text-[26px]">Purge</p>
                         </div>
-                        <div style={{ cursor: "pointer" }} className=" border-b-[1px] border-[#D0D5DD]">
-                            <a ><p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Partnerships</p></a>
+                        <div onClick={() => handleClick(title2)} style={{ cursor: "pointer" }} className=" border-b-[1px] border-[#D0D5DD]">
+                            <p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Partnerships</p>
                         </div>
                         <div className="flex px-10 py-5 flex-col ">
                             <p className="font-syne text-[#000000] font-semibold text-[30px]">Projects</p>
@@ -144,17 +189,18 @@ export default function ResponsibilitiesOfNode() {
 
 
 
-                        <div style={{ cursor: "pointer" }} className=" border-t-[1px]  border-[#D0D5DD]">
-                            <a><p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Policy</p></a>
+                        <div onClick={() => handleClick(title4)} style={{ cursor: "pointer" }} className=" border-t-[1px]  border-[#D0D5DD]">
+                            <p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Policy</p>
                         </div>
 
                     </div>
 
                 </div>
+            )}
 
-            </div>
 
-            <div className=" mt-10">
+
+            {title === "Policy" && (
                 <div className="flex justify-between shadow-lg w-full">
                     <div className="relative w-full">
                         <img className="object-contain" src={nodeResponsibilities4} alt="node" />
@@ -164,14 +210,14 @@ export default function ResponsibilitiesOfNode() {
                         </div>
                     </div>
                     <div className="flex flex-col w-[100%]  border-b-[1px] border-[#D0D5DD]">
-                        <div style={{ cursor: "pointer" }} className=" border-b-[1px] border-t-[1px] border-[#D0D5DD]">
-                            <a><p className="font-syne px-10 py-3 text-[#000000] font-semibold text-[26px]">Purge</p></a>
+                        <div onClick={() => handleClick(title1)} style={{ cursor: "pointer" }} className=" border-b-[1px] border-t-[1px] border-[#D0D5DD]">
+                            <p className="font-syne px-10 py-3 text-[#000000] font-semibold text-[26px]">Purge</p>
                         </div>
-                        <div style={{ cursor: "pointer" }} className=" border-b-[1px] border-[#D0D5DD]">
-                            <a ><p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Partnerships</p></a>
+                        <div onClick={() => handleClick(title2)} style={{ cursor: "pointer" }} className=" border-b-[1px] border-[#D0D5DD]">
+                            <p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Partnerships</p>
                         </div>
-                        <div style={{ cursor: "pointer" }} className=" border-b-[1px]  border-[#D0D5DD]">
-                            <a><p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Policy</p></a>
+                        <div onClick={() => handleClick(title3)} style={{ cursor: "pointer" }} className=" border-b-[1px]  border-[#D0D5DD]">
+                            <p className="font-syne  px-10 py-3 text-[#000000] font-semibold text-[26px]">Projects</p>
                         </div>
                         <div className="flex px-10 py-5 flex-col ">
                             <p className="font-syne text-[#000000] font-semibold text-[30px]">Policy</p>
@@ -199,8 +245,9 @@ export default function ResponsibilitiesOfNode() {
                     </div>
 
                 </div>
+            )}
 
-            </div> */}
+
 
 
 

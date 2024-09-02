@@ -13,4 +13,5 @@ export const nexaflowPageObj = {
   teamPage: "6613c142e22f7fb0bb64a7f7",
   privacyPolicyPage: "6613d35ee22f7fb0bb64a88b",
   corsId: "656764d70d487853ac0ceade",
+  subscribeButtonSheet1:"66d5af8dc4843fadfbfb4281",
 };
