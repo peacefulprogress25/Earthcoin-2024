@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard, Navigation, Autoplay } from "swiper/modules";
+import { Keyboard, Navigation, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "./features.css";
-import 'swiper/css/navigation';
+import "swiper/css/navigation";
 
 function Features() {
   const data = [
@@ -15,7 +16,10 @@ function Features() {
       ),
       description: (
         <span>
-         $EARTH is a new unit of value, not pegged to any currency. Designed to be loosely range bound, <br /> assets backing each token serve as the floor while valuing positive externalities created by those <br /> assets and the utility of the currency create a soft ceiling. 
+          $EARTH is a new unit of value, not pegged to any currency. Designed to
+          be loosely range bound, <br /> assets backing each token serve as the
+          floor while valuing positive externalities created by those <br />{" "}
+          assets and the utility of the currency create a soft ceiling.
         </span>
       ),
       img: "/assets/images/New-unit-of-value.png",
@@ -28,7 +32,9 @@ function Features() {
       ),
       description: (
         <span>
-         When you pay a premium over the base value of $EARTH it represents <br /> the economic value placed on ecosystems and it services. This helps us <br /> reward projects creating more of this
+          When you pay a premium over the base value of $EARTH it represents{" "}
+          <br /> the economic value placed on ecosystems and it services. This
+          helps us <br /> reward projects creating more of this
         </span>
       ),
       img: "/assets/images/Economy-home.png",
@@ -36,12 +42,14 @@ function Features() {
     {
       title: (
         <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
-          Program <span className='text-[#EC8000]'>Solarpunk Values</span> into Money
+          Program <span className='text-[#EC8000]'>Solarpunk Values</span> into
+          Money
         </p>
       ),
       description: (
         <span>
-          $EARTH utility will be designed to acknowledge and reward people & merchants that <br /> are imbibing these above mentioned values. 
+          $EARTH utility will be designed to acknowledge and reward people &
+          merchants that <br /> are imbibing these above mentioned values.
         </span>
       ),
       img: "/assets/images/Solarpunk-Values.png",
@@ -69,7 +77,9 @@ function Features() {
       ),
       description: (
         <span>
-         $Earth acts as a borderless, capital efficient funnel <br />to incentivize, mobilize & allocate capital <br />towards climate solutions.
+          $Earth acts as a borderless, capital efficient funnel <br />
+          to incentivize, mobilize & allocate capital <br />
+          towards climate solutions.
         </span>
       ),
       img: "/assets/images/climate-environment.png",
@@ -79,9 +89,10 @@ function Features() {
   return (
     <div className='h-[80vh] my-3 w-full'>
       <Swiper
-        modules={[Keyboard, Navigation, Autoplay]}
+        modules={[Keyboard, Navigation, Autoplay, EffectFade]}
         className='w-full mySwiper'
-        slidesPerView={1}
+        fadeEffect={{ crossFade: true }}
+        effect='fade'
         navigation={true}
         spaceBetween={100}
         loop={true}
