@@ -59,7 +59,7 @@ export default function Footer() {
         },
         {
           option: "Contact",
-           link:"",
+           link:"/form",
         },
       ],
     },

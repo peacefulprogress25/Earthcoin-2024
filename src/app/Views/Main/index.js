@@ -33,6 +33,7 @@ export default function Main() {
   const [partners, setPartners] = useState([]);
   const [social, setSocial] = useState([]);
   const [updates, setUpdates] = useState([]);
+  const[funding,setFunding] = useState([])
 
   useEffect(() => {
     const getPageByID = async () => {
@@ -43,28 +44,29 @@ export default function Main() {
       setSocial(page?.Social);
       setPartners(page?.Partners);
       setUpdates(page?.Updates);
+      setFunding(page?.Stats);
     };
 
     getPageByID();
   }, []);
-  const funding = [
-    {
-      balance: "$17k+",
-      impact: "Treasury",
-    },
-    {
-      balance: "93",
-      impact: "Holders",
-    },
-    {
-      balance: "5",
-      impact: "Projects Funded",
-    },
-    {
-      balance: "25%",
-      impact: "APY",
-    },
-  ];
+  // const funding = [
+  //   {
+  //     balance: "$17k+",
+  //     impact: "Treasury",
+  //   },
+  //   {
+  //     balance: "93",
+  //     impact: "Holders",
+  //   },
+  //   {
+  //     balance: "5",
+  //     impact: "Projects Funded",
+  //   },
+  //   {
+  //     balance: "25%",
+  //     impact: "APY",
+  //   },
+  // ];
   const keys = [
     {
       title: "Mobilize",
@@ -270,7 +272,7 @@ export default function Main() {
                 {impact.balance}
               </p>
               <p className='text-[#101828] text-center text-[16px]  font-medium font-inter'>
-                {impact.impact}
+                {impact.title}
               </p>
             </div>
           ))}
