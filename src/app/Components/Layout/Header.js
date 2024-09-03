@@ -32,20 +32,20 @@ export default function Header() {
   ];
   const nodes = [
     {
-      title: "What are nodes of $EARTH?",
+      title: "What are $EARTH NODES?",
       subtitle: "Roles and responsibilities",
       icon: "/assets/icons/faq.svg",
       link: "/network",
     },
     {
-      title: "Become an $EARTH node",
+      title: "Become an $EARTH NODE",
       subtitle: "Steps to follow ",
-      icon: "/assets/icons/life-buoy.svg",
+      icon: "/assets/icons/mushroom.png",
       link: "/community",
     },
     {
       title: "$EARTH Mycelium Network",
-      subtitle: "Steps to follow ",
+      subtitle: "Leaderboard",
       icon: "/assets/icons/life-buoy.svg",
       link: "/node",
     },
@@ -92,7 +92,9 @@ export default function Header() {
   ];
   return (
     <nav className="fixed hidden sm:block left-0 top-0 z-10 right-0 bg-white">
-      <div className="flex h-20 w-full mx-auto border-b border-[#F2F4F7] gap-2 items-center px-4 sm:px-[6%]">
+     
+      <div className="flex justify-between h-20 w-full mx-auto border-b border-[#F2F4F7] gap-2 items-center px-4 sm:px-[6%]">
+      <div className="flex justify-start h-20 w-full mx-auto gap-2 items-center">
         <Link href="/">
           <ImageView
             alt="logo"
@@ -210,14 +212,22 @@ export default function Header() {
           <Link href="/media">Media</Link>
           <Link href="/dashboard">Dashboard</Link>
         </div>
-        <>
+        </div>
+      
+        <div className="flex justify-end gap-2">
+        <Link
+            href="/"
+            className="w-[80px] ml-auto text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
+          >
+            BUY
+          </Link>
           <Link
             href="/dapp"
             className="w-[80px] ml-auto text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
           >
             DAPP
           </Link>
-        </>
+        </div>
       </div>
     </nav>
   );

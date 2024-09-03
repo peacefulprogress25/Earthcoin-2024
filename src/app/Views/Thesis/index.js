@@ -14,6 +14,7 @@ const thesisbg2 = "/assets/images/thesisbg2.png";
 const thesisbg3 = "/assets/images/thesisbg3.png";
 const thesisbg4 = "/assets/images/thesisbg4.png";
 const agriculture = "/assets/images/agriculture.png";
+const solarpunkSpaces = "/assets/images/solarpunk-spaces.png";
 const pieChart = "/assets/images/Piechart-2.png";
 const exportImg = "/assets/images/Export.png";
 const assetthesis = "/assets/images/assetthesis.png"
@@ -440,7 +441,7 @@ export default function Thesis() {
         )}
         {title === "Solarpunk Spaces" && (
           <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
-             <div className="lg:w-[100%]">
+             <div className="lg:w-[60%]">
             <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter'>
               Solarpunk Spaces
             </p>
@@ -490,15 +491,15 @@ export default function Thesis() {
                 </ol> */}
             </div>
             </div>
-            {/* <div className="w-full flex justify-center px-[8%]">
-                <ImageView
-                  src={solarpunk}
-                  alt="solarpunk"
-                  width={500}
-                  height={500}
-                  className="object-cover mt-10 mb-5"
-                />
-              </div> */}
+            <div className='w-full lg:w-[40%] lg:px-0 flex justify-center px-[8%]'>
+              <ImageView
+                src={solarpunkSpaces}
+                alt='eco'
+                width={500}
+                height={500}
+                className='object-cover mt-10 mb-5'
+              />
+            </div>
           </div>
         )}
         </div>

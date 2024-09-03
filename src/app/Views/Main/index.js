@@ -13,9 +13,11 @@ import Treasury from "../../Components/EarthTreasury";
 import Nodes from "./Nodes";
 import Features from "./Features";
 import Projects from "./Projects";
+import buttonConfig from "../../utils/button";
 
 const earth = "/assets/video/EarthVideo.mp4";
 const earthHome = "/assets/images/earth-home.png";
+const earthNode = "/assets/images/earthnode-home.png";
 const groot = "/assets/images/groot1.png";
 const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
@@ -31,9 +33,8 @@ const mainBottomSection = "/assets/images/main-bottom-section.png";
 export default function Main() {
   const router = useRouter();
   const [partners, setPartners] = useState([]);
-  const [social, setSocial] = useState([]);
   const [updates, setUpdates] = useState([]);
-  const[funding,setFunding] = useState([])
+  const [funding, setFunding] = useState([])
 
   useEffect(() => {
     const getPageByID = async () => {
@@ -41,7 +42,6 @@ export default function Main() {
         pageId: nexaflowPageObj.landingPage,
         websiteId: nexaflowPageObj.website,
       });
-      setSocial(page?.Social);
       setPartners(page?.Partners);
       setUpdates(page?.Updates);
       setFunding(page?.Stats);
@@ -143,6 +143,43 @@ export default function Main() {
     "Yield generating",
     "Building the solarpunk future",
   ];
+  const social = [
+    {
+      image: "/assets/images/telegram.png",
+      buttonLink: buttonConfig.social_home_telegram.link,
+      external: buttonConfig.social_home_telegram.external,
+    },
+    {
+      image: "/assets/images/twitter.png",
+      buttonLink: buttonConfig.social_home_twitter.link,
+      external: buttonConfig.social_home_twitter.external,
+    },
+    {
+      image: "/assets/images/discord.png",
+      buttonLink: buttonConfig.social_home_discord.link,
+      external: buttonConfig.social_home_discord.external,
+    },
+    {
+      image: "/assets/images/Mask.png",
+      buttonLink: buttonConfig.social_home_mask.link,
+      external: buttonConfig.social_home_mask.external,
+    },
+    {
+      image: "/assets/images/cloud.png",
+      buttonLink: buttonConfig.social_home_cloud.link,
+      external: buttonConfig.social_home_cloud.external,
+    },
+    {
+      image: "/assets/images/instagram.png",
+      buttonLink: buttonConfig.social_home_instagram.link,
+      external: buttonConfig.social_home_instagram.external,
+    },
+    {
+      image: "/assets/images/linkedin.png",
+      buttonLink: buttonConfig.social_home_linkedin.link,
+      external: buttonConfig.social_home_linkedin.external,
+    },
+  ]
   const socialIcons = [
     {
       icon: "/assets/icons/notion.svg",
@@ -233,39 +270,48 @@ export default function Main() {
     <div className='mt-20'>
       {" "}
       <div className='relative h-[100vh] 2xl:h-[95vh] '>
-      <ImageView
-            src={earthHome}
-            alt='earthcoin'
-            width={500}
-            height={500}
-            className='object-cover w-full h-full'
-          />
+        <ImageView
+          src={earthHome}
+          alt='earthcoin'
+          width={500}
+          height={500}
+          className='object-cover w-full h-full'
+        />
         {/* <Video
           src={earth}
           alt='earthcoin'
           className='object-cover w-full h-full'
         /> */}
+       
 
         <div className='absolute md:top-[15rem] lg:top-[15rem] xl:top-[12rem]  text-[#000000] text-xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne w-full text-center font-medium'>
           <p className="leading-none">
-          Digital currency funding{" "}
+            Digital currency funding{" "}
             <br />
             climate solutions.
           </p>
+
           <button className='  text-white mt-5 xl:mt-10 font-inter font-semibold px-4 py-2 rounded-md bg-[#101323] border-[1px] border-[#EC8000] text-[16px]'>
-          GET $EARTH
-            </button>
+            <Link
+              href={buttonConfig?.home_get_earth?.link || ""}
+              target={buttonConfig?.home_get_earth?.external ? "_blank" : "_self"}
+            >
+              {buttonConfig?.home_get_earth?.title}
+            </Link>
+          </button>
+
         </div>
       </div>
+
+
       <div className='mx-auto  pt-16 px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full'>
         <div className='flex flex-col items-center justify-center w-full pb-10 sm:flex-row'>
           {funding.map((impact, index) => (
             <div
-              className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${
-                index !== funding.length - 1
+              className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${index !== funding.length - 1
                   ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
                   : ""
-              }`}
+                }`}
               key={index}
             >
               <p className='font-syne font-semibold text-[20px] text-center sm:text-[52px] text-[#EC8000]'>
@@ -277,6 +323,22 @@ export default function Main() {
             </div>
           ))}
         </div>
+
+        <div>
+        <p className="leading-10 text-[#000000] text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
+      One transaction to get Rewarded for 
+            <br />
+           <span className="text-[#EC8000]"> Climate Action</span>
+          </p>
+        </div>
+
+        <ImageView
+          src={earthNode}
+          alt='earthcoin'
+          width={500}
+          height={500}
+          className='object-cover w-full h-full'
+        />
 
         {/* <div className="flex gap-x-[32px] py-[55px]">
           {keys.map((data) => (
@@ -296,7 +358,11 @@ export default function Main() {
             </div>
           ))}
         </div> */}
+        <p className="text-[#000000] mt-5 text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
+        What  is $EARTH? 
+        </p>
         <Features />
+
         {/* <Projects /> */}
         {/* <div className='flex flex-col gap-8 mt-3'>
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
@@ -390,6 +456,20 @@ export default function Main() {
           </div>
         </div> */}
       </div>
+      <div className=' relative mb-16 -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] '>
+        <ImageView
+          alt='social'
+          src={mainBottomSection}
+          width={1440}
+          height={430}
+          className='w-full rounded-lg h-[24rem] object-cover mt-20'
+        />
+        <div className='absolute top-[20rem] md:left-[8rem] lg:left-[14rem] xl:left-[22rem]  text-[#FFFFFF] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold'>
+          <p>
+          Crypto economics to value nature
+          </p>
+        </div>
+      </div>
       <div>
         {/* <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
           <div className='flex items-center flex-col w-[80%] px-20 mt-28 gap-4 '>
@@ -446,7 +526,12 @@ export default function Main() {
           )}
         </div>
         <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
-          View Partners
+        <Link
+              href={buttonConfig?.home_partners?.link || ""}
+              target={buttonConfig?.home_partners?.external ? "_blank" : "_self"}
+            >
+              {buttonConfig?.home_partners?.title}
+            </Link>
         </button>
       </div>
       <div className=' relative max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] '>
@@ -481,81 +566,74 @@ export default function Main() {
       <div className='grid w-full grid-cols-1 px-20 mt-8 sm:grid-cols-2 gap-x-6 gap-y-5'>
         {updates && updates?.length
           ? updates.map((card, index) => (
-              <div
-                className={`flex cursor-pointer w-full items-start ${
-                  index === 0
-                    ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
-                    : "col-span-1 flex-row sm:col-span-1"
+            <div
+              className={`flex cursor-pointer w-full items-start ${index === 0
+                  ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
+                  : "col-span-1 flex-row sm:col-span-1"
                 }`}
-                key={index}
+              key={index}
+            >
+              <ImageView
+                src={card.image}
+                alt={card.name}
+                width={200}
+                height={200}
+                className={`${index === 0
+                    ? "w-full h-[20rem] object-cover"
+                    : "w-full h-40 sm:w-full object-cover"
+                  }`}
+              />
+              <div
+                className={`${index === 0 ? "mt-4" : "flex flex-col gap-2 px-4"
+                  }`}
               >
-                <ImageView
-                  src={card.image}
-                  alt={card.name}
-                  width={200}
-                  height={200}
-                  className={`${
-                    index === 0
-                      ? "w-full h-[20rem] object-cover"
-                      : "w-full h-40 sm:w-full object-cover"
-                  }`}
-                />
-                <div
-                  className={`${
-                    index === 0 ? "mt-4" : "flex flex-col gap-2 px-4"
-                  }`}
-                >
-                  <p className='text-[#EC8000] font-inter font-semibold text-[12px]'>
-                    {card?.name} • {card?.date}
-                  </p>
-                  <div className='flex items-start justify-between mt-2'>
-                    <p
-                      className={`text-[#101828] font-inter font-semibold text-[16px] ${
-                        index === 0 ? "font-syne text-[22px]" : ""
-                      }`}
-                    >
-                      {card?.title}
-                    </p>
-                    {index === 0 ? (
-                      <LuArrowUpRight size={22} color='#101828' />
-                    ) : (
-                      ""
-                    )}
-                  </div>
+                <p className='text-[#EC8000] font-inter font-semibold text-[12px]'>
+                  {card?.name} • {card?.date}
+                </p>
+                <div className='flex items-start justify-between mt-2'>
                   <p
-                    className={`text-[#475467] ${
-                      index === 0 ? "mt-2" : ""
-                    } font-inter w-[100%] font-normal text-[14px]`}
+                    className={`text-[#101828] font-inter font-semibold text-[16px] ${index === 0 ? "font-syne text-[22px]" : ""
+                      }`}
                   >
-                    {card?.description}
+                    {card?.title}
                   </p>
-                  <div
-                    className={`flex items-center ${
-                      index === 0 ? "mt-4" : "mt-0"
+                  {index === 0 ? (
+                    <LuArrowUpRight size={22} color='#101828' />
+                  ) : (
+                    ""
+                  )}
+                </div>
+                <p
+                  className={`text-[#475467] ${index === 0 ? "mt-2" : ""
+                    } font-inter w-[100%] font-normal text-[14px]`}
+                >
+                  {card?.description}
+                </p>
+                <div
+                  className={`flex items-center ${index === 0 ? "mt-4" : "mt-0"
                     } gap-2`}
-                  >
-                    {card && card?.length
-                      ? card?.tags.map((tag, i) => (
-                          <p
-                            className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${
-                              tag === "Design"
-                                ? "text-[#EC8000] bg-[#FFFCF8]"
-                                : tag === "Research"
-                                ? "bg-[#EEF4FF] text-[#3538CD]"
-                                : tag === "Presentation"
+                >
+                  {card && card?.length
+                    ? card?.tags.map((tag, i) => (
+                      <p
+                        className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${tag === "Design"
+                            ? "text-[#EC8000] bg-[#FFFCF8]"
+                            : tag === "Research"
+                              ? "bg-[#EEF4FF] text-[#3538CD]"
+                              : tag === "Presentation"
                                 ? "bg-[#FDF2FA] text-[#C11574]"
                                 : ""
-                            }`}
-                            key={i}
-                          >
-                            {tag}
-                          </p>
-                        ))
-                      : null}
-                  </div>
+                          }`}
+                        key={i}
+                      >
+                        {tag}
+                      </p>
+                    ))
+                    : null}
                 </div>
               </div>
-            ))
+            </div>
+          ))
           : null}
 
         {/* {social && social?.length ? (
@@ -666,28 +744,39 @@ export default function Main() {
       </div>
       <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
         <div className='flex flex-wrap justify-center gap-1 mt-6 sm:gap-4'>
-          {social && social?.length ? (
-            social.map((partner, index) => (
-              <a
-                href={partner?.link}
-                target='_blank'
-                className='cursor-pointer'
-                key={index}
-              >
-                <ImageView
-                  alt='social'
-                  src={partner.icon}
-                  width={40}
-                  height={40}
-                  className='w-full h-14 '
-                />
-              </a>
-            ))
-          ) : (
-            <div className='w-full h-[6rem]'>
-              <Loader />
-            </div>
-          )}
+          {social.map((partner, index) => (
+            <Link
+              key={index}
+              href={social?.buttonLink || ""}
+              target={social?.external ? "_blank" : "_self"}
+            >
+              <ImageView
+                alt='social'
+                src={partner.image}
+                width={40}
+                height={40}
+                className='w-full h-14 '
+              />
+            </Link>
+            //    <a
+            //    href={partner?.buttonLink}
+            //    target='_blank'
+            //    className='cursor-pointer'
+            //    key={index}
+            //  >
+            //    <ImageView
+            //      alt='social'
+            //      src={partner.image}
+            //      width={40}
+            //      height={40}
+            //      className='w-full h-14 '
+            //    />
+            //  </a>
+
+
+
+          ))
+          }
         </div>
 
         <p className='text-3xl font-medium font-syne '>Join us!</p>
@@ -714,7 +803,12 @@ export default function Main() {
               our team.
             </p>
             <button className='w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm'>
-              $Earth GPT
+            <Link
+              href={buttonConfig?.home_footer_banner?.link || ""}
+              target={buttonConfig?.home_footer_banner?.external ? "_blank" : "_self"}
+            >
+              {buttonConfig?.home_footer_banner?.title}
+            </Link>
             </button>
           </div>
         </div>

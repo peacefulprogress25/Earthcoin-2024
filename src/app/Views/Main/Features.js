@@ -54,21 +54,6 @@ function Features() {
       ),
       img: "/assets/images/Solarpunk-Values.png",
     },
-    // {
-    //   title: (
-    //     <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
-    //       Protocol Owned <span className='text-[#EC8000]'> Liquidity</span>{" "}
-    //     </p>
-    //   ),
-    //   description: (
-    //     <span>
-    //       Perpetual liquidity for you to swap your $EARTH for $DAI whenever{" "}
-    //       <br /> you choose to irrespective of market conditions. This LP is
-    //       owned by <br /> the treasury as a service to currency holders.
-    //     </span>
-    //   ),
-    //   img: "/assets/images/Liquiditypool.png",
-    // },
     {
       title: (
         <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>

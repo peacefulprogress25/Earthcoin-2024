@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import buttonConfig from "../../utils/button";
 
 const img = "/assets/images/landing-page-node1.png";
 const checkIcon = "/assets/icons/check-icon.png";
@@ -44,10 +46,20 @@ function Nodes() {
           </section>
           <section className='flex items-center gap-3 mr-auto'>
             <button className='  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs'>
-              Learn more
+            <Link
+              href={buttonConfig?.home_earthNode_learnMore?.link || ""}
+              target={buttonConfig?.home_earthNode_learnMore?.external ? "_blank" : "_self"}
+            >
+              {buttonConfig?.home_earthNode_learnMore?.title}
+            </Link>
             </button>
             <button className='  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs'>
-              Become a NODE
+            <Link
+              href={buttonConfig?.home_earthNode_becomeNode?.link || ""}
+              target={buttonConfig?.home_earthNode_becomeNode?.external ? "_blank" : "_self"}
+            >
+              {buttonConfig?.home_earthNode_becomeNode?.title}
+            </Link>
             </button>
           </section>
         </section>

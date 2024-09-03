@@ -22,7 +22,7 @@ export default function Footer() {
         },
         {
           option: "$EARTH Updates",
-          link: "",
+          link: "/updates",
         },
         {
           option: "$EARTH Summary",
@@ -30,7 +30,7 @@ export default function Footer() {
         },
         {
           option: "$EARTH Contracts",
-          link: "",
+          link: "/contracts",
         },
       ],
     },

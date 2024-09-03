@@ -39,7 +39,7 @@ export default function ResponsibilitiesOfNode() {
   return (
     <div className=' px-4 sm:px-[6%]'>
       {title === "Responsibilities Of Node" && (
-        <div className='flex justify-between w-full shadow-lg'>
+        <div className='flex md:flex-col xl:flex-row justify-between w-full shadow-lg'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -57,19 +57,19 @@ export default function ResponsibilitiesOfNode() {
           <div className='flex flex-col justify-between w-[100%]  border-b-[1px]  border-r-[1px] border-[#D0D5DD]'>
             {responsibilitiesNodes && responsibilitiesNodes.length
               ? responsibilitiesNodes?.map((item, index) => {
-                  return (
-                    <div
-                      key={index}
-                      onClick={() => handleClick(item.title)}
-                      style={{ cursor: "pointer" }}
-                      className=' flex justify-center items-center border-t-[1px] h-[25%]  border-[#D0D5DD]'
-                    >
-                      <p className='font-syne h-full flex flex-col justify-center items-center   text-[#000000] font-semibold text-[26px]'>
-                        {item.title}
-                      </p>
-                    </div>
-                  );
-                })
+                return (
+                  <div
+                    key={index}
+                    onClick={() => handleClick(item.title)}
+                    style={{ cursor: "pointer" }}
+                    className=' flex justify-center items-center border-t-[1px] h-[25%]  border-[#D0D5DD]'
+                  >
+                    <p className='font-syne h-full flex flex-col justify-center items-center   text-[#000000] font-semibold text-[26px]'>
+                      {item.title}
+                    </p>
+                  </div>
+                );
+              })
               : null}
 
             {/* <div style={{ cursor: "pointer" }} className=" flex justify-center items-center border-t-[1px] h-[25%] border-[#D0D5DD]">
@@ -86,7 +86,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Purge" && (
-        <div className='flex justify-between w-full shadow-lg'>
+        <div className='flex md:flex-col xl:flex-row justify-between w-full shadow-lg'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -159,7 +159,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Partnerships" && (
-        <div className='flex justify-between w-full shadow-lg'>
+        <div className='flex md:flex-col xl:flex-row justify-between w-full shadow-lg'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -167,7 +167,7 @@ export default function ResponsibilitiesOfNode() {
               alt='node'
             />
             <div className='absolute top-10 left-10'>
-              <p className='font-syne text-white font-semibold text-[35px]'>
+              <p className='font-syne text-white font-semibold sm:text-[20px] lg:text-[35px]'>
                 Responsibilities
                 <br />
                 of a Node
@@ -184,29 +184,14 @@ export default function ResponsibilitiesOfNode() {
                 Purge
               </p>
             </div>
-            <div className='flex flex-col px-10 py-5 '>
+            <div className='flex flex-col md:h-[15rem] lg:h-[20rem] xl:h-[28rem] px-10 py-5 '>
               <p className='font-syne text-[#000000] font-semibold text-[30px]'>
                 Partnerships
               </p>
               <p className='font-inter leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
-                We envision $EARTH treasury to be a source of patient, aligned
-                $$$ waiting to deployed towards projects that are building net
-                zero infrastructure. Addressing climate change is no longer a
-                technology, knowledge or feasibility problem but a finance
-                problem. An absolute zero emission future is a function of
-                millions of climate solutions (link) being deployed as quickly
-                as possible. For this to be a reality we need ginormous amounts
-                of capital. ($3-4 Trillion/Yr climate finance gap)
+                Warm introductions or complete coordination with any organisation or individual that can contribute to $EARTH mission/vision. This can take the form of a) Onboarding new Nodes b) Onboarding merchants who accept payments in $EARTH c) Onboarding organisations or individuals who in any way shape or form can further our mission/vision.
               </p>
-              <p className='font-inter leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
-                Since Nodes are the only ones with permission to mint $EARTH and
-                only when $EARTH is minted directly at the protocol do the $
-                flow into the treasury, it will be up to all the Nodes combined
-                to ensure the treasury is equipped to do what&apos;s necessary
-                at all times. We see this as a function of nodes personally
-                purging their petro $ at regular intervals + seeking aligned
-                capital from within their network.
-              </p>
+
             </div>
 
             <div
@@ -232,7 +217,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Projects" && (
-        <div className='flex justify-between w-full shadow-lg'>
+        <div className='flex md:flex-col xl:flex-row justify-between w-full shadow-lg'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -266,28 +251,19 @@ export default function ResponsibilitiesOfNode() {
                 Partnerships
               </p>
             </div>
-            <div className='flex flex-col px-10 py-5 '>
+            <div className='flex flex-col md:h-[15rem] lg:h-[20rem] xl:h-[28rem] px-10 py-5 '>
               <p className='font-syne text-[#000000] font-semibold text-[30px]'>
                 Projects
               </p>
               <p className='font-inter leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
-                We envision $EARTH treasury to be a source of patient, aligned
-                $$$ waiting to deployed towards projects that are building net
-                zero infrastructure. Addressing climate change is no longer a
-                technology, knowledge or feasibility problem but a finance
-                problem. An absolute zero emission future is a function of
-                millions of climate solutions (link) being deployed as quickly
-                as possible. For this to be a reality we need ginormous amounts
-                of capital. ($3-4 Trillion/Yr climate finance gap)
+                Connecting Dao to economically/ecologically viable projects that can be potentially funded by $EARTH treasury ( from the 5 sectors we are focusing on).
               </p>
               <p className='font-inter leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
-                Since Nodes are the only ones with permission to mint $EARTH and
-                only when $EARTH is minted directly at the protocol do the $
-                flow into the treasury, it will be up to all the Nodes combined
-                to ensure the treasury is equipped to do what&apos;s necessary
-                at all times. We see this as a function of nodes personally
-                purging their petro $ at regular intervals + seeking aligned
-                capital from within their network.
+                Projects should transparently communicate their impact funded with $EARTH to the DAO to validate their activity and earn rewards by accomplishing milestones and impact projections.
+              </p>
+              <p className='font-inter leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
+
+                Projects should have an impact report manual so the DAO could have community events to evaluate the different projects trajectory backed by $EARTH.
               </p>
             </div>
 
@@ -305,7 +281,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Policy" && (
-        <div className='flex justify-between w-full shadow-lg'>
+        <div className='flex md:flex-col xl:flex-row justify-between w-full shadow-lg'>
           <div className='relative w-full'>
             <img
               className='object-contain'

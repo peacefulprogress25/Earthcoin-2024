@@ -73,7 +73,7 @@ export default function Community() {
             Network
           </p>
           <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
-            Become an $Earth Node
+          Become an $EARTH NODE
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
             From purging petro dollars to forming partnerships to policy making,

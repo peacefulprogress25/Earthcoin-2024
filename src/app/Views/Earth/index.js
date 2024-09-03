@@ -20,7 +20,7 @@ export default function Earth() {
     {
       title: "$EARTH Protocol",
       description:
-        "Only SBT holders have access to mint $EARTH directly at the protocol. Purge your petro-dollars ($DAI) to mint $EARTH",
+        "Only NODE holders have access to mint $EARTH directly at the protocol. Purge your petro-dollars ($DAI) to mint $EARTH",
       features: [
         "Price lower than dex",
         "Increases treasury size",
@@ -66,7 +66,7 @@ export default function Earth() {
             How to get $EARTH
           </p>
           <p className='text-[#FFFFFF] text-center font-normal  text-[20px] font-inter'>
-            What is $EARTH and how to get $EARTH
+          Mint at protocol or buy on Uniswap
           </p>
         </div>
       </div>

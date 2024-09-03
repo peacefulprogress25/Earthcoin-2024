@@ -17,7 +17,7 @@ export default function Network() {
           Network
         </p>
         <p className='text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne'>
-          What are Nodes of $Earth?
+        What are $EARTH NODES?
         </p>
         <p className='text-[#475467] text-center font-normal  text-[16px] font-inter'>
           From purging petro dollars to forming partnerships to policy making,
