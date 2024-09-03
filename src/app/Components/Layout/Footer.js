@@ -10,27 +10,27 @@ export default function Footer() {
       options: [
         {
           option: "DAPP",
-          link:"/dapp",
+          link: "/dapp",
         },
         {
           option: "Projects",
-          link:"/projects",
+          link: "/projects",
         },
         {
           option: "Tokenomics",
-          link:"/tokenomics",
+          link: "/tokenomics",
         },
         {
           option: "$EARTH Updates",
-           link:"",
+          link: "",
         },
         {
           option: "$EARTH Summary",
-           link:"",
+          link: "",
         },
         {
           option: "$EARTH Contracts",
-           link:"",
+          link: "",
         },
       ],
     },
@@ -39,27 +39,27 @@ export default function Footer() {
       options: [
         {
           option: "Thesis",
-           link:"/thesis",
+          link: "/thesis",
         },
         {
           option: "Purpose",
-           link:"/purpose",
+          link: "/purpose",
         },
         {
           option: "Team",
-           link:"/about",
+          link: "/about",
         },
         {
           option: "News",
-           link:"",
+          link: "",
         },
         {
           option: "Media kit",
-           link:"",
+          link: "",
         },
         {
           option: "Contact",
-           link:"/form",
+          link: "/form",
         },
       ],
     },
@@ -68,27 +68,27 @@ export default function Footer() {
       options: [
         {
           option: "What is $EARTH?",
-           link:"/resources",
+          link: "/resources",
         },
         {
           option: "How $EARTH works?",
-           link:"",
+          link: "",
         },
         {
           option: "How to get $EARTH?",
-           link:"/earth",
+          link: "/earth",
         },
         {
           option: "$EARTH Nodes",
-           link:"/network",
+          link: "/network",
         },
         {
           option: "Become a node",
-           link:"/community",
+          link: "/community",
         },
         {
           option: "FAQ",
-           link:"/faq",
+          link: "/faq",
         },
       ],
     },
@@ -137,77 +137,76 @@ export default function Footer() {
     },
   ];
   return (
-    <div className="h-fit flex flex-col justify-end w-full">
-      <div className="flex-col flex sm:flex-row my-10 mt-16 items-center sm:items-start w-full max-w-screen-2xl mx-auto  gap-10 px-[6%] justify-between">
-        <div className="flex items-center w-full  sm:items-start sm:w-[50%] flex-col justify-between">
-          <div className="flex flex-col items-center sm:items-start">
+    <div className='flex flex-col justify-end w-full h-fit'>
+      <div className='flex-col flex sm:flex-row my-10 mt-16 items-center sm:items-start w-full max-w-screen-2xl mx-auto  gap-10 px-[6%] justify-between'>
+        <div className='flex items-center w-full  sm:items-start sm:w-[50%] flex-col justify-between'>
+          <div className='flex flex-col items-center sm:items-start'>
             <ImageView
-              alt="logo"
+              alt='logo'
               src={logo}
               width={100}
               height={100}
-              className="object-contain"
+              className='object-contain'
             />
-            <p className="text-[#475467] mt-6 font-normal text-center sm:text-left font-inter text-sm">
+            <p className='text-[#475467] mt-6 font-normal text-center sm:text-left font-inter text-sm'>
               Embedding climate action,
               <br /> ecosystem services,
               <br /> solarpunk values into money
             </p>
-            <div className="flex items-center mt-20">
+            <div className='flex items-center mt-20'>
               <Link
-                href="/privacy-policy"
-                className="text-[#475467] pr-2 border-r border-[#475467] font-normal text-center sm:text-left font-inter text-sm"
+                href='/privacy-policy'
+                className='text-[#475467] pr-2 border-r border-[#475467] font-normal text-center sm:text-left font-inter text-sm'
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/terms-of-service"
-                className="text-[#475467] pl-2 font-normal text-center sm:text-left font-inter text-sm"
+                href='/terms-of-service'
+                className='text-[#475467] pl-2 font-normal text-center sm:text-left font-inter text-sm'
               >
                 Terms & Conditions
               </Link>
             </div>
           </div>
         </div>
-        <div style={{cursor:"pointer"}} className="  items-center flex flex-col sm:ml-10 sm:flex-row sm:gap-2 gap-x-2 gap-y-4 w-full justify-center sm:justify-between">
+        <div
+          style={{ cursor: "pointer" }}
+          className='flex flex-col items-center justify-center w-full  sm:ml-10 sm:flex-row sm:gap-2 gap-x-2 gap-y-4 sm:justify-between'
+        >
           {Footerdata?.map((option, index) => (
             <div
-              className="flex items-center  sm:items-start gap-3 flex-col"
+              className='flex flex-col items-center gap-3 sm:items-start'
               key={index}
             >
-              <p className="text-[#667085] font-inter font-semibold text-[13px]">
+              <p className='text-[#667085] font-inter font-semibold text-[13px]'>
                 {option?.title}
               </p>
               {option?.options?.map((option, index) => (
                 <p
-                  className="text-[#475467] font-inter font-semibold text-[14px]"
+                  className='text-[#475467] font-inter font-semibold text-[14px]'
                   key={index}
                 >
-                  <Link
-                href={option.link}
-              >{option.option}{" "}</Link> 
+                  <Link href={option.link}>{option.option} </Link>
                 </p>
-            
-               
               ))}
             </div>
           ))}
         </div>
       </div>
-      <div className="bg-[#F9FAFB] w-full flex items-center h-20">
-        <div className="px-[6%] justify-between max-w-screen-2xl gap-4 h-full mx-auto flex w-full items-center">
-          <p className="text-[#667085] font-normal font-inter text-[12px] sm:text-[14px]">
-            © 2023 SOLARPUNKDAO. All rights reserved.
+      <div className='bg-[#F9FAFB] w-full flex items-center h-20'>
+        <div className='px-[6%] justify-between max-w-screen-2xl gap-4 h-full mx-auto flex w-full items-center'>
+          <p className='text-[#667085] font-normal font-inter text-[12px] sm:text-[14px]'>
+            © {new Date().getFullYear()} SOLARPUNKDAO. All rights reserved.
           </p>
-          <div className="flex gap-4 items-center">
+          <div className='flex items-center gap-4'>
             {socialIcons.map((icons, index) => (
-              <button className="cursor-pointer" key={index}>
+              <button className='cursor-pointer' key={index}>
                 <ImageView
                   alt={icons.icon}
                   src={icons.icon}
                   width={20}
                   height={20}
-                  className="object-contain"
+                  className='object-contain'
                 />
               </button>
             ))}

@@ -1,5 +1,5 @@
 export default {
-  home_get_earth:{
+  home_get_earth: {
     title: "GET $EARTH",
     position: "Nodes",
     page: "/",
@@ -44,8 +44,8 @@ export default {
   earth_uniswap_becomeNode: {
     title: "Go to Uniswap",
     position: "Nodes",
-    page: "/",
-    external: false,
+    page: "/earth",
+    external: true,
     link: "https://app.uniswap.org/swap?inputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063&outputCurrency=0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
   },
   earth_footer_banner: {
@@ -69,21 +69,21 @@ export default {
     external: false,
     link: "",
   },
-  network_community_bookslot:{
+  network_community_bookslot: {
     title: "Book a slot",
     position: "Stepper",
     page: "/",
     external: false,
     link: "",
   },
-  network_community_verified:{
+  network_community_verified: {
     title: "Get KYC verified",
     position: "Stepper",
     page: "/",
     external: false,
     link: "",
   },
-  network_community_dapp:{
+  network_community_dapp: {
     title: "Go to DAPP",
     position: "Stepper",
     page: "/",
@@ -97,7 +97,7 @@ export default {
     external: false,
     link: "",
   },
-  media_get_started:{
+  media_get_started: {
     title: "Get started",
     position: "Startups",
     page: "/",
