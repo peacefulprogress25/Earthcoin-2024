@@ -43,7 +43,7 @@ export default function Header() {
       title: "Become an $EARTH NODE",
       subtitle: "Steps to follow ",
       icon: "/assets/icons/mushroom.png",
-      link: "/community",
+      link: "/earthnode",
     },
     {
       title: "$EARTH Mycelium Network",

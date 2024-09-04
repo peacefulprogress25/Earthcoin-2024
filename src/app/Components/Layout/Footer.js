@@ -84,7 +84,7 @@ export default function Footer() {
         },
         {
           option: "Become a node",
-          link: "/community",
+          link: "/earthnode",
         },
         {
           option: "FAQ",

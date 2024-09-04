@@ -248,7 +248,7 @@ export default function Thesis() {
         </div>
         <div className="w-[75%]">
         {title === "Regenerative Agriculture" && (
-          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+          <div className='border-2 h-full lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
             <div className="lg:w-[60%]">
             <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 lg:mr-0 font-inter'>
               Regenerative Agricuture
@@ -295,7 +295,7 @@ export default function Thesis() {
           </div>
         )}
         {title === "Clean Energy" && (
-          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] h-full py-6'>
              <div className="lg:w-[60%]">
             <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter'>
               Clean Energy
@@ -333,7 +333,7 @@ export default function Thesis() {
           </div>
         )}
         {title === "Ecosystem Conservation" && (
-          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] h-full rounded-lg px-[6%] py-6'>
              <div className="lg:w-[60%]">
             <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter'>
               Ecosystem Conservation
@@ -386,7 +386,7 @@ export default function Thesis() {
           </div>
         )}
         {title === "Clean Transport" && (
-          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+          <div className='border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
              <div className="lg:w-[60%]">
             <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter'>
               Clean Transport
@@ -440,7 +440,7 @@ export default function Thesis() {
           </div>
         )}
         {title === "Solarpunk Spaces" && (
-          <div className='border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
+          <div className='border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6'>
              <div className="lg:w-[60%]">
             <p className='text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter'>
               Solarpunk Spaces

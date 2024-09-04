@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 
 const community = "/assets/images/community.png";
 const nature = "/assets/images/nature.png";
-export default function Community() {
+export default function EarthNode() {
   const communityList = [
     // {
     //   title: "1. Get your bespoke PFP",

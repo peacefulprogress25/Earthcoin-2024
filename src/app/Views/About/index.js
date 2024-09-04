@@ -284,7 +284,7 @@ export default function About() {
             ))
           ) : (
             <div className='h-[60vh] w-full flex items-center justify-center'>
-              <Loader />
+              {jobs ? <Loader /> : <p className='text-[#475467] font-medium text-left text-[14px] font-inter'>No Data</p>}
             </div>
           )}
         </div>
