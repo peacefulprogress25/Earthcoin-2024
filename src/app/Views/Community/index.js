@@ -19,26 +19,22 @@ export default function Community() {
     //   btntext: "PFP Form",
     // },
     {
-      title: "1. Participate in our community",
+      title: "1. Google form & KYC verification",
       description:
-        "Engage in our community by joining our Telegram group, supporting us on Twitter, and following our social media channels.",
+        "Fill the Google Form and complete KYC process by furnishing basic information including name, ID, and a live photo to ensure compliance and authenticity.",
+        btntext: "Get KYC verified",
+        btntext1: "Google Form",
     },
     {
-      title: "2. Get your bespoke PFP",
+      title: "2. Onboarding call",
       description:
-        "Obtain your personalized Solarpunk profile picture by completing our form, expressing your vibe and views on the solarpunk movement.",
+        "Participate in an onboarding call with an existing Solarpunk DAO member to gain clear understanding of Node responsibilities and $EARTH mechanics.",
       btntext: "Book a slot",
     },
     {
-      title: "3. Get your bespoke PFP",
+      title: "3. Mint Soul Bound Token (SBT)",
       description:
-        "Obtain your personalized Solarpunk profile picture by completing our form, expressing your vibe and views on the solarpunk movement.",
-      btntext: "Get KYC verified",
-    },
-    {
-      title: "4. Get your bespoke PFP",
-      description:
-        "Obtain your personalized Solarpunk profile picture by completing our form, expressing your vibe and views on the solarpunk movement.",
+        "After completing the aforementioned steps, your wallet will be whitelisted for minting a Soul Bound Token, officially designating you as a Node.",
       btntext: "Go to DAPP",
     },
   ];
@@ -88,31 +84,7 @@ export default function Community() {
           className="w-full h-[18rem]  mt-4 object-cover"
         />
         <div className="sm:px-[8%] px-4 mt-10 mb-16 flex flex-col gap-16 w-full items-start">
-          <p className="text-[#475467] text-left mt-6 font-normal  text-[16px] font-inter">
-            Even if we are to believe the righteous intentions of all nation
-            states, climate change will never be their to priority because they
-            are boundary bound plus lack of incentives for long term action.
-            <br />
-            <br />
-            We believe that the biggest impediment towards scaling climate
-            action globally is capital. $Earth leverages the best of 
-            <span className="text-[#EC8000] font-semibold">
-              crypto economics to incentivize blockchain to mobilize
-            </span>
-             capital globally in a capital efficient manner.
-            <br />
-            <br />
-            ur priority with $Earth is to ensure that viable projects building
-            the Solarpunk Infra stack do not face any capital constraints. To
-            this effect we intend to be 
-            <span className="text-[#EC8000] font-semibold">
-              perpetual holding partners
-            </span>
-             in these projects to the maximum extent possible, structuring deals
-            in a way that we always earn pro rata of the projects earnings and <span className="text-[#EC8000] font-semibold">
-              are equal partners in wins and loses.
-            </span>
-          </p>
+         
           <Stepper
             sx={{
               "& .MuiStepConnector-line": {
@@ -207,27 +179,24 @@ export default function Community() {
                   <p className="text-[#475467] px-10  text-left mt-2 font-normal  text-[16px] font-inter">
                     {community?.description}
                   </p>
-                  {community?.btntext ? (
-                    <div className="px-10">
+                  {community?.btntext1 ? (
+                    <div className="flex">
+                      <div className="px-10">
                     <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
                       {community?.btntext}
                     </button>
                     </div>
+                    <div>
+                    <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
+                      {community?.btntext1}
+                    </button>
+                    </div>
+                    </div>
                   ) : (
-                    <div className="flex mt-6 px-10  gap-1 sm:gap-3">
-                      {socialIcons.map((icons, index) => (
-                        <button
-                          className="cursor-pointer w-10 h-10"
-                          key={index}
-                        >
-                          <ImageView
-                            alt="icon"
-                            src={icons.icon}
-                            width={35}
-                            height={35}
-                          />
-                        </button>
-                      ))}
+                    <div className="px-10">
+                    <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
+                      {community?.btntext}
+                    </button>
                     </div>
                   )}
                 </StepContent>

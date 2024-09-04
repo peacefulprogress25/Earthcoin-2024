@@ -132,6 +132,13 @@ export default {
     external: true,
     link: "",
   },
+  network_community_googleForm: {
+    title: "Google Form",
+    position: "Stepper",
+    page: "/community",
+    external: true,
+    link: "",
+  },
   network_community_dapp: {
     title: "Go to DAPP",
     position: "Stepper",

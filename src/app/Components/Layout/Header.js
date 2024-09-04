@@ -3,13 +3,15 @@ import Link from "next/link";
 import ImageView from "../ImageView";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import UniswapEarth from "../BuyUniswap";
 
 const logo = "/assets/images/logo.png";
 
 export default function Header() {
   const [showaboutMenu, setShowaboutMenu] = useState(false);
   const [showresourceMenu, setShowresourceMenu] = useState(false);
-  const [showNodes, setShowNodes] = useState(false)
+  const [showNodes, setShowNodes] = useState(false);
+  const [showUniswap, setShowUniswap] = useState(false)
   const aboutMenu = [
     {
       title: "Thesis",
@@ -217,9 +219,18 @@ export default function Header() {
         <div className="flex justify-end gap-2">
         <Link
             href="/"
-            className="w-[80px] ml-auto text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
+            className="w-[80px] relative ml-auto text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
+            onMouseEnter={() => setShowUniswap(true)}
+            onMouseLeave={() => setShowUniswap(false)}
           >
             BUY
+            {showUniswap && 
+            <div className="absolute w-[22rem] h-[20rem] flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[2.5rem] rounded-lg bg-white">
+               <UniswapEarth setShowUniswap={setShowUniswap} />
+               
+            </div>
+           
+             }
           </Link>
           <Link
             href="/dapp"
