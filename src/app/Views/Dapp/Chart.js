@@ -78,7 +78,10 @@ const Chart = ({ setScreen, screen, callBack }) => {
         .attr(
           "transform",
           `translate(${width / 2 + margin.left},${height / 2 + margin.top})`
-        );
+        )
+        .on("mouseover", (data, d) => {
+          console.log("hello", d);
+        });
     }
 
     // const donutData = [

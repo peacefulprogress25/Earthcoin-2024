@@ -172,10 +172,16 @@ export default function Dapp() {
     return Number(value).toFixed(2);
   };
   const formatAddress = (address) => {
-    const formattedAddress =
-      address.substring(0, 5) + "...." + address.substring(address.length - 5);
+    try {
+      const formattedAddress =
+        address?.substring(0, 5) +
+        "...." +
+        address?.substring(address.length - 5);
 
-    return formattedAddress;
+      return formattedAddress;
+    } catch (error) {
+      return "";
+    }
   };
 
   const svgRef = useRef(null);
