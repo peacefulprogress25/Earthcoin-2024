@@ -43,9 +43,11 @@
     color: #EC8000 !important;
   }
   .swiper-button-prev{
+    margin-top: -5rem !important;
     color: #EC8000 !important;
   }
   .swiper-button-next{
+    margin-top: -5rem !important;
     color: #EC8000 !important;
   }
   
