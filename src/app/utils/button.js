@@ -10,23 +10,17 @@ export default {
     title: "Learn more",
     position: "Nodes",
     page: "/",
-    external: true,
-    link: "",
+    external: false,
+    link: "/network",
   },
   home_earthNode_becomeNode: {
     title: "Become a NODE",
     position: "Nodes",
     page: "/",
-    external: true,
-    link: "",
+    external: false,
+    link: "/earthnode",
   },
-  home_partners: {
-    title: "View Partners",
-    position: "Partners",
-    page: "/",
-    external: true,
-    link: "",
-  },
+
   home_footer_banner: {
     title: "$Earth GPT",
     position: "AI Banner",
@@ -52,13 +46,13 @@ export default {
     external: true,
     link: "https://discord.gg/67sjSmjd4m",
   },
-  social_home_mask: {
+  social_home_lens: {
     position: "Join Us",
     page: "/",
     external: true,
     link: "",
   },
-  social_home_cloud: {
+  social_home_farcaster: {
     position: "Join Us",
     page: "/",
     external: true,
@@ -97,13 +91,13 @@ export default {
     external: true,
     link: "https://app.uniswap.org/swap?inputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063&outputCurrency=0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
   },
-  footer_banner: {
-    title: "Learn More",
-    position: "Banner",
-    page: "/",
-    external: false,
-    link: "",
-  },
+  // footer_banner: {
+  //   title: "Learn More",
+  //   position: "Banner",
+  //   page: "/",
+  //   external: false,
+  //   link: "",
+  // },
   faq_footer_banner: {
     title: "Earth GPT",
     position: "AI Banner",
@@ -123,7 +117,7 @@ export default {
     position: "Stepper",
     page: "/earthnode",
     external: true,
-    link: "https://forms.gle/zx6Si4FTMKNUpBzH6",
+    link: "https://calendly.com/earthcoin",
   },
   network_earthnode_verified: {
     title: "Get KYC verified",
@@ -137,7 +131,7 @@ export default {
     position: "Stepper",
     page: "/earthnode",
     external: true,
-    link: "",
+    link: "https://forms.gle/zx6Si4FTMKNUpBzH6",
   },
   network_earthnode_dapp: {
     title: "Go to DAPP",
@@ -147,10 +141,10 @@ export default {
     link: "",
   },
   media_get_started: {
-    title: "Get started",
+    title: "Get $Earth",
     position: "Startups",
     page: "/media",
-    external: true,
-    link: "",
+    external: false,
+    link: "/dapp",
   },
 };
