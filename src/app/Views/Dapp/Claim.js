@@ -27,10 +27,10 @@ function Claim({ setScreen }) {
   });
 
   const isWhitelisted = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
         setLoading((obj) => ({ ...obj, whitelist: true }));
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         let contract = new ethers.Contract(claimAddress, ClaimJson.abi, signer);
         let result = await contract.isWhitelisted(account);
@@ -50,8 +50,8 @@ function Claim({ setScreen }) {
   }, []);
 
   const claimFn = async () => {
-    if (typeof window.ethereum !== undefined) {
-      const providers = new ethers.providers.Web3Provider(window.ethereum);
+    if (typeof window?.ethereum !== undefined) {
+      const providers = new ethers.providers.Web3Provider(window?.ethereum);
       const signer = providers.getSigner();
       const contract = new ethers.Contract(claimAddress, ClaimJson.abi, signer);
       setLoading((obj) => ({ ...obj, claim: true }));

@@ -151,11 +151,11 @@ export default function Sbt() {
       });
       return;
     }
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       setLoading((loading) => ({ ...loading, mintLoading: true }));
 
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const tt = await signer.getAddress();
         let contract = new ethers.Contract(
@@ -178,7 +178,7 @@ export default function Sbt() {
     }
   };
   const whitelistAddress = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
         setLoading((loading) => ({ ...loading, whitelistLoading: true }));
         const signer = await getProviderOrSigner(true);
@@ -240,9 +240,9 @@ export default function Sbt() {
   }
 
   const isMinted = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const tt = await signer.getAddress();
         let contract = new ethers.Contract(
@@ -262,9 +262,9 @@ export default function Sbt() {
   };
 
   const isWhitelisted = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const tt = await signer.getAddress();
         let contract = new ethers.Contract(

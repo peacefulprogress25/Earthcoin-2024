@@ -80,9 +80,9 @@ function UnstakeFunction({ stake, setStake }) {
   const [accFactor, setAccFactor] = useState(0);
 
   const getAccFactor = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const contract = new ethers.Contract(
           earthstakingAddress,
@@ -143,7 +143,7 @@ function UnstakeFunction({ stake, setStake }) {
       return;
     }
 
-    if (typeof window.ethereum !== "undefined") {
+    if (typeof window?.ethereum !== "undefined") {
       const Amount = ethers.utils.parseUnits(amount, "ether");
       const AllowanceAmount = allowanceAmount * Math.pow(10, 18);
       console.log({ AllowanceAmount, allowanceAmount });
@@ -155,7 +155,7 @@ function UnstakeFunction({ stake, setStake }) {
         return;
       }
       setLoading((obj) => ({ ...obj, increaseAllowance: true }));
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const provider = new ethers.providers.Web3Provider(window?.ethereum);
       const signer = provider.getSigner();
       const fruitContract = new ethers.Contract(
         fruitAddress,
@@ -312,9 +312,9 @@ function StakeFunction({ stake, setStake }) {
   });
 
   const getAccFactor = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const contract = new ethers.Contract(
           earthstakingAddress,
@@ -364,7 +364,7 @@ function StakeFunction({ stake, setStake }) {
       return;
     }
 
-    if (typeof window.ethereum !== "undefined") {
+    if (typeof window?.ethereum !== "undefined") {
       const Amount = ethers.utils.parseUnits(amount, "ether");
       const EarthBalance = earthBalance * Math.pow(10, 18);
 
@@ -374,7 +374,7 @@ function StakeFunction({ stake, setStake }) {
       }
       setLoading((obj) => ({ ...obj, increaseAllowance: true }));
 
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const provider = new ethers.providers.Web3Provider(window?.ethereum);
       const signer = provider.getSigner();
       const earthStakingContract = new ethers.Contract(
         earthstakingAddress,

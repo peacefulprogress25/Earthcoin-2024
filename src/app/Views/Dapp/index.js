@@ -98,8 +98,8 @@ export default function Dapp() {
   const [currentNetwork, setcurrentNetwork] = useState("");
 
   const networkChanged = async (chainId) => {
-    if (typeof window.ethereum !== undefined) {
-      let provider = new ethers.providers.Web3Provider(window.ethereum);
+    if (typeof window?.ethereum !== undefined) {
+      let provider = new ethers.providers.Web3Provider(window?.ethereum);
       provider = await provider.getNetwork();
       provider.name = provider.name === "unknown" ? "localhost" : provider.name;
       setcurrentNetwork(provider.name);
@@ -111,10 +111,10 @@ export default function Dapp() {
   };
 
   useEffect(() => {
-    window.ethereum.on("chainChanged", networkChanged);
+    window?.ethereum.on("chainChanged", networkChanged);
 
     // return () => {
-    //   window.ethereum.removeListener("chainChanged", networkChanged);
+    //   window?.ethereum.removeListener("chainChanged", networkChanged);
     // };
   }, []);
 
@@ -127,16 +127,16 @@ export default function Dapp() {
   };
 
   useEffect(() => {
-    window.ethereum?.on("accountsChanged", handleAccountChange);
+    window?.ethereum?.on("accountsChanged", handleAccountChange);
     return () => {
-      window.ethereum?.removeListener("accountsChanged", handleAccountChange);
+      window?.ethereum?.removeListener("accountsChanged", handleAccountChange);
     };
   }, []);
 
   const isMinted = async (account) => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         let contract = new ethers.Contract(
           soulboundAddress,

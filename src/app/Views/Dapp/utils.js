@@ -13,8 +13,8 @@ export const NotifyUser = (obj) => {
 };
 
 const checkNetwork = async () => {
-  if (typeof window.ethereum !== "undefined") {
-    let provider = new ethers.providers.Web3Provider(window.ethereum);
+  if (typeof window?.ethereum !== "undefined") {
+    let provider = new ethers.providers.Web3Provider(window?.ethereum);
     provider = await provider.getNetwork();
     console.log(provider.chainId);
     if (provider.chainId !== parseInt(envObj.chainId)) {
@@ -36,8 +36,8 @@ export const connectWallet = async ({ wallet, setShowMenu, message }) => {
         return;
       }
 
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const accounts = await window.ethereum.request({
+      const provider = new ethers.providers.Web3Provider(window?.ethereum);
+      const accounts = await window?.ethereum.request({
         method: "eth_requestAccounts",
       });
 

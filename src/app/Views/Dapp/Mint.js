@@ -33,9 +33,9 @@ export default function Mint({ treasuryFunction, totalEarth }) {
   const [minted, setMinted] = useState(false);
 
   const isMinted = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const tt = await signer.getAddress();
         let contract = new ethers.Contract(
@@ -57,7 +57,7 @@ export default function Mint({ treasuryFunction, totalEarth }) {
       return;
     }
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(window?.ethereum);
     const signer = provider.getSigner();
     const Amount = ethers.utils.parseUnits(input, "ether");
 
@@ -96,10 +96,10 @@ export default function Mint({ treasuryFunction, totalEarth }) {
   };
 
   const mint = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       setLoading((obj) => ({ ...obj, mint: true }));
 
-      const providers = new ethers.providers.Web3Provider(window.ethereum);
+      const providers = new ethers.providers.Web3Provider(window?.ethereum);
       const signer = providers.getSigner();
       const price = ethers.utils.parseUnits(input, "ether");
       const contract = new ethers.Contract(presaleAddress, Presale.abi, signer);
@@ -148,8 +148,8 @@ export default function Mint({ treasuryFunction, totalEarth }) {
   };
 
   const getBalance = async () => {
-    if (typeof window.ethereum !== undefined) {
-      const providers = new ethers.providers.Web3Provider(window.ethereum);
+    if (typeof window?.ethereum !== undefined) {
+      const providers = new ethers.providers.Web3Provider(window?.ethereum);
       const signer = providers.getSigner();
       const contract = new ethers.Contract(
         stableCoinAddress,

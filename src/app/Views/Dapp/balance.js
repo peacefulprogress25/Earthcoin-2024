@@ -32,8 +32,8 @@ export const earthAmount = async () => {
     return;
   }
 
-  if (typeof window.ethereum !== undefined) {
-    let provider = new ethers.providers.Web3Provider(window.ethereum);
+  if (typeof window?.ethereum !== undefined) {
+    let provider = new ethers.providers.Web3Provider(window?.ethereum);
     let signer = provider.getSigner();
     const contract = new ethers.Contract(
       eartherc20Address,
@@ -59,8 +59,8 @@ export const allowance = async () => {
     return;
   }
 
-  if (typeof window.ethereum !== undefined) {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+  if (typeof window?.ethereum !== undefined) {
+    const provider = new ethers.providers.Web3Provider(window?.ethereum);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(fruitAddress, FruitJSON.abi, signer);
 
@@ -83,8 +83,8 @@ export const getBalance = async () => {
     return;
   }
 
-  if (typeof window.ethereum !== undefined) {
-    const providers = new ethers.providers.Web3Provider(window.ethereum);
+  if (typeof window?.ethereum !== undefined) {
+    const providers = new ethers.providers.Web3Provider(window?.ethereum);
     const signer = providers.getSigner();
     const contract = new ethers.Contract(
       stableCoinAddress,
@@ -107,8 +107,8 @@ export const getBalance = async () => {
 };
 
 export const totalEarth = async () => {
-  if (typeof window.ethereum !== undefined) {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+  if (typeof window?.ethereum !== undefined) {
+    const provider = new ethers.providers.Web3Provider(window?.ethereum);
     const signer = provider.getSigner();
     const treasuryContract = new ethers.Contract(
       EarthTreasuryAddress,
