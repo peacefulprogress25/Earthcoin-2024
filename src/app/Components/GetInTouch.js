@@ -1,4 +1,6 @@
 import ImageView from "./ImageView";
+import buttonConfig from "../utils/button";
+import { Link } from "@mui/material";
 
 const group = "/assets/images/Avatar_group.svg";
 export default function GetInTouch() {
@@ -18,9 +20,16 @@ export default function GetInTouch() {
         Can’t find the answer you’re looking for? Please drop a message to our
         team.
       </p>
-      <button className="w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm">
+      <Link
+          className="w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm"
+          href={buttonConfig?.faq_footer_banner?.link || ""}
+          target={buttonConfig?.faq_footer_banner?.external ? "_blank" : "_self"}
+        >
+          {buttonConfig?.faq_footer_banner?.title}
+        </Link>
+      {/* <button className="w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm">
         Get in touch
-      </button>
+      </button> */}
     </div>
   );
 }

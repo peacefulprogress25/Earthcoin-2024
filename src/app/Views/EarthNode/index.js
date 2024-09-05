@@ -7,6 +7,8 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import buttonConfig from "../../utils/button";
+import Link from "next/link";
 
 const community = "/assets/images/community.png";
 const nature = "/assets/images/nature.png";
@@ -22,20 +24,30 @@ export default function EarthNode() {
       title: "1. Google form & KYC verification",
       description:
         "Fill the Google Form and complete KYC process by furnishing basic information including name, ID, and a live photo to ensure compliance and authenticity.",
-        btntext: "Get KYC verified",
-        btntext1: "Google Form",
+      btntext: buttonConfig.network_earthnode_verified.title,
+      buttonLink: buttonConfig.network_earthnode_verified.link,
+      external: buttonConfig.network_earthnode_verified.external,
+      btntext1: buttonConfig.network_earthnode_googleForm.title,
+      buttonLink1: buttonConfig.network_earthnode_googleForm.link,
+      external1: buttonConfig.network_earthnode_googleForm.external,
     },
     {
       title: "2. Onboarding call",
       description:
         "Participate in an onboarding call with an existing Solarpunk DAO member to gain clear understanding of Node responsibilities and $EARTH mechanics.",
-      btntext: "Book a slot",
+      btntext: buttonConfig.network_earthnode_bookslot.title,
+      buttonLink: buttonConfig.network_earthnode_bookslot.link,
+      external: buttonConfig.network_earthnode_bookslot.external,
+
     },
     {
       title: "3. Mint Soul Bound Token (SBT)",
       description:
         "After completing the aforementioned steps, your wallet will be whitelisted for minting a Soul Bound Token, officially designating you as a Node.",
-      btntext: "Go to DAPP",
+      btntext: buttonConfig.network_earthnode_dapp.title,
+      buttonLink: buttonConfig.network_earthnode_dapp.link,
+      external: buttonConfig.network_earthnode_dapp.external,
+
     },
   ];
   const socialIcons = [
@@ -69,7 +81,7 @@ export default function EarthNode() {
             Network
           </p>
           <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
-          Become an $EARTH NODE
+            Become an $EARTH NODE
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
             From purging petro dollars to forming partnerships to policy making,
@@ -84,7 +96,7 @@ export default function EarthNode() {
           className="w-full h-[18rem]  mt-4 object-cover"
         />
         <div className="sm:px-[8%] px-4 mt-10 mb-16 flex flex-col gap-16 w-full items-start">
-         
+
           <Stepper
             sx={{
               "& .MuiStepConnector-line": {
@@ -182,21 +194,45 @@ export default function EarthNode() {
                   {community?.btntext1 ? (
                     <div className="flex">
                       <div className="px-10">
-                    <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
-                      {community?.btntext}
-                    </button>
-                    </div>
-                    <div>
-                    <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
-                      {community?.btntext1}
-                    </button>
-                    </div>
+                        <Link
+                          key={index}
+                          className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
+                          href={community?.buttonLink || ""}
+                          target={community?.external ? "_blank" : "_self"}
+                        >
+                          {community?.btntext}
+                        </Link>
+                        {/* <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
+                          {community?.btntext}
+                        </button> */}
+                      </div>
+                      <div>
+                        <Link
+                          key={index}
+                          className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
+                          href={community?.buttonLink1 || ""}
+                          target={community?.external1 ? "_blank" : "_self"}
+                        >
+                          {community?.btntext1}
+                        </Link>
+                        {/* <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
+                          {community?.btntext1}
+                        </button> */}
+                      </div>
                     </div>
                   ) : (
                     <div className="px-10">
-                    <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
-                      {community?.btntext}
-                    </button>
+                      <Link
+                        key={index}
+                        className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
+                        href={community?.buttonLink || ""}
+                        target={community?.external ? "_blank" : "_self"}
+                      >
+                        {community?.btntext}
+                      </Link>
+                      {/* <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
+                        {community?.btntext}
+                      </button> */}
                     </div>
                   )}
                 </StepContent>

@@ -7,6 +7,7 @@ import nexaflowApi from "../../services/nexaflow";
 import Link from "next/link";
 import { Loader } from "../../Components/Loader";
 import { useEffect, useState } from "react";
+import buttonConfig from "../../utils/button";
 
 export default function Media() {
   const [media, setMedia] = useState([]);
@@ -157,9 +158,16 @@ export default function Media() {
           <p className="text-[#475467] font-inter mt-2 text-center font-normal text-[16px]">
             Join over 4,000+ startups already growing with Untitled.
           </p>
-          <button className="w-[100px] mt-6  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
+          <Link
+          className="w-[100px] mt-6  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
+          href={buttonConfig?.media_get_started?.link || ""}
+          target={buttonConfig?.media_get_started?.external ? "_blank" : "_self"}
+        >
+          {buttonConfig?.media_get_started?.title}
+        </Link>
+          {/* <button className="w-[100px] mt-6  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
             Get started
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

@@ -1,4 +1,6 @@
 import ImageView from "./ImageView";
+import buttonConfig from "../utils/button";
+import Link from "next/link";
 
 const faq = "/assets/images/faq.png";
 
@@ -21,9 +23,16 @@ export default function Gpt() {
             Can’t find the answer you’re looking for? Ask our AI assistant.
           </p>
         </div>
-        <button className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm">
+        <Link
+         className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm"
+          href={buttonConfig?.projects_footer_banner?.link || ""}
+          target={buttonConfig?.projects_footer_banner?.external ? "_blank" : "_self"}
+        >
+          {buttonConfig?.projects_footer_banner?.title}
+        </Link>
+        {/* <button className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm">
           Earth GPT
-        </button>
+        </button> */}
       </div>
     </div>
   );
