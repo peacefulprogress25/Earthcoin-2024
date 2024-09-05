@@ -1,10 +1,18 @@
-
+"use client";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useState } from "react";
+import { FaCopy } from "react-icons/fa";
 const tokenIcon = "/assets/icons/token-Icon.png";
 const featuredNetwork = "/assets/icons/Featured-network.png";
 const creditCard = "/assets/icons/credit-card.png";
 import Link from "next/link";
 import buttonConfig from "../utils/button";
 export default function UniswapEarth({ setShowUniswap }) {
+    const [copied, setCopied] = useState(false);
+
+    const onCopy = () => {
+        setCopied(true);
+    };
     return (
         <div>
             <img className="w-12 h-12" src={creditCard} alt="earthcoin" />
@@ -21,7 +29,13 @@ export default function UniswapEarth({ setShowUniswap }) {
                 <img className="w-8 h-8" src={tokenIcon} alt="earthcoin" />
                 <div className="flex flex-col">
                     <p className="text-[#344054] font-inter font-medium text-[10px]">Token Contract</p>
+                    
+                    <div style={{ cursor: "pointer" }} className="flex flex-col items-center line-clamp-3 w-[10rem]">
                     <p className="text-[#475467] font-inter font-normal text-[10px]">0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6</p>
+                    <CopyToClipboard onCopy={onCopy} text="0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6">
+                        <FaCopy style={copied ? { color: "#EC8000 " } : ""} />
+                    </CopyToClipboard>
+                </div>
                 </div>
             </div>
             <div className="flex gap-2 mt-5 w-full">

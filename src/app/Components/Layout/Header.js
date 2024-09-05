@@ -4,14 +4,22 @@ import ImageView from "../ImageView";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import UniswapEarth from "../BuyUniswap";
+import AccountDapp from "../Dappaccount";
+import { usePathname } from "next/navigation";
+
 
 const logo = "/assets/images/logo.png";
+const avatar = "/assets/icons/dapp-Avatar.png";
+const downIcon = "/assets/icons/down-Icon.png";
 
 export default function Header() {
+  const pathname = usePathname();
+  console.log(pathname)
   const [showaboutMenu, setShowaboutMenu] = useState(false);
   const [showresourceMenu, setShowresourceMenu] = useState(false);
   const [showNodes, setShowNodes] = useState(false);
-  const [showUniswap, setShowUniswap] = useState(false)
+  const [showUniswap, setShowUniswap] = useState(false);
+  const [accountDapp, SetAccountDapp] = useState(false);
   const aboutMenu = [
     {
       title: "Thesis",
@@ -55,7 +63,7 @@ export default function Header() {
   const resourceMenu = [
     {
       title: "What is $EARTH?",
-      subtitle: "Digital currency fueling climate solutions.",
+      subtitle: "Digital currency funding regeneration",
       icon: "/assets/icons/earth.svg",
       link: "/resources",
     },
@@ -73,7 +81,7 @@ export default function Header() {
     },
     {
       title: "Tokenomics",
-      subtitle: "Mint and Trade ",
+      subtitle: "Token logic driving $EARTH",
       icon: "/assets/icons/cross.svg",
       link: "/tokenomics",
     },
@@ -215,8 +223,36 @@ export default function Header() {
           <Link href="/dashboard">Dashboard</Link>
         </div>
         </div>
-      
+        {pathname === "/dapp" ? 
         <div className="flex justify-end gap-2">
+        
+        
+        <Link
+            href="/"
+           
+            onMouseEnter={() => SetAccountDapp(true)}
+            onMouseLeave={() => SetAccountDapp(false)}
+          >
+            <div  className=" relative ml-auto text-white font-inter flex h-10 w-[18rem] items-center justify-end rounded-lg bg-[#FFEDD2] px-[2px] text-sm">
+               <p className="font-inter font-semibold text-[14px] text-[#000000] mr-[12rem]">10.28 $DAI</p>
+               <div className=" absolute w-[11rem] rounded-lg bg-[#EC8000] h-9 flex justify-between px-3 items-center ">
+                  <img className="w-5 h-5" src={avatar} alt="earthcoin" />
+                  <p className="font-inter font-semibold text-[14px] text-white">0x2c75...8874</p>
+                  <img className="w-4 h-4" src={downIcon} alt="earthcoin" />
+               </div>
+            </div>
+            {accountDapp && 
+            <div className="absolute w-[22rem] h-[28rem] flex flex-col border border-[#EAECF0]  shadow-lg gap-8 top-[3.5rem] rounded-lg bg-white">
+               <AccountDapp />
+               
+            </div>
+          
+           
+             }
+          </Link> 
+          </div>
+          :
+      <div className="flex justify-end gap-2">
         <Link
             href="/"
             className="w-[80px] relative ml-auto text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
@@ -225,7 +261,7 @@ export default function Header() {
           >
             BUY
             {showUniswap && 
-            <div className="absolute w-[22rem] h-[20rem] flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[2.5rem] rounded-lg bg-white">
+            <div className="absolute w-[22rem] h-[22rem] flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6 top-[2.5rem] rounded-lg bg-white">
                <UniswapEarth setShowUniswap={setShowUniswap} />
                
             </div>
@@ -238,7 +274,13 @@ export default function Header() {
           >
             DAPP
           </Link>
-        </div>
+          
+      </div>
+      
+          }
+       
+       
+        
       </div>
     </nav>
   );

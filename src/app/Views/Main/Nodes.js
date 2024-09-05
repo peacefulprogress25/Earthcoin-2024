@@ -10,6 +10,7 @@ function Nodes() {
     "Mint $Earth",
     "Vote on projects to fund",
     "Vote on monetary, fiscal policy",
+    "Propose partnerships"
   ];
 
   return (

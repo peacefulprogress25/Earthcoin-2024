@@ -14,11 +14,12 @@ import Nodes from "./Nodes";
 import Features from "./Features";
 import Projects from "./Projects";
 import buttonConfig from "../../utils/button";
+import TradeDapp from "../../Components/Trade";
 
 const earth = "/assets/video/EarthVideo.mp4";
 const earthHome = "/assets/images/earth-home.png";
 const earthNode = "/assets/images/earthnode-home.png";
-const groot = "/assets/images/groot1.png";
+const groot = "/assets/images/faq.png";
 const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
 const asset = "/assets/images/Climatesolutions.png";
@@ -288,7 +289,7 @@ export default function Main() {
           <p className="leading-none">
             Digital currency funding{" "}
             <br />
-            climate solutions.
+            regeneration
           </p>
 
           <button className='  text-white mt-5 xl:mt-10 font-inter font-semibold px-4 py-2 rounded-md bg-[#101323] border-[1px] border-[#EC8000] text-[16px]'>
@@ -326,7 +327,7 @@ export default function Main() {
 
         <div>
         <p className="leading-10 text-[#000000] text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
-      One transaction to get Rewarded for 
+      Just ONE transaction to get Rewarded for 
             <br />
            <span className="text-[#EC8000]"> Climate Action</span>
           </p>
@@ -525,14 +526,14 @@ export default function Main() {
             </div>
           )}
         </div>
-        <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
+        {/* <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
         <Link
               href={buttonConfig?.home_partners?.link || ""}
               target={buttonConfig?.home_partners?.external ? "_blank" : "_self"}
             >
               {buttonConfig?.home_partners?.title}
             </Link>
-        </button>
+        </button> */}
       </div>
       <div className=' relative max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] '>
         <ImageView
