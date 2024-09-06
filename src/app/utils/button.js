@@ -147,18 +147,4 @@ export default {
     external: false,
     link: "/dapp",
   },
-  dapp_node: {
-    title: "GOOGLE FORM",
-    position: "Center Chart",
-    page: "/dapp",
-    external: false,
-    link: "",
-  },
-  dapp_trade: {
-    title: "TRADE",
-    position: "Center Chart",
-    page: "/dapp",
-    external: false,
-    link: "",
-  },
 };

@@ -61,3 +61,7 @@ export const connectWallet = async ({ wallet, setShowMenu, message }) => {
     console.error(error);
   }
 };
+
+
+export const formatWalletAddress = (address) =>
+  address?.substring(0, 5) + "...." + address?.substring(address.length - 5);

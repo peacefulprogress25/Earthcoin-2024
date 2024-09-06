@@ -19,9 +19,45 @@ const Chart = ({ setScreen, screen, callBack }) => {
       value: 270,
       color: wallet ? "#c1272d" : "#045047",
     },
-    { name: "SBT", value: 170, color: "#adb745" },
+    { name: "NODE", value: 170, color: "#adb745" },
   ];
   const [donutData, setDonutData] = useState(init);
+
+
+  const tooltipData = {
+    mint: {
+      title: "Mint",
+      description: "The mint function purges $DAI to bring new $EARTH into existence."
+    },
+    stake: {
+      title: "Stake",
+      description: "The mint function purges $DAI to bring new $EARTH into existence."
+    },
+    node: {
+      title: "NODE",
+      description: "The mint function purges $DAI to bring new $EARTH into existence."
+    },
+    trade: {
+      title: "Trade",
+      description: "The mint function purges $DAI to bring new $EARTH into existence."
+    },
+    claim: {
+      title: "Claim",
+      description: "The mint function purges $DAI to bring new $EARTH into existence."
+    },
+    connectwallet: {
+      title: "Connect / Disconnect Wallet",
+      description: "Use this button to connect your wallet to our DAPP. Make sure you have connected the correct wallet before conducting transactions."
+    },
+    disconnectwallet: {
+      title: "Connect / Disconnect Wallet",
+      description: "Use this button to connect your wallet to our DAPP. Make sure you have connected the correct wallet before conducting transactions."
+    }
+
+  }
+
+
+
 
   useEffect(() => {
     setDonutData((data) => {
@@ -32,7 +68,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
       };
       return data;
     });
-  }, []);
+  }, [wallet]);
 
   useEffect(() => {
     if (screen === "CONNECT WALLET" || screen === "DISCONNECT WALLET") {
@@ -42,7 +78,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
         setDonutData((prevData) =>
           prevData.map((d) =>
             d.name === "CONNECT WALLET"
-              ? { ...d, name: "DISCONNECT WALLET", color: "#045047" }
+              ? { ...d, name: "DISCONNECT WALLET", color: "#c1272d" }
               : d
           )
         );
@@ -57,6 +93,18 @@ const Chart = ({ setScreen, screen, callBack }) => {
   }, [screen]);
 
   console.log(donutData);
+
+  const tooltip = d3.select("body")
+    .append("div")
+    .attr("id", "tooltip")
+    .style("position", "absolute")
+    .style("visibility", "hidden")
+    .style("background-color", "white")
+    .style("padding", "10px")
+    .style("border-radius", "5px")
+    .style("pointer-events", "none")
+    .style("box-shadow", "0px 4px 6px - 2px #10182808")
+    .style("width", "22rem")
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
@@ -79,9 +127,9 @@ const Chart = ({ setScreen, screen, callBack }) => {
           "transform",
           `translate(${width / 2 + margin.left},${height / 2 + margin.top})`
         )
-        .on("mouseover", (data, d) => {
-          console.log("hello", d);
-        });
+      // .on("mouseover", (data, d) => {
+      //   console.log("hello", d);
+      // });
     }
 
     // const donutData = [
@@ -183,13 +231,73 @@ const Chart = ({ setScreen, screen, callBack }) => {
           .attr("id", "donutArc" + i)
           .attr("d", newArc)
           .style("fill", "none");
-      });
+      })
+
 
     svg
       .selectAll(".donutText")
       .data(donutData)
       .enter()
       .append("text")
+      .on("mousemove", function (event, d) {
+
+        const name = d.name?.split(' ').join('')
+        const data = tooltipData[name?.toLowerCase()]
+        console.log(d);
+        // Show the tooltip and update its content
+        tooltip
+          .style("visibility", "visible")
+          .html(`<div>
+            <p class="font-inter text-[#344054] text-md font-bold">${data?.title}</p>
+            <p class="font-inter text-[#344054]  text-sm font-light">${data?.description}</p>
+          
+          </div>`);
+      })
+      .on("mouseover", function (event, d) {
+        let x, y;
+        switch (d.name) {
+          case "TRADE":
+            x = 60;
+            y = 45;
+            break;
+          case "CLAIM":
+            x = 50;
+            y = 20;
+            break;
+          case "CONNECT WALLET":
+          case "DISCONNECT WALLET":
+            x = -150;
+            y = -33;
+            break;
+          case "STAKE":
+            x = -150;
+            y = 110;
+
+            break
+          case "MINT":
+            x = -400;
+            y = 60;
+            break
+          case "NODE":
+            x = -400;
+            y = 10;
+            break
+          default:
+            break;
+        }
+
+        // Update tooltip position
+        tooltip
+          .style("top", `${event.pageY - y}px`)
+          .style("left", `${event.pageX + x}px`)
+          .style("z-index", "100")
+        // .html(`<strong>${d.name}</strong><br>Value: ${d.value}`);
+
+      })
+      .on("mouseout", function () {
+        // Hide the tooltip
+        tooltip.style("visibility", "hidden");
+      })
       .attr("class", "donutText")
       // .attr("dy", 28)
       .attr("dy", function (d, i) {
@@ -211,6 +319,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
 
         // Update the screen with the clicked slice's name
         setScreen(d.name);
+        tooltip.style("visibility", "hidden")
         console.log(d.name);
       })
       .append("textPath")
@@ -221,7 +330,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
       })
       .text(function (d) {
         return d.name;
-      });
+      })
   }, [setScreen, donutData, disconnect]);
 
   return !disconnect ? (

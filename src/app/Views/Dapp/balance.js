@@ -125,7 +125,7 @@ export const totalEarth = async () => {
       const ratio =
         info.earth.toString() !== "0"
           ? parseFloat(info.stablec.toString() / Math.pow(10, 18)) /
-            parseFloat(info.earth.toString() / Math.pow(10, 18))
+          parseFloat(info.earth.toString() / Math.pow(10, 18))
           : 0;
 
       const mintMultiple = await presaleContract.mintMultiple();
@@ -157,9 +157,18 @@ export const fetchDexPrice = async () => {
     const response = await fetch(dexscreener);
     const result = await response.json();
 
-    dispatch(earthBalanceFn({ dex: result?.pair?.priceUsd }));
+    dispatch(earthBalanceFn({ dex: result?.pair?.priceUsd ? result?.pair?.priceUsd : 0 }));
   } catch (error) {
     console.error("Error fetching data:", error);
   } finally {
   }
 };
+
+
+
+export const fetchBalance = () => {
+  earthAmount()
+  allowance()
+  getBalance()
+  totalEarth()
+}

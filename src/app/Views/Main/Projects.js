@@ -56,6 +56,7 @@ function Projects() {
   };
   return (
     <>
+      <p className="text-[#1F2636] font-syne text-center font-medium mb-10 text-3xl w-3/4">$EARTH treasury is dedicated to yield bearing RWAs directly addressing the climate crisis</p>
       <div className="flex justify-between w-full ">
         <ProjectDetails obj={project?.[activeIndex]} />
 
