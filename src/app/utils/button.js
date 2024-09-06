@@ -81,7 +81,7 @@ export default {
     title: "Go to DAPP",
     position: "Nodes",
     page: "/earth",
-    external: true,
+    external: false,
     link: "/dapp",
   },
   earth_uniswap_becomeNode: {
@@ -91,13 +91,13 @@ export default {
     external: true,
     link: "https://app.uniswap.org/swap?inputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063&outputCurrency=0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
   },
-  // footer_banner: {
-  //   title: "Learn More",
-  //   position: "Banner",
-  //   page: "/",
-  //   external: false,
-  //   link: "",
-  // },
+  footer_banner: {
+    title: "Learn More",
+    position: "Banner",
+    page: "/",
+    external: false,
+    link: "",
+  },
   faq_footer_banner: {
     title: "Earth GPT",
     position: "AI Banner",
@@ -123,7 +123,7 @@ export default {
     title: "Get KYC verified",
     position: "Stepper",
     page: "/earthnode",
-    external: true,
+    external: false,
     link: "",
   },
   network_earthnode_googleForm: {
@@ -137,7 +137,7 @@ export default {
     title: "Go to DAPP",
     position: "Stepper",
     page: "/earthnode",
-    external: true,
+    external: false,
     link: "",
   },
   media_get_started: {
@@ -151,28 +151,14 @@ export default {
     title: "GOOGLE FORM",
     position: "Center Chart",
     page: "/dapp",
-    external: true,
+    external: false,
     link: "",
   },
   dapp_trade: {
     title: "TRADE",
     position: "Center Chart",
     page: "/dapp",
-    external: true,
-    link: "",
-  },
-  dapp_node: {
-    title: "GOOGLE FORM",
-    position: "Center Chart",
-    page: "/dapp",
-    external: true,
-    link: "",
-  },
-  dapp_trade: {
-    title: "TRADE",
-    position: "Center Chart",
-    page: "/dapp",
-    external: true,
+    external: false,
     link: "",
   },
 };

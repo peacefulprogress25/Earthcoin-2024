@@ -1,5 +1,6 @@
 import ImageView from "../ImageView";
 import Link from "next/link";
+import buttonConfig from "../../utils/button";
 
 const logo = "/assets/images/logo.png";
 
@@ -79,7 +80,7 @@ export default function Footer() {
           link: "/earth",
         },
         {
-          option: "$EARTH Nodes",
+          option: "$EARTH NODES",
           link: "/network",
         },
         {
@@ -119,21 +120,33 @@ export default function Footer() {
   const socialIcons = [
     {
       icon: "/assets/icons/telegram-grey.svg",
+      buttonLink: buttonConfig.social_home_telegram.link,
+      external: buttonConfig.social_home_telegram.external,
     },
     {
       icon: "/assets/icons/twitter.svg",
+      buttonLink: buttonConfig.social_home_twitter.link,
+      external: buttonConfig.social_home_twitter.external,
     },
     {
       icon: "/assets/icons/linkedin.svg",
+      buttonLink: buttonConfig.social_home_linkedin.link,
+      external: buttonConfig.social_home_linkedin.external,
     },
     {
       icon: "/assets/icons/instagram-grey.svg",
+      buttonLink: buttonConfig.social_home_instagram.link,
+      external: buttonConfig.social_home_instagram.external,
     },
     {
       icon: "/assets/icons/discord-grey.svg",
+      buttonLink: buttonConfig.social_home_discord.link,
+      external: buttonConfig.social_home_discord.external,
     },
     {
       icon: "/assets/icons/cloud-grey.svg",
+      buttonLink: buttonConfig.social_home_lens.link,
+      external: buttonConfig.social_home_lens.external,
     },
   ];
   return (
@@ -200,15 +213,30 @@ export default function Footer() {
           </p>
           <div className='flex items-center gap-4'>
             {socialIcons.map((icons, index) => (
-              <button className='cursor-pointer' key={index}>
-                <ImageView
+               <Link
+               className='cursor-pointer'
+               key={index}
+               href={icons?.buttonLink}
+               target={icons?.external ? "_blank" : "_self"}
+             >
+               <ImageView
                   alt={icons.icon}
                   src={icons.icon}
                   width={20}
                   height={20}
                   className='object-contain'
                 />
-              </button>
+             </Link>
+              
+              // <button className='cursor-pointer' key={index}>
+              //   <ImageView
+              //     alt={icons.icon}
+              //     src={icons.icon}
+              //     width={20}
+              //     height={20}
+              //     className='object-contain'
+              //   />
+              // </button>
             ))}
           </div>
         </div>
