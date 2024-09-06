@@ -81,32 +81,32 @@ export default function About() {
 
     if (!getEmailData) {
       setLoading(false);
-      showMessage({ value: "Error Occurred", type: "error" });
+      showMessage({ value: "Email failed to submit", type: "error" });
       return;
     }
 
     const emailArray = getEmailData.slice(1).map((innerArray) => innerArray[0]);
 
     if (emailArray.includes(formData.email)) {
-      showMessage({ value: "Email already added", type: "error" });
+      showMessage({ value: "Subscription already active", type: "error" });
 
       setLoading(false);
       return;
     }
     const response = await nexaflowApi.postGoogleSheetData({
-      googleSheetId: nexaflowPageObj.subscribeButtonSheet1,
-      data: [formData.email],
+      googleSheetId: nexaflowPageObj.googleSheetId,
+      data: [[formData.email]],
     });
 
     if (!response) {
-      showMessage({ value: "Error Occurred", type: "error" });
+      showMessage({ value: "Email failed to submit", type: "error" });
 
       setLoading(false);
 
       return;
     }
     showMessage({
-      value: "Done! you will get early access soon.",
+      value: "Email submitted successfully",
       type: "success",
     });
 
