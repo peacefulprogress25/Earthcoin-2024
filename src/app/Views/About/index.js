@@ -214,11 +214,10 @@ export default function About() {
             <p
               key={index}
               onClick={() => setSelectedCategory(option?.section)}
-              className={`font-inter text-[14px] sm:text-[14px] px-1 sm:px-4 font-semibold text-[#475467] ${
-                selectedCategory === option.section
+              className={`font-inter text-[14px] sm:text-[14px] px-1 sm:px-4 font-semibold text-[#475467] ${selectedCategory === option.section
                   ? " bg-[#FFFCF8] px-4 py-2 rounded-md text-[#EC8000]"
                   : ""
-              }`}
+                }`}
             >
               {option.section}
             </p>
@@ -282,11 +281,18 @@ export default function About() {
                 </div>
               </div>
             ))
-          ) : (
+          ) : filteredPosts && filteredPosts.length ? (
             <div className='h-[60vh] w-full flex items-center justify-center'>
-              {jobs ? <Loader /> : <p className='text-[#475467] font-medium text-left text-[14px] font-inter'>No Data</p>}
+              <Loader />
             </div>
-          )}
+
+          ) :
+            (
+              <div className='h-[60vh] w-full flex items-center justify-center'>
+                <p className='text-[#475467] font-medium text-left text-[14px] font-inter'>No Data</p>
+              </div>
+
+            )}
         </div>
       </div>
       <div className='w-full flex flex-col mt-20 items-center justify-center py-20 px-4 bg-[#F9FAFB]'>
@@ -321,7 +327,7 @@ export default function About() {
             <p className='text-[12px] mt-3 sm:mt-1 text-left font-normal text-[#475467] font-inter'>
               We care about your data in our{" "}
               <span className='underline decoration-[#475467]'>
-                privacy policy
+                <a href="/privacy-policy">privacy policy</a>
               </span>
             </p>
           </div>
@@ -367,7 +373,7 @@ export function PeopleCard({ people }) {
       </p>
       <div className='flex gap-4 mt-3'>
         {socialIcons.map((icons, index) => (
-          <Link href={icons?.link} key={index}>
+          <Link href={icons?.link} target="_blank" key={index}>
             <ImageView
               src={icons?.icon}
               width={400}

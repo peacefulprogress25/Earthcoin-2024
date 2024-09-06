@@ -86,7 +86,7 @@ export default function Header() {
       link: "/tokenomics",
     },
     // {
-    //   title: "$EARTH nodes",
+    //   title: "$EARTH NODES",
     //   subtitle: "",
     //   icon: "/assets/icons/node.svg",
     //   link: "/node",

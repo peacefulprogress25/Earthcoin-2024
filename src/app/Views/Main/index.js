@@ -133,10 +133,10 @@ export default function Main() {
       link: "/earth",
     },
     {
-      title: "Become an $EARTH Node.",
+      title: "Become an $EARTH NODE.",
       description: "Learn about how to become a node",
       img: "/assets/images/Card4.png",
-      link: "/community",
+      link: "/earthnode",
     },
   ];
   const features = [
