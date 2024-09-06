@@ -72,7 +72,7 @@ function Features() {
   ];
 
   return (
-    <div className='h-[80vh] my-3 w-full'>
+    <div className='h-[94vh] my-3 w-full'>
       <Swiper
         modules={[Keyboard, Navigation, Autoplay, EffectFade]}
         className='w-full mySwiper'
@@ -82,7 +82,7 @@ function Features() {
         spaceBetween={100}
         loop={true}
         autoplay={{
-          delay: 4000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         keyboard={{
@@ -91,12 +91,12 @@ function Features() {
       >
         {data.map((obj, i) => {
           return (
-            <SwiperSlide key={i}>
+            <SwiperSlide >
               <div className='flex flex-col  mx-auto w-full py-10 gap-4 items-center justify-center border-[#EAECF0] border-[1px] rounded-md'>
                 <Image
-                  width={250}
-                  height={250}
-                  className={i === 3 ? "w-full" : "w-1/4"}
+                  width={600}
+                  height={600}
+                  className={`w-full h-96 object-contain ${+i === 0 || +i === 3 ? "mt-3" : ""}`}
                   src={obj.img}
                   alt={obj.title}
                 />
