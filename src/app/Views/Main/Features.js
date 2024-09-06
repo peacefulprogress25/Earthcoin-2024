@@ -91,7 +91,7 @@ function Features() {
       >
         {data.map((obj, i) => {
           return (
-            <SwiperSlide >
+            <SwiperSlide key={i}>
               <div className='flex flex-col  mx-auto w-full py-10 gap-4 items-center justify-center border-[#EAECF0] border-[1px] rounded-md'>
                 <Image
                   width={600}
