@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import nexaflowApi from "../../services/nexaflow";
 import { nexaflowPageObj } from "../../utils/constants";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import { EffectCoverflow, Keyboard, Navigation, Pagination } from "swiper/modules";
 import ImageView from "../../Components/ImageView";
 
 // Import Swiper styles
@@ -11,10 +11,12 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 // import "./project.css";
 import { useRouter } from "next/navigation";
+import ProjectDetails from "./ProjectDetails";
 // import "./features.css";
 
 function Projects() {
   const [project, setProject] = useState();
+
   const router = useRouter();
   useEffect(() => {
     const getPageByID = async () => {
@@ -45,51 +47,59 @@ function Projects() {
   // Handle slide change and reset to start if at the end
   const handleSlideChange = (swiper) => {
     const totalSlides = swiper.slides.length;
-    if (swiper.activeIndex === totalSlides - 1) {
-      swiper.slideTo(0, 1500);
-      // Reset to the first slide
-      // Transition duration is set to 0 for immediate reset
-    }
+    // if (swiper.activeIndex === totalSlides - 1) {
+    //   swiper.slideTo(0, 1500);
+    //   // Reset to the first slide
+    //   // Transition duration is set to 0 for immediate reset
+    // }
     setActiveIndex(swiper.activeIndex);
   };
   return (
-    // <div>
-    <Swiper
-      effect={"coverflow"}
-      grabCursor={true}
-      // className=''
-      releaseOnEdges={true}
-      centeredSlides={true}
-      // onReachEnd={(swiper) => swiper.slideTo(0, 1500)}
-      slidesPerView={"auto"}
-      onSlideChange={handleSlideChange}
-      coverflowEffect={{
-        rotate: 0,
-        stretch: 400,
-        depth: 200,
-        modifier: 1,
-        // slideShadows: true,
-      }}
-      // pagination={true}
-      modules={[EffectCoverflow, Pagination]}
-      className='!mr-0 mySwiper-project !w-[70%] mb-10'
-    >
-      {project && project.length
-        ? [...project].map((data, index) => {
-            return (
-              <SwiperSlide
-                key={index}
-                style={{
-                  opacity: index < activeIndex ? 0 : 1,
-                  transition:
-                    index < activeIndex ? "opacity 0.1s ease-in-out" : "",
-                }}
-              >
-                <div
-                  className='rounded-lg border-4 bg-white h-fit overflow-hidden cursor-pointer   flex flex-col border-[#101828]'
-                  onClick={() => router.push(`/projects/${data.projectId}`)}
+    <>
+      <div className="flex justify-between w-full ">
+        <ProjectDetails obj={project?.[activeIndex]} />
+
+
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          // className=''
+          releaseOnEdges={true}
+          centeredSlides={true}
+          // onReachEnd={(swiper) => swiper.slideTo(0, 1500)}
+          slidesPerView={"auto"}
+          onSlideChange={handleSlideChange}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 400,
+            depth: 200,
+            modifier: 1,
+            // slideShadows: true,
+          }}
+          keyboard={{
+            enabled: true,
+          }}
+          // pagination={true}
+          modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
+          className='!mr-0 mySwiper-project !w-[90%] mb-10'
+        >
+          {project && project.length
+            ? [...project].map((data, index) => {
+              return (
+                <SwiperSlide
+                  key={index}
+                  style={{
+                    opacity: index < activeIndex ? 0 : 1,
+                    transition:
+                      index < activeIndex ? "opacity 0.1s ease-in-out" : "",
+                  }}
                 >
-                  <div className='flex flex-col items-center justify-center px-3 sm:px-6'>
+                  <div
+                    className='flex flex-col overflow-hidden cursor-pointer h-fit '
+                    onClick={() => router.push(`/projects/${data.projectId}`)}
+                  >
+                    <ImageView src={data?.coverPic} alt={data?.projectName} className='w-full h-[28rem] ' width={600} height={600} />
+                    {/* <div className='flex flex-col items-center justify-center px-3 sm:px-6'>
                     <div className='flex items-center justify-center w-full gap-2 pt-3 sm:pt-6'>
                       <ImageView
                         src={data.icon}
@@ -136,14 +146,21 @@ function Projects() {
                         Internal rate of return
                       </p>
                     </div>
+                  </div> */}
                   </div>
-                </div>
-              </SwiperSlide>
-            );
-          })
-        : null}
-    </Swiper>
-    // </div>
+                </SwiperSlide>
+              );
+            })
+            : null}
+        </Swiper>
+
+      </div>
+      <button
+        onClick={() => router.push("/projects")}
+        className=" relative mx-auto cursor-pointer z-50 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
+
+      >Browse All Projects</button>
+    </>
   );
 }
 

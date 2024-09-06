@@ -9,7 +9,8 @@ import { useState, useEffect } from "react";
 import { Loader } from "../../Components/Loader";
 import Link from "next/link";
 import Video from "../../Components/Video";
-import Treasury from "../../Components/EarthTreasury";
+import ProjectDetails from "./ProjectDetails";
+
 import Nodes from "./Nodes";
 import Features from "./Features";
 import Projects from "./Projects";
@@ -364,7 +365,7 @@ export default function Main() {
         </p>
         <Features />
 
-        {/* <Projects /> */}
+        <Projects />
         {/* <div className='flex flex-col gap-8 mt-3'>
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
