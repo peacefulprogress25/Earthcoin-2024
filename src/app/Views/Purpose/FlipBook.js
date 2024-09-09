@@ -16,7 +16,7 @@ const Page = React.forwardRef((props, ref) => {
     </div>
   );
 });
-
+Page.displayName = 'Page';
 function FlipBook() {
   return (
     <HTMLFlipBook
