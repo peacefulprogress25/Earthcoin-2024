@@ -92,7 +92,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
     }
   }, [screen]);
 
-  console.log(donutData);
+
 
   const tooltip = d3.select("body")
     .append("div")
@@ -243,7 +243,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
 
         const name = d.name?.split(' ').join('')
         const data = tooltipData[name?.toLowerCase()]
-        console.log(d);
+
         // Show the tooltip and update its content
         tooltip
           .style("visibility", "visible")
@@ -320,7 +320,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
         // Update the screen with the clicked slice's name
         setScreen(d.name);
         tooltip.style("visibility", "hidden")
-        console.log(d.name);
+
       })
       .append("textPath")
       .attr("startOffset", "50%")
