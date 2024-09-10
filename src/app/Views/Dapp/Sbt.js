@@ -401,16 +401,16 @@ export default function Sbt() {
         </button>
 
         {!pageStatus.verified &&
-        (!pageStatus.verifyStatus ||
-          pageStatus.verifyStatus !== "completed" ||
-          pageStatus.verifyStatus !== "approved") &&
-        signed ? (
+          (!pageStatus.verifyStatus ||
+            pageStatus.verifyStatus !== "completed" ||
+            pageStatus.verifyStatus !== "approved") &&
+          signed ? (
           <Verifier
             address={walletAddressRef}
             setLoading={setLoading}
             input={input}
             handlePersonaCompletion={handlePersonaCompletion}
-            // setShowBalance={setShowBalance}
+          // setShowBalance={setShowBalance}
           />
         ) : null}
       </div>
@@ -440,6 +440,7 @@ const Verifier = ({
               setLoading((loading) => ({ ...loading, signLoading: false }));
             }}
             templateId={templateId}
+            environmentId='env_oHeLwXnBxzNS7qsLHeEtkBqv'
             referenceId={address.current}
             fields={{
               nameFirst: input?.firstName,

@@ -318,7 +318,7 @@ export default function Dapp() {
                 ) : null}
 
                 {screen === "NODE" && account ? (
-                  <Node />
+                  <Sbt />
                 ) : screen === "TRADE" && account ? (
                   <Trade />
                 ) : screen === "STAKE" && account ? (

@@ -3,6 +3,7 @@ import { disconnectWalletFn, profileState } from "../redux/profileSlice";
 import Link from "next/link";
 import { useEffect } from "react";
 import { fetchBalance } from "../Views/Dapp/balance";
+import { formatWalletAddress } from "../Views/Dapp/utils";
 
 const avatar = "/assets/icons/dapp-Avatar.png";
 const copyIcon = "/assets/icons/copy-Icon.png";
@@ -29,14 +30,12 @@ export default function AccountDapp() {
     return (
         <div>
             <div className='bg-[#3C42420F] px-6 py-4'>
-                <div className='flex flex-col items-center mt-3'>
+                <div className='flex flex-col items-center mt-3 mb-6'>
                     <img className='w-16 h-16' src={avatar} />
                     <p className='font-inter font-semibold text-[18px] text-[#25292E]'>
-                        0xhab.eth
+                        {formatWalletAddress(wallet)}
                     </p>
-                    <p className='text-[#3C424299] font-inter font-semibold text-[12px]'>
-                        SOLARPUNKMAXI
-                    </p>
+
                 </div>
 
                 <div className='flex w-full gap-2 mt-3'>
@@ -59,7 +58,7 @@ export default function AccountDapp() {
                 <div className='flex w-full gap-2 mt-2'>
                     <div className='flex flex-col items-center px-4 py-2 w-[50%] drop-shadow rounded-lg bg-white'>
                         <p className='font-inter font-semibold text-[18px] text-[#25292E]'>
-                            {balanceObj?.earth}
+                            {balanceObj?.earth?.toFixed(2)}
                         </p>
                         <p className='font-inter font-semibold text-[12px] text-[#101828]'>
                             $EARTH Balance
@@ -67,7 +66,7 @@ export default function AccountDapp() {
                     </div>
                     <div className='flex flex-col items-center px-4 py-2 w-[50%]  drop-shadow rounded-lg bg-white'>
                         <p className='font-inter font-semibold text-[18px] text-[#25292E]'>
-                            {balanceObj?.dai}
+                            {balanceObj?.dai?.toFixed(2)}
                         </p>
                         <p className='font-inter font-semibold text-[12px] text-[#101828]'>
                             $DAI Balance
@@ -86,7 +85,7 @@ export default function AccountDapp() {
             <div className='flex w-full gap-2 px-6 py-4'>
                 <div className='flex flex-col items-center px-4 py-2 w-[50%] border-[1px] border-[#EAECF0] drop-shadow rounded-lg'>
                     <p className='font-inter font-semibold text-[18px] text-[#25292E]'>
-                        $ {earthBalance?.earth}
+                        $ {earthBalance?.earth?.toFixed(2)}
                     </p>
                     <p className='font-inter font-semibold text-[12px] text-[#101828]'>
                         $EARTH Price
@@ -94,7 +93,7 @@ export default function AccountDapp() {
                 </div>
                 <div className='flex flex-col items-center px-4 py-2 w-[50%] border-[1px] border-[#EAECF0] drop-shadow rounded-lg '>
                     <p className='font-inter font-semibold text-[18px] text-[#25292E]'>
-                        $ {earthBalance?.treasury}
+                        $ {earthBalance?.treasury?.toFixed(2)}
                     </p>
                     <p className='font-inter font-semibold text-[12px] text-[#101828]'>
                         Treasury Size

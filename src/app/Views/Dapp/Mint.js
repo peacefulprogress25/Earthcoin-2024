@@ -18,19 +18,18 @@ export default function Mint({ treasuryFunction, totalEarth }) {
   const [showTransactionPopup, setShowTransactionPopup] = useState(false);
   const { showMessage } = useNotification();
   const { earth } = useSelector(profileState)?.earthBalance;
-  const [loading, setLoading] = useState({
+  const initState = {
     increaseAllowance: false,
     mint: false,
-  });
-  const [progress, setProgress] = useState({
-    increaseAllowance: false,
-    mint: false,
-  });
+  }
+  const [loading, setLoading] = useState(initState);
+  const [progress, setProgress] = useState(initState);
   const [input, setInput] = useState("");
   const account = useSelector(profileState).wallet;
   const [balance, setBalance] = useState(0);
   const [result, setResult] = useState("");
   const [minted, setMinted] = useState(false);
+  const [transaction, setTransaction] = useState(false)
 
   const isMinted = async () => {
     if (typeof window?.ethereum !== undefined) {
@@ -70,7 +69,7 @@ export default function Mint({ treasuryFunction, totalEarth }) {
       });
       return;
     }
-
+    setTransaction(true)
     setLoading((obj) => ({ ...obj, increaseAllowance: true }));
 
     const contract = new ethers.Contract(
@@ -115,13 +114,15 @@ export default function Mint({ treasuryFunction, totalEarth }) {
         totalEarth();
         treasuryFunction();
         showMessage({ type: "success", value: "Transaction Success" });
+        setLoading((obj) => ({ ...obj, mint: false }));
         setProgress((obj) => ({ ...obj, mint: true }));
+        setTransaction(false)
 
         setMinted(true);
       } catch (error) {
         console.log(error);
         console.log(error.transactionHash);
-        setLoading(false);
+        setLoading((obj) => ({ ...obj, mint: false }));
         setMinted(false);
         showMessage({ type: "error", value: error.reason });
       }
@@ -189,6 +190,15 @@ export default function Mint({ treasuryFunction, totalEarth }) {
   //   };
   // }, []);
 
+
+  const resetState = () => {
+    setProgress(initState)
+    setLoading(initState)
+    setTransaction(false)
+    setShowTransactionPopup(false);
+
+  }
+
   const twitterContent = `I just purged my petro $$$ for $Earth to build net zero infrastructure and seed the #solarpunk paradigm`;
 
   return (
@@ -245,8 +255,11 @@ export default function Mint({ treasuryFunction, totalEarth }) {
       {showTransactionPopup && (
         <TransactionPopup
           handleSubmit={handleSubmit}
-          handleCancel={() => setShowTransactionPopup(false)}
+          handleCancel={resetState}
           setShowTransactionPopup={setShowTransactionPopup}
+          loading={loading}
+          progress={progress}
+          transaction={transaction}
         >
           <Progress
             progress={progress}

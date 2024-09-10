@@ -49,6 +49,7 @@ export const connectWallet = async ({ wallet, setShowMenu, message }) => {
           type: "success",
           message: message ? message : "Wallet Connected",
         });
+        return true
       } else {
         NotifyUser({ type: "error", message: "No Wallet Found" });
       }

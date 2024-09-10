@@ -266,9 +266,8 @@ export default function Header() {
               <button
                 onClick={() => setAccountDapp(true)}
               >
-                <div className=" relative ml-auto text-white font-inter flex h-10 w-[18rem] items-center justify-end rounded-lg bg-[#FFEDD2] px-[2px] text-sm">
-                  <p className="font-inter font-semibold text-[14px] text-[#000000] mr-[12rem]">10.28 $DAI</p>
-                  <div className=" absolute w-[11rem] rounded-lg bg-[#EC8000] h-9 flex justify-between px-3 items-center ">
+                <div className=" relative ml-auto text-white font-inter flex h-10  items-center justify-end rounded-lg px-[2px] text-sm">
+                  <div className="w-[11rem] rounded-lg bg-[#EC8000] h-9 flex justify-between px-3 items-center ">
                     <img className="w-5 h-5" src={avatar} alt="earthcoin" />
                     <p className="font-inter font-semibold text-[14px] text-white">{formatWalletAddress(profile?.wallet)}</p>
                     <img className="w-4 h-4" src={downIcon} alt="earthcoin" />

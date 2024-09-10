@@ -10,13 +10,12 @@ function Progress({ data, progress, loading, failed }) {
       {data.map((obj) => {
         const underProgress = loading[obj?.title];
         const pending = !progress[obj?.title] && !loading[obj?.title];
-        const completed = !loading[obj?.title] && progress[obj?.title];
+        const completed = progress[obj?.title];
 
         return (
           <li
-            className={`flex items-center gap-2 text-[${
-              completed ? "#12B76A" : "#475467"
-            }] font-inter  `}
+            className={`flex items-center gap-2 text-[${completed ? "#12B76A" : "#475467"
+              }] font-inter  `}
             key={obj.title}
           >
             {obj?.text}{" "}
@@ -25,7 +24,7 @@ function Progress({ data, progress, loading, failed }) {
             ) : pending ? (
               "(pending)"
             ) : (
-              "(Complete)"
+              "(Completed)"
             )}
           </li>
         );
