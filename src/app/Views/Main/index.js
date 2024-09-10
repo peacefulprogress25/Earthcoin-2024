@@ -31,6 +31,7 @@ const highlight = "/assets/images/highlightText.png";
 const graph = "/assets/icons/graph.svg";
 const climateEnvironmentCrisis = "/assets/images/climate-environment.png";
 const mainBottomSection = "/assets/images/main-bottom-section.png";
+const mainBottomSection1 = "/assets/images/main-bottom-section1.png";
 
 export default function Main() {
   const router = useRouter();
@@ -271,7 +272,7 @@ export default function Main() {
   return (
     <div className='mt-20'>
       {" "}
-      <div className='relative h-[100vh] 2xl:h-[95vh] '>
+      <div className='relative '>
         <ImageView
           src={earthHome}
           alt='earthcoin'
@@ -286,7 +287,7 @@ export default function Main() {
         /> */}
 
 
-        <div className='absolute md:top-[15rem] lg:top-[15rem] xl:top-[12rem]  text-[#000000] text-xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne w-full text-center font-medium'>
+        <div className='absolute md:top-[7rem] lg:top-[10rem] xl:top-[12rem]  text-[#000000] text-xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne w-full text-center font-medium'>
           <p className="leading-none">
             Digital currency funding{" "}
             <br />
@@ -461,14 +462,14 @@ export default function Main() {
       <div className=' relative mb-16 -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] '>
         <ImageView
           alt='social'
-          src={mainBottomSection}
+          src={mainBottomSection1}
           width={1440}
           height={430}
           className='w-full rounded-lg h-[24rem] object-cover mt-20'
         />
-        <div className='absolute top-[20rem] md:left-[8rem] lg:left-[14rem] xl:left-[22rem]  text-[#FFFFFF] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold'>
+        <div className='absolute top-[20rem] md:left-[6rem] lg:left-[12rem] xl:left-[20rem]  text-[#FFFFFF] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold'>
           <p>
-            Crypto economics to value nature
+          Using crypto economics to value NATURE
           </p>
         </div>
       </div>
