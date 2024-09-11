@@ -96,7 +96,7 @@ export default function Mint({ treasuryFunction, totalEarth }) {
 
   const mint = async () => {
     if (typeof window?.ethereum !== undefined) {
-      setLoading((obj) => ({ ...obj, mint: true }));
+      setLoading((obj) => ({ increaseAllowance: false, mint: true }));
 
       const providers = new ethers.providers.Web3Provider(window?.ethereum);
       const signer = providers.getSigner();
@@ -178,17 +178,17 @@ export default function Mint({ treasuryFunction, totalEarth }) {
     }
   }, [earth, input]);
 
-  // useEffect(() => {
-  //   getBalance();
+  useEffect(() => {
+    getBalance();
 
-  //   const intervalId = setInterval(() => {
-  //     getBalance();
-  //   }, 5000);
+    const intervalId = setInterval(() => {
+      getBalance();
+    }, 5000);
 
-  //   return () => {
-  //     clearInterval(intervalId);
-  //   };
-  // }, []);
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
 
   const resetState = () => {

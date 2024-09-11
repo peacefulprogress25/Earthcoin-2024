@@ -149,7 +149,7 @@ export default function Dapp() {
         let minted = await contract.tokenMintedAddress(account);
 
         if (minted) {
-          setScreen((items) => items.filter((heading) => heading !== "SBT"));
+          setScreen((items) => items && Array.isArray(items) && items.filter((heading) => heading !== "SBT"));
         } else {
           setScreen(label);
         }
