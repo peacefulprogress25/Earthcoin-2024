@@ -131,7 +131,7 @@ export default function Media() {
         <p className="text-[#101828] mt-8 font-syne text-center font-semibold text-[22px]">
           All Posts
         </p>
-        <div className="w-full  cursor-pointer gap-4 sm:gap-12 border-y border-[#F2F4F7] flex px-2 items-center justify-center h-16">
+        <div className="w-full cursor-pointer gap-4 sm:gap-12 border-y border-[#F2F4F7] flex px-2 items-center justify-center h-16">
           {category.map((option, index) => (
             <p
               key={index}
