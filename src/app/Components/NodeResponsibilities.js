@@ -39,7 +39,7 @@ export default function ResponsibilitiesOfNode() {
   return (
     <div className=' px-4 sm:px-[6%]'>
       {title === "Responsibilities Of Node" && (
-        <div className='flex md:flex-col xl:flex-row justify-between w-full shadow-lg'>
+        <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between w-full shadow-lg'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -86,7 +86,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Purge" && (
-        <div className='flex md:flex-col xl:flex-row justify-between w-full shadow-lg'>
+        <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between w-full shadow-lg'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -159,7 +159,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Partnerships" && (
-        <div className='flex md:flex-col xl:flex-row justify-between w-full shadow-lg'>
+        <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between w-full shadow-lg'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -217,7 +217,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Projects" && (
-        <div className='flex md:flex-col xl:flex-row justify-between w-full shadow-lg'>
+        <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between w-full shadow-lg'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -281,7 +281,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Policy" && (
-        <div className='flex md:flex-col xl:flex-row justify-between w-full shadow-lg'>
+        <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between w-full shadow-lg'>
           <div className='relative w-full'>
             <img
               className='object-contain'
