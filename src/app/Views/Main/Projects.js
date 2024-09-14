@@ -84,6 +84,7 @@ function Projects() {
           keyboard={{
             enabled: true,
           }}
+          navigation={true}
           // pagination={true}
           modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
           className='!mr-0 mySwiper-project !w-[90%] mb-10'
