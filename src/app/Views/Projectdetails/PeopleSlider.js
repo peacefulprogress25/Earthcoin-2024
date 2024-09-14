@@ -99,7 +99,7 @@ export default function PeopleSlider({ details }) {
           modules={[Navigation]}
         >
           {details?.teams.map((people, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className="w-full">
               <PeopleCard people={people} />
             </SwiperSlide>
           ))}

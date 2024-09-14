@@ -18,6 +18,7 @@ import TradeDapp from "../../Components/Trade";
 import buttonConfig from "../../utils/button";
 
 const earth = "/assets/video/EarthVideo.mp4";
+const earthnodevdo = "/assets/video/home_earthnode.mp4";
 const earthHome = "/assets/images/earth-home.png";
 const earthNode = "/assets/images/earthnode-home.png";
 const groot = "/assets/images/faq.png";
@@ -330,18 +331,23 @@ export default function Main() {
         <div>
           <p className="leading-10 text-[#000000] text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
             Just ONE transaction to get Rewarded for
-            
+
             <span className="text-[#EC8000]"> Climate Action</span>
           </p>
         </div>
 
-        <ImageView
-          src={earthNode}
+        <Video
+          src={earthnodevdo}
+          className={`object-cover w-full h-full   block`}
+        />
+
+        {/* <ImageView
+          src={earthNode}œœ
           alt='earthcoin'
           width={500}
           height={500}
           className='object-cover w-full h-full'
-        />
+        /> */}
 
         {/* <div className="flex gap-x-[32px] py-[55px]">
           {keys.map((data) => (
