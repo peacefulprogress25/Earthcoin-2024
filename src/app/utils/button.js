@@ -124,7 +124,7 @@ export default {
     position: "Stepper",
     page: "/earthnode",
     external: false,
-    link: "",
+    link: "/dapp",
   },
   network_earthnode_googleForm: {
     title: "Google Form",
@@ -138,7 +138,7 @@ export default {
     position: "Stepper",
     page: "/earthnode",
     external: false,
-    link: "",
+    link: "/dapp",
   },
   media_get_started: {
     title: "Get $Earth",
@@ -147,4 +147,5 @@ export default {
     external: false,
     link: "/dapp",
   },
+
 };

@@ -275,7 +275,7 @@ export default function Header() {
                 </div>
               </button>
               {accountDapp &&
-                <div ref={dappRef} className="absolute w-[22rem] h-[28rem] flex flex-col border border-[#EAECF0]  shadow-lg gap-8 top-20 rounded-lg bg-white">
+                <div ref={dappRef} className="absolute w-[22rem]  flex flex-col border border-[#EAECF0]  shadow-lg gap-8 top-20 rounded-lg bg-white">
                   <AccountDapp />
 
                 </div>
