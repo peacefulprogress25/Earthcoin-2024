@@ -100,7 +100,7 @@ export default function PeopleSlider({ details }) {
         >
           {details?.teams.map((people, index) => (
             <SwiperSlide key={index} className="w-full">
-              <PeopleCard people={people} />
+              <PeopleCard people={people} className="w-full" />
             </SwiperSlide>
           ))}
         </Swiper>
