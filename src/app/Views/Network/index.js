@@ -30,10 +30,10 @@ export default function Network() {
           alt='earthcoin'
           width={500}
           height={500}
-          className='object-contain w-full h-full'
+          className='object-contain w-full xl:w-[97%] h-full'
         />
 
-        <div className='absolute px-10 sm:px-[10%] flex flex-col justify-center items-center md:top-[6rem] lg:top-[8rem] xl:top-[10rem] w-full'>
+        <div className='absolute px-10 sm:px-[10%] flex flex-col justify-center items-center md:top-[6rem] lg:top-[8rem] xl:top-[19rem] w-full'>
           <p className='font-apercu-pro w-full text-left font-noraml md:text-[18px] lg:text-[22px] xl:text-[30px] text-[#101828]'>
             <span className='text-[#EC8000]'>Gm</span> Degens, Regens, Treegens,
             Beegens, Seagens, Lunarpunks, <br /> Mycopunks, Junglepunks and
