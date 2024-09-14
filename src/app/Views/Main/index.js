@@ -330,7 +330,7 @@ export default function Main() {
         <div>
           <p className="leading-10 text-[#000000] text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
             Just ONE transaction to get Rewarded for
-            <br />
+            
             <span className="text-[#EC8000]"> Climate Action</span>
           </p>
         </div>
@@ -469,7 +469,7 @@ export default function Main() {
         />
         <div className='absolute top-[20rem] md:left-[6rem] lg:left-[12rem] xl:left-[20rem]  text-[#FFFFFF] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold'>
           <p>
-          Using crypto economics to value NATURE
+            Using crypto economics to value NATURE
           </p>
         </div>
       </div>
