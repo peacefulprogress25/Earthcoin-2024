@@ -544,69 +544,75 @@ export default function Thesis() {
               ))}
             </div>
           </div> */}
-        <p className='text-[#101828] font-semibold text-center mt-16 text-[20px] sm:text-[28px] mr-10 font-syne'>
-          Rationale behind sector selection -
-        </p>
+<p className='text-[#101828] font-semibold text-center mt-16 text-[20px] sm:text-[28px] xl:text-[32px] 2xl:text-[36px] mr-10 font-syne'>
+  Rationale behind sector selection -
+</p>
 
-        <div className="relative mt-5">
-              <div className="absolute  md:top-16 md:left-[10rem] lg:top-20 lg:left-[14rem] xl:top-24 xl:left-[18rem] ">
-              <p className='mb-3 text-center sm:text-left font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
-              They <span className='text-white '> directly address</span>{" "} all causes of climate change
-            </p>
-              </div>
-            <ImageView
-              src={thesisbg1}
-              alt="graph"
-              width={600}
-              height={600}
-              className=" w-full object-contain"
-            />
-            </div>
+<div className="relative mt-5">
+  <div className="absolute top-16 left-0 right-0 mx-auto">
+    <p className='mb-3 text-center font-semibold text-[14px] lg:text-[18px] xl:text-[24px] 2xl:text-[28px] font-syne'>
+      They <span className='text-white'> directly address</span> all causes of climate change
+    </p>
+  </div>
+  <ImageView
+    src={thesisbg1}
+    alt="graph"
+    width={600}
+    height={600}
+    className="w-full object-contain"
+  />
+</div>
 
-            <div className="relative mt-5">
-              <div className="absolute md:top-12 md:left-[8rem] lg:top-16 lg:left-[12rem] xl:top-20 xl:left-[16rem] ">
-              <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
-              They cater to humanities <span className='text-white '> core needs</span>{" "} - energy, food, transport, <br /> materials and ecosystems to sustain LIFE
-            </p>
-              </div>
-            <ImageView
-              src={thesisbg2}
-              alt="graph"
-              width={200}
-              height={200}
-              className=" w-full object-contain"
-            />
-            </div>
+<div className="relative mt-5">
+  <div className="absolute top-12 left-0 right-0 mx-auto">
+    <p className='mb-3 text-center font-semibold text-[14px] lg:text-[18px] xl:text-[24px] 2xl:text-[28px] font-syne'>
+      They cater to humanities <span className='text-white'> core needs</span> - energy, food, transport,
+      <br /> materials and ecosystems to sustain LIFE
+    </p>
+  </div>
+  <ImageView
+    src={thesisbg2}
+    alt="graph"
+    width={200}
+    height={200}
+    className="w-full object-contain"
+  />
+</div>
 
-            <div className="relative mt-5">
-              <div className="absolute md:top-10 md:left-[6rem] lg:top-12 lg:left-[9rem] xl:top-16 xl:left-[13rem]  ">
-              <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
-              All these climate solutions generate tremendous amounts of  <span className='text-white '> positive <br /> externalities </span>{" "}- Clean Air, Healthy soil, Increasing Biodiversity, Nutrient rich <br /> food, Clean Water, Energy Independence, reducing pollution etc.
-            </p>
-              </div>
-            <ImageView
-              src={thesisbg3}
-              alt="graph"
-              width={200}
-              height={200}
-              className=" w-full object-contain"
-            />
-            </div>
+<div className="relative mt-5">
+  <div className="absolute top-10 left-0 right-0 mx-auto">
+    <p className='mb-3 text-center font-semibold text-[14px] lg:text-[18px] xl:text-[24px] 2xl:text-[28px] font-syne'>
+      All these climate solutions generate tremendous amounts of <span className='text-white'> positive
+      <br /> externalities</span> - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient-rich
+      <br /> food, Clean Water, Energy Independence, reducing pollution etc.
+    </p>
+  </div>
+  <ImageView
+    src={thesisbg3}
+    alt="graph"
+    width={200}
+    height={200}
+    className="w-full object-contain"
+  />
+</div>
 
-            <div className="relative mt-5">
-              <div className="absolute md:top-10 md:left-[8rem] lg:top-12 lg:left-[11rem] xl:top-16 xl:left-[15rem] ">
-              <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
-              These real world solutions have undisputed long term value which <br /> also provide  <span className='text-white '> monetary yields </span>{" "} uncorrelated to crypto sentiment <br /> which ensures strong floor value for $Earth.
-            </p>
-              </div>
-            <ImageView
-              src={thesisbg4}
-              alt="graph"
-              width={600}
-              height={600}
-              className=" w-full object-contain"
-            />
-            </div>
+<div className="relative mt-5">
+  <div className="absolute top-10 left-0 right-0 mx-auto">
+    <p className='mb-3 text-center font-semibold text-[14px] lg:text-[18px] xl:text-[24px] 2xl:text-[28px] font-syne'>
+      These real world solutions have undisputed long-term value which
+      <br /> also provide <span className='text-white'> monetary yields</span> uncorrelated to crypto sentiment
+      <br /> which ensures strong floor value for $Earth.
+    </p>
+  </div>
+  <ImageView
+    src={thesisbg4}
+    alt="graph"
+    width={600}
+    height={600}
+    className="w-full object-contain"
+  />
+</div>
+
 
 
 
