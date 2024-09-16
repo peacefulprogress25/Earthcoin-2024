@@ -33,7 +33,7 @@ export default function Network() {
           className='object-contain w-full xl:w-[97%] h-full'
         />
 
-        <div className='absolute px-10 sm:px-[10%] flex flex-col justify-center items-center md:top-[6rem] lg:top-[8rem] xl:top-[15rem] w-full'>
+        <div className='absolute px-10 sm:px-[10%] flex flex-col justify-center items-center md:top-[6rem] lg:top-[8rem] xl:top-[14rem] w-full'>
           <p className='font-apercu-pro w-full text-left font-noraml md:text-[18px] lg:text-[22px] xl:text-[30px] text-[#101828]'>
             <span className='text-[#EC8000]'>Gm</span> Degens, Regens, Treegens,
             Beegens, Seagens, Lunarpunks, <br /> Mycopunks, Junglepunks and
