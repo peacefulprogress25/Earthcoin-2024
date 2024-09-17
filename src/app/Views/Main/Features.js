@@ -72,10 +72,10 @@ function Features() {
   ];
 
   return (
-    <div className='h-[94vh] my-3 w-full'>
+    <div className='h-[70vh] my-3 w-full'>
       <Swiper
         modules={[Keyboard, Navigation, Autoplay, EffectFade]}
-        className='w-full mySwiper'
+        className='w-full mySwiper '
         fadeEffect={{ crossFade: true }}
         effect='fade'
         navigation={true}

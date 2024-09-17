@@ -738,7 +738,7 @@ export default function Main() {
             />
             <Link
               href={data.link}
-              className="flex flex-col w-full absolute p-[2rem] pb-[4rem] sm:p-[3rem] top-[0rem]"
+              className="flex flex-col w-full absolute p-[2rem] pb-[4rem] sm:p-[3rem] top-[1rem]"
             >
               <div className="flex items-center justify-between">
                 <p
