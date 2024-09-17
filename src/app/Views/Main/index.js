@@ -569,7 +569,7 @@ export default function Main() {
           </p>
         </div>
       </div>
-      <div className="grid w-full grid-cols-1 px-20 mt-8 sm:grid-cols-2 gap-x-6 gap-y-5">
+      <div className="grid w-full grid-cols-1 px-20 mt-8 xl:grid-cols-2 gap-x-6 gap-y-5">
         {updates && updates?.length
           ? updates.map((card, index) => (
               <div
@@ -587,8 +587,8 @@ export default function Main() {
                   height={200}
                   className={`${
                     index === 0
-                      ? "w-full h-[20rem] object-cover"
-                      : "w-full h-40 sm:w-full object-cover"
+                      ? "w-full h-[20rem] xl:object-cover "
+                      : "w-full xl:h-40 h-[13rem]  xl:object-cover"
                   }`}
                 />
                 <div
