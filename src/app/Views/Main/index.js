@@ -9,16 +9,19 @@ import { useState, useEffect } from "react";
 import { Loader } from "../../Components/Loader";
 import Link from "next/link";
 import Video from "../../Components/Video";
-import Treasury from "../../Components/EarthTreasury";
+import ProjectDetails from "./ProjectDetails";
+
 import Nodes from "./Nodes";
 import Features from "./Features";
 import Projects from "./Projects";
+import TradeDapp from "../../Components/Trade";
 import buttonConfig from "../../utils/button";
 
 const earth = "/assets/video/EarthVideo.mp4";
+const earthnodevdo = "/assets/video/home_earthnode.mp4";
 const earthHome = "/assets/images/earth-home.png";
 const earthNode = "/assets/images/earthnode-home.png";
-const groot = "/assets/images/groot1.png";
+const groot = "/assets/images/faq.png";
 const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
 const asset = "/assets/images/Climatesolutions.png";
@@ -29,6 +32,7 @@ const highlight = "/assets/images/highlightText.png";
 const graph = "/assets/icons/graph.svg";
 const climateEnvironmentCrisis = "/assets/images/climate-environment.png";
 const mainBottomSection = "/assets/images/main-bottom-section.png";
+const mainBottomSection1 = "/assets/images/main-bottom-section1.png";
 
 export default function Main() {
   const router = useRouter();
@@ -131,10 +135,10 @@ export default function Main() {
       link: "/earth",
     },
     {
-      title: "Become an $EARTH Node.",
+      title: "Become an $EARTH NODE.",
       description: "Learn about how to become a node",
       img: "/assets/images/Card4.png",
-      link: "/community",
+      link: "/earthnode",
     },
   ];
   const features = [
@@ -161,13 +165,13 @@ export default function Main() {
     },
     {
       image: "/assets/images/Mask.png",
-      buttonLink: buttonConfig.social_home_mask.link,
-      external: buttonConfig.social_home_mask.external,
+      buttonLink: buttonConfig.social_home_farcaster.link,
+      external: buttonConfig.social_home_farcaster.external,
     },
     {
       image: "/assets/images/cloud.png",
-      buttonLink: buttonConfig.social_home_cloud.link,
-      external: buttonConfig.social_home_cloud.external,
+      buttonLink: buttonConfig.social_home_lens.link,
+      external: buttonConfig.social_home_lens.external,
     },
     {
       image: "/assets/images/instagram.png",
@@ -269,7 +273,7 @@ export default function Main() {
   return (
     <div className='mt-20'>
       {" "}
-      <div className='relative h-[100vh] 2xl:h-[95vh] '>
+      <div className='relative '>
         <ImageView
           src={earthHome}
           alt='earthcoin'
@@ -282,13 +286,13 @@ export default function Main() {
           alt='earthcoin'
           className='object-cover w-full h-full'
         /> */}
-       
 
-        <div className='absolute md:top-[15rem] lg:top-[15rem] xl:top-[12rem]  text-[#000000] text-xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne w-full text-center font-medium'>
+
+        <div className='absolute md:top-[7rem] lg:top-[10rem] xl:top-[12rem]  text-[#000000] text-xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne w-full text-center font-medium'>
           <p className="leading-none">
             Digital currency funding{" "}
             <br />
-            climate solutions.
+            regeneration
           </p>
 
           <button className='  text-white mt-5 xl:mt-10 font-inter font-semibold px-4 py-2 rounded-md bg-[#101323] border-[1px] border-[#EC8000] text-[16px]'>
@@ -309,8 +313,8 @@ export default function Main() {
           {funding.map((impact, index) => (
             <div
               className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${index !== funding.length - 1
-                  ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
-                  : ""
+                ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
+                : ""
                 }`}
               key={index}
             >
@@ -325,20 +329,25 @@ export default function Main() {
         </div>
 
         <div>
-        <p className="leading-10 text-[#000000] text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
-      One transaction to get Rewarded for 
-            <br />
-           <span className="text-[#EC8000]"> Climate Action</span>
+          <p className="leading-10 text-[#000000] text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
+            Just ONE transaction to get Rewarded for
+
+            <span className="text-[#EC8000]"> Climate Action</span>
           </p>
         </div>
 
-        <ImageView
-          src={earthNode}
+        <Video
+          src={earthnodevdo}
+          className={`object-cover w-full h-full   block`}
+        />
+
+        {/* <ImageView
+          src={earthNode}œœ
           alt='earthcoin'
           width={500}
           height={500}
           className='object-cover w-full h-full'
-        />
+        /> */}
 
         {/* <div className="flex gap-x-[32px] py-[55px]">
           {keys.map((data) => (
@@ -359,11 +368,11 @@ export default function Main() {
           ))}
         </div> */}
         <p className="text-[#000000] mt-5 text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
-        What  is $EARTH? 
+          What  is $EARTH?
         </p>
         <Features />
 
-        {/* <Projects /> */}
+        <Projects />
         {/* <div className='flex flex-col gap-8 mt-3'>
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
@@ -459,14 +468,14 @@ export default function Main() {
       <div className=' relative mb-16 -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] '>
         <ImageView
           alt='social'
-          src={mainBottomSection}
+          src={mainBottomSection1}
           width={1440}
           height={430}
           className='w-full rounded-lg h-[24rem] object-cover mt-20'
         />
-        <div className='absolute top-[20rem] md:left-[8rem] lg:left-[14rem] xl:left-[22rem]  text-[#FFFFFF] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold'>
+        <div className='absolute top-[20rem] md:left-[6rem] lg:left-[12rem] xl:left-[20rem]  text-[#FFFFFF] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold'>
           <p>
-          Crypto economics to value nature
+            Using crypto economics to value NATURE
           </p>
         </div>
       </div>
@@ -525,14 +534,14 @@ export default function Main() {
             </div>
           )}
         </div>
-        <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
+        {/* <button className='w-fit  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm'>
         <Link
               href={buttonConfig?.home_partners?.link || ""}
               target={buttonConfig?.home_partners?.external ? "_blank" : "_self"}
             >
               {buttonConfig?.home_partners?.title}
             </Link>
-        </button>
+        </button> */}
       </div>
       <div className=' relative max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] '>
         <ImageView
@@ -568,8 +577,8 @@ export default function Main() {
           ? updates.map((card, index) => (
             <div
               className={`flex cursor-pointer w-full items-start ${index === 0
-                  ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
-                  : "col-span-1 flex-row sm:col-span-1"
+                ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
+                : "col-span-1 flex-row sm:col-span-1"
                 }`}
               key={index}
             >
@@ -579,8 +588,8 @@ export default function Main() {
                 width={200}
                 height={200}
                 className={`${index === 0
-                    ? "w-full h-[20rem] object-cover"
-                    : "w-full h-40 sm:w-full object-cover"
+                  ? "w-full h-[20rem] object-cover"
+                  : "w-full h-40 sm:w-full object-cover"
                   }`}
               />
               <div
@@ -617,12 +626,12 @@ export default function Main() {
                     ? card?.tags.map((tag, i) => (
                       <p
                         className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${tag === "Design"
-                            ? "text-[#EC8000] bg-[#FFFCF8]"
-                            : tag === "Research"
-                              ? "bg-[#EEF4FF] text-[#3538CD]"
-                              : tag === "Presentation"
-                                ? "bg-[#FDF2FA] text-[#C11574]"
-                                : ""
+                          ? "text-[#EC8000] bg-[#FFFCF8]"
+                          : tag === "Research"
+                            ? "bg-[#EEF4FF] text-[#3538CD]"
+                            : tag === "Presentation"
+                              ? "bg-[#FDF2FA] text-[#C11574]"
+                              : ""
                           }`}
                         key={i}
                       >
@@ -747,8 +756,8 @@ export default function Main() {
           {social.map((partner, index) => (
             <Link
               key={index}
-              href={social?.buttonLink || ""}
-              target={social?.external ? "_blank" : "_self"}
+              href={partner?.buttonLink}
+              target={partner?.external ? "_blank" : "_self"}
             >
               <ImageView
                 alt='social'
@@ -803,12 +812,12 @@ export default function Main() {
               our team.
             </p>
             <button className='w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm'>
-            <Link
-              href={buttonConfig?.home_footer_banner?.link || ""}
-              target={buttonConfig?.home_footer_banner?.external ? "_blank" : "_self"}
-            >
-              {buttonConfig?.home_footer_banner?.title}
-            </Link>
+              <Link
+                href={buttonConfig?.home_footer_banner?.link || ""}
+                target={buttonConfig?.home_footer_banner?.external ? "_blank" : "_self"}
+              >
+                {buttonConfig?.home_footer_banner?.title}
+              </Link>
             </button>
           </div>
         </div>

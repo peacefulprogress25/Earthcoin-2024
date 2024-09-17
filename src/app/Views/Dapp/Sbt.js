@@ -9,6 +9,7 @@ import { profileState } from "../../redux/profileSlice";
 import useNotification from "../../Hooks/useNotification";
 import { BtnLoader, Loader } from "../../Components/Loader";
 import { nexaflowPageObj } from "../../utils/constants";
+import NodeDapp from "./Node";
 
 const soulboundAddress = envObj.soulboundAddress;
 const templateId = envObj.personaTemplateId;
@@ -151,11 +152,11 @@ export default function Sbt() {
       });
       return;
     }
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       setLoading((loading) => ({ ...loading, mintLoading: true }));
 
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const tt = await signer.getAddress();
         let contract = new ethers.Contract(
@@ -178,7 +179,7 @@ export default function Sbt() {
     }
   };
   const whitelistAddress = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
         setLoading((loading) => ({ ...loading, whitelistLoading: true }));
         const signer = await getProviderOrSigner(true);
@@ -240,9 +241,9 @@ export default function Sbt() {
   }
 
   const isMinted = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const tt = await signer.getAddress();
         let contract = new ethers.Contract(
@@ -262,9 +263,9 @@ export default function Sbt() {
   };
 
   const isWhitelisted = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const tt = await signer.getAddress();
         let contract = new ethers.Contract(
@@ -299,7 +300,8 @@ export default function Sbt() {
         <p className='message'>Verified and Soulbound Token Minted</p>
       </div>
     );
-  } else if (
+  }
+  else if (
     pageStatus.verifyStatus &&
     pageStatus.verifyStatus === "completed" &&
     !pageStatus.verify &&
@@ -312,23 +314,16 @@ export default function Sbt() {
         <br />
         <img className='error-icon' src={exclamationIcon} alt='error' />
         <p className='sbt-kyc-comp-description'>
-          Once your KYC documents have been approved, your wallet will be
+          Once your verification have been approved, your wallet will be
           whitelisted to mint this SBT
         </p>
       </div>
     );
-  } else if (pageStatus.verify && !pageStatus.whiteListed) {
+  }
+  else if (pageStatus.verify && !pageStatus.whiteListed) {
     return (
-      <div className='flex flex-col items-center justify-center w-full gap-3'>
-        <CgDanger color='#c1272d' size='60' />
-        <p className='text-[22px] text-center font-inter font-medium text-black'>
-          SOUL BOUND TOKEN <br />{" "}
-          <span className='text-[#c94247]'>NOT FOUND</span>
-        </p>
-        <p className='font-normal text-black font-inter text-md'>
-          Your account is not whitelisted
-        </p>
-      </div>
+      <NodeDapp />
+
     );
   } else if (
     pageStatus.verify &&
@@ -401,16 +396,16 @@ export default function Sbt() {
         </button>
 
         {!pageStatus.verified &&
-        (!pageStatus.verifyStatus ||
-          pageStatus.verifyStatus !== "completed" ||
-          pageStatus.verifyStatus !== "approved") &&
-        signed ? (
+          (!pageStatus.verifyStatus ||
+            pageStatus.verifyStatus !== "completed" ||
+            pageStatus.verifyStatus !== "approved") &&
+          signed ? (
           <Verifier
             address={walletAddressRef}
             setLoading={setLoading}
             input={input}
             handlePersonaCompletion={handlePersonaCompletion}
-            // setShowBalance={setShowBalance}
+          // setShowBalance={setShowBalance}
           />
         ) : null}
       </div>
@@ -440,6 +435,7 @@ const Verifier = ({
               setLoading((loading) => ({ ...loading, signLoading: false }));
             }}
             templateId={templateId}
+            environmentId='env_oHeLwXnBxzNS7qsLHeEtkBqv'
             referenceId={address.current}
             fields={{
               nameFirst: input?.firstName,

@@ -58,7 +58,7 @@ export default function Mechanics() {
       content1: (
         <p className='text-[#475467] text-center sm:text-left font-normal mt-2 lg:mt-8 text-[10px]  lg:text-[14px] font-inter'>
           Let&apos;s consider Jimi, who has become an{" "}
-          <span className='text-[#EC8000] font-semibold'>$EARTH Node</span>.
+          <span className='text-[#EC8000] font-semibold'>$EARTH NODE</span>.
         </p>
       ),
       content2: (

@@ -26,10 +26,14 @@ export default function Earth() {
         "Increases treasury size",
         "Zero slippage",
       ],
-      sbt: "Become a NODE",
-      link: "Go to DAPP",
+
       img: "/assets/images/earth-protocol.png",
-      external: false,
+      btntext: buttonConfig.earth_protocol_dapp.title,
+      buttonLink: buttonConfig.earth_protocol_dapp.link,
+      external: buttonConfig.earth_protocol_dapp.external,
+      btntext1: buttonConfig.earth_protocol_becomenode.title,
+      buttonLink1: buttonConfig.earth_protocol_becomenode.link,
+      external1: buttonConfig.earth_protocol_becomenode.external,
     },
     {
       title: "Uniswap",
@@ -42,9 +46,10 @@ export default function Earth() {
         "Transaction fees grow the treasury",
         "Increased demand on dex instigates $EARTH mints",
       ],
-      link: buttonConfig.earth_uniswap_becomeNode.title,
-      buttonLink: buttonConfig.earth_uniswap_becomeNode.link,
+
       img: "/assets/images/uniswap.png",
+      btntext: buttonConfig.earth_uniswap_becomeNode.title,
+      buttonLink: buttonConfig.earth_uniswap_becomeNode.link,
       external: buttonConfig.earth_uniswap_becomeNode.external,
     },
   ];
@@ -66,16 +71,15 @@ export default function Earth() {
             How to get $EARTH
           </p>
           <p className='text-[#FFFFFF] text-center font-normal  text-[20px] font-inter'>
-          Mint at protocol or buy on Uniswap
+            Mint at protocol or buy on Uniswap
           </p>
         </div>
       </div>
       <div className='flex flex-col mx-auto max-w-screen-2xl'>
         {earthData?.map((data, index) => (
           <div
-            className={`flex flex-col sm:flex-row justify-between ${
-              index === 1 ? "flex-col sm:flex-row-reverse" : ""
-            }`}
+            className={`flex flex-col sm:flex-row justify-between ${index === 1 ? "flex-col sm:flex-row-reverse" : ""
+              }`}
             key={index}
           >
             <div className='flex justify-center w-full sm:w-[50%] px-[6%] flex-col gap-2'>
@@ -114,14 +118,30 @@ export default function Earth() {
               </div>
               <div className='flex gap-5'>
                 <div>
-                  {data?.sbt && (
-                    <button className='bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter'>
-                      {data?.sbt}
-                    </button>
+                  {data?.btntext1 && (
+                    <Link
+                      key={index}
+                      className='bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter'
+                      href={data?.buttonLink1 || ""}
+                      target={data?.external1 ? "_blank" : "_self"}
+                    >
+                      {data?.btntext1}
+                    </Link>
+                    // <button className='bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter'>
+                    //   {data?.btntext1}
+                    // </button>
                   )}
                 </div>
                 <div className='text-start'>
-                  <button className='bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter'>
+                  <Link
+                    key={index}
+                    className='bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter'
+                    href={data?.buttonLink || ""}
+                    target={data?.external ? "_blank" : "_self"}
+                  >
+                    {data?.btntext}
+                  </Link>
+                  {/* <button className='bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter'>
                     {data.external ? (
                       <a href={data?.buttonLink} target='_blank'>
                         {data?.link}
@@ -129,7 +149,7 @@ export default function Earth() {
                     ) : (
                       <Link href={data?.buttonLink || ""}>{data.link}</Link>
                     )}
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

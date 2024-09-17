@@ -30,6 +30,8 @@ import {
   totalEarth,
   fetchDexPrice,
 } from "./balance";
+import Node from "./Node";
+
 
 const GradientBg = "/assets/images/dapp-bg.png";
 const rays = "/assets/images/Background rays.png";
@@ -98,8 +100,8 @@ export default function Dapp() {
   const [currentNetwork, setcurrentNetwork] = useState("");
 
   const networkChanged = async (chainId) => {
-    if (typeof window.ethereum !== undefined) {
-      let provider = new ethers.providers.Web3Provider(window.ethereum);
+    if (typeof window?.ethereum !== undefined) {
+      let provider = new ethers.providers.Web3Provider(window?.ethereum);
       provider = await provider.getNetwork();
       provider.name = provider.name === "unknown" ? "localhost" : provider.name;
       setcurrentNetwork(provider.name);
@@ -111,10 +113,10 @@ export default function Dapp() {
   };
 
   useEffect(() => {
-    window.ethereum.on("chainChanged", networkChanged);
+    window?.ethereum.on("chainChanged", networkChanged);
 
     // return () => {
-    //   window.ethereum.removeListener("chainChanged", networkChanged);
+    //   window?.ethereum.removeListener("chainChanged", networkChanged);
     // };
   }, []);
 
@@ -127,16 +129,16 @@ export default function Dapp() {
   };
 
   useEffect(() => {
-    window.ethereum?.on("accountsChanged", handleAccountChange);
+    window?.ethereum?.on("accountsChanged", handleAccountChange);
     return () => {
-      window.ethereum?.removeListener("accountsChanged", handleAccountChange);
+      window?.ethereum?.removeListener("accountsChanged", handleAccountChange);
     };
   }, []);
 
   const isMinted = async (account) => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         let contract = new ethers.Contract(
           soulboundAddress,
@@ -147,7 +149,7 @@ export default function Dapp() {
         let minted = await contract.tokenMintedAddress(account);
 
         if (minted) {
-          setScreen((items) => items.filter((heading) => heading !== "SBT"));
+          setScreen((items) => items && Array.isArray(items) && items.filter((heading) => heading !== "SBT"));
         } else {
           setScreen(label);
         }
@@ -248,7 +250,7 @@ export default function Dapp() {
           className='object-cover w-full h-full'
         />
         <div className='absolute flex items-center justify-around w-full h-full px-10 py-12'>
-          <div className='flex flex-col bg-white/20'>
+          {/* <div className='flex flex-col bg-white/20'>
             <div className='border-b-2 border-[white] border-opacity-30'>
               <div className='flex flex-col items-center justify-center p-5'>
                 <ImageView src={wallet} alt='wallet' width={40} height={40} />
@@ -275,7 +277,7 @@ export default function Dapp() {
                 );
               })}
             </div>
-          </div>
+          </div> */}
           <div className='relative flex justify-center w-[45rem]'>
             {showContent ? (
               <ImageView
@@ -295,7 +297,7 @@ export default function Dapp() {
             </Chart>
             {showContent ? (
               <div className='rounded-full border-2 z-[6] flex absolute overflow-hidden top-[5.1rem] left-[9.3rem]  xl:left-[11rem] items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]'>
-                {account && screen === "DISCONNECT WALLET" ? (
+                {/* {account && screen === "DISCONNECT WALLET" ? (
                   <ImageView
                     src={disconnect}
                     width={200}
@@ -303,19 +305,19 @@ export default function Dapp() {
                     alt='disconnect wallet'
                     className='w-full h-full'
                   />
-                ) : null}
+                ) : null} */}
 
                 {!account ? (
                   <ImageView
                     src={connect}
-                    width={200}
-                    height={200}
+                    width={600}
+                    height={600}
                     alt='disconnect wallet'
-                    className='w-full h-full'
+                    className='object-cover w-full h-full'
                   />
                 ) : null}
 
-                {screen === "SBT" && account ? (
+                {screen === "NODE" && account ? (
                   <Sbt />
                 ) : screen === "TRADE" && account ? (
                   <Trade />
@@ -330,7 +332,13 @@ export default function Dapp() {
                     setHeading={setScreen}
                   />
                 ) : account ? (
-                  <Sbt />
+                  <ImageView
+                    src={disconnect}
+                    width={200}
+                    height={200}
+                    alt='disconnect wallet'
+                    className='object-cover w-full h-full'
+                  />
                 ) : null}
               </div>
             ) : null}{" "}
@@ -370,7 +378,7 @@ export default function Dapp() {
               <Sbt />
             )}
           </div> */}
-          <div className='flex flex-col bg-white/20 '>
+          {/* <div className='flex flex-col bg-white/20 '>
             <div className='border-b-2 border-[white] border-opacity-30'>
               <div className='flex flex-col items-center justify-center p-4'>
                 <p className='text-white font-inter text-center  font-light text-[20px]'>
@@ -393,7 +401,7 @@ export default function Dapp() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

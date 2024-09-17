@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ImageView from "./ImageView";
+import buttonConfig from "../utils/button";
 
 const mintBg = "/assets/images/mintBg.png";
 export default function Minting() {
@@ -19,15 +20,22 @@ export default function Minting() {
             <span className='text-white'>Become a node.</span>
           </p>
           <p className='text-white font-inter w-full font-normal  text-[10px] sm:text-[16px]'>
-          Join regens, treegens, degens and solarpunks growing with $Earth.
+            Join regens, treegens, degens and solarpunks growing with $Earth.
           </p>
         </div>
         <Link
+          className='w-[80px] sm:w-[100px] sm:-mt-10  text-center text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm'
+          href={buttonConfig?.footer_banner?.link || ""}
+          target={buttonConfig?.footer_banner?.external ? "_blank" : "_self"}
+        >
+          {buttonConfig?.footer_banner?.title}
+        </Link>
+        {/* <Link
           href='/community'
           className='w-[80px] sm:w-[100px] sm:-mt-10  text-center text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm'
         >
           Learn More
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

@@ -36,17 +36,15 @@ export default function Stake() {
     <div className='flex z-[5] items-center justify-center w-[73%] flex-col gap-2'>
       <div className='flex gap-3'>
         <p
-          className={`text-center font-inter text-[16px] font-medium ${
-            stake ? "text-[#27b676]" : "text-black"
-          }`}
+          className={`text-center font-inter text-[16px] font-medium ${stake ? "text-[#27b676]" : "text-black"
+            }`}
         >
           STAKE
         </p>
         <Switch onChange={onChange} />
         <p
-          className={`text-center font-inter text-[16px] font-medium ${
-            stake ? "text-black" : " text-[#27b676]"
-          }`}
+          className={`text-center font-inter text-[16px] font-medium ${stake ? "text-black" : " text-[#27b676]"
+            }`}
         >
           UNSTAKE
         </p>
@@ -66,23 +64,21 @@ function UnstakeFunction({ stake, setStake }) {
   const allowanceAmount = balance.fruit;
   const [showPopup, setShowPopup] = useState(false);
   const { showMessage } = useNotification();
-
-  const [loading, setLoading] = useState({
+  const [transaction, setTransaction] = useState(false)
+  const initState = {
     increaseAllowance: false,
     unstake: false,
-  });
-  const [progress, setProgress] = useState({
-    increaseAllowance: false,
-    unstake: false,
-  });
+  }
+  const [loading, setLoading] = useState(initState);
+  const [progress, setProgress] = useState(initState);
 
   const [result, setResult] = useState(0);
   const [accFactor, setAccFactor] = useState(0);
 
   const getAccFactor = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const contract = new ethers.Contract(
           earthstakingAddress,
@@ -143,7 +139,7 @@ function UnstakeFunction({ stake, setStake }) {
       return;
     }
 
-    if (typeof window.ethereum !== "undefined") {
+    if (typeof window?.ethereum !== "undefined") {
       const Amount = ethers.utils.parseUnits(amount, "ether");
       const AllowanceAmount = allowanceAmount * Math.pow(10, 18);
       console.log({ AllowanceAmount, allowanceAmount });
@@ -155,7 +151,8 @@ function UnstakeFunction({ stake, setStake }) {
         return;
       }
       setLoading((obj) => ({ ...obj, increaseAllowance: true }));
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      setTransaction(true)
+      const provider = new ethers.providers.Web3Provider(window?.ethereum);
       const signer = provider.getSigner();
       const fruitContract = new ethers.Contract(
         fruitAddress,
@@ -196,9 +193,12 @@ function UnstakeFunction({ stake, setStake }) {
         // Refresh each value
 
         showMessage({ type: "success", value: "Amount Unstaked" });
+        setTransaction(false)
+
       } catch (error) {
-        setAmount("");
+        // setAmount("");
         allowance();
+
         setLoading((obj) => {
           if (obj.unstake) {
             obj.unstake = false;
@@ -213,6 +213,13 @@ function UnstakeFunction({ stake, setStake }) {
       }
     }
   };
+
+  const resetState = () => {
+    setProgress(initState)
+    setLoading(initState)
+    setTransaction(false)
+    setShowPopup(false);
+  }
 
   return allowanceAmount !== "" ? (
     <>
@@ -266,7 +273,10 @@ function UnstakeFunction({ stake, setStake }) {
         {showPopup ? (
           <TransactionPopup
             handleSubmit={unstakeFn}
-            handleCancel={() => setShowPopup(false)}
+            handleCancel={resetState}
+            progress={progress}
+            loading={loading}
+            transaction={transaction}
           >
             <Progress
               loading={loading}
@@ -301,20 +311,19 @@ function StakeFunction({ stake, setStake }) {
   const [result, setResult] = useState(0);
   const [accFactor, setAccFactor] = useState(0);
   const { showMessage } = useNotification();
+  const [transaction, setTransaction] = useState(false)
 
-  const [loading, setLoading] = useState({
+  const initState = {
     increaseAllowance: false,
     stake: false,
-  });
-  const [progress, setProgress] = useState({
-    increaseAllowance: false,
-    stake: false,
-  });
+  }
+  const [loading, setLoading] = useState(initState);
+  const [progress, setProgress] = useState(initState);
 
   const getAccFactor = async () => {
-    if (typeof window.ethereum !== undefined) {
+    if (typeof window?.ethereum !== undefined) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window?.ethereum);
         const signer = provider.getSigner();
         const contract = new ethers.Contract(
           earthstakingAddress,
@@ -364,17 +373,18 @@ function StakeFunction({ stake, setStake }) {
       return;
     }
 
-    if (typeof window.ethereum !== "undefined") {
+    if (typeof window?.ethereum !== "undefined") {
       const Amount = ethers.utils.parseUnits(amount, "ether");
       const EarthBalance = earthBalance * Math.pow(10, 18);
 
       if (Number(Amount) > EarthBalance) {
         showMessage({ type: "error", value: "Amount exceeds earth balance" });
-        // return;
+        return;
       }
       setLoading((obj) => ({ ...obj, increaseAllowance: true }));
+      setTransaction(true)
 
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const provider = new ethers.providers.Web3Provider(window?.ethereum);
       const signer = provider.getSigner();
       const earthStakingContract = new ethers.Contract(
         earthstakingAddress,
@@ -407,7 +417,14 @@ function StakeFunction({ stake, setStake }) {
         getAccFactor();
 
         setAmount("");
+        setLoading((obj) => ({
+          ...obj,
+          stake: false,
+
+        }));
         setProgress((obj) => ({ ...obj, stake: true }));
+
+        setTransaction(false)
 
         // Refresh each value
         // totalEarth();
@@ -422,10 +439,11 @@ function StakeFunction({ stake, setStake }) {
           }
           return obj;
         });
-        setAmount("");
+        // setAmount("");
         earthAmount();
         showMessage({ type: "error", value: error.code });
         console.log(error);
+
       }
     }
   };
@@ -440,6 +458,13 @@ function StakeFunction({ stake, setStake }) {
       setAmount(validatedValue);
     }
   };
+
+  const resetState = () => {
+    setProgress(initState)
+    setLoading(initState)
+    setTransaction(false)
+    setShowPopup(false);
+  }
 
   return earthBalance !== "" ? (
     <div className='flex flex-col items-center justify-center'>
@@ -492,7 +517,11 @@ function StakeFunction({ stake, setStake }) {
       {showPopup ? (
         <TransactionPopup
           handleSubmit={stakeFn}
-          handleCancel={() => setShowPopup(false)}
+          handleCancel={resetState}
+          progress={progress}
+          loading={loading}
+          transaction={transaction}
+
         >
           <Progress
             loading={loading}
