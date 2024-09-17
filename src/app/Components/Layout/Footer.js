@@ -183,14 +183,14 @@ export default function Footer() {
           </div>
         </div>
         <div
-          className='grid grid-cols-2 sm:flex sm:flex-row gap-x-16 gap-y-12 sm:gap-2 w-full sm:ml-10 sm:justify-between'
+          className='grid grid-cols-2 sm:flex sm:flex-row gap-y-12 sm:gap-2 w-full sm:ml-10 sm:justify-between'
         >
           {Footerdata?.map((option, index) => (
             <div
               className={`flex flex-col items-start gap-3 ${
-                index === 2 ? 'col-span-2 justify-self-center sm:justify-self-auto' : ''
+                index === 2 ? 'col-span-2 justify-self-start sm:justify-self-auto' : ''
               } ${
-                index === 0 ? 'justify-self-end' : index === 1 ? 'justify-self-start' : ''
+                index === 0 ? 'pr-[4.5rem]' : index === 1 ? 'pl-[4.5rem]' : ''
               }`}
               key={index}
             >
