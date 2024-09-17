@@ -135,7 +135,7 @@ export default function Thesis() {
         className='object-cover w-full'
       />
       <div className='w-full max-w-screen-2xl md:flex-row sm:mt-10 mx-auto px-4 sm:px-[5%] flex gap-10 flex-col items-center pb-10'>
-        <div className=' px-4 flex flex-col w-full items-start'>
+        <div className='flex flex-col items-start w-full px-4 '>
           <p className='text-[#101828] font-semibold text-left  text-[20px] sm:text-[28px] mr-10 font-syne'>
             This transition is no longer a IF but a
             <span className='text-[#EC8000]'> WHEN.</span>
@@ -543,12 +543,12 @@ export default function Thesis() {
               ))}
             </div>
           </div> */}
-        <p className='text-[#101828] font-semibold text-center mt-16 text-[20px] sm:text-[28px] mr-10 font-syne'>
+        <p className='text-[#101828] font-semibold text-center mt-16 text-[20px] sm:text-[28px] xl:text-[32px] 2xl:text-[36px] mr-10 font-syne'>
           Rationale behind sector selection -
         </p>
 
         <div className="relative mt-5">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
+          <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
             <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
               They <span className='text-white '> directly address</span>{" "} all causes of climate change
             </p>
@@ -558,12 +558,12 @@ export default function Thesis() {
             alt="graph"
             width={600}
             height={600}
-            className=" w-full object-contain"
+            className="object-contain w-full "
           />
         </div>
 
         <div className="relative mt-5">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
+          <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
             <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
               They cater to humanities <span className='text-white '> core needs</span>{" "} - energy, food, transport, <br /> materials and ecosystems to sustain LIFE
             </p>
@@ -573,12 +573,12 @@ export default function Thesis() {
             alt="graph"
             width={200}
             height={200}
-            className=" w-full object-contain"
+            className="object-contain w-full "
           />
         </div>
 
         <div className="relative mt-5">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
+          <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
             <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
               All these climate solutions generate tremendous amounts of  <span className='text-white '> positive <br /> externalities </span>{" "}- Clean Air, Healthy soil, Increasing Biodiversity, Nutrient rich <br /> food, Clean Water, Energy Independence, reducing pollution etc.
             </p>
@@ -588,12 +588,12 @@ export default function Thesis() {
             alt="graph"
             width={200}
             height={200}
-            className=" w-full object-contain"
+            className="object-contain w-full "
           />
         </div>
 
         <div className="relative mt-5">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
+          <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
             <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
               These real world solutions have undisputed long term value which <br /> also provide  <span className='text-white '> monetary yields </span>{" "} uncorrelated to crypto sentiment <br /> which ensures strong floor value for $Earth.
             </p>
@@ -603,9 +603,10 @@ export default function Thesis() {
             alt="graph"
             width={600}
             height={600}
-            className=" w-full object-contain"
+            className="object-contain w-full "
           />
         </div>
+
 
 
 
@@ -646,7 +647,7 @@ export default function Thesis() {
             </p>
           </li>
         </ol> */}
-        <div className="flex justify-between mt-32 mb-24 gap-10">
+        <div className="flex justify-between gap-10 mt-32 mb-24">
           <div className="md:w-[70%] lg:w-[50%]">
             <p className='text-[#101828] font-semibold text-left mt-6 md:text-[16px] lg:text-[28px] mr-10 font-syne'>
               How?
