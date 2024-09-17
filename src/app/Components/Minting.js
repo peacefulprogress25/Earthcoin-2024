@@ -13,7 +13,7 @@ export default function Minting() {
         height={800}
         className='w-full h-[25vh] sm:h-[28vh] rounded-xl object-cover'
       />
-      <div className='absolute flex items-center justify-between w-full gap-6 px-4 py-4 sm:px-16 top-2 sm:top-8'>
+      <div className='absolute flex items-center justify-between w-full gap-6 px-4 py-4 sm:px-16 top-2 sm:top-20'>
         <div className='flex flex-col items-start gap-4'>
           <p className='text-[#EC8000] w-[100%] font-syne font-semibold text-[24px] sm:text-[24px]'>
             Want minting rights?{" "}
