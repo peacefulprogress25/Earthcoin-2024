@@ -24,7 +24,7 @@ function FlipBook() {
       height={600}
       maxShadowOpacity={0.8}
       flippingTime={1000}
-      showCover={true}
+      // showCover={true}
       className="shadow-2xl "
       style={{
         boxShadow: '0 15px 15px rgba(0, 0, 0, 0.5)',
