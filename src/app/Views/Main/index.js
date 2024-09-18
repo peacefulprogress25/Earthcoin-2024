@@ -287,7 +287,7 @@ export default function Main() {
           className='object-cover w-full h-full'
         /> */}
 
-        <div className="absolute md:top-[7rem] lg:top-[10rem] xl:top-[12rem]  text-[#000000] text-xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne w-full text-center font-medium">
+        <div className="absolute md:top-[7rem] lg:top-[10rem] xl:top-[14rem] 2xl:top-[20rem]  text-[#000000] text-xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne w-full text-center font-medium">
           <p className="leading-none">
             Digital currency funding <br />
             regeneration

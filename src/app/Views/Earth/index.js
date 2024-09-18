@@ -55,7 +55,7 @@ export default function Earth() {
   ];
   return (
     <div>
-      <div className='relative mt-20 w-[100%] max-w-screen-2xl mx-auto flex gap-10 flex-col items-center pb-10'>
+      <div className='relative mt-20 w-[100%]  mx-auto flex gap-10 flex-col items-center pb-10'>
         <ImageView
           src={solarchakra}
           alt='solarchakra'
@@ -63,7 +63,7 @@ export default function Earth() {
           width={1440}
           height={500}
         />
-        <div className='absolute md:top-[5rem] lg:top-[20rem] xl:top-[22rem] flex flex-col gap-2 items-center '>
+        <div className='absolute md:top-[5rem] lg:top-[20rem] xl:top-[19rem] flex flex-col gap-2 items-center '>
           <p className='text-[#FFFFFF] font-semibold text-center text-[14px] font-inter'>
             About
           </p>
@@ -75,7 +75,7 @@ export default function Earth() {
           </p>
         </div>
       </div>
-      <div className='flex flex-col mx-auto max-w-screen-2xl'>
+      <div className='flex flex-col mx-auto '>
         {earthData?.map((data, index) => (
           <div
             className={`flex flex-col sm:flex-row justify-between ${index === 1 ? "flex-col sm:flex-row-reverse" : ""
