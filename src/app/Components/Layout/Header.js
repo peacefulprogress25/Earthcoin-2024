@@ -264,7 +264,7 @@ export default function Header() {
             <Link href="/dashboard">Dashboard</Link>
           </div>
         </div>
-        
+
         {/* Mobile menu button */}
         <button
           className="sm:hidden text-[#475467]"
@@ -274,7 +274,7 @@ export default function Header() {
         </button>
 
         {/* Desktop buttons */}
-        <div className="hidden sm:flex justify-end gap-2">
+        <div className="justify-end hidden gap-2 sm:flex">
           {pathname === "/dapp" ?
             profile?.wallet ?
               <div className="flex justify-end gap-2">
@@ -290,7 +290,7 @@ export default function Header() {
                   </div>
                 </button>
                 {accountDapp &&
-                  <div ref={dappRef} className="absolute w-[22rem] h-[28rem] flex flex-col border border-[#EAECF0]  shadow-lg gap-8 top-20 rounded-lg bg-white">
+                  <div ref={dappRef} className="absolute w-[22rem]  flex flex-col border border-[#EAECF0]  shadow-lg gap-8 top-20 rounded-lg bg-white">
                     <AccountDapp />
 
                   </div>
@@ -329,10 +329,10 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden fixed top-20 left-0 right-0 bottom-0 bg-white z-20 overflow-y-auto">
-          <div className="flex flex-col p-4 gap-4">
+        <div className="fixed bottom-0 left-0 right-0 z-20 overflow-y-auto bg-white sm:hidden top-20">
+          <div className="flex flex-col gap-4 p-4">
             <div>
-              <button 
+              <button
                 className="text-[#475467] font-semibold w-full text-left flex justify-between items-center"
                 onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
               >
@@ -349,9 +349,9 @@ export default function Header() {
                 </div>
               )}
             </div>
-            
+
             <div>
-              <button 
+              <button
                 className="text-[#475467] font-semibold w-full text-left flex justify-between items-center"
                 onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
               >
@@ -370,9 +370,9 @@ export default function Header() {
             </div>
 
             <Link href="/projects" className="text-[#475467] font-semibold">Projects</Link>
-            
+
             <div>
-              <button 
+              <button
                 className="text-[#475467] font-semibold w-full text-left flex justify-between items-center"
                 onClick={() => setMobileNodesOpen(!mobileNodesOpen)}
               >
@@ -392,7 +392,7 @@ export default function Header() {
 
             <Link href="/media" className="text-[#475467] font-semibold">Media</Link>
             <Link href="/dashboard" className="text-[#475467] font-semibold">Dashboard</Link>
-            
+
             {pathname !== "/dapp" && (
               <>
                 <button

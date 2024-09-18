@@ -157,7 +157,7 @@ export default function About() {
   const filteredPosts =
     selectedCategory === "View all"
       ? jobs
-      : jobs.filter((post) => post.title === selectedCategory);
+      : jobs?.filter((post) => post?.title === selectedCategory);
   return (
     <div>
       <div className='mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[8%] flex gap-10 flex-col items-center'>
@@ -215,8 +215,8 @@ export default function About() {
               key={index}
               onClick={() => setSelectedCategory(option?.section)}
               className={`font-inter text-[14px] sm:text-[14px] px-1 sm:px-4 font-semibold text-[#475467] ${selectedCategory === option.section
-                  ? " bg-[#FFFCF8] px-4 py-2 rounded-md text-[#EC8000]"
-                  : ""
+                ? " bg-[#FFFCF8] px-4 py-2 rounded-md text-[#EC8000]"
+                : ""
                 }`}
             >
               {option.section}

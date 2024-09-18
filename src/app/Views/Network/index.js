@@ -17,7 +17,7 @@ export default function Network() {
           Network
         </p>
         <p className='text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne'>
-        What are $EARTH NODES?
+          What are $EARTH NODES?
         </p>
         <p className='text-[#475467] text-center font-normal  text-[16px] font-inter'>
           From purging petro dollars to forming partnerships to policy making,
@@ -33,7 +33,7 @@ export default function Network() {
           className='object-contain w-full xl:w-[97%] h-full'
         />
 
-        <div className='absolute px-10 sm:px-[10%] flex flex-col justify-center items-center md:top-[6rem] lg:top-[8rem] xl:top-[14rem] w-full'>
+        <div className='absolute px-10 sm:px-[10%] flex flex-col justify-center items-center md:top-[6rem] lg:top-[8rem] xl:top-[12rem] w-full'>
           <p className='font-apercu-pro w-full text-left font-noraml md:text-[18px] lg:text-[22px] xl:text-[30px] text-[#101828]'>
             <span className='text-[#EC8000]'>Gm</span> Degens, Regens, Treegens,
             Beegens, Seagens, Lunarpunks, <br /> Mycopunks, Junglepunks and
@@ -109,7 +109,7 @@ export default function Network() {
             system, businesses are regenerative by design, well being is the
             north star, AGI helps us focus on becoming more human...
           </p>
-          <p className='text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml md:text-[10px] lg:text-[14px] xl:text-[18px]'>
+          <p className='text-[#475467] my-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml md:text-[10px] lg:text-[14px] xl:text-[18px]'>
             This definitely is an unprecedented challenge but humanity&apos;s
             past is replete with instances where a committed collective of
             aligned frequencies have dramatically changed the world for the
@@ -119,7 +119,7 @@ export default function Network() {
             holistically addressing the climate/environment/meta crisis can max
             leverage this multifaceted tool/network ($EARTH) to coordinate like
             the mycelium network (vibrant, adaptive, diverse & symbiotic) to
-            fulfil our mission & vision.
+            fulfil our mission & vision. Mission - Make anthropogenic climate change history, Vision - Seed the Solarpunk paradigm
           </p>
         </div>
       </div>

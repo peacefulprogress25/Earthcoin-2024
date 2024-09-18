@@ -56,8 +56,12 @@ function Projects() {
   };
   return (
     <>
-      <p className="text-[#1F2636] font-syne text-center font-medium mb-10 text-3xl w-3/4">$EARTH treasury is dedicated to yield bearing RWAs directly addressing the climate crisis</p>
+
+      <p className="text-[#1F2636] font-syne text-center font-medium  text-3xl w-3/4">Treasury is dedicated to yield bearing RWAs directly <br />   <span > addressing the climate crisis </span></p>
+
+
       <div className="flex justify-between w-full ">
+
         <ProjectDetails obj={project?.[activeIndex]} />
 
 
@@ -80,6 +84,7 @@ function Projects() {
           keyboard={{
             enabled: true,
           }}
+          navigation={true}
           // pagination={true}
           modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
           className='!mr-0 mySwiper-project !w-[90%] mb-10'

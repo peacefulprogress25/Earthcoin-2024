@@ -39,7 +39,7 @@ export default function ResponsibilitiesOfNode() {
   return (
     <div className=' px-4 sm:px-[6%]'>
       {title === "Responsibilities Of Node" && (
-        <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between w-full shadow-lg'>
+        <div className='flex flex-col justify-between w-full shadow-lg md:flex-row lg:flex-row xl:flex-row'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -86,7 +86,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Purge" && (
-        <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between w-full shadow-lg'>
+        <div className='flex flex-col justify-between w-full shadow-lg md:flex-row lg:flex-row xl:flex-row'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -106,7 +106,7 @@ export default function ResponsibilitiesOfNode() {
               <p className='font-syne text-[#000000] font-semibold text-[30px]'>
                 Purge
               </p>
-              <p className='font-inter leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
+              <p className='font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
                 We envision $EARTH treasury to be a source of patient, aligned
                 $$$ waiting to deployed towards projects that are building net
                 zero infrastructure. Addressing climate change is no longer a
@@ -116,7 +116,7 @@ export default function ResponsibilitiesOfNode() {
                 as possible. For this to be a reality we need ginormous amounts
                 of capital. ($3-4 Trillion/Yr climate finance gap)
               </p>
-              <p className='font-inter leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
+              <p className='font-syne leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
                 Since Nodes are the only ones with permission to mint $EARTH and
                 only when $EARTH is minted directly at the protocol do the $
                 flow into the treasury, it will be up to all the Nodes combined
@@ -159,7 +159,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Partnerships" && (
-        <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between w-full shadow-lg'>
+        <div className='flex flex-col justify-between w-full shadow-lg md:flex-row lg:flex-row xl:flex-row'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -188,7 +188,7 @@ export default function ResponsibilitiesOfNode() {
               <p className='font-syne text-[#000000] font-semibold text-[30px]'>
                 Partnerships
               </p>
-              <p className='font-inter leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
+              <p className='font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
                 Warm introductions or complete coordination with any organisation or individual that can contribute to $EARTH mission/vision. This can take the form of a) Onboarding new Nodes b) Onboarding merchants who accept payments in $EARTH c) Onboarding organisations or individuals who in any way shape or form can further our mission/vision.
               </p>
 
@@ -217,7 +217,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Projects" && (
-        <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between w-full shadow-lg'>
+        <div className='flex flex-col justify-between w-full shadow-lg md:flex-row lg:flex-row xl:flex-row'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -255,13 +255,13 @@ export default function ResponsibilitiesOfNode() {
               <p className='font-syne text-[#000000] font-semibold text-[30px]'>
                 Projects
               </p>
-              <p className='font-inter leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
+              <p className='font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
                 Connecting Dao to economically/ecologically viable projects that can be potentially funded by $EARTH treasury ( from the 5 sectors we are focusing on).
               </p>
-              <p className='font-inter leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
+              <p className='font-syne leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
                 Projects should transparently communicate their impact funded with $EARTH to the DAO to validate their activity and earn rewards by accomplishing milestones and impact projections.
               </p>
-              <p className='font-inter leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
+              <p className='font-syne leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
 
                 Projects should have an impact report manual so the DAO could have community events to evaluate the different projects trajectory backed by $EARTH.
               </p>
@@ -281,7 +281,7 @@ export default function ResponsibilitiesOfNode() {
       )}
 
       {title === "Policy" && (
-        <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between w-full shadow-lg'>
+        <div className='flex flex-col justify-between w-full shadow-lg md:flex-row lg:flex-row xl:flex-row'>
           <div className='relative w-full'>
             <img
               className='object-contain'
@@ -324,21 +324,21 @@ export default function ResponsibilitiesOfNode() {
                 Projects
               </p>
             </div>
-            <div className='flex flex-col px-10 py-5 '>
+            <div className='flex flex-col px-10 py-5 font-syne'>
               <p className='font-syne text-[#000000] font-semibold text-[30px]'>
                 Policy
               </p>
-              <p className='font-inter leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
+              <p className='font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
                 Co-ordinating on monetary and fiscal policy for $EARTH to
                 achieve its goals.
               </p>
-              <p className='font-inter leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
+              <p className='font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[13px]'>
                 Monetary policy will involve deciding on the premium $EARTH
                 commands over the $ value of assets in our treasury to fulfil
                 our goals. Controlling the supply of $EARTH in the secondary
                 market for maintaining desired price levels.
               </p>
-              <p className='font-inter leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
+              <p className='font-syne leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px]'>
                 Fiscal policy would involve deciding how best to deploy $EARTH
                 that is in the treasury. Current usage is for APY, LP, DAO,
                 Rewarding community, rewarding projects and partners.

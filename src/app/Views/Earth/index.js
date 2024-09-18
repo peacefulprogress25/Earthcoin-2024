@@ -63,7 +63,7 @@ export default function Earth() {
           width={1440}
           height={500}
         />
-        <div className='absolute md:top-[5rem] lg:top-[15rem] xl:top-[12rem] flex flex-col gap-2 items-center'>
+        <div className='absolute md:top-[5rem] lg:top-[20rem] xl:top-[22rem] flex flex-col gap-2 items-center '>
           <p className='text-[#FFFFFF] font-semibold text-center text-[14px] font-inter'>
             About
           </p>

@@ -27,23 +27,23 @@ const Chart = ({ setScreen, screen, callBack }) => {
   const tooltipData = {
     mint: {
       title: "Mint",
-      description: "The mint function purges $DAI to bring new $EARTH into existence."
+      description: "Purge your $DAI to create $EARTH and fund real world regeneration in one transaction."
     },
     stake: {
       title: "Stake",
-      description: "The mint function purges $DAI to bring new $EARTH into existence."
+      description: "Stake your $EARTH here for some $FRUIT to earn some juicy APYs"
     },
     node: {
-      title: "NODE",
-      description: "The mint function purges $DAI to bring new $EARTH into existence."
+      title: "$EARTH NODE",
+      description: "Finish your KYC, fill Google form and complete your onboarding call to become a NODE."
     },
     trade: {
       title: "Trade",
-      description: "The mint function purges $DAI to bring new $EARTH into existence."
+      description: "Buy $EARTH on Uniswap if you are not a NODE yet."
     },
     claim: {
       title: "Claim",
-      description: "The mint function purges $DAI to bring new $EARTH into existence."
+      description: "Claim your Rewards for making #Refi a reality."
     },
     connectwallet: {
       title: "Connect / Disconnect Wallet",

@@ -38,7 +38,7 @@ export default function AccountDapp() {
 
                 </div>
 
-                <div className='flex w-full gap-2 mt-3'>
+                {/* <div className='flex w-full gap-2 mt-3'>
                     <button className='flex flex-col items-center px-4 py-2 w-[50%] rounded-lg  drop-shadow bg-white'>
                         <img className='w-6 h-6' src={copyIcon} />
                         <p className='font-inter font-semibold text-[12px] text-[#25292E]'>
@@ -54,7 +54,7 @@ export default function AccountDapp() {
                             Disconnect
                         </p>
                     </button>
-                </div>
+                </div> */}
                 <div className='flex w-full gap-2 mt-2'>
                     <div className='flex flex-col items-center px-4 py-2 w-[50%] drop-shadow rounded-lg bg-white'>
                         <p className='font-inter font-semibold text-[18px] text-[#25292E]'>

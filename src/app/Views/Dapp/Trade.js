@@ -30,12 +30,14 @@ export default function Trade() {
           </CopyToClipboard>
         </div>
       </div>
-      <button
+      <Link
+        href={buttonConfig.earth_uniswap_becomeNode.link}
+        target={buttonConfig.earth_uniswap_becomeNode.external ? "_blank" : "_self"}
         className="text-white px-6 py-2 border-[1px] border-[#EC8000] bg-[#EC8000] rounded-lg shadow-lg font-inter font-light text-sm h-10"
 
       >
         TRADE
-      </button>
+      </Link>
     </div>
   )
 }
