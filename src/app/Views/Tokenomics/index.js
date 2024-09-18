@@ -275,7 +275,7 @@ export default function Mechanics() {
 
   return (
     <div>
-      <div className=" mt-32 px-8">
+      <div className=" mt-32 px-8 ">
         <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             About
