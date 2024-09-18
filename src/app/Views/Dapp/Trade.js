@@ -14,7 +14,7 @@ export default function Trade() {
   };
   return (
     <div className="flex flex-col items-center gap-5 p-6 bg-white">
-      <p className="text-[#101828] font-inter font-medium text-center text-2xl">Trade $Dai <br />for $Earth</p>
+      <p className="text-[#101828] font-inter font-medium text-center text-md  sm:text-2xl">Trade $Dai <br />for $Earth</p>
       <div className="flex flex-col items-center">
         <p className="font-bold text-center text-black font-inter text-md">Network:</p>
         <p className="text-[#101828] font-inter font-semibold text-center text-sm">Polygon POS</p>

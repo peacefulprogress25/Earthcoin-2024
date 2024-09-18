@@ -96,7 +96,7 @@ Let's GROW 🌞💚`;
 
   return !progress.claim ? (
     progress.whitelisted ? (
-      <div className='flex justify-center w-[73%] items-center flex-col gap-2'>
+      <div className='flex justify-center w-[73%] items-center flex-col gap-2 pt-24 mb-8  sm:pt-0 sm:mb-0' >
         {" "}
         {/* <CgDanger color="#c1272d" size="70" className="mb-2" /> */}
         <ImageView
@@ -106,7 +106,7 @@ Let's GROW 🌞💚`;
           height={70}
           className='mb-2'
         />
-        <p className='text-[18px] text-center font-inter font-medium text-black'>
+        <p className='sm:text-[18px] text-md text-center font-inter font-medium text-black'>
           You have earned this $Earth in recognition of your contributions
           towards making #Refi dream a tangible reality
         </p>

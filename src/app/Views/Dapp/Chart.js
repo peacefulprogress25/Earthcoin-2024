@@ -94,7 +94,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
 
 
 
-  const tooltip = d3.select("body")
+  const tooltip = d3.select(".dapp")
     .append("div")
     .attr("id", "tooltip")
     .style("position", "absolute")
@@ -122,11 +122,12 @@ const Chart = ({ setScreen, screen, callBack }) => {
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("class", "wrapper")
+        .attr("class", "wrapper ")
         .attr(
           "transform",
           `translate(${width / 2 + margin.left},${height / 2 + margin.top})`
         )
+
       // .on("mouseover", (data, d) => {
       //   console.log("hello", d);
       // });
@@ -257,30 +258,30 @@ const Chart = ({ setScreen, screen, callBack }) => {
         let x, y;
         switch (d.name) {
           case "TRADE":
-            x = 60;
-            y = 45;
+            x = -260;
+            y = 200;
             break;
           case "CLAIM":
-            x = 50;
-            y = 20;
+            x = -260;
+            y = 200;
             break;
           case "CONNECT WALLET":
           case "DISCONNECT WALLET":
-            x = -150;
-            y = -33;
+            x = -450;
+            y = 140;
             break;
           case "STAKE":
-            x = -150;
-            y = 110;
+            x = -450;
+            y = 280;
 
             break
           case "MINT":
-            x = -400;
-            y = 60;
+            x = -680;
+            y = 280;
             break
           case "NODE":
-            x = -400;
-            y = 10;
+            x = -700;
+            y = 160;
             break
           default:
             break;
@@ -336,7 +337,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
   return !disconnect ? (
     <div
       ref={chartRef}
-      className='cursor-pointer chart text-center relative text-[16px] font-semibold font-inter z-[3]'
+      className='cursor-pointer w-full sm:h-full flex items-center justify-center  chart text-center relative text-[16px] font-semibold font-inter z-[3]'
     ></div>
   ) : null;
 };
