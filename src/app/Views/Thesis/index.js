@@ -549,7 +549,7 @@ export default function Thesis() {
 
         <div className="relative mt-5">
           <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
-            <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
+            <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne '>
               They <span className='text-white '> directly address</span>{" "} all causes of climate change
             </p>
           </div>
@@ -564,7 +564,7 @@ export default function Thesis() {
 
         <div className="relative mt-5">
           <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
-            <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
+            <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne text-nowrap'>
               They cater to humanities <span className='text-white '> core needs</span>{" "} - energy, food, transport, <br /> materials and ecosystems to sustain LIFE
             </p>
           </div>
@@ -579,7 +579,7 @@ export default function Thesis() {
 
         <div className="relative mt-5">
           <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
-            <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
+            <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne text-nowrap'>
               All these climate solutions generate tremendous amounts of  <span className='text-white '> positive <br /> externalities </span>{" "}- Clean Air, Healthy soil, Increasing Biodiversity, Nutrient rich <br /> food, Clean Water, Energy Independence, reducing pollution etc.
             </p>
           </div>
@@ -594,7 +594,7 @@ export default function Thesis() {
 
         <div className="relative mt-5">
           <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
-            <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne'>
+            <p className='mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne text-nowrap'>
               These real world solutions have undisputed long term value which <br /> also provide  <span className='text-white '> monetary yields </span>{" "} uncorrelated to crypto sentiment <br /> which ensures strong floor value for $Earth.
             </p>
           </div>
