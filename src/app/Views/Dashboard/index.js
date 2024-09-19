@@ -99,6 +99,10 @@ export default function Dashboard() {
           font: {
             size: 12,
           },
+          maxRotation: 90,
+          minRotation: 45,
+          autoSkip: true,
+          maxTicksLimit: 12,
         },
         border: {
           width: 1,
@@ -106,8 +110,6 @@ export default function Dashboard() {
         },
         grid: {
           color: "transparent",
-          // tickColor: "#02B69C",
-
           tickLength: 9,
           tickWidth: 2,
           offset: true,

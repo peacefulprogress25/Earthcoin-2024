@@ -62,59 +62,43 @@ export default function Updates() {
   return (
     <>
       {update && update.length ? (
-            <Chrono
-              items={update}
-              mode="VERTICAL"
-              disableToolbar
-              cardHeight={200}
-              timelinePointShape="square"
-              timelinePointDimension={20}
-              theme={{
-                primary: "#E4E7EC",
-                secondary: "#667085",
-                titleColor: "#667085",
-                cardTitleColor: "#000000",
-                cardSubtitleColor: "#667085",
-                titleColorActive: "#E4E7EC",
-                iconBackgroundColor: "transparent",
-              }}
-              fontSizes={{
-                cardSubtitle: "14px",
-                cardTitle: "16px",
-                cardText: "12px",
-                title: "14px",
-              }}
-            >
+        <div className="w-full max-w-[600px] mx-auto px-4 custom-chrono">
+          <Chrono
+            items={update}
+            mode="VERTICAL"
+            disableToolbar
+            cardHeight={200}
+            timelinePointShape="square"
+            timelinePointDimension={20}
+            theme={{
+              primary: "#E4E7EC",
+              secondary: "#667085",
+              titleColor: "#667085",
+              cardTitleColor: "#000000",
+              cardSubtitleColor: "#667085",
+              titleColorActive: "#E4E7EC",
+              iconBackgroundColor: "transparent",
+            }}
+            fontSizes={{
+              cardSubtitle: "12px",
+              cardTitle: "14px",
+              cardText: "10px",
+              title: "12px",
+            }}
+            scrollable={{ scrollbar: true }}
+          >
             {update?.map((updates, index) => (
-              <div key={index}>
-            <button className="flex gap-1 p-1 font-inter border border-[#D0D5DD] rounded-md text-[#6172F3] font-normal text-[14px]">
-                <ImageView src={file} alt="file" width={20} height={20} />
-               {updates.btnText}
-              </button>
+              <div key={index} className="w-full">
+                <button className="w-full flex justify-center items-center gap-1 p-1 font-inter border border-[#D0D5DD] rounded-md text-[#6172F3] font-normal text-[12px] sm:text-[14px]">
+                  <ImageView src={file} alt="file" width={16} height={16} className="sm:w-5 sm:h-5" />
+                  {updates.btnText}
+                </button>
               </div>
             ))}
-              {/* <button className="flex gap-1 p-1 font-inter border border-[#D0D5DD] rounded-md text-[#F63D68] font-normal text-[14px]">
-                <ImageView src={play} alt="play" width={20} height={20} />
-                JanuaryExp..
-              </button>
-
-              <div></div>
-              <button className="flex gap-1 p-1 font-inter border border-[#D0D5DD] rounded-md text-[#F63D68] font-normal text-[14px]">
-                <ImageView src={play} alt="play" width={20} height={20} />
-                JanuaryExp..
-              </button>
-              <button className="flex gap-1 p-1 font-inter border border-[#D0D5DD] rounded-md text-[#6172F3] font-normal text-[14px]">
-                <ImageView src={file} alt="file" width={20} height={20} />
-                JanuaryExp..
-              </button>
-              <button className="flex gap-1 p-1 font-inter border border-[#D0D5DD] rounded-md text-[#6172F3] font-normal text-[14px]">
-                <ImageView src={file} alt="file" width={20} height={20} />
-                JanuaryExp..
-              </button> */}
-            </Chrono>
-        )
-      : (
-        <div className='w-[50%] h-[30vh] flex items-center justify-center'>
+          </Chrono>
+        </div>
+      ) : (
+        <div className='w-full h-[30vh] flex items-center justify-center'>
           <Loader />
         </div>
       )}

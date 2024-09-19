@@ -82,13 +82,13 @@ export default function Projectdetails() {
       {details ? (
         <>
           <ProjectHeader details={details} />
-          <div className="w-full  cursor-pointer gap-4 sm:gap-12 border-b border-[#F2F4F7] flex px-2 items-center justify-center h-20">
+          <div className="w-full  cursor-pointer gap-4 sm:gap-10 border-b border-[#F2F4F7] flex px-2 items-center justify-center h-20">
             {category.map((option, index) => (
               <Link
                 key={index}
                 href={option?.link}
                 passHref
-                className="font-Inter text-[18px] sm:text-[18px] px-1 sm:px-5 font-semibold text-[#475467]"
+                className="font-Inter text-[14px] xs:text-[18px] sm:text-[18px] px-1 sm:px-5 font-semibold text-[#475467]"
               >
                 {option.section}
               </Link>
@@ -106,7 +106,7 @@ export default function Projectdetails() {
             <ProjectImpact details={details} />
             <div
               id="details"
-              className="flex gap-4 border px-10  w-full border-[#FCCA6B] rounded-md"
+              className="flex gap-4 border px-4 sm:px-8 md:px-10 w-full border-[#FCCA6B] rounded-md"
             >
               <div className="border-[#EAECF0] mt-10 grow border-r">
                 <Steps
@@ -231,7 +231,7 @@ export default function Projectdetails() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[14px] sm:text-[16px]">
+                  <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[12px] sm:text-[16px] md:text-[12px]">
                     INVESTMENT TYPE
                   </p>
                   <p className="text-[#101828] font-medium text-[14px] sm:text-[16px]">

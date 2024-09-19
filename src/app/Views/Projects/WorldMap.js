@@ -60,7 +60,7 @@ export default function WorldMap({ projects }) {
         height={600}
         className="z-[-1] w-full h-[100vh] object-cover"
       />
-      <div className="flex flex-col pt-[1rem] absolute mb-10 top-10 w-full gap-1 items-center">
+      <div className="flex flex-col pt-[1rem] absolute mb-10 top-10 sm:top-9 w-full gap-1 items-center">
         <p className="text-white font-light text-center text-[14px] font-inter">
           PROJECTS
         </p>
@@ -73,7 +73,7 @@ export default function WorldMap({ projects }) {
       </div>
       <MapContainer
         center={position}
-        zoom={1}
+        zoom={0.5}
         zoomControl={false}
         scrollWheelZoom={false}
         doubleClickZoom={false}

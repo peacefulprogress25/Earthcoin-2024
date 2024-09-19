@@ -210,7 +210,7 @@ export default function PostSlider({ post }) {
   ];
   return (
     <div className="overflow-hidden h-full w-full ">
-      <div className="flex  w-full">
+      <div className="flex w-full">
         <Swiper
           centeredSlides={false}
           grid={{
@@ -218,6 +218,14 @@ export default function PostSlider({ post }) {
           }}
           slidesPerView="auto"
           slidesPerGroup={3}
+          breakpoints={{
+            0: {
+              slidesPerGroup: 1,
+            },
+            640: {
+              slidesPerGroup: 3,
+            },
+          }}
           loop={false}
           spaceBetween={25}
           navigation={{
