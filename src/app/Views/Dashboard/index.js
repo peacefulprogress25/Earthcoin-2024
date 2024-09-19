@@ -245,7 +245,7 @@ export default function Dashboard() {
   ];
   return (
     <div>
-      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+      <div className="mt-32 w-full max-w-screen-2xl  px-18 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Dashboard
@@ -356,7 +356,7 @@ export default function Dashboard() {
           <div className="w-[100%] h-[35vh]">
             <Line data={data} width="400" height="300" options={options} />
           </div>
-          <div className="grid items-center w-full grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="grid items-center w-full grid-cols-1 gap-3 sm:grid-cols-3 ">
             {cardData?.map((price, index) => (
               <div
                 className="flex flex-col p-6 w-[18rem] lg:w-[18rem] xl:w-[24rem]  rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
@@ -399,7 +399,7 @@ export default function Dashboard() {
                     <ImageView
                       src={price?.img}
                       alt="chart"
-                      width={100}
+                      width={88}
                       height={100}
                       className="object-cover"
                     />
@@ -417,7 +417,7 @@ export default function Dashboard() {
             <p className="text-[#475467] text-[14px] text-left  font-normal font-inter">
               Track, manage and forecast $EARTH trends.
             </p>
-            <div className="flex flex-col w-full gap-4 mt-8 sm:flex-row overflow-auto scrollbar-none ">
+            <div className="flex flex-col w-full gap-4 mt-8 sm:flex-row overflow-auto hide-scrollbar ">
               {fundingData?.map((fund, index) => {
                 const title = fund.title?.split(" ");
 

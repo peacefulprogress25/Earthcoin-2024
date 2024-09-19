@@ -14,7 +14,7 @@ function Nodes() {
   ];
 
   return (
-    <div className='px-[6%] w-full max-w-screen-2xl'>
+    <div className='px-[6%] 2xl:px-[8.5%] '>
       <section className='flex flex-col items-center justify-center w-full gap-3'>
         <h6 className='text-[#EC8000] font-inter text-xs'>NODES</h6>
         <h1 className='text-3xl font-medium font-syne '>$Earth NODES</h1>

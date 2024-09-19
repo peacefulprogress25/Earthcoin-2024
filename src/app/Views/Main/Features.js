@@ -72,7 +72,7 @@ function Features() {
   ];
 
   return (
-    <div className='h-[70vh] my-3 w-full'>
+    <div className='md:h-[70vh] lg:h-[80vh] w-full'>
       <Swiper
         modules={[Keyboard, Navigation, Autoplay, EffectFade]}
         className='w-full mySwiper '

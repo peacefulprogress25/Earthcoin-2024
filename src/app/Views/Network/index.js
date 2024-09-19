@@ -30,7 +30,7 @@ export default function Network() {
           alt='earthcoin'
           width={500}
           height={500}
-          className='object-contain w-full xl:w-[97%] h-full'
+          className='object-contain w-full h-full'
         />
 
         <div className='absolute px-10 sm:px-[10%] flex flex-col justify-center items-center md:top-[6rem] lg:top-[8rem] xl:top-[12rem] w-full'>
