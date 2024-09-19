@@ -301,11 +301,12 @@ export default function Mechanics() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-3 w-full justify-center">
           {data.map((option, index) => (
             <Card key={index} option={option} />
           ))}
         </div>
+
         <div className="sm:px-[13%] px-4 flex flex-col w-full items-start">
           <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[25px]  font-syne">
             Here we look at how tokenomics have been designed to achieve these
@@ -392,29 +393,31 @@ export default function Mechanics() {
           {tokenomicsdata.map((obj, i) => {
             return (
               <SwiperSlide key={i}>
-                <div className="flex w-[90%] xw ">
+                <div className="flex w- ">
                   <div className="w-full  border-t-2  border-[#EAECF0] ">
-                    <p className="text-[#101828] font-semibold text-left mt-4 lg:mt-10 text-[20px] sm:text-[28px] mr-10 lg:mr-0 font-syne">
-                      Example
-                    </p>
-                    {obj.content1}
+                    <div className="pr-2">
+                      <p className="text-[#101828] font-semibold text-left mt-4 lg:mt-10 text-[20px] sm:text-[28px] mr-10 lg:mr-0 font-syne">
+                        Example
+                      </p>
+                      {obj.content1}
 
-                    {obj.content2}
-                    <br />
-                    <div className="flex gap-2">
-                      {obj.content3}
+                      {obj.content2}
+                      <br />
+                      <div className="flex gap-2">
+                        {obj.content3}
 
-                      <div>
-                        {obj.content4}
+                        <div>
+                          {obj.content4}
 
-                        {obj.content5}
+                          {obj.content5}
+                        </div>
                       </div>
+                      {obj.content6}
+                      {obj.content7}
+                      {obj.content8}
+                      {obj.content9}
+                      {obj.description}
                     </div>
-                    {obj.content6}
-                    {obj.content7}
-                    {obj.content8}
-                    {obj.content9}
-                    {obj.description}
                   </div>
                 </div>
               </SwiperSlide>
@@ -424,7 +427,7 @@ export default function Mechanics() {
 
         <div
           style={{ backgroundImage: `url(${treasurybg})` }}
-          className="w-[30rem] lg:w-[36rem] md:h-[21rem] overflow-hidden bg-no-repeat lg:h-[28rem] xl:h-[32rem]"
+          className="w-[30rem] lg:w-[52rem]   overflow-hidden bg-cover sm:h-[33rem]  xl:h-[36rem]"
         >
           <ImageView
             src={"/assets/images/flow.png"}
@@ -432,11 +435,11 @@ export default function Mechanics() {
             width={600}
             height={600}
             // style={{ transform: `scale(1.5)` }}
-            className="scale-150 w-96 flow-chart"
+            className="scale-150 w-96  flow-chart "
           />
         </div>
         <StepperMui
-          className="absolute z-20 bottom-20"
+          className="absolute z-20 bottom-24"
           onChange={(index) => swiper.current.swiper.slideTo(index)}
         />
       </div>
