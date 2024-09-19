@@ -227,7 +227,7 @@ const earthResources = "/assets/video/What-is-$EARTH.mp4";
           towards climate solutions.
               </p>
             </div>
-            <div className='p-5'>
+            <div className='p-5 '>
               <ImageView
                 src={environmentClimate}
                 alt='service'

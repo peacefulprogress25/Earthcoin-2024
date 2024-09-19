@@ -59,7 +59,7 @@ export default function Contract() {
         <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
           $EARTH Contracts
         </p>
-        <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
+        <p className="text-[#475467] text-center font-normal  text-[16px] sm:text-[15px] font-inter">
           Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
           suspendisse morbi eleifend <br /> faucibus eget vestibulum felis.
           Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam.

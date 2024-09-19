@@ -63,7 +63,7 @@ export default function Media() {
           </p>
         </div>
         {media && media.length ? (
-          <div className="grid grid-flow-col  grid-rows-3 mt-8 sm:grid-rows-2 gap-6">
+          <div className="grid grid-flow-col grid-rows-3 mt-8 sm:grid-rows-2 gap-6">
             {media.map((card, index) => (
               <div
                 className={`flex flex-col sm:flex-row gap-6 ${
@@ -76,11 +76,11 @@ export default function Media() {
                   alt={card.name}
                   width={200}
                   height={200}
-                  className={`${
+                  className={`w-full h-[200px] object-cover ${
                     index === 0
-                      ? "w-full h-[13rem]"
-                      : "w-full sm:w-[50%] object-contain"
-                  } object-cover`}
+                      ? "sm:h-[13rem]"
+                      : "sm:w-[50%] sm:h-auto"
+                  }`}
                 />
                 <div className="flex flex-col gap-2">
                   <p className="text-[#EC8000] font-inter font-semibold text-[12px]">

@@ -61,7 +61,7 @@ export default function WorldMap({ nodeList }) {
         alt="map"
         width={600}
         height={600}
-        className="!w-full z-[-1] h-[100vh] object-cover"
+        className="!w-full z-[-1] h-[100vh] sm:h-[100vh] object-cover"
       />
       <div className="flex flex-col pt-[1rem] absolute top-10 w-full gap-1 items-center">
         <p className="text-white font-light text-center text-[14px] font-inter">
@@ -82,7 +82,7 @@ export default function WorldMap({ nodeList }) {
         doubleClickZoom={false}
         dragging={false}
         attributionControl={false}
-        className="leaflet-Map h-[100vh] w-[100vh] mt-0 sm:-mt-[2rem] ml-0 sm:-ml-[6rem] object-cover"
+        className="leaflet-Map h-[80vh] sm:h-[100vh] w-[100vh] mt-0 sm:-mt-[2rem] ml-0 sm:-ml-[6rem] object-cover"
       >
         {loading ? (
           <div className="h-[60vh] w-full flex items-center ml-0  sm:ml-[6rem]  mt-0  sm:mt-[5rem] justify-center">
