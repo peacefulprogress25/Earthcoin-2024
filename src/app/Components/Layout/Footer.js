@@ -151,8 +151,8 @@ export default function Footer() {
   ];
   return (
     <div className='flex flex-col justify-end w-full h-fit'>
-      <div className='flex-col flex sm:flex-row my-10 mt-16 items-center sm:items-start w-full max-w-screen-2xl mx-auto  gap-10 px-[6%] justify-between'>
-        <div className='flex items-center w-full  sm:items-start sm:w-[50%] flex-col justify-between'>
+      <div className='flex-col flex sm:flex-row my-10 mt-16 items-center sm:items-start w-full max-w-screen-2xl mx-auto gap-10 px-[6%] justify-between'>
+        <div className='flex items-center w-full sm:items-start sm:w-[50%] flex-col justify-between'>
           <div className='flex flex-col items-center sm:items-start'>
             <ImageView
               alt='logo'
@@ -183,12 +183,15 @@ export default function Footer() {
           </div>
         </div>
         <div
-          style={{ cursor: "pointer" }}
-          className='flex flex-col items-center justify-center w-full  sm:ml-10 sm:flex-row sm:gap-2 gap-x-2 gap-y-4 sm:justify-between'
+          className='grid grid-cols-2 sm:flex sm:flex-row gap-y-12 sm:gap-2 w-full sm:ml-10 sm:justify-between'
         >
           {Footerdata?.map((option, index) => (
             <div
-              className='flex flex-col items-center gap-3 sm:items-start'
+              className={`flex flex-col items-start gap-3 ${
+                index === 2 ? 'col-span-2 justify-self-start sm:justify-self-auto' : ''
+              } ${
+                index === 0 ? 'pr-[4.5rem]' : index === 1 ? 'pl-[4.5rem]' : ''
+              }`}
               key={index}
             >
               <p className='text-[#667085] font-inter font-semibold text-[13px]'>
