@@ -203,19 +203,19 @@ export default function Mint({ treasuryFunction, totalEarth }) {
 
   return (
     <>
-      <div className='flex w-[72%] items-center flex-col gap-3'>
-        <p className='text-black text-center font-inter text-[28px] font-medium'>
+      <div className='flex w-[72%] mt-8 py-8 sm:py-0 sm:mt-0 items-center flex-col gap-3'>
+        <p className='text-black text-center font-inter sm:text-[28px] text-md font-medium'>
           Mint $Earth <br /> by passing $Dai
         </p>
-        <p className='text-[16px] text-center font-inter font-medium text-black'>
+        <p className=' text-sm sm:text-[16px] text-center font-inter font-medium text-black'>
           New Tokens can only be minted at the protocol using DAPP
         </p>
-        <div className='flex justify-center w-full gap-3 mt-2'>
+        <div className='flex flex-wrap justify-center w-full gap-3 mt-2 sm:flex-nowrap'>
           <div className='flex flex-col w-[130px]'>
             <p className='text-black text-center font-inter text-[12px] font-medium'>
               Enter $Dai amount
             </p>
-            <div className='flex border-2 gap-2  border-[#EAECF0] items-center p-1'>
+            <div className='flex border-2  gap-2  border-[#EAECF0] items-center p-1'>
               <input
                 type='text'
                 className='w-16 outline-none'

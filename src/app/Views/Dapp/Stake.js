@@ -33,7 +33,7 @@ export default function Stake() {
     }
   };
   return (
-    <div className='flex z-[5] items-center justify-center w-[73%] flex-col gap-2'>
+    <div className='flex z-[5] items-center justify-center w-[73%] flex-col gap-2 pt-24 mb-8 sm:pt-0 sm:mb-0'>
       <div className='flex gap-3'>
         <p
           className={`text-center font-inter text-[16px] font-medium ${stake ? "text-[#27b676]" : "text-black"
@@ -224,10 +224,10 @@ function UnstakeFunction({ stake, setStake }) {
   return allowanceAmount !== "" ? (
     <>
       <div className='flex flex-col items-center justify-center'>
-        <p className='text-black text-center font-inter mt-5 text-[28px] font-medium'>
+        <p className='text-black text-center font-inter mt-5 sm:text-[28px] text-md  font-medium'>
           Unstake $Fruit to <br /> get $Earth
         </p>
-        <div className='flex justify-center w-full gap-4 mt-2'>
+        <div className='flex flex-wrap justify-center w-full gap-4 mt-2 sm:flex-nowrap'>
           <div className='flex flex-col w-[140px]'>
             <p className='text-black text-center font-inter text-[12px] font-medium'>
               Enter $Fruit amount
@@ -468,10 +468,10 @@ function StakeFunction({ stake, setStake }) {
 
   return earthBalance !== "" ? (
     <div className='flex flex-col items-center justify-center'>
-      <p className='text-black text-center font-inter mt-5 text-[28px] font-medium'>
+      <p className='text-black text-center font-inter mt-5 text-md sm:text-[28px] font-medium'>
         Stake $Earth to <br /> get $Fruit
       </p>
-      <div className='flex justify-center w-full gap-4 mt-2'>
+      <div className='flex flex-wrap justify-center w-full gap-4 mt-2 sm:flex-nowrap'>
         <div className='flex flex-col w-[140px]'>
           <p className='text-black text-center font-inter text-[12px] font-medium'>
             Enter $Earth amount
