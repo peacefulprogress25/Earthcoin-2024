@@ -22,7 +22,6 @@ export default function Earth() {
   useEffect(() => {
     if (isXLarge) {
       setWidth(770);
-      console.log("sdf");
     } else if (isLarge) {
       setWidth(700);
     } else if (isMedium) {
@@ -33,7 +32,6 @@ export default function Earth() {
       setWidth(470); // Default width for small screens
     }
   }, [isXLarge, isLarge, isMedium, isSmall]);
-  console.log(width, "width", isSmall, isMedium, isLarge, isXLarge);
 
   const onCopy = () => {
     setCopied(true);
