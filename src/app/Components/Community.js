@@ -24,7 +24,7 @@ function Community({ title, description, img }) {
   ];
   return (
     <div
-      className={`flex flex-col w-full  mb-16 p-8 items-center  justify-center ${img
+      className={`flex flex-col w-full  mb-16 max-[480px]:mb-8 p-8 items-center  justify-center ${img
         ? "bg-[url('/assets/images/Curious.png')] bg-cover bg-no-repeat rounded-b-2xl"
         : "bg-[#F9FAFB] rounded-md"
         } `}
