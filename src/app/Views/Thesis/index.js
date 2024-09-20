@@ -92,10 +92,10 @@ export default function Thesis() {
             <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
               About
             </p>
-            <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
+            <p className="text-[#101828] font-semibold text-center text-[30px]  sm:text-[40px] font-syne">
               THESIS
             </p>
-            <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
+            <p className="text-[#475467] text-center font-normal  text-[16px]  font-inter">
               Every crisis comes with an opportunity, here we breakdown the
               thesis driving $EARTH
             </p>
@@ -154,11 +154,11 @@ export default function Thesis() {
               className="object-cover w-full mt-4"
             />
             <div className="sm:px-[8%]  px-4 flex flex-col w-full items-start">
-              <p className="text-[#101828] font-semibold text-center w-full mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
+              <p className="text-[#101828] font-semibold text-center w-full mt-6 text-[20px]  sm:text-[28px] mr-10 font-syne">
                 FUEL to our FIRE
               </p>
               <div className="mt-6">
-                <p className="text-[#475467] text-center w-full font-normal  text-[15px] font-inter">
+                <p className="text-[#475467] text-center w-full font-normal  text-[15px] max-[480px]:text-[12px] font-inter">
                   Addressing climate change is truly one of those{" "}
                   <span className="text-[#EC8000] font-semibold">
                     once in a generation opportunity.
@@ -188,12 +188,12 @@ export default function Thesis() {
       />
       <div className="w-full max-w-screen-2xl md:flex-row sm:mt-10 mx-auto px-4 sm:px-[5%] flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col items-start w-full px-4 ">
-          <p className="text-[#101828] font-semibold text-left  text-[20px] sm:text-[28px] mr-10 font-syne">
+          <p className="text-[#101828] font-semibold text-left  text-[20px] max-[480px]:text-wrap max-[480px]:text-center max-[480px]:text-[15px] max-[480px]:ml-8 sm:text-[28px] mr-10 font-syne">
             This transition is no longer a IF but a
             <span className="text-[#EC8000]"> WHEN.</span>
           </p>
           <div className="mt-6">
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] max-[480px]:text-[12px]  font-inter">
               Even if we are to believe the righteous intentions of all nation
               states, climate change will never be their to priority because
               they are boundary bound plus lack of incentives for long term
@@ -234,11 +234,11 @@ export default function Thesis() {
         </div>
       </div>
       <div className="flex justify-center w-full">
-        <p className="text-[#101828] font-semibold text-center mt-6 text-[20px] sm:text-[28px] mr-10 lg:mr-0 lg:mt-[5rem] font-syne">
+        <p className="text-[#101828] font-semibold text-center mt-6 text-[20px] max-[480px]:text-[15px] sm:text-[28px] max-[480px]:mr-2 mr-10 lg:mr-0 lg:mt-[5rem] font-syne">
           Sectors we are focusing on -
         </p>
       </div>
-      <div className="px-[6%] flex gap-8 py-[4%] justify-between">
+      <div className="px-[6%] flex gap-8 py-[4%] justify-between max-[480px]:gap-3">
         {/* <ImageView
           src={earthPower}
           alt='earthPower'
@@ -247,7 +247,7 @@ export default function Thesis() {
           className='object-cover w-full'
         /> */}
 
-        <div className="flex flex-col justify-between  w-[25%] gap-6 ">
+        <div className="flex flex-col justify-between  w-[25%] gap-6  max-[480px]:w-[24%] ">
           {fundingData && fundingData.length ? (
             fundingData?.map((power, index) => {
               const title = power.title?.split(" ");
@@ -259,7 +259,7 @@ export default function Thesis() {
                   className="flex flex-col cursor-pointer gap-2 grow w-full  rounded-lg overflow-hidden border border-[#EAECF0] justify-between"
                 >
                   <div
-                    className={`rounded-md p-2 lg:mt-2 my-auto flex justify-between  
+                    className={`rounded-md p-2 lg:mt-2 my-auto flex justify-between   max-[480px]:flex-col max-[480px]:gap-1 
                 `}
                   >
                     <p className="text-[#101828] w-[50%] md:px-5 text-[9px] sm:text-[15px] font-semibold font-inter">
@@ -297,15 +297,15 @@ export default function Thesis() {
             </div>
           )}
         </div>
-        <div className="w-[75%]">
+        <div className="w-[75%] max-[480px]:w-[76%] ">
           {title === "Regenerative Agriculture" && (
             <div className="border-2 h-full lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6">
               <div className="lg:w-[60%]">
-                <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 lg:mr-0 font-inter">
+                <p className="text-[#101828] font-semibold text-left max-[480px]:text-[12px]  text-[14px] sm:text-[18px] mr-10 lg:mr-0 font-inter">
                   Regenerative Agricuture
                 </p>
                 <div className="mt-6">
-                  <p className="text-[#475467] text-center sm:text-left font-normal lg:text-[14px]  text-[16px] font-inter">
+                  <p className="text-[#475467] text-center sm:text-left font-normal lg:text-[14px] max-[480px]:text-[9px]  text-[16px] font-inter">
                     As of today less than 5% of our food production comes from
                     regenerative sources. Majority of farming in todays time is
                     chemical intensive using industrial inputs to produce
@@ -349,11 +349,11 @@ export default function Thesis() {
           {title === "Clean Energy" && (
             <div className="border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] h-full py-6">
               <div className="lg:w-[60%]">
-                <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
+                <p className="text-[#101828] font-semibold text-left max-[480px]:text-[12px]  text-[14px] sm:text-[18px] mr-10 font-inter">
                   Clean Energy
                 </p>
                 <div className="mt-6">
-                  <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] lg:text-[14px] font-inter">
+                  <p className="text-[#475467] text-center sm:text-left font-normal max-[480px]:text-[9px]  text-[16px] lg:text-[14px] font-inter">
                     Currently clean electricity generation comprises of 35%
                     market share of the total electricity consumed which in
                     itself is less than 20% of total energy consumption. So in
@@ -385,13 +385,13 @@ export default function Thesis() {
             </div>
           )}
           {title === "Ecosystem Conservation" && (
-            <div className="border-2 lg:flex lg:gap-5 border-[#F2F4F7] h-full rounded-lg px-[6%] py-6">
+            <div className="border-2 lg:flex lg:gap-5 border-[#F2F4F7] h-full  rounded-lg px-[6%] py-6">
               <div className="lg:w-[60%]">
-                <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
+                <p className="text-[#101828] font-semibold text-left  text-[14px] max-[480px]:text-[12px] sm:text-[18px] mr-10 font-inter">
                   Ecosystem Conservation
                 </p>
                 <div className="mt-6">
-                  <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] lg:text-[14px] font-inter">
+                  <p className="text-[#475467] text-center sm:text-left font-normal max-[480px]:text-[9px]  text-[16px] lg:text-[14px] font-inter">
                     We have destroyed over 50% of our forest cover in the last
                     200 yrs primarily because of urbanization, agriculture,
                     resource demand and cattle grazing. On last count over 10
@@ -441,11 +441,11 @@ export default function Thesis() {
           {title === "Clean Transport" && (
             <div className="border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6">
               <div className="lg:w-[60%]">
-                <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
+                <p className="text-[#101828] font-semibold text-left  text-[14px] max-[480px]:text-[12px] sm:text-[18px] mr-10 font-inter">
                   Clean Transport
                 </p>
                 <div className="mt-6">
-                  <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] lg:text-[14px] font-inter">
+                  <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] max-[480px]:text-[9px] lg:text-[14px] font-inter">
                     Transportation contributes about 10-15% of the emission
                     problem. We are already began witnessing the wave of
                     transition forming towards electric vehicles. Right now, at
@@ -496,11 +496,11 @@ export default function Thesis() {
           {title === "Solarpunk Spaces" && (
             <div className="border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6">
               <div className="lg:w-[60%]">
-                <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] mr-10 font-inter">
+                <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] max-[480px]:text-[12px] mr-10 font-inter">
                   Solarpunk Spaces
                 </p>
                 <div className="mt-8">
-                  <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] lg:text-[14px] font-inter">
+                  <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] max-[480px]:text-[9px] lg:text-[14px] font-inter">
                     Built environment is a major contributor to GHG emissions.
                     The construction process itself is energy-intensive with
                     production of materials like cement, steel, and glass that
@@ -517,7 +517,7 @@ export default function Thesis() {
                   </p>
                   <br />
                   <br />
-                  <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                  <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] max-[480px]:text-[9px] font-inter">
                     Shelter being a core human need we dont anticipate the
                     demand tapering anytime soon so $EARTH treasury will be
                     funding construction that lis energy effecient, using
@@ -626,8 +626,9 @@ export default function Thesis() {
             <div className="relative mt-5">
               <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
                 <p className=" text-center font-semibold text-[6.8px] max-[375px]:text-[5px]  font-syne ">
-                  They <span className="text-white "> directly address  all </span>{" "}
-                 causes of climate change
+                  They{" "}
+                  <span className="text-white "> directly address all </span>{" "}
+                  causes of climate change
                 </p>
               </div>
               <ImageView
