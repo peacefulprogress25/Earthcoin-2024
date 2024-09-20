@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import Minting from "../../Components/Minting";
 import { FaCopy } from "react-icons/fa";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import buttonConfig from "../../utils/button";
 import Link from "next/link";
 
@@ -13,9 +13,27 @@ const check = "/assets/icons/Check_icon.svg";
 
 export default function Earth() {
   const [copied, setCopied] = useState(false);
-  const isSmall = useMediaQuery({ query: "(mix-width: 1100px)" });
-  const isMedium = useMediaQuery({ query: "(mix-width: 1280x)" });
-  const isLarge = useMediaQuery({ query: "(mix-width: 1440px)" });
+  const isSmall = useMediaQuery({ query: "(min-width: 1100px)" });
+  const isMedium = useMediaQuery({ query: "(min-width: 1280px)" });
+  const isLarge = useMediaQuery({ query: "(min-width: 1440px)" });
+  const isXLarge = useMediaQuery({ query: "(min-width: 1550px)" });
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    if (isXLarge) {
+      setWidth(770);
+      console.log("sdf");
+    } else if (isLarge) {
+      setWidth(700);
+    } else if (isMedium) {
+      setWidth(550);
+    } else if (isSmall) {
+      setWidth(520);
+    } else {
+      setWidth(470); // Default width for small screens
+    }
+  }, [isXLarge, isLarge, isMedium, isSmall]);
+  console.log(width, "width", isSmall, isMedium, isLarge, isXLarge);
 
   const onCopy = () => {
     setCopied(true);
@@ -162,8 +180,10 @@ export default function Earth() {
             <ImageView
               src={data?.img}
               alt={data?.title}
-              // width={isSmall ? 450 : isMedium ? 500 : isLarge ? 600 : 400}
-              width={600}
+              //pls have a look to this , it's not working properly
+              // width={isSmall ? 450 : isMedium ? 500 : isLarge ? 700 : 400}
+              // width={600}
+              width={width || 500}
               height={600}
             />
           </div>
