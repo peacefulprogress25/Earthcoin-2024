@@ -468,68 +468,135 @@ export default function Mechanics() {
         </div>
       </div>
 
-      <div className="h-[38rem] lg:h-[42rem] xl:h-[45rem] flex items-center relative pl-10">
-        <Swiper
-          ref={swiper}
-          fadeEffect={{ crossFade: true }}
-          modules={[EffectFade]}
-          effect="fade"
-          className="mt-36 mySwiper"
-          onSlideChange={(swiper) => swipeFn(swiper.activeIndex)}
-        >
-          {tokenomicsdata.map((obj, i) => {
-            return (
-              <SwiperSlide key={i}>
-                <div className="flex w- ">
-                  <div className="w-full  border-t-2  border-[#EAECF0] ">
-                    <div className="pr-2">
-                      <p className="text-[#101828] font-semibold text-left mt-4 lg:mt-10 text-[20px] sm:text-[28px] mr-10 lg:mr-0 font-syne">
-                        Example
-                      </p>
-                      {obj.content1}
+      {!isMobile ? (
+        <div className="h-[38rem] lg:h-[42rem] xl:h-[45rem] flex items-center relative pl-10">
+          <Swiper
+            ref={swiper}
+            fadeEffect={{ crossFade: true }}
+            modules={[EffectFade]}
+            effect="fade"
+            className="mt-36 mySwiper"
+            onSlideChange={(swiper) => swipeFn(swiper.activeIndex)}
+          >
+            {tokenomicsdata.map((obj, i) => {
+              return (
+                <SwiperSlide key={i}>
+                  <div className="flex w- ">
+                    <div className="w-full  border-t-2  border-[#EAECF0] ">
+                      <div className="pr-2">
+                        <p className="text-[#101828] font-semibold text-left mt-4 lg:mt-10 text-[20px] sm:text-[28px] mr-10 lg:mr-0 font-syne ">
+                          Example
+                        </p>
+                        {obj.content1}
 
-                      {obj.content2}
-                      <br />
-                      <div className="flex gap-2">
-                        {obj.content3}
+                        {obj.content2}
+                        <br />
+                        <div className="flex gap-2">
+                          {obj.content3}
 
-                        <div>
-                          {obj.content4}
+                          <div>
+                            {obj.content4}
 
-                          {obj.content5}
+                            {obj.content5}
+                          </div>
                         </div>
+                        {obj.content6}
+                        {obj.content7}
+                        {obj.content8}
+                        {obj.content9}
+                        {obj.description}
                       </div>
-                      {obj.content6}
-                      {obj.content7}
-                      {obj.content8}
-                      {obj.content9}
-                      {obj.description}
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
 
-        <div
-          style={{ backgroundImage: `url(${treasurybg})` }}
-          className="w-[30rem] lg:w-[52rem]   overflow-hidden bg-cover sm:h-[33rem]  xl:h-[36rem]"
-        >
-          <ImageView
-            src={"/assets/images/flow.png"}
-            alt="graph"
-            width={600}
-            height={600}
-            // style={{ transform: `scale(1.5)` }}
-            className="scale-150 w-96  flow-chart "
+          <div
+            style={{ backgroundImage: `url(${treasurybg})` }}
+            className="w-[30rem] lg:w-[52rem]   overflow-hidden bg-cover sm:h-[33rem]  xl:h-[36rem]"
+          >
+            <ImageView
+              src={"/assets/images/flow.png"}
+              alt="graph"
+              width={600}
+              height={600}
+              // style={{ transform: `scale(1.5)` }}
+              className="scale-150 w-96  flow-chart "
+            />
+          </div>
+          <StepperMui
+            className="absolute z-20 bottom-24"
+            onChange={(index) => swiper.current.swiper.slideTo(index)}
           />
         </div>
-        <StepperMui
-          className="absolute z-20 bottom-24"
-          onChange={(index) => swiper.current.swiper.slideTo(index)}
-        />
-      </div>
+      ) : (
+        <>
+          <div className="h-[38rem] lg:h-[42rem] xl:h-[45rem] flex flex-col items-center relative  ">
+            <Swiper
+              ref={swiper}
+              fadeEffect={{ crossFade: true }}
+              modules={[EffectFade]}
+              effect="fade"
+              className="mt-10 mySwiper !h-[30rem] !overflow-scroll mb-2 hide-scrollbar"
+              onSlideChange={(swiper) => swipeFn(swiper.activeIndex)}
+            >
+              {tokenomicsdata.map((obj, i) => {
+                return (
+                  <SwiperSlide key={i}>
+                    <div className="flex ">
+                      <div className="w-full  border-t-2  border-[#EAECF0]  ">
+                        <div className="">
+                          <p className="text-[#101828] font-semibold text-left mt-2 text-[18px]  font-syne ">
+                            Example
+                          </p>
+                          {obj.content1}
+
+                          {obj.content2}
+                          <br />
+                          <div className="flex gap-1">
+                            {obj.content3}
+
+                            <div>
+                              {obj.content4}
+
+                              {obj.content5}
+                            </div>
+                          </div>
+                          {obj.content6}
+                          {obj.content7}
+                          {obj.content8}
+                          {obj.content9}
+                          {obj.description}
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+
+            <div
+              style={{ backgroundImage: `url(${treasurybg})` }}
+              className=" lg:w-[52rem]   overflow-hidden bg-cover "
+            >
+              <ImageView
+                src={"/assets/images/flow.png"}
+                alt="graph"
+                width={400}
+                height={400}
+                // style={{ transform: `scale(1.5)` }}
+                className="scale-150 flow-chart "
+              />
+            </div>
+            <StepperMui
+              className="absolute z-20 top-[100.2%] mr-10"
+              onChange={(index) => swiper.current.swiper.slideTo(index)}
+            />
+          </div>
+        </>
+      )}
 
       {/* <div className="flex justify-between md:gap-10 xl:gap-16 w-full mt-[5rem]">
 
