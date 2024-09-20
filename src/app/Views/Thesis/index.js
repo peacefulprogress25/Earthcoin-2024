@@ -808,41 +808,81 @@ export default function Thesis() {
             </p>
           </li>
         </ol> */}
-        <div className="flex justify-between gap-10 mt-32 mb-24">
-          <div className="md:w-[70%] lg:w-[50%]">
-            <p className="text-[#101828] font-semibold text-left mt-6 md:text-[16px] lg:text-[28px] mr-10 font-syne">
-              How?
-            </p>
-            <div className="w-full mt-6">
-              <p className="text-[#475467] text-center sm:text-left font-normal  md:text-[10px] lg:text-[14px] xl:text-[16px] font-inter">
-                We have tried to make it as easy and rewarding for anyone across
-                the planet to take constructive climate action by simply buying
-                $Earth and using it eventually to build a sustainable, circular,
-                solarpunky economy.
-                <br />
-                <br />
-                Unlike BTC or ETH which are minted as block rewards for
-                validating transactions on the blockchain, $Earth is only minted
-                against purged $$$ which are used to fund climate solutions. For
-                the first time we will have a{" "}
-                <span className="text-[#EC8000]md:text-[10px] lg:text-[14px] xl:text-[16px] font-semibold">
-                  currency that is backed by climate solutions
-                </span>{" "}
-                which provide essential utility for humanity and not by a shiny
-                metal or military forces.
+        {!isMobile ? (
+          <div className="flex justify-between gap-10 mt-32 mb-24">
+            <div className="md:w-[70%] lg:w-[50%]">
+              <p className="text-[#101828] font-semibold text-left mt-6 md:text-[16px] lg:text-[28px] mr-10 font-syne">
+                How?
               </p>
+              <div className="w-full mt-6">
+                <p className="text-[#475467] text-center sm:text-left font-normal  md:text-[10px] lg:text-[14px] xl:text-[16px] font-inter">
+                  We have tried to make it as easy and rewarding for anyone
+                  across the planet to take constructive climate action by
+                  simply buying $Earth and using it eventually to build a
+                  sustainable, circular, solarpunky economy.
+                  <br />
+                  <br />
+                  Unlike BTC or ETH which are minted as block rewards for
+                  validating transactions on the blockchain, $Earth is only
+                  minted against purged $$$ which are used to fund climate
+                  solutions. For the first time we will have a{" "}
+                  <span className="text-[#EC8000]md:text-[10px] lg:text-[14px] xl:text-[16px] font-semibold">
+                    currency that is backed by climate solutions
+                  </span>{" "}
+                  which provide essential utility for humanity and not by a
+                  shiny metal or military forces.
+                </p>
+              </div>
+            </div>
+            <div>
+              <ImageView
+                src={assetthesis}
+                alt="asset"
+                width={500}
+                height={500}
+                className="object-cover"
+              />
             </div>
           </div>
-          <div>
-            <ImageView
-              src={assetthesis}
-              alt="asset"
-              width={500}
-              height={500}
-              className="object-cover"
-            />
-          </div>
-        </div>
+        ) : (
+          <>
+            <div className="flex justify-between gap-10 mt-32 max-[480px]:mt-10 mb-24 max-[480px]:mb-8 max-[480px]:flex-col">
+              <div className="md:w-[70%] lg:w-[50%]">
+                <p className="text-[#101828] font-semibold text-left mt-6 md:text-[16px] max-[480px]-text-[12px] max-[480px]:text-center max-[480px]:mr-0  lg:text-[28px] mr-10 font-syne">
+                  How?
+                </p>
+                <div className="w-full mt-6">
+                  <p className="text-[#475467] text-center sm:text-left font-normal max-[480px]:text-[9.5px]  md:text-[10px] lg:text-[14px] xl:text-[16px] font-inter">
+                    We have tried to make it as easy and rewarding for anyone
+                    across the planet to take constructive climate action by
+                    simply buying $Earth and using it eventually to build a
+                    sustainable, circular, solarpunky economy.
+                    <br />
+                    <br />
+                    Unlike BTC or ETH which are minted as block rewards for
+                    validating transactions on the blockchain, $Earth is only
+                    minted against purged $$$ which are used to fund climate
+                    solutions. For the first time we will have a{" "}
+                    <span className="text-[#EC8000]md:text-[10px] lg:text-[14px] xl:text-[16px] font-semibold">
+                      currency that is backed by climate solutions
+                    </span>{" "}
+                    which provide essential utility for humanity and not by a
+                    shiny metal or military forces.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <ImageView
+                  src={assetthesis}
+                  alt="asset"
+                  width={500}
+                  height={500}
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </>
+        )}
       </div>
 
       <Community
