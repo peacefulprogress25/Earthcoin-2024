@@ -10,6 +10,7 @@ import StepperMui from "../../Components/StepperMui";
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { useEffect, useRef, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const tokenomics = "/assets/images/tokenomics.png";
 const curious = "/assets/images/Curious.png";
@@ -26,6 +27,7 @@ const treasury = "/assets/images/treasury.png";
 const harvest = "/assets/images/harvest-treasury.png";
 
 export default function Mechanics() {
+  const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
   gsap.registerPlugin(MotionPathPlugin);
   const [lastPosition, setLastPosition] = useState({ tx: 40, ty: 280 });
   const swiper = useRef();
@@ -280,10 +282,10 @@ export default function Mechanics() {
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             About
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
+          <p className="text-[#101828] font-semibold text-center text-[30px] max-[480px]:text-[24px] sm:text-[40px] font-syne">
             TOKENOMICS
           </p>
-          <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
+          <p className="text-[#475467] text-center font-normal  text-[16px] max-[480px]:text-[14px] font-inter">
             The economic models behind $Earth funding climate solutions and
             putting Eco in Economy
           </p>
@@ -296,7 +298,7 @@ export default function Mechanics() {
           className="object-cover w-full mt-4"
         />
         <div className="sm:px-[13%] px-4 flex flex-col w-full items-start">
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px]  font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] max-[480px]:text-[16px] sm:text-[28px]  font-syne">
             $EARTH is designed to -
           </p>
         </div>
@@ -307,77 +309,162 @@ export default function Mechanics() {
           ))}
         </div>
 
-        <div className="sm:px-[13%] px-4 flex flex-col w-full items-start">
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[25px]  font-syne">
+        <div className="sm:px-[13%] px-4 flex flex-col w-full items-start ">
+          <p className="text-[#101828] font-semibold text-left max-[480px]:text-center mt-6 text-[20px] sm:text-[25px] max-[480px]:text-[12px]  font-syne">
             Here we look at how tokenomics have been designed to achieve these
             objectives
           </p>
           <div className="mt-6">
-            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+            <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] max-[480px]:text-[12px] font-inter">
               In order to get an understanding of $EARTH currency design we will
               first explain key concepts and then take you through an example of
               how these concepts play out in action
             </p>
           </div>
-          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
-              $Earth -
-            </p>
-
-            <p className="text-[#475467] text-center sm:text-left font-normal w-[70%] text-[16px] font-inter">
-              Token that can be minted/created only when petro $$$ are purged at
-              the protocol level by Earth Nodes.
-            </p>
-          </div>
-          <div className="mt-6 w-full flex flex-col sm:flex-row gap-15 justify-between items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
-              Neoliberal Value -
-            </p>
-            <div className="flex flex-col gap-5 w-[70%] items-start">
-              <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-                Price of real world assets backing each $EARTH in the existing
-                neoliberal paradigm. Value of this cannot go down,
-                <span className="text-[#EC8000] font-semibold">
-                  {" "}
-                  EVER!
-                </span>{" "}
-                This is coded into the smart contracts.
+          {!isMobile ? (
+            <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+              <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
+                $Earth -
               </p>
-              <p className="text-[#101828] font-semibold text-left   text-[18px]  font-syne">
-                Treasury value in $ ÷ $EARTH in circulation
+
+              <p className="text-[#475467] text-center sm:text-left font-normal w-[70%] text-[16px] font-inter">
+                Token that can be minted/created only when petro $$$ are purged
+                at the protocol level by Earth Nodes.
               </p>
             </div>
-          </div>
-          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
-              Mint Multiple -
-            </p>
+          ) : (
+            <>
+              <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-5 border-[#EAECF0] ">
+                <p className="text-[#101828] w-[30%] font-semibold text-left  max-[480px]:text-[16px]   text-[20px]  font-syne">
+                  $Earth -
+                </p>
 
-            <p className="text-[#475467] text-center sm:text-left font-normal w-[70%]  text-[16px] font-inter">
-              The premium Earth Nodes pay to mint $EARTH on the neoliberal value
-              of assets in the treasury
-            </p>
-          </div>
-          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
-              Harvest -
-            </p>
+                <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] max-[480px]:text-[12px] mt-2 font-inter">
+                  Token that can be minted/created only when petro $$$ are
+                  purged at the protocol level by Earth Nodes.
+                </p>
+              </div>
+            </>
+          )}
+          {!isMobile ? (
+            <div className="mt-6 w-full flex flex-col sm:flex-row gap-15 justify-between items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+              <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
+                Neoliberal Value -
+              </p>
+              <div className="flex flex-col gap-5 w-[70%] items-start">
+                <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
+                  Price of real world assets backing each $EARTH in the existing
+                  neoliberal paradigm. Value of this cannot go down,
+                  <span className="text-[#EC8000] font-semibold">
+                    {" "}
+                    EVER!
+                  </span>{" "}
+                  This is coded into the smart contracts.
+                </p>
+                <p className="text-[#101828] font-semibold text-left   text-[18px]  font-syne">
+                  Treasury value in $ ÷ $EARTH in circulation
+                </p>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="mt-6 w-full flex flex-col sm:flex-row gap-15 justify-between items-start sm:items-center border-b-2 pb-5 border-[#EAECF0] space-between">
+                <p className="text-[#101828]  font-semibold text-left   max-[480px]:text-[16px]  text-[20px]  font-syne">
+                  Neoliberal Value -
+                </p>
+                <div className="flex flex-col gap-5  ">
+                  <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] max-[480px]:text-[12px] mt-2  font-inter">
+                    Price of real world assets backing each $EARTH in the
+                    existing neoliberal paradigm. Value of this cannot go down,
+                    <span className="text-[#EC8000] font-semibold">
+                      {" "}
+                      EVER!
+                    </span>{" "}
+                    This is coded into the smart contracts.
+                  </p>
+                  <p className="text-[#101828] font-semibold text-center  text-[18px] max-[480px]:text-[14px]  font-syne">
+                    Treasury value in $ ÷ $EARTH in circulation
+                  </p>
+                </div>
+              </div>
+            </>
+          )}
+          {!isMobile ? (
+            <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+              <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
+                Mint Multiple -
+              </p>
 
-            <p className="text-[#475467] text-center sm:text-left font-normal w-[70%]  text-[16px] font-inter">
-              Function that lets the protocol mint $EARTH to the extent that it
-              doesn&apos;t dilute the neoliberal value of assets backing each
-              $EARTH
-            </p>
-          </div>
-          <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-            <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
-              Mint price -
-            </p>
+              <p className="text-[#475467] text-center sm:text-left font-normal w-[70%]  text-[16px] font-inter">
+                The premium Earth Nodes pay to mint $EARTH on the neoliberal
+                value of assets in the treasury
+              </p>
+            </div>
+          ) : (
+            <>
+              <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-5 border-[#EAECF0] space-between">
+                <p className="text-[#101828] font-semibold text-left  max-[480px]:text-[16px]  text-[20px]  font-syne">
+                  Mint Multiple -
+                </p>
 
-            <p className="text-[#101828] font-semibold text-left  w-[70%] text-[18px]  font-syne">
-              Neoliberal value of assets backing each $EARTH x Mint multiple
-            </p>
-          </div>
+                <p className="text-[#475467] text-center sm:text-left font-normal max-[480px]:text-[12px] mt-2  text-[16px] font-inter">
+                  The premium Earth Nodes pay to mint $EARTH on the neoliberal
+                  value of assets in the treasury
+                </p>
+              </div>
+            </>
+          )}
+          {!isMobile ? (
+            <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+              <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
+                Harvest -
+              </p>
+
+              <p className="text-[#475467] text-center sm:text-left font-normal w-[70%]  text-[16px] font-inter">
+                Function that lets the protocol mint $EARTH to the extent that
+                it doesn&apos;t dilute the neoliberal value of assets backing
+                each $EARTH
+              </p>
+            </div>
+          ) : (
+            <>
+              <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15items-start sm:items-center border-b-2 pb-5 border-[#EAECF0] space-between">
+                <p className="text-[#101828]  font-semibold text-left max-[480px]:text-[16px] text-[20px]  font-syne">
+                  Harvest -
+                </p>
+
+                <p className="text-[#475467] text-center sm:text-left font-normal max-[480px]:text-[12px] mt-2  text-[16px] font-inter">
+                  Function that lets the protocol mint $EARTH to the extent that
+                  it doesn&apos;t dilute the neoliberal value of assets backing
+                  each $EARTH
+                </p>
+              </div>
+            </>
+          )}
+
+          {!isMobile ? (
+            <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
+              <p className="text-[#101828] w-[30%] font-semibold text-left text-[20px] font-syne">
+                Mint price -
+              </p>
+
+              <p className="text-[#101828] font-semibold text-left  w-[70%] text-[18px]  font-syne">
+                Neoliberal value of assets backing each $EARTH x Mint multiple
+              </p>
+            </div>
+          ) : (
+            <>
+              <div className="mt-6 w-full flex flex-col justify-between sm:flex-row gap-15 items-start sm:items-center border-b-2 pb-5 border-[#EAECF0] space-between">
+                <p className="text-[#101828] font-semibold text-left text-[20px] max-[480px]:text-[16px] font-syne">
+                  Mint price -
+                </p>
+
+                <p className="text-[#101828] font-semibold  text-center max-[480px]:text-[11px] mt-2 font-syne">
+                  Neoliberal value of assets backing each $EARTH x Mint multiple
+                </p>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
