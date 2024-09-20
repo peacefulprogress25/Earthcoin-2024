@@ -887,7 +887,7 @@ export default function Mechanics() {
 
       <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
 
-      <div className="w-full px-10">
+      <div className="w-full max-[480px]:px-1  px-10">
         <Community
           title="Still curious?"
           img={curious}
