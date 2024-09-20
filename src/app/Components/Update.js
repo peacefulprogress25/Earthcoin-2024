@@ -67,7 +67,7 @@ export default function Updates() {
             items={update}
             mode="VERTICAL"
             disableToolbar
-            cardHeight={200}
+            cardHeight={250}
             timelinePointShape="square"
             timelinePointDimension={20}
             theme={{

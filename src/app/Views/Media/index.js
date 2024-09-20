@@ -47,6 +47,8 @@ export default function Media() {
     selectedCategory === "All"
       ? post
       : post.filter((post) => post.category === selectedCategory);
+  const hasContent = media.length > 0 || post.length > 0;
+
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
@@ -158,16 +160,15 @@ export default function Media() {
           <p className="text-[#475467] font-inter mt-2 text-center font-normal text-[16px]">
             Join over 4,000+ startups already growing with Untitled.
           </p>
-          <Link
-          className="w-[100px] mt-6  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
-          href={buttonConfig?.media_get_started?.link || ""}
-          target={buttonConfig?.media_get_started?.external ? "_blank" : "_self"}
-        >
-          {buttonConfig?.media_get_started?.title}
-        </Link>
-          {/* <button className="w-[100px] mt-6  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm">
-            Get started
-          </button> */}
+          {hasContent && (
+            <Link
+              className="w-[100px] mt-6 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
+              href={buttonConfig?.media_get_started?.link || ""}
+              target={buttonConfig?.media_get_started?.external ? "_blank" : "_self"}
+            >
+              {buttonConfig?.media_get_started?.title}
+            </Link>
+          )}
         </div>
       </div>
     </div>

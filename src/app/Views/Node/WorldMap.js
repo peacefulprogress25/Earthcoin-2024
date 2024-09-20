@@ -3,7 +3,7 @@ import ImageView from "../../Components/ImageView";
 import "leaflet/dist/leaflet.css";
 import React, { useState, useEffect } from "react";
 import mapData from "../Projects/data/countries.json";
-import { MapContainer, GeoJSON, Marker, Popup } from "react-leaflet";
+import { MapContainer, GeoJSON, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import Link from "next/link";
 import "../Projects/map.css";
@@ -16,15 +16,49 @@ const markerIcon = new L.Icon({
   iconUrl: "/assets/icons/marker-red.svg",
   iconSize: MarkerIconSize,
 });
+
+// Custom hook to set zoom level based on screen size
+const SetZoom = ({ setZoomLevel }) => {
+  const map = useMap();
+
+  useEffect(() => {
+    // Function to adjust zoom based on screen width
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 640) {
+        map.setZoom(0.1); // Zoom level for screens below 640px
+        setZoomLevel(0.1);
+      } else {
+        map.setZoom(1); // Zoom level for larger screens
+        setZoomLevel(1);
+      }
+    };
+
+    // Set zoom on initial load
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [map, setZoomLevel]);
+
+  return null;
+};
+
 export default function WorldMap({ nodeList }) {
   const position = [20, 100];
   const [loading, setLoading] = useState(true);
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
   }, []);
+
   const renderIcons = () => {
     return nodeList && nodeList.length
       ? nodeList.map((map, index) => (
@@ -41,10 +75,7 @@ export default function WorldMap({ nodeList }) {
                 event.target.openPopup();
               },
               mouseout: (event) => {
-                // setTimeout(() => {
-                //   console.log("close");
                 event.target.closePopup();
-                // }, 30000);
               },
             }}
           >
@@ -53,9 +84,9 @@ export default function WorldMap({ nodeList }) {
         ))
       : null;
   };
+
   return (
     <div className="w-full flex flex-col relative">
-      {" "}
       <ImageView
         src={map}
         alt="map"
@@ -67,7 +98,7 @@ export default function WorldMap({ nodeList }) {
         <p className="text-white font-light text-center text-[14px] font-inter">
           Nodes of $EARTH
         </p>
-        <p className="text-white font-semibold text-center text-[30px] sm:text-[30px] !font-syne">
+        <p className="text-white font-semibold text-center text-[24px] sm:text-[30px] !font-syne">
           $EARTH Mycelium map
         </p>
         <p className="text-white text-center font-light  text-[16px] font-inter">
@@ -76,7 +107,7 @@ export default function WorldMap({ nodeList }) {
       </div>
       <MapContainer
         center={position}
-        zoom={1}
+        zoom={zoomLevel}
         zoomControl={false}
         scrollWheelZoom={false}
         doubleClickZoom={false}
@@ -84,6 +115,7 @@ export default function WorldMap({ nodeList }) {
         attributionControl={false}
         className="leaflet-Map h-[80vh] sm:h-[100vh] w-[100vh] mt-0 sm:-mt-[2rem] ml-0 sm:-ml-[6rem] object-cover"
       >
+        <SetZoom setZoomLevel={setZoomLevel} />
         {loading ? (
           <div className="h-[60vh] w-full flex items-center ml-0  sm:ml-[6rem]  mt-0  sm:mt-[5rem] justify-center">
             <Loader />
@@ -98,6 +130,7 @@ export default function WorldMap({ nodeList }) {
     </div>
   );
 }
+
 function PopoverHandler({ map, id }) {
   const socialIcons = [
     {
@@ -114,6 +147,7 @@ function PopoverHandler({ map, id }) {
       link: map?.google,
     },
   ];
+
   return (
     <Popup className="map_popup" key={map.name}>
       <ImageView
@@ -123,10 +157,8 @@ function PopoverHandler({ map, id }) {
         height={20}
         className="rounded-full"
       />
-      <p className="text-[#344054] font-semibold  font-inter ">{map?.name}</p>
-      <p className="text-[#667085] font-normal mt-2 font-inter ">
-        Minted till date:
-      </p>
+      <p className="text-[#344054] font-semibold font-inter">{map?.name}</p>
+      <p className="text-[#667085] font-normal mt-2 font-inter">Minted till date:</p>
       <p className="text-[#667085] font-normal font-inter">{map?.balance}</p>
       <div className="flex mt-2 gap-3">
         {socialIcons.map((icons, index) => (

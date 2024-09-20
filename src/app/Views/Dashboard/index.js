@@ -288,15 +288,15 @@ export default function Dashboard() {
           <div className="flex flex-col w-full gap-6 sm:flex-row">
             {priceData?.map((price, index) => (
               <div
-                className="flex flex-col p-6 w-[18rem] sm:w-[41rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                className="flex flex-col p-6 w-full sm:w-[41rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0] mx-auto sm:mx-0 max-w-[18rem] sm:max-w-none"
                 key={index}
               >
-                <p className="text-[#101828] text-[14px] font-semibold font-inter">
+                <p className="text-[#101828] text-[14px] font-semibold font-inter text-center sm:text-left">
                   {price?.title}
                 </p>
-                <div className="flex items-end justify-between gap-2">
-                  <div className="flex flex-col items-start">
-                    <p className="text-[#101828] text-[40px] font-semibold font-syne">
+                <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-2">
+                  <div className="flex flex-col items-center sm:items-start">
+                    <p className="text-[#101828] text-[40px] font-semibold font-syne text-center sm:text-left">
                       {price?.price}
                       <span className="text-[22px]">$DAI</span>
                     </p>
@@ -323,7 +323,7 @@ export default function Dashboard() {
                     alt="chart"
                     width={100}
                     height={100}
-                    className="object-cover"
+                    className="object-cover mt-4 sm:mt-0"
                   />
                 </div>
               </div>
@@ -356,10 +356,10 @@ export default function Dashboard() {
           <div className="w-[100%] h-[35vh]">
             <Line data={data} width="400" height="300" options={options} />
           </div>
-          <div className="grid items-center w-full grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="grid items-center w-full grid-cols-1 sm:grid-cols-3 gap-3">
             {cardData?.map((price, index) => (
               <div
-                className="flex flex-col p-6 w-[18rem] lg:w-[18rem] xl:w-[24rem]  rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                className="flex flex-col p-6 w-full sm:w-[18rem] lg:w-[18rem] xl:w-[24rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
                 key={index}
               >
                 <p className="text-[#101828] text-[14px] font-semibold font-inter">
@@ -367,10 +367,10 @@ export default function Dashboard() {
                 </p>
                 <div className="flex items-end justify-between gap-2">
                   <div className="flex flex-col items-start">
-                    <p className="text-[#101828] text-[40px] font-semibold font-syne">
+                    <p className="text-[#101828] text-[32px] sm:text-[40px] font-semibold font-syne">
                       {price?.price}
                       {price?.daiBalance && (
-                        <span className="text-[22px]">$DAI</span>
+                        <span className="text-[18px] sm:text-[22px]">$DAI</span>
                       )}
                     </p>
                     {price?.percent ? (
@@ -399,9 +399,9 @@ export default function Dashboard() {
                     <ImageView
                       src={price?.img}
                       alt="chart"
-                      width={100}
-                      height={100}
-                      className="object-cover"
+                      width={80}
+                      height={80}
+                      className="object-cover w-20 h-20 sm:w-[100px] sm:h-[100px]"
                     />
                   ) : (
                     ""
@@ -457,11 +457,11 @@ export default function Dashboard() {
                 className="text-[#667085] font-inter text-[14px] font-normal"
               />
             </div>
-            <div className="w-full hidden sm:flex border-2 rounded-md mt-6 border-[#EAECF0] mb-6 flex-col">
-              <table className="table-auto">
-                <thead className="bg-transparent border-b-2 border-[#EAECF0]  h-[40px] !w-full text-left font-inter font-medium text-[#475467] text-[12px]">
+            <div className="w-full border-2 rounded-md mt-6 border-[#EAECF0] mb-6 flex-col overflow-x-auto">
+              <table className="w-full table-auto">
+                <thead className="bg-transparent border-b-2 border-[#EAECF0] h-[40px] !w-full text-left font-inter font-medium text-[#475467] text-[12px]">
                   <tr className="">
-                    <th className="bg-[#F9FAFB] flex-1  pl-4 rounded-tl-md">
+                    <th className="bg-[#F9FAFB] flex-1 pl-4 rounded-tl-md">
                       <p>Asset</p>
                     </th>
                     <th className="bg-[#F9FAFB] flex-1">
@@ -470,29 +470,28 @@ export default function Dashboard() {
                     <th className="bg-[#F9FAFB] flex-1">
                       <p>Contract Address</p>
                     </th>
-                    <th className=" bg-[#F9FAFB] flex-1">
+                    <th className="bg-[#F9FAFB] flex-1">
                       <p>Quantity</p>
                     </th>
-                    <th className=" bg-[#F9FAFB] flex-1">
+                    <th className="bg-[#F9FAFB] flex-1">
                       <p>Price</p>
                     </th>
-                    <th className=" bg-[#F9FAFB] flex-1">
+                    <th className="bg-[#F9FAFB] flex-1">
                       <p>Change (24H)</p>
                     </th>
-                    <th className=" bg-[#F9FAFB] w-[100px] flex-1 pr-2 rounded-tr-md ">
+                    <th className="bg-[#F9FAFB] w-[100px] flex-1 pr-2 rounded-tr-md">
                       <p>Value</p>
                     </th>
                   </tr>
                 </thead>
-                <tbody className="bg-transparent text-[#101828]    !w-full text-[12px] font-semibold">
+                <tbody className="bg-transparent text-[#101828] !w-full text-[12px] font-semibold">
                   {transactionList.map((list, index) => (
                     <tr
                       key={index}
-                      className={`h-[60px]  border-b-2  border-[#EAECF0] font-inter font-medium 
-                     text-[#101828]`}
+                      className="h-[60px] border-b-2 border-[#EAECF0] font-inter font-medium text-[#101828]"
                     >
-                      <td>
-                        <div className="flex items-center gap-2 pl-4">
+                      <td className="max-sm:p-4">
+                        <div className="flex items-center gap-2 pl-4 max-sm:pl-0">
                           <ImageView
                             src={list.icon}
                             alt="asset"
@@ -503,7 +502,7 @@ export default function Dashboard() {
                           <p className="">{list.hash}</p>
                         </div>
                       </td>
-                      <td>
+                      <td className="max-sm:p-4">
                         <p className="rounded-full w-fit p-1 text-[#344054] bg-[#F2F4F7]">
                           {list.method}
                         </p>
@@ -511,33 +510,22 @@ export default function Dashboard() {
                       <td>
                         <p>{list.block}</p>
                       </td>
-                      <td>
+                      <td className="max-sm:p-4">
                         <p>{list.quantity}</p>
                       </td>
-                      <td>
+                      <td className="max-sm:p-4">
                         <p>{list.price}</p>
                       </td>
-                      <td>
+                      <td className="max-sm:p-4">
                         <p>{list.change}</p>
                       </td>
-                      <td>
+                      <td className="max-sm:p-4">
                         <p>{list.value}</p>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-              <div className="flex justify-between items-center w-full p-4   h-[50px]">
-                <button className="p-1 cursor-pointer w-fit h-fit border-2 font-medium border-[#D0D5DD] font-inter rounded-md text-[#344054] text-[12px]">
-                  Previous
-                </button>
-                <p className="text-[#344054] font-medium font-inter text-[12px]">
-                  Page 1 of 10
-                </p>
-                <button className="p-1 w-fit h-fit cursor-pointer font-medium border-2 font-inter border-[#D0D5DD] rounded-md text-[#344054] text-[12px]">
-                  Next
-                </button>
-              </div>
             </div>
             <Minting />
           </div>{" "}
@@ -546,7 +534,7 @@ export default function Dashboard() {
           <div className="h-[60vh] w-full flex items-center justify-center">
             <Loader />
           </div>
-        )} */}
+        ) */}
       </div>
     </div>
   );

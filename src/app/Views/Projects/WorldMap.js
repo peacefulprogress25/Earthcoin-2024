@@ -1,12 +1,11 @@
-"use client";
-import ImageView from "../../Components/ImageView";
 import "leaflet/dist/leaflet.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import mapData from "./data/countries.json";
-import { MapContainer, GeoJSON, Marker, Popup } from "react-leaflet";
+import { MapContainer, GeoJSON, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "./map.css";
 import { Loader } from "../../Components/Loader";
+import ImageView from "../../Components/ImageView";
 
 const map = "/assets/images/map-bg.png";
 const MarkerIconSize = [35, 100];
@@ -15,9 +14,41 @@ const markerIcon = new L.Icon({
   iconSize: MarkerIconSize,
 });
 
+// Custom hook to control zoom
+const SetZoom = ({ setZoomLevel }) => {
+  const map = useMap();
+
+  useEffect(() => {
+    // Detect screen size and set zoom level accordingly
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 640) {
+        map.setZoom(0.1); // Set zoom for screens below 640px
+        setZoomLevel(0.1);
+      } else {
+        map.setZoom(1); // Set zoom for screens above 640px
+        setZoomLevel(1);
+      }
+    };
+
+    // Call on component mount
+    handleResize();
+
+    // Update zoom on window resize
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [map, setZoomLevel]);
+
+  return null;
+};
+
 export default function WorldMap({ projects }) {
   const position = [20, 100];
   const [loading, setLoading] = useState(true);
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,7 +68,6 @@ export default function WorldMap({ projects }) {
             icon={markerIcon}
             eventHandlers={{
               mouseover: (event) => {
-                console.log("called");
                 event.target.openPopup();
               },
               mouseout: (event) => {
@@ -73,7 +103,7 @@ export default function WorldMap({ projects }) {
       </div>
       <MapContainer
         center={position}
-        zoom={0.5}
+        zoom={zoomLevel}
         zoomControl={false}
         scrollWheelZoom={false}
         doubleClickZoom={false}
@@ -81,6 +111,7 @@ export default function WorldMap({ projects }) {
         attributionControl={false}
         className="leaflet-Map h-[100vh] w-[100vh] mt-0 sm:-mt-[2rem] ml-0 sm:-ml-[5rem] object-cover"
       >
+        <SetZoom setZoomLevel={setZoomLevel} />
         {loading ? (
           <div className="h-[60vh] w-full flex items-center ml-0  sm:ml-[5rem]  mt-0  sm:mt-[5rem] justify-center">
             <Loader />

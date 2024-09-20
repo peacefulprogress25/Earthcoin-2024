@@ -37,7 +37,7 @@
     }
 
     @media (max-width: 340px) {
-      left: 10%;
+      left: 20%;
       transform: translateX(-50%);
       right: auto;
       margin: 0;

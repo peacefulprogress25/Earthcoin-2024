@@ -38,11 +38,11 @@ export default function Faq() {
           </p>
         </div>
         <Gpt />
-        <div className="sm:px-[6%] px-4 flex flex-col w-full items-start">
+        <div className="sm:px-[6%] px-4 flex flex-col w-full items-start sm:items-center">
           {faqdata && faqdata.length ? (
             faqdata.map(({ question, answer }, i) => {
               return (
-                <FAQSection Question={question} Answer={answer} key={i} i={i} />
+                <FAQSection Question={question} Answer={answer} key={i} i={i}  />
               );
             })
           ) : (
@@ -111,16 +111,18 @@ function FAQSection({ Question, Answer, i }) {
         </button>
       </div>
       {index === i ? (
-        <div className="w-[50%] sm:w-full text-[14px] sm:text-[16px]  font-inter text-[#475467]">
-          <Editor
-            editorState={editorState}
-            wrapperClassName="demo-wrapper"
-            editorClassName="richText-editor"
-            toolbarHidden={true}
-            readOnly={true}
-          />
-        </div>
-      ) : null}
+  <div className="w-full text-xs leading-relaxed sm:text-base sm:leading-7 font-inter text-[#475467]">
+    <Editor
+      editorState={editorState}
+      wrapperClassName="demo-wrapper"
+      editorClassName="richText-editor"
+      toolbarHidden={true}
+      readOnly={true}
+    />
+  </div>
+) : null}
+
+
     </div>
   );
 }
