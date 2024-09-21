@@ -1,6 +1,6 @@
 import ImageView from "../../Components/ImageView";
 import Community from "../../Components/Community";
-import FlipBook from "./FlipBook"
+import FlipBook from "./FlipBook";
 
 const purpose = "/assets/images/purpose.png";
 const jungle = "/assets/images/jungle.png";
@@ -11,19 +11,18 @@ const economy = "/assets/images/economys.png";
 const mountain = "/assets/images/mountain.png";
 const tree = "/assets/images/tree.png";
 
-
 export default function Purpose() {
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col gap-2 items-center">
-          <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
+          <p className="text-[#EC8000] font-semibold text-center text-[14px] max-[480px]:text-[12px] font-inter">
             About
           </p>
-          <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
+          <p className="text-[#101828] font-semibold text-center text-[30px] max-[480px]:text-[20px] sm:text-[40px] font-syne">
             PURPOSE
           </p>
-          <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
+          <p className="text-[#475467] text-center font-normal  text-[16px] max-[480px]:text-[12px] font-inter">
             Why $EARTH
           </p>
         </div>
@@ -34,15 +33,14 @@ export default function Purpose() {
         <FlipBook />
       </div>
 
-      <div className="w-full px-20 py-20 ">
+      <div className="w-full px-20 py-20 max-[480px]:px-3 max-[480px]:py-5 ">
         <div className="h-[2px] my-8 bg-[#F2F4F7]"></div>
-        <div className="mt-20 -mb-20">
+        <div className="mt-20 max-[480px]:mt-6 -mb-20">
           <Community
             title="Ready to Go down the rabbit hole?"
             description="Join our social community!"
           />
         </div>
-
       </div>
     </div>
   );
