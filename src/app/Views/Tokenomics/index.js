@@ -591,7 +591,7 @@ export default function Mechanics() {
               />
             </div>
             <StepperMui
-              className="absolute z-20 top-[100.2%] mr-10"
+              className="absolute z-20 top-[101%] mr-10"
               onChange={(index) => swiper.current.swiper.slideTo(index)}
             />
           </div>
@@ -952,7 +952,7 @@ export default function Mechanics() {
             />
           </div> */}
 
-      <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
+      <div className="w-full h-[1.5px] my-10 bg-[#F2F4F7] "></div>
 
       <div className="w-full max-[480px]:px-1  px-10">
         <Community
