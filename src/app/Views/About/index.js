@@ -169,24 +169,24 @@ export default function About() {
             Meet the team behind SolarpunkDAO
           </p>
           <p className='text-[#475467] text-center font-normal w-[80%] sm:w-[60%] text-[16px] font-inter'>
-            We're a small team that loves to create great experiences and make
+            We&apos;re a small team that loves to create great experiences and make
             meaningful connections between builders and customers. Join our
             remote ream!
           </p>
         </div>
         <div className='w-[90%] mx-auto sm:w-full flex flex-col items-center'>
-  {teams && teams.length ? (
-    <div className='grid grid-cols-1 mt-10 mb-10 sm:grid-cols-3 gap-x-6 gap-y-12 sm:justify-items-center'>
-      {teams?.map((people, index) => (
-        <PeopleCard people={people} key={index} />
-      ))}
-    </div>
-  ) : (
-    <div className='h-[60vh] w-full flex items-center justify-center'>
-      <Loader />
-    </div>
-  )}
-</div>
+          {teams && teams.length ? (
+            <div className='grid grid-cols-1 mt-10 mb-10 sm:grid-cols-3 gap-x-6 gap-y-12 sm:justify-items-center'>
+              {teams?.map((people, index) => (
+                <PeopleCard people={people} key={index} />
+              ))}
+            </div>
+          ) : (
+            <div className='h-[60vh] w-full flex items-center justify-center'>
+              <Loader />
+            </div>
+          )}
+        </div>
 
 
         <div className='w-full h-[1px] bg-[#F2F4F7]'></div>
@@ -211,16 +211,15 @@ export default function About() {
           height={400}
           className='w-full mt-4 object-cover h-[45vh]'
         />
-        <div className='flex flex-wrap items-center justify-center w-full px-2 py-4 cursor-pointer gap-4 md:gap-2 lg:gap-1'>
+        <div className='flex flex-wrap items-center justify-center w-full gap-4 px-2 py-4 cursor-pointer md:gap-2 lg:gap-1'>
           {category.map((option, index) => (
             <p
               key={index}
               onClick={() => setSelectedCategory(option?.section)}
-              className={`font-inter text-[14px] px-2 md:px-3 lg:px-4 py-2 font-semibold text-[#475467] ${
-                selectedCategory === option.section
+              className={`font-inter text-[14px] px-2 md:px-3 lg:px-4 py-2 font-semibold text-[#475467] ${selectedCategory === option.section
                   ? "bg-[#FFFCF8] rounded-md text-[#EC8000]"
                   : ""
-              }`}
+                }`}
             >
               {option.section}
             </p>
@@ -307,7 +306,7 @@ export default function About() {
         </p>
         <form>
           <div className='flex flex-col items-center sm:items-start'>
-            <div className='flex flex-col items-center sm:items-start gap-3 mt-8 sm:flex-row sm:items-center'>
+            <div className='flex flex-col items-center gap-3 mt-8 sm:items-start sm:flex-row sm:items-center'>
               <input
                 name='email'
                 onChange={handleChange}
