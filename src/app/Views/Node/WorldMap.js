@@ -94,7 +94,7 @@ export default function WorldMap({ nodeList }) {
         height={600}
         className="!w-full z-[-1] h-[100vh] sm:h-[100vh] object-cover"
       />
-      <div className="flex flex-col pt-[1rem] absolute top-10 w-full gap-1 items-center">
+      <div className="flex flex-col pt-[1rem] md:pt-0 absolute top-10 w-full gap-1 items-center">
         <p className="text-white font-light text-center text-[14px] font-inter">
           Nodes of $EARTH
         </p>

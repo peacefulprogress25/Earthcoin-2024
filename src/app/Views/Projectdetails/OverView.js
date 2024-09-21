@@ -86,7 +86,7 @@ export default function OverView({ details }) {
           <p className='text-[#101828] font-semibold font-syne text-[30px]'>
             Overview
           </p>
-          <div className='text-[14px] sm:text-[16px]   text-[#475467]'>
+          <div className='text-[12px] sm:text-[14px] md:text-[16px] text-[#475467] '>
             <Editor
               editorState={editorState}
               wrapperClassName='demo-wrapper'

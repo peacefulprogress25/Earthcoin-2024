@@ -318,13 +318,15 @@ export default function Dashboard() {
                       </p>
                     </div>
                   </div>
-                  <ImageView
-                    src={price?.img}
-                    alt="chart"
-                    width={100}
-                    height={100}
-                    className="object-cover mt-4 sm:mt-0"
-                  />
+                  <div className="md:flex-wrap mt-4 sm:mt-0">
+                    <ImageView
+                      src={price?.img}
+                      alt="chart"
+                      width={100}
+                      height={100}
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
               </div>
             ))}
@@ -356,10 +358,10 @@ export default function Dashboard() {
           <div className="w-[100%] h-[35vh]">
             <Line data={data} width="400" height="300" options={options} />
           </div>
-          <div className="grid items-center w-full grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="grid items-center w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {cardData?.map((price, index) => (
               <div
-                className="flex flex-col p-6 w-full sm:w-[18rem] lg:w-[18rem] xl:w-[24rem] rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
+                className="flex flex-col p-6 w-full rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
                 key={index}
               >
                 <p className="text-[#101828] text-[14px] font-semibold font-inter">
@@ -367,7 +369,7 @@ export default function Dashboard() {
                 </p>
                 <div className="flex items-end justify-between gap-2">
                   <div className="flex flex-col items-start">
-                    <p className="text-[#101828] text-[32px] sm:text-[40px] font-semibold font-syne">
+                    <p className="text-[#101828] text-[32px] sm:text-[36px] md:text-[40px] font-semibold font-syne">
                       {price?.price}
                       {price?.daiBalance && (
                         <span className="text-[18px] sm:text-[22px]">$DAI</span>
@@ -396,13 +398,15 @@ export default function Dashboard() {
                     ) : null}
                   </div>
                   {price?.img ? (
-                    <ImageView
-                      src={price?.img}
-                      alt="chart"
-                      width={80}
-                      height={80}
-                      className="object-cover w-20 h-20 sm:w-[100px] sm:h-[100px]"
-                    />
+                    <div className="md:flex-wrap mt-4 sm:mt-0">
+                      <ImageView
+                        src={price?.img}
+                        alt="chart"
+                        width={80}
+                        height={80}
+                        className="object-cover w-20 h-20 sm:w-[100px] sm:h-[100px]"
+                      />
+                    </div>
                   ) : (
                     ""
                   )}
@@ -411,7 +415,7 @@ export default function Dashboard() {
             ))}
           </div>
           <div className="flex flex-col items-center w-full sm:items-start">
-            <p className="text-[#101828] text-[28px] text-left  font-semibold font-syne">
+            <p className="text-[#101828] text-[22px] sm:text-[28px] text-left font-semibold font-syne">
               Sector wise funding breakdown
             </p>
             <p className="text-[#475467] text-[14px] text-left  font-normal font-inter">

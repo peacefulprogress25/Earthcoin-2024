@@ -261,7 +261,7 @@ export default function Projectdetails() {
                 </p>
                 <Link
                   href={details?.companyWebsite}
-                  className="sm:w-[180px] w-[150px]  text-white font-Inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs  sm:text-sm"
+                  className="sm:w-[180px] w-[150px]  text-white font-Inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs  sm:text-sm text-center"
                 >
                   Visit company website
                 </Link>

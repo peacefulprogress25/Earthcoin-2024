@@ -111,11 +111,11 @@ function FAQSection({ Question, Answer, i }) {
         </button>
       </div>
       {index === i ? (
-  <div className="w-full text-xs leading-relaxed sm:text-base sm:leading-7 font-inter text-[#475467]">
+  <div className="w-full text-xs leading-relaxed sm:text-[16px] sm:leading-7 font-inter text-[#475467]">
     <Editor
       editorState={editorState}
       wrapperClassName="demo-wrapper"
-      editorClassName="richText-editor"
+      editorClassName="richText-editor custom-editor"
       toolbarHidden={true}
       readOnly={true}
     />

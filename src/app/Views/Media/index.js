@@ -51,7 +51,7 @@ export default function Media() {
 
   return (
     <div>
-      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+     <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col gap-2 items-center">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Media

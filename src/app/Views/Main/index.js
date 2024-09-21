@@ -272,8 +272,7 @@ export default function Main() {
   // ];
   return (
     <div className="mt-20">
-      {" "}
-      <div className="relative ">
+      <div className="relative">
         <ImageView
           src={earthHome}
           alt="earthcoin"
@@ -281,19 +280,14 @@ export default function Main() {
           height={500}
           className="object-cover w-full h-full"
         />
-        {/* <Video
-          src={earth}
-          alt='earthcoin'
-          className='object-cover w-full h-full'
-        /> */}
 
-        <div className="absolute md:top-[7rem] lg:top-[10rem] xl:top-[14rem] 2xl:top-[20rem]  text-[#000000] text-xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne w-full text-center font-medium">
-          <p className="leading-none">
-            Digital currency funding <br />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <p className="text-[#000000] text-2xl sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight mb-4 sm:mb-6">
+            Digital currency funding <br className="hidden sm:inline" />
             regeneration
           </p>
 
-          <button className="  text-white mt-5 xl:mt-10 font-inter font-semibold px-4 py-2 rounded-md bg-[#101323] border-[1px] border-[#EC8000] text-[16px]">
+          <button className="text-white mt-4 sm:mt-6 font-inter font-semibold px-4 py-2 rounded-md bg-[#101323] border border-[#EC8000] text-sm sm:text-base">
             <Link
               href={buttonConfig?.home_get_earth?.link || ""}
               target={

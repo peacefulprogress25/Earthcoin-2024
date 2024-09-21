@@ -60,7 +60,7 @@ function Projects() {
       <p className="text-[#1F2636] font-syne text-center font-medium  text-3xl w-3/4">Treasury is dedicated to yield bearing RWAs directly <br />   <span > addressing the climate crisis </span></p>
 
 
-      <div className="flex justify-between w-full ">
+      <div className="flex flex-col md:flex-row justify-between w-full ">
 
         <ProjectDetails obj={project?.[activeIndex]} />
 
