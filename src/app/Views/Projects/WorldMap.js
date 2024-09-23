@@ -90,15 +90,15 @@ export default function WorldMap({ projects }) {
         height={600}
         className="z-[-1] w-full h-[100vh] object-cover"
       />
-      <div className="flex flex-col pt-[1rem] lg:pt-0 mg:pt-0 sm:pt-0   absolute mb-10 top-10 sm:top-9 w-full gap-1 items-center">
+      <div className="flex flex-col pt-[1rem] lg:pt-0 mg:pt-0 sm:pt-0   absolute mb-10 top-20  sm:top-9 w-full gap-1 items-center">
         <p className="text-white font-light text-center text-[14px] font-inter">
           PROJECTS
         </p>
         <p className="text-white font-semibold text-center text-[30px] !font-syne">
-          Climate Solutions backing $EARTH
+          RWAs backing $EARTH
         </p>
         <p className="text-white text-center font-light text-[16px] font-inter">
-          $Earth treasury funds the following climate action projects
+          Assets addressing climate change and catering to humanities core needs
         </p>
       </div>
       <MapContainer
