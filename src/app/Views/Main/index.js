@@ -281,7 +281,7 @@ export default function Main() {
           className="object-cover w-full h-full"
         />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <p className="text-[#000000] text-2xl sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight mb-4 sm:mb-6">
             Digital currency funding <br className="hidden sm:inline" />
             regeneration
@@ -300,14 +300,13 @@ export default function Main() {
         </div>
       </div>
       <div className="mx-auto  pt-2 sm:pt-2 px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full">
-      <div className="flex flex-col items-center justify-center w-full pb-2 sm:pb-2 sm:flex-row">
+        <div className="flex flex-col items-center justify-center w-full pb-2 sm:pb-2 sm:flex-row">
           {funding.map((impact, index) => (
             <div
-              className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${
-                index !== funding.length - 1
-                  ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
-                  : ""
-              }`}
+              className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${index !== funding.length - 1
+                ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
+                : ""
+                }`}
               key={index}
             >
               <p className="font-syne font-semibold text-[20px] text-center sm:text-[52px] text-[#EC8000]">
@@ -457,19 +456,19 @@ export default function Main() {
         </div> */}
       </div>
       <div className="relative mb-16 -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]">
-  <ImageView
-    alt="social"
-    src={mainBottomSection1}
-    width={1440}
-    height={430}
-    className="w-full rounded-lg h-[24rem] object-cover mt-20"
-  />
-  <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] text-[14px] sm:text-[18px] md:text-[24px] lg:text-[30px] xl:text-[34px] 2xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
-    <p className="whitespace-nowrap">
-      Using crypto economics to value <br/> NATURE
-    </p>
-  </div>
-</div>
+        <ImageView
+          alt="social"
+          src={mainBottomSection1}
+          width={1440}
+          height={430}
+          className="w-full rounded-lg h-[24rem] object-cover mt-20"
+        />
+        <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] text-[14px] sm:text-[18px] md:text-[24px] lg:text-[30px] xl:text-[34px] 2xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
+          <p className="whitespace-nowrap">
+            Using crypto economics to value <br /> NATURE
+          </p>
+        </div>
+      </div>
 
       <div>
         {/* <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
@@ -564,88 +563,81 @@ export default function Main() {
           </p>
         </div>
       </div>
-      <div className="grid w-full grid-cols-1 px-4 sm:px-20 mt-8 xl:grid-cols-2 gap-x-6 gap-y-5">
+      <div className="grid w-full grid-cols-1 px-4 mt-8 sm:px-20 xl:grid-cols-2 gap-x-6 gap-y-5">
         {updates && updates?.length
           ? updates.map((card, index) => (
-              <div
-                className={`flex cursor-pointer w-full items-start ${
-                  index === 0
-                    ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
-                    : "col-span-1 flex-row sm:col-span-1 flex-col sm:flex-row"
+            <div
+              className={`flex cursor-pointer w-full items-start ${index === 0
+                ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
+                : "col-span-1 flex-row sm:col-span-1 flex-col sm:flex-row"
                 }`}
-                key={index}
+              key={index}
+            >
+              <ImageView
+                src={card.image}
+                alt={card.name}
+                width={200}
+                height={200}
+                className={`${index === 0
+                  ? "w-full h-[13rem] sm:h-[20rem] xl:object-cover"
+                  : "w-full h-[13rem] sm:h-40 xl:object-cover"
+                  }`}
+              />
+              <div
+                className={`${index === 0 ? "mt-4" : "flex flex-col gap-2 px-4 mt-4 sm:mt-0"
+                  }`}
               >
-                <ImageView
-                  src={card.image}
-                  alt={card.name}
-                  width={200}
-                  height={200}
-                  className={`${
-                    index === 0
-                      ? "w-full h-[13rem] sm:h-[20rem] xl:object-cover"
-                      : "w-full h-[13rem] sm:h-40 xl:object-cover"
-                  }`}
-                />
-                <div
-                  className={`${
-                    index === 0 ? "mt-4" : "flex flex-col gap-2 px-4 mt-4 sm:mt-0"
-                  }`}
-                >
-                  <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
-                    {card?.name} • {card?.date}
-                  </p>
-                  <div className="flex items-start justify-between mt-2">
-                    <p
-                      className={`text-[#101828] font-inter font-semibold text-[16px] ${
-                        index === 0 ? "font-syne text-[22px]" : ""
-                      }`}
-                    >
-                      {card?.title}
-                    </p>
-                    {index === 0 ? (
-                      <LuArrowUpRight size={22} color="#101828" />
-                    ) : (
-                      ""
-                    )}
-                  </div>
+                <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
+                  {card?.name} • {card?.date}
+                </p>
+                <div className="flex items-start justify-between mt-2">
                   <p
-                    className={`text-[#475467] ${
-                      index === 0 ? "mt-2" : "mt-2 sm:mt-0"
-                    } font-inter w-[100%] font-normal text-[14px]`}
+                    className={`text-[#101828] font-inter font-semibold text-[16px] ${index === 0 ? "font-syne text-[22px]" : ""
+                      }`}
                   >
-                    {card?.description}
+                    {card?.title}
                   </p>
-                  <div
-                    className={`flex items-center ${
-                      index === 0 ? "mt-4" : "mt-4 sm:mt-0"
+                  {index === 0 ? (
+                    <LuArrowUpRight size={22} color="#101828" />
+                  ) : (
+                    ""
+                  )}
+                </div>
+                <p
+                  className={`text-[#475467] ${index === 0 ? "mt-2" : "mt-2 sm:mt-0"
+                    } font-inter w-[100%] font-normal text-[14px]`}
+                >
+                  {card?.description}
+                </p>
+                <div
+                  className={`flex items-center ${index === 0 ? "mt-4" : "mt-4 sm:mt-0"
                     } gap-2`}
-                  >
-                    {card && card?.length
-                      ? card?.tags.map((tag, i) => (
-                          <p
-                            className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${
-                              tag === "Design"
-                                ? "text-[#EC8000] bg-[#FFFCF8]"
-                                : tag === "Research"
-                                ? "bg-[#EEF4FF] text-[#3538CD]"
-                                : tag === "Presentation"
-                                ? "bg-[#FDF2FA] text-[#C11574]"
-                                : ""
-                            }`}
-                            key={i}
-                          >
-                            {tag}
-                          </p>
-                        ))
-                      : null}
-                  </div>
+                >
+                  {card && card?.length
+                    ? card?.tags.map((tag, i) => (
+                      <p
+                        className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${tag === "Design"
+                          ? "text-[#EC8000] bg-[#FFFCF8]"
+                          : tag === "Research"
+                            ? "bg-[#EEF4FF] text-[#3538CD]"
+                            : tag === "Presentation"
+                              ? "bg-[#FDF2FA] text-[#C11574]"
+                              : ""
+                          }`}
+                        key={i}
+                      >
+                        {tag}
+                      </p>
+                    ))
+                    : null}
                 </div>
               </div>
-            ))
+            </div>
+          ))
           : null}
-  </div>
+      </div>
 
-        {/* {social && social?.length ? (
+      {/* {social && social?.length ? (
             social.map((partner, index) => (
           
           <div
@@ -804,7 +796,7 @@ export default function Main() {
               Still have questions?
             </p>
             <p className="text-white font-inter text-center mt-1 font-light text-[16px]">
-              Can't find the answer you're looking for? Please drop a message to
+              Can&apos;t find the answer you&apos;re looking for? Please drop a message to
               our team.
             </p>
             <button className="w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm">
