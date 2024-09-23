@@ -25,8 +25,7 @@ export default function Network() {
           What are $EARTH NODES?
         </p>
         <p className="text-[#475467] text-center font-normal  text-[16px] max-[480px]:text-[12px] font-inter max-[480px]:w-[90%]">
-          From purging petro dollars to forming partnerships to policy making,
-          these NODES keep <br /> the $EARTH network running
+          Mycelium network creating a regenerative economy using $EARTH
         </p>
       </div>
       <div className="relative w-full ">
