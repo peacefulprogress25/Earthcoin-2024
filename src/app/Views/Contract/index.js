@@ -60,9 +60,7 @@ export default function Contract() {
           $EARTH Contracts
         </p>
         <p className="text-[#475467] text-center font-normal  text-[16px] sm:text-[15px] font-inter">
-          Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
-          suspendisse morbi eleifend <br /> faucibus eget vestibulum felis.
-          Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam.
+          Addresses for all contracts governing $EARTH across chains
         </p>
       </div>
       <div className="sm:px-[20%] px-4 flex gap-2 pb-20 border-b-2 border-[#EAECF0] sm:gap-4 flex-col w-full items-center">

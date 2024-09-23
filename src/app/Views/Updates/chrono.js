@@ -1,7 +1,6 @@
 import Updates from "../../Components/Update";
 
 export default function ChronoPage() {
-  
   if (typeof window === "undefined") {
   }
 
@@ -16,13 +15,12 @@ export default function ChronoPage() {
             $EARTH Updates
           </p>
           <p className="text-[#475467] text-center font-normal w-[70%]  text-[16px] font-inter">
-            Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
-            suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum
-            quis montes, sit sit. Tellus aliquam enim urna, etiam.
+            Track each milestone in our journey of creating a regenerative
+            economy
           </p>
         </div>
         <div className="flex flex-col h-fit">
-          <Updates/>
+          <Updates />
         </div>
       </div>
     </div>

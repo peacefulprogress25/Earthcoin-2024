@@ -61,7 +61,7 @@ export default function Footer() {
           link: "",
         },
         {
-          option: "Contact",
+          option: "Get Funded",
           link: "/form",
         },
       ],

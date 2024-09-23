@@ -67,7 +67,7 @@ export default function Header() {
     },
     {
       title: "Team",
-      subtitle: "Get up and running on new features and techniques.",
+      subtitle: "Earthlings building $EARTH",
       icon: "/assets/icons/play-circle.svg",
       link: "/about",
     },

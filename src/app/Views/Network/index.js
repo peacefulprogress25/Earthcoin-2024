@@ -25,8 +25,7 @@ export default function Network() {
           What are $EARTH NODES?
         </p>
         <p className="text-[#475467] text-center font-normal  text-[16px] max-[480px]:text-[12px] font-inter max-[480px]:w-[90%]">
-          From purging petro dollars to forming partnerships to policy making,
-          these NODES keep <br /> the $EARTH network running
+          Mycelium network creating a regenerative economy using $EARTH
         </p>
       </div>
       <div className="relative w-full ">
@@ -118,7 +117,7 @@ export default function Network() {
               solar system, businesses are regenerative by design, well being is
               the north star, AGI helps us focus on becoming more human...
             </p>
-            <p className="text-[#475467] my-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml md:text-[10px] lg:text-[14px] xl:text-[18px]">
+            <p className="text-[#475467] mt-2 sm:mt-6 w-full font-apercu-pro text-left font-noraml md:text-[10px] lg:text-[14px] xl:text-[18px]">
               This definitely is an unprecedented challenge but humanity&apos;s
               past is replete with instances where a committed collective of
               aligned frequencies have dramatically changed the world for the
@@ -131,10 +130,16 @@ export default function Network() {
               to fulfil our mission & vision. Mission - Make anthropogenic
               climate change history, Vision - Seed the Solarpunk paradigm
             </p>
+            <p className="text-[#475467]  w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
+              Mission - Make anthropogenic climate change history
+            </p>
+            <p className="text-[#475467]  w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
+              Vision - Seed the Solarpunk paradigm
+            </p>
           </div>
         ) : (
           <>
-            <div className=" absolute top-10 px-4 max-[322px]:px-4  max-[480px]:px-5  flex flex-col justify-center items-center w-full">
+            <div className=" absolute top-8 px-4 max-[322px]:px-4  max-[480px]:px-5  flex flex-col justify-center items-center w-full">
               <p className="font-apercu-pro w-full text-left font-noraml max-[322px]:text-[8px] max-[480px]:text-[9px] text-[#101828]">
                 <span className="text-[#EC8000]">Gm</span> Degens, Regens,
                 Treegens, Beegens, Seagens, Lunarpunks, <br /> Mycopunks,
@@ -226,9 +231,13 @@ export default function Network() {
                 holistically addressing the climate/environment/meta crisis can
                 max leverage this multifaceted tool/network ($EARTH) to
                 coordinate like the mycelium network (vibrant, adaptive, diverse
-                & symbiotic) to fulfil our mission & vision. Mission - Make
-                anthropogenic climate change history, Vision - Seed the
-                Solarpunk paradigm
+                & symbiotic) to fulfil our mission & vision.
+              </p>
+              <p className="text-[#475467] w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px]">
+                Mission - Make anthropogenic climate change history
+              </p>
+              <p className="text-[#475467]  w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px]">
+                Vision - Seed the Solarpunk paradigm
               </p>
             </div>
           </>
