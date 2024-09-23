@@ -533,13 +533,13 @@ export default function Mechanics() {
         </div>
       ) : (
         <>
-          <div className="h-[38rem] lg:h-[42rem] xl:h-[45rem] flex flex-col items-center relative  ">
+          <div className="h-[40rem] lg:h-[42rem] xl:h-[45rem] flex flex-col items-center relative  ">
             <Swiper
               ref={swiper}
               fadeEffect={{ crossFade: true }}
               modules={[EffectFade]}
               effect="fade"
-              className="mt-10 mySwiper !h-[30rem] !overflow-scroll mb-2 hide-scrollbar"
+              className="mt-5 mySwiper !h-[10rem] !overflow-scroll mb-2 hide-scrollbar"
               onSlideChange={(swiper) => swipeFn(swiper.activeIndex)}
             >
               {tokenomicsdata.map((obj, i) => {
@@ -584,8 +584,8 @@ export default function Mechanics() {
               <ImageView
                 src={"/assets/images/flow.png"}
                 alt="graph"
-                width={400}
-                height={400}
+                width={500}
+                height={500}
                 // style={{ transform: `scale(1.5)` }}
                 className="scale-150 flow-chart "
               />
