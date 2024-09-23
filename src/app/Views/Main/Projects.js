@@ -57,11 +57,12 @@ function Projects() {
   return (
     <>
 
-      <p className="text-[#1F2636] font-syne text-center font-medium  text-3xl w-3/4">Treasury is dedicated to yield bearing RWAs directly <br />   <span > addressing the climate crisis </span></p>
+      <p className="text-[#1F2636] font-syne text-center font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl w-3/4">
+        Treasury is dedicated to yield bearing RWAs directly <br />
+        <span>addressing the climate crisis</span>
+      </p>
 
-
-      <div className="flex flex-col md:flex-row justify-between w-full ">
-
+      <div className="flex flex-col md:flex-row justify-between w-full justify-center">
         <ProjectDetails obj={project?.[activeIndex]} />
 
 
@@ -85,9 +86,8 @@ function Projects() {
             enabled: true,
           }}
           navigation={true}
-          // pagination={true}
           modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
-          className='!mr-0 mySwiper-project !w-[90%] mb-10'
+          className='!mr-0 mySwiper-project !w-[90%] mb-10 custom-swiper'
         >
           {project && project.length
             ? [...project].map((data, index) => {
@@ -164,10 +164,12 @@ function Projects() {
       <button
         onClick={() => router.push("/projects")}
         className=" relative mx-auto cursor-pointer z-50 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
-
-      >Browse All Projects</button>
+      >
+        Browse All Projects
+      </button>
     </>
   );
 }
 
 export default Projects;
+

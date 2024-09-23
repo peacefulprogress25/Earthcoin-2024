@@ -299,8 +299,8 @@ export default function Main() {
           </button>
         </div>
       </div>
-      <div className="mx-auto  pt-16 px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full">
-        <div className="flex flex-col items-center justify-center w-full pb-10 sm:flex-row">
+      <div className="mx-auto  pt-2 sm:pt-2 px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className="flex flex-col items-center justify-center w-full pb-2 sm:pb-2 sm:flex-row">
           {funding.map((impact, index) => (
             <div
               className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${
@@ -456,20 +456,21 @@ export default function Main() {
           </div>
         </div> */}
       </div>
-      <div className=" relative mb-16 -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] ">
-        <ImageView
-          alt="social"
-          src={mainBottomSection1}
-          width={1440}
-          height={430}
-          className="w-full rounded-lg h-[24rem] object-cover mt-20"
-        />
-        <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
-          <p className="whitespace-nowrap">
-            Using crypto economics to value NATURE
-          </p>
-        </div>
-      </div>
+      <div className="relative mb-16 -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]">
+  <ImageView
+    alt="social"
+    src={mainBottomSection1}
+    width={1440}
+    height={430}
+    className="w-full rounded-lg h-[24rem] object-cover mt-20"
+  />
+  <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] text-[14px] sm:text-[18px] md:text-[24px] lg:text-[30px] xl:text-[34px] 2xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
+    <p className="whitespace-nowrap">
+      Using crypto economics to value <br/> NATURE
+    </p>
+  </div>
+</div>
+
       <div>
         {/* <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
           <div className='flex items-center flex-col w-[80%] px-20 mt-28 gap-4 '>
@@ -542,10 +543,10 @@ export default function Main() {
           height={430}
           className="w-full rounded-lg h-[24rem] object-cover mt-20"
         />
-        <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
-          <p className="whitespace-nowrap">
-            We do not inherit this world from our parents <br />
-            We borrow it from our children <br />
+        <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] text-[14px] sm:text-[18px] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
+          <p className="whitespace-normal sm:whitespace-nowrap">
+            We do not inherit this world from our parents <br className="hidden sm:block" />
+            We borrow it from our children <br className="hidden sm:block" />
             Let&apos;s leave it better than we found it
           </p>
         </div>
@@ -563,14 +564,14 @@ export default function Main() {
           </p>
         </div>
       </div>
-      <div className="grid w-full grid-cols-1 px-20 mt-8 xl:grid-cols-2 gap-x-6 gap-y-5">
+      <div className="grid w-full grid-cols-1 px-4 sm:px-20 mt-8 xl:grid-cols-2 gap-x-6 gap-y-5">
         {updates && updates?.length
           ? updates.map((card, index) => (
               <div
                 className={`flex cursor-pointer w-full items-start ${
                   index === 0
                     ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
-                    : "col-span-1 flex-row sm:col-span-1"
+                    : "col-span-1 flex-row sm:col-span-1 flex-col sm:flex-row"
                 }`}
                 key={index}
               >
@@ -581,13 +582,13 @@ export default function Main() {
                   height={200}
                   className={`${
                     index === 0
-                      ? "w-full h-[20rem] xl:object-cover "
-                      : "w-full xl:h-40 h-[13rem]  xl:object-cover"
+                      ? "w-full h-[13rem] sm:h-[20rem] xl:object-cover"
+                      : "w-full h-[13rem] sm:h-40 xl:object-cover"
                   }`}
                 />
                 <div
                   className={`${
-                    index === 0 ? "mt-4" : "flex flex-col gap-2 px-4"
+                    index === 0 ? "mt-4" : "flex flex-col gap-2 px-4 mt-4 sm:mt-0"
                   }`}
                 >
                   <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
@@ -609,14 +610,14 @@ export default function Main() {
                   </div>
                   <p
                     className={`text-[#475467] ${
-                      index === 0 ? "mt-2" : ""
+                      index === 0 ? "mt-2" : "mt-2 sm:mt-0"
                     } font-inter w-[100%] font-normal text-[14px]`}
                   >
                     {card?.description}
                   </p>
                   <div
                     className={`flex items-center ${
-                      index === 0 ? "mt-4" : "mt-0"
+                      index === 0 ? "mt-4" : "mt-4 sm:mt-0"
                     } gap-2`}
                   >
                     {card && card?.length
@@ -642,6 +643,7 @@ export default function Main() {
               </div>
             ))
           : null}
+  </div>
 
         {/* {social && social?.length ? (
             social.map((partner, index) => (
@@ -715,7 +717,7 @@ export default function Main() {
         ))
       )
     } */}
-      </div>
+
       <div className="grid items-center justify-center sm:px-[6%] w-full grid-cols-1 gap-8 px-4 mx-auto mt-28 sm:grid-cols-2">
         {cardData?.map((data, index) => (
           <div
@@ -749,7 +751,7 @@ export default function Main() {
           </div>
         ))}
       </div>
-      <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className="max-w-screen-2xl pt-2 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="flex flex-wrap justify-center gap-1 mt-6 sm:gap-4">
           {social.map((partner, index) => (
             <Link
@@ -802,7 +804,7 @@ export default function Main() {
               Still have questions?
             </p>
             <p className="text-white font-inter text-center mt-1 font-light text-[16px]">
-              Can’t find the answer you’re looking for? Please drop a message to
+              Can't find the answer you're looking for? Please drop a message to
               our team.
             </p>
             <button className="w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm">

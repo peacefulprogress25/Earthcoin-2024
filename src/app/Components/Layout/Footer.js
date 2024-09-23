@@ -27,10 +27,10 @@ export default function Footer() {
           option: "$EARTH Updates",
           link: "/updates",
         },
-        {
-          option: "$EARTH Summary",
-          link: "",
-        },
+        // {
+        //   option: "$EARTH Summary",
+        //   link: "",
+        // },
         {
           option: "$EARTH Contracts",
           link: "/contracts",

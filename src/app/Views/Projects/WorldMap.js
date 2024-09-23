@@ -102,27 +102,28 @@ export default function WorldMap({ projects }) {
         </p>
       </div>
       <MapContainer
-        center={position}
-        zoom={zoomLevel}
-        zoomControl={false}
-        scrollWheelZoom={false}
-        doubleClickZoom={false}
-        dragging={false}
-        attributionControl={false}
-        className="leaflet-Map h-[100vh] w-[100vh] mt-0 sm:-mt-[2rem] ml-0 sm:-ml-[5rem] object-cover"
-      >
-        <SetZoom setZoomLevel={setZoomLevel} />
-        {loading ? (
-          <div className="h-[60vh] w-full flex items-center ml-0  sm:ml-[5rem]  mt-0  sm:mt-[5rem] justify-center">
-            <Loader />
-          </div>
-        ) : (
-          <>
-            <GeoJSON data={mapData.features} className="geoJson" />
-            {renderIcons()}
-          </>
-        )}
-      </MapContainer>
+  center={position}
+  zoom={zoomLevel}
+  zoomControl={false}
+  scrollWheelZoom={false}
+  doubleClickZoom={false}
+  dragging={false}
+  attributionControl={false}
+  className="leaflet-Map h-[100vh] w-[100vh] mt-0 sm:-mt-[2rem] ml-0 sm:-ml-[5rem] object-cover"
+>
+  <SetZoom setZoomLevel={setZoomLevel} />
+  {loading ? (
+    <div className="h-[60vh] w-full flex items-center justify-center ml-0 sm:ml-[5rem] pt-[5rem] sm:pt-[18rem]">
+      <Loader />
+    </div>
+  ) : (
+    <>
+      <GeoJSON data={mapData.features} className="geoJson" />
+      {renderIcons()}
+    </>
+  )}
+</MapContainer>
+
     </div>
   );
 }

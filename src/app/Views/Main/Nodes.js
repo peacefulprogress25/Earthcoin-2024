@@ -14,7 +14,7 @@ function Nodes() {
   ];
 
   return (
-    <div className='px-[6%] 2xl:px-[8.5%] '>
+    <div className='flex flex-col items-center justify-center px-6 md:px-8.5 xl:px-12'>
       <section className='flex flex-col items-center justify-center w-full gap-3'>
         <h6 className='text-[#EC8000] font-inter text-xs'>NODES</h6>
         <h1 className='text-3xl font-medium font-syne '>$Earth NODES</h1>
@@ -23,8 +23,8 @@ function Nodes() {
           the solarpunk paradigm
         </p>
       </section>
-      <div className='flex items-center justify-around w-full mt-12'>
-        <section className='flex flex-col w-1/2 gap-6'>
+      <div className='flex flex-col md:flex-row items-center justify-center w-full mt-12'>
+        <section className='flex flex-col w-full md:w-1/2 gap-6'>
           <section className='flex flex-col gap-5'>
             <p className='text-[#475467] font-inter text-sm font-light'>
               Just like Bitcoin has miners, Ethereum has validators, we have
@@ -45,8 +45,8 @@ function Nodes() {
               );
             })}
           </section>
-          <section className='flex items-center gap-3 mr-auto'>
-            <button className='  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs'>
+          <section className='flex items-center gap-3 mr-auto w-full sm:justify-around'>
+            <button className='text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs'>
             <Link
               href={buttonConfig?.home_earthNode_learnMore?.link || ""}
               target={buttonConfig?.home_earthNode_learnMore?.external ? "_blank" : "_self"}
@@ -64,8 +64,8 @@ function Nodes() {
             </button>
           </section>
         </section>
-        <section className='flex w-1/2'>
-          <Image src={img} className='w-3/4 ml-auto' width={400} height={400} />
+        <section className='flex w-full md:w-1/2 justify-center mt-0 sm:mt-4' style={{ marginTop: '2rem' }}>
+          <Image src={img} className='w-full sm:w-3/4' width={400} height={400} />
         </section>
       </div>
     </div>

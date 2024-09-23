@@ -64,3 +64,16 @@
     font-size: 14px !important;
   }
 }
+
+
+
+.custom-swiper {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .custom-swiper {
+    justify-content: flex-start;
+  }
+}

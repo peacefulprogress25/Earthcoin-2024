@@ -339,6 +339,7 @@ export default function Header() {
                       key={index}
                       href={item.link}
                       className="flex items-center gap-2 text-[#475467]"
+                      onClick={() => setMobileMenuOpen(false)} // Close menu on link click
                     >
                       <ImageView
                         src={item.icon}
@@ -372,6 +373,7 @@ export default function Header() {
                       key={index}
                       href={item.link}
                       className="flex items-center gap-2 text-[#475467]"
+                      onClick={() => setMobileMenuOpen(false)} // Close menu on link click
                     >
                       <ImageView
                         src={item.icon}
@@ -386,7 +388,7 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/projects" className="text-[#475467] font-semibold">
+            <Link href="/projects" className="text-[#475467] font-semibold" onClick={() => setMobileMenuOpen(false)}>
               Projects
             </Link>
 
@@ -409,6 +411,7 @@ export default function Header() {
                       key={index}
                       href={item.link}
                       className="flex items-center gap-2 text-[#475467]"
+                      onClick={() => setMobileMenuOpen(false)} // Close menu on link click
                     >
                       <ImageView
                         src={item.icon}
@@ -423,10 +426,10 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/media" className="text-[#475467] font-semibold">
+            <Link href="/media" className="text-[#475467] font-semibold" onClick={() => setMobileMenuOpen(false)}>
               Media
             </Link>
-            <Link href="/dashboard" className="text-[#475467] font-semibold">
+            <Link href="/dashboard" className="text-[#475467] font-semibold" onClick={() => setMobileMenuOpen(false)}>
               Dashboard
             </Link>
 
@@ -436,7 +439,7 @@ export default function Header() {
                   className="w-full text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
                   onClick={() => {
                     setShowUniswap(true);
-                    setMobileMenuOpen(false);
+                    setMobileMenuOpen(false); // Close menu on button click
                   }}
                 >
                   BUY
@@ -444,7 +447,7 @@ export default function Header() {
                 <Link
                   href="/dapp"
                   className="w-full text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => setMobileMenuOpen(false)} // Close menu on link click
                 >
                   DAPP
                 </Link>
