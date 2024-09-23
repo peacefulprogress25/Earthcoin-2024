@@ -38,7 +38,6 @@ export default function EarthNode() {
       btntext: buttonConfig.network_earthnode_bookslot.title,
       buttonLink: buttonConfig.network_earthnode_bookslot.link,
       external: buttonConfig.network_earthnode_bookslot.external,
-
     },
     {
       title: "3. Mint Soul Bound Token (SBT)",
@@ -47,7 +46,6 @@ export default function EarthNode() {
       btntext: buttonConfig.network_earthnode_dapp.title,
       buttonLink: buttonConfig.network_earthnode_dapp.link,
       external: buttonConfig.network_earthnode_dapp.external,
-
     },
   ];
   const socialIcons = [
@@ -84,8 +82,7 @@ export default function EarthNode() {
             Become an $EARTH NODE
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
-            From purging petro dollars to forming partnerships to policy making,
-            these NODES keep <br /> the $EARTH network running
+            Finish the following steps to become a part of the solution
           </p>
         </div>
         <ImageView
@@ -96,7 +93,6 @@ export default function EarthNode() {
           className="w-full h-[18rem]  mt-4 object-cover"
         />
         <div className="sm:px-[8%] px-4 mt-10 mb-16 flex flex-col gap-16 w-full items-start">
-
           <Stepper
             sx={{
               "& .MuiStepConnector-line": {
