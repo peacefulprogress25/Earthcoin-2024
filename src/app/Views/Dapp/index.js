@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import TransactionPopup from "./TransactionPopup";
-
 import ImageView from "../../Components/ImageView";
 import Sbt from "./Sbt";
 import Trade from "./Trade";
@@ -12,14 +10,6 @@ import Chart from "./Chart";
 import { ethers } from "ethers";
 import useNotification from "../../Hooks/useNotification";
 import { envObj } from "../../utils/env";
-import {
-  PresaleAllocation as PresaleAllocationJSON,
-  Presale as PresaleJSON,
-  StableCoin as StableCoinJSON,
-  EarthTreasury as EarthTreasuryJSON,
-  LockedFruit as LockedFruitJSON,
-  EarthStaking as EarthStakingJSON,
-} from "./abi";
 import Soulbound from "./abi/SoulBound.json";
 import { useSelector } from "react-redux";
 import { connectWalletFn, profileState } from "../../redux/profileSlice";
@@ -47,7 +37,7 @@ const EarthStakingAddress = envObj.earthstakingAddress;
 export default function Dapp() {
   const [showPopup, setShowPopup] = useState(false);
   const { showMessage } = useNotification();
-
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
   const [screen, setScreen] = useState("SBT");
   const {
     wallet: account,
@@ -113,11 +103,10 @@ export default function Dapp() {
   };
 
   useEffect(() => {
-    window?.ethereum.on("chainChanged", networkChanged);
+    if (typeof window?.ethereum !== undefined) {
+      window?.ethereum?.on("chainChanged", networkChanged);
+    }
 
-    // return () => {
-    //   window?.ethereum.removeListener("chainChanged", networkChanged);
-    // };
   }, []);
 
   const handleAccountChange = (...args) => {
@@ -129,10 +118,12 @@ export default function Dapp() {
   };
 
   useEffect(() => {
-    window?.ethereum?.on("accountsChanged", handleAccountChange);
-    return () => {
-      window?.ethereum?.removeListener("accountsChanged", handleAccountChange);
-    };
+    if (typeof window?.ethereum !== undefined) {
+      window?.ethereum?.on("accountsChanged", handleAccountChange);
+      return () => {
+        window?.ethereum?.removeListener("accountsChanged", handleAccountChange);
+      };
+    }
   }, []);
 
   const isMinted = async (account) => {
@@ -231,8 +222,28 @@ export default function Dapp() {
     }
   }, [wallet, screen]);
 
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 640) {
+        setIsSmallScreen(true)
+        return
+      }
+      setIsSmallScreen(false)
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className='w-full mt-20 '>
+    !isSmallScreen ? <div className='w-full mt-20 '>
       {/* <button
         className="border border-black rouned-md"
         onClick={() => setShowPopup(true)}
@@ -317,6 +328,8 @@ export default function Dapp() {
           </div>
         </div>
       </div>
+    </div> : <div className="flex items-center justify-center w-full h-screen">
+      <p className="font-medium text-center font-syne text-md ">Use Desktop version for better user experience.</p>
     </div>
   );
 }
