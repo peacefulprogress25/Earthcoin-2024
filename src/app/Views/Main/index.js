@@ -282,7 +282,7 @@ export default function Main() {
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-          <p className="text-[#000000] text-2xl sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight mb-4 sm:mb-6">
+          <p className="text-[#000000] text-2xl sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight mb-4 sm:mb-6 lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
             Digital currency funding <br className="hidden sm:inline" />
             regeneration
           </p>
@@ -465,15 +465,13 @@ export default function Main() {
           height={430}
           className="w-full rounded-lg h-[24rem] object-cover mt-20"
         />
-        <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] text-[14px] sm:text-[18px] md:text-[24px] lg:text-[30px] xl:text-[34px] 2xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
-          <div>
-            <p className="whitespace-nowrap font-bold text-[14px] sm:text-[18px] md:text-[24px] lg:text-[30px] xl:text-[34px] 2xl:text-[35px] ">
-              $EARTH for EARTH
-            </p>
-            <p className="whitespace-nowrap max-[480px]:text-[12px] text-[13px] sm:text-[17px] md:text-[22px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px] ">
-              Using crypto economics to value NATURE
-            </p>
-          </div>
+       <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] font-syne text-center font-semibold flex items-center justify-center">
+          <p className="whitespace-normal sm:whitespace-nowrap text-[18px] sm:text-[24px] md:text-[27px] lg:text-[40px] xl:text-[44px] leading-tight">
+            We do not inherit this world from our parents{" "}
+            <br className="hidden sm:block" />
+            We borrow it from our children <br className="hidden sm:block" />
+            Let&apos;s leave it better than we found it
+          </p>
         </div>
       </div>
 
@@ -549,11 +547,11 @@ export default function Main() {
           height={430}
           className="w-full rounded-lg h-[24rem] object-cover mt-20"
         />
-        <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] text-[14px] sm:text-[18px] md:text-[30px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
+        <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] text-[14px] sm:text-[25px] md:text-[28px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
           <p className="whitespace-normal sm:whitespace-nowrap">
             We do not inherit this world from our parents{" "}
-            <br className="hidden sm:block" />
-            We borrow it from our children <br className="hidden sm:block" />
+            <br />
+            We borrow it from our children <br  />
             Let&apos;s leave it better than we found it
           </p>
         </div>

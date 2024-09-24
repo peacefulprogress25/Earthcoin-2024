@@ -72,7 +72,7 @@ function Features() {
   ];
 
   return (
-    <div className='md:h-[70vh] lg:h-[80vh] w-full'>
+    <div className='min-h-[70vh] w-full py-8'>
       <Swiper
         modules={[Keyboard, Navigation, Autoplay, EffectFade]}
         className='w-full mySwiper '
@@ -101,7 +101,7 @@ function Features() {
                   alt={obj.title}
                 />
                 {obj.title}
-                <p className='text-[#475467] font-inter text-sm md:text-md font-light text-center'>
+                <p className='text-[#475467] font-inter text-sm md:text-md font-light text-center mb-4'>
                   {obj.description}
                 </p>
               </div>

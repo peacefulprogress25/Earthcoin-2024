@@ -45,7 +45,7 @@ function Nodes() {
               );
             })}
           </section>
-          <section className='flex items-center gap-3 mr-auto w-full sm:justify-around'>
+          <section className='flex items-center gap-3 mr-auto w-full sm:justify-start'>
             <button className='text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs'>
             <Link
               href={buttonConfig?.home_earthNode_learnMore?.link || ""}
