@@ -49,6 +49,13 @@
   }
 }
 
+/* New media query for very small screens */
+@media (max-width: 320px) {
+  .public-DraftStyleDefault-block span {
+    font-size: 12px;
+  }
+}
+
 .custom-editor span {
   font-size: 17px !important;
 }
@@ -62,6 +69,12 @@
 @media (max-width: 480px) {
   .custom-editor span {
     font-size: 14px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .custom-editor span {
+    font-size: 12px !important;
   }
 }
 
