@@ -533,13 +533,13 @@ export default function Mechanics() {
         </div>
       ) : (
         <>
-          <div className="h-[40rem] lg:h-[42rem] xl:h-[45rem] flex flex-col items-center relative  ">
+          <div className="h-[60rem] flex flex-col items-center relative  ">
             <Swiper
               ref={swiper}
               fadeEffect={{ crossFade: true }}
               modules={[EffectFade]}
               effect="fade"
-              className="mt-5 mySwiper !h-[10rem] !overflow-scroll mb-2 hide-scrollbar"
+              className="mt-10 mySwiper !h-[40rem]  mb-2 hide-scrollbar"
               onSlideChange={(swiper) => swipeFn(swiper.activeIndex)}
             >
               {tokenomicsdata.map((obj, i) => {
@@ -591,7 +591,7 @@ export default function Mechanics() {
               />
             </div>
             <StepperMui
-              className="absolute z-20 top-[101%] mr-10"
+              className="absolute z-20 top-[102%] mr-10"
               onChange={(index) => swiper.current.swiper.slideTo(index)}
             />
           </div>
@@ -952,7 +952,7 @@ export default function Mechanics() {
             />
           </div> */}
 
-      <div className="w-full h-[1.5px] my-10 bg-[#F2F4F7] "></div>
+      <div className="w-full h-[1.5px] my-14 bg-[#F2F4F7] "></div>
 
       <div className="w-full max-[480px]:px-1  px-10">
         <Community

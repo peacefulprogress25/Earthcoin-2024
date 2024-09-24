@@ -127,14 +127,15 @@ export default function Network() {
               holistically addressing the climate/environment/meta crisis can
               max leverage this multifaceted tool/network ($EARTH) to coordinate
               like the mycelium network (vibrant, adaptive, diverse & symbiotic)
-              to fulfil our mission & vision. Mission - Make anthropogenic
-              climate change history, Vision - Seed the Solarpunk paradigm
+              to fulfil our mission & vision.
             </p>
             <p className="text-[#475467]  w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
-              Mission - Make anthropogenic climate change history
+              <span className=" font-bold"> Mission </span>- Make anthropogenic
+              climate change history
             </p>
             <p className="text-[#475467]  w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
-              Vision - Seed the Solarpunk paradigm
+              <span className=" font-bold"> Vision </span> - Seed the Solarpunk
+              paradigm
             </p>
           </div>
         ) : (
@@ -234,10 +235,12 @@ export default function Network() {
                 & symbiotic) to fulfil our mission & vision.
               </p>
               <p className="text-[#475467] w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px]">
-                Mission - Make anthropogenic climate change history
+                <span className=" font-bold"> Mission </span>- Make
+                anthropogenic climate change history
               </p>
               <p className="text-[#475467]  w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px]">
-                Vision - Seed the Solarpunk paradigm
+                <span className=" font-bold"> Vision </span> - Seed the
+                Solarpunk paradigm
               </p>
             </div>
           </>
