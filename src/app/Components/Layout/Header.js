@@ -137,7 +137,7 @@ export default function Header() {
     <nav className="fixed top-0 left-0 right-0 z-10 bg-white">
       <div className="flex justify-between h-20 w-full mx-auto border-b border-[#F2F4F7] gap-2 items-center px-4 sm:px-[6%]">
         <div className="flex items-center justify-start w-full h-20 gap-2 mx-auto">
-          <Link href="/">
+          <Link href="/" onClick={() => setMobileMenuOpen(false)}>
             <ImageView
               alt="logo"
               src={logo}
@@ -152,6 +152,7 @@ export default function Header() {
               href="/"
               onMouseEnter={() => setShowaboutMenu(true)}
               onMouseLeave={() => setShowaboutMenu(false)}
+              onClick={() => setMobileMenuOpen(false)} // Close menu on link click
             >
               About <IoIosArrowDown />{" "}
               {showaboutMenu && (
@@ -161,6 +162,7 @@ export default function Header() {
                       className="flex items-start justify-start gap-4"
                       key={index}
                       href={menu?.link}
+                      onClick={() => setMobileMenuOpen(false)} // Close menu on link click
                     >
                       <ImageView
                         src={menu?.icon}
