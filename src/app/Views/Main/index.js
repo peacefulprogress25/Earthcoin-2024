@@ -465,14 +465,16 @@ export default function Main() {
           height={430}
           className="w-full rounded-lg h-[24rem] object-cover mt-20"
         />
-       <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] font-syne text-center font-semibold flex items-center justify-center">
-          <p className="whitespace-normal sm:whitespace-nowrap text-[18px] sm:text-[24px] md:text-[27px] lg:text-[40px] xl:text-[44px] leading-tight">
-            We do not inherit this world from our parents{" "}
-            <br className="hidden sm:block" />
-            We borrow it from our children <br className="hidden sm:block" />
-            Let&apos;s leave it better than we found it
-          </p>
-        </div>
+      <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] font-syne text-center flex items-center justify-center">
+  <p className="font-bold whitespace-normal text-[18px] xs:whitespace-nowrap sm:text-[24px] md:text-[27px] lg:text-[40px] xl:text-[44px] leading-tight">
+    $EARTH for EARTH {" "}
+    <br/>
+    <span className="xs:whitespace-nowrap whitespace-normal font-normal text-[14px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px]">
+      Using crypto economics to value NATURE
+    </span>
+  </p>
+</div>
+
       </div>
 
       <div>

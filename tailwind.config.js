@@ -29,6 +29,9 @@ module.exports = {
         "apercu-pro": ["var(--bookFont2)"],
         "book-antiqua": ["var(--bookFont1)"],
       },
+      screens: {
+        'xs': '360px',
+      },
     },
   },
   plugins: [],
