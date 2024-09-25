@@ -53,3 +53,17 @@
   margin-top: -5rem !important;
   color: #EC8000 !important;
 }
+
+@media (max-width: 768px) { /* Small screens */
+  .swiper {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) { /* Medium screens */
+  .swiper {
+    width: 75% !important;
+    margin: 0 auto;
+  }
+}

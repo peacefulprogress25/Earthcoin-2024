@@ -209,15 +209,32 @@ export default function PostSlider({ post }) {
     },
   ];
   return (
-    <div className="overflow-hidden h-full w-full ">
-      <div className="flex  w-full">
+    <div className="overflow-hidden w-full">
+      <div className="flex w-full">
         <Swiper
           centeredSlides={false}
           grid={{
             rows: 2,
+            fill: 'row', // Ensures proper filling of rows
           }}
-          slidesPerView="auto"
-          slidesPerGroup={3}
+          slidesPerView={1} // Default for mobile
+          slidesPerGroup={1} // Default for mobile
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+              grid: {
+                rows: 2,
+              },
+            },
+            1024: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+              grid: {
+                rows: 2,
+              },
+            },
+          }}
           loop={false}
           spaceBetween={25}
           navigation={{
@@ -258,7 +275,7 @@ export default function PostSlider({ post }) {
           Previous
         </button>
         <div
-          className="swiper-pagination z-[-1]  gap-1"
+          className="swiper-pagination z-10 gap-1" // Adjusted z-index
           id="swiper-pagination-post"
         ></div>
         <button
@@ -284,7 +301,7 @@ export function SliderCard({ card }) {
     <Link
       href={card?.link}
       target="_blank"
-      className={`flex flex-col h-fit w-[24rem] gap-6`}
+      className={`flex flex-col h-fit w-full gap-6`} // Changed width to full for responsiveness
     >
       <ImageView
         src={card.img}
@@ -303,10 +320,10 @@ export function SliderCard({ card }) {
           </p>
           <LuArrowUpRight size={22} color="#101828" />
         </div>
-        <p className="text-[#475467] font-inter w-[90%] font-normal text-[14px]">
+        <p className="text-[#475467] font-inter w-full font-normal text-[14px]"> {/* Changed width to full */}
           {card?.description}
         </p>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap"> {/* Added flex-wrap for tags */}
           {card?.tags.map((tag, i) => (
             <p
               className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${

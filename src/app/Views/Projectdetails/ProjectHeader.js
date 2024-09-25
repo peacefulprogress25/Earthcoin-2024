@@ -4,14 +4,14 @@ import ImageView from "../../Components/ImageView";
 const headerBg = "/assets/images/Header_sectionBg.svg";
 export default function ProjectHeader({ details }) {
   return (
-    <div className="flex relative items-center justify-center flex-col h-[50vh] sm:h-[48vh] py-3 w-full bg-no-repeat">
+    <div className="relative w-full h-[50vh] sm:h-[48vh] overflow-hidden">
       <ImageView
         src={headerBg}
         width={400}
         height={400}
-        className="w-full object-cover h-full"
+        className="absolute inset-0 w-[100vw] h-full object-cover object-center"
       />
-      <div className="justify-center absolute items-center flex flex-col py-4 sm:py-8 px-[8%]">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-[8%]">
         <p className="pt-1 sm:pt-2 font-Inter text-center font-semibold text-[12px] sm:text-[14px] text-white">
           {details.category}
         </p>

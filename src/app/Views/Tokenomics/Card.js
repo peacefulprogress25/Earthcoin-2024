@@ -1,13 +1,13 @@
 export default function Card({ option }) {
   return (
-    <div className="max-w-[22rem] py-6 px-10 rounded-lg border justify-center !items-center border-[#EAECF0] w-full shadow-lg">
-      <p className="font-inter text-[14px]  mt-1 text-center font-normal color-[#475467]">
+    <div className=" py-6 lg:py-14 px-10  rounded-lg border justify-center !items-center border-[#EAECF0] w-full shadow-lg">
+      <p className="font-inter text-[14px] max-[480px]:text-[12px]  mt-1 text-center font-normal color-[#475467]">
         {option?.title}
       </p>
-      <p className="font-inter text-[18px] text-center font-semibold color-[#101828]">
+      <p className="font-inter text-[18px] max-[480px]:text-[16px]  text-center font-semibold color-[#101828]">
         {option?.subtitle}
       </p>
-      <p className="font-inter mt-4 text-[14px] px-4 !text-center font-normal color-[#475467]">
+      <p className="font-inter mt-4 text-[14px] max-[480px]:text-[12px] px-4 !text-center font-normal color-[#475467]">
         {option?.description}
       </p>
     </div>

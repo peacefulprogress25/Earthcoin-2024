@@ -6,6 +6,11 @@
   z-index: 2;
   background-color: transparent !important;
   opacity: 0.9;
+
+  @media (max-width: 639px) {
+    top: 4rem;
+  }
+
   .leaflet-container {
   }
   .leaflet-control-container {
@@ -23,7 +28,22 @@
   .leaflet-pane {
     left: 120px;
     top: 8px;
+  
+    @media (min-width: 341px) and (max-width: 640px) {
+      left: 15%;
+      transform: translateX(-50%);
+      right: auto;
+      margin: 0;
+    }
+
+    @media (max-width: 340px) {
+      left: 20%;
+      transform: translateX(-50%);
+      right: auto;
+      margin: 0;
+    }
   }
+  
   .leaflet-map-pane svg {
     /* height: 43rem !important; */
   }

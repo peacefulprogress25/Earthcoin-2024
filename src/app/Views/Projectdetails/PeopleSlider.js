@@ -105,7 +105,7 @@ export default function PeopleSlider({ details }) {
           ))}
         </Swiper>
       </div>
-      <div className="slider-controller h-20 relative flex items-center gap-4">
+      <div className="slider-controller h-20 relative flex justify-center items-center gap-4">
         <button
           className="cursor-pointer swiper-button-prev"
           id="button-prev-collection"

@@ -23,11 +23,11 @@ export default function ContractDetails({ details }) {
   );
   const editorState = EditorState.createWithContent(contentState);
   return (
-    <div className="flex flex-col mt-8 items-center sm:items-start px-[5%]">
-      <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
+    <div className="flex flex-col mt-8 items-center sm:items-start px-4 sm:px-[5%]">
+      <p className="text-[24px] sm:text-[28px] text-left font-semibold text-[#101828] font-syne">
         Contract Details
       </p>
-      <div className="border-b-2 w-full border-[#EAECF0] pb-8 text-[14px] sm:text-[16px]  font-Inter text-[#475467]">
+      <div className="border-b-2 w-full border-[#EAECF0] pb-4 sm:pb-8 text-[12px] sm:text-[16px] font-Inter text-[#475467]">
         <Editor
           editorState={editorState}
           wrapperClassName="demo-wrapper"

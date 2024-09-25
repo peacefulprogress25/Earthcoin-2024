@@ -32,4 +32,61 @@
 
 .public-DraftStyleDefault-block span {
   font-family: var(--primary-font) !important;
+  font-size: 17px; /* Default font size */
+}
+
+/* Adjust font size for medium screens */
+@media (max-width: 768px) {
+  .public-DraftStyleDefault-block span {
+    font-size: 15px;
+  }
+}
+
+/* Adjust font size for small screens */
+@media (max-width: 480px) {
+  .public-DraftStyleDefault-block span {
+    font-size: 14px;
+  }
+}
+
+/* New media query for very small screens */
+@media (max-width: 320px) {
+  .public-DraftStyleDefault-block span {
+    font-size: 12px;
+  }
+}
+
+.custom-editor span {
+  font-size: 17px !important;
+}
+
+@media (max-width: 768px) {
+  .custom-editor span {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-editor span {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .custom-editor span {
+    font-size: 12px !important;
+  }
+}
+
+
+
+.custom-swiper {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .custom-swiper {
+    justify-content: flex-start;
+  }
 }

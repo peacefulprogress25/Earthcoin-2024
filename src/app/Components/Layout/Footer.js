@@ -1,10 +1,12 @@
 import ImageView from "../ImageView";
 import Link from "next/link";
 import buttonConfig from "../../utils/button";
+import { useMediaQuery } from "react-responsive";
 
 const logo = "/assets/images/logo.png";
 
 export default function Footer() {
+  const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
   const Footerdata = [
     {
       title: "$Earth",
@@ -25,10 +27,10 @@ export default function Footer() {
           option: "$EARTH Updates",
           link: "/updates",
         },
-        {
-          option: "$EARTH Summary",
-          link: "",
-        },
+        // {
+        //   option: "$EARTH Summary",
+        //   link: "",
+        // },
         {
           option: "$EARTH Contracts",
           link: "/contracts",
@@ -59,7 +61,7 @@ export default function Footer() {
           link: "",
         },
         {
-          option: "Contact",
+          option: "Get Funded",
           link: "/form",
         },
       ],
@@ -150,84 +152,116 @@ export default function Footer() {
     },
   ];
   return (
-    <div className='flex flex-col justify-end w-full h-fit'>
-      <div className='flex-col flex sm:flex-row my-10 mt-16 items-center sm:items-start w-full max-w-screen-2xl mx-auto  gap-10 px-[6%] justify-between'>
-        <div className='flex items-center w-full  sm:items-start sm:w-[50%] flex-col justify-between'>
-          <div className='flex flex-col items-center sm:items-start'>
+    <div className="flex flex-col justify-end w-full h-fit">
+      <div className="flex-col flex sm:flex-row my-10 mt-16 items-center sm:items-start w-full max-w-screen-2xl mx-auto gap-10 px-[6%] justify-between">
+        <div className="flex items-center w-full sm:items-start sm:w-[50%] flex-col justify-between">
+          <div className="flex flex-col items-center sm:items-start">
             <ImageView
-              alt='logo'
+              alt="logo"
               src={logo}
               width={100}
               height={100}
-              className='object-contain'
+              className="object-contain"
             />
-            <p className='text-[#475467] mt-6 font-normal text-center sm:text-left font-inter text-sm'>
+            <p className="text-[#475467] mt-6 font-normal text-center sm:text-left font-inter text-sm">
               Embedding climate action,
               <br /> ecosystem services,
               <br /> solarpunk values into money
             </p>
-            <div className='flex items-center mt-20'>
+            <div className="flex items-center mt-20">
               <Link
-                href='/privacy-policy'
-                className='text-[#475467] pr-2 border-r border-[#475467] font-normal text-center sm:text-left font-inter text-sm'
+                href="/privacy-policy"
+                className="text-[#475467] pr-2 border-r border-[#475467] font-normal text-center sm:text-left font-inter text-sm"
               >
                 Privacy Policy
               </Link>
               <Link
-                href='/terms-of-service'
-                className='text-[#475467] pl-2 font-normal text-center sm:text-left font-inter text-sm'
+                href="/terms-of-service"
+                className="text-[#475467] pl-2 font-normal text-center sm:text-left font-inter text-sm"
               >
                 Terms & Conditions
               </Link>
             </div>
           </div>
         </div>
-        <div
-          style={{ cursor: "pointer" }}
-          className='flex flex-col items-center justify-center w-full  sm:ml-10 sm:flex-row sm:gap-2 gap-x-2 gap-y-4 sm:justify-between'
-        >
-          {Footerdata?.map((option, index) => (
-            <div
-              className='flex flex-col items-center gap-3 sm:items-start'
-              key={index}
-            >
-              <p className='text-[#667085] font-inter font-semibold text-[13px]'>
-                {option?.title}
-              </p>
-              {option?.options?.map((option, index) => (
-                <p
-                  className='text-[#475467] font-inter font-semibold text-[14px]'
+        {!isMobile ? (
+          <div className="grid grid-cols-2 sm:flex sm:flex-row gap-y-12 sm:gap-2 w-full sm:ml-10 sm:justify-between">
+            {Footerdata?.map((option, index) => (
+              <div
+                className={`flex flex-col items-start gap-3 ${
+                  index === 2
+                    ? "col-span-2 justify-self-start sm:justify-self-auto"
+                    : ""
+                } ${
+                  index === 0 ? "pr-[4.5rem]" : index === 1 ? "pl-[4.5rem]" : ""
+                }`}
+                key={index}
+              >
+                <p className="text-[#667085] font-inter font-semibold text-[13px]">
+                  {option?.title}
+                </p>
+                {option?.options?.map((option, index) => (
+                  <p
+                    className="text-[#475467] font-inter font-semibold text-[14px]"
+                    key={index}
+                  >
+                    <Link href={option.link}>{option.option} </Link>
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-3 gap-2">
+              {Footerdata?.map((option, index) => (
+                <div
+                  className={`flex flex-col  gap-3 items-center ${
+                    index === 2
+                      ? " justify-self-start sm:justify-self-auto text-center "
+                      : ""
+                  } ${index === 0 ? "" : index === 1 ? "ml-3" : ""}`}
                   key={index}
                 >
-                  <Link href={option.link}>{option.option} </Link>
-                </p>
+                  <p className="text-[#667085] font-inter font-semibold text-[13px] max-[480px]:text-[10px]">
+                    {option?.title}
+                  </p>
+                  {option?.options?.map((option, index) => (
+                    <p
+                      className="text-[#475467] font-inter font-semibold text-[14px] max-[480px]:text-[8px]"
+                      key={index}
+                    >
+                      <Link href={option.link}>{option.option} </Link>
+                    </p>
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
       </div>
-      <div className='bg-[#F9FAFB] w-full flex items-center h-20'>
-        <div className='px-[6%] justify-between max-w-screen-2xl gap-4 h-full mx-auto flex w-full items-center'>
-          <p className='text-[#667085] font-normal font-inter text-[12px] sm:text-[14px]'>
+      <div className="bg-[#F9FAFB] w-full flex items-center h-20">
+        <div className="px-[6%] justify-between max-w-screen-2xl gap-4 h-full mx-auto flex w-full items-center">
+          <p className="text-[#667085] font-normal font-inter text-[12px] max-[480px]:text-[10px] sm:text-[14px]">
             © {new Date().getFullYear()} SOLARPUNKDAO. All rights reserved.
           </p>
-          <div className='flex items-center gap-4'>
+          <div className="flex items-center gap-4">
             {socialIcons.map((icons, index) => (
-               <Link
-               className='cursor-pointer'
-               key={index}
-               href={icons?.buttonLink}
-               target={icons?.external ? "_blank" : "_self"}
-             >
-               <ImageView
+              <Link
+                className="cursor-pointer"
+                key={index}
+                href={icons?.buttonLink}
+                target={icons?.external ? "_blank" : "_self"}
+              >
+                <ImageView
                   alt={icons.icon}
                   src={icons.icon}
                   width={20}
                   height={20}
-                  className='object-contain'
+                  className="object-contain"
                 />
-             </Link>
-              
+              </Link>
+
               // <button className='cursor-pointer' key={index}>
               //   <ImageView
               //     alt={icons.icon}

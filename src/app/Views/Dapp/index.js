@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import TransactionPopup from "./TransactionPopup";
-
 import ImageView from "../../Components/ImageView";
 import Sbt from "./Sbt";
 import Trade from "./Trade";
@@ -12,14 +10,6 @@ import Chart from "./Chart";
 import { ethers } from "ethers";
 import useNotification from "../../Hooks/useNotification";
 import { envObj } from "../../utils/env";
-import {
-  PresaleAllocation as PresaleAllocationJSON,
-  Presale as PresaleJSON,
-  StableCoin as StableCoinJSON,
-  EarthTreasury as EarthTreasuryJSON,
-  LockedFruit as LockedFruitJSON,
-  EarthStaking as EarthStakingJSON,
-} from "./abi";
 import Soulbound from "./abi/SoulBound.json";
 import { useSelector } from "react-redux";
 import { connectWalletFn, profileState } from "../../redux/profileSlice";
@@ -47,7 +37,7 @@ const EarthStakingAddress = envObj.earthstakingAddress;
 export default function Dapp() {
   const [showPopup, setShowPopup] = useState(false);
   const { showMessage } = useNotification();
-
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
   const [screen, setScreen] = useState("SBT");
   const {
     wallet: account,
@@ -113,11 +103,10 @@ export default function Dapp() {
   };
 
   useEffect(() => {
-    window?.ethereum.on("chainChanged", networkChanged);
+    if (typeof window?.ethereum !== undefined) {
+      window?.ethereum?.on("chainChanged", networkChanged);
+    }
 
-    // return () => {
-    //   window?.ethereum.removeListener("chainChanged", networkChanged);
-    // };
   }, []);
 
   const handleAccountChange = (...args) => {
@@ -129,10 +118,12 @@ export default function Dapp() {
   };
 
   useEffect(() => {
-    window?.ethereum?.on("accountsChanged", handleAccountChange);
-    return () => {
-      window?.ethereum?.removeListener("accountsChanged", handleAccountChange);
-    };
+    if (typeof window?.ethereum !== undefined) {
+      window?.ethereum?.on("accountsChanged", handleAccountChange);
+      return () => {
+        window?.ethereum?.removeListener("accountsChanged", handleAccountChange);
+      };
+    }
   }, []);
 
   const isMinted = async (account) => {
@@ -231,8 +222,28 @@ export default function Dapp() {
     }
   }, [wallet, screen]);
 
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 640) {
+        setIsSmallScreen(true)
+        return
+      }
+      setIsSmallScreen(false)
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className='w-full mt-20'>
+    !isSmallScreen ? <div className='w-full mt-20 '>
       {/* <button
         className="border border-black rouned-md"
         onClick={() => setShowPopup(true)}
@@ -241,7 +252,7 @@ export default function Dapp() {
       </button>
       {showPopup && <TransactionPopup setShowPopup={setShowPopup} />} */}
 
-      <div className='relative flex w-full h-screen'>
+      <div className='relative flex w-full h-screen '>
         <ImageView
           src={GradientBg}
           alt='GradientBg'
@@ -249,43 +260,15 @@ export default function Dapp() {
           height={800}
           className='object-cover w-full h-full'
         />
-        <div className='absolute flex items-center justify-around w-full h-full px-10 py-12'>
-          {/* <div className='flex flex-col bg-white/20'>
-            <div className='border-b-2 border-[white] border-opacity-30'>
-              <div className='flex flex-col items-center justify-center p-5'>
-                <ImageView src={wallet} alt='wallet' width={40} height={40} />
-                <p className='text-white font-inter text-center mt-1 font-light text-[16px]'>
-                  {formatAddress(account)}
-                </p>
-              </div>
-            </div>
-            <div className='flex flex-col items-center justify-center gap-4 p-5'>
-              {balance?.map((value, index) => {
-                const current = value?.balance
-                  ? formatToTwoDecimalPlaces(value?.balance)
-                  : 0;
-
-                return (
-                  <div className='flex flex-col items-center' key={index}>
-                    <p className='text-white font-inter text-center  font-light text-[20px]'>
-                      {current}
-                    </p>
-                    <p className='text-white font-inter text-center  font-light text-[12px]'>
-                      {value?.title}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div> */}
-          <div className='relative flex justify-center w-[45rem]'>
+        <div className='absolute flex items-center justify-center h-full py-12 sm:w-full'>
+          <div className='dapp relative flex justify-center items-center  md:w-[41.5rem] w-full mx-0  xl:w-[45rem]  '>
             {showContent ? (
               <ImageView
                 src={rays}
                 alt='rays'
                 width={800}
                 height={800}
-                className='w-full  z-[1] -left-[1rem] -top-[5rem] absolute'
+                className='w-full  z-[1] h-full  left-0  absolute'
               />
             ) : null}
             <Chart
@@ -296,7 +279,7 @@ export default function Dapp() {
               {" "}
             </Chart>
             {showContent ? (
-              <div className='rounded-full border-2 z-[6] flex absolute overflow-hidden top-[5.1rem] left-[9.3rem]  xl:left-[11rem] items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]'>
+              <div className='rounded-full sm:w-[23rem] w-[71%] h-[71%]  sm:h-[23rem] border-2 z-[6] flex absolute  top-13  sm:top-[5.1rem] sm:left-[9.3rem]  xl:left-[11rem] overflow-auto  items-center shadow-lg bg-white justify-center border-black '>
                 {/* {account && screen === "DISCONNECT WALLET" ? (
                   <ImageView
                     src={disconnect}
@@ -343,67 +326,10 @@ export default function Dapp() {
               </div>
             ) : null}{" "}
           </div>
-          {/* <div className="relative">
-            <div
-              onClick={() => handleBtnClick("STAKE")}
-              className="text-[18px] h-[8rem] w-[15rem] pt-2 border-black stake bg-white border-2 cursor-pointer  absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-start"
-            >
-              <span>S</span>
-              <span>T</span>
-              <span>A</span>
-              <span>K</span>
-              <span>E</span>
-            </div>
-            <div
-              onClick={() => handleBtnClick("MINT")}
-              className="text-[18px] h-[8rem] w-[15rem] mint pt-2 border-black stake bg-white border-2 cursor-pointer  absolute text-black  font-medium flex top-0 gap-[1px] stake text-center justify-center items-start"
-            >
-              <span>M</span>
-              <span>I</span>
-              <span>N</span>
-              <span>T</span>
-            </div> */}
-          {/* <div className="rounded-full !z-[20] relative border-2 p-4 inner-circle flex items-center shadow-lg bg-white justify-center border-black w-[23rem] h-[23rem]">
-            {screen === "SBT" ? (
-              <Sbt />
-            ) : screen === "TRADE" ? (
-              <Trade />
-            ) : screen === "STAKE" ? (
-              <Stake />
-            ) : screen === "CLAIM" ? (
-              <Claim />
-            ) : screen === "MINT" ? (
-              <Mint />
-            ) : (
-              <Sbt />
-            )}
-          </div> */}
-          {/* <div className='flex flex-col bg-white/20 '>
-            <div className='border-b-2 border-[white] border-opacity-30'>
-              <div className='flex flex-col items-center justify-center p-4'>
-                <p className='text-white font-inter text-center  font-light text-[20px]'>
-                  $Earth
-                </p>
-                <p className='text-white font-inter text-center  font-light text-[14px]'>
-                  Summary
-                </p>
-              </div>
-            </div>
-            <div className='flex flex-col items-center justify-center gap-4 p-4'>
-              {price?.map((value, index) => (
-                <div className='flex flex-col items-center' key={index}>
-                  <p className='text-white font-inter text-center  font-light text-[20px]'>
-                    {value?.balance ? value?.balance : 0}
-                  </p>
-                  <p className='text-white font-inter text-center  font-light text-[12px]'>
-                    {value?.title}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div> */}
         </div>
       </div>
+    </div> : <div className="flex items-center justify-center w-full h-screen">
+      <p className="font-medium text-center font-syne text-md ">Use Desktop version for better user experience.</p>
     </div>
   );
 }

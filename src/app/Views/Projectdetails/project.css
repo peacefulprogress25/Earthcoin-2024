@@ -140,18 +140,35 @@
     pointer-events: none;
     cursor: pointer;
   }
-  .swiper-button-next {
-    left: 60px;
+  .swiper-button-next,
+  .swiper-button-prev {
     width: 40px;
     height: 40px;
     position: absolute;
-    padding-top: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-top: 0;
+  }
+  .swiper-button-next {
+    right: 10px;
+    left: auto;
   }
   .swiper-button-prev {
-    left: 0;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    padding-top: 1.5rem;
+    left: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: auto;
+      bottom: 10px;
+      transform: translateY(0);
+    }
+    .swiper-button-next {
+      right: calc(50% - 50px);
+    }
+    .swiper-button-prev {
+      left: calc(50% - 50px);
+    }
   }
 }

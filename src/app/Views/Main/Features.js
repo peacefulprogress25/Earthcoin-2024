@@ -72,10 +72,10 @@ function Features() {
   ];
 
   return (
-    <div className='h-[94vh] my-3 w-full'>
+    <div className='min-h-[70vh] w-full py-8'>
       <Swiper
         modules={[Keyboard, Navigation, Autoplay, EffectFade]}
-        className='w-full mySwiper'
+        className='w-full mySwiper '
         fadeEffect={{ crossFade: true }}
         effect='fade'
         navigation={true}
@@ -92,16 +92,16 @@ function Features() {
         {data.map((obj, i) => {
           return (
             <SwiperSlide key={i}>
-              <div className='flex flex-col  mx-auto w-full py-10 gap-4 items-center justify-center border-[#EAECF0] border-[1px] rounded-md'>
+              <div className='flex flex-col mx-auto w-full py-6 md:py-10 gap-4 items-center justify-center border-[#EAECF0] border-[1px] rounded-md px-4 md:px-0'>
                 <Image
                   width={600}
                   height={600}
-                  className={`w-full h-96 object-contain ${+i === 0 || +i === 3 ? "mt-3" : ""}`}
+                  className={`w-full h-48 md:h-96 object-contain ${+i === 0 || +i === 3 ? "mt-3" : ""}`}
                   src={obj.img}
                   alt={obj.title}
                 />
                 {obj.title}
-                <p className='text-[#475467] font-inter text-md font-light text-center '>
+                <p className='text-[#475467] font-inter text-sm md:text-md font-light text-center mb-4'>
                   {obj.description}
                 </p>
               </div>

@@ -4,6 +4,8 @@ import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
 import { Loader } from "../../Components/Loader";
 import Gpt from "../../Components/Gpt";
+import Link from "next/link";
+import buttonConfig from "../../utils/button";
 
 const faq = "/assets/images/faq.png";
 const plus = "/assets/icons/plus-circle.svg";
@@ -37,12 +39,12 @@ export default function Faq() {
             Have questions? We’re here to help.
           </p>
         </div>
-        <Gpt />
-        <div className="sm:px-[6%] px-4 flex flex-col w-full items-start">
+        <Gpt isFaq={true} />
+        {/* <div className="sm:px-[6%] px-4 flex flex-col w-full items-start sm:items-center">
           {faqdata && faqdata.length ? (
             faqdata.map(({ question, answer }, i) => {
               return (
-                <FAQSection Question={question} Answer={answer} key={i} i={i} />
+                <FAQSection Question={question} Answer={answer} key={i} i={i}  />
               );
             })
           ) : (
@@ -50,6 +52,22 @@ export default function Faq() {
               <Loader />
             </div>
           )}
+        </div> */}
+        <div className="flex flex-col gap-2 items-center">
+          <p className="text-[#101828] font-semibold text-center max-[480px]:text-[11px] text-[18px]  font-syne">
+            Chat with Ask $EARTH to resolve all your queries
+          </p>
+          <Link
+            className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm"
+            href={buttonConfig?.projects_footer_banner?.link || ""}
+            target={
+              buttonConfig?.projects_footer_banner?.external
+                ? "_blank"
+                : "_self"
+            }
+          >
+            {buttonConfig?.projects_footer_banner?.title}
+          </Link>
         </div>
         <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>
       </div>
@@ -111,11 +129,11 @@ function FAQSection({ Question, Answer, i }) {
         </button>
       </div>
       {index === i ? (
-        <div className="w-[50%] sm:w-full text-[14px] sm:text-[16px]  font-inter text-[#475467]">
+        <div className="w-full text-xs leading-relaxed sm:text-[16px] sm:leading-7 font-inter text-[#475467]">
           <Editor
             editorState={editorState}
             wrapperClassName="demo-wrapper"
-            editorClassName="richText-editor"
+            editorClassName="richText-editor custom-editor"
             toolbarHidden={true}
             readOnly={true}
           />

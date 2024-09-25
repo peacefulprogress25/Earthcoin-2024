@@ -29,23 +29,23 @@ export default function Node() {
   return (
     <div className="mt-20 w-full">
       <Insight nodeList={nodeList} />
-      <div className="max-w-screen-2xl mx-auto mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full">
-        <div className="flex sm:px-[20%] px-4 flex-col w-full gap-10">
-          <p className="text-[#101828] font-semibold text-center text-[24px] sm:text-[36px] font-syne">
+      <div className="max-w-screen-2xl mx-auto mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full px-4 sm:px-6">
+        <div className="flex flex-col w-full gap-10">
+          <p className="text-[#101828] font-semibold text-center text-[20px] sm:text-[24px] md:text-[36px] font-syne">
             From purging petro dollars to forming partnerships to policy making,
             these nodes keep the $EARTH network running
           </p>
           <div className="flex w-full items-center justify-center flex-col gap-6">
             {nodeList && nodeList.length ? (
               nodeList.map((node, index) => (
-                <div className="flex gap-3 justify-center w-full" key={index}>
-                  <div className="p-6 h-fit flex flex-col max-w-[40rem] w-full items-center sm:items-start sm:flex-row border border-[#EAECF0] rounded-xl gap-5">
+                <div className="flex flex-col sm:flex-row gap-3 justify-center w-full" key={index}>
+                  <div className="p-4 sm:p-6 h-fit flex flex-col max-w-full sm:max-w-[40rem] w-full items-center sm:items-start sm:flex-row border border-[#EAECF0] rounded-xl gap-5">
                     <ImageView
                       src={node?.image}
                       alt="node"
                       width={90}
                       height={90}
-                      className="h-[9rem] w-[9rem] object-cover"
+                      className="h-[7rem] w-[7rem] sm:h-[9rem] sm:w-[9rem] object-cover"
                     />
                     <div className="flex flex-col items-center sm:items-start gap-2">
                       <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
@@ -54,10 +54,10 @@ export default function Node() {
                       <p className="text-[#101828] font-inter font-semibold text-[16px]">
                         {node?.name}
                       </p>
-                      <p className="text-[#475467] w-full sm:w-[65%] text-center sm:text-left font-inter font-normal text-[14px]">
+                      <p className="text-[#475467] w-full text-center sm:text-left font-inter font-normal text-[14px]">
                         {node?.description}
                       </p>
-                      <div className="flex mt-1  gap-3">
+                      <div className="flex mt-1 gap-3">
                         {/* {socialIcons.map((icons, index) => ( */}
                         <Link href={node?.twitter} className="cursor-pointer">
                           <ImageView
@@ -90,11 +90,11 @@ export default function Node() {
                       </div>
                     </div>
                   </div>
-                  <div className="p-6 px-8 flex flex-col max-w-[10rem] w-full items-center justify-between border border-[#EAECF0] rounded-xl gap-3">
+                  <div className="p-4 sm:p-6 px-6 sm:px-8 flex flex-row sm:flex-col max-w-full sm:max-w-[10rem] w-full items-center justify-between border border-[#EAECF0] rounded-xl gap-3">
                     <p className="text-[#EC8000] font-inter text-center font-semibold text-[12px]">
                       Wallet Balance
                     </p>
-                    <p className="text-[#101828] font-inter font-semibold text-[30px] sm:text-[40px]">
+                    <p className="text-[#101828] font-inter font-semibold text-[24px] sm:text-[30px] md:text-[40px]">
                       {node?.balance}
                     </p>
                     <p className="text-[#475467] font-inter font-normal text-[14px]">
@@ -110,7 +110,7 @@ export default function Node() {
             )}
           </div>
         </div>
-        <div className="flex sm:px-[6%]">
+        <div className="flex w-full">
           <Minting />
         </div>
       </div>

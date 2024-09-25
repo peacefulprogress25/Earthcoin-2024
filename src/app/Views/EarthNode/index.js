@@ -38,7 +38,6 @@ export default function EarthNode() {
       btntext: buttonConfig.network_earthnode_bookslot.title,
       buttonLink: buttonConfig.network_earthnode_bookslot.link,
       external: buttonConfig.network_earthnode_bookslot.external,
-
     },
     {
       title: "3. Mint Soul Bound Token (SBT)",
@@ -47,7 +46,6 @@ export default function EarthNode() {
       btntext: buttonConfig.network_earthnode_dapp.title,
       buttonLink: buttonConfig.network_earthnode_dapp.link,
       external: buttonConfig.network_earthnode_dapp.external,
-
     },
   ];
   const socialIcons = [
@@ -84,8 +82,7 @@ export default function EarthNode() {
             Become an $EARTH NODE
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
-            From purging petro dollars to forming partnerships to policy making,
-            these NODES keep <br /> the $EARTH network running
+            Finish the following steps to become a part of the solution
           </p>
         </div>
         <ImageView
@@ -96,7 +93,6 @@ export default function EarthNode() {
           className="w-full h-[18rem]  mt-4 object-cover"
         />
         <div className="sm:px-[8%] px-4 mt-10 mb-16 flex flex-col gap-16 w-full items-start">
-
           <Stepper
             sx={{
               "& .MuiStepConnector-line": {
@@ -183,56 +179,47 @@ export default function EarthNode() {
                 }}
               >
                 <StepLabel>
-                  <p className="text-[#101828] pl-12 font-semibold text-left text-[20px] sm:text-[28px] font-syne">
+                  <p className="text-[#101828] pl-4 sm:pl-12 font-semibold text-left text-[18px] sm:text-[24px] md:text-[28px] font-syne">
                     {community?.title}
                   </p>
                 </StepLabel>
-                <StepContent className="pl-12 pb-20">
-                  <p className="text-[#475467] px-10  text-left mt-2 font-normal  text-[16px] font-inter">
+                <StepContent className="pl-4 sm:pl-12 pb-20">
+                  <p className="text-[#475467] px-2 sm:px-10 text-left mt-2 font-normal text-[14px] sm:text-[16px] font-inter">
                     {community?.description}
                   </p>
                   {community?.btntext1 ? (
-                    <div className="flex">
-                      <div className="px-10">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                      <div className="px-2 sm:px-10">
                         <Link
-                          key={index}
-                          className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
+                          key={`${index}-1`}
+                          className="w-full sm:w-fit min-w-[100px] mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
                           href={community?.buttonLink || ""}
                           target={community?.external ? "_blank" : "_self"}
                         >
                           {community?.btntext}
                         </Link>
-                        {/* <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
-                          {community?.btntext}
-                        </button> */}
                       </div>
-                      <div>
+                      <div className="px-2 sm:px-0">
                         <Link
-                          key={index}
-                          className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
+                          key={`${index}-2`}
+                          className="w-full sm:w-fit min-w-[100px] mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
                           href={community?.buttonLink1 || ""}
                           target={community?.external1 ? "_blank" : "_self"}
                         >
                           {community?.btntext1}
                         </Link>
-                        {/* <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
-                          {community?.btntext1}
-                        </button> */}
                       </div>
                     </div>
                   ) : (
-                    <div className="px-10">
+                    <div className="px-2 sm:px-10">
                       <Link
                         key={index}
-                        className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
+                        className="w-full sm:w-fit min-w-[100px] mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
                         href={community?.buttonLink || ""}
                         target={community?.external ? "_blank" : "_self"}
                       >
                         {community?.btntext}
                       </Link>
-                      {/* <button className="w-fit  min-w-[100px]  mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm">
-                        {community?.btntext}
-                      </button> */}
                     </div>
                   )}
                 </StepContent>
