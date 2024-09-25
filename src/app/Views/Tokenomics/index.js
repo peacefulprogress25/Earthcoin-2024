@@ -533,22 +533,26 @@ export default function Mechanics() {
         </div>
       ) : (
         <>
-          <div className="h-[60rem] flex flex-col items-center relative  ">
+          <div className="h-full flex flex-col items-center relative  ">
             <Swiper
               ref={swiper}
               fadeEffect={{ crossFade: true }}
               modules={[EffectFade]}
               effect="fade"
-              className="mt-10 mySwiper !h-[40rem]  mb-2 hide-scrollbar"
+              className="!mt-10 mySwiper   mb-2  "
               onSlideChange={(swiper) => swipeFn(swiper.activeIndex)}
             >
               {tokenomicsdata.map((obj, i) => {
                 return (
                   <SwiperSlide key={i}>
-                    <div className="flex ">
-                      <div className="w-full  border-t-2  border-[#EAECF0]  ">
-                        <div className="">
-                          <p className="text-[#101828] font-semibold text-left mt-2 text-[18px]  font-syne ">
+                    <div
+                      className={`flex !max-h-fit mb-3   hide-scrollbar !overflow-scroll ${
+                        i === 2 ? "!h-[20rem]" : "!h-[20rem]"
+                      } `}
+                    >
+                      <div className="w-full  border-t-2   border-[#EAECF0]  ">
+                        <div className="h-fit">
+                          <p className="text-[#101828] font-semibold text-left  text-[18px]  font-syne mt-2 ">
                             Example
                           </p>
                           {obj.content1}
@@ -558,7 +562,7 @@ export default function Mechanics() {
                           <div className="flex gap-1">
                             {obj.content3}
 
-                            <div>
+                            <div className="">
                               {obj.content4}
 
                               {obj.content5}
@@ -579,14 +583,13 @@ export default function Mechanics() {
 
             <div
               style={{ backgroundImage: `url(${treasurybg})` }}
-              className=" lg:w-[52rem]   overflow-hidden bg-cover "
+              className=" lg:w-[52rem]   overflow-hidden bg-cover h-[70vh] "
             >
               <ImageView
                 src={"/assets/images/flow.png"}
                 alt="graph"
                 width={500}
                 height={500}
-                // style={{ transform: `scale(1.5)` }}
                 className="scale-150 flow-chart "
               />
             </div>
