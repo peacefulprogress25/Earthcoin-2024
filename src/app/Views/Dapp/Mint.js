@@ -14,7 +14,7 @@ const soulboundAddress = envObj.soulboundAddress;
 const stableCoinAddress = envObj.stableCoinAddress;
 const presaleAddress = envObj.presaleAddress;
 
-export default function Mint({ treasuryFunction, totalEarth }) {
+export default function Mint({ totalEarth }) {
   const [showTransactionPopup, setShowTransactionPopup] = useState(false);
   const { showMessage } = useNotification();
   const { earth } = useSelector(profileState)?.earthBalance;
@@ -28,7 +28,6 @@ export default function Mint({ treasuryFunction, totalEarth }) {
   const account = useSelector(profileState).wallet;
   const [balance, setBalance] = useState(0);
   const [result, setResult] = useState("");
-  const [minted, setMinted] = useState(false);
   const [transaction, setTransaction] = useState(false)
 
   const isMinted = async () => {
@@ -84,6 +83,7 @@ export default function Mint({ treasuryFunction, totalEarth }) {
         Presale.address,
         Amount
       );
+      await allowance.wait();
       setProgress((obj) => ({ ...obj, increaseAllowance: true }));
       mint();
     } catch (error) {
@@ -108,23 +108,20 @@ export default function Mint({ treasuryFunction, totalEarth }) {
         );
 
         await info.wait();
-        setLoading((obj) => ({ ...obj, mint: false }));
-
         getBalance();
         totalEarth();
-        treasuryFunction();
         showMessage({ type: "success", value: "Transaction Success" });
         setLoading((obj) => ({ ...obj, mint: false }));
         setProgress((obj) => ({ ...obj, mint: true }));
         setTransaction(false)
 
-        setMinted(true);
+
       } catch (error) {
         console.log(error);
-        console.log(error.transactionHash);
+        console.log(error?.transactionHash);
         setLoading((obj) => ({ ...obj, mint: false }));
-        setMinted(false);
-        showMessage({ type: "error", value: error.reason });
+
+        showMessage({ type: "error", value: error?.reason });
       }
     }
   };

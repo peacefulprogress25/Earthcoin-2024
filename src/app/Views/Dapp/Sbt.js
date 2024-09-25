@@ -11,6 +11,7 @@ import { BtnLoader, Loader } from "../../Components/Loader";
 import { nexaflowPageObj } from "../../utils/constants";
 import NodeDapp from "./Node";
 
+const exclamationIcon = "/assets/images/exclamation-mark.png"
 const soulboundAddress = envObj.soulboundAddress;
 const templateId = envObj.personaTemplateId;
 
@@ -309,11 +310,10 @@ export default function Sbt() {
     !pageStatus.minted
   ) {
     return (
-      <div className='sbt-container'>
-        <br />
-        <br />
+      <div className='flex flex-col items-center justify-center w-3/4 gap-4'>
+
         <img className='error-icon' src={exclamationIcon} alt='error' />
-        <p className='sbt-kyc-comp-description'>
+        <p className='text-center sbt-kyc-comp-description font-syne'>
           Once your verification have been approved, your wallet will be
           whitelisted to mint this SBT
         </p>
@@ -435,7 +435,7 @@ const Verifier = ({
               setLoading((loading) => ({ ...loading, signLoading: false }));
             }}
             templateId={templateId}
-            // environmentId='env_oHeLwXnBxzNS7qsLHeEtkBqv'
+            environmentId='env_oHeLwXnBxzNS7qsLHeEtkBqv'
             referenceId={address.current}
             fields={{
               nameFirst: input?.firstName,

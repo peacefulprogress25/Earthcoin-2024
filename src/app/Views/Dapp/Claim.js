@@ -22,7 +22,7 @@ function Claim({ setScreen }) {
   });
   const account = useSelector(profileState).wallet;
   const [progress, setProgress] = useState({
-    whitelisted: true,
+    whitelisted: false,
     claim: false,
   });
 
@@ -142,7 +142,7 @@ Let's GROW 🌞💚`;
           Share via Twitter
         </button>
       </TwitterShareButton>
-      <p className='text-sm text-center'>
+      <p className='text-sm text-center font-syne'>
         Stake your $Earth{" "}
         <button onClick={() => setScreen("STAKE")} className='text-primary'>
           here
