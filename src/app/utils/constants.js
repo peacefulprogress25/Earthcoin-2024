@@ -12,5 +12,5 @@ export const nexaflowPageObj = {
   googleSheetId: "656714a70d487853ac0ce9fc",
   teamPage: "6613c142e22f7fb0bb64a7f7",
   privacyPolicyPage: "6613d35ee22f7fb0bb64a88b",
-  corsId: "66dfec98c4843fadfbfb5de8",
+  corsId: "656764d70d487853ac0ceade",
 };
