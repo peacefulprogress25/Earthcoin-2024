@@ -18,8 +18,9 @@ function Features() {
         <span>
           $EARTH is a new unit of value, not pegged to any currency. Designed to
           be loosely range bound, <br /> assets backing each token serve as the
-          floor while valuing positive externalities created by those <br />{" "}
-          assets and the utility of the currency create a soft ceiling.
+          floor while valuing positive externalities created by those
+          assets and the utility of the currency create a soft ceiling.{" "}
+       
         </span>
       ),
       img: "/assets/images/New-unit-of-value.png",
@@ -34,7 +35,7 @@ function Features() {
         <span>
           When you pay a premium over the base value of $EARTH it represents{" "}
           <br /> the economic value placed on ecosystems and it services. This
-          helps us <br /> reward projects creating more of this
+          helps us  reward projects creating more of this <br />
         </span>
       ),
       img: "/assets/images/Economy-home.png",
@@ -63,8 +64,8 @@ function Features() {
       description: (
         <span>
           $Earth acts as a borderless, capital efficient funnel <br />
-          to incentivize, mobilize & allocate capital <br />
-          towards climate solutions.
+          to incentivize, mobilize & allocate capital towards climate solutions. <br />
+    
         </span>
       ),
       img: "/assets/images/climate-environment.png",
@@ -82,7 +83,7 @@ function Features() {
         spaceBetween={100}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         keyboard={{

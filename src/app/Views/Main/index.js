@@ -21,7 +21,8 @@ const earth = "/assets/video/EarthVideo.mp4";
 const earthnodevdo = "/assets/video/home_earthnode.mp4";
 const earthHome = "/assets/images/earth-home.png";
 const earthNode = "/assets/images/earthnode-home.png";
-const groot = "/assets/images/faq.png";
+//const groot = "/assets/images/faq.png";
+const groot = "/assets/images/faqnew.png";
 const zap = "/assets/icons/zap.svg";
 const check = "/assets/icons/Check_icon.svg";
 const asset = "/assets/images/Climatesolutions.png";
@@ -364,7 +365,28 @@ export default function Main() {
         </p>
         <Features />
 
+        <div className="relative mb-16 -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]">
+        <ImageView
+          alt="social"
+          src={mainBottomSection1}
+          width={1440}
+          height={430}
+          className="w-full rounded-lg h-[24rem] object-cover mt-20"
+        />
+      <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] font-syne text-center flex items-center justify-center">
+  <p className="font-bold whitespace-normal text-[18px] xs:whitespace-nowrap sm:text-[24px] md:text-[27px] lg:text-[40px] xl:text-[44px] leading-tight">
+    $EARTH for EARTH {" "}
+    <br/>
+    <span className="xs:whitespace-nowrap whitespace-normal font-normal text-[14px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px]">
+      Using crypto economics to value NATURE
+    </span>
+  </p>
+</div>
+
+      </div>
+
         <Projects />
+        
         {/* <div className='flex flex-col gap-8 mt-3'>
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
@@ -457,26 +479,7 @@ export default function Main() {
           </div>
         </div> */}
       </div>
-      <div className="relative mb-16 -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]">
-        <ImageView
-          alt="social"
-          src={mainBottomSection1}
-          width={1440}
-          height={430}
-          className="w-full rounded-lg h-[24rem] object-cover mt-20"
-        />
-      <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] font-syne text-center flex items-center justify-center">
-  <p className="font-bold whitespace-normal text-[18px] xs:whitespace-nowrap sm:text-[24px] md:text-[27px] lg:text-[40px] xl:text-[44px] leading-tight">
-    $EARTH for EARTH {" "}
-    <br/>
-    <span className="xs:whitespace-nowrap whitespace-normal font-normal text-[14px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px]">
-      Using crypto economics to value NATURE
-    </span>
-  </p>
-</div>
-
-      </div>
-
+     
       <div>
         {/* <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
           <div className='flex items-center flex-col w-[80%] px-20 mt-28 gap-4 '>
