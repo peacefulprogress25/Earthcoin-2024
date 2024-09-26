@@ -49,9 +49,10 @@ export default function Mechanics() {
     },
     {
       title: "Enable",
-      subtitle: "Humanity",
+      //subtitle: "Humanity",
+      subtitle: "Solarpunk Paradigm",
       description:
-        "Use as a medium of exchange to build the solarpunk paradigm for the future.",
+        "Use as a medium of exchange to build the solarpunk paradigm.",
     },
   ];
 
@@ -959,9 +960,9 @@ export default function Mechanics() {
 
       <div className="w-full max-[480px]:px-1  px-10">
         <Community
-          title="Still curious?"
+          //title="Still curious?"
           img={curious}
-          description="Join our social community to understand further!"
+          //description="Join our social community to understand further!"
         />
       </div>
     </div>

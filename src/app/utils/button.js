@@ -99,14 +99,16 @@ export default {
     link: "",
   },
   faq_footer_banner: {
-    title: "Earth GPT",
+    //title: "Earth GPT",
+    title: "Get $Earth",
     position: "AI Banner",
     page: "/faq",
     external: true,
     link: "https://chatgpt.com/g/g-dhkZ0P5ZL-ask-earth",
   },
   projects_footer_banner: {
-    title: "Earth GPT",
+    //title: "Earth GPT",
+    title: "Get $Earth",
     position: "AI Banner",
     page: "/projects",
     external: true,

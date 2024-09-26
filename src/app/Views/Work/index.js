@@ -49,8 +49,7 @@ export default function Work() {
     "Projects send returns (Dividend/Interest) to protocol.",
     "Projects send principal amount back to treasury, this is used to fund more projects and increase LP",
     "Dividend/Interest sent to protocol is used to mint $EARTH, that $EARTH is transferred to Reward/Staking pool to pass onto holders",
-    "Harvest function at the protocol level mints $EARTH without reducing",
-    "Neoliberal value of assets backing each $EARTH",
+    "Harvest function at the protocol level mints $EARTH without reducing Neoliberal value of assets backing each $EARTH",
     "$EARTH minted from Harvest is sent to Harvest treasury",
     "$EARTH in Harvest treasury is allocated to Liquidity pool, Staking/reward contract, Solarpunk DAO etc",
   ];
@@ -164,8 +163,8 @@ export default function Work() {
         </div> */}
         <Community
           img={true}
-          title="Still curious?"
-          description="Join our social community to understand further!"
+          //title="Still curious?"
+          //description="Join our social community to understand further!"
         />
       </div>
     </>

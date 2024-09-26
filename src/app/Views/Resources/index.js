@@ -272,10 +272,10 @@ const earthResources = "/assets/video/What-is-$EARTH.mp4";
         <div className="sm:px-[8%] px-4 flex mt-6 gap-8 flex-col w-full items-start">
           {/* <div className="w-full h-[1.5px] my-8  bg-[#F2F4F7]"></div> */}
 
-          <Community
+          {/* <Community
             title="Still curious?"
             description="Join our social community to understand further!"
-          />
+          /> */}
         </div>
       </div>
   );

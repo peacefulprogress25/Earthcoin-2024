@@ -79,10 +79,10 @@ export default function Network() {
               So what now ? Well as our beloved advisor loves to say - One
               cannot solve a problem from the same frequency that created it.
               The socio-economic frequency we inhabit is simply a function of
-              the story we tell ourselves manifesting itself via incentives for
-              complex coordinated action leveraging the technologies we have
-              today and fueled by one of the best know technologies of our time
-              - MONEY. Thanks to Bitcoin we are{" "}
+              the story we tell ourselves manifesting itself via incentives
+              for complex coordinated action leveraging the technologies we
+              have today and fueled by one of the best know technologies of
+              our time - MONEY. Thanks to Bitcoin we are{" "}
               <span className="text-[#1D2939]">
                 experiencing a regenaissance in the frequencies programmable
                 MONEY can manifest.
@@ -129,14 +129,14 @@ export default function Network() {
               like the mycelium network (vibrant, adaptive, diverse & symbiotic)
               to fulfil our mission & vision.
             </p>
-            <p className="text-[#475467]  w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
-              <span className=" font-bold"> Mission </span>- Make anthropogenic
-              climate change history
+            <p className="text-[#475467] mt-14 w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
+              Mission -  <span className=" font-bold"> Make anthropogenic
+              climate change history </span> 
             </p>
             <p className="text-[#475467]  w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
-              <span className=" font-bold"> Vision </span> - Seed the Solarpunk
-              paradigm
-            </p>
+               Vision - <span className=" font-bold"> Seed the Solarpunk
+              paradigm  </span>
+            </p> 
           </div>
         ) : (
           <>

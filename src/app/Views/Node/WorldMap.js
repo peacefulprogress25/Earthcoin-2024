@@ -96,13 +96,13 @@ export default function WorldMap({ nodeList }) {
       />
       <div className="flex flex-col pt-[1rem] md:pt-0 absolute top-10 w-full gap-1 items-center">
         <p className="text-white font-light text-center text-[14px] font-inter">
-          Nodes of $EARTH
+          $EARTH NODES
         </p>
         <p className="text-white font-semibold text-center text-[24px] sm:text-[30px] !font-syne">
-          $EARTH Mycelium map
+          Mycelium Network
         </p>
         <p className="text-white text-center font-light  text-[16px] font-inter">
-          Nodes powering $EARTH map
+          Nodes powering $EARTH network
         </p>
       </div>
       <MapContainer

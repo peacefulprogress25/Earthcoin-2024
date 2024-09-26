@@ -106,7 +106,7 @@ export default function ResponsibilitiesOfNode() {
               <p className="font-syne text-[#000000] font-semibold text-[30px] ">
                 Purge
               </p>
-              <p className="font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[13px] max-[480px]:text-[10px]">
+              <p className="font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[18px] max-[480px]:text-[10px]">
                 We envision $EARTH treasury to be a source of patient, aligned
                 $$$ waiting to deployed towards projects that are building net
                 zero infrastructure. Addressing climate change is no longer a
@@ -116,7 +116,7 @@ export default function ResponsibilitiesOfNode() {
                 as possible. For this to be a reality we need ginormous amounts
                 of capital. ($3-4 Trillion/Yr climate finance gap)
               </p>
-              <p className="font-syne leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px] max-[480px]:text-[10px]">
+              <p className="font-syne leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[18px] max-[480px]:text-[10px]">
                 Since Nodes are the only ones with permission to mint $EARTH and
                 only when $EARTH is minted directly at the protocol do the $
                 flow into the treasury, it will be up to all the Nodes combined
@@ -188,7 +188,7 @@ export default function ResponsibilitiesOfNode() {
               <p className="font-syne text-[#000000] font-semibold text-[30px]">
                 Partnerships
               </p>
-              <p className="font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[13px] max-[480px]:text-[10px]">
+              <p className="font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[18px] max-[480px]:text-[10px]">
                 Warm introductions or complete coordination with any
                 organisation or individual that can contribute to $EARTH
                 mission/vision. This can take the form of a) Onboarding new
@@ -259,17 +259,17 @@ export default function ResponsibilitiesOfNode() {
               <p className="font-syne text-[#000000] font-semibold text-[30px]">
                 Projects
               </p>
-              <p className="font-syne leading-5 sm:mt-5 w-full font-light text-[#475467] text-[13px] max-[480px]:text-[10px]">
+              <p className="font-syne leading-5 sm:mt-5 w-full font-light text-[#475467] text-[18px] max-[480px]:text-[10px]">
                 Connecting Dao to economically/ecologically viable projects that
                 can be potentially funded by $EARTH treasury ( from the 5
                 sectors we are focusing on).
               </p>
-              <p className="font-syne leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px] max-[480px]:text-[10px]">
+              <p className="font-syne leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[18px] max-[480px]:text-[10px]">
                 Projects should transparently communicate their impact funded
                 with $EARTH to the DAO to validate their activity and earn
                 rewards by accomplishing milestones and impact projections.
               </p>
-              <p className="font-syne leading-5 sm:mt-3 mb-4 w-full font-light text-[#475467] text-[13px] max-[480px]:text-[10px]">
+              <p className="font-syne leading-5 sm:mt-3 mb-4 w-full font-light text-[#475467] text-[18px] max-[480px]:text-[10px]">
                 Projects should have an impact report manual so the DAO could
                 have community events to evaluate the different projects
                 trajectory backed by $EARTH.
@@ -337,17 +337,17 @@ export default function ResponsibilitiesOfNode() {
               <p className="font-syne text-[#000000] font-semibold text-[30px]">
                 Policy
               </p>
-              <p className="font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[13px] max-[480px]:text-[10px]">
+              <p className="font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[18px] max-[480px]:text-[10px]">
                 Co-ordinating on monetary and fiscal policy for $EARTH to
                 achieve its goals.
               </p>
-              <p className="font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[13px] max-[480px]:text-[10px]">
+              <p className="font-syne leading-5 mt-5 w-full font-light text-[#475467] text-[18px] max-[480px]:text-[10px]">
                 Monetary policy will involve deciding on the premium $EARTH
                 commands over the $ value of assets in our treasury to fulfil
                 our goals. Controlling the supply of $EARTH in the secondary
                 market for maintaining desired price levels.
               </p>
-              <p className="font-syne leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[13px] max-[480px]:text-[10px]">
+              <p className="font-syne leading-5 mt-3 mb-4 w-full font-light text-[#475467] text-[18px] max-[480px]:text-[10px]">
                 Fiscal policy would involve deciding how best to deploy $EARTH
                 that is in the treasury. Current usage is for APY, LP, DAO,
                 Rewarding community, rewarding projects and partners.
