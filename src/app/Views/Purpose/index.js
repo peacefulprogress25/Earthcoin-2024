@@ -15,7 +15,7 @@ export default function Purpose() {
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] max-[480px]:text-[12px] font-inter">
             About
           </p>
@@ -29,7 +29,7 @@ export default function Purpose() {
       </div>
 
       {/* Image with book animation */}
-      <div className="flex justify-center items-center">
+      <div className="flex items-center justify-center">
         <FlipBook />
       </div>
 
@@ -37,8 +37,8 @@ export default function Purpose() {
         <div className="h-[2px] my-8 bg-[#F2F4F7]"></div>
         <div className="mt-20 max-[480px]:mt-6 -mb-20">
           <Community
-            title="Ready to Go down the rabbit hole?"
-            description="Join our social community!"
+            title=""
+            description=""
           />
         </div>
       </div>

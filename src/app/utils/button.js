@@ -22,7 +22,7 @@ export default {
   },
 
   home_footer_banner: {
-    title: "$Earth GPT",
+    title: "Get $Earth",
     position: "AI Banner",
     page: "/",
     external: true,

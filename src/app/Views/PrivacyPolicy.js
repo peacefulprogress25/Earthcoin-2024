@@ -42,19 +42,7 @@ export default function PrivacyPolicy() {
   }
 
   return (
-    <div className="flex mt-20 mx-auto w-full max-w-screen-lg px-4 py-4 items-center justify-center flex-col">
-      <div className="flex flex-col gap-2 items-center">
-        <p className="text-[#EC8000] font-semibold text-center text-[12px] sm:text-[14px] font-inter">
-          Current as of 27 March 2024
-        </p>
-        <p className="text-[#101828] font-semibold text-center text-[24px] sm:text-[30px] lg:text-[40px] font-syne">
-          Privacy Policy
-        </p>
-        <p className="text-[#475467] text-center font-normal text-[14px] sm:text-[16px] lg:text-[18px] font-inter leading-relaxed">
-          Your privacy is important to us at Untitled. We respect your privacy
-          regarding any information we may collect from you across our website.
-        </p>
-      </div>
+    <div className="flex flex-col items-center justify-center w-full max-w-screen-lg px-4 py-4 mx-auto mt-20">
       {privacypolicy.details ? (
         <Editor
           editorState={editorState}
@@ -70,5 +58,5 @@ export default function PrivacyPolicy() {
       )}
     </div>
   );
-  
+
 }

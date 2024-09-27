@@ -62,7 +62,7 @@ function Projects() {
         <span>addressing the climate crisis</span>
       </p>
 
-      <div className="flex flex-col md:flex-row justify-between w-full justify-center">
+      <div className="flex flex-col justify-between w-full md:flex-row ">
         <ProjectDetails obj={project?.[activeIndex]} />
 
 

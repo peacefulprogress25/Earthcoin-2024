@@ -274,19 +274,18 @@ export default function Thesis() {
                     />
                   </div>
                   <div
-                    className={`w-full h-2 ${
-                      power.title === "Clean Energy"
+                    className={`w-full h-2 ${power.title === "Clean Energy"
                         ? "bg-[#486D2F]"
                         : power.title === "Regenerative Agriculture"
-                        ? "bg-[#F4AB1F]"
-                        : power.title === "Ecosystem Conservation"
-                        ? "bg-[#B2BC45]"
-                        : power.title === "Clean Transport"
-                        ? "bg-[#EC8000]"
-                        : power.title === "Solarpunk Spaces"
-                        ? "bg-[#045047]"
-                        : ""
-                    }`}
+                          ? "bg-[#F4AB1F]"
+                          : power.title === "Ecosystem Conservation"
+                            ? "bg-[#B2BC45]"
+                            : power.title === "Clean Transport"
+                              ? "bg-[#EC8000]"
+                              : power.title === "Solarpunk Spaces"
+                                ? "bg-[#045047]"
+                                : ""
+                      }`}
                   ></div>
                 </div>
               );
@@ -688,7 +687,7 @@ export default function Thesis() {
                 All these climate solutions generate tremendous amounts of {" "}
                 <span className="text-white ">
                   {" "}
-                  positive <br /> externalities 
+                  positive <br /> externalities
                 </span>{" "}
                 - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient
                 rich <br /> food, Clean Water, Energy Independence, reducing
@@ -711,7 +710,7 @@ export default function Thesis() {
                   All these climate solutions generate tremendous amounts of {" "}
                   <span className="text-white ">
                     {" "}
-                    positive <br /> externalities 
+                    positive <br /> externalities
                   </span>{" "}
                   - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient
                   rich <br /> food, Clean Water, Energy Independence, reducing
@@ -886,8 +885,8 @@ export default function Thesis() {
       </div>
 
       <Community
-        title="Ready to go down the rabbit hole?"
-        description="Join our social community!"
+        title=""
+        description=""
       />
     </div>
   );

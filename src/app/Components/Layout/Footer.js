@@ -75,7 +75,7 @@ export default function Footer() {
         },
         {
           option: "How $EARTH works?",
-          link: "",
+          link: "/works",
         },
         {
           option: "How to get $EARTH?",
@@ -185,16 +185,14 @@ export default function Footer() {
           </div>
         </div>
         {!isMobile ? (
-          <div className="grid grid-cols-2 sm:flex sm:flex-row gap-y-12 sm:gap-2 w-full sm:ml-10 sm:justify-between">
+          <div className="grid w-full grid-cols-2 sm:flex sm:flex-row gap-y-12 sm:gap-2 sm:ml-10 sm:justify-between">
             {Footerdata?.map((option, index) => (
               <div
-                className={`flex flex-col items-start gap-3 ${
-                  index === 2
+                className={`flex flex-col items-start gap-3 ${index === 2
                     ? "col-span-2 justify-self-start sm:justify-self-auto"
                     : ""
-                } ${
-                  index === 0 ? "pr-[4.5rem]" : index === 1 ? "pl-[4.5rem]" : ""
-                }`}
+                  } ${index === 0 ? "pr-[4.5rem]" : index === 1 ? "pl-[4.5rem]" : ""
+                  }`}
                 key={index}
               >
                 <p className="text-[#667085] font-inter font-semibold text-[13px]">
@@ -216,11 +214,10 @@ export default function Footer() {
             <div className="grid grid-cols-3 gap-2">
               {Footerdata?.map((option, index) => (
                 <div
-                  className={`flex flex-col  gap-3 items-center ${
-                    index === 2
+                  className={`flex flex-col  gap-3 items-center ${index === 2
                       ? " justify-self-start sm:justify-self-auto text-center "
                       : ""
-                  } ${index === 0 ? "" : index === 1 ? "ml-3" : ""}`}
+                    } ${index === 0 ? "" : index === 1 ? "ml-3" : ""}`}
                   key={index}
                 >
                   <p className="text-[#667085] font-inter font-semibold text-[13px] max-[480px]:text-[10px]">

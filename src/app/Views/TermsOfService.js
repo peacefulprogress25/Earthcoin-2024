@@ -11,7 +11,7 @@ export default function TermsOfService() {
   useEffect(() => {
     const getPageByID = async () => {
       const page = await nexaflowApi.getPageByID({
-        pageId: nexaflowPageObj.privacyPolicyPage,
+        pageId: nexaflowPageObj.termsConditionsPage,
         websiteId: nexaflowPageObj.website,
       });
       console.log(page);
@@ -43,20 +43,7 @@ export default function TermsOfService() {
   }
 
   return (
-    <div className="flex mt-20 mx-auto w-full max-w-screen-lg px-4 py-4 items-center justify-center flex-col">
-      <div className="flex flex-col gap-2 items-center">
-        <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
-          Current as of 27 March 2024
-        </p>
-        <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
-          Terms of Service
-        </p>
-        <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
-          Your privacy is important to us at Untitled. We respect your privacy
-          regarding any <br /> information we may collect from you across our
-          website.
-        </p>
-      </div>
+    <div className="flex flex-col items-center justify-center w-full max-w-screen-lg px-4 py-4 mx-auto mt-20">
 
       {termsOfService?.details ? (
         <Editor

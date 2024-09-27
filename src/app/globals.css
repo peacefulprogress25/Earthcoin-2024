@@ -32,7 +32,8 @@
 
 .public-DraftStyleDefault-block span {
   font-family: var(--primary-font) !important;
-  font-size: 17px; /* Default font size */
+  font-size: 17px;
+  /* Default font size */
 }
 
 /* Adjust font size for medium screens */

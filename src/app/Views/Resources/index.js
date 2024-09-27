@@ -9,19 +9,19 @@ export default function Resources() {
   const bottomSection = "/assets/images/below-section.png";
   const economy = "/assets/images/economy.png";
   const asset = "/assets/images/Climatesolutions.png";
-const govern = "/assets/images/Communitygoverned.png";
-const range = "/assets/images/Rangebound.png";
-const pool = "/assets/images/Liquiditypool.png";
-const newUnitValue = "/assets/images/New-unit-of-value.png";
-const economyHome = "/assets/images/Economy-home1.png";
-const solarPunk = "/assets/images/Solarpunk-Values1.png";
-const environmentClimate = "/assets/images/climate-environment.png";
-const earthResources = "/assets/video/What-is-$EARTH.mp4";
+  const govern = "/assets/images/Communitygoverned.png";
+  const range = "/assets/images/Rangebound.png";
+  const pool = "/assets/images/Liquiditypool.png";
+  const newUnitValue = "/assets/images/New-unit-of-value.png";
+  const economyHome = "/assets/images/Economy-home1.png";
+  const solarPunk = "/assets/images/Solarpunk-Values1.png";
+  const environmentClimate = "/assets/images/climate-environment.png";
+  const earthResources = "/assets/video/What-is-$EARTH.mp4";
 
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
-        <div className="flex flex-col w-full gap-2 items-center">
+        <div className="flex flex-col items-center w-full gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Resources
           </p>
@@ -32,37 +32,37 @@ const earthResources = "/assets/video/What-is-$EARTH.mp4";
             The economic models behind $Earth driving our solarpunk vision home
           </p> */}
 
-        
-        <div className="sm:px-[5%] px-4 flex mt-6 flex-col w-full items-center">
+
+          <div className="sm:px-[5%] px-4 flex mt-6 flex-col w-full items-center">
             <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-            Digital currency backed by climate solutions, ecosystem services and solarpunk values.
+              Digital currency backed by climate solutions, ecosystem services and solarpunk values.
               <br />
-              <br />
-              </p>
-              <div className="w-[95%]">
-              <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
-              $EARTH is a fairly multi faceted token/currency/tool. Here we shed light on various aspects of $EARTH and how it each parts contributes to our objective of making anthropogenic climate change history and seeding the solarpunk paradigm.
               <br />
             </p>
+            <div className="w-[95%]">
+              <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
+                $EARTH is a fairly multi faceted token/currency/tool. Here we shed light on various aspects of $EARTH and how it each parts contributes to our objective of making anthropogenic climate change history and seeding the solarpunk paradigm.
+                <br />
+              </p>
             </div>
           </div>
-          </div>
-          </div>
-           <Video
-          src={earthResources}
-          alt='earthcoin'
-           className="w-full mt-4 object-cover"
-        />
-        
-        {/* <ImageView
+        </div>
+      </div>
+      <Video
+        src={earthResources}
+        alt='earthcoin'
+        className="object-cover w-full mt-4"
+      />
+
+      {/* <ImageView
           src={resources}
           alt="resources"
           width={400}
           height={200}
-          className="w-full mt-4 object-cover"
+          className="object-cover w-full mt-4"
         /> */}
-        <div className="mt-16 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
-         <div className='flex flex-col gap-8 mt-3'>
+      <div className="mt-16 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+        <div className='flex flex-col gap-8 mt-3'>
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
               <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
@@ -155,13 +155,13 @@ const earthResources = "/assets/video/What-is-$EARTH.mp4";
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
               <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
-              New Unit of <span className='text-[#EC8000]'>Value</span>
+                New Unit of <span className='text-[#EC8000]'>Value</span>
               </p>
               <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5 font-normal font-inter'>
-              $EARTH is a new unit of value, not pegged to any currency. Designed to
-          be loosely range bound, <br /> assets backing each token serve as the
-          floor while valuing positive externalities created by those <br />{" "}
-          assets and the utility of the currency create a soft ceiling.
+                $EARTH is a new unit of value, not pegged to any currency. Designed to
+                be loosely range bound, <br /> assets backing each token serve as the
+                floor while valuing positive externalities created by those <br />{" "}
+                assets and the utility of the currency create a soft ceiling.
               </p>
             </div>
             <div className='p-5'>
@@ -177,12 +177,12 @@ const earthResources = "/assets/video/What-is-$EARTH.mp4";
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
               <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
-              Putting the Eco in <span className='text-[#EC8000]'>Economy</span>
+                Putting the Eco in <span className='text-[#EC8000]'>Economy</span>
               </p>
               <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5 font-normal font-inter'>
-              When you pay a premium over the base value of $EARTH it represents{" "}
-          <br /> the economic value placed on ecosystems and it services. This
-          helps us <br /> reward projects creating more of this
+                When you pay a premium over the base value of $EARTH it represents{" "}
+                <br /> the economic value placed on ecosystems and it services. This
+                helps us <br /> reward projects creating more of this
               </p>
             </div>
             <div className='p-5'>
@@ -198,12 +198,12 @@ const earthResources = "/assets/video/What-is-$EARTH.mp4";
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
               <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
-              Program <span className='text-[#EC8000]'>Solarpunk Values</span> into
-              Money
+                Program <span className='text-[#EC8000]'>Solarpunk Values</span> into
+                Money
               </p>
               <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5 font-normal font-inter'>
-              $EARTH utility will be designed to acknowledge and reward people &
-              merchants that <br /> are imbibing these above mentioned values.
+                $EARTH utility will be designed to acknowledge and reward people &
+                merchants that <br /> are imbibing these above mentioned values.
               </p>
             </div>
             <div className='p-5'>
@@ -219,12 +219,12 @@ const earthResources = "/assets/video/What-is-$EARTH.mp4";
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
               <p className='font-syne font-semibold text-[20px] text-center sm:text-left sm:text-[28px] text-black'>
-              Climate finance <span className='text-[#EC8000]'> funnel</span>
+                Climate finance <span className='text-[#EC8000]'> funnel</span>
               </p>
               <p className='text-[#475467]  text-center sm:text-left text-[16px] py-5 font-normal font-inter'>
-              $Earth acts as a borderless, capital efficient funnel <br />
-          to incentivize, mobilize & allocate capital <br />
-          towards climate solutions.
+                $Earth acts as a borderless, capital efficient funnel <br />
+                to incentivize, mobilize & allocate capital <br />
+                towards climate solutions.
               </p>
             </div>
             <div className='p-5 '>
@@ -240,7 +240,7 @@ const earthResources = "/assets/video/What-is-$EARTH.mp4";
         </div>
       </div>
 
-        {/* <div className="sm:px-[20%] px-4 flex mt-6 flex-col w-full items-start">
+      {/* <div className="sm:px-[20%] px-4 flex mt-6 flex-col w-full items-start">
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
             $EARTH is a fairly multi faceted token/currency/tool and while our
             tagline is -
@@ -269,14 +269,14 @@ const earthResources = "/assets/video/What-is-$EARTH.mp4";
             </p>
           </div>
         </div> */}
-        <div className="sm:px-[8%] px-4 flex mt-6 gap-8 flex-col w-full items-start">
-          {/* <div className="w-full h-[1.5px] my-8  bg-[#F2F4F7]"></div> */}
+      <div className="sm:px-[8%] px-4 flex mt-6 gap-8 flex-col w-full items-start">
+        {/* <div className="w-full h-[1.5px] my-8  bg-[#F2F4F7]"></div> */}
 
-          {/* <Community
-            title="Still curious?"
-            description="Join our social community to understand further!"
-          /> */}
-        </div>
+        <Community
+          title=""
+          description=""
+        />
       </div>
+    </div>
   );
 }

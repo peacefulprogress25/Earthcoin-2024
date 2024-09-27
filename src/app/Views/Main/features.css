@@ -54,16 +54,53 @@
   color: #EC8000 !important;
 }
 
-@media (max-width: 768px) { /* Small screens */
+@media (max-width: 768px) {
+
+  /* Small screens */
   .swiper {
     width: 100% !important;
     margin: 0 auto;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) { /* Medium screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* Medium screens */
   .swiper {
     width: 75% !important;
     margin: 0 auto;
   }
+}
+
+@keyframes fadeInOut {
+
+  0%,
+  20%,
+  100% {
+    opacity: 0;
+  }
+
+  30%,
+  90% {
+    opacity: 1;
+  }
+}
+
+.fade-slide {
+  position: absolute;
+  opacity: 0;
+  animation: fadeInOut 6s ease-in-out infinite;
+}
+
+/* Delay each slide for a staggered effect */
+.slide-1 {
+  animation-delay: 0s;
+}
+
+.slide-2 {
+  animation-delay: 6s;
+}
+
+.slide-3 {
+  animation-delay: 12s;
 }

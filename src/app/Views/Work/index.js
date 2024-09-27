@@ -79,7 +79,7 @@ export default function Work() {
           height={200}
           className="object-cover w-full mt-4"
         /> */}
-        <div className="relative  h-[89vh] w-full flex items-center justify-center ">
+        <div className="relative  h-[89vh] w-3/4 flex items-center justify-center ">
           {loading ? (
             <section className="absolute ">
               <Loader />{" "}
@@ -90,14 +90,12 @@ export default function Work() {
             onLoadedData={() => {
               setLoading(false);
             }}
-            className={` object-fill w-full h-full  ${
-              loading ? "none" : "block"
-            } `}
+            className={` object-fill w-full h-full  ${loading ? "none" : "block"
+              } `}
           />
-          <div
-            className={`absolute top-0 w-full h-full ${
-              loading ? "none" : "block"
-            } `}
+          {/* <div
+            className={`absolute top-0 w-full h-full ${loading ? "none" : "block"
+              } `}
           >
             <ImageView
               src={earth}
@@ -106,19 +104,11 @@ export default function Work() {
               height={800}
               className="object-cover w-full h-full mix-blend-overlay"
             />
-          </div>
+          </div> */}
         </div>
 
         <div className="flex justify-center items-center px-[100px]">
-          <div className="">
-            <ImageView
-              src={plan}
-              alt="plan"
-              width={261.13}
-              height={682}
-              className="object-cover mt-4"
-            />
-          </div>
+
           <div className="flex flex-col w-full items-start pl-[64px]">
             <div>
               <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
@@ -163,8 +153,8 @@ export default function Work() {
         </div> */}
         <Community
           img={true}
-          //title="Still curious?"
-          //description="Join our social community to understand further!"
+        //title="Still curious?"
+        //description="Join our social community to understand further!"
         />
       </div>
     </>

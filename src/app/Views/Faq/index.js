@@ -28,7 +28,7 @@ export default function Faq() {
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             FAQs
           </p>
@@ -53,7 +53,7 @@ export default function Faq() {
             </div>
           )}
         </div> */}
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col items-center gap-2">
           <p className="text-[#101828] font-semibold text-center max-[480px]:text-[11px] text-[18px]  font-syne">
             Chat with Ask $EARTH to resolve all your queries
           </p>
@@ -75,70 +75,70 @@ export default function Faq() {
   );
 }
 
-function FAQSection({ Question, Answer, i }) {
-  const [index, setIndex] = useState(0);
+// function FAQSection({ Question, Answer, i }) {
+//   const [index, setIndex] = useState(0);
 
-  const handleClick = (i) => {
-    if (index === i) {
-      setIndex("");
-      return;
-    }
+//   const handleClick = (i) => {
+//     if (index === i) {
+//       setIndex("");
+//       return;
+//     }
 
-    setIndex(i);
-  };
-  const [editorLoaded, setEditorLoaded] = useState(false);
+//     setIndex(i);
+//   };
+//   const [editorLoaded, setEditorLoaded] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setEditorLoaded(true);
-    }
-  }, []);
+//   useEffect(() => {
+//     if (typeof window !== "undefined") {
+//       setEditorLoaded(true);
+//     }
+//   }, []);
 
-  if (!editorLoaded) {
-    return null;
-  }
+//   if (!editorLoaded) {
+//     return null;
+//   }
 
-  const { Editor } = require("react-draft-wysiwyg");
-  const { EditorState, ContentState } = require("draft-js");
-  const htmlToDraft = require("html-to-draftjs").default;
+//   const { Editor } = require("react-draft-wysiwyg");
+//   const { EditorState, ContentState } = require("draft-js");
+//   const htmlToDraft = require("html-to-draftjs").default;
 
-  const contentBlock = htmlToDraft(Answer);
-  const contentState = ContentState.createFromBlockArray(
-    contentBlock.contentBlocks
-  );
-  const editorState = EditorState.createWithContent(contentState);
-  return (
-    <div
-      key={i}
-      className={`flex flex-col w-full cursor-pointer p-4 py-6 items-start ${
-        i !== Question.length - 1 ? "border-b-2 border-[#EAECF0]" : ""
-      }`}
-      onClick={() => handleClick(i)}
-    >
-      <div className="flex w-full gap-4 justify-between">
-        <p className="font-inter font-semibold text-[16px] text-[#101828] w-[70%] sm:w-full">
-          {Question}
-        </p>
-        <button className="cursor-pointer">
-          <ImageView
-            src={index === i ? minus : plus}
-            alt="icon"
-            width={25}
-            height={25}
-          />
-        </button>
-      </div>
-      {index === i ? (
-        <div className="w-full text-xs leading-relaxed sm:text-[16px] sm:leading-7 font-inter text-[#475467]">
-          <Editor
-            editorState={editorState}
-            wrapperClassName="demo-wrapper"
-            editorClassName="richText-editor custom-editor"
-            toolbarHidden={true}
-            readOnly={true}
-          />
-        </div>
-      ) : null}
-    </div>
-  );
-}
+//   const contentBlock = htmlToDraft(Answer);
+//   const contentState = ContentState.createFromBlockArray(
+//     contentBlock.contentBlocks
+//   );
+//   const editorState = EditorState.createWithContent(contentState);
+//   return (
+//     <div
+//       key={i}
+//       className={`flex flex-col w-full cursor-pointer p-4 py-6 items-start ${
+//         i !== Question.length - 1 ? "border-b-2 border-[#EAECF0]" : ""
+//       }`}
+//       onClick={() => handleClick(i)}
+//     >
+//       <div className="flex justify-between w-full gap-4">
+//         <p className="font-inter font-semibold text-[16px] text-[#101828] w-[70%] sm:w-full">
+//           {Question}
+//         </p>
+//         <button className="cursor-pointer">
+//           <ImageView
+//             src={index === i ? minus : plus}
+//             alt="icon"
+//             width={25}
+//             height={25}
+//           />
+//         </button>
+//       </div>
+//       {index === i ? (
+//         <div className="w-full text-xs leading-relaxed sm:text-[16px] sm:leading-7 font-inter text-[#475467]">
+//           <Editor
+//             editorState={editorState}
+//             wrapperClassName="demo-wrapper"
+//             editorClassName="richText-editor custom-editor"
+//             toolbarHidden={true}
+//             readOnly={true}
+//           />
+//         </div>
+//       ) : null}
+//     </div>
+//   );
+// }

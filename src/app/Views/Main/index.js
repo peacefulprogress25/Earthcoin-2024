@@ -16,6 +16,8 @@ import Features from "./Features";
 import Projects from "./Projects";
 import TradeDapp from "../../Components/Trade";
 import buttonConfig from "../../utils/button";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
 
 const earth = "/assets/video/EarthVideo.mp4";
 const earthnodevdo = "/assets/video/home_earthnode.mp4";
@@ -283,11 +285,37 @@ export default function Main() {
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-          <p className="text-[#000000] text-2xl sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight mb-4 sm:mb-6 lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-            Digital currency funding <br className="hidden sm:inline" />
-            regeneration
+          <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight mb-4 sm:mb-6 lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+            Programming money to
           </p>
-
+          <Swiper
+            modules={[Autoplay, EffectFade]}
+            className='w-full mySwiper !h-fit mb-8'
+            fadeEffect={{ crossFade: true }}
+            effect='fade'
+            spaceBetween={100}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+          >
+            <SwiperSlide>
+              <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+                Reward climate finance
+              </p>
+            </SwiperSlide>
+            <SwiperSlide>
+              <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+                Make regeneration a reality
+              </p>
+            </SwiperSlide>
+            <SwiperSlide>
+              <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+                Build the solarpunk paradigm
+              </p>
+            </SwiperSlide>
+          </Swiper>
           <button className="text-white mt-4 sm:mt-6 font-inter font-semibold px-4 py-2 rounded-md bg-[#101323] border border-[#EC8000] text-sm sm:text-base">
             <Link
               href={buttonConfig?.home_get_earth?.link || ""}
@@ -304,11 +332,10 @@ export default function Main() {
         <div className="flex flex-col items-center justify-center w-full pb-2 sm:pb-2 sm:flex-row">
           {funding.map((impact, index) => (
             <div
-              className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${
-                index !== funding.length - 1
-                  ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
-                  : ""
-              }`}
+              className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${index !== funding.length - 1
+                ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
+                : ""
+                }`}
               key={index}
             >
               <p className="font-syne font-semibold text-[20px] text-center sm:text-[52px] text-[#EC8000]">
@@ -366,27 +393,27 @@ export default function Main() {
         <Features />
 
         <div className="relative mb-16 -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]">
-        <ImageView
-          alt="social"
-          src={mainBottomSection1}
-          width={1440}
-          height={430}
-          className="w-full rounded-lg h-[24rem] object-cover mt-20"
-        />
-      <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] font-syne text-center flex items-center justify-center">
-  <p className="font-bold whitespace-normal text-[18px] xs:whitespace-nowrap sm:text-[24px] md:text-[27px] lg:text-[40px] xl:text-[44px] leading-tight">
-    $EARTH for EARTH {" "}
-    <br/>
-    <span className="xs:whitespace-nowrap whitespace-normal font-normal text-[14px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px]">
-      Using crypto economics to value NATURE
-    </span>
-  </p>
-</div>
+          <ImageView
+            alt="social"
+            src={mainBottomSection1}
+            width={1440}
+            height={430}
+            className="w-full rounded-lg h-[24rem] object-cover mt-20"
+          />
+          <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] font-syne text-center flex items-center justify-center">
+            <p className="font-bold whitespace-normal text-[18px] xs:whitespace-nowrap sm:text-[24px] md:text-[27px] lg:text-[40px] xl:text-[44px] leading-tight">
+              $EARTH for EARTH {" "}
+              <br />
+              <span className="xs:whitespace-nowrap whitespace-normal font-normal text-[14px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px]">
+                Using crypto economics to value NATURE
+              </span>
+            </p>
+          </div>
 
-      </div>
+        </div>
 
         <Projects />
-        
+
         {/* <div className='flex flex-col gap-8 mt-3'>
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
@@ -479,7 +506,7 @@ export default function Main() {
           </div>
         </div> */}
       </div>
-     
+
       <div>
         {/* <div className='max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full'>
           <div className='flex items-center flex-col w-[80%] px-20 mt-28 gap-4 '>
@@ -556,7 +583,7 @@ export default function Main() {
           <p className="whitespace-normal sm:whitespace-nowrap">
             We do not inherit this world from our parents{" "}
             <br />
-            We borrow it from our children <br  />
+            We borrow it from our children <br />
             Let&apos;s leave it better than we found it
           </p>
         </div>
@@ -577,83 +604,76 @@ export default function Main() {
       <div className="grid w-full grid-cols-1 px-4 mt-8 sm:px-20 xl:grid-cols-2 gap-x-6 gap-y-5">
         {updates && updates?.length
           ? updates.map((card, index) => (
-              <div
-                className={`flex cursor-pointer w-full items-start ${
-                  index === 0
-                    ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
-                    : "col-span-1 flex-row sm:col-span-1 flex-col sm:flex-row"
+            <div
+              className={`flex cursor-pointer w-full items-start ${index === 0
+                ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
+                : "col-span-1 flex-row sm:col-span-1 flex-col sm:flex-row"
                 }`}
-                key={index}
+              key={index}
+            >
+              <ImageView
+                src={card.image}
+                alt={card.name}
+                width={200}
+                height={200}
+                className={`${index === 0
+                  ? "w-full h-[13rem] sm:h-[20rem] xl:object-cover"
+                  : "w-full h-[13rem] sm:h-40 xl:object-cover"
+                  }`}
+              />
+              <div
+                className={`${index === 0
+                  ? "mt-4"
+                  : "flex flex-col gap-2 px-4 mt-4 sm:mt-0"
+                  }`}
               >
-                <ImageView
-                  src={card.image}
-                  alt={card.name}
-                  width={200}
-                  height={200}
-                  className={`${
-                    index === 0
-                      ? "w-full h-[13rem] sm:h-[20rem] xl:object-cover"
-                      : "w-full h-[13rem] sm:h-40 xl:object-cover"
-                  }`}
-                />
-                <div
-                  className={`${
-                    index === 0
-                      ? "mt-4"
-                      : "flex flex-col gap-2 px-4 mt-4 sm:mt-0"
-                  }`}
-                >
-                  <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
-                    {card?.name} • {card?.date}
-                  </p>
-                  <div className="flex items-start justify-between mt-2">
-                    <p
-                      className={`text-[#101828] font-inter font-semibold text-[16px] ${
-                        index === 0 ? "font-syne text-[22px]" : ""
-                      }`}
-                    >
-                      {card?.title}
-                    </p>
-                    {index === 0 ? (
-                      <LuArrowUpRight size={22} color="#101828" />
-                    ) : (
-                      ""
-                    )}
-                  </div>
+                <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
+                  {card?.name} • {card?.date}
+                </p>
+                <div className="flex items-start justify-between mt-2">
                   <p
-                    className={`text-[#475467] ${
-                      index === 0 ? "mt-2" : "mt-2 sm:mt-0"
-                    } font-inter w-[100%] font-normal text-[14px]`}
+                    className={`text-[#101828] font-inter font-semibold text-[16px] ${index === 0 ? "font-syne text-[22px]" : ""
+                      }`}
                   >
-                    {card?.description}
+                    {card?.title}
                   </p>
-                  <div
-                    className={`flex items-center ${
-                      index === 0 ? "mt-4" : "mt-4 sm:mt-0"
+                  {index === 0 ? (
+                    <LuArrowUpRight size={22} color="#101828" />
+                  ) : (
+                    ""
+                  )}
+                </div>
+                <p
+                  className={`text-[#475467] ${index === 0 ? "mt-2" : "mt-2 sm:mt-0"
+                    } font-inter w-[100%] font-normal text-[14px]`}
+                >
+                  {card?.description}
+                </p>
+                <div
+                  className={`flex items-center ${index === 0 ? "mt-4" : "mt-4 sm:mt-0"
                     } gap-2`}
-                  >
-                    {card && card?.length
-                      ? card?.tags.map((tag, i) => (
-                          <p
-                            className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${
-                              tag === "Design"
-                                ? "text-[#EC8000] bg-[#FFFCF8]"
-                                : tag === "Research"
-                                ? "bg-[#EEF4FF] text-[#3538CD]"
-                                : tag === "Presentation"
-                                ? "bg-[#FDF2FA] text-[#C11574]"
-                                : ""
-                            }`}
-                            key={i}
-                          >
-                            {tag}
-                          </p>
-                        ))
-                      : null}
-                  </div>
+                >
+                  {card && card?.length
+                    ? card?.tags.map((tag, i) => (
+                      <p
+                        className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${tag === "Design"
+                          ? "text-[#EC8000] bg-[#FFFCF8]"
+                          : tag === "Research"
+                            ? "bg-[#EEF4FF] text-[#3538CD]"
+                            : tag === "Presentation"
+                              ? "bg-[#FDF2FA] text-[#C11574]"
+                              : ""
+                          }`}
+                        key={i}
+                      >
+                        {tag}
+                      </p>
+                    ))
+                    : null}
                 </div>
               </div>
-            ))
+            </div>
+          ))
           : null}
       </div>
 
@@ -809,7 +829,8 @@ export default function Main() {
             alt="groot"
             width={1216}
             height={300}
-            className="w-full h-[350px] rounded-lg object-cover"
+            style={{ "box-shadow": "0px 10px 10px rgba(0, 0, 0, 0.3)" }}
+            className="w-full h-[350px]  rounded-lg object-cover"
           />
           <div className="flex flex-col w-full justify-end items-center p-4 absolute bottom-[1.5rem]">
             <p className="text-white font-inter text-center mt-3 font-medium text-[18px]">
