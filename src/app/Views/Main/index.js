@@ -328,7 +328,7 @@ export default function Main() {
           </button>
         </div>
       </div>
-      <div className="mx-auto  pt-2 sm:pt-2 px-4 sm:px-[6%] mt-16 h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className="mx-auto  pt-2 sm:pt-2 px-4 sm:px-[6%] mt-16 h-fit flex flex-col items-center justify-center w-full">
         <div className="flex flex-col items-center justify-center w-full pb-2 sm:pb-2 sm:flex-row">
           {funding.map((impact, index) => (
             <div
@@ -348,7 +348,7 @@ export default function Main() {
           ))}
         </div>
 
-        <div>
+        <div className="mt-16">
           <p className="leading-10 text-[#000000] text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
             {/* Just ONE transaction to get Rewarded for */}
             Just one transaction to fund real world regeneration
@@ -784,7 +784,7 @@ export default function Main() {
         ))}
       </div>
       <div className="max-w-screen-2xl pt-2 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
-        <div className="flex flex-wrap justify-center gap-1 mt-6 sm:gap-4">
+        <div className="flex flex-wrap justify-center gap-1 mt-12 sm:gap-4">
           {social.map((partner, index) => (
             <Link
               key={index}
@@ -822,39 +822,37 @@ export default function Main() {
           View Partners
         </button> */}
       </div>
-      <div className=" pt-0 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
-        <div className="relative w-full mt-0 sm:mt-28 sm:mb-8">
-          <ImageView
-            src={groot}
-            alt="groot"
-            width={1216}
-            height={300}
-            style={{ "box-shadow": "0px 10px 10px rgba(0, 0, 0, 0.3)" }}
-            className="w-full h-[350px]  rounded-lg object-cover"
-          />
-          <div className="flex flex-col w-full justify-end items-center p-4 absolute bottom-[1.5rem]">
-            <p className="text-white font-inter text-center mt-3 font-medium text-[18px]">
-              Still have questions?
+      <div className="pt-0 mx-auto px-4 sm:px-[6%] h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className="relative mt-12  w-full">
+      <ImageView
+        src={groot}
+         alt="groot"
+        width={800}
+        height={800}
+        className="w-full h-[35vh] sm:h-[50vh] rounded-md object-cover"
+      />
+        <div className="flex w-full justify-between gap-6 items-center py-4 px-8 absolute bottom-2 sm:bottom-4">
+          <div className="flex flex-col gap-2 items-start">
+            <p className="text-white font-syne font-semibold text-[15px] sm:text-[28px]">
+            Still have questions?
             </p>
-            <p className="text-white font-inter text-center mt-1 font-light text-[16px]">
-              Can&apos;t find the answer you&apos;re looking for? Please drop a
-              message to our team.
+            <p className="text-white font-inter font-normal  text-[10px] sm:text-[16px]">
+            Can&apos;t find the answer you&apos;re looking for? Please drop a message to our team.
             </p>
-            <button className="w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm">
-              <Link
-                href={buttonConfig?.home_footer_banner?.link || ""}
-                target={
-                  buttonConfig?.home_footer_banner?.external
-                    ? "_blank"
-                    : "_self"
-                }
-              >
-                {buttonConfig?.home_footer_banner?.title}
-              </Link>
-            </button>
           </div>
+          <button>
+          <Link
+            className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm"
+            href={buttonConfig?.home_footer_banner?.link || ""}
+          target={buttonConfig?.home_footer_banner?.external ? "_blank" : "_self"}
+          >
+              {buttonConfig?.home_footer_banner?.title}
+          </Link>
+          </button>
         </div>
-      </div>
+    </div>
+</div>
+
     </div>
   );
 }

@@ -57,7 +57,7 @@ function Projects() {
   return (
     <>
 
-      <p className="text-[#1F2636] font-syne text-center font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl w-3/4">
+      <p className="text-[#1F2636] font-syne text-center font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl w-3/4 mb-16">
         Treasury is dedicated to yield bearing RWAs directly <br />
         <span>addressing the climate crisis</span>
       </p>
@@ -163,7 +163,7 @@ function Projects() {
       </div>
       <button
         onClick={() => router.push("/projects")}
-        className=" relative mx-auto cursor-pointer z-50 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
+        className=" relative mx-auto cursor-pointer z-50 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm mt-8"
       >
         Browse All Projects
       </button>
