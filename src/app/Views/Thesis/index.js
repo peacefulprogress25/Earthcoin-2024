@@ -645,7 +645,7 @@ export default function Thesis() {
         {!isMobile ? (
           <div className="relative mt-5">
              <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
-              <p className="mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne text-nowrap max-[580px]:text-[12px] max-[480px]:text-[10px]">
+              <p className="mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne text-nowrap max-[580px]:text-[7px] max-[480px]:text-[7px]">
                 They cater to humanities{" "}
                 <span className="text-white "> core needs</span> - energy, food,
                 transport, <br /> materials and ecosystems to sustain LIFE
