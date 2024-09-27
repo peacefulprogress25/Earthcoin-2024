@@ -39,6 +39,11 @@
 }
 
 
+
+  .custom-contract .public-DraftStyleDefault-block span {
+    font-size: 17px;
+  }
+
 /* Adjust font size for medium screens */
 @media (max-width: 768px) {
   .custom-contract .public-DraftStyleDefault-block span {
