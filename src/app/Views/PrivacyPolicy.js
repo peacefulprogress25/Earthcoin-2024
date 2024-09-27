@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
         <Editor
           editorState={editorState}
           wrapperClassName="demo-wrapper"
-          editorClassName="richText-editor"
+          editorClassName="richText-editor "
           toolbarHidden={true}
           readOnly={true}
         />

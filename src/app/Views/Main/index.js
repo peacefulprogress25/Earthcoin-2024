@@ -544,7 +544,7 @@ export default function Main() {
             Projects collaborating with $EARTH to fulfil its mission/vision
           </p>
         </div>
-        <div className="flex flex-wrap  sm:px-[32%] justify-center mt-6 gap-1 sm:gap-5">
+        <div className="flex flex-wrap  sm:px-[32%] justify-center mt-0 gap-1 sm:gap-5">
           {partners && partners?.length ? (
             partners.map((partner, index) => (
               <Link href={partner?.link} className="cursor-pointer" key={index}>
@@ -571,13 +571,13 @@ export default function Main() {
             </Link>
         </button> */}
       </div>
-      <div className=" relative max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] ">
+      <div className=" relative max-w-screen-2xl pt-2 mx-auto px-4 sm:px-[6%] ">
         <ImageView
           alt="social"
           src={mainBottomSection}
           width={1440}
           height={430}
-          className="w-full rounded-lg h-[24rem] object-cover mt-20"
+          className="w-full rounded-lg h-[24rem] object-cover mt-12"
         />
         <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] text-[14px] sm:text-[25px] md:text-[28px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
           <p className="whitespace-normal sm:whitespace-nowrap">
@@ -750,7 +750,7 @@ export default function Main() {
       )
     } */}
 
-      <div className="grid items-center justify-center sm:px-[6%] w-full grid-cols-1 gap-8 px-4 mx-auto mt-28 sm:grid-cols-2">
+      <div className="grid items-center justify-center sm:px-[6%] w-full grid-cols-1 gap-8 px-4 mx-auto mt-20 sm:grid-cols-2">
         {cardData?.map((data, index) => (
           <div
             className="relative w-full cursor-pointer grow"

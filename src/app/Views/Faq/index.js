@@ -133,7 +133,7 @@ export default function Faq() {
 //           <Editor
 //             editorState={editorState}
 //             wrapperClassName="demo-wrapper"
-//             editorClassName="richText-editor custom-editor"
+//             editorClassName="richText-editor"
 //             toolbarHidden={true}
 //             readOnly={true}
 //           />
