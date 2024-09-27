@@ -55,7 +55,7 @@ export default function ProjectImpact({ details }) {
           <Editor
             editorState={editorState}
             wrapperClassName='demo-wrapper'
-            editorClassName='richText-editor'
+            editorClassName='richText-editor custom-contract'
             toolbarHidden={true}
             readOnly={true}
           />

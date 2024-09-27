@@ -39,13 +39,13 @@ export default function ContractDetails({ details }) {
       <div className="flex w-full flex-col border-b-2 px-2 border-[#EAECF0] pb-8">
         <p className="font-Inter mt-3 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
           Contract Address - 
-          <span className="text-[#101828] inline-block">
+          <span className=" custom-contract text-[#101828] inline-block">
             {details?.contractDetails?.contractAddress}
           </span>
         </p>
         <p className="font-Syne mt-1 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
           $Earth - 
-          <span className="text-[#101828] inline-block">
+          <span className=" custom-contract text-[#101828] inline-block">
             {details?.contractDetails?.earth}
           </span>
         </p>
