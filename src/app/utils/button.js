@@ -112,8 +112,7 @@ export default {
     link: "https://chatgpt.com/g/g-dhkZ0P5ZL-ask-earth",
   },
   projects_footer_banner: {
-    //title: "Earth GPT",
-    title: "Get $Earth",
+    title: "Ask $Earth",
     position: "AI Banner",
     page: "/projects",
     external: true,

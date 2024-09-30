@@ -10,10 +10,13 @@ import useNotification from "../../Hooks/useNotification";
 import { BtnLoader, Loader } from "../../Components/Loader";
 import { nexaflowPageObj } from "../../utils/constants";
 import NodeDapp from "./Node";
+import { TwitterShareButton } from "react-share";
 
+const twitter = "/assets/icons/twitter.png";
 const exclamationIcon = "/assets/images/exclamation-mark.png"
 const soulboundAddress = envObj.soulboundAddress;
 const templateId = envObj.personaTemplateId;
+const twitterContent = `I just became an $EARTH NODE to create a mycelium network that regenerates EARTH`;
 
 export default function Sbt() {
   const { showMessage } = useNotification();
@@ -297,8 +300,13 @@ export default function Sbt() {
   };
   if (pageStatus.minted) {
     return (
-      <div className='sbt-message-container'>
-        <p className='message'>Verified and Soulbound Token Minted</p>
+      <div className='flex flex-col items-center justify-center gap-3'>
+        <p className='text-lg message text-primary font-syne'>Verified and Soulbound Token Minted</p>
+        <TwitterShareButton url={twitterContent}>
+          <button className='flex flex-col items-center justify-center gap-2 text-md "w-[80px] ml-auto text-white font-inter h-10 rounded-md bg-[#EC8000] p-2 text-sm'>
+            Share via Twitter
+          </button>
+        </TwitterShareButton>
       </div>
     );
   }

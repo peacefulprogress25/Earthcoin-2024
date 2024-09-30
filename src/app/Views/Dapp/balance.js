@@ -132,20 +132,23 @@ export const totalEarth = async () => {
       let t = mintMultiple.toString() / 10;
       console.log(mintMultiple.toString());
 
+      let result = {
+        earth:
+          Math.round(100 * (parseFloat(ratio) * parseFloat(t))) /
+          100 /
+          Math.pow(10, 18),
+        treasury: info.stablec.toString() / Math.pow(10, 18),
+      }
+
       dispatch(
-        earthBalanceFn({
-          earth:
-            Math.round(100 * (parseFloat(ratio) * parseFloat(t))) /
-            100 /
-            Math.pow(10, 18),
-          treasury: info.stablec.toString() / Math.pow(10, 18),
-        })
+        earthBalanceFn(result)
       );
-      fetchDexPrice();
+      const dexPrice = await fetchDexPrice();
       console.log(
         Math.round(100 * (parseFloat(ratio) * parseFloat(t))) / 100,
         info.stablec.toString() / Math.pow(10, 18)
       );
+      return { ...result, dexPrice }
     } catch (error) {
       console.log(error);
     }
@@ -158,6 +161,7 @@ export const fetchDexPrice = async () => {
     const result = await response.json();
 
     dispatch(earthBalanceFn({ dex: result?.pair?.priceUsd ? result?.pair?.priceUsd : 0 }));
+    return result?.pair?.priceUsd ? result?.pair?.priceUsd : 0
   } catch (error) {
     console.error("Error fetching data:", error);
   } finally {

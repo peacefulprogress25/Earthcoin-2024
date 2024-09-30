@@ -9,6 +9,8 @@ import { useSelector } from "react-redux";
 import { profileState } from "../../redux/profileSlice";
 import useNotification from "../../Hooks/useNotification";
 import Progress from "./Progress";
+import { TwitterShareButton } from "react-share";
+
 
 const soulboundAddress = envObj.soulboundAddress;
 const stableCoinAddress = envObj.stableCoinAddress;
@@ -19,8 +21,8 @@ export default function Mint({ totalEarth }) {
   const { showMessage } = useNotification();
   const { earth } = useSelector(profileState)?.earthBalance;
   const initState = {
-    increaseAllowance: false,
-    mint: false,
+    increaseAllowance: true,
+    mint: true,
   }
   const [loading, setLoading] = useState(initState);
   const [progress, setProgress] = useState(initState);
@@ -200,55 +202,65 @@ export default function Mint({ totalEarth }) {
 
   return (
     <>
-      <div className='flex w-[72%] mt-8 py-8 sm:py-0 sm:mt-0 items-center flex-col gap-3'>
-        <p className='text-black text-center font-inter sm:text-[28px] text-md font-medium'>
-          Mint $Earth <br /> by passing $Dai
-        </p>
-        <p className=' text-sm sm:text-[16px] text-center font-inter font-medium text-black'>
-          New Tokens can only be minted at the protocol using DAPP
-        </p>
-        <div className='flex flex-wrap justify-center w-full gap-3 mt-2 sm:flex-nowrap'>
-          <div className='flex flex-col w-[130px]'>
-            <p className='text-black text-center font-inter text-[12px] font-medium'>
-              Enter $Dai amount
-            </p>
-            <div className='flex border-2  gap-2  border-[#EAECF0] items-center p-1'>
-              <input
-                type='text'
-                className='w-16 outline-none'
-                value={input}
-                onChange={handleChange}
-              />
-              <p className='text-black text-center font-inter text-[12px] font-medium'>
-                $DAI
-              </p>
-            </div>
-          </div>
-          <div className='flex flex-col w-[130px]'>
-            <p className='text-black text-center font-inter text-[12px] font-medium'>
-              You will recieve
-            </p>
-            <div className='flex border-2 border-[#EAECF0] w-fit gap-2 items-center p-1'>
-              <input
-                type='text'
-                className='w-16 outline-none'
-                placeholder='158.68'
-                readOnly
-                value={result}
-              />
-              <p className='text-black text-center font-inter text-[12px] font-medium'>
-                $EARTH
-              </p>
-            </div>
-          </div>
+      {progress.increaseAllowance && progress.mint ?
+        <div className='flex flex-col items-center justify-center gap-3'>
+          <p className='text-lg message text-primary font-syne'>Token Minted Successfully</p>
+          <TwitterShareButton url={twitterContent}>
+            <button className='flex flex-col items-center justify-center gap-2 text-md "w-[80px] ml-auto text-white font-inter h-10 rounded-md bg-[#EC8000] p-2 text-sm'>
+              Share via Twitter
+            </button>
+          </TwitterShareButton>
         </div>
-        <button
-          onClick={() => input && setShowTransactionPopup(true)}
-          className='w-[120px] cursor-pointer text-white mt-2 font-inter flex h-10 items-center justify-center rounded-md bg-[#ec8000] p-2 text-[14px]'
-        >
-          MINT
-        </button>
-      </div>
+
+        : <div className='flex w-[72%] mt-8 py-8 sm:py-0 sm:mt-0 items-center flex-col gap-3'>
+          <p className='text-black text-center font-inter sm:text-[28px] text-md font-medium'>
+            Mint $Earth <br /> by passing $Dai
+          </p>
+          <p className=' text-sm sm:text-[16px] text-center font-inter font-medium text-black'>
+            New Tokens can only be minted at the protocol using DAPP
+          </p>
+          <div className='flex flex-wrap justify-center w-full gap-3 mt-2 sm:flex-nowrap'>
+            <div className='flex flex-col w-[130px]'>
+              <p className='text-black text-center font-inter text-[12px] font-medium'>
+                Enter $Dai amount
+              </p>
+              <div className='flex border-2  gap-2  border-[#EAECF0] items-center p-1'>
+                <input
+                  type='text'
+                  className='w-16 outline-none'
+                  value={input}
+                  onChange={handleChange}
+                />
+                <p className='text-black text-center font-inter text-[12px] font-medium'>
+                  $DAI
+                </p>
+              </div>
+            </div>
+            <div className='flex flex-col w-[130px]'>
+              <p className='text-black text-center font-inter text-[12px] font-medium'>
+                You will recieve
+              </p>
+              <div className='flex border-2 border-[#EAECF0] w-fit gap-2 items-center p-1'>
+                <input
+                  type='text'
+                  className='w-16 outline-none'
+                  placeholder='158.68'
+                  readOnly
+                  value={result}
+                />
+                <p className='text-black text-center font-inter text-[12px] font-medium'>
+                  $EARTH
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={() => input && setShowTransactionPopup(true)}
+            className='w-[120px] cursor-pointer text-white mt-2 font-inter flex h-10 items-center justify-center rounded-md bg-[#ec8000] p-2 text-[14px]'
+          >
+            MINT
+          </button>
+        </div>}
       {showTransactionPopup && (
         <TransactionPopup
           handleSubmit={handleSubmit}

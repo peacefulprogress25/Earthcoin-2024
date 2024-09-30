@@ -12,6 +12,7 @@ import { Loader } from "../../Components/Loader";
 import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
+import { fetchDexPrice, totalEarth } from "../Dapp/balance";
 
 const wallet = "/assets/icons/wallet.svg";
 const chart = "/assets/images/Line and bar chart.png";
@@ -118,6 +119,10 @@ export default function Dashboard() {
     },
   };
   const [fundingData, setFundingData] = useState([]);
+  const [chartData, setChartData] = useState([])
+  const [priceDetails, setPriceDetails] = useState({})
+
+
   useEffect(() => {
     const getPageByID = async () => {
       const page = await nexaflowApi.getPageByID({
@@ -126,21 +131,34 @@ export default function Dashboard() {
       });
       console.log(page);
       setFundingData(page?.FundingNeeds);
+      setChartData(page?.PriceChart)
     };
 
     getPageByID();
   }, []);
+
+  useEffect(() => {
+    (async () => {
+      const data = await totalEarth();
+      console.log(data);
+      setPriceDetails(data)
+    })()
+  }, [])
+
+
   const priceData = [
     {
       title: "Mint Price",
       price: "10.00",
+      unit: "$DAI",
       increase: true,
       percent: "3%",
       img: "/assets/icons/green-chart.svg",
     },
     {
-      title: "Mint Price",
-      price: "10.00",
+      title: "Price On Dex",
+      price: `${priceDetails?.dexPrice}`,
+      unit: "$",
       percent: "10%",
       img: "/assets/icons/red-chart.svg",
     },
@@ -294,17 +312,16 @@ export default function Dashboard() {
                 <p className="text-[#101828] text-[14px] font-semibold font-inter text-center sm:text-left">
                   {price?.title}
                 </p>
-                <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-2">
+                <div className="flex flex-col items-center justify-between gap-2 sm:flex-row sm:items-end">
                   <div className="flex flex-col items-center sm:items-start">
                     <p className="text-[#101828] text-[40px] font-semibold font-syne text-center sm:text-left">
                       {price?.price}
-                      <span className="text-[22px]">$DAI</span>
+                      <span className="text-[22px]">{price?.unit}</span>
                     </p>
-                    <div className="flex gap-1">
+                    {/* <div className="flex gap-1">
                       <button
-                        className={`flex font-inter font-medium text-[12px] ${
-                          price?.increase ? "text-[#027A48]" : "text-[#B42318]"
-                        }`}
+                        className={`flex font-inter font-medium text-[12px] ${price?.increase ? "text-[#027A48]" : "text-[#B42318]"
+                          }`}
                       >
                         {price?.increase ? (
                           <GoArrowUp size={15} color="#027A48" />
@@ -316,9 +333,9 @@ export default function Dashboard() {
                       <p className="text-[#475467] text-[12px] font-medium font-inter">
                         vs last month
                       </p>
-                    </div>
+                    </div> */}
                   </div>
-                  <div className="md:flex-wrap mt-4 sm:mt-0">
+                  {/* <div className="mt-4 md:flex-wrap sm:mt-0">
                     <ImageView
                       src={price?.img}
                       alt="chart"
@@ -326,7 +343,7 @@ export default function Dashboard() {
                       height={100}
                       className="object-cover"
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
@@ -358,8 +375,8 @@ export default function Dashboard() {
           <div className="w-[100%] h-[35vh]">
             <Line data={data} width="400" height="300" options={options} />
           </div>
-          <div className="grid items-center w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-            {cardData?.map((price, index) => (
+          <div className="grid items-center w-full grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
+            {chartData?.map((price, index) => (
               <div
                 className="flex flex-col p-6 w-full rounded-lg shadow-sm gap-3 border border-[#EAECF0]"
                 key={index}
@@ -370,7 +387,7 @@ export default function Dashboard() {
                 <div className="flex items-end justify-between gap-2">
                   <div className="flex flex-col items-start">
                     <p className="text-[#101828] text-[32px] sm:text-[36px] md:text-[40px] font-semibold font-syne">
-                      {price?.price}
+                      {!price?.value ? priceDetails?.treasury?.toFixed(2) : price?.value}
                       {price?.daiBalance && (
                         <span className="text-[18px] sm:text-[22px]">$DAI</span>
                       )}
@@ -378,11 +395,10 @@ export default function Dashboard() {
                     {price?.percent ? (
                       <div className="flex gap-1">
                         <button
-                          className={`flex font-inter font-medium text-[12px] ${
-                            price?.increase
-                              ? "text-[#027A48]"
-                              : "text-[#B42318]"
-                          }`}
+                          className={`flex font-inter font-medium text-[12px] ${price?.increase
+                            ? "text-[#027A48]"
+                            : "text-[#B42318]"
+                            }`}
                         >
                           {price?.increase ? (
                             <GoArrowUp size={15} color="#027A48" />
@@ -398,7 +414,7 @@ export default function Dashboard() {
                     ) : null}
                   </div>
                   {price?.img ? (
-                    <div className="md:flex-wrap mt-4 sm:mt-0">
+                    <div className="mt-4 md:flex-wrap sm:mt-0">
                       <ImageView
                         src={price?.img}
                         alt="chart"
@@ -421,7 +437,7 @@ export default function Dashboard() {
             <p className="text-[#475467] text-[14px] text-left  font-normal font-inter">
               Track, manage and forecast $EARTH trends.
             </p>
-            <div className="flex flex-col w-full gap-4 mt-8 sm:flex-row overflow-auto scrollbar-none ">
+            <div className="flex flex-col w-full gap-4 mt-8 overflow-auto sm:flex-row scrollbar-none ">
               {fundingData?.map((fund, index) => {
                 const title = fund.title?.split(" ");
 
