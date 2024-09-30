@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { fetchBalance } from "../Views/Dapp/balance";
 import { formatWalletAddress } from "../Views/Dapp/utils";
 
-const avatar = "/assets/icons/dapp-Avatar.png";
+const avatar = "/assets/images/dapp-Avatar.png";
 const copyIcon = "/assets/icons/copy-Icon.png";
 const disconnetIcon = "/assets/icons/disconnet-Icon.png";
 const sideIcon = "/assets/icons/side-Icon.png";
@@ -31,7 +31,7 @@ export default function AccountDapp() {
         <div>
             <div className='bg-[#3C42420F] px-6 py-4'>
                 <div className='flex flex-col items-center mt-3 mb-6'>
-                    <img className='w-16 h-16' src={avatar} />
+                    <img className='w-16 h-16 scale-110 rounded-full' src={avatar} />
                     <p className='font-inter font-semibold text-[18px] text-[#25292E]'>
                         {formatWalletAddress(wallet)}
                     </p>

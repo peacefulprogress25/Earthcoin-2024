@@ -12,7 +12,7 @@ import { formatWalletAddress } from "../../Views/Dapp/utils";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const logo = "/assets/images/logo.png";
-const avatar = "/assets/icons/dapp-Avatar.png";
+const avatar = "/assets/images/dapp-Avatar.png";
 const downIcon = "/assets/icons/down-Icon.png";
 import { useMediaQuery } from "react-responsive";
 
@@ -273,7 +273,7 @@ export default function Header() {
                 <button onClick={() => setAccountDapp(true)}>
                   <div className=" relative ml-auto text-white font-inter flex h-10  items-center justify-end rounded-lg px-[2px] text-sm">
                     <div className="w-[11rem] rounded-lg bg-[#EC8000] h-9 flex justify-between px-3 items-center ">
-                      <img className="w-5 h-5" src={avatar} alt="earthcoin" />
+                      <img className="object-cover w-5 h-5" src={avatar} alt="earthcoin" />
                       <p className="font-inter font-semibold text-[14px] text-white">
                         {formatWalletAddress(profile?.wallet)}
                       </p>
@@ -329,9 +329,8 @@ export default function Header() {
               >
                 About{" "}
                 <IoIosArrowDown
-                  className={`transition-transform ${
-                    mobileAboutOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform ${mobileAboutOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
               {mobileAboutOpen && (
@@ -363,9 +362,8 @@ export default function Header() {
               >
                 Resources{" "}
                 <IoIosArrowDown
-                  className={`transition-transform ${
-                    mobileResourcesOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform ${mobileResourcesOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
               {mobileResourcesOpen && (
@@ -401,9 +399,8 @@ export default function Header() {
               >
                 Nodes{" "}
                 <IoIosArrowDown
-                  className={`transition-transform ${
-                    mobileNodesOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform ${mobileNodesOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
               {mobileNodesOpen && (

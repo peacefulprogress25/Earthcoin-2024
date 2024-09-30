@@ -25,8 +25,8 @@ import Node from "./Node";
 
 const GradientBg = "/assets/images/dapp-bg.png";
 const rays = "/assets/images/Background rays.png";
-const disconnect = "/assets/images/Disconnect Wallet.jpeg";
-const connect = "/assets/images/Connect wallet.jpeg";
+const disconnect = "/assets/images/Disconnect Wallet.png";
+const connect = "/assets/images/Connect wallet.png";
 const wallet = "/assets/icons/wallet-white.svg";
 
 const soulboundAddress = envObj.soulboundAddress;

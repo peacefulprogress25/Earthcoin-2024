@@ -267,7 +267,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
             break;
           case "CONNECT WALLET":
           case "DISCONNECT WALLET":
-            x = -450;
+            x = -250;
             y = 140;
             break;
           case "STAKE":
