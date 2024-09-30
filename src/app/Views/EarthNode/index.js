@@ -74,7 +74,7 @@ export default function EarthNode() {
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Network
           </p>
@@ -118,14 +118,14 @@ export default function EarthNode() {
               //   borderLeft: "6px solid #EAECF0 !important",
               // },
             }}
-            active={true}
-            activeStep={2}
+            // active={true}
+            activeStep={3}
             orientation="vertical"
           >
             {communityList?.map((community, index) => (
               <Step
                 key={index}
-                className=" flex flex-col items-start"
+                className="flex flex-col items-start "
                 active={true}
                 sx={{
                   ".MuiStepLabel-root": {
@@ -183,12 +183,12 @@ export default function EarthNode() {
                     {community?.title}
                   </p>
                 </StepLabel>
-                <StepContent className="pl-4 sm:pl-12 pb-20">
+                <StepContent className="pb-20 pl-4 sm:pl-12">
                   <p className="text-[#475467] px-2 sm:px-10 text-left mt-2 font-normal text-[14px] sm:text-[16px] font-inter">
                     {community?.description}
                   </p>
                   {community?.btntext1 ? (
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:gap-4">
                       <div className="px-2 sm:px-10">
                         <Link
                           key={`${index}-1`}

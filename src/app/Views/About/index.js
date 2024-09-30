@@ -166,7 +166,7 @@ export default function About() {
             The Team
           </p>
           <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
-            Meet the team behind SolarpunkDAO
+            Meet the team behind $EARTH
           </p>
           <p className="text-[#475467] text-center font-normal w-[80%] sm:w-[60%] text-[16px] font-inter">
             On a mission to make climate change history and seed the solarpunk
@@ -214,11 +214,10 @@ export default function About() {
             <p
               key={index}
               onClick={() => setSelectedCategory(option?.section)}
-              className={`font-inter text-[14px] px-2 md:px-3 lg:px-4 py-2 font-semibold text-[#475467] ${
-                selectedCategory === option.section
-                  ? "bg-[#FFFCF8] rounded-md text-[#EC8000]"
-                  : ""
-              }`}
+              className={`font-inter text-[14px] px-2 md:px-3 lg:px-4 py-2 font-semibold text-[#475467] ${selectedCategory === option.section
+                ? "bg-[#FFFCF8] rounded-md text-[#EC8000]"
+                : ""
+                }`}
             >
               {option.section}
             </p>
@@ -348,11 +347,7 @@ export function PeopleCard({ people }) {
     {
       icon: "/assets/icons/linkedin.svg",
       link: socialLink?.linkedin,
-    },
-    {
-      icon: "/assets/icons/football.svg",
-      link: socialLink?.twitter,
-    },
+    }
   ];
   return (
     <div className="flex flex-col gap-1  max-w-[16rem] w-full">

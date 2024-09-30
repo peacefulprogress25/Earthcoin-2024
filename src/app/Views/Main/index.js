@@ -302,17 +302,17 @@ export default function Main() {
           >
             <SwiperSlide>
               <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-                Reward climate finance
+                reward climate finance
               </p>
             </SwiperSlide>
             <SwiperSlide>
               <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-                Make regeneration a reality
+                make regeneration a reality
               </p>
             </SwiperSlide>
             <SwiperSlide>
               <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-                Build the solarpunk paradigm
+                build the solarpunk paradigm
               </p>
             </SwiperSlide>
           </Swiper>
@@ -351,7 +351,7 @@ export default function Main() {
         <div className="mt-16">
           <p className="leading-10 text-[#000000] text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
             {/* Just ONE transaction to get Rewarded for */}
-            Just one transaction to fund real world regeneration
+            Just ONE transaction to fund net zero infrastructure
             {/* <span className="text-[#EC8000]"> Climate Action</span> */}
           </p>
         </div>
@@ -823,35 +823,35 @@ export default function Main() {
         </button> */}
       </div>
       <div className="pt-0 mx-auto px-4 sm:px-[6%] h-fit flex flex-col gap-12 items-center justify-center w-full">
-      <div className="relative mt-12  w-full">
-      <ImageView
-        src={groot}
-         alt="groot"
-        width={800}
-        height={800}
-        className="w-full h-[35vh] sm:h-[50vh] rounded-md object-cover"
-      />
-        <div className="flex w-full justify-between gap-6 items-center py-4 px-8 absolute bottom-2 sm:bottom-4">
-          <div className="flex flex-col gap-2 items-start">
-            <p className="text-white font-syne font-semibold text-[15px] sm:text-[28px]">
-            Still have questions?
-            </p>
-            <p className="text-white font-inter font-normal  text-[10px] sm:text-[16px]">
-            Can&apos;t find the answer you&apos;re looking for? Please drop a message to our team.
-            </p>
+        <div className="relative w-full mt-12">
+          <ImageView
+            src={groot}
+            alt="groot"
+            width={800}
+            height={800}
+            className="w-full h-[35vh] sm:h-[50vh] rounded-md object-cover"
+          />
+          <div className="absolute flex items-center justify-between w-full gap-6 px-8 py-4 bottom-2 sm:bottom-4">
+            <div className="flex flex-col items-start gap-2">
+              <p className="text-white font-syne font-semibold text-[15px] sm:text-[28px]">
+                Still have questions?
+              </p>
+              <p className="text-white font-inter font-normal  text-[10px] sm:text-[16px]">
+                Speak to our AI Assistant here.
+              </p>
+            </div>
+            <button>
+              <Link
+                className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm"
+                href={buttonConfig?.home_footer_banner?.link || ""}
+                target={buttonConfig?.home_footer_banner?.external ? "_blank" : "_self"}
+              >
+                {buttonConfig?.home_footer_banner?.title}
+              </Link>
+            </button>
           </div>
-          <button>
-          <Link
-            className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm"
-            href={buttonConfig?.home_footer_banner?.link || ""}
-          target={buttonConfig?.home_footer_banner?.external ? "_blank" : "_self"}
-          >
-              {buttonConfig?.home_footer_banner?.title}
-          </Link>
-          </button>
         </div>
-    </div>
-</div>
+      </div>
 
     </div>
   );

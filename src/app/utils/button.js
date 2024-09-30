@@ -119,7 +119,7 @@ export default {
     position: "Stepper",
     page: "/earthnode",
     external: true,
-    link: "https://calendly.com/earthcoin",
+    link: "https://calendar.app.google/UgyzCz8bbga5rhed7",
   },
   network_earthnode_verified: {
     title: "Get KYC verified",

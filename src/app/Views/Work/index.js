@@ -65,11 +65,12 @@ export default function Work() {
     <>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col items-center gap-2">
+          <p className="mb-0 text-center font-syne text-[#EC8000]">Resources</p>
           <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
             How $EARTH works?
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
-            The economic models behind $Earth driving our solarpunk vision home
+            Mechanics of $EARTH and flow of $EARTH / $DAI
           </p>
         </div>
         {/* <ImageView
@@ -112,21 +113,8 @@ export default function Work() {
           <div className="flex flex-col w-full items-start pl-[64px]">
             <div>
               <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
-                $EARTH - Blackhole for Climate Finance
+                Flow that makes regeneration a reality
               </p>
-              <div className="mt-6">
-                <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-                  $EARTH is designed to serve as a capital efficient funnel that
-                  incentivizes, mobilizes and allocates petro $ to be projects
-                  directly addressing climate change and solving the
-                  environmental crisis.
-                </p>
-                <p className="text-[#475467] mt-6 text-center sm:text-left font-normal  text-[16px] font-inter">
-                  Here we provide an overview of each step that takes place to
-                  make this happen -
-                </p>
-              </div>
-
               <div className="mt-10 ml-6">
                 <ol className="list-decimal">
                   {earthValues.map((value, index) => (
