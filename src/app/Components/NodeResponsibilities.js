@@ -102,7 +102,7 @@ export default function ResponsibilitiesOfNode() {
             </div>
           </div>
           <div className="flex flex-col w-[100%]  border-b-[1px] border-[#D0D5DD]">
-            <div className="flex flex-col px-10 py-5 ">
+            <div className="flex flex-col px-10 py-5 md:h-[14rem] md:overflow-y-auto xl:overflow-y-hidden lg:h-[20rem] xl:h-[28rem] ">
               <p className="font-syne text-[#000000] font-semibold text-[30px] ">
                 Purge
               </p>
@@ -184,7 +184,7 @@ export default function ResponsibilitiesOfNode() {
                 Purge
               </p>
             </div>
-            <div className="flex flex-col md:h-[15rem] lg:h-[20rem] xl:h-[28rem] px-10 py-5 ">
+            <div className="flex flex-col md:h-[14rem] md:overflow-y-auto xl:overflow-y-hidden lg:h-[20rem] xl:h-[28rem] px-10 py-5 ">
               <p className="font-syne text-[#000000] font-semibold text-[30px]">
                 Partnerships
               </p>
@@ -255,7 +255,7 @@ export default function ResponsibilitiesOfNode() {
                 Partnerships
               </p>
             </div>
-            <div className="flex flex-col md:h-[19rem] lg:h-[23rem] xl:h-[31rem] sm:px-10 py-5 px-10 ">
+            <div className="flex flex-col md:h-[14rem] md:overflow-y-auto xl:overflow-y-hidden lg:h-[23rem] xl:h-[31rem] sm:px-10 py-5 px-10 ">
               <p className="font-syne text-[#000000] font-semibold text-[30px]">
                 Projects
               </p>
@@ -333,7 +333,7 @@ export default function ResponsibilitiesOfNode() {
                 Projects
               </p>
             </div>
-            <div className="flex flex-col px-10 py-5 font-syne">
+            <div className="flex flex-col px-10 py-5 md:h-[14rem] md:overflow-y-auto xl:overflow-y-hidden lg:h-[20rem] xl:h-[28rem] font-syne">
               <p className="font-syne text-[#000000] font-semibold text-[30px]">
                 Policy
               </p>

@@ -328,8 +328,8 @@ export default function Main() {
           </button>
         </div>
       </div>
-      <div className="mx-auto  pt-2 sm:pt-2 px-4 sm:px-[6%] mt-16 h-fit flex flex-col items-center justify-center w-full">
-        <div className="flex flex-col items-center justify-center w-full pb-2 sm:pb-2 sm:flex-row">
+      <div className="mx-auto  pt-2 mt-[2rem] sm:mt-[4rem] xl:mt-[6rem] px-4 sm:px-[6%] mt-16 h-fit flex flex-col items-center justify-center w-full">
+        <div className="flex flex-col items-center justify-center w-full pb-2 sm:flex-row">
           {funding.map((impact, index) => (
             <div
               className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${index !== funding.length - 1
@@ -338,7 +338,7 @@ export default function Main() {
                 }`}
               key={index}
             >
-              <p className="font-syne font-semibold text-[20px] text-center sm:text-[52px] text-[#EC8000]">
+              <p className="font-syne font-semibold text-[20px] text-center md:text-[35px] lg:text-[52px] text-[#EC8000]">
                 {impact.balance}
               </p>
               <p className="text-[#101828] text-center text-[16px]  font-medium font-inter">
@@ -348,7 +348,7 @@ export default function Main() {
           ))}
         </div>
 
-        <div className="mt-16">
+        <div className="mt-[2rem] sm:mt-[4rem] xl:mt-[6rem]">
           <p className="leading-10 text-[#000000] text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
             {/* Just ONE transaction to get Rewarded for */}
             Just ONE transaction to fund net zero infrastructure
@@ -392,7 +392,7 @@ export default function Main() {
         </p>
         <Features />
 
-        <div className="relative mb-16 -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]">
+        <div className="relative mb-[2rem] sm:mb-[4rem] xl:mb-[6rem] -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]">
           <ImageView
             alt="social"
             src={mainBottomSection1}
@@ -783,7 +783,7 @@ export default function Main() {
           </div>
         ))}
       </div>
-      <div className="max-w-screen-2xl pt-2 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className="max-w-screen-2xl mt-[3rem] xl:mt-[5rem] mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="flex flex-wrap justify-center gap-1 mt-12 sm:gap-4">
           {social.map((partner, index) => (
             <Link
@@ -822,7 +822,7 @@ export default function Main() {
           View Partners
         </button> */}
       </div>
-      <div className="pt-0 mx-auto px-4 sm:px-[6%] h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className=" mt-[3rem] xl:mt-[5rem] mx-auto px-4 sm:px-[6%] h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="relative w-full mt-12">
           <ImageView
             src={groot}
