@@ -21,8 +21,8 @@ export default function Mint({ totalEarth }) {
   const { showMessage } = useNotification();
   const { earth } = useSelector(profileState)?.earthBalance;
   const initState = {
-    increaseAllowance: true,
-    mint: true,
+    increaseAllowance: false,
+    mint: false,
   }
   const [loading, setLoading] = useState(initState);
   const [progress, setProgress] = useState(initState);

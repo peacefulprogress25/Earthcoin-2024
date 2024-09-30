@@ -23,7 +23,7 @@ function Claim({ setScreen }) {
   const account = useSelector(profileState).wallet;
   const [progress, setProgress] = useState({
     whitelisted: false,
-    claim: true,
+    claim: false,
   });
 
   const isWhitelisted = async () => {
