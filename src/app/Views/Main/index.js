@@ -827,14 +827,16 @@ export default function Main() {
       </div>
       <div className=" mt-[3rem] xl:mt-[5rem] mx-auto px-4 sm:px-[6%] h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="relative w-full mt-12">
-          <ImageView
-            src={groot}
-            alt="groot"
-            width={800}
-            height={800}
-            className="w-full h-[35vh] sm:h-[50vh] rounded-md object-cover"
-          />
-          <div className="absolute flex items-center justify-between w-full gap-6 px-8 py-4 bottom-2 sm:bottom-4">
+          <div className="w-full img-shadow" >
+            <ImageView
+              src={groot}
+              alt="groot"
+              width={800}
+              height={800}
+              className="w-full h-[35vh] sm:h-[50vh] rounded-md object-cover "
+            />
+          </div>
+          <div className="absolute flex items-center justify-between w-full gap-6 px-2 py-4 sm:px-8 bottom-2 sm:bottom-4">
             <div className="flex flex-col items-start gap-2">
               <p className="text-white font-syne font-semibold text-[15px] sm:text-[28px]">
                 Still have questions?
