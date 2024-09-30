@@ -53,14 +53,6 @@ export default function Footer() {
           link: "/about",
         },
         {
-          option: "News",
-          link: "",
-        },
-        {
-          option: "Media kit",
-          link: "",
-        },
-        {
           option: "Get Funded",
           link: "/form",
         },
@@ -86,7 +78,7 @@ export default function Footer() {
           link: "/network",
         },
         {
-          option: "Become a node",
+          option: "Become a NODE",
           link: "/earthnode",
         },
         {
@@ -189,8 +181,8 @@ export default function Footer() {
             {Footerdata?.map((option, index) => (
               <div
                 className={`flex flex-col items-start gap-3 ${index === 2
-                    ? "col-span-2 justify-self-start sm:justify-self-auto"
-                    : ""
+                  ? "col-span-2 justify-self-start sm:justify-self-auto"
+                  : ""
                   } ${index === 0 ? "pr-[4.5rem]" : index === 1 ? "pl-[4.5rem]" : ""
                   }`}
                 key={index}
@@ -215,8 +207,8 @@ export default function Footer() {
               {Footerdata?.map((option, index) => (
                 <div
                   className={`flex flex-col  gap-3 items-center ${index === 2
-                      ? " justify-self-start sm:justify-self-auto text-center "
-                      : ""
+                    ? " justify-self-start sm:justify-self-auto text-center "
+                    : ""
                     } ${index === 0 ? "" : index === 1 ? "ml-3" : ""}`}
                   key={index}
                 >

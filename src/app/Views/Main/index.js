@@ -285,7 +285,7 @@ export default function Main() {
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-          <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight mb-4 sm:mb-6 lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+          <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
             Programming money to
           </p>
           <Swiper
@@ -316,6 +316,9 @@ export default function Main() {
               </p>
             </SwiperSlide>
           </Swiper>
+
+          <p className="text-[30px] font-inter">Reserve currency for #Refi</p>
+
           <button className="text-white mt-4 sm:mt-6 font-inter font-semibold px-4 py-2 rounded-md bg-[#101323] border border-[#EC8000] text-sm sm:text-base">
             <Link
               href={buttonConfig?.home_get_earth?.link || ""}

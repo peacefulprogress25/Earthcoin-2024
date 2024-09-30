@@ -44,12 +44,12 @@ function Community({ title, description, img }) {
       <div className="flex gap-1 ">
         <button className="w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm">
           <Link
-            href={buttonConfig?.home_footer_banner?.link || ""}
+            href={buttonConfig?.dapp_footer_banner?.link || ""}
             target={
-              buttonConfig?.home_footer_banner?.external ? "_blank" : "_self"
+              buttonConfig?.dapp_footer_banner?.external ? "_blank" : "_self"
             }
           >
-            {buttonConfig?.home_footer_banner?.title}
+            {buttonConfig?.dapp_footer_banner?.title}
           </Link>
         </button>
         {/* {socialIcons.map((icons, index) => (

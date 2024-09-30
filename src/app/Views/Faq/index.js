@@ -59,14 +59,14 @@ export default function Faq() {
           </p>
           <Link
             className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm"
-            href={buttonConfig?.projects_footer_banner?.link || ""}
+            href={buttonConfig?.faq_footer_banner?.link || ""}
             target={
-              buttonConfig?.projects_footer_banner?.external
+              buttonConfig?.faq_footer_banner?.external
                 ? "_blank"
                 : "_self"
             }
           >
-            {buttonConfig?.projects_footer_banner?.title}
+            {buttonConfig?.faq_footer_banner?.title}
           </Link>
         </div>
         <div className="w-full h-[1.5px] my-8 bg-[#F2F4F7]"></div>

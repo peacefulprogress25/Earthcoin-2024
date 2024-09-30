@@ -20,9 +20,15 @@ export default {
     external: false,
     link: "/earthnode",
   },
-
+  dapp_footer_banner: {
+    title: "Ask $Earth",
+    position: "AI Banner",
+    page: "/",
+    external: false,
+    link: "/dapp",
+  },
   home_footer_banner: {
-    title: "Get $Earth",
+    title: "Ask $Earth",
     position: "AI Banner",
     page: "/",
     external: true,
@@ -99,8 +105,7 @@ export default {
     link: "",
   },
   faq_footer_banner: {
-    //title: "Earth GPT",
-    title: "Get $Earth",
+    title: "Ask $Earth",
     position: "AI Banner",
     page: "/faq",
     external: true,

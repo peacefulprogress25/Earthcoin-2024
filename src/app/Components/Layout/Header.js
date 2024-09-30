@@ -125,10 +125,10 @@ export default function Header() {
     // },
 
     {
-      title: "FAQ",
-      subtitle: "Answers to your $Earth curiosities.",
+      title: "How $EARTH works?",
+      subtitle: "Mechanics of $EARTH and flow of $EARTH / $DAI",
       icon: "/assets/icons/faq.svg",
-      link: "/faq",
+      link: "/works",
     },
   ];
 
