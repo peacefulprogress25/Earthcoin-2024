@@ -31,6 +31,7 @@ export default function Mint({ totalEarth }) {
   const [balance, setBalance] = useState(0);
   const [result, setResult] = useState("");
   const [transaction, setTransaction] = useState(false)
+  const [twitterShare, setTwitterShare] = useState(false)
 
   const isMinted = async () => {
     if (typeof window?.ethereum !== undefined) {
@@ -191,6 +192,9 @@ export default function Mint({ totalEarth }) {
 
 
   const resetState = () => {
+    if (progress.mint) {
+      setTwitterShare(true)
+    }
     setProgress(initState)
     setLoading(initState)
     setTransaction(false)
@@ -202,7 +206,7 @@ export default function Mint({ totalEarth }) {
 
   return (
     <>
-      {progress.increaseAllowance && progress.mint ?
+      {twitterShare ?
         <div className='flex flex-col items-center justify-center gap-3'>
           <p className='text-lg message text-primary font-syne'>Token Minted Successfully</p>
           <TwitterShareButton url={twitterContent}>
