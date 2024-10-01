@@ -22,10 +22,10 @@ export default function GetInTouch() {
       </p> */}
       <Link
         className="w-[100px] mt-4 !text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm !no-underline"
-        href={buttonConfig?.faq_footer_banner?.link || ""}
-        target={buttonConfig?.faq_footer_banner?.external ? "_blank" : "_self"}
+        href={buttonConfig?.dapp_footer_banner?.link || ""}
+        target={buttonConfig?.dapp_footer_banner?.external ? "_blank" : "_self"}
       >
-        {buttonConfig?.faq_footer_banner?.title}
+        {buttonConfig?.dapp_footer_banner?.title}
       </Link>
       {/* <button className="w-[100px] mt-4 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 cursor-pointer text-sm">
         Get in touch

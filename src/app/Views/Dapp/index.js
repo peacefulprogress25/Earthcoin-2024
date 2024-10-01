@@ -21,6 +21,7 @@ import {
   fetchDexPrice,
 } from "./balance";
 import Node from "./Node";
+import { useRouter, useSearchParams } from "next/navigation";
 
 
 const GradientBg = "/assets/images/dapp-bg.png";
@@ -45,6 +46,21 @@ export default function Dapp() {
     earthBalance,
   } = useSelector(profileState);
   const [showContent, setShowContent] = useState(true);
+  const searchParams = useSearchParams()
+  let pageType = searchParams.get("type")
+  const router = useRouter()
+
+
+  useEffect(() => {
+
+    if (pageType === 'node') {
+      showMessage({
+        type: "success", value: "Click NODE to complete the KYC"
+      })
+      pageType = ''
+      router.replace("/dapp")
+    }
+  }, [pageType])
 
   const walletCallBack = () => {
     setShowContent(false);

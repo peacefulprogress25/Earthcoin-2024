@@ -171,11 +171,11 @@ export default function Main() {
       buttonLink: buttonConfig.social_home_farcaster.link,
       external: buttonConfig.social_home_farcaster.external,
     },
-    {
-      image: "/assets/images/cloud.png",
-      buttonLink: buttonConfig.social_home_lens.link,
-      external: buttonConfig.social_home_lens.external,
-    },
+    // {
+    //   image: "/assets/images/cloud.png",
+    //   buttonLink: buttonConfig.social_home_lens.link,
+    //   external: buttonConfig.social_home_lens.external,
+    // },
     {
       image: "/assets/images/instagram.png",
       buttonLink: buttonConfig.social_home_instagram.link,
@@ -582,7 +582,7 @@ export default function Main() {
           height={430}
           className="w-full rounded-lg h-[24rem] object-cover mt-12"
         />
-        <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] text-[14px] sm:text-[25px] md:text-[28px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
+        <div className="absolute top-[58%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] text-[14px] sm:text-[25px] md:text-[28px] lg:text-[34px] xl:text-[35px] font-syne text-center font-semibold flex items-center justify-center">
           <p className="whitespace-normal sm:whitespace-nowrap">
             We do not inherit this world from our parents{" "}
             <br />

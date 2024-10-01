@@ -21,7 +21,7 @@ export default {
     link: "/earthnode",
   },
   dapp_footer_banner: {
-    title: "Ask $Earth",
+    title: "Get $Earth",
     position: "AI Banner",
     page: "/",
     external: false,
@@ -62,7 +62,7 @@ export default {
     position: "Join Us",
     page: "/",
     external: true,
-    link: "",
+    link: "https://warpcast.com/earth-coin",
   },
   social_home_instagram: {
     position: "Join Us",
@@ -102,7 +102,7 @@ export default {
     position: "Banner",
     page: "/",
     external: false,
-    link: "",
+    link: "/earthnode",
   },
   faq_footer_banner: {
     title: "Ask $Earth",
@@ -130,7 +130,7 @@ export default {
     position: "Stepper",
     page: "/earthnode",
     external: false,
-    link: "/dapp",
+    link: "/dapp?type=node",
   },
   network_earthnode_googleForm: {
     title: "Google Form",

@@ -51,26 +51,21 @@ export default function Media() {
 
   return (
     <div>
-     <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
-        <div className="flex flex-col gap-2 items-center">
+      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+        <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Media
           </p>
           <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">
-            $EARTH News
-          </p>
-          <p className="text-[#475467] text-center font-normal w-[80%] text-[18px] font-inter">
-            Catch the latest news about new product features, the latest in
-            technology, solutions, and updates.
+            Explore $EARTH
           </p>
         </div>
         {media && media.length ? (
-          <div className="grid grid-flow-col grid-rows-3 mt-8 sm:grid-rows-2 gap-6">
+          <div className="grid grid-flow-col grid-rows-3 gap-6 mt-8 sm:grid-rows-2">
             {media.map((card, index) => (
               <div
-                className={`flex flex-col sm:flex-row gap-6 ${
-                  index === 0 ? "sm:row-span-2 row-span-1 !flex-col" : ""
-                }`}
+                className={`flex flex-col sm:flex-row gap-6 ${index === 0 ? "sm:row-span-2 row-span-1 !flex-col" : ""
+                  }`}
                 key={index}
               >
                 <ImageView
@@ -78,21 +73,19 @@ export default function Media() {
                   alt={card.name}
                   width={200}
                   height={200}
-                  className={`w-full h-[200px] object-cover ${
-                    index === 0
-                      ? "sm:h-[13rem]"
-                      : "sm:w-[50%] sm:h-auto"
-                  }`}
+                  className={`w-full h-[200px] object-cover ${index === 0
+                    ? "sm:h-[13rem]"
+                    : "sm:w-[50%] sm:h-auto"
+                    }`}
                 />
                 <div className="flex flex-col gap-2">
                   <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
                     {card?.name}
                   </p>
-                  <div className="flex justify-between items-center">
+                  <div className="flex items-center justify-between">
                     <p
-                      className={`text-[#101828]  font-inter font-semibold text-[16px]  ${
-                        index === 0 ? "font-syne text-[22px]" : ""
-                      }`}
+                      className={`text-[#101828]  font-inter font-semibold text-[16px]  ${index === 0 ? "font-syne text-[22px]" : ""
+                        }`}
                     >
                       {card?.title}
                     </p>
@@ -106,15 +99,14 @@ export default function Media() {
                   <div className="flex items-center gap-2">
                     {card?.tags.map((tag, i) => (
                       <p
-                        className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${
-                          tag?.tag === "Design"
-                            ? "text-[#EC8000] bg-[#FFFCF8]"
-                            : tag?.tag === "Research"
+                        className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${tag?.tag === "Design"
+                          ? "text-[#EC8000] bg-[#FFFCF8]"
+                          : tag?.tag === "Research"
                             ? "bg-[#EEF4FF] text-[#3538CD]"
                             : tag?.tag === "Presentation"
-                            ? "bg-[#FDF2FA] text-[#C11574]"
-                            : ""
-                        }`}
+                              ? "bg-[#FDF2FA] text-[#C11574]"
+                              : ""
+                          }`}
                         key={i}
                       >
                         {tag?.tag}
@@ -138,9 +130,8 @@ export default function Media() {
             <p
               key={index}
               onClick={() => setSelectedCategory(option?.section)}
-              className={`font-inter text-[14px] sm:text-[14px] px-1 sm:px-4 font-semibold text-[#475467] ${
-                selectedCategory === option.section ? " text-[#EC8000]" : ""
-              }`}
+              className={`font-inter text-[14px] sm:text-[14px] px-1 sm:px-4 font-semibold text-[#475467] ${selectedCategory === option.section ? " text-[#EC8000]" : ""
+                }`}
             >
               {option.section}
             </p>
@@ -153,13 +144,7 @@ export default function Media() {
             <Loader />
           </div>
         )}
-        <div className="flex  flex-col w-full p-8 items-center rounded-md justify-center">
-          <p className="text-[#101828] font-syne text-center font-semibold text-[20px] sm:text-[26px]">
-            Let’s get started on something great
-          </p>
-          <p className="text-[#475467] font-inter mt-2 text-center font-normal text-[16px]">
-            Join over 4,000+ startups already growing with Untitled.
-          </p>
+        <div className="flex flex-col items-center justify-center w-full p-8 rounded-md">
           {hasContent && (
             <Link
               className="w-[100px] mt-6 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"

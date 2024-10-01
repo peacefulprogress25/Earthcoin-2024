@@ -5,6 +5,8 @@ import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
 import { useState, useEffect } from "react";
 import Gpt from "../../Components/Gpt";
+import Link from "next/link";
+import buttonConfig from "../../utils/button";
 
 export default function Project() {
   const category = [
@@ -43,10 +45,10 @@ export default function Project() {
     getPageByID();
   }, []);
   return (
-    <div className="mt-20 mb-24 w-full">
+    <div className="w-full mt-20 mb-24">
       <Insight projects={projects} />
       <div className="w-[100%] hidden sm:flex cursor-pointer gap-1 sm:gap-12 border-b border-[#F2F4F7]  px-[5%] items-center justify-between sm:justify-center h-20">
-        
+
         {category.map((option, index) => (
           <p
             key={index}
@@ -55,12 +57,22 @@ export default function Project() {
             {option.section}
           </p>
         ))}
-      
+
       </div>
       <ProjectList projects={projects} />
-      <div className="max-w-screen-2xl mx-auto  w-full px-[6%]">
+      <div className="max-w-screen-2xl mx-auto flex items-center justify-center h-[40vh]  w-full px-[6%]">
         {/* <Faq faq={faq} /> */}
-        <Gpt />
+        <Link
+          className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm"
+          href={buttonConfig?.dapp_footer_banner?.link || ""}
+          target={
+            buttonConfig?.dapp_footer_banner?.external
+              ? "_blank"
+              : "_self"
+          }
+        >
+          {buttonConfig?.dapp_footer_banner?.title}
+        </Link>
       </div>
     </div>
   );
