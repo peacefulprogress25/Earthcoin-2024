@@ -61,11 +61,11 @@ export default function OverView({ details }) {
             <p className='text-[#EC8000] font-semibold mt-2 text-[14px]'>
               Date of approval{" "}
             </p>
-            <p className='text-[#475467] font-semibold text-[14px]'>
+            <p className='text-[#475467] font-semibold sm:w-[8rem] text-[14px]'>
               {details?.dateApproved}
             </p>
           </div>
-          <div className='flex gap-2'>
+          {/* <div className='flex gap-2'>
             {socialIcons.map((icons, index) => (
               <button
                 className='cursor-pointer w-8 h-8 p-2 border-2 border-[#D0D5DD] rounded-md'
@@ -80,7 +80,7 @@ export default function OverView({ details }) {
                 />
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
         <div className='flex flex-col items-start'>
           <p className='text-[#101828] font-semibold font-syne text-[30px]'>
