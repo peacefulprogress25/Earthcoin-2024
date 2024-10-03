@@ -10,80 +10,9 @@ const media = "/assets/images/media.png";
 const leftArrow = "/assets/icons/left_arrow.svg";
 const rightArrow = "/assets/icons/right_arrow.svg";
 export default function PeopleSlider({ details }) {
-  const peoplelist = [
-    {
-      position: "Founder",
-      image: media,
-      name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      position: "Founder",
-      image: media,
-      name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      position: "Founder",
-      image: media,
-      name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      position: "Founder",
-      image: media,
-      name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      position: "Founder",
-      image: media,
-      name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      position: "Founder",
-      image: media,
-      name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      position: "Founder",
-      image: media,
-      name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      position: "Founder",
-      image: media,
-      name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      position: "Founder",
-      image: media,
-      name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      position: "Founder",
-      image: media,
-      name: "William",
-      description:
-        "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-  ];
+
   return (
-    <div className="flex flex-col relative h-fit people overflow-hidden w-full gap-2">
+    <div className="relative flex flex-col w-full gap-2 overflow-hidden h-fit people">
       <div className="flex w-full">
         <Swiper
           centeredSlides={false}
@@ -98,14 +27,14 @@ export default function PeopleSlider({ details }) {
           }}
           modules={[Navigation]}
         >
-          {details?.teams.map((people, index) => (
+          {details?.teams.filter(people => people?.image).map((people, index) => (
             <SwiperSlide key={index} className="w-full">
               <PeopleCard people={people} className="w-full" />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-      <div className="slider-controller h-20 relative flex justify-center items-center gap-4">
+      <div className="relative flex items-center justify-center h-20 gap-4 slider-controller">
         <button
           className="cursor-pointer swiper-button-prev"
           id="button-prev-collection"
@@ -175,7 +104,7 @@ export function PeopleCard({ people }) {
               src={icons?.icon}
               width={400}
               height={400}
-              className="w-5 cursor-pointer h-5"
+              className="w-5 h-5 cursor-pointer"
             />
           </Link>
         ))}

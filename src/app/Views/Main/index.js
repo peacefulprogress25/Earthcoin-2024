@@ -317,7 +317,7 @@ export default function Main() {
             </SwiperSlide>
           </Swiper>
 
-          <p className="text-[30px] font-inter">Reserve currency for #Refi</p>
+          <p className="xl:text-[30px] lg:text-[25px] md:text-xl md:mt-3 lg:mt-0  text-sm  font-inter">Reserve currency for #Refi</p>
 
           <button className="text-white mt-4 sm:mt-6 font-inter font-semibold px-4 py-2 rounded-md bg-[#101323] border border-[#EC8000] text-sm sm:text-base">
             <Link
@@ -550,7 +550,7 @@ export default function Main() {
         <div className="flex flex-wrap  sm:px-[32%] justify-center mt-0 gap-1 sm:gap-5">
           {partners && partners?.length ? (
             partners.map((partner, index) => (
-              <Link href={partner?.link} className="cursor-pointer" key={index}>
+              <Link href={partner?.link} target="_blank" className="cursor-pointer" key={index}>
                 <ImageView
                   alt="social"
                   src={partner.icon}

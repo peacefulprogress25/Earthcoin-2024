@@ -62,14 +62,13 @@ export default function ProjectImpact({ details }) {
         </div>
       </div>
 
-      <div className='flex flex-col items-center justify-center w-full gap-16 sm:gap-24 sm:flex-row'>
-        {details?.positiveExternalities.map((impact, index) => (
+      <div className='flex flex-col items-center w-full gap-16 sm:gap-24 sm:flex-row'>
+        {details?.positiveExternalities.filter(impact => impact?.icon).map((impact, index) => (
           <div
-            className={`flex flex-col px-3 sm:px-4 items-center justify-center w-full sm:w-[18rem] ${
-              index !== details?.positiveExternalities.length - 1
-                ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
-                : ""
-            }`}
+            className={`flex flex-col px-3 sm:px-4 items-center justify-center w-full sm:w-[18rem] ${index !== details?.positiveExternalities.length - 1
+              ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
+              : ""
+              }`}
             key={index}
           >
             <ImageView

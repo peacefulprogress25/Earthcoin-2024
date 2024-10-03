@@ -202,13 +202,13 @@ export default function Mint({ totalEarth }) {
 
   }
 
-  const twitterContent = `I just purged my petro $$$ for $Earth to build net zero infrastructure and seed the #solarpunk paradigm`;
+  const twitterContent = `I just purged my petro $$ for $EARTH to fund net zero infrastructure and seed the solarpunk paradigm.`;
 
   return (
     <>
       {twitterShare ?
         <div className='flex flex-col items-center justify-center gap-3'>
-          <p className='text-lg message text-primary font-syne'>Token Minted Successfully</p>
+          <p className='w-3/4 text-lg text-center message text-primary font-syne'>Congrats on purging your petro $ for  $EARTH to fund climate solutions</p>
           <TwitterShareButton url={twitterContent}>
             <button className='flex flex-col items-center justify-center gap-2 text-md "w-[80px] ml-auto text-white font-inter h-10 rounded-md bg-[#EC8000] p-2 text-sm'>
               Share via Twitter

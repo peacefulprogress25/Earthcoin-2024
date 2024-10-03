@@ -13,6 +13,7 @@ import { envObj } from "../../utils/env";
 import Soulbound from "./abi/SoulBound.json";
 import { useSelector } from "react-redux";
 import { connectWalletFn, profileState } from "../../redux/profileSlice";
+import * as d3 from "d3";
 import {
   getBalance,
   allowance,
@@ -22,6 +23,7 @@ import {
 } from "./balance";
 import Node from "./Node";
 import { useRouter, useSearchParams } from "next/navigation";
+import { toast } from "sonner";
 
 
 const GradientBg = "/assets/images/dapp-bg.png";
@@ -52,10 +54,13 @@ export default function Dapp() {
 
 
   useEffect(() => {
-
     if (pageType === 'node') {
-      showMessage({
-        type: "success", value: "Click NODE to complete the KYC"
+      toast.message("Click NODE to complete the KYC", {
+        onAutoClose: () => {
+          d3.selectAll('.donutArcSlices').nodes()?.[5]?.dispatchEvent(new Event('click'))
+        },
+        duration: 1000,
+        position: "bottom-right"
       })
       pageType = ''
       router.replace("/dapp")
