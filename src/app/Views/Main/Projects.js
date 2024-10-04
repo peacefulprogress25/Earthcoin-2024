@@ -15,7 +15,7 @@ import ProjectDetails from "./ProjectDetails";
 // import "./features.css";
 
 function Projects() {
-  const [project, setProject] = useState();
+  const [project, setProject] = useState([]);
 
   const router = useRouter();
   useEffect(() => {
@@ -40,72 +40,69 @@ function Projects() {
     getPageByID();
   }, []);
 
-  console.log(project);
 
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Handle slide change and reset to start if at the end
   const handleSlideChange = (swiper) => {
-    const totalSlides = swiper.slides.length;
-    // if (swiper.activeIndex === totalSlides - 1) {
-    //   swiper.slideTo(0, 1500);
-    //   // Reset to the first slide
-    //   // Transition duration is set to 0 for immediate reset
-    // }
     setActiveIndex(swiper.activeIndex);
   };
-  return (
-    <>
+  console.log(project);
 
-      <p className="text-[#1F2636] font-syne text-center font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl w-3/4 mb-[2rem] sm:mb-[4rem] xl:mb-[6rem]">
-        Treasury is dedicated to yield bearing RWAs directly <br />
-        <span>addressing the climate crisis</span>
-      </p>
+  if (project && project.length) {
 
-      <div className="flex flex-col justify-between w-full md:flex-row ">
-        <ProjectDetails obj={project?.[activeIndex]} />
+    return (
+      <>
+
+        <p className="text-[#1F2636] font-syne text-center font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl w-3/4 mb-[2rem] sm:mb-[4rem] xl:mb-[6rem]">
+          Treasury is dedicated to yield bearing RWAs directly <br />
+          <span>addressing the climate crisis</span>
+        </p>
+
+        <div className="flex flex-col justify-between w-full md:flex-row ">
+          <ProjectDetails obj={project?.filter(data => data?.projectName)?.[activeIndex]} />
 
 
-        <Swiper
-          effect={"coverflow"}
-          grabCursor={true}
-          // className=''
-          releaseOnEdges={true}
-          centeredSlides={true}
-          // onReachEnd={(swiper) => swiper.slideTo(0, 1500)}
-          slidesPerView={"auto"}
-          onSlideChange={handleSlideChange}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 400,
-            depth: 200,
-            modifier: 1,
-            // slideShadows: true,
-          }}
-          keyboard={{
-            enabled: true,
-          }}
-          navigation={true}
-          modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
-          className='!mr-0 mySwiper-project !w-[90%] mb-10 custom-swiper'
-        >
-          {project && project.length
-            ? [...project].map((data, index) => {
-              return (
-                <SwiperSlide
-                  key={index}
-                  style={{
-                    opacity: index < activeIndex ? 0 : 1,
-                    transition:
-                      index < activeIndex ? "opacity 0.1s ease-in-out" : "",
-                  }}
-                >
-                  <div
-                    className='flex flex-col overflow-hidden cursor-pointer h-fit '
-                    onClick={() => router.push(`/projects/${data.projectId}`)}
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            // className=''
+            releaseOnEdges={true}
+            centeredSlides={true}
+            // onReachEnd={(swiper) => swiper.slideTo(0, 1500)}
+            slidesPerView={"auto"}
+            onSlideChange={handleSlideChange}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 400,
+              depth: 200,
+              modifier: 1,
+              // slideShadows: true,
+            }}
+            keyboard={{
+              enabled: true,
+            }}
+            navigation={true}
+            modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
+            className='!mr-0 mySwiper-project !w-[90%] mb-10 custom-swiper'
+          >
+            {project && project.length
+              ? [...project].filter(data => data?.projectName).map((data, index) => {
+                return (
+                  <SwiperSlide
+                    key={index}
+                    style={{
+                      opacity: index < activeIndex ? 0 : 1,
+                      transition:
+                        index < activeIndex ? "opacity 0.1s ease-in-out" : "",
+                    }}
                   >
-                    <ImageView src={data?.projectCoverPic} alt={data?.projectName} className='w-full h-[28rem] ' width={600} height={600} />
-                    {/* <div className='flex flex-col items-center justify-center px-3 sm:px-6'>
+                    <div
+                      className='flex flex-col overflow-hidden cursor-pointer h-fit '
+                      onClick={() => router.push(`/projects/${data.projectId}`)}
+                    >
+                      <ImageView src={data?.thumbnail} alt={data?.projectName} className='w-full h-[28rem] ' width={600} height={600} />
+                      {/* <div className='flex flex-col items-center justify-center px-3 sm:px-6'>
                     <div className='flex items-center justify-center w-full gap-2 pt-3 sm:pt-6'>
                       <ImageView
                         src={data.icon}
@@ -153,22 +150,24 @@ function Projects() {
                       </p>
                     </div>
                   </div> */}
-                  </div>
-                </SwiperSlide>
-              );
-            })
-            : null}
-        </Swiper>
+                    </div>
+                  </SwiperSlide>
+                );
+              })
+              : null}
+          </Swiper>
 
-      </div>
-      <button
-        onClick={() => router.push("/projects")}
-        className=" relative mx-auto cursor-pointer z-50 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm mt-8"
-      >
-        Browse All Projects
-      </button>
-    </>
-  );
+        </div>
+        <button
+          onClick={() => router.push("/projects")}
+          className=" relative mx-auto cursor-pointer z-50 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm mt-8"
+        >
+          Browse All Projects
+        </button>
+      </>
+    );
+  }
+  return null
 }
 
 export default Projects;

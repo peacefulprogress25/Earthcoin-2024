@@ -11,57 +11,61 @@ const leftArrow = "/assets/icons/left_arrow.svg";
 const rightArrow = "/assets/icons/right_arrow.svg";
 export default function PeopleSlider({ details }) {
 
-  return (
-    <div className="relative flex flex-col w-full gap-2 overflow-hidden h-fit people">
-      <div className="flex w-full">
-        <Swiper
-          centeredSlides={false}
-          slidesPerView="auto"
-          slidesPerGroup={2}
-          loop={false}
-          spaceBetween={20}
-          onSwiper={(swiper) => console.log(swiper)}
-          navigation={{
-            nextEl: "#button-next-collection",
-            prevEl: "#button-prev-collection",
-          }}
-          modules={[Navigation]}
-        >
-          {details?.teams.filter(people => people?.image).map((people, index) => (
-            <SwiperSlide key={index} className="w-full">
-              <PeopleCard people={people} className="w-full" />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+
+  if (details?.teams && details?.teams?.length) {
+    return (
+      <div className="relative flex flex-col w-full gap-2 overflow-hidden h-fit people">
+        <div className="flex w-full">
+          <Swiper
+            centeredSlides={false}
+            slidesPerView="auto"
+            slidesPerGroup={2}
+            loop={false}
+            spaceBetween={20}
+            onSwiper={(swiper) => console.log(swiper)}
+            navigation={{
+              nextEl: "#button-next-collection",
+              prevEl: "#button-prev-collection",
+            }}
+            modules={[Navigation]}
+          >
+            {details?.teams.filter(people => people?.image).map((people, index) => (
+              <SwiperSlide key={index} className="w-full">
+                <PeopleCard people={people} className="w-full" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className="relative flex items-center justify-center h-20 gap-4 slider-controller">
+          <button
+            className="cursor-pointer swiper-button-prev"
+            id="button-prev-collection"
+          >
+            <ImageView
+              src={leftArrow}
+              alt="left"
+              width={50}
+              height={50}
+              className="w-10 h-10"
+            />
+          </button>
+          <button
+            className="cursor-pointer swiper-button-next"
+            id="button-next-collection"
+          >
+            <ImageView
+              src={rightArrow}
+              alt="right"
+              width={50}
+              height={50}
+              className="w-10 h-10"
+            />
+          </button>
+        </div>
       </div>
-      <div className="relative flex items-center justify-center h-20 gap-4 slider-controller">
-        <button
-          className="cursor-pointer swiper-button-prev"
-          id="button-prev-collection"
-        >
-          <ImageView
-            src={leftArrow}
-            alt="left"
-            width={50}
-            height={50}
-            className="w-10 h-10"
-          />
-        </button>
-        <button
-          className="cursor-pointer swiper-button-next"
-          id="button-next-collection"
-        >
-          <ImageView
-            src={rightArrow}
-            alt="right"
-            width={50}
-            height={50}
-            className="w-10 h-10"
-          />
-        </button>
-      </div>
-    </div>
-  );
+    );
+  }
+  return null
 }
 
 export function PeopleCard({ people }) {
@@ -99,7 +103,7 @@ export function PeopleCard({ people }) {
       </p>
       <div className="flex gap-3">
         {socialIcons.map((icons, index) => (
-          <Link href={icons?.link} key={index}>
+          <Link href={icons?.link || ''} key={index}>
             <ImageView
               src={icons?.icon}
               width={400}

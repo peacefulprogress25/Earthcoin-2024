@@ -1,4 +1,3 @@
-import React from "react";
 import ImageView from "../../Components/ImageView";
 
 const headerBg = "/assets/images/Header_sectionBg.svg";
@@ -21,7 +20,7 @@ export default function ProjectHeader({ details }) {
         <p className="py-1 sm:py-2 font-Inter text-center font-normal text-[16px] sm:text-[17px] text-white">
           {details?.projectsSubtitle}
         </p>
-        <div className="flex justify-center pt-3 sm:pt-6 gap-2 items-center">
+        <div className="flex items-center justify-center gap-2 pt-3 sm:pt-6">
           <ImageView src={details?.projectIcon} alt="avatar" width={50} height={50} />
           <p className="text-white font-Inter font-semibold text-[16px]">
             {details?.projectsTitle}

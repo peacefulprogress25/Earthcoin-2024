@@ -59,30 +59,30 @@ export default function WorldMap({ projects }) {
   const renderIcons = () => {
     return projects && projects.length
       ? projects.map((map, index) => (
-          <Marker
-            key={map.title}
-            position={[
-              map?.latitude ? map?.latitude : 17.89,
-              map?.longitude ? map?.longitude : 89.56,
-            ]}
-            icon={markerIcon}
-            eventHandlers={{
-              mouseover: (event) => {
-                event.target.openPopup();
-              },
-              mouseout: (event) => {
-                event.target.closePopup();
-              },
-            }}
-          >
-            <PopoverHandler map={map} key={map.subText} id={map.subText} />
-          </Marker>
-        ))
+        <Marker
+          key={map.title}
+          position={[
+            map?.latitude ? map?.latitude : 17.89,
+            map?.longitude ? map?.longitude : 89.56,
+          ]}
+          icon={markerIcon}
+          eventHandlers={{
+            mouseover: (event) => {
+              event.target.openPopup();
+            },
+            mouseout: (event) => {
+              event.target.closePopup();
+            },
+          }}
+        >
+          <PopoverHandler map={map} key={map.subText} id={map.subText} />
+        </Marker>
+      ))
       : null;
   };
 
   return (
-    <div className="w-full flex flex-col relative">
+    <div className="relative flex flex-col w-full">
       <ImageView
         src={map}
         alt="map"
@@ -102,27 +102,27 @@ export default function WorldMap({ projects }) {
         </p>
       </div>
       <MapContainer
-  center={position}
-  zoom={zoomLevel}
-  zoomControl={false}
-  scrollWheelZoom={false}
-  doubleClickZoom={false}
-  dragging={false}
-  attributionControl={false}
-  className="leaflet-Map h-[100vh] w-[100vh] mt-0 sm:-mt-[2rem] ml-0 sm:-ml-[5rem] object-cover"
->
-  <SetZoom setZoomLevel={setZoomLevel} />
-  {loading ? (
-    <div className="h-[60vh] w-full flex items-center justify-center ml-0 sm:ml-[5rem] pt-[5rem] sm:pt-[18rem]">
-      <Loader />
-    </div>
-  ) : (
-    <>
-      <GeoJSON data={mapData.features} className="geoJson" />
-      {renderIcons()}
-    </>
-  )}
-</MapContainer>
+        center={position}
+        zoom={zoomLevel}
+        zoomControl={false}
+        scrollWheelZoom={false}
+        doubleClickZoom={false}
+        dragging={false}
+        attributionControl={false}
+        className="leaflet-Map h-[100vh] w-[100vh] mt-0 sm:-mt-[2rem] ml-0 sm:-ml-[5rem] object-cover"
+      >
+        <SetZoom setZoomLevel={setZoomLevel} />
+        {loading ? (
+          <div className="h-[60vh] w-full flex items-center justify-center ml-0 sm:ml-[5rem] pt-[5rem] sm:pt-[18rem]">
+            <Loader />
+          </div>
+        ) : (
+          <>
+            <GeoJSON data={mapData.features} className="geoJson" />
+            {renderIcons()}
+          </>
+        )}
+      </MapContainer>
 
     </div>
   );
@@ -131,7 +131,7 @@ export default function WorldMap({ projects }) {
 function PopoverHandler({ map, id }) {
   return (
     <Popup className="map_popup" key={map.subText}>
-      <ImageView src={map.icon} alt="alt" width={20} height={20} />
+      <ImageView src={map?.projectIcon} alt="alt" width={20} height={20} />
       <p className="text-[#344054] font-semibold font-inter">{map?.subText}</p>
       <p className="text-[#667085] font-normal mt-2 font-inter text-center">
         {map?.projectName}

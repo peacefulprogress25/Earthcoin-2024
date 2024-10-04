@@ -1,6 +1,6 @@
 export const nexaflowPageObj = {
-  website: "66fa7becc4843fadfbfbb059",
-  projectsPage: "6614dcd9e22f7fb0bb64aa53",
+  website: "670001b3c4843fadfbfbc68d",
+  projectsPage: "66fe8551c4843fadfbfbbd56",
   faqsPage: "6613dba2e22f7fb0bb64a8d7",
   mediaPage: "66163b5ee22f7fb0bb64b68c",
   contractPage: "6616567ee22f7fb0bb64b7db",

@@ -13,24 +13,24 @@ export default function ProjectDetails({ obj }) {
          <p className="mt-3 text-sm font-light w-[3/4] text-black !font-inter">{obj?.projectsSubtitle}</p>
 
          <div className="flex justify-start gap-16 mt-5">
-            <div className="flex flex-col items-center w-[10rem]">
+            {obj?.projectValue ? <div className="flex flex-col items-center w-[10rem]">
                <p className="text-[#EC8000] font-syne font-semibold text-[28px]">{obj?.projectValue}</p>
                <p className="text-sm font-medium text-black font-inter">Total Project Value</p>
-            </div>
-            <div className="flex flex-col items-center">
+            </div> : null}
+            {obj?.Irr ? <div className="flex flex-col items-center">
                <p className="text-[#EC8000] font-syne font-semibold text-[28px]">{obj?.Irr}%</p>
                <p className="text-sm font-medium text-black font-inter">Internal rate of return</p>
-            </div>
+            </div> : null}
          </div>
          <div className="flex justify-start gap-16 mt-5">
-            <div className="flex flex-col items-center w-[10rem]">
+            {obj?.region ? <div className="flex flex-col items-center w-[10rem]">
                <p className="text-[#EC8000] font-syne font-semibold text-[28px]">{obj?.region}</p>
                <p className="text-sm font-medium text-black font-inter">Location</p>
-            </div>
-            <div className="flex flex-col items-center ">
+            </div> : null}
+            {obj?.fundingNeeded ? <div className="flex flex-col items-center ">
                <p className="text-[#EC8000] font-syne font-semibold text-[28px]">{obj?.fundingNeeded}</p>
                <p className="text-sm font-medium text-black font-inter">Funding Needed</p>
-            </div>
+            </div> : null}
          </div>
       </div>
    )

@@ -32,55 +32,57 @@ export default function Media({ details }) {
   //   );
   //   editorState = EditorState.createWithContent(contentState);
   // }
-  return (
-    <div className="flex flex-col w-full items-start px-[5%]">
-      <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
-        Project Updates
-      </p>
-      <div className="flex flex-col w-[100%] h-fit">
-      {details?.updates && details?.updates.length ? (
-        <div className="w-full max-w-[600px] mx-auto px-4 custom-chrono">
-          <Chrono
-            items={details?.updates}
-            mode="VERTICAL"
-            disableToolbar
-            cardHeight={250}
-            timelinePointShape="square"
-            timelinePointDimension={20}
-            theme={{
-              primary: "#E4E7EC",
-              secondary: "#667085",
-              titleColor: "#667085",
-              cardTitleColor: "#000000",
-              cardSubtitleColor: "#667085",
-              titleColorActive: "#E4E7EC",
-              iconBackgroundColor: "transparent",
-            }}
-            fontSizes={{
-              cardSubtitle: "12px",
-              cardTitle: "14px",
-              cardText: "10px",
-              title: "12px",
-            }}
-            scrollable={{ scrollbar: true }}
-          >
-            {details?.updates?.map((updates, index) => (
-              <div key={index} className="w-full">
-                <button className="w-full flex justify-center items-center gap-1 p-1 font-inter border border-[#D0D5DD] rounded-md text-[#6172F3] font-normal text-[12px] sm:text-[14px]">
-                  <ImageView src={file} alt="file" width={16} height={16} className="sm:w-5 sm:h-5" />
-                  {updates.btnText}
-                </button>
-              </div>
-            ))}
-          </Chrono>
+
+  if (details?.updates && details?.updates.length) {
+    return (
+      <div className="flex flex-col w-full items-start px-[5%]">
+        <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
+          Project Updates
+        </p>
+        <div className="flex flex-col w-[100%] h-fit">
+          {details?.updates && details?.updates.length ? (
+            <div className="w-full max-w-[600px] mx-auto px-4 custom-chrono">
+              <Chrono
+                items={details?.updates}
+                mode="VERTICAL"
+                disableToolbar
+                cardHeight={250}
+                timelinePointShape="square"
+                timelinePointDimension={20}
+                theme={{
+                  primary: "#E4E7EC",
+                  secondary: "#667085",
+                  titleColor: "#667085",
+                  cardTitleColor: "#000000",
+                  cardSubtitleColor: "#667085",
+                  titleColorActive: "#E4E7EC",
+                  iconBackgroundColor: "transparent",
+                }}
+                fontSizes={{
+                  cardSubtitle: "12px",
+                  cardTitle: "14px",
+                  cardText: "10px",
+                  title: "12px",
+                }}
+                scrollable={{ scrollbar: true }}
+              >
+                {details?.updates?.map((updates, index) => (
+                  <div key={index} className="w-full">
+                    <button className="w-full flex justify-center items-center gap-1 p-1 font-inter border border-[#D0D5DD] rounded-md text-[#6172F3] font-normal text-[12px] sm:text-[14px]">
+                      <ImageView src={file} alt="file" width={16} height={16} className="sm:w-5 sm:h-5" />
+                      {updates.btnText}
+                    </button>
+                  </div>
+                ))}
+              </Chrono>
+            </div>
+          ) : (
+            <div className='w-full h-[30vh] flex items-center justify-center'>
+              <Loader />
+            </div>
+          )}
         </div>
-      ) : (
-        <div className='w-full h-[30vh] flex items-center justify-center'>
-          <Loader />
-        </div>
-      )}
-        </div>
-      {/* <p className="text-[16px] mt-4 text-left font-normal text-[#475467] font-inter">
+        {/* <p className="text-[16px] mt-4 text-left font-normal text-[#475467] font-inter">
         Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
         suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis
         montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere
@@ -96,7 +98,7 @@ export default function Media({ details }) {
         donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet sodales
         id est ac volutpat.
       </p> */}
-      {/* <div className="text-[14px] sm:text-[16px]  font-Syne text-[#475467]">
+        {/* <div className="text-[14px] sm:text-[16px]  font-Syne text-[#475467]">
         <Editor
           editorState={editorState}
           wrapperClassName="demo-wrapper"
@@ -132,7 +134,7 @@ export default function Media({ details }) {
           — Olivia Rhye, Product Designer
         </p>
       </div> */}
-      {/* <p className="text-[14px] mt-10 text-left font-normal border-b-2  border-[#EAECF0] pb-8 text-[#475467] font-inter">
+        {/* <p className="text-[14px] mt-10 text-left font-normal border-b-2  border-[#EAECF0] pb-8 text-[#475467] font-inter">
         Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id
         scelerisque est ultricies ultricies. Duis est sit sed leo nisl, blandit
         elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque
@@ -147,7 +149,7 @@ export default function Media({ details }) {
         <br /> <br /> Nulla adipiscing erat a erat. Condimentum lorem posuere
         gravida enim posuere cursus diam.
       </p> */}
-      {/* <div className="text-[14px] sm:text-[16px] pb-8 mt-10 font-Syne text-[#475467]">
+        {/* <div className="text-[14px] sm:text-[16px] pb-8 mt-10 font-Syne text-[#475467]">
         <Editor
           editorState={editorState}
           wrapperClassName="demo-wrapper"
@@ -156,7 +158,9 @@ export default function Media({ details }) {
           readOnly={true}
         />
       </div> */}
-      <div className="bg-[#EAECF0] w-full h-[2px]"></div>
-    </div>
-  );
+        <div className="bg-[#EAECF0] w-full h-[2px]"></div>
+      </div>
+    );
+  }
+  return null
 }

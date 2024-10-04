@@ -5,25 +5,30 @@ import ImageView from "../../Components/ImageView";
 const plus = "/assets/icons/plus-circle.svg";
 const minus = "/assets/icons/minus-circle.svg";
 export default function FAQ({ details }) {
-  return (
-    <div className="flex flex-col  w-full  pb-5 !items-start px-[5%]">
-      <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
-        Frequently asked questions
-      </p>
-      <p className="text-[15px] mt-2 text-left font-normal text-[#475467] font-inter">
-        Everything you need to know about $Earth.
-      </p>
-      <div className="flex w-full mt-5 flex-col">
-        {details?.faq && details?.faq.length
-          ? details?.faq.map(({ Question, Answer }, i) => {
+
+  if (details?.faq && details?.faq.length) {
+
+    return (
+      <div className="flex flex-col  w-full  pb-5 !items-start px-[5%]">
+        <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
+          Frequently asked questions
+        </p>
+        <p className="text-[15px] mt-2 text-left font-normal text-[#475467] font-inter">
+          Everything you need to know about $Earth.
+        </p>
+        <div className="flex flex-col w-full mt-5">
+          {details?.faq && details?.faq.length
+            ? details?.faq.map(({ Question, Answer }, i) => {
               return (
                 <FAQSection Question={Question} Answer={Answer} key={i} i={i} />
               );
             })
-          : ""}
+            : ""}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+  return null
 }
 
 function FAQSection({ Question, Answer, i }) {
@@ -61,12 +66,11 @@ function FAQSection({ Question, Answer, i }) {
   return (
     <div
       key={i}
-      className={`flex flex-col w-full cursor-pointer p-4 py-6 items-start ${
-        i !== Question.length - 1 ? "border-b-2 border-[#EAECF0]" : ""
-      }`}
+      className={`flex flex-col w-full cursor-pointer p-4 py-6 items-start ${i !== Question.length - 1 ? "border-b-2 border-[#EAECF0]" : ""
+        }`}
       onClick={() => handleClick(i)}
     >
-      <div className="flex w-full justify-between">
+      <div className="flex justify-between w-full">
         <p className="font-inter font-semibold text-[16px] text-[#101828]">
           {Question}
         </p>

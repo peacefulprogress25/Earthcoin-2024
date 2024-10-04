@@ -56,30 +56,11 @@ export default function Projectdetails() {
       link: "#contact",
     },
   ];
-  // const timeline = [
-  //   {
-  //     title: "Pipeline",
-  //     subTitle: "- 544 days",
-  //     description: "30 Apr 2022 ",
-  //   },
-  //   {
-  //     title: "Approved",
-  //     subTitle: "- 106 days so far",
-  //     description: "25 Oct 2023 ",
-  //   },
-  //   {
-  //     title: "Under implementation",
-  //     description: "",
-  //   },
-  //   {
-  //     title: "Completed",
-  //     description: "",
-  //   },
-  // ];
-  const details = projects.find((project) => project.projectId === id);
+
+  const details = projects && projects.find((project) => project.projectId === id);
 
   return (
-    <div className="min-h-screen mt-20 w-full">
+    <div className="w-full min-h-screen mt-20">
       {details ? (
         <>
           <ProjectHeader details={details} />
@@ -87,7 +68,7 @@ export default function Projectdetails() {
             {category.map((option, index) => (
               <Link
                 key={index}
-                href={option?.link}
+                href={option?.link || ''}
                 passHref
                 className="font-Inter text-[14px] xs:text-[18px] sm:text-[18px] px-1 sm:px-5 font-semibold text-[#475467]"
               >
@@ -97,26 +78,26 @@ export default function Projectdetails() {
           </div>
           <div className="max-w-screen-2xl mx-auto h-fit flex flex-col px-4 sm:px-[6%] gap-8 sm:gap-16 items-center justify-center w-full">
             <OverView details={details} />
-            <ImageView
+            {details?.projectCoverPic ? <ImageView
               src={details?.projectCoverPic}
               alt="coverpic"
               width={400}
               height={400}
               className="w-full object-cover h-[18rem]"
-            />
+            /> : null}
             <ProjectImpact details={details} />
             <div
               id="details"
               className="flex gap-4 border px-4 sm:px-8 md:px-10 w-full border-[#FCCA6B] rounded-md"
             >
-              <div className="border-[#EAECF0] mt-10 grow border-r">
+              {details?.timeline && details?.timeline?.length ? <div className="border-[#EAECF0] mt-10 grow border-r">
                 <Steps
                   progressDot
                   current={details?.timelineCurrentState}
                   direction="vertical"
                   className="custom-step align-middle font-Inter text-[#101828] font-semibold"
                   // items={details?.timeline}
-                  items={details?.timeline?.map(obj=>({title:obj?.timelineTitle,description:obj?.timelineDate}))}
+                  items={details?.timeline?.map(obj => ({ title: obj?.timelineTitle, description: obj?.timelineDate }))}
                 />
                 {/* <Stepper
                   sx={{
@@ -152,7 +133,7 @@ export default function Projectdetails() {
                   {details?.map((community, index) => (
                     <Step
                       key={index}
-                      className=" flex flex-col items-start"
+                      className="flex flex-col items-start "
                       active={true}
                       sx={{
                         ".MuiStepLabel-root": {
@@ -209,7 +190,7 @@ export default function Projectdetails() {
                           {community?.title}
                         </p>
                       </StepLabel>
-                      <StepContent className="pl-8 pb-20">
+                      <StepContent className="pb-20 pl-8">
                         <div className="flex gap-2">
                           <p className="text-black text-left mt-2 font-normal  text-[16px] font-inter">
                             {community?.description}
@@ -222,56 +203,57 @@ export default function Projectdetails() {
                     </Step>
                   ))}
                 </Stepper> */}
-              </div>
-              <div className="flex items-start p-10 grow flex-col gap-10">
-                <div className="flex flex-col gap-1">
+              </div> : null}
+              <div className="flex flex-col items-start gap-10 p-10 grow">
+                {details?.region ? <div className="flex flex-col gap-1">
                   <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[14px] sm:text-[16px]">
                     REIGON
                   </p>
                   <p className="text-[#101828] font-medium  text-[20px] sm:text-[28px]">
                     {details?.region}
                   </p>
-                </div>
-                <div className="flex flex-col gap-1">
+                </div> : null}
+                {details?.investmentType ? <div className="flex flex-col gap-1">
                   <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[12px] sm:text-[16px] md:text-[12px]">
                     INVESTMENT TYPE
                   </p>
                   <p className="text-[#101828] font-medium text-[14px] sm:text-[16px]">
                     {details?.investmentType}
                   </p>
-                </div>
-                <div className="flex flex-col gap-1">
+                </div> : null}
+                {details?.projectSize ? <div className="flex flex-col gap-1">
                   <p className="border-b border-[#EAECF0] text-[#EC8000] font-medium text-[14px] sm:text-[16px]">
                     PROJECT SIZE
                   </p>
                   <p className="text-[#101828] font-medium text-[14px] sm:text-[16px]">
                     {details?.projectSize}
                   </p>
-                </div>
+                </div> : null}
               </div>
             </div>
             <div
               id="contact"
-              className="flex flex-col w-full items-start gap-2"
+              className="flex flex-col items-start w-full gap-2"
             >
               <p className="font-Inter text-[#EC8000] font-medium text-[14px]">
                 ACCREDITED ENTITY
               </p>
-              <div className="flex w-full justify-between gap-2 items-center">
+              <div className="flex items-center justify-between w-full gap-2">
                 <p className="font-syne text-[#101828] font-semibold text-[18px] sm:text-[27px]">
-                {details?.accreditedEntity?.title}
+                  {details?.accreditedEntity?.title}
                 </p>
                 <Link
-                  href={details?.accreditedEntity?.websiteLink}
+                  href={details?.accreditedEntity?.websiteLink || ''}
+                  target="_blank"
                   className="sm:w-[180px] w-[150px]  text-white font-Inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs  sm:text-sm text-center"
                 >
                   Visit company website
                 </Link>
               </div>
               <p className="font-Inter text-[#475467] font-normal text-[14px]">
-              {details?.accreditedEntity?.line1}<br />
-              {details?.accreditedEntity?.line2}<br />
-              {details?.accreditedEntity?.line3}
+                {details?.accreditedEntity?.line1}<br />
+                {details?.accreditedEntity?.line2}<br />
+                {details?.accreditedEntity?.line3}
               </p>
             </div>
             <PeopleSlider details={details} />
