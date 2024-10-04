@@ -13,18 +13,18 @@ export default function ProjectHeader({ details }) {
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-[8%]">
         <p className="pt-1 sm:pt-2 font-Inter text-center font-semibold text-[12px] sm:text-[14px] text-white">
-          {details.category}
+          {details?.projectsCategory}
         </p>
         <p className="pt-1 sm:pt-2 font-syne text-center font-semibold text-[30px] sm:text-[40px] text-white">
-          {details.projectName}
+          {details?.projectName}
         </p>
         <p className="py-1 sm:py-2 font-Inter text-center font-normal text-[16px] sm:text-[17px] text-white">
-          {details.subtitle}
+          {details?.projectsSubtitle}
         </p>
         <div className="flex justify-center pt-3 sm:pt-6 gap-2 items-center">
-          <ImageView src={details.icon} alt="avatar" width={50} height={50} />
+          <ImageView src={details?.projectIcon} alt="avatar" width={50} height={50} />
           <p className="text-white font-Inter font-semibold text-[16px]">
-            {details.subText}
+            {details?.projectsTitle}
           </p>
         </div>
       </div>

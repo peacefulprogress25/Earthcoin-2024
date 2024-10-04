@@ -104,7 +104,7 @@ function Projects() {
                     className='flex flex-col overflow-hidden cursor-pointer h-fit '
                     onClick={() => router.push(`/projects/${data.projectId}`)}
                   >
-                    <ImageView src={data?.coverPic} alt={data?.projectName} className='w-full h-[28rem] ' width={600} height={600} />
+                    <ImageView src={data?.projectCoverPic} alt={data?.projectName} className='w-full h-[28rem] ' width={600} height={600} />
                     {/* <div className='flex flex-col items-center justify-center px-3 sm:px-6'>
                     <div className='flex items-center justify-center w-full gap-2 pt-3 sm:pt-6'>
                       <ImageView

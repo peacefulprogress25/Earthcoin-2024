@@ -246,24 +246,24 @@ export default function ProjectList({ projects }) {
             <div className="justify-center items-center flex flex-col px-3 sm:px-6">
               <div className="flex w-full justify-center pt-3 sm:pt-6 gap-2 items-center">
                 <ImageView
-                  src={project.icon}
+                  src={project?.projectIcon}
                   alt="avatar"
                   width={40}
                   height={40}
                   className="w-8 h-8 sm:w-10 sm:h-10"
                 />
                 <p className="text-black font-inter font-semibold text-[14px] sm:text-[16px]">
-                  {project.subText}
+                  {project?.projectsTitle}
                 </p>
               </div>
               <p className="pt-1 sm:pt-2 font-syne text-center font-semibold text-[18px] sm:text-[24px] text-black">
                 {project.projectName}
               </p>
               <p className="pt-1 sm:pt-2 font-inter font-semibold text-[10px] sm:text-[12px] text-[#EC8000]">
-                {project.category}
+                {project.projectsCategory}
               </p>
               <p className="py-1 sm:py-2 font-inter text-center font-normal text-[11px] sm:text-[13px] text-black">
-                {project.subtitle}
+                {project?.projectsSubtitle}
               </p>
             </div>
             <div className="flex flex-wrap border-t-2 mt-4 w-full border-[#EAECF0]">
@@ -293,7 +293,7 @@ export default function ProjectList({ projects }) {
               </div>
             </div>
             <ImageView
-              src={project.coverPic}
+              src={project?.projectCoverPic}
               alt="coverpic"
               width={350}
               height={450}

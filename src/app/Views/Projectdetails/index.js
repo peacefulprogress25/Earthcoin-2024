@@ -77,6 +77,7 @@ export default function Projectdetails() {
   //   },
   // ];
   const details = projects.find((project) => project.projectId === id);
+
   return (
     <div className="min-h-screen mt-20 w-full">
       {details ? (
@@ -97,7 +98,7 @@ export default function Projectdetails() {
           <div className="max-w-screen-2xl mx-auto h-fit flex flex-col px-4 sm:px-[6%] gap-8 sm:gap-16 items-center justify-center w-full">
             <OverView details={details} />
             <ImageView
-              src={details.coverPic}
+              src={details?.projectCoverPic}
               alt="coverpic"
               width={400}
               height={400}
@@ -114,7 +115,8 @@ export default function Projectdetails() {
                   current={details?.timelineCurrentState}
                   direction="vertical"
                   className="custom-step align-middle font-Inter text-[#101828] font-semibold"
-                  items={details?.timeline}
+                  // items={details?.timeline}
+                  items={details?.timeline?.map(obj=>({title:obj?.timelineTitle,description:obj?.timelineDate}))}
                 />
                 {/* <Stepper
                   sx={{
@@ -257,21 +259,19 @@ export default function Projectdetails() {
               </p>
               <div className="flex w-full justify-between gap-2 items-center">
                 <p className="font-syne text-[#101828] font-semibold text-[18px] sm:text-[27px]">
-                  African Development Bank
+                {details?.accreditedEntity?.title}
                 </p>
                 <Link
-                  href={details?.companyWebsite}
+                  href={details?.accreditedEntity?.websiteLink}
                   className="sm:w-[180px] w-[150px]  text-white font-Inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs  sm:text-sm text-center"
                 >
                   Visit company website
                 </Link>
               </div>
               <p className="font-Inter text-[#475467] font-normal text-[14px]">
-                Principal Climate and Environment Finance Officer <br />
-                African Development Bank Climate Change and Green Growth
-                Department CCIA.
-                <br /> Rue Jean Paul II, Plateau, 01 BP 1387 Abidjan 01, Côte
-                d’Ivoire
+              {details?.accreditedEntity?.line1}<br />
+              {details?.accreditedEntity?.line2}<br />
+              {details?.accreditedEntity?.line3}
               </p>
             </div>
             <PeopleSlider details={details} />

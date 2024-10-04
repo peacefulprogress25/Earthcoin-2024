@@ -63,9 +63,9 @@ export default function ProjectImpact({ details }) {
       </div>
 
       <div className='flex flex-col items-center w-full gap-16 sm:gap-24 sm:flex-row'>
-        {details?.positiveExternalities.filter(impact => impact?.icon).map((impact, index) => (
+        {details?.projectImpactList.filter(impact => impact?.projectImpactIcon).map((impact, index) => (
           <div
-            className={`flex flex-col px-3 sm:px-4 items-center justify-center w-full sm:w-[18rem] ${index !== details?.positiveExternalities.length - 1
+            className={`flex flex-col px-3 sm:px-4 items-center justify-center w-full sm:w-[18rem] ${index !== details?.projectImpactList.length - 1
               ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
               : ""
               }`}
@@ -73,13 +73,13 @@ export default function ProjectImpact({ details }) {
           >
             <ImageView
               alt={impact.title}
-              src={impact.icon}
+              src={impact?.projectImpactIcon}
               width={100}
               height={100}
               className='object-contain w-10 h-10 sm:w-20 sm:h-20'
             />
             <p className='text-[#101828] text-center text-[14px] sm:text-[16px] mt-2 font-semibold font-Inter'>
-              {impact.title}
+              {impact?.projectImpactTitle}
             </p>
           </div>
         ))}
