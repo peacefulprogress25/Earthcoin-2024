@@ -24,7 +24,7 @@ function Nodes() {
         </p>
       </section>
       <div className='flex flex-col md:flex-row items-center justify-center w-full mt-12'>
-        <section className='flex flex-col w-full md:w-1/2 gap-6'>
+        <section className='flex flex-col w-full md:w-1/2 sm:mt-4 gap-6'>
           <section className='flex flex-col gap-5'>
             <p className='text-[#475467] font-inter text-sm font-light'>
               Just like Bitcoin has miners, Ethereum has validators, we have
@@ -64,8 +64,8 @@ function Nodes() {
             </button>
           </section>
         </section>
-        <section className='flex w-full md:w-1/2 justify-center mt-0 sm:mt-4' style={{ marginTop: '2rem' }}>
-          <Image src={img} className='w-full sm:w-3/4' width={400} height={400} />
+        <section className='flex w-full md:w-1/2 justify-center mt-2' style={{marginTop:"2rem"}}>
+          <Image src={img} className='w-full object-contain sm:w-[88%]' width={400} height={400} />
         </section>
       </div>
     </div>

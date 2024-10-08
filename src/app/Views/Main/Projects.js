@@ -160,7 +160,7 @@ function Projects() {
         </div>
         <button
           onClick={() => router.push("/projects")}
-          className=" relative mx-auto cursor-pointer z-50 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm mt-8"
+          className=" relative mx-auto cursor-pointer z-40 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm mt-8"
         >
           Browse All Projects
         </button>

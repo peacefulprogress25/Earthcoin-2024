@@ -416,7 +416,7 @@ export default function Main() {
         </div>
 
         <Projects />
-
+        <Nodes />
         {/* <div className='flex flex-col gap-8 mt-3'>
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>
@@ -534,7 +534,7 @@ export default function Main() {
         /> */}
       </div>
       {/* <Treasury /> */}
-      <Nodes />
+     
       <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">

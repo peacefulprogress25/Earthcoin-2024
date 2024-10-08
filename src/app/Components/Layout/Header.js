@@ -134,7 +134,7 @@ export default function Header() {
 
   console.log(showUniswap);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-white">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
       <div className="flex justify-between h-20 w-full mx-auto border-b border-[#F2F4F7] gap-2 items-center px-4 sm:px-[6%]">
         <div className="flex items-center justify-start w-full h-20 gap-2 mx-auto">
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>
