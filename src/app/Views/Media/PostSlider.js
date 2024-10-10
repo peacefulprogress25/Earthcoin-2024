@@ -10,7 +10,6 @@ import "./slider.css";
 import Link from "next/link";
 import { colors } from ".";
 
-const click = "/assets/icons/circle.svg";
 const left = "/assets/icons/arrow-left.svg";
 const right = "/assets/icons/arrow-right.svg";
 
