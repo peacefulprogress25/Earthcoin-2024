@@ -9,6 +9,11 @@ import { Loader } from "../../Components/Loader";
 import { useEffect, useState } from "react";
 import buttonConfig from "../../utils/button";
 
+
+export const colors = [
+  "text-[#EC8000] bg-[#FFFCF8]", "bg-[#EEF4FF] text-[#3538CD]", "bg-[#FDF2FA] text-[#C11574]", "text-[#EC8000] bg-[#FFFCF8]", "bg-[#EEF4FF] text-[#3538CD]",
+]
+
 export default function Media() {
   const [media, setMedia] = useState([]);
   const [post, setPosts] = useState([]);
@@ -37,8 +42,9 @@ export default function Media() {
       const highlightedPosts = page?.Posts.filter(
         (post) => post.highlight === "true"
       );
-      setMedia(highlightedPosts);
+      setMedia(page?.Media);
       setPosts(page?.Posts);
+      console.log(page, highlightedPosts);
     };
 
     getPageByID();
@@ -48,7 +54,6 @@ export default function Media() {
       ? post
       : post.filter((post) => post.category === selectedCategory);
   const hasContent = media.length > 0 || post.length > 0;
-
   return (
     <div>
       <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
@@ -89,24 +94,17 @@ export default function Media() {
                     >
                       {card?.title}
                     </p>
-                    {index === 0 && (
-                      <LuArrowUpRight size={22} color="#101828" />
-                    )}
+                    {/* {index === 0 && ( */}
+                    <LuArrowUpRight size={22} color="#101828" />
+                    {/* )} */}
                   </div>
-                  <p className="text-[#475467] font-inter w-[90%] font-normal text-[14px]">
+                  <p className="text-[#475467] font-inter w-[90%] font-normal text-[14px] overflow-hidden text-ellipsis line-clamp-3">
                     {card?.description}
                   </p>
                   <div className="flex items-center gap-2">
                     {card?.tags.map((tag, i) => (
                       <p
-                        className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${tag?.tag === "Design"
-                          ? "text-[#EC8000] bg-[#FFFCF8]"
-                          : tag?.tag === "Research"
-                            ? "bg-[#EEF4FF] text-[#3538CD]"
-                            : tag?.tag === "Presentation"
-                              ? "bg-[#FDF2FA] text-[#C11574]"
-                              : ""
-                          }`}
+                        className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${colors[i]}`}
                         key={i}
                       >
                         {tag?.tag}

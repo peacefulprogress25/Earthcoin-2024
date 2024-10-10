@@ -8,208 +8,16 @@ import ImageView from "../../Components/ImageView";
 import { LuArrowUpRight } from "react-icons/lu";
 import "./slider.css";
 import Link from "next/link";
+import { colors } from ".";
 
 const click = "/assets/icons/circle.svg";
 const left = "/assets/icons/arrow-left.svg";
 const right = "/assets/icons/arrow-right.svg";
 
 export default function PostSlider({ post }) {
-  const cardData = [
-    {
-      name: "Olivia Rhye • 20 Jan 2022",
-      title: "UX review presentations",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research", "Presentation"],
-    },
-    {
-      name: "Phoenix Baker • 19 Jan 2022",
-      title: "Migrating to Linear 101",
-      description:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Lana Steiner • 18 Jan 2022",
-      title: "Building your API Stack",
-      description:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-      img: "/assets/images/steiner.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Olivia Rhye • 20 Jan 2022",
-      title: "UX review presentations",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research", "Presentation"],
-    },
-    {
-      name: "Phoenix Baker • 19 Jan 2022",
-      title: "Migrating to Linear 101",
-      description:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Lana Steiner • 18 Jan 2022",
-      title: "Building your API Stack",
-      description:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-      img: "/assets/images/steiner.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Olivia Rhye • 20 Jan 2022",
-      title: "UX review presentations",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research", "Presentation"],
-    },
-    {
-      name: "Phoenix Baker • 19 Jan 2022",
-      title: "Migrating to Linear 101",
-      description:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Lana Steiner • 18 Jan 2022",
-      title: "Building your API Stack",
-      description:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-      img: "/assets/images/steiner.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Olivia Rhye • 20 Jan 2022",
-      title: "UX review presentations",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research", "Presentation"],
-    },
-    {
-      name: "Phoenix Baker • 19 Jan 2022",
-      title: "Migrating to Linear 101",
-      description:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Lana Steiner • 18 Jan 2022",
-      title: "Building your API Stack",
-      description:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-      img: "/assets/images/steiner.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Olivia Rhye • 20 Jan 2022",
-      title: "UX review presentations",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research", "Presentation"],
-    },
-    {
-      name: "Phoenix Baker • 19 Jan 2022",
-      title: "Migrating to Linear 101",
-      description:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Lana Steiner • 18 Jan 2022",
-      title: "Building your API Stack",
-      description:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-      img: "/assets/images/steiner.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Olivia Rhye • 20 Jan 2022",
-      title: "UX review presentations",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research", "Presentation"],
-    },
-    {
-      name: "Phoenix Baker • 19 Jan 2022",
-      title: "Migrating to Linear 101",
-      description:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Lana Steiner • 18 Jan 2022",
-      title: "Building your API Stack",
-      description:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-      img: "/assets/images/steiner.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Olivia Rhye • 20 Jan 2022",
-      title: "UX review presentations",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research", "Presentation"],
-    },
-    {
-      name: "Phoenix Baker • 19 Jan 2022",
-      title: "Migrating to Linear 101",
-      description:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Lana Steiner • 18 Jan 2022",
-      title: "Building your API Stack",
-      description:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-      img: "/assets/images/steiner.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Olivia Rhye • 20 Jan 2022",
-      title: "UX review presentations",
-      description:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research", "Presentation"],
-    },
-    {
-      name: "Phoenix Baker • 19 Jan 2022",
-      title: "Migrating to Linear 101",
-      description:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get...",
-      img: "/assets/images/baker.png",
-      tags: ["Design", "Research"],
-    },
-    {
-      name: "Lana Steiner • 18 Jan 2022",
-      title: "Building your API Stack",
-      description:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag...",
-      img: "/assets/images/steiner.png",
-      tags: ["Design", "Research"],
-    },
-  ];
+
   return (
-    <div className="overflow-hidden w-full">
+    <div className="w-full overflow-hidden">
       <div className="flex w-full">
         <Swiper
           centeredSlides={false}
@@ -229,27 +37,28 @@ export default function PostSlider({ post }) {
             },
             1024: {
               slidesPerView: 3,
-              slidesPerGroup: 3,
+              // slidesPerGroup: 3,
               grid: {
                 rows: 2,
               },
             },
           }}
           loop={false}
-          spaceBetween={25}
+          // spaceBetween={30}
+
           navigation={{
             nextEl: "#button-next-post",
             prevEl: "#button-prev-post",
           }}
-          pagination={{
-            el: "#swiper-pagination-post",
-            clickable: true,
-            renderBullet: function (index, className) {
-              return (
-                '<span class="' + className + '">' + (index + 1) + "</span>"
-              );
-            },
-          }}
+          // pagination={{
+          //   el: "#swiper-pagination-post",
+          //   clickable: true,
+          //   renderBullet: function (index, className) {
+          //     return (
+          //       '<span class="' + className + '">' + (index + 1) + "</span>"
+          //     );
+          //   },
+          // }}
           modules={[Pagination, Navigation, Grid]}
           className="post_swiper_container"
         >
@@ -260,7 +69,7 @@ export default function PostSlider({ post }) {
           ))}
         </Swiper>
       </div>
-      <div className="slider-controller px-4 h-20 z-20 relative flex justify-center items-center gap-4">
+      <div className="relative z-20 flex items-center justify-center h-20 gap-4 px-4 slider-controller">
         <button
           className="cursor-pointer z-[20] flex gap-2 items-center text-[#475467] font-inter font-semibold text-[12px] swiper-button-prev"
           id="button-prev-post"
@@ -275,7 +84,7 @@ export default function PostSlider({ post }) {
           Previous
         </button>
         <div
-          className="swiper-pagination z-10 gap-1" // Adjusted z-index
+          className="z-10 gap-1 swiper-pagination" // Adjusted z-index
           id="swiper-pagination-post"
         ></div>
         <button
@@ -301,40 +110,32 @@ export function SliderCard({ card }) {
     <Link
       href={card?.link}
       target="_blank"
-      className={`flex flex-col h-fit w-full gap-6`} // Changed width to full for responsiveness
+      className={`flex flex-col w-[320px] sm:w-full gap-6 pr-[25px]`} // Changed width to full for responsiveness
     >
       <ImageView
         src={card.img}
         alt={card.name}
         width={200}
         height={200}
-        className="w-full object-cover"
+        className="w-full object-contain h-[200px]"
       />
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col w-full gap-2">
         <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
           {card?.name}
         </p>
-        <div className="flex justify-between items-center">
-          <p className={`text-[#101828]  font-syne text-[22px] font-semibold`}>
+        <div className="flex items-center justify-between">
+          <p className={`text-[#101828]  font-syne  text-md  sm:text-[22px]   font-semibold`}>
             {card?.title}
           </p>
-          <LuArrowUpRight size={22} color="#101828" />
+          {/* <LuArrowUpRight size={22} color="#101828" /> */}
         </div>
-        <p className="text-[#475467] font-inter w-full font-normal text-[14px]"> {/* Changed width to full */}
+        <p className="text-[#475467] overflow-hidden text-ellipsis line-clamp-2  font-inter w-full font-normal text-[14px]"> {/* Changed width to full */}
           {card?.description}
         </p>
-        <div className="flex items-center gap-2 flex-wrap"> {/* Added flex-wrap for tags */}
+        <div className="flex flex-wrap items-center gap-2"> {/* Added flex-wrap for tags */}
           {card?.tags.map((tag, i) => (
             <p
-              className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${
-                tag?.tag === "Design"
-                  ? "text-[#EC8000] bg-[#FFFCF8]"
-                  : tag?.tag === "Research"
-                  ? "bg-[#EEF4FF] text-[#3538CD]"
-                  : tag?.tag === "Presentation"
-                  ? "bg-[#FDF2FA] text-[#C11574]"
-                  : ""
-              }`}
+              className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${colors[i]}`}
               key={i}
             >
               {tag?.tag}

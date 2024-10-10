@@ -140,7 +140,8 @@ export default function Dashboard() {
       setChartData(page?.PriceChart)
       setTreasuryList(page?.treasury_holdings)
       const data = await totalEarth();
-      setPriceDetails(data)
+      const dexPrice = await fetchDexPrice();
+      setPriceDetails({ ...data, dexPrice })
       setLoading(false)
     };
 
