@@ -534,7 +534,7 @@ export default function Main() {
         /> */}
       </div>
       {/* <Treasury /> */}
-     
+
       <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
@@ -610,12 +610,13 @@ export default function Main() {
             <div
               className={`flex cursor-pointer w-full items-start ${index === 0
                 ? "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
-                : "col-span-1 flex-row sm:col-span-1 flex-col sm:flex-row"
+                : "col-span-1  sm:col-span-1 flex-col sm:flex-row"
                 }`}
               key={index}
             >
               <ImageView
                 src={card.image}
+                onClick={() => window.open(card?.link, "_blank")}
                 alt={card.name}
                 width={200}
                 height={200}
