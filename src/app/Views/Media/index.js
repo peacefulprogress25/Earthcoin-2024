@@ -39,12 +39,12 @@ export default function Media() {
         pageId: nexaflowPageObj.mediaPage,
         websiteId: nexaflowPageObj.website,
       });
-      const highlightedPosts = page?.Posts.filter(
-        (post) => post.highlight === "true"
-      );
+      // const highlightedPosts = page?.Posts.filter(
+      //   (post) => post.highlight === "true"
+      // );
       setMedia(page?.Media);
       setPosts(page?.Posts);
-      console.log(page, highlightedPosts);
+      console.log(page);
     };
 
     getPageByID();
@@ -52,7 +52,8 @@ export default function Media() {
   const filteredPosts =
     selectedCategory === "All"
       ? post
-      : post.filter((post) => post.category === selectedCategory);
+      : post?.filter((post) => post.category === selectedCategory);
+  console.log(filteredPosts);
   const hasContent = media.length > 0 || post.length > 0;
   return (
     <div>
@@ -68,7 +69,9 @@ export default function Media() {
         {media && media.length ? (
           <div className="grid grid-flow-col grid-rows-3 gap-6 mt-8 sm:grid-rows-2">
             {media.map((card, index) => (
-              <div
+              <Link
+                href={card?.link || ''}
+                target="_blank"
                 className={`flex flex-col sm:flex-row gap-6 ${index === 0 ? "sm:row-span-2 row-span-1 !flex-col" : ""
                   }`}
                 key={index}
@@ -112,7 +115,7 @@ export default function Media() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         ) : (
@@ -137,7 +140,9 @@ export default function Media() {
         </div>
         {filteredPosts && filteredPosts.length ? (
           <PostSlider post={filteredPosts} />
-        ) : (
+        ) : (filteredPosts && !filteredPosts.length) || !filteredPosts ? <div className="h-[60vh] w-full flex items-center justify-center">
+          <p className="font-syne text-md">No Posts</p>
+        </div> : (
           <div className="h-[60vh] w-full flex items-center justify-center">
             <Loader />
           </div>
