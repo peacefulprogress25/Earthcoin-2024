@@ -146,6 +146,20 @@ export default {
     external: false,
     link: "/dapp",
   },
+  media_import_earth:{
+    title: "Import $EARTH",
+    position: "Dashboard",
+    page: "/media",
+    external: false,
+    link: "",
+  },
+  media_dexscreener:{
+    title: "Dexscreener",
+    position: "Dashboard",
+    page: "/media",
+    external: true,
+    link: "https://dexscreener.com/polygon/0x40da612b7803892ed002e4f9effd746dc3cf4a5c",
+  },
   media_get_started: {
     title: "Get $Earth",
     position: "Startups",

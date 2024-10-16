@@ -547,7 +547,7 @@ export default function Main() {
             Projects collaborating with $EARTH to fulfil its mission/vision
           </p>
         </div>
-        <div className="flex flex-wrap  sm:px-[32%] justify-center mt-0 gap-1 sm:gap-5">
+        <div className="flex flex-wrap  sm:px-[32%] justify-center mt-0 gap-1 sm:gap-7">
           {partners && partners?.length ? (
             partners.map((partner, index) => (
               <Link href={partner?.link} target="_blank" className="cursor-pointer" key={index}>
@@ -622,7 +622,7 @@ export default function Main() {
                 height={200}
                 className={`${index === 0
                   ? "w-full h-[13rem] sm:h-[20rem] xl:object-cover"
-                  : "w-full h-[13rem] sm:h-40 xl:object-cover"
+                  : "w-full sm:w-[50%] h-[13rem] sm:h-full xl:object-cover"
                   }`}
               />
               <div
@@ -788,7 +788,7 @@ export default function Main() {
         ))}
       </div>
       <div className="max-w-screen-2xl mt-[3rem] xl:mt-[5rem] mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
-        <div className="flex flex-wrap justify-center gap-1 mt-12 sm:gap-4">
+        <div className="flex flex-wrap justify-center gap-4 mt-12">
           {social.map((partner, index) => (
             <Link
               key={index}
