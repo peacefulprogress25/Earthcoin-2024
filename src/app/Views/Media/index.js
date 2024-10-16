@@ -52,7 +52,7 @@ export default function Media() {
   const filteredPosts =
     selectedCategory === "All"
       ? post
-      : post?.filter((post) => post.category === selectedCategory);
+      : post?.filter(post => post?.name)?.filter((post) => post.category === selectedCategory);
   console.log(filteredPosts);
   const hasContent = media.length > 0 || post.length > 0;
   return (
@@ -68,7 +68,7 @@ export default function Media() {
         </div>
         {media && media.length ? (
           <div className="grid grid-flow-col grid-rows-3 gap-6 mt-8 sm:grid-rows-2">
-            {media.map((card, index) => (
+            {media.filter(card => card?.name).map((card, index) => (
               <Link
                 href={card?.link || ''}
                 target="_blank"

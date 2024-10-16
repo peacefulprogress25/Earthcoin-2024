@@ -16,7 +16,11 @@ const twitter = "/assets/icons/twitter.png";
 const exclamationIcon = "/assets/images/exclamation-mark.png"
 const soulboundAddress = envObj.soulboundAddress;
 const templateId = envObj.personaTemplateId;
-const twitterContent = `I just became an $EARTH NODE to create a mycelium network that regenerates EARTH`;
+const twitterContent = `I just became an $EARTH NODE to create a mycelium network that makes climate change history, regeneration a reality and seeds the solarpunk paradigm.
+
+
+#letsGROW #Refi
+`;
 
 export default function Sbt() {
   const { showMessage } = useNotification();
