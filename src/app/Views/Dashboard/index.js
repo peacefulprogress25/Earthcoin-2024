@@ -14,6 +14,7 @@ import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import { fetchDexPrice, totalEarth } from "../Dapp/balance";
 import { Select } from "antd";
+import buttonConfig from "../../utils/button";
 
 const wallet = "/assets/icons/wallet.svg";
 const chart = "/assets/images/Line and bar chart.png";
@@ -210,7 +211,29 @@ export default function Dashboard() {
             </p>
           </div>
           <div className='flex items-center gap-2'>
-            <button className='w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm'>
+          <Link
+           className='w-[80px] sm:w-[150px] font-semibold gap-1 text-white  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  bg-[#EC8000]  p-2 text-xs sm:text-sm'
+            href={buttonConfig?.media_dexscreener?.link || ""}
+            target={buttonConfig?.media_dexscreener?.external ? "_blank" : "_self"}
+          >
+      
+            {buttonConfig?.media_dexscreener?.title}
+          </Link>
+          <Link
+           className='w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm'
+            href={buttonConfig?.media_import_earth?.link || ""}
+            target={buttonConfig?.media_import_earth?.external ? "_blank" : "_self"}
+          >
+             <ImageView
+                src={wallet}
+                alt='wallet'
+                width={20}
+                height={20}
+                className='object-contain w-4 h-4'
+              />
+            {buttonConfig?.media_import_earth?.title}
+          </Link>
+            {/* <button className='w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm'>
               <ImageView
                 src={wallet}
                 alt='wallet'
@@ -219,7 +242,7 @@ export default function Dashboard() {
                 className='object-contain w-4 h-4'
               />
               Import $EARTH
-            </button>
+            </button> */}
             <button className='w-[80px]  gap-1 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm'>
               <FaPlus size={17} color='#fff' />
               Add
@@ -273,7 +296,7 @@ export default function Dashboard() {
               </div>
             ))}
           </div>
-          <p className='text-[#101828] w-full pb-3 border-b border-[#EAECF0] font-inter text-left font-semibold text-[14px]'>
+          {/* <p className='text-[#101828] w-full pb-3 border-b border-[#EAECF0] font-inter text-left font-semibold text-[14px]'>
             Price chart
           </p>
           <div className='flex justify-start w-full gap-4'>
@@ -289,7 +312,7 @@ export default function Dashboard() {
                 Mint
               </p>
             </div>
-          </div>
+          </div> */}
           {/* <ImageView
             src={chart}
             alt="chart"
@@ -297,9 +320,9 @@ export default function Dashboard() {
             height={1000}
             className="w-full h-[35vh] object-cover"
           /> */}
-          <div className='w-[100%] h-[35vh]'>
+          {/* <div className='w-[100%] h-[35vh]'>
             <Line data={data} width='400' height='300' options={options} />
-          </div>
+          </div> */}
           <div className='grid items-center w-full grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3'>
             {chartData?.map((price, index) => (
               <div
