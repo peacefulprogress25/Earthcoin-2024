@@ -107,16 +107,16 @@ export default function PostSlider({ post }) {
 export function SliderCard({ card }) {
   return (
     <Link
-      href={card?.link}
+    href={card?.link || ''}
       target="_blank"
-      className={`flex flex-col w-[320px] sm:w-full gap-6 pr-[25px]`} // Changed width to full for responsiveness
+      className={`flex flex-col items-center w-full gap-6 pr-[25px]`} // Changed width to full for responsiveness
     >
       <ImageView
         src={card.img}
         alt={card.name}
         width={200}
         height={200}
-        className="w-full object-contain h-[200px]"
+        className="w-full object-cover h-[200px]"
       />
       <div className="flex flex-col w-full gap-2">
         <p className="text-[#EC8000] font-inter font-semibold text-[12px]">

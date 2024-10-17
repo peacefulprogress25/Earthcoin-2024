@@ -51,7 +51,7 @@ export default function Media() {
   }, []);
   const filteredPosts =
     selectedCategory === "All"
-      ? post
+      ? post?.filter(post => post?.name)
       : post?.filter(post => post?.name)?.filter((post) => post.category === selectedCategory);
   console.log(filteredPosts);
   const hasContent = media.length > 0 || post.length > 0;
