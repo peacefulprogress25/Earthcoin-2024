@@ -12,7 +12,7 @@ import { Loader } from "../../Components/Loader";
 import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
-import { fetchDexPrice, totalEarth } from "../Dapp/balance";
+import { addToken, fetchDexPrice, totalEarth } from "../Dapp/balance";
 import { Select } from "antd";
 import buttonConfig from "../../utils/button";
 
@@ -211,28 +211,28 @@ export default function Dashboard() {
             </p>
           </div>
           <div className='flex items-center gap-2'>
-          <Link
-           className='w-[80px] sm:w-[150px] font-semibold gap-1 text-white  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  bg-[#EC8000]  p-2 text-xs sm:text-sm'
-            href={buttonConfig?.media_dexscreener?.link || ""}
-            target={buttonConfig?.media_dexscreener?.external ? "_blank" : "_self"}
-          >
-      
-            {buttonConfig?.media_dexscreener?.title}
-          </Link>
-          <Link
-           className='w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm'
-            href={buttonConfig?.media_import_earth?.link || ""}
-            target={buttonConfig?.media_import_earth?.external ? "_blank" : "_self"}
-          >
-             <ImageView
+            <Link
+              className='w-[80px] sm:w-[150px] font-semibold gap-1 text-white  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  bg-[#EC8000]  p-2 text-xs sm:text-sm'
+              href={buttonConfig?.media_dexscreener?.link || ""}
+              target={buttonConfig?.media_dexscreener?.external ? "_blank" : "_self"}
+            >
+
+              {buttonConfig?.media_dexscreener?.title}
+            </Link>
+            <Link
+              className='w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm'
+              href={buttonConfig?.media_import_earth?.link || ""}
+              target={buttonConfig?.media_import_earth?.external ? "_blank" : "_self"}
+            >
+              <ImageView
                 src={wallet}
                 alt='wallet'
                 width={20}
                 height={20}
                 className='object-contain w-4 h-4'
               />
-            {buttonConfig?.media_import_earth?.title}
-          </Link>
+              {buttonConfig?.media_import_earth?.title}
+            </Link>
             {/* <button className='w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm'>
               <ImageView
                 src={wallet}
@@ -243,7 +243,7 @@ export default function Dashboard() {
               />
               Import $EARTH
             </button> */}
-            <button className='w-[80px]  gap-1 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm'>
+            <button onClick={addToken} className='w-[80px]  gap-1 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm'>
               <FaPlus size={17} color='#fff' />
               Add
             </button>

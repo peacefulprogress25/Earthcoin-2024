@@ -18,6 +18,7 @@ import TradeDapp from "../../Components/Trade";
 import buttonConfig from "../../utils/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
+import { totalEarth } from "../Dapp/balance";
 
 const earth = "/assets/video/EarthVideo.mp4";
 const earthnodevdo = "/assets/video/home_earthnode.mp4";
@@ -42,6 +43,7 @@ export default function Main() {
   const [partners, setPartners] = useState([]);
   const [updates, setUpdates] = useState([]);
   const [funding, setFunding] = useState([]);
+  const [treasuryValue, setTreasuryValue] = useState('')
 
   useEffect(() => {
     const getPageByID = async () => {
@@ -52,28 +54,15 @@ export default function Main() {
       setPartners(page?.Partners);
       setUpdates(page?.Updates);
       setFunding(page?.Stats);
+      const data = await totalEarth();
+      setTreasuryValue(data?.treasury?.toFixed(2))
     };
 
     getPageByID();
   }, []);
-  // const funding = [
-  //   {
-  //     balance: "$17k+",
-  //     impact: "Treasury",
-  //   },
-  //   {
-  //     balance: "93",
-  //     impact: "Holders",
-  //   },
-  //   {
-  //     balance: "5",
-  //     impact: "Projects Funded",
-  //   },
-  //   {
-  //     balance: "25%",
-  //     impact: "APY",
-  //   },
-  // ];
+
+
+
   const keys = [
     {
       title: "Mobilize",
@@ -333,7 +322,7 @@ export default function Main() {
       </div>
       <div className="mx-auto  pt-2 mt-[2rem] sm:mt-[4rem] xl:mt-[6rem] px-4 sm:px-[6%] mt-16 h-fit flex flex-col items-center justify-center w-full">
         <div className="flex flex-col items-center justify-center w-full pb-2 sm:flex-row">
-          {funding.map((impact, index) => (
+          {funding && funding.length ? funding.map((impact, index) => (
             <div
               className={`flex flex-col px-2 py-4 sm:py-0 items-center  justify-center w-[16rem] ${index !== funding.length - 1
                 ? " border-b-2 sm:border-b-0 sm:border-r-2 border-[#EAECF0]"
@@ -342,13 +331,13 @@ export default function Main() {
               key={index}
             >
               <p className="font-syne font-semibold text-[20px] text-center md:text-[35px] lg:text-[52px] text-[#EC8000]">
-                {impact.balance}
+                {index === 0 ? treasuryValue : impact.balance}
               </p>
               <p className="text-[#101828] text-center text-[16px]  font-medium font-inter">
                 {impact.title}
               </p>
             </div>
-          ))}
+          )) : null}
         </div>
 
         <div className="mt-[2rem] sm:mt-[4rem] xl:mt-[6rem]">

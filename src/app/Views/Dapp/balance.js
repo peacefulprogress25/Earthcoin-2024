@@ -169,6 +169,14 @@ export const fetchDexPrice = async () => {
 };
 
 
+export const addToken = async () => {
+  try {
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
 export const fetchBalance = () => {
   earthAmount()
