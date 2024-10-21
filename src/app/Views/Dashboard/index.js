@@ -219,7 +219,7 @@ export default function Dashboard() {
 
               {buttonConfig?.media_dexscreener?.title}
             </Link>
-            <Link
+            {/* <Link
               className='w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm'
               href={buttonConfig?.media_import_earth?.link || ""}
               target={buttonConfig?.media_import_earth?.external ? "_blank" : "_self"}
@@ -232,7 +232,7 @@ export default function Dashboard() {
                 className='object-contain w-4 h-4'
               />
               {buttonConfig?.media_import_earth?.title}
-            </Link>
+            </Link> */}
             {/* <button className='w-[80px] sm:w-[150px] font-semibold gap-1 text-[#344054]  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  p-2 text-xs sm:text-sm'>
               <ImageView
                 src={wallet}

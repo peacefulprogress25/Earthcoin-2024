@@ -165,7 +165,7 @@ export default function Footer() {
                 href="/privacy-policy"
                 className="text-[#475467] pr-2 border-r border-[#475467] font-normal text-center sm:text-left font-inter text-sm"
               >
-                Privacy Policy
+               Token Disclaimer
               </Link>
               <Link
                 href="/terms-of-service"

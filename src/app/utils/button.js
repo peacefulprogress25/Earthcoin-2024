@@ -146,13 +146,6 @@ export default {
     external: false,
     link: "/dapp",
   },
-  media_import_earth:{
-    title: "Import $EARTH",
-    position: "Dashboard",
-    page: "/media",
-    external: false,
-    link: "",
-  },
   media_dexscreener:{
     title: "Dexscreener",
     position: "Dashboard",

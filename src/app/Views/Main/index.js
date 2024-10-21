@@ -524,7 +524,7 @@ export default function Main() {
       </div>
       {/* <Treasury /> */}
 
-      <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-screen flex flex-col gap-12 items-center justify-start w-full">
         <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Partners
@@ -536,7 +536,7 @@ export default function Main() {
             Projects collaborating with $EARTH to fulfil its mission/vision
           </p>
         </div>
-        <div className="flex flex-wrap  sm:px-[32%] justify-center mt-0 gap-1 sm:gap-7">
+        <div className="flex flex-wrap grid grid-cols-5 sm:px-[32%] justify-center mt-0 gap-3 sm:gap-7">
           {partners && partners?.length ? (
             partners.map((partner, index) => (
               <Link href={partner?.link} target="_blank" className="cursor-pointer" key={index}>
@@ -777,7 +777,8 @@ export default function Main() {
         ))}
       </div>
       <div className="max-w-screen-2xl mt-[3rem] xl:mt-[5rem] mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
-        <div className="flex flex-wrap justify-center gap-4 mt-12">
+        {/* <div className="flex flex-wrap justify-center gap-4 mt-12"> */}
+        <div className="flex flex-wrap justify-center mt-12 gap-3 sm:gap-7">
           {social.map((partner, index) => (
             <Link
               key={index}
@@ -787,9 +788,9 @@ export default function Main() {
               <ImageView
                 alt="social"
                 src={partner.image}
-                width={40}
-                height={40}
-                className="w-full h-14 "
+                width={60}
+                height={60}
+      
               />
             </Link>
             //    <a
