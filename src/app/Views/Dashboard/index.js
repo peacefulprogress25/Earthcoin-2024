@@ -212,7 +212,7 @@ export default function Dashboard() {
           </div>
           <div className='flex items-center gap-2'>
             <Link
-              className='w-[80px] sm:w-[150px] font-semibold gap-1 text-white  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  bg-[#EC8000]  p-2 text-xs sm:text-sm'
+              className='w-max font-semibold gap-1 text-white  border border-[#D0D5DD] font-inter flex h-10 items-center justify-center rounded-md  bg-[#EC8000]  p-2 text-xs sm:text-sm'
               href={buttonConfig?.media_dexscreener?.link || ""}
               target={buttonConfig?.media_dexscreener?.external ? "_blank" : "_self"}
             >
@@ -243,9 +243,9 @@ export default function Dashboard() {
               />
               Import $EARTH
             </button> */}
-            <button onClick={addToken} className='w-[80px]  gap-1 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm'>
+            <button onClick={addToken} className='w-max  gap-1 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm'>
               <FaPlus size={17} color='#fff' />
-              Add
+              Add Token
             </button>
           </div>
         </div>
