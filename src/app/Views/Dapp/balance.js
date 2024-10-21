@@ -11,6 +11,7 @@ import { balanceFn, earthBalanceFn } from "../../redux/profileSlice";
 import { EarthTreasury as EarthTreasuryJSON } from "./abi";
 import Soulbound from "./abi/SoulBound.json";
 import Presale from "./abi/Presale.json";
+import { toast } from "sonner";
 
 const { dispatch } = store;
 const dexscreener =
@@ -171,7 +172,19 @@ export const fetchDexPrice = async () => {
 
 export const addToken = async () => {
   try {
-
+    // await window.ethereum.request({
+    //   "method": "wallet_watchAsset",
+    //   "params": {
+    //     type: "ERC20",
+    //     options: {
+    //       address: "0xb60e8dd61c5d32be8058bb8eb970870f07233155",
+    //       symbol: "FOO",
+    //       decimals: 18,
+    //       image: "https://foo.io/token-image.svg"
+    //     }
+    //   },
+    // });
+    // toast.success("Token Added")
   } catch (error) {
     console.log(error);
   }
