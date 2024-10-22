@@ -172,20 +172,21 @@ export const fetchDexPrice = async () => {
 
 export const addToken = async () => {
   try {
-    // await window.ethereum.request({
-    //   "method": "wallet_watchAsset",
-    //   "params": {
-    //     type: "ERC20",
-    //     options: {
-    //       address: "0xb60e8dd61c5d32be8058bb8eb970870f07233155",
-    //       symbol: "FOO",
-    //       decimals: 18,
-    //       image: "https://foo.io/token-image.svg"
-    //     }
-    //   },
-    // });
-    // toast.success("Token Added")
+    await window.ethereum.request({
+      "method": "wallet_watchAsset",
+      "params": {
+        type: "ERC20",
+        options: {
+          address: "0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
+          symbol: "EARTH",
+          decimals: 18,
+          image: "https://polygonscan.com/token/images/solarpunkdao_32.png"
+        }
+      },
+    });
+    toast.success("Token Added")
   } catch (error) {
+    toast.error(error?.message)
     console.log(error);
   }
 }
