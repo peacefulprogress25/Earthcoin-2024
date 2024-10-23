@@ -305,7 +305,7 @@ export default function Sbt() {
   if (pageStatus.minted) {
     return (
       <div className='flex flex-col items-center justify-center gap-3'>
-        <p className='text-lg message text-primary font-syne'>Verified and Soulbound Token Minted</p>
+        <p className='text-lg message text-primary font-syne'>Congrats on becoming an $EARTH NODE</p>
         <TwitterShareButton url={twitterContent}>
           <button className='flex flex-col items-center justify-center gap-2 text-md "w-[80px] ml-auto text-white font-inter h-10 rounded-md bg-[#EC8000] p-2 text-sm'>
             Share via Twitter
