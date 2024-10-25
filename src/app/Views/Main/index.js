@@ -533,10 +533,10 @@ export default function Main() {
             Agents of Change
           </p>
           <p className="text-[#475467] text-center font-normal  text-[16px] font-inter">
-            Projects collaborating with $EARTH to fulfil its mission/vision
+            Projects collaborating with $Earth to fulfil its mission/vision
           </p>
         </div>
-        <div className="flex flex-wrap grid grid-cols-5 sm:px-[32%] justify-center mt-0 gap-3 sm:gap-7">
+        <div className="flex flex-wrap sm:px-[25%] justify-center mt-0 gap-3 sm:gap-7">
           {partners && partners?.length ? (
             partners.map((partner, index) => (
               <Link href={partner?.link} target="_blank" className="cursor-pointer" key={index}>
