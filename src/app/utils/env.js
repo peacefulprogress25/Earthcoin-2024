@@ -14,4 +14,5 @@ export const
     earthstakingAddress: process.env.NEXT_PUBLIC_EARTH_STAKING_ADDRESS,
     chainId: process.env.NEXT_PUBLIC_CHAINID,
     network: process.env.NEXT_PUBLIC_NETWORK,
+    infuraId: process.env.NEXT_PUBLIC_INFURA_ID
   };

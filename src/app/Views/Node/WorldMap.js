@@ -62,31 +62,31 @@ export default function WorldMap({ nodeList }) {
   const renderIcons = () => {
     return nodeList && nodeList.length
       ? nodeList.map((map, index) => (
-          <Marker
-            key={map.name}
-            position={[
-              map?.latitude ? map?.latitude : 17.89,
-              map.longitude ? map.longitude : 89.56,
-            ]}
-            icon={markerIcon}
-            eventHandlers={{
-              mouseover: (event) => {
-                console.log("called");
-                event.target.openPopup();
-              },
-              mouseout: (event) => {
-                event.target.closePopup();
-              },
-            }}
-          >
-            <PopoverHandler map={map} key={map.name} id={map.name} />
-          </Marker>
-        ))
+        <Marker
+          key={map.name}
+          position={[
+            map?.latitude ? map?.latitude : 17.89,
+            map.longitude ? map.longitude : 89.56,
+          ]}
+          icon={markerIcon}
+          eventHandlers={{
+            mouseover: (event) => {
+
+              event.target.openPopup();
+            },
+            mouseout: (event) => {
+              event.target.closePopup();
+            },
+          }}
+        >
+          <PopoverHandler map={map} key={map.name} id={map.name} />
+        </Marker>
+      ))
       : null;
   };
 
   return (
-    <div className="w-full flex flex-col relative">
+    <div className="relative flex flex-col w-full">
       <ImageView
         src={map}
         alt="map"
@@ -160,14 +160,14 @@ function PopoverHandler({ map, id }) {
       <p className="text-[#344054] font-semibold font-inter">{map?.name}</p>
       <p className="text-[#667085] font-normal mt-2 font-inter">Minted till date:</p>
       <p className="text-[#667085] font-normal font-inter">{map?.balance}</p>
-      <div className="flex mt-2 gap-3">
+      <div className="flex gap-3 mt-2">
         {socialIcons.map((icons, index) => (
           <Link href={icons?.link} key={index}>
             <ImageView
               src={icons?.icon}
               width={400}
               height={400}
-              className="w-5  cursor-pointer h-5"
+              className="w-5 h-5 cursor-pointer"
             />
           </Link>
         ))}

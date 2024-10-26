@@ -14,7 +14,7 @@ export default function TermsOfService() {
         pageId: nexaflowPageObj.termsConditionsPage,
         websiteId: nexaflowPageObj.website,
       });
-      console.log(page);
+
       setTeamsOfService(page);
     };
     getPageByID();

@@ -54,7 +54,7 @@ export default function Sbt() {
       const web3Provider = new providers.Web3Provider(provider);
 
       const { chainId } = await web3Provider.getNetwork();
-      console.log(chainId);
+
       // if (chainId !== 80001) {
       //   window.alert("Change the network to Polygon");
       //   throw new Error("Change network to Polygon");
@@ -87,7 +87,7 @@ export default function Sbt() {
           "You confirm you are the owner of this wallet"
         );
         signatureRef.current = signature;
-        console.log("Signature", signatureRef.current);
+
         setSigned(true);
       } catch (e) {
         showMessage({
@@ -117,12 +117,12 @@ export default function Sbt() {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log(response.data, "JJJJJJ");
+
         for (let i = 0; i < response.data.length; i++) {
           const refId = response.data[i].attributes["reference-id"];
           const status = response.data[i].attributes["status"];
 
-          console.log(refId, status);
+
           if (refId?.toLowerCase() === account?.toLowerCase()) {
             if (status === "approved") {
               setPageStatus((pageStatus) => ({
@@ -205,7 +205,7 @@ export default function Sbt() {
   };
 
   const handleUnstake = () => {
-    console.log(input);
+
     for (let i in input) {
       if (!input[i]) {
         showMessage({ type: "error", value: `${i} is required` });
@@ -262,7 +262,7 @@ export default function Sbt() {
 
         let result = await contract.tokenMintedAddress(account);
         setPageStatus((status) => ({ ...status, minted: result }));
-        console.log({ minted: result });
+
       } catch (e) {
         console.log(e);
         showMessage({ type: "error", value: e.code });
@@ -284,7 +284,7 @@ export default function Sbt() {
         ``;
         let result = await contract.whitelistedAddresses(account);
         setPageStatus((status) => ({ ...status, whiteListed: result }));
-        console.log({ whiteListed: result });
+
         result && isMinted();
       } catch (e) {
         console.log(e);
@@ -455,14 +455,14 @@ const Verifier = ({
               emailAddress: input?.email,
             }}
             onLoad={() => {
-              console.log("Loaded inline");
+
             }}
             onComplete={({ inquiryId, status, fields }) => {
               setReferenceId(inquiryId);
               handlePersonaCompletion(inquiryId);
 
-              // Inquiry completed. Optionally tell your server about it.
-              console.log(`Sending finished inquiry ${inquiryId} to backend`);
+
+
             }}
           />
         </div>

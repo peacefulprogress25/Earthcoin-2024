@@ -18,7 +18,7 @@ export default function Faq() {
         pageId: nexaflowPageObj.faqsPage,
         websiteId: nexaflowPageObj.website,
       });
-      console.log(page);
+
       setFaqdata(page?.faq);
     };
 

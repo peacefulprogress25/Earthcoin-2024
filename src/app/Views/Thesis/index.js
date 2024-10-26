@@ -36,7 +36,7 @@ export default function Thesis() {
         pageId: nexaflowPageObj.dashboardPage,
         websiteId: nexaflowPageObj.website,
       });
-      console.log(page);
+
       setFundingData(page?.FundingNeeds);
     };
 
@@ -275,16 +275,16 @@ export default function Thesis() {
                   </div>
                   <div
                     className={`w-full h-2 ${power.title === "Clean Energy"
-                        ? "bg-[#486D2F]"
-                        : power.title === "Regenerative Agriculture"
-                          ? "bg-[#F4AB1F]"
-                          : power.title === "Ecosystem Conservation"
-                            ? "bg-[#B2BC45]"
-                            : power.title === "Clean Transport"
-                              ? "bg-[#EC8000]"
-                              : power.title === "Solarpunk Spaces"
-                                ? "bg-[#045047]"
-                                : ""
+                      ? "bg-[#486D2F]"
+                      : power.title === "Regenerative Agriculture"
+                        ? "bg-[#F4AB1F]"
+                        : power.title === "Ecosystem Conservation"
+                          ? "bg-[#B2BC45]"
+                          : power.title === "Clean Transport"
+                            ? "bg-[#EC8000]"
+                            : power.title === "Solarpunk Spaces"
+                              ? "bg-[#045047]"
+                              : ""
                       }`}
                   ></div>
                 </div>
@@ -605,11 +605,11 @@ export default function Thesis() {
         {!isMobile ? (
           <div className="relative mt-5">
             <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
-            <p
-  className={`mb-3 text-center font-semibold md:text-[14px] lg:text-[18px] xl:text-[20px] max-[580px]:text-[12px] max-[480px]:text-[10px] font-syne`}
->
-  They <span className="text-white">directly address</span> all causes of climate change
-</p>
+              <p
+                className={`mb-3 text-center font-semibold md:text-[14px] lg:text-[18px] xl:text-[20px] max-[580px]:text-[12px] max-[480px]:text-[10px] font-syne`}
+              >
+                They <span className="text-white">directly address</span> all causes of climate change
+              </p>
 
 
             </div>
@@ -644,7 +644,7 @@ export default function Thesis() {
 
         {!isMobile ? (
           <div className="relative mt-5">
-             <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
+            <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
               <p className="mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne text-nowrap max-[580px]:text-[12px] max-[480px]:text-[7px]">
                 They cater to humanities{" "}
                 <span className="text-white "> core needs</span> - energy, food,
@@ -663,7 +663,7 @@ export default function Thesis() {
           <>
             <div className="relative mt-5">
               <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
-              <p className="mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne text-nowrap max-[580px]:text-[12px] max-[480px]:text-[10px] ">
+                <p className="mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne text-nowrap max-[580px]:text-[12px] max-[480px]:text-[10px] ">
                   They cater to humanities{" "}
                   <span className="text-white "> core needs</span> - energy,
                   food, <br /> transport, materials and ecosystems to sustain
@@ -684,7 +684,7 @@ export default function Thesis() {
         {!isMobile ? (
           <div className="relative mt-5">
             <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
-            <p className="mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne text-nowrap max-[580px]:text-[12px] max-[480px]:text-[10px] ">
+              <p className="mb-3 text-center font-semibold  md:text-[14px] lg:text-[18px] xl:text-[20px] font-syne text-nowrap max-[580px]:text-[12px] max-[480px]:text-[10px] ">
                 All these climate solutions generate tremendous amounts of {" "}
                 <span className="text-white ">
                   {" "}
@@ -752,7 +752,7 @@ export default function Thesis() {
           <>
             <div className="relative mt-5">
               <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:top-1/2 md:left-1/2 lg:top-1/2 lg:left-2/5 xl:top-1/2 xl:left-1/2">
-              <p className=" text-center font-semibold text-[7px] max-[480px]:text-[6px] max-[580px]:text-[6px] font-syne text-nowrap">
+                <p className=" text-center font-semibold text-[7px] max-[480px]:text-[6px] max-[580px]:text-[6px] font-syne text-nowrap">
                   These real world solutions have undisputed long term value
                   which <br /> also provide {" "}
                   <span className="text-white "> monetary yields </span>{" "}
@@ -809,7 +809,7 @@ export default function Thesis() {
           </li>
         </ol> */}
         {!isMobile ? (
-                <div className="flex justify-between gap-10 mt-32 mb-24 max-[768px]:flex-col">
+          <div className="flex justify-between gap-10 mt-32 mb-24 max-[768px]:flex-col">
             <div className="md:w-[70%] lg:w-[50%]">
               <p className="text-[#101828] font-semibold text-left mt-6 md:text-[16px] lg:text-[28px] mr-10 font-syne">
                 How?
@@ -846,13 +846,13 @@ export default function Thesis() {
           </div>
         ) : (
           <>
-           <div className="flex flex-col justify-between gap-10 mt-32 mb-24 max-[768px]:flex-col">
+            <div className="flex flex-col justify-between gap-10 mt-32 mb-24 max-[768px]:flex-col">
               <div className="md:w-[70%] lg:w-[50%]">
                 <p className="text-[#101828] font-semibold text-left mt-6 md:text-[16px] max-[480px]:text-[12px] max-[768px]:text-[16px] text-center lg:text-[28px] mr-10 font-syne">
                   How?
                 </p>
                 <div className="w-full mt-6">
-                <p className="text-[#475467] text-center sm:text-left font-normal max-[480px]:text-[9.5px] md:text-[10px] lg:text-[14px] xl:text-[16px] font-inter">
+                  <p className="text-[#475467] text-center sm:text-left font-normal max-[480px]:text-[9.5px] md:text-[10px] lg:text-[14px] xl:text-[16px] font-inter">
                     We have tried to make it as easy and rewarding for anyone
                     across the planet to take constructive climate action by
                     simply buying $Earth and using it eventually to build a

@@ -14,12 +14,12 @@ export default function PrivacyPolicy() {
         pageId: nexaflowPageObj.privacyPolicyPage,
         websiteId: nexaflowPageObj.website,
       });
-      console.log(page);
+
       setPrivacypolicy(page);
     };
     getPageByID();
   }, []);
-  console.log(privacypolicy);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setEditorLoaded(true);

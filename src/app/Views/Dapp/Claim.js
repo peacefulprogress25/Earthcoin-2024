@@ -34,7 +34,7 @@ function Claim({ setScreen }) {
         const signer = provider.getSigner();
         let contract = new ethers.Contract(claimAddress, ClaimJson.abi, signer);
         let result = await contract.isWhitelisted(account);
-        console.log({ result });
+
         setProgress((progress) => ({ ...progress, whitelisted: result }));
         setLoading((obj) => ({ ...obj, whitelist: false }));
       } catch (e) {

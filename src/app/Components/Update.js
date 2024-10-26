@@ -16,7 +16,7 @@ export default function Updates() {
         pageId: nexaflowPageObj.updatePage,
         websiteId: nexaflowPageObj.website,
       });
-      console.log(page);
+
       setUpdate(page?.updates);
     };
 

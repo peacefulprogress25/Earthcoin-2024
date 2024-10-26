@@ -37,7 +37,7 @@ export default function Project() {
         pageId: nexaflowPageObj.projectsPage,
         websiteId: nexaflowPageObj.website,
       });
-      console.log(page);
+
       setProjects(page?.Projects);
       setFaq(page?.Faq);
     };

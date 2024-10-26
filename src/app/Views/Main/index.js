@@ -18,7 +18,7 @@ import TradeDapp from "../../Components/Trade";
 import buttonConfig from "../../utils/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
-import { totalEarth } from "../Dapp/balance";
+import { getTreasury, totalEarth } from "../Dapp/balance";
 
 const earth = "/assets/video/EarthVideo.mp4";
 const earthnodevdo = "/assets/video/home_earthnode.mp4";
@@ -54,8 +54,8 @@ export default function Main() {
       setPartners(page?.Partners);
       setUpdates(page?.Updates);
       setFunding(page?.Stats);
-      const data = await totalEarth();
-      setTreasuryValue(data?.treasury?.toFixed(2))
+      const data = await getTreasury();
+      setTreasuryValue(data?.treasury)
     };
 
     getPageByID();
@@ -778,7 +778,7 @@ export default function Main() {
       </div>
       <div className="max-w-screen-2xl mt-[3rem] xl:mt-[5rem] mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
         {/* <div className="flex flex-wrap justify-center gap-4 mt-12"> */}
-        <div className="flex flex-wrap justify-center mt-12 gap-3 sm:gap-7">
+        <div className="flex flex-wrap justify-center gap-3 mt-12 sm:gap-7">
           {social.map((partner, index) => (
             <Link
               key={index}
@@ -790,7 +790,7 @@ export default function Main() {
                 src={partner.image}
                 width={60}
                 height={60}
-      
+
               />
             </Link>
             //    <a

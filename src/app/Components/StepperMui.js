@@ -8,7 +8,7 @@ export default function StepperMui({ onChange, className }) {
   const handleStep = (step) => {
     setActiveStep(step);
     onChange(step);
-    console.log(step);
+
   };
 
   return (

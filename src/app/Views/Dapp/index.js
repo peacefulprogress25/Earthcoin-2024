@@ -179,7 +179,7 @@ export default function Dapp() {
   // const data = ["STAKE", "TRADE", "CLAIM", "DISCONNECT WALLET", "SBT", "MINT"];
 
   const handleBtnClick = (content) => {
-    console.log(content);
+
     setScreen(content);
   };
   const formatToTwoDecimalPlaces = (value) => {
@@ -232,7 +232,7 @@ export default function Dapp() {
     return parts;
   };
 
-  console.log(screen);
+
 
   useEffect(() => {
     if (wallet) {

@@ -21,7 +21,7 @@ const profileSlice = createSlice({
   initialState,
   reducers: {
     connectWalletFn: (state, action) => {
-      console.log(action);
+
       return { ...state, wallet: action.payload };
     },
     balanceFn: (state, action) => {

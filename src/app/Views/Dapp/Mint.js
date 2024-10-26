@@ -80,7 +80,7 @@ export default function Mint({ totalEarth }) {
       signer
     );
     try {
-      console.log("Contract: ", contract);
+
 
       const allowance = await contract.increaseAllowance(
         Presale.address,
@@ -121,7 +121,7 @@ export default function Mint({ totalEarth }) {
 
       } catch (error) {
         console.log(error);
-        console.log(error?.transactionHash);
+
         setLoading((obj) => ({ ...obj, mint: false }));
 
         showMessage({ type: "error", value: error?.reason });
@@ -160,7 +160,7 @@ export default function Mint({ totalEarth }) {
       try {
         const info = await contract.balanceOf(account);
         setBalance(info / Math.pow(10, 18));
-        console.log("balance fetched");
+
       } catch (error) {
         console.log(error);
 

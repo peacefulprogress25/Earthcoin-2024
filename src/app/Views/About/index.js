@@ -51,13 +51,10 @@ export default function About() {
     }));
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(email)
-  // };
+
 
   const handleSubmit = async () => {
-    console.log(formData);
+
     if (!formData.email) {
       showMessage({
         type: "error",
@@ -133,7 +130,7 @@ export default function About() {
         pageId: nexaflowPageObj.teamPage,
         websiteId: nexaflowPageObj.website,
       });
-      console.log(page);
+
       setTeams(page?.Teams);
       setJobs(page?.jobs);
     };

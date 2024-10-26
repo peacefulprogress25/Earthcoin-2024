@@ -129,7 +129,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
         )
 
       // .on("mouseover", (data, d) => {
-      //   console.log("hello", d);
+
       // });
     }
 
@@ -192,7 +192,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
         if (screen === "DISCONNECT WALLET") {
           setScreen("DISCONNECT WALLET");
         } else {
-          console.log(d.data.name);
+
           setScreen(d.data.name);
         }
       })

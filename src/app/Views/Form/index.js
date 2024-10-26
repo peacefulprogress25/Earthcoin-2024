@@ -86,7 +86,7 @@ export default function Form() {
       formId: nexaflowPageObj.submitForm,
       data: updatedFormData,
     });
-    console.log(response);
+
     if (response?.message === "ok") {
       showMessage({
         type: "success",

@@ -12,7 +12,7 @@ import { Loader } from "../../Components/Loader";
 import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
-import { addToken, fetchDexPrice, totalEarth } from "../Dapp/balance";
+import { addToken, fetchDexPrice, getTreasury, totalEarth } from "../Dapp/balance";
 import { Select } from "antd";
 import buttonConfig from "../../utils/button";
 
@@ -140,7 +140,7 @@ export default function Dashboard() {
       setFundingData(page?.FundingNeeds);
       setChartData(page?.PriceChart)
       setTreasuryList(page?.treasury_holdings)
-      const data = await totalEarth();
+      const data = await getTreasury();
       const dexPrice = await fetchDexPrice();
       setPriceDetails({ ...data, dexPrice })
       setLoading(false)
@@ -336,7 +336,7 @@ export default function Dashboard() {
                   <div className='flex flex-col items-start'>
                     <p className='text-[#101828] text-[32px] sm:text-[36px] md:text-[40px] font-semibold font-syne'>
                       {!price?.value
-                        ? priceDetails?.treasury?.toFixed(2)
+                        ? priceDetails?.treasury
                         : price?.value}
                       {!price?.value && (
                         <span className='text-[18px] sm:text-[22px]'>$DAI</span>

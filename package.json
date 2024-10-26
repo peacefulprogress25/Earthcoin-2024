@@ -41,6 +41,7 @@
     "redux-persist": "^6.0.0",
     "sonner": "^1.4.41",
     "swiper": "^11.0.7",
+    "web3": "^4.14.0",
     "web3modal": "^1.9.12"
   },
   "devDependencies": {

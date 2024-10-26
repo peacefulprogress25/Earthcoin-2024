@@ -44,7 +44,7 @@ export default function Media() {
       // );
       setMedia(page?.Media);
       setPosts(page?.Posts);
-      console.log(page);
+
     };
 
     getPageByID();
@@ -53,7 +53,7 @@ export default function Media() {
     selectedCategory === "All"
       ? post?.filter(post => post?.name)
       : post?.filter(post => post?.name)?.filter((post) => post.category === selectedCategory);
-  console.log(filteredPosts);
+
   const hasContent = media.length > 0 || post.length > 0;
   return (
     <div>

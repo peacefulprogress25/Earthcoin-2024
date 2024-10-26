@@ -22,7 +22,6 @@ export default function PeopleSlider({ details }) {
             slidesPerGroup={2}
             loop={false}
             spaceBetween={20}
-            onSwiper={(swiper) => console.log(swiper)}
             navigation={{
               nextEl: "#button-next-collection",
               prevEl: "#button-prev-collection",

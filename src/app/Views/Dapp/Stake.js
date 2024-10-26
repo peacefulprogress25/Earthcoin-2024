@@ -25,7 +25,7 @@ export default function Stake() {
   const { showMessage } = useNotification();
 
   const onChange = (checked) => {
-    console.log(`switch to ${checked}`);
+
     if (checked) {
       setStake(false);
     } else {
@@ -88,7 +88,7 @@ function UnstakeFunction({ stake, setStake }) {
 
         let value = await contract.accumulationFactor();
         let result = value.toString() / Math.pow(2, 64);
-        console.log(result);
+
         setAccFactor(result);
       } catch (error) {
         console.log(error);
@@ -142,7 +142,7 @@ function UnstakeFunction({ stake, setStake }) {
     if (typeof window?.ethereum !== "undefined") {
       const Amount = ethers.utils.parseUnits(amount, "ether");
       const AllowanceAmount = allowanceAmount * Math.pow(10, 18);
-      console.log({ AllowanceAmount, allowanceAmount });
+
       if (Number(Amount) > AllowanceAmount) {
         showMessage({
           type: "error",
@@ -170,7 +170,7 @@ function UnstakeFunction({ stake, setStake }) {
           earthstakingAddress,
           Amount
         );
-        console.log(info.toString());
+
         await info.wait();
         setLoading((obj) => ({ unstake: true, increaseAllowance: false }));
         setProgress((obj) => ({ ...obj, increaseAllowance: true }));
@@ -343,7 +343,7 @@ function StakeFunction({ stake, setStake }) {
   useEffect(() => {
     if (amount) {
       const value = amount / accFactor;
-      console.log({ value, accFactor, amount });
+
       setResult(value);
     } else {
       setResult(0);
@@ -410,7 +410,7 @@ function StakeFunction({ stake, setStake }) {
         setProgress((obj) => ({ ...obj, increaseAllowance: true }));
 
         const info = await earthStakingContract.stake(Amount);
-        console.log(info.toString());
+
         await info.wait();
         // earthAmount();
         earthAmount();

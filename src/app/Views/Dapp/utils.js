@@ -16,7 +16,7 @@ const checkNetwork = async () => {
   if (typeof window?.ethereum !== "undefined") {
     let provider = new ethers.providers.Web3Provider(window?.ethereum);
     provider = await provider.getNetwork();
-    console.log(provider.chainId);
+
     if (provider.chainId !== parseInt(envObj.chainId)) {
       NotifyUser({
         type: "error",

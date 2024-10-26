@@ -24,12 +24,12 @@ export const totalEarth = async () => {
       const ratio =
         info.earth.toString() !== "0"
           ? parseFloat(info.stablec.toString() / Math.pow(10, 18)) /
-            parseFloat(info.earth.toString() / Math.pow(10, 18))
+          parseFloat(info.earth.toString() / Math.pow(10, 18))
           : 0;
 
       const mintMultiple = await presaleContract.mintMultiple();
       let t = mintMultiple.toString() / 10;
-      console.log(mintMultiple.toString());
+
       return Math.round(100 * (parseFloat(ratio) * parseFloat(t))) / 100;
     } catch (error) {
       console.log(error);

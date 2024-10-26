@@ -47,7 +47,7 @@ function Projects() {
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.activeIndex);
   };
-  console.log(project);
+
 
   if (project && project.length) {
 
