@@ -4,6 +4,7 @@ import { Select } from "antd";
 import "./dapp.css"
 import { useDispatch, useSelector } from "react-redux";
 import { networkFn, profileState } from "../../redux/profileSlice";
+import { VerifyNetwork } from "./utils";
 
 export default function Network() {
   const { Option } = Select;
@@ -13,11 +14,12 @@ export default function Network() {
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const handleChange = (value) => {
+  const handleChange = async(value) => {
     // Find the selected object based on the value
     const selectedObj = networks.filter((option) => option?.chainId === value);
     setSelectedOption(selectedObj[0]);
     dispatch(networkFn(selectedObj[0]?.chainId))
+    await VerifyNetwork(selectedObj[0]);
     console.log(selectedObj[0]);  // logs the name of the selected object
   };
 
