@@ -78,17 +78,17 @@ export const VerifyNetwork = async (obj) => {
   }
 };
 
-export const connectWalletFn = async (obj) => {
-  try {
-    const getNetworkResult = await checkNetwork(obj);
-    if (!getNetworkResult) {
-      return;
-    }
-    return connectWallet();
-  } catch (error) {
-    console.error(error);
-  }
-};
+// export const connectWalletFn = async (obj) => {
+//   try {
+//     const getNetworkResult = await checkNetwork(obj);
+//     if (!getNetworkResult) {
+//       return;
+//     }
+//     return connectWallet();
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
 
 export const connectWallet = async ({ wallet, setShowMenu, message }) => {
   try {
