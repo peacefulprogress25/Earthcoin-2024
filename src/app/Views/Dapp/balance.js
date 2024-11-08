@@ -118,7 +118,7 @@ export const totalEarth = async () => {
       signer
     );
     try {
-      const info = await getTreasury()?.info;
+      const { info, treasury } = await getTreasury();
       const ratio =
         info?.earth.toString() !== "0"
           ? parseFloat(info?.stablec.toString() / Math.pow(10, 18)) /
@@ -128,15 +128,15 @@ export const totalEarth = async () => {
       const mintMultiple = await presaleContract.mintMultiple();
       let t = mintMultiple.toString() / 10;
 
+      console.log(info.stablec);
 
       let result = {
         earth:
           Math.round(100 * (parseFloat(ratio) * parseFloat(t))) /
           100 /
           Math.pow(10, 18),
-        treasury: info.stablec.toString() / Math.pow(10, 18),
+        treasury,
       }
-
       dispatch(
         earthBalanceFn(result)
       );
@@ -188,6 +188,7 @@ export const getTreasury = async () => {
     const web3 = new Web3(new Web3.providers.HttpProvider(provider));
     const contract = new web3.eth.Contract(EarthTreasuryJSON.abi, EarthTreasuryAddress);
     const info = await contract?.methods?.intrinsicValueRatio()?.call();
+    console.log({ info });
     return {
       info,
       treasury: (info?.stablec?.toString() / Math.pow(10, 18))?.toFixed(2)

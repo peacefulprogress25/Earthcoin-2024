@@ -4,6 +4,7 @@ const initialState = {
   wallet: "",
   walletBalance: "0.0",
   accounts: [],
+  chainId: '',
   balance: {
     earth: 0,
     fruit: 0,
@@ -21,11 +22,13 @@ const profileSlice = createSlice({
   initialState,
   reducers: {
     connectWalletFn: (state, action) => {
-
       return { ...state, wallet: action.payload };
     },
     balanceFn: (state, action) => {
       return { ...state, balance: { ...state.balance, ...action.payload } };
+    },
+    networkFn: (state, action) => {
+      return { ...state, chainId: action.payload }
     },
     earthBalanceFn: (state, action) => {
       return {

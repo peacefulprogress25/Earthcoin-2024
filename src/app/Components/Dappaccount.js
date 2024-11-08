@@ -58,7 +58,7 @@ export default function AccountDapp() {
                 <div className='flex w-full gap-2 mt-2'>
                     <div className='flex flex-col items-center px-4 py-2 w-[50%] drop-shadow rounded-lg bg-white'>
                         <p className='font-inter font-semibold text-[18px] text-[#25292E]'>
-                            {balanceObj?.earth?.toFixed(2)}
+                            {balanceObj?.earth && balanceObj?.earth?.toFixed(2)}
                         </p>
                         <p className='font-inter font-semibold text-[12px] text-[#101828]'>
                             $EARTH Balance
@@ -66,7 +66,7 @@ export default function AccountDapp() {
                     </div>
                     <div className='flex flex-col items-center px-4 py-2 w-[50%]  drop-shadow rounded-lg bg-white'>
                         <p className='font-inter font-semibold text-[18px] text-[#25292E]'>
-                            {balanceObj?.dai?.toFixed(2)}
+                            {balanceObj?.dai && balanceObj?.dai?.toFixed(2)}
                         </p>
                         <p className='font-inter font-semibold text-[12px] text-[#101828]'>
                             $DAI Balance
@@ -85,7 +85,7 @@ export default function AccountDapp() {
             <div className='flex w-full gap-2 px-6 py-4'>
                 <div className='flex flex-col items-center px-4 py-2 w-[50%] border-[1px] border-[#EAECF0] drop-shadow rounded-lg'>
                     <p className='font-inter font-semibold text-[18px] text-[#25292E]'>
-                        $ {earthBalance?.earth?.toFixed(2)}
+                        $ {earthBalance?.earth && earthBalance?.earth?.toFixed(2)}
                     </p>
                     <p className='font-inter font-semibold text-[12px] text-[#101828]'>
                         $EARTH Price
@@ -93,7 +93,7 @@ export default function AccountDapp() {
                 </div>
                 <div className='flex flex-col items-center px-4 py-2 w-[50%] border-[1px] border-[#EAECF0] drop-shadow rounded-lg '>
                     <p className='font-inter font-semibold text-[18px] text-[#25292E]'>
-                        $ {earthBalance?.treasury?.toFixed(2)}
+                        $ {earthBalance?.treasury}
                     </p>
                     <p className='font-inter font-semibold text-[12px] text-[#101828]'>
                         Treasury Size
