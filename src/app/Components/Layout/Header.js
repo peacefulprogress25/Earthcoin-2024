@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { profileState } from "../../redux/profileSlice";
 import { formatWalletAddress } from "../../Views/Dapp/utils";
 import { HiMenu, HiX } from "react-icons/hi";
+import Network from "../../Views/Dapp/Network"
 
 const logo = "/assets/images/logo.png";
 const avatar = "/assets/images/dapp-Avatar.png";
@@ -270,6 +271,7 @@ export default function Header() {
           {pathname === "/dapp" ? (
             profile?.wallet ? (
               <div className="flex justify-end gap-2">
+                <Network />
                 <button onClick={() => setAccountDapp(true)}>
                   <div className=" relative ml-auto text-white font-inter flex h-10  items-center justify-end rounded-lg px-[2px] text-sm">
                     <div className="w-[11rem] rounded-lg bg-[#EC8000] h-9 flex justify-between px-3 items-center ">

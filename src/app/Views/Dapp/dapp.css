@@ -250,3 +250,20 @@
   width: 100%;
   border-radius: 16px;
 }
+.ant-select-selection-item,.ant-select-selection-placeholder,.ant-select-arrow{
+  color: white !important;
+}
+.ant-select-selector{
+  font-size: 14px !important;
+  background-color: #EC8000 !important;
+  outline: none !important;
+  border: none !important;
+ 
+}
+.ant-select-outlined{
+  outline: none !important;
+  border: none !important;
+}
+.ant-select{
+  margin-top: 4px !important;
+}
