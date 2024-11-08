@@ -60,6 +60,7 @@ const {
   earthBalanceFn,
   disconnectWalletFn,
   termsConditionFn,
+  networkFn
 } = profileSlice.actions;
 
 export {
@@ -70,4 +71,5 @@ export {
   disconnectWalletFn,
   termsConditionFn,
   earthBalanceFn,
+  networkFn
 };

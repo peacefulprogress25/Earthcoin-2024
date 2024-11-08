@@ -12,19 +12,81 @@ export const NotifyUser = (obj) => {
   toast[obj.type](obj.message);
 };
 
-const checkNetwork = async () => {
-  if (typeof window?.ethereum !== "undefined") {
-    let provider = new ethers.providers.Web3Provider(window?.ethereum);
-    provider = await provider.getNetwork();
 
-    if (provider.chainId !== parseInt(envObj.chainId)) {
-      NotifyUser({
-        type: "error",
-        message: "Change your network to " + envObj.network,
+
+const addNetwork = async (obj) => {
+  try {
+    if (window?.ethereum !== undefined) {
+      const provider = window.ethereum;
+      await provider.request({
+        method: "wallet_addEthereumChain",
+        params: [obj],
       });
+
+      connectWallet();
+      return true;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const switchNetwork = async (obj) => {
+  try {
+    const provider = window.ethereum;
+    const response = await provider.request({
+      method: "wallet_switchEthereumChain",
+      params: [{ chainId: obj.chainId }],
+    });
+    return true;
+  } catch (error) {
+    if (error.code === 4902) {
+      return addNetwork(obj);
+    }
+    console.log(error);
+  }
+};
+
+const checkNetwork = async (obj) => {
+  try {
+    if (typeof window.ethereum !== "undefined") {
+      const provider = window.ethereum;
+      let chainId = await provider.chainId;
+
+      if (chainId === obj.chainId) {
+        return true;
+      }
+      return switchNetwork(obj);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+
+export const VerifyNetwork = async (obj) => {
+  try {
+    const getNetworkResult = await checkNetwork(obj);
+    if (!getNetworkResult) {
       return;
     }
-    return true;
+    connectWallet();
+    return getNetworkResult;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const connectWalletFn = async (obj) => {
+  try {
+    const getNetworkResult = await checkNetwork(obj);
+    if (!getNetworkResult) {
+      return;
+    }
+    return connectWallet();
+  } catch (error) {
+    console.error(error);
   }
 };
 
