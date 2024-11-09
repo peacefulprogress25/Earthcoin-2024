@@ -41,7 +41,7 @@ export const earthAmount = async () => {
     return;
   }
   const eartherc20Address = getAddressFn()?.earthERC20;
-  if (typeof window?.ethereum !== undefined) {
+  if (typeof window?.ethereum !== undefined && eartherc20Address) {
     let provider = new ethers.providers.Web3Provider(window?.ethereum);
     let signer = provider.getSigner();
     const contract = new ethers.Contract(
@@ -68,7 +68,7 @@ export const allowance = async () => {
     return;
   }
   const fruitAddress = getAddressFn()?.fruit;
-  if (typeof window?.ethereum !== undefined) {
+  if (typeof window?.ethereum !== undefined && fruitAddress) {
     const provider = new ethers.providers.Web3Provider(window?.ethereum);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(fruitAddress, FruitJSON.abi, signer);
@@ -93,7 +93,7 @@ export const getBalance = async () => {
   }
   const stableCoinAddress = getAddressFn()?.stableCoin;
 
-  if (typeof window?.ethereum !== undefined) {
+  if (typeof window?.ethereum !== undefined && stableCoinAddress) {
     const providers = new ethers.providers.Web3Provider(window?.ethereum);
     const signer = providers.getSigner();
     const contract = new ethers.Contract(
@@ -117,10 +117,10 @@ export const getBalance = async () => {
 };
 
 export const totalEarth = async () => {
-  if (typeof window?.ethereum !== undefined) {
+  const presaleAddress = getAddressFn()?.presale;
+  if (typeof window?.ethereum !== undefined && presaleAddress) {
     const provider = new ethers.providers.Web3Provider(window?.ethereum);
     const signer = provider.getSigner();
-    const presaleAddress = getAddressFn()?.presale;
     const presaleContract = new ethers.Contract(
       presaleAddress,
       Presale.abi,
@@ -136,9 +136,6 @@ export const totalEarth = async () => {
 
       const mintMultiple = await presaleContract.mintMultiple();
       let t = mintMultiple.toString() / 10;
-
-      console.log(info.stablec);
-
       let result = {
         earth:
           Math.round(100 * (parseFloat(ratio) * parseFloat(t))) /
@@ -198,7 +195,6 @@ export const getTreasury = async () => {
     const web3 = new Web3(new Web3.providers.HttpProvider(provider));
     const contract = new web3.eth.Contract(EarthTreasuryJSON.abi, EarthTreasuryAddress);
     const info = await contract?.methods?.intrinsicValueRatio()?.call();
-    console.log({ info });
     return {
       info,
       treasury: (info?.stablec?.toString() / Math.pow(10, 18))?.toFixed(2)
