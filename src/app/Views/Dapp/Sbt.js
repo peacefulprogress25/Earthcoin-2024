@@ -1,5 +1,5 @@
 import { CgDanger } from "react-icons/cg";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { envObj } from "../../utils/env";
 import { Contract, providers, utils, ethers } from "ethers";
 import Web3Modal from "web3modal";
@@ -11,10 +11,10 @@ import { BtnLoader, Loader } from "../../Components/Loader";
 import { nexaflowPageObj } from "../../utils/constants";
 import NodeDapp from "./Node";
 import { TwitterShareButton } from "react-share";
+import { AddressContext } from "../../Providers";
 
 const twitter = "/assets/icons/twitter.png";
 const exclamationIcon = "/assets/images/exclamation-mark.png"
-const soulboundAddress = envObj.soulboundAddress;
 const templateId = envObj.personaTemplateId;
 const twitterContent = `I just became an $EARTH NODE to create a mycelium network that makes climate change history, regeneration a reality and seeds the solarpunk paradigm.
 
@@ -24,6 +24,8 @@ const twitterContent = `I just became an $EARTH NODE to create a mycelium networ
 
 export default function Sbt() {
   const { showMessage } = useNotification();
+  const { addressObj } = useContext(AddressContext)
+  const soulboundAddress = addressObj?.soulbound;
   const [pageStatus, setPageStatus] = useState({
     verifyStatus: "",
     verify: false,

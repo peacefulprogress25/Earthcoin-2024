@@ -1,4 +1,4 @@
-export default {
+export const contractAddressList = {
     137: {
         earthERC20: "0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
         earthStaking: "0xFD4791764e27Fe0Bac5A2BfDf2ABd5745EC588DC",

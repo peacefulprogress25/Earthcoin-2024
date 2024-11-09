@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import ImageView from "../../Components/ImageView";
 import Sbt from "./Sbt";
 import Trade from "./Trade";
@@ -24,6 +24,8 @@ import {
 import Node from "./Node";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
+import { networks } from "./constants/network";
+import { AddressContext } from "../../Providers";
 
 
 const GradientBg = "/assets/images/dapp-bg.png";
@@ -32,10 +34,7 @@ const disconnect = "/assets/images/Disconnect Wallet.png";
 const connect = "/assets/images/Connect wallet.png";
 const wallet = "/assets/icons/wallet-white.svg";
 
-const soulboundAddress = envObj.soulboundAddress;
-const EarthTreasuryAddress = envObj.EarthTreasuryAddress;
-const PresaleAddress = envObj.presaleAddress;
-const EarthStakingAddress = envObj.earthstakingAddress;
+
 
 export default function Dapp() {
   const [showPopup, setShowPopup] = useState(false);
@@ -46,12 +45,15 @@ export default function Dapp() {
     wallet: account,
     balance: balanceObj,
     earthBalance,
+    chainId
   } = useSelector(profileState);
   const [showContent, setShowContent] = useState(true);
+  const { addressObj } = useContext(AddressContext)
   const searchParams = useSearchParams()
   let pageType = searchParams.get("type")
   const router = useRouter()
 
+  const soulboundAddress = addressObj?.soulbound;
 
   useEffect(() => {
     if (pageType === 'node') {
@@ -102,23 +104,15 @@ export default function Dapp() {
     },
   ];
 
-  const [userData, setUserData] = useState({
-    earth: "",
-    fruit: "",
-  });
-  const [earth, setEarth] = useState();
 
-  const [currentNetwork, setcurrentNetwork] = useState("");
 
   const networkChanged = async (chainId) => {
     if (typeof window?.ethereum !== undefined) {
-      let provider = new ethers.providers.Web3Provider(window?.ethereum);
-      provider = await provider.getNetwork();
-      provider.name = provider.name === "unknown" ? "localhost" : provider.name;
-      setcurrentNetwork(provider.name);
+      const selectedNetwork = networks.filter(obj => obj.chainId === chainId)
+
       showMessage({
         type: "success",
-        value: `Chain-id: ${provider.chainId} \n Network name: ${provider.name}`,
+        value: `Network Switched to ${selectedNetwork[0].chainName}`,
       });
     }
   };
@@ -130,22 +124,22 @@ export default function Dapp() {
 
   }, []);
 
-  const handleAccountChange = (...args) => {
-    connectWalletFn({
-      wallet: "",
-      setShowMenu: "",
-      value: "Account Changed",
-    });
-  };
+  // const handleAccountChange = (...args) => {
+  //   connectWalletFn({
+  //     wallet: "",
+  //     setShowMenu: "",
+  //     value: "Account Changed",
+  //   });
+  // };
 
-  useEffect(() => {
-    if (typeof window?.ethereum !== undefined) {
-      window?.ethereum?.on("accountsChanged", handleAccountChange);
-      return () => {
-        window?.ethereum?.removeListener("accountsChanged", handleAccountChange);
-      };
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window?.ethereum !== undefined) {
+  //     window?.ethereum?.on("accountsChanged", handleAccountChange);
+  //     return () => {
+  //       window?.ethereum?.removeListener("accountsChanged", handleAccountChange);
+  //     };
+  //   }
+  // }, []);
 
   const isMinted = async (account) => {
     if (typeof window?.ethereum !== undefined) {
@@ -331,7 +325,6 @@ export default function Dapp() {
                   <Claim setScreen={setScreen} />
                 ) : screen === "MINT" && account ? (
                   <Mint
-                    earth={earth}
                     totalEarth={totalEarth}
                     setHeading={setScreen}
                   />

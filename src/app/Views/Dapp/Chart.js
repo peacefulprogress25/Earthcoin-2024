@@ -3,11 +3,12 @@ import * as d3 from "d3";
 import { connectWallet } from "./utils";
 import { useSelector } from "react-redux";
 import { profileState } from "../../redux/profileSlice";
+import { store } from "../../redux";
 
 const Chart = ({ setScreen, screen, callBack }) => {
   const chartRef = useRef();
   const [disconnect, setDisconnect] = useState(false);
-  const { wallet } = useSelector(profileState);
+  const { wallet, chainId } = useSelector(profileState);
 
   const init = [
     { name: "MINT", value: 200, color: "#adb745" },
@@ -193,7 +194,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
           setScreen("DISCONNECT WALLET");
         } else {
 
-          setScreen(d.data.name);
+          chainId && setScreen(d.data.name);
         }
       })
       //Create the new invisible arcs and flip the direction for the bottom half labels
@@ -308,6 +309,8 @@ const Chart = ({ setScreen, screen, callBack }) => {
       .style("z-index", "2")
       .on("click", function (event, d) {
         // Reset the fill color of all slices to white
+        const chainId = store.getState().profile.chainId
+        if (d.name === "CONNECT WALLET" && !chainId) return
         svg.selectAll(".donutArcSlices").style("fill", "#fff");
         svg.selectAll(".donutText").style("fill", "#000");
         // Find the corresponding slice and change its color
@@ -317,7 +320,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
             return sliceData.data.name === d.name;
           })
           .style("fill", d.color);
-
+        console.log(d.name);
         // Update the screen with the clicked slice's name
         setScreen(d.name);
         tooltip.style("visibility", "hidden")

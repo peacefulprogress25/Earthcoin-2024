@@ -7,6 +7,7 @@ import { ethers } from "ethers";
 import { toast } from "sonner";
 import { store } from "../../redux";
 import { envObj } from "../../utils/env";
+import { networks } from "./constants/network";
 
 export const NotifyUser = (obj) => {
   toast[obj.type](obj.message);
@@ -23,7 +24,7 @@ const addNetwork = async (obj) => {
         params: [obj],
       });
 
-      connectWallet();
+      // connectWallet();
       return true;
     }
   } catch (error) {
@@ -71,7 +72,7 @@ export const VerifyNetwork = async (obj) => {
     if (!getNetworkResult) {
       return;
     }
-    connectWallet();
+    // connectWallet();
     return getNetworkResult;
   } catch (error) {
     console.error(error);
@@ -90,10 +91,21 @@ export const VerifyNetwork = async (obj) => {
 //   }
 // };
 
-export const connectWallet = async ({ wallet, setShowMenu, message }) => {
+export const connectWallet = async () => {
   try {
+    const wallet = store.getState().profile.wallet;
     if (!wallet) {
-      const getNetworkResult = await checkNetwork();
+
+      const chainId = store.getState().profile.chainId;
+
+      const selectedNetwork = networks.filter(obj => obj?.chainId === chainId);
+
+      if (!selectedNetwork[0]) return;
+
+      console.log(selectedNetwork);
+
+      const getNetworkResult = await checkNetwork(selectedNetwork[0]);
+      console.log(getNetworkResult);
       if (!getNetworkResult) {
         return;
       }
@@ -109,7 +121,7 @@ export const connectWallet = async ({ wallet, setShowMenu, message }) => {
         store.dispatch(balanceFn(ethers.utils.formatEther(balance)));
         NotifyUser({
           type: "success",
-          message: message ? message : "Wallet Connected",
+          message: "Wallet Connected",
         });
         return true
       } else {
@@ -119,7 +131,7 @@ export const connectWallet = async ({ wallet, setShowMenu, message }) => {
       store.dispatch(disconnectWalletFn());
       NotifyUser({ type: "success", message: "Wallet Disconnected" });
     }
-    setShowMenu && setShowMenu(false);
+
   } catch (error) {
     console.error(error);
   }

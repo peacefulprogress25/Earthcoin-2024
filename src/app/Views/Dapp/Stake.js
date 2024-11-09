@@ -1,5 +1,5 @@
 import { Switch } from "antd";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./dapp.css";
 import { envObj } from "../../utils/env";
 import {
@@ -15,10 +15,9 @@ import { useSelector } from "react-redux";
 import { allowance, earthAmount } from "./balance";
 import TransactionPopup from "./TransactionPopup";
 import Progress from "./Progress";
+import { AddressContext } from "../../Providers";
 
-const earthstakingAddress = envObj.earthstakingAddress;
-const eartherc20Address = envObj.eartherc20Address;
-const fruitAddress = envObj.fruitAddress;
+
 
 export default function Stake() {
   const [stake, setStake] = useState(true);
@@ -74,6 +73,12 @@ function UnstakeFunction({ stake, setStake }) {
 
   const [result, setResult] = useState(0);
   const [accFactor, setAccFactor] = useState(0);
+
+  const { addressObj } = useContext(AddressContext)
+
+
+  const earthstakingAddress = addressObj.earthStaking;
+  const fruitAddress = addressObj.fruit;
 
   const getAccFactor = async () => {
     if (typeof window?.ethereum !== undefined) {
@@ -312,6 +317,11 @@ function StakeFunction({ stake, setStake }) {
   const [accFactor, setAccFactor] = useState(0);
   const { showMessage } = useNotification();
   const [transaction, setTransaction] = useState(false)
+  const { addressObj } = useContext(AddressContext)
+
+
+  const earthstakingAddress = addressObj.earthStaking;
+  const eartherc20Address = addressObj.earthERC20;
 
   const initState = {
     increaseAllowance: false,

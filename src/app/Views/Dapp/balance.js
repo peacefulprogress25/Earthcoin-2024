@@ -13,18 +13,25 @@ import Soulbound from "./abi/SoulBound.json";
 import Presale from "./abi/Presale.json";
 import { toast } from "sonner";
 import Web3 from "web3";
+import { contractAddressList, networks } from "./constants/network";
 
 const { dispatch } = store;
 const dexscreener =
   "https://api.dexscreener.com/latest/dex/pairs/polygon/0x40da612b7803892ed002e4f9effd746dc3cf4a5c";
 
-const eartherc20Address = envObj.eartherc20Address;
-const fruitAddress = envObj.fruitAddress;
-const stableCoinAddress = envObj.stableCoinAddress;
-const EarthTreasuryAddress = envObj.EarthTreasuryAddress;
-const presaleAddress = envObj.presaleAddress;
 
 const getWallet = () => store.getState().profile.wallet;
+
+
+export const getAddressFn = () => {
+  try {
+    const storedChainId = store.getState().profile.chainId;
+    const chainId = storedChainId ? parseInt(storedChainId, 16) : networks[0].chainId
+    return contractAddressList[chainId]
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 export const earthAmount = async () => {
 
@@ -33,7 +40,7 @@ export const earthAmount = async () => {
     console.error("wallet not found");
     return;
   }
-
+  const eartherc20Address = getAddressFn()?.earthERC20;
   if (typeof window?.ethereum !== undefined) {
     let provider = new ethers.providers.Web3Provider(window?.ethereum);
     let signer = provider.getSigner();
@@ -60,7 +67,7 @@ export const allowance = async () => {
     console.error("wallet not found");
     return;
   }
-
+  const fruitAddress = getAddressFn()?.fruit;
   if (typeof window?.ethereum !== undefined) {
     const provider = new ethers.providers.Web3Provider(window?.ethereum);
     const signer = provider.getSigner();
@@ -84,6 +91,7 @@ export const getBalance = async () => {
     console.error("wallet not found");
     return;
   }
+  const stableCoinAddress = getAddressFn()?.stableCoin;
 
   if (typeof window?.ethereum !== undefined) {
     const providers = new ethers.providers.Web3Provider(window?.ethereum);
@@ -112,6 +120,7 @@ export const totalEarth = async () => {
   if (typeof window?.ethereum !== undefined) {
     const provider = new ethers.providers.Web3Provider(window?.ethereum);
     const signer = provider.getSigner();
+    const presaleAddress = getAddressFn()?.presale;
     const presaleContract = new ethers.Contract(
       presaleAddress,
       Presale.abi,
@@ -184,6 +193,7 @@ export const addToken = async () => {
 }
 export const getTreasury = async () => {
   try {
+    const EarthTreasuryAddress = getAddressFn()?.earthTreasury;
     const provider = `https://polygon-mainnet.infura.io/v3/${envObj.infuraId}`
     const web3 = new Web3(new Web3.providers.HttpProvider(provider));
     const contract = new web3.eth.Contract(EarthTreasuryJSON.abi, EarthTreasuryAddress);

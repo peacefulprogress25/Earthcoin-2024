@@ -4,17 +4,16 @@ import Presale from "./abi/Presale.json";
 import { StableCoin } from "./abi";
 import Soulbound from "./abi/SoulBound.json";
 import { ethers } from "ethers";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useSelector } from "react-redux";
 import { profileState } from "../../redux/profileSlice";
 import useNotification from "../../Hooks/useNotification";
 import Progress from "./Progress";
 import { TwitterShareButton } from "react-share";
+import { AddressContext } from "../../Providers";
 
 
-const soulboundAddress = envObj.soulboundAddress;
-const stableCoinAddress = envObj.stableCoinAddress;
-const presaleAddress = envObj.presaleAddress;
+
 
 export default function Mint({ totalEarth }) {
   const [showTransactionPopup, setShowTransactionPopup] = useState(false);
@@ -32,6 +31,12 @@ export default function Mint({ totalEarth }) {
   const [result, setResult] = useState("");
   const [transaction, setTransaction] = useState(false)
   const [twitterShare, setTwitterShare] = useState(false)
+  const { addressObj } = useContext(AddressContext)
+
+
+  const soulboundAddress = addressObj?.soulbound;
+  const stableCoinAddress = addressObj?.stableCoin;
+  const presaleAddress = addressObj?.presale;
 
   const isMinted = async () => {
     if (typeof window?.ethereum !== undefined) {

@@ -3,19 +3,21 @@ import ImageView from "../../Components/ImageView";
 import { envObj } from "../../utils/env";
 import ClaimJson from "./abi/TokenAirdrop.json";
 import { ethers } from "ethers";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useSelector } from "react-redux";
 import { profileState } from "../../redux/profileSlice";
 import useNotification from "../../Hooks/useNotification";
 import { BtnLoader, Loader } from "../../Components/Loader";
 import { TwitterShareButton } from "react-share";
+import { AddressContext } from "../../Providers";
 
 const claim = "/assets/images/Claim illustration.png";
 
-const claimAddress = envObj.claimAddress;
 
 function Claim({ setScreen }) {
   const { showMessage } = useNotification();
+  const { addressObj } = useContext(AddressContext)
+  const claimAddress = addressObj.claim;
   const [loading, setLoading] = useState({
     whitelist: false,
     claim: false,
