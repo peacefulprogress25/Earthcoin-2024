@@ -1,5 +1,5 @@
 export const contractAddressList = {
-    137: {
+    137: { // polygon mainnet
         earthERC20: "0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
         earthStaking: "0xFD4791764e27Fe0Bac5A2BfDf2ABd5745EC588DC",
         earthTreasury: "0x4Bd65205422293eCC5Fb00cD018692Fa4Bb38BdF",
@@ -10,7 +10,7 @@ export const contractAddressList = {
         stableCoin: "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
         claim: "0x0DBAd79b9dA051d20857499f8fa1bDCF2a4dfE84"
     },
-    44787: {
+    44787: { //testnet
         earthERC20: "0xB30918C8Ea73D4a40A9bb7b800fb743F6Ef52489",
         earthStaking: "0x17a692cAb04ECc3706BA057C577E5218e251Bc69",
         earthTreasury: "0x14C0dcfC7cF3Cb0512B273F15a17EA5F7370ACb8",
@@ -21,7 +21,7 @@ export const contractAddressList = {
         stableCoin: "0x94c52bdAc17388739c70eC60c8eb8137069E544C",
         claim: "0x15e522a4b3A03edC4130e09D0B88Bda90f03E96F"
     },
-    42220: {
+    42220: { // Celo Mainnet
         earthERC20: "0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
         earthStaking: "0xFD4791764e27Fe0Bac5A2BfDf2ABd5745EC588DC",
         earthTreasury: "0xDD7879E58E33706151a0B57deBB1c5308584a4Cc",
@@ -48,16 +48,16 @@ export const networks = [
             decimals: 18,
         },
     },
-    {
-        chainName: "Celo Testnet",
-        chainId: "0xaef3",
-        rpcUrls: ["https://alfajores-forno.celo-testnet.org"],
-        blockExplorerUrls: ["https://alfajores.celoscan.io"],
-        nativeCurrency: {
-            symbol: "CELO",
-            decimals: 18,
-        },
-    },
+    // {
+    //     chainName: "Celo Testnet",
+    //     chainId: "0xaef3",
+    //     rpcUrls: ["https://alfajores-forno.celo-testnet.org"],
+    //     blockExplorerUrls: ["https://alfajores.celoscan.io"],
+    //     nativeCurrency: {
+    //         symbol: "CELO",
+    //         decimals: 18,
+    //     },
+    // },
     {
         chainName: "Celo",
         chainId: "0xa4ec",
