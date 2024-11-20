@@ -4,12 +4,11 @@ import { Toaster } from "sonner";
 import ReactGA from "react-ga4";
 import { Provider as ReduxProvider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { persistStore } from "redux-persist";
-import { store } from "./redux";
+import { store, persistor } from "./redux";
 import { usePathname } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
 import { envObj } from "./utils/env";
-export const persistor = persistStore(store);
+
 
 export const AddressContext = createContext()
 export default function Providers({ children }) {
