@@ -186,7 +186,7 @@ export default function Header() {
             </Link>
             <Link
               className="relative flex items-center h-full gap-1"
-              href="/thesis"
+              href=""
               onMouseEnter={() => setShowresourceMenu(true)}
               onMouseLeave={() => setShowresourceMenu(false)}
             >
@@ -254,7 +254,7 @@ export default function Header() {
               )}
             </Link>
             <Link href="/media">Media</Link>
-            <Link href="/dashboard">Dashboard</Link>
+            {/* <Link href="/dashboard">Dashboard</Link> */}
           </div>
         </div>
 
@@ -300,6 +300,12 @@ export default function Header() {
             ) : null
           ) : (
             <div className="flex justify-end gap-2">
+              <Link
+                href="/dashboard"
+                className="w-[80px] ml-auto text-[#475467] font-inter font-semibold flex h-10 items-center justify-center rounded-md p-2 text-sm"
+              >
+                Dashboard
+              </Link>
               <button
                 className="w-[80px] relative ml-auto text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
                 onClick={() => setShowUniswap(true)}
