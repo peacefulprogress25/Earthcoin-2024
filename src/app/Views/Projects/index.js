@@ -14,13 +14,13 @@ export default function Project() {
       section: "All",
     },
     {
-      section: "Clean Energy",
+      section: "clean Energy",
     },
     {
       section: "Regenerative Agriculture",
     },
     {
-      section: "Clean Transport",
+      section: "clean Transport",
     },
     {
       section: "Ecosystem Conservation",
@@ -60,9 +60,9 @@ export default function Project() {
 
       </div>
       <ProjectList projects={projects} />
-      <div className="max-w-screen-2xl mx-auto flex items-center justify-center h-[40vh]  w-full px-[6%]">
+      {/* <div className="max-w-screen-2xl mx-auto flex items-center justify-center h-[40vh]  w-full px-[6%]"> */}
         {/* <Faq faq={faq} /> */}
-        <Link
+        {/* <Link
           className="w-[80px] sm:w-[100px]  text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs sm:text-sm"
           href={buttonConfig?.dapp_footer_banner?.link || ""}
           target={
@@ -73,7 +73,7 @@ export default function Project() {
         >
           {buttonConfig?.dapp_footer_banner?.title}
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

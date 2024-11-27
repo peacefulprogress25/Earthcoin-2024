@@ -27,7 +27,7 @@ const solarpunk = "/assets/images/solarpunk.png";
 
 export default function Thesis() {
   const [fundingData, setFundingData] = useState([]);
-  const [title, setTitle] = useState("Clean Energy");
+  const [title, setTitle] = useState("clean Energy");
   const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function Thesis() {
       percent: "14.14%",
     },
     {
-      title: "Clean Energy",
+      title: "clean Energy",
       percent: "40.40%",
     },
     {
@@ -63,7 +63,7 @@ export default function Thesis() {
       percent: "10.10%",
     },
     {
-      title: "Clean Transport",
+      title: "clean Transport",
       percent: "20.20%",
     },
   ];
@@ -72,7 +72,7 @@ export default function Thesis() {
       title: "Regenerative Agriculture",
     },
     {
-      title: "Clean Transport",
+      title: "clean Transport",
     },
     {
       title: "Ecosystem Conservation",
@@ -81,7 +81,7 @@ export default function Thesis() {
       title: "Solarpunk Spaces",
     },
     {
-      title: "Clean Energy",
+      title: "clean Energy",
     },
   ];
   return (
@@ -274,13 +274,13 @@ export default function Thesis() {
                     />
                   </div>
                   <div
-                    className={`w-full h-2 ${power.title === "Clean Energy"
+                    className={`w-full h-2 ${power.title === "clean Energy"
                       ? "bg-[#486D2F]"
                       : power.title === "Regenerative Agriculture"
                         ? "bg-[#F4AB1F]"
                         : power.title === "Ecosystem Conservation"
                           ? "bg-[#B2BC45]"
-                          : power.title === "Clean Transport"
+                          : power.title === "clean Transport"
                             ? "bg-[#EC8000]"
                             : power.title === "Solarpunk Spaces"
                               ? "bg-[#045047]"
@@ -345,11 +345,11 @@ export default function Thesis() {
               </div>
             </div>
           )}
-          {title === "Clean Energy" && (
+          {title === "clean Energy" && (
             <div className="border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] h-full py-6">
               <div className="lg:w-[60%]">
                 <p className="text-[#101828] font-semibold text-left max-[480px]:text-[12px]  text-[14px] sm:text-[18px] mr-10 font-inter">
-                  Clean Energy
+                  clean Energy
                 </p>
                 <div className="mt-6">
                   <p className="text-[#475467] text-center sm:text-left font-normal max-[480px]:text-[9px]  text-[16px] lg:text-[14px] font-inter">
@@ -437,11 +437,11 @@ export default function Thesis() {
               </div>
             </div>
           )}
-          {title === "Clean Transport" && (
+          {title === "clean Transport" && (
             <div className="border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6">
               <div className="lg:w-[60%]">
                 <p className="text-[#101828] font-semibold text-left  text-[14px] max-[480px]:text-[12px] sm:text-[18px] mr-10 font-inter">
-                  Clean Transport
+                  clean Transport
                 </p>
                 <div className="mt-6">
                   <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] max-[480px]:text-[9px] lg:text-[14px] font-inter">
@@ -526,7 +526,7 @@ export default function Thesis() {
                     management, aiming to become self sustainable entities.
                   </p>
                   {/* <ol className="list-decimal mt-4 pl-4 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter">
-                  <li>) Clean material manufacturing (steel, concrete etc.)</li>
+                  <li>) clean material manufacturing (steel, concrete etc.)</li>
                   <br />
                   <li>) Energy storage</li>
                   <br />
@@ -539,7 +539,7 @@ export default function Thesis() {
                   <br />
                   <li>) Energy Efficiency</li>
                   <br />
-                  <li>) Clean Public transport</li>
+                  <li>) clean Public transport</li>
                   <br />
                   <li>) Tech for Solarpunk paradigm</li>
                 </ol> */}
@@ -579,11 +579,11 @@ export default function Thesis() {
                         ? "bg-[#F4AB1F]"
                         : chart.title === "Ecosystem Conservation"
                           ? "bg-[#B2BC45]"
-                          : chart.title === "Clean Energy"
+                          : chart.title === "clean Energy"
                             ? "bg-[#486D2F]"
                             : chart.title === "Solarpunk Spaces"
                               ? "bg-[#045047]"
-                              : chart.title === "Clean Transport"
+                              : chart.title === "clean Transport"
                                 ? "bg-[#EC8000]"
                                 : ""
                       } w-[5px]  -left-3 top-[8px] absolute h-[5px] rounded-full`}
@@ -690,8 +690,8 @@ export default function Thesis() {
                   {" "}
                   positive <br /> externalities
                 </span>{" "}
-                - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient
-                rich <br /> food, Clean Water, Energy Independence, reducing
+                - clean Air, Healthy soil, Increasing Biodiversity, Nutrient
+                rich <br /> food, clean Water, Energy Independence, reducing
                 pollution etc.
               </p>
             </div>
@@ -713,8 +713,8 @@ export default function Thesis() {
                     {" "}
                     positive <br /> externalities
                   </span>{" "}
-                  - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient
-                  rich <br /> food, Clean Water, Energy Independence, reducing
+                  - clean Air, Healthy soil, Increasing Biodiversity, Nutrient
+                  rich <br /> food, clean Water, Energy Independence, reducing
                   pollution etc.
                 </p>
               </div>
@@ -792,8 +792,8 @@ export default function Thesis() {
               <span className='text-[#EC8000] font-semibold'>
                 positive externalities
               </span>{" "}
-              - Clean Air, Healthy soil, Increasing Biodiversity, Nutrient rich
-              food, Clean Water, Energy Independence, reducing pollution etc.
+              - clean Air, Healthy soil, Increasing Biodiversity, Nutrient rich
+              food, clean Water, Energy Independence, reducing pollution etc.
             </p>
           </li>
           <li className='mb-2 text-[#475467] text-center sm:text-left font-normal  text-[16px] font-inter'>

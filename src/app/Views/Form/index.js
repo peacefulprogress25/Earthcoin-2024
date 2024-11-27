@@ -104,7 +104,7 @@ export default function Form() {
 
   const sectorList = [
     {
-      sector: "Clean Energy",
+      sector: "clean Energy",
     },
     {
       sector: "Ecosystem Conservation",
@@ -116,7 +116,7 @@ export default function Form() {
       sector: "Climate Tech",
     },
     {
-      sector: "Clean Transport",
+      sector: "clean Transport",
     },
     {
       sector: "Solarpunk Society",

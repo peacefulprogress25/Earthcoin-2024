@@ -137,45 +137,57 @@ export default function EarthNode() {
                   ".Mui-active .MuiStepContent-root": {
                     borderLeft: "6px solid  #EAECF0 !important",
                   },
+                  "& .MuiStepContent-root": {
+          borderLeft:
+            index === communityList.length - 1
+              ? "none" // Remove border for the last step
+              : "6px solid #EC8000", // Default border
+            },
                   ".Mui-completed .MuiStepIcon-root": {
                     width: " 0.8em",
                     height: "0.8em",
                   },
-                  ".MuiSvgIcon-root-MuiStepIcon-root.Mui-completed": {
-                    color: "#EC8000",
-                  },
-                  ".MuiSvgIcon-root-MuiStepIcon-root.Mui-active": {
-                    width: " 0.8em",
-                    height: "0.8em",
-                    color: "#EC8000",
-                  },
-                  "& .Mui-active": {
-                    "&.MuiStepIcon-root": {
-                      fill: "#EAECF0 !important",
-                      width: " 0.8em",
-                      height: "0.8em",
-                    },
-                    "& .MuiStepIcon-text": {
-                      fill: "#000",
-                      fontSize: "12px",
-                    },
-                  },
-                  "& .MuiStepIcon-text": {
-                    fill: "white",
-                    fontSize: "14px",
-                    fontWeight: "600",
-                  },
-                  "& .Mui-completed": {
+                  ".MuiStepIcon-root.Mui-completed": {
+          color: "#EC8000", // Orange color for completed step
+        },
+        ".MuiStepIcon-root.Mui-active": {
+          color: "#EC8000", // Orange color for active step
+        },
+                  // ".MuiSvgIcon-root-MuiStepIcon-root.Mui-completed": {
+                  //   color: "#EC8000",
+                  // },
+                  // ".MuiSvgIcon-root-MuiStepIcon-root.Mui-active": {
+                  //   width: " 0.8em",
+                  //   height: "0.8em",
+                  //   color: "#EC8000",
+                  // },
+                  // "& .Mui-active": {
+                  //   "&.MuiStepIcon-root": {
+                  //     fill: "#EAECF0 !important",
+                  //     width: " 0.8em",
+                  //     height: "0.8em",
+                  //   },
+                  //   "& .MuiStepIcon-text": {
+                  //     fill: "#000",
+                  //     fontSize: "12px",
+                  //   },
+                  // },
+                  // "& .MuiStepIcon-text": {
+                  //   fill: "white",
+                  //   fontSize: "14px",
+                  //   fontWeight: "600",
+                  // },
+                  // "& .Mui-completed": {
                     "&.MuiStepIcon-root": {
                       fill: "#EC8000 !important",
                       width: " 0.8em",
                       height: "0.8em",
                     },
-                    "& .MuiStepIcon-text": {
-                      fill: "#fff",
-                      fontSize: "12px",
-                    },
-                  },
+                  //   "& .MuiStepIcon-text": {
+                  //     fill: "#fff",
+                  //     fontSize: "12px",
+                  //   },
+                  
                 }}
               >
                 <StepLabel>

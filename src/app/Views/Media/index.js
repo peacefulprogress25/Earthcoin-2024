@@ -1,7 +1,6 @@
 "use client";
 import ImageView from "../../Components/ImageView";
 import { LuArrowUpRight } from "react-icons/lu";
-import PostSlider from "./PostSlider";
 import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
 import Link from "next/link";
@@ -33,6 +32,8 @@ export default function Media() {
       section: "Podcasts",
     },
   ];
+
+ 
   useEffect(() => {
     const getPageByID = async () => {
       const page = await nexaflowApi.getPageByID({
@@ -49,11 +50,13 @@ export default function Media() {
 
     getPageByID();
   }, []);
-  const filteredPosts =
-    selectedCategory === "All"
-      ? post?.filter(post => post?.name)
-      : post?.filter(post => post?.name)?.filter((post) => post.category === selectedCategory);
 
+   const filteredPosts =
+    selectedCategory === "All"
+      ? post?.filter((post) => post?.name)
+      : post?.filter((post) => post?.name && post.category === selectedCategory);
+
+ 
   const hasContent = media.length > 0 || post.length > 0;
   return (
     <div>
@@ -91,9 +94,12 @@ export default function Media() {
                     {card?.name}
                   </p>
                   <div className="flex items-center justify-between">
-                    <p
-                      className={`text-[#101828]  font-inter font-semibold text-[16px]  ${index === 0 ? "font-syne text-[22px]" : ""
-                        }`}
+                  <p
+                      className={`text-[#101828] font-inter font-semibold text-[16px] ${
+                        index === 0
+                          ? "font-syne text-[22px]"
+                          : ""
+                      }`}
                     >
                       {card?.title}
                     </p>
@@ -123,7 +129,9 @@ export default function Media() {
             <Loader />
           </div>
         )}
-        <p className="text-[#101828] mt-8 font-syne text-center font-semibold text-[22px]">
+
+         {/* Filter Section */}
+         <p className="text-[#101828] mt-8 font-syne text-center font-semibold text-[22px]">
           All Posts
         </p>
         <div className="w-full cursor-pointer gap-4 sm:gap-12 border-y border-[#F2F4F7] flex px-2 items-center justify-center h-16">
@@ -131,28 +139,78 @@ export default function Media() {
             <p
               key={index}
               onClick={() => setSelectedCategory(option?.section)}
-              className={`font-inter text-[14px] sm:text-[14px] px-1 sm:px-4 font-semibold text-[#475467] ${selectedCategory === option.section ? " text-[#EC8000]" : ""
-                }`}
+              className={`font-inter text-[14px] sm:text-[14px] px-1 sm:px-4 font-semibold text-[#475467] ${
+                selectedCategory === option.section ? " text-[#EC8000]" : ""
+              }`}
             >
               {option.section}
             </p>
           ))}
         </div>
-        {filteredPosts && filteredPosts.length ? (
-          <PostSlider post={filteredPosts} />
-        ) : (filteredPosts && !filteredPosts.length) || !filteredPosts ? <div className="h-[60vh] w-full flex items-center justify-center">
-          <p className="font-syne text-md">No Posts</p>
-        </div> : (
-          <div className="h-[60vh] w-full flex items-center justify-center">
-            <Loader />
+
+       {/* Posts Section */}
+       {post.length > 0 ? (
+         filteredPosts && filteredPosts.length ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            {filteredPosts.map((post, index) => (
+              <Link
+                href={post?.link || ""}
+                target="_blank"
+                className="flex flex-col gap-4 group"
+                key={index}
+              >
+                <div className="relative">
+                  <ImageView
+                    src={post.img}
+                    alt={post.name}
+                    width={300}
+                    height={200}
+                    className="w-full h-[200px] object-cover rounded-md"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  {/* Orange Text at Bottom */}
+                <p className="text-[#EC8000] font-inter text-[12px] font-medium">
+                  {post?.name}
+                </p>
+                  <p className="text-[#101828] font-syne text-[16px] font-semibold">
+                    {post?.title}
+                  </p>
+                  <p className="text-[#475467] font-inter text-[14px] font-normal line-clamp-3">
+                    {post?.description}
+                  </p>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                    {post?.tags.map((tag, i) => (
+                      <p
+                        className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${colors[i]}`}
+                        key={i}
+                      >
+                        {tag?.tag}
+                      </p>
+                    ))}
+                  </div>
+
+              </Link>
+            ))}
           </div>
-        )}
+         ) : (
+          <div className="h-[60vh] w-full flex items-center justify-center">
+            <p className="font-syne text-md">No Posts</p>
+          </div>
+         )
+       ) : null}
+
+        {/* CTA Section */}
         <div className="flex flex-col items-center justify-center w-full p-8 rounded-md">
           {hasContent && (
             <Link
               className="w-[100px] mt-6 text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
               href={buttonConfig?.media_get_started?.link || ""}
-              target={buttonConfig?.media_get_started?.external ? "_blank" : "_self"}
+              target={
+                buttonConfig?.media_get_started?.external ? "_blank" : "_self"
+              }
             >
               {buttonConfig?.media_get_started?.title}
             </Link>

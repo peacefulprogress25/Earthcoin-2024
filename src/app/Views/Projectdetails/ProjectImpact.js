@@ -30,7 +30,7 @@ export default function ProjectImpact({ details }) {
   const impacts = [
     {
       icon: "/assets/icons/air.svg",
-      impact: "Clean Air",
+      impact: "clean Air",
     },
     {
       icon: "/assets/icons/climate.svg",

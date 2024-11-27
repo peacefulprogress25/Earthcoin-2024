@@ -80,10 +80,10 @@ export default function Work() {
           height={200}
           className="object-cover w-full mt-4"
         /> */}
-        <div className="relative  h-[89vh] w-3/4 flex items-center justify-center ">
+        <div className="relative h-auto w-full flex items-center justify-center">
           {loading ? (
-            <section className="absolute ">
-              <Loader />{" "}
+            <section className="absolute">
+              <Loader />
             </section>
           ) : null}
           <Video
@@ -91,8 +91,7 @@ export default function Work() {
             onLoadedData={() => {
               setLoading(false);
             }}
-            className={` object-fill w-full h-full  ${loading ? "none" : "block"
-              } `}
+            className={`object-fill w-full h-full ${loading ? "hidden" : "block"}`}
           />
           {/* <div
             className={`absolute top-0 w-full h-full ${loading ? "none" : "block"
@@ -139,11 +138,11 @@ export default function Work() {
             activities like -
           </p>
         </div> */}
-        <Community
+        {/* <Community
           img={true}
         //title="Still curious?"
         //description="Join our social community to understand further!"
-        />
+        /> */}
       </div>
     </>
   );

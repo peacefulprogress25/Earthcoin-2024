@@ -432,15 +432,15 @@ export default function Dashboard() {
                 />
               </div>
               <Select
-
-                options={
-                  fundingData && fundingData.length
+                options={[
+                  { label: "All", value: "" },
+                  ...(fundingData && fundingData.length
                     ? fundingData.map((obj) => ({
-                      label: obj?.title,
-                      value: obj?.title,
-                    }))
-                    : []
-                }
+                        label: obj?.title,
+                        value: obj?.title,
+                      }))
+                    : []),
+                ]}
                 showSearch
                 allowClear
                 value={filter?.type || undefined}

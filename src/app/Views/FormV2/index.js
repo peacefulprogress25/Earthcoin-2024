@@ -4,7 +4,7 @@ const form = "/assets/images/level.png";
 export default function FormV2() {
   const sectorList = [
     {
-      sector: "Clean Energy",
+      sector: "clean Energy",
     },
     {
       sector: "Ecosystem Conservation",
@@ -16,7 +16,7 @@ export default function FormV2() {
       sector: "Climate Tech",
     },
     {
-      sector: "Clean Transport",
+      sector: "clean Transport",
     },
     {
       sector: "Solarpunk Society",
