@@ -14,7 +14,7 @@ function Nodes() {
   ];
 
   return (
-    <div className='flex flex-col items-center justify-center px-6 md:px-8.5 xl:px-12 mt-16'>  
+    <div className='flex flex-col items-center justify-center mt-16'>  
       <section className='flex flex-col items-center justify-center w-full gap-3'>
         <h6 className='text-[#EC8000] font-inter text-xs'>NODES</h6>
         <h1 className='text-3xl font-semibold font-syne '>$EARTH NODES</h1>
@@ -23,7 +23,7 @@ function Nodes() {
           the solarpunk paradigm
         </p>
       </section>
-      <div className='flex flex-col md:flex-row items-center justify-center w-full mt-12'>
+      <div className='flex flex-col md:flex-row items-center justify-between w-full mt-12'>
         <section className='flex flex-col w-full md:w-1/2 sm:mt-4 gap-6'>
           <section className='flex flex-col gap-5'>
             <p className='text-[#475467] font-inter text-sm font-light'>
@@ -65,7 +65,7 @@ function Nodes() {
           </section>
         </section>
         <section className='flex w-full md:w-1/2 justify-center mt-2' style={{marginTop:"2rem"}}>
-          <Image src={img} className='w-full object-contain sm:w-[88%]' width={400} height={400} />
+          <Image src={img} className='w-full object-contain sm:w-[100%]' width={400} height={400} />
         </section>
       </div>
     </div>

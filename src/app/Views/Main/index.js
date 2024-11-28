@@ -263,7 +263,7 @@ export default function Main() {
   //   },
   // ];
   return (
-    <div className="mt-20">
+    <div className="mt-20 ">
       <div className="relative">
         <ImageView
           src={earthHome}
@@ -320,7 +320,7 @@ export default function Main() {
           </button>
         </div>
       </div>
-      <div className="mx-auto  pt-2 mt-[2rem] sm:mt-[4rem] xl:mt-[6rem] px-4 sm:px-[6%] mt-16 h-fit flex flex-col items-center justify-center w-full">
+      <div className="mx-auto  pt-2 mt-[2rem] sm:mt-[4rem] xl:mt-[6rem] px-4 sm:px-[6%] 2xl:px-0 mt-16 h-fit flex flex-col items-center justify-center w-full">
         <div className="flex flex-col items-center justify-center w-full pb-2 sm:flex-row">
           {funding && funding.length ? funding.map((impact, index) => (
             <div
@@ -384,7 +384,7 @@ export default function Main() {
         </p>
         <Features />
 
-        <div className="relative mb-[2rem] sm:mb-[4rem] xl:mb-[6rem] -mt-10 max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]">
+        <div className="relative w-full mb-[2rem] sm:mb-[4rem] xl:mb-[6rem] -mt-10 pt-16">
           <ImageView
             alt="social"
             src={mainBottomSection1}
@@ -524,7 +524,7 @@ export default function Main() {
       </div>
       {/* <Treasury /> */}
 
-      <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-screen flex flex-col gap-12 items-center justify-start w-full">
+      <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] 2xl:px-0 flex flex-col gap-12 items-center justify-start w-full">
         <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Partners
@@ -563,7 +563,7 @@ export default function Main() {
             </Link>
         </button> */}
       </div>
-      <div className=" relative max-w-screen-2xl pt-2 mx-auto px-4 sm:px-[6%] ">
+      <div className=" relative max-w-screen-2xl pt-2 mx-auto px-4 sm:px-[6%] 2xl:px-0 ">
         <ImageView
           alt="social"
           src={mainBottomSection}
@@ -580,7 +580,7 @@ export default function Main() {
           </p>
         </div>
       </div>
-      <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className="max-w-screen-2xl pt-16 mx-auto px-4 sm:px-[6%] 2xl:px-0  h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             News
@@ -593,7 +593,7 @@ export default function Main() {
           </p>
         </div>
       </div>
-      <div className="grid w-full grid-cols-1 px-4 mt-8 sm:px-20 xl:grid-cols-2 gap-x-6 gap-y-5">
+      <div className="grid w-full grid-cols-1 px-4 mt-8 sm:px-20 2xl:px-0 xl:grid-cols-2 gap-x-6 gap-y-5">
         {updates && updates?.length
           ? updates.map((card, index) => (
             <div
@@ -743,7 +743,7 @@ export default function Main() {
       )
     } */}
 
-      <div className="grid items-center justify-center sm:px-[6%] w-full grid-cols-1 gap-8 px-4 mx-auto mt-20 sm:grid-cols-2">
+      <div className="grid items-center justify-center sm:px-[6%] 2xl:px-0 w-full grid-cols-1 gap-8 px-4 mx-auto mt-20 sm:grid-cols-2">
         {cardData?.map((data, index) => (
           <div
             className="relative w-full cursor-pointer grow"
@@ -776,7 +776,7 @@ export default function Main() {
           </div>
         ))}
       </div>
-      <div className="max-w-screen-2xl mt-[3rem] xl:mt-[5rem] mx-auto px-4 sm:px-[6%]  h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className="max-w-screen-2xl mt-[3rem] xl:mt-[5rem] mx-auto px-4 sm:px-[6%] 2xl:px-0  h-fit flex flex-col gap-12 items-center justify-center w-full">
         {/* <div className="flex flex-wrap justify-center gap-4 mt-12"> */}
         <div className="flex flex-wrap justify-center gap-3 mt-12 sm:gap-7">
           {social.map((partner, index) => (
@@ -816,7 +816,7 @@ export default function Main() {
           View Partners
         </button> */}
       </div>
-      <div className=" mt-[3rem] xl:mt-[5rem] mx-auto px-4 sm:px-[6%] h-fit flex flex-col gap-12 items-center justify-center w-full">
+      <div className=" mt-[3rem] xl:mt-[5rem] mx-auto px-4 sm:px-[6%] 2xl:px-0 h-fit flex flex-col gap-12 items-center justify-center w-full">
         <div className="relative w-full mt-12">
           <div className="w-full img-shadow" >
             <ImageView

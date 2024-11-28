@@ -145,9 +145,9 @@ export default function Footer() {
   ];
   return (
     <div className="flex flex-col justify-end w-full h-fit">
-      <div className="flex-col flex sm:flex-row my-10 mt-16 items-center sm:items-start w-full max-w-screen-2xl mx-auto gap-10 px-[6%] justify-between">
-        <div className="flex items-center w-full sm:items-start sm:w-[50%] flex-col justify-between">
-          <div className="flex flex-col items-center sm:items-start">
+      <div className="flex-col flex lg:flex-row my-10 mt-16 items-center lg:items-start w-full max-w-screen-2xl mx-auto gap-10 px-[6%] 2xl:px-0 justify-between">
+        <div className="flex items-center w-full lg:items-start lg:w-[50%] flex-col justify-between">
+          <div className="flex flex-col items-center lg:items-start">
             <ImageView
               alt="logo"
               src={logo}
@@ -155,7 +155,7 @@ export default function Footer() {
               height={100}
               className="object-contain"
             />
-            <p className="text-[#475467] mt-6 font-normal text-center sm:text-left font-inter text-sm">
+            <p className="text-[#475467] mt-6 font-normal text-center lg:text-left font-inter text-sm">
               Embedding climate action,
               <br /> ecosystem services,
               <br /> solarpunk values into money
@@ -163,13 +163,13 @@ export default function Footer() {
             <div className="flex items-center mt-20">
               <Link
                 href="/privacy-policy"
-                className="text-[#475467] pr-2 border-r border-[#475467] font-normal text-center sm:text-left font-inter text-sm"
+                className="text-[#475467] pr-2 border-r border-[#475467] font-normal text-center lg:text-left font-inter text-lg"
               >
                Token Disclaimer
               </Link>
               <Link
                 href="/terms-of-service"
-                className="text-[#475467] pl-2 font-normal text-center sm:text-left font-inter text-sm"
+                className="text-[#475467] pl-2 font-normal text-center lg:text-left font-inter text-sm"
               >
                 Terms & Conditions
               </Link>
@@ -183,7 +183,7 @@ export default function Footer() {
                 className={`flex flex-col items-start gap-3 ${index === 2
                   ? "col-span-2 justify-self-start sm:justify-self-auto"
                   : ""
-                  } ${index === 0 ? "pr-[4.5rem]" : index === 1 ? "pl-[4.5rem]" : ""
+                  } ${index === 0 ? "pr-[4.5rem]" : index === 1 ? "pr-[4.5rem]" : ""
                   }`}
                 key={index}
               >

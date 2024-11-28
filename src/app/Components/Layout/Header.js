@@ -136,7 +136,7 @@ export default function Header() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
-      <div className="flex justify-between h-20 w-full mx-auto border-b border-[#F2F4F7] gap-2 items-center px-4 sm:px-[6%]">
+      <div className="flex justify-between h-20 max-w-screen-2xl mx-auto border-b border-[#F2F4F7] gap-2 items-center px-4 sm:px-[6%] 2xl:px-0">
         <div className="flex items-center justify-start w-full h-20 gap-2 mx-auto">
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>
             <ImageView
@@ -147,7 +147,7 @@ export default function Header() {
               className="object-contain"
             />
           </Link>
-          <div className="items-center h-full ml-2 sm:ml-8 hidden sm:flex gap-2 sm:gap-9 font-inter text-[#475467] font-semibold text-sm">
+          <div className="items-center h-full ml-2 sm:ml-8 hidden lg:flex gap-2 sm:gap-9 font-inter text-[#475467] font-semibold text-sm">
             <Link
               className="relative flex items-center h-full gap-1"
               href="/"
@@ -260,20 +260,20 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="sm:hidden text-[#475467]"
+          className="lg:hidden text-[#475467]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
         </button>
 
         {/* Desktop buttons */}
-        <div className="justify-end hidden gap-2 sm:flex">
+        <div className="justify-end hidden gap-2 lg:flex">
         {pathname === "/dapp" ? 
         <div className="flex justify-end gap-2">
         <Network />
         </div> :  null}
         </div>
-        <div className="justify-end hidden gap-2 sm:flex">
+        <div className="justify-end hidden gap-2 lg:flex">
           {pathname === "/dapp" ? (
             profile?.wallet ? (
               <div className="flex justify-end gap-2">
@@ -333,7 +333,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="fixed bottom-0 left-0 right-0 z-20 overflow-y-auto bg-white sm:hidden top-20">
+        <div className="fixed bottom-0 left-0 right-0 z-20 overflow-y-auto bg-white lg:hidden top-20">
           <div className="flex flex-col gap-4 p-4">
             <div>
               <button

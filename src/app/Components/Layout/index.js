@@ -10,7 +10,7 @@ export default function BaseLayout({ children }) {
   return (
     <main className="flex flex-col">
       <Header />
-      <div className="min-h-screen">{children}</div>
+      <div className="min-h-screen 2xl:mx-auto max-w-screen-2xl">{children}</div>
       {pathname !== "/dapp" ? <Footer /> : null}
       {/* <FooterV2 /> */}
     </main>
