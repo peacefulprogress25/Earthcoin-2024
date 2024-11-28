@@ -41,7 +41,7 @@ export default function Media({ details }) {
         </p>
         <div className="flex flex-col w-[100%] h-fit">
           {details?.updates && details?.updates.length ? (
-            <div className="w-full max-w-[600px] mx-auto px-4 custom-chrono">
+            <div className="w-full max-w-[700px] mx-auto px-4 custom-chrono">
               <Chrono
                 items={details?.updates}
                 mode="VERTICAL"
