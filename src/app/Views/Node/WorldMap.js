@@ -26,11 +26,11 @@ const SetZoom = ({ setZoomLevel }) => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       if (screenWidth < 640) {
-        map.setZoom(0.1); // Zoom level for screens below 640px
-        setZoomLevel(0.1);
+        map.setZoom(0.2); // Zoom level for screens below 640px
+        setZoomLevel(0.2);
       } else {
-        map.setZoom(1); // Zoom level for larger screens
-        setZoomLevel(1);
+        map.setZoom(1.7); // Zoom level for larger screens
+        setZoomLevel(1.7);
       }
     };
 
@@ -62,26 +62,25 @@ export default function WorldMap({ nodeList }) {
   const renderIcons = () => {
     return nodeList && nodeList.length
       ? nodeList.map((map, index) => (
-        <Marker
-          key={map.name}
-          position={[
-            map?.latitude ? map?.latitude : 17.89,
-            map.longitude ? map.longitude : 89.56,
-          ]}
-          icon={markerIcon}
-          eventHandlers={{
-            mouseover: (event) => {
-
-              event.target.openPopup();
-            },
-            mouseout: (event) => {
-              event.target.closePopup();
-            },
-          }}
-        >
-          <PopoverHandler map={map} key={map.name} id={map.name} />
-        </Marker>
-      ))
+          <Marker
+            key={map.name}
+            position={[
+              map?.latitude ? map?.latitude : 17.89,
+              map.longitude ? map.longitude : 89.56,
+            ]}
+            icon={markerIcon}
+            eventHandlers={{
+              mouseover: (event) => {
+                event.target.openPopup();
+              },
+              mouseout: (event) => {
+                event.target.closePopup();
+              },
+            }}
+          >
+            <PopoverHandler map={map} key={map.name} id={map.name} />
+          </Marker>
+        ))
       : null;
   };
 
@@ -109,15 +108,17 @@ export default function WorldMap({ nodeList }) {
         center={position}
         zoom={zoomLevel}
         zoomControl={false}
+        zoomSnap={0.1}
+        zoomDelta={0.1}
         scrollWheelZoom={false}
         doubleClickZoom={false}
         dragging={false}
         attributionControl={false}
-        className="leaflet-Map h-[80vh] sm:h-[100vh] w-[100vh] mt-0 sm:-mt-[2rem] ml-0 sm:-ml-[6rem] object-cover"
+        className="leaflet-Map h-[100vh] w-[100vh]  object-cover"
       >
         <SetZoom setZoomLevel={setZoomLevel} />
         {loading ? (
-          <div className="h-[60vh] w-full flex items-center ml-0  sm:ml-[6rem]  mt-0  sm:mt-[5rem] justify-center">
+          <div className="h-[60vh] w-full flex items-center  justify-center">
             <Loader />
           </div>
         ) : (
@@ -158,7 +159,9 @@ function PopoverHandler({ map, id }) {
         className="rounded-full"
       />
       <p className="text-[#344054] font-semibold font-inter">{map?.name}</p>
-      <p className="text-[#667085] font-normal mt-2 font-inter">Minted till date:</p>
+      <p className="text-[#667085] font-normal mt-2 font-inter">
+        Minted till date:
+      </p>
       <p className="text-[#667085] font-normal font-inter">{map?.balance}</p>
       <div className="flex gap-3 mt-2">
         {socialIcons.map((icons, index) => (
