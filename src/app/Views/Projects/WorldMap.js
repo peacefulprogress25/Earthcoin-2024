@@ -23,11 +23,14 @@ const SetZoom = ({ setZoomLevel }) => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       if (screenWidth < 640) {
-        map.setZoom(0.2); // Set zoom for screens below 640px
+        map.setZoom(0.2);
         setZoomLevel(0.2);
-      } else {
-        map.setZoom(1.7); // Set zoom for screens above 640px
+      } else if (screenWidth < 1536) {
+        map.setZoom(1.7);
         setZoomLevel(1.7);
+      } else {
+        map.setZoom(2.8);
+        setZoomLevel(2.8);
       }
     };
 
@@ -111,7 +114,7 @@ export default function WorldMap({ projects }) {
         doubleClickZoom={false}
         dragging={false}
         attributionControl={false}
-        className="leaflet-Map h-[100vh] w-[100vh]  object-cover"
+        className="leaflet-Map h-[100vh] w-[100vh] flex items-center justify-center object-cover"
       >
         <SetZoom setZoomLevel={setZoomLevel} />
         {loading ? (
