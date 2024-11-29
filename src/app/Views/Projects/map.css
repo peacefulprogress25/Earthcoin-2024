@@ -28,12 +28,15 @@
   .leaflet-pane {
     left: 120px;
     top: 8px;
-  
+
     @media (min-width: 341px) and (max-width: 640px) {
       left: 15%;
       transform: translateX(-50%);
       right: auto;
       margin: 0;
+    }
+    @media (min-width: 1536px) {
+      left: 200px;
     }
 
     @media (max-width: 340px) {
@@ -43,7 +46,7 @@
       margin: 0;
     }
   }
-  
+
   .leaflet-map-pane svg {
     /* height: 43rem !important; */
   }
