@@ -20,7 +20,7 @@ export default function Resources() {
 
   return (
     <div>
-      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] 2xl:px-0 flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col items-center w-full gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Resources
@@ -61,7 +61,7 @@ export default function Resources() {
           height={200}
           className="object-cover w-full mt-4"
         /> */}
-      <div className="mt-16 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+      <div className="mt-16 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] 2xl:px-0 flex gap-10 flex-col items-center pb-10">
         <div className='flex flex-col gap-8 mt-3'>
           <div className='flex flex-col shadow gap-4 sm:flex-row p-5 items-center sm:items-start justify-between border-2 border-[#EAECF0] rounded-lg'>
             <div className='flex flex-col w-full sm:w-[60%] p-10 justify-center items-center sm:items-start '>

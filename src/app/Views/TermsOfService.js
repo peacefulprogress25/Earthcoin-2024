@@ -43,7 +43,7 @@ export default function TermsOfService() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-screen-lg px-4 py-4 mx-auto mt-20">
+    <div className="flex flex-col items-center justify-center w-full px-4 sm:px-[6%] 2xl:px-0 py-4 mx-auto mt-20">
 
       {termsOfService?.details ? (
         <Editor

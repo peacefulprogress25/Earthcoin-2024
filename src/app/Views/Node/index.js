@@ -29,7 +29,7 @@ export default function Node() {
   return (
     <div className="w-full mt-20">
       <Insight nodeList={nodeList} />
-      <div className="flex flex-col items-center justify-center w-full gap-12 px-4 mx-auto mt-16 max-w-screen-2xl h-fit sm:px-6">
+      <div className="flex flex-col items-center justify-center w-full gap-12 mx-auto mt-16 px-4 sm:px-[6%] 2xl:px-0 h-fit">
         <div className="flex flex-col w-full gap-10">
           <p className="text-[#101828] font-semibold text-center text-[20px] sm:text-[24px] md:text-[36px] font-syne">
             From purging petro dollars to forming partnerships to policy making,

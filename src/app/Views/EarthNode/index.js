@@ -72,8 +72,7 @@ export default function EarthNode() {
     },
   ];
   return (
-    <div>
-      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+      <div className="mt-32 w-full mx-auto px-4 sm:px-[6%] 2xl:px-0 flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             Network
@@ -90,9 +89,9 @@ export default function EarthNode() {
           alt="purpose"
           width={400}
           height={300}
-          className="w-full h-[18rem]  mt-4 object-cover"
+          className="w-full h-full  mt-4 object-cover"
         />
-        <div className="sm:px-[8%] px-4 mt-10 mb-16 flex flex-col gap-16 w-full items-start">
+        <div className=" mt-10 mb-16 flex flex-col gap-16 w-full items-start">
           <Stepper
             sx={{
               "& .MuiStepConnector-line": {
@@ -239,7 +238,6 @@ export default function EarthNode() {
             ))}
           </Stepper>
         </div>{" "}
-      </div>{" "}
-    </div>
+      </div>
   );
 }

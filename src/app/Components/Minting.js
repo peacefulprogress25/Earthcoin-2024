@@ -28,7 +28,7 @@ export default function Minting() {
             </p>
           </div>
           <Link
-            className="w-[70px] xs:w-[80px] xl:w-[200px] text-center text-white font-inter flex h-6 xs:h-8 sm:h-10 items-center justify-center rounded-md bg-[#EC8000] p-1 sm:p-2 text-[8px] xs:text-[10px] sm:text-xs xl:text-base"
+            className="w-[70px] xs:w-[80px] sm:w-[100px] xl:w-[200px] text-center text-white font-inter flex h-6 xs:h-8 sm:h-10 items-center justify-center rounded-md bg-[#EC8000] p-1 sm:p-2 text-[8px] xs:text-[10px] sm:text-xs xl:text-base"
             href={buttonConfig?.footer_banner?.link || ""}
             target={buttonConfig?.footer_banner?.external ? "_blank" : "_self"}
           >

@@ -123,7 +123,7 @@ export default function Form() {
     },
   ];
   return (
-    <div className='flex flex-col items-center overflow-hidden w-full h-[89vh] mt-20 gap-10 mx-auto '>
+    <div className='flex flex-col px-4 sm:px-[6%] 2xl:px-0 items-center overflow-hidden w-full h-[89vh] mt-20 gap-10 mx-auto '>
       <div className='flex flex-col w-full h-[89vh] sm:flex-row'>
         <Video
           src={form}

@@ -63,7 +63,7 @@ export default function Work() {
   ];
   return (
     <>
-      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+      <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] 2xl:px-0 flex gap-10 flex-col items-center pb-10">
         <div className="flex flex-col items-center gap-2">
           <p className="mb-0 text-center font-syne text-[#EC8000]">Resources</p>
           <p className="text-[#101828] font-semibold text-center text-[30px] sm:text-[40px] font-syne">

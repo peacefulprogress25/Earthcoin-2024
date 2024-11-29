@@ -26,7 +26,7 @@ export default function TermsofFunding({ details }) {
   if (details?.termsOfFunding) {
 
     return (
-      <div className="flex flex-col w-full items-center mt-8 sm:items-start  px-[5%]">
+      <div className="flex flex-col w-full items-center mt-8 sm:items-start">
         <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
           Terms of funding
         </p>

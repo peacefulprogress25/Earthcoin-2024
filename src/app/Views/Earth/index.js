@@ -131,7 +131,7 @@ export default function Earth() {
               }`}
               key={index}
             >
-              <div className="flex justify-center w-full sm:w-[49%] px-[6%] flex-col gap-2">
+              <div className="flex justify-center w-full sm:w-[49%] px-[6%] 2xl:px-0 flex-col gap-2">
                 <p className="text-[#101828] font-semibold text-left text-[20px] sm:text-[28px] font-syne">
                   {data?.title}
                 </p>
@@ -170,7 +170,7 @@ export default function Earth() {
                     </div>
                   ))}
                 </div>
-                <div className="flex gap-5">
+                <div className="flex sm:flex-col lg:flex-row gap-5">
                   <div>
                     {data?.btntext1 && (
                       <Link
@@ -312,7 +312,7 @@ export default function Earth() {
           </div>
         </>
       )}
-      <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+      <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] 2xl:px-0 flex gap-10 flex-col items-center pb-10">
         <Minting />
       </div>
     </div>

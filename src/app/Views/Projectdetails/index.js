@@ -76,7 +76,7 @@ export default function Projectdetails() {
               </Link>
             ))}
           </div>
-          <div className="max-w-screen-2xl mx-auto h-fit flex flex-col px-4 sm:px-[6%] gap-8 sm:gap-16 items-center justify-center w-full">
+          <div className=" mx-auto h-fit flex flex-col px-4 sm:px-[6%] 2xl:px-0 gap-8 sm:gap-16 items-center justify-center w-full">
             <OverView details={details} />
             {details?.projectCoverPic ? <ImageView
               src={details?.projectCoverPic}

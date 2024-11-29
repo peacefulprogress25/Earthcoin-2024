@@ -18,11 +18,11 @@ export default function ProjectList({ projects }) {
 
 
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-screen-lg gap-8 px-4 pb-8 mx-auto mt-8 sm:mt-16 h-fit sm:gap-12">
+    <div className="flex flex-col items-center justify-center w-full gap-8 pb-8 mx-auto px-4 sm:px-[6%] 2xl:px-0 mt-8 sm:mt-16 h-fit sm:gap-12">
       {sortedProjects && sortedProjects?.length ? (
         sortedProjects?.filter(data => data?.projectName)?.map((project, index) => (
           <div
-            className="rounded-lg border-2 sm:border-4 max-w-[1080px] cursor-pointer w-full h-fit flex flex-col border-[#101828]"
+            className="rounded-lg border-2 sm:border-4 w-full cursor-pointer w-full h-fit flex flex-col border-[#101828]"
             key={index}
             onClick={() => router.push(`/projects/${project.projectId}`)}
           >

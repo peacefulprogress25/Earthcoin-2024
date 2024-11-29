@@ -37,7 +37,7 @@ export default function ResponsibilitiesOfNode() {
     setTitle4(title4);
   };
   return (
-    <div className="w-[96%] pr-2 max-[480px]:w-full">
+    <div className="w-[100%] pr-2 max-[480px]:w-full">
       {title === "Responsibilities Of Node" && (
         <div className="flex flex-col justify-between w-full shadow-lg md:flex-row lg:flex-row xl:flex-row">
           <div className="relative w-full">

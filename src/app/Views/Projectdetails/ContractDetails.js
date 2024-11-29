@@ -27,7 +27,7 @@ export default function ContractDetails({ details }) {
 
 
     return (
-      <div className="flex flex-col w-full items-center mt-8 sm:items-start  px-[5%]">
+      <div className="flex flex-col w-full items-center mt-8 sm:items-start">
         <p className="text-[24px] sm:text-[28px] text-left font-semibold text-[#101828] font-syne">
           Contract Details
         </p>
@@ -40,7 +40,7 @@ export default function ContractDetails({ details }) {
             readOnly={true}
           />
         </div>
-        <div className="flex w-full flex-col border-b-2 px-2 border-[#EAECF0] pb-8">
+        <div className="flex w-full flex-col border-b-2 border-[#EAECF0] pb-8">
           <p className="font-Inter mt-3 text-wrap font-medium text-[#EC8000] text-[12px] sm:text-[16px]">
             Contract Address -
             <span className=" custom-contract text-[#101828] inline-block">

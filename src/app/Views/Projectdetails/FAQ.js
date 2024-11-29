@@ -9,7 +9,7 @@ export default function FAQ({ details }) {
   if (details?.faq && details?.faq.length) {
 
     return (
-      <div className="flex flex-col  w-full  pb-5 !items-start px-[5%]">
+      <div className="flex flex-col  w-full  pb-5 !items-start">
         <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
           Frequently asked questions
         </p>

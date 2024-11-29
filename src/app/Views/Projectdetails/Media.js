@@ -35,11 +35,11 @@ export default function Media({ details }) {
 
   if (details?.updates && details?.updates.length) {
     return (
-      <div className="flex flex-col w-full items-start px-[5%]">
+      <div className="flex flex-col w-full items-start">
         <p className="text-[28px] text-left font-semibold text-[#101828] font-syne">
           Project Updates
         </p>
-        <div className="flex flex-col w-[100%] h-fit">
+        <div className="flex flex-col mt-8 w-[100%] h-fit">
           {details?.updates && details?.updates.length ? (
             <div className="w-full max-w-[600px] mx-auto px-4 custom-chrono">
               <Chrono

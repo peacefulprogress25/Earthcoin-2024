@@ -16,7 +16,7 @@ export default function Network() {
   const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
 
   return (
-    <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center pb-10">
+    <div className="mt-32 w-full mx-auto px-4 sm:px-[6%] 2xl:px-0 flex gap-10 flex-col items-center pb-10">
       <div className="flex flex-col items-center gap-2">
         <p className="text-[#EC8000] font-semibold text-center text-[14px] max-[480px]:text-[12px] font-inter">
           Network
@@ -38,13 +38,13 @@ export default function Network() {
         />
 
         {!isMobile ? (
-          <div className="absolute px-10 sm:px-[10%] flex flex-col justify-center items-center md:top-[6rem] lg:top-[8rem] xl:top-[12rem] w-full">
-            <p className="font-apercu-pro w-full text-left font-noraml md:text-[18px] lg:text-[22px] xl:text-[30px] text-[#101828]">
+          <div className="absolute px-10 sm:px-[10%] flex flex-col justify-center items-center top-[4rem] md:top-[6rem] lg:top-[5rem] xl:top-[8rem] w-full">
+            <p className="font-apercu-pro w-full text-left font-noraml text-[15px] md:text-[18px] lg:text-[22px] xl:text-[30px] text-[#101828]">
               <span className="text-[#EC8000]">Gm</span> Degens, Regens,
               Treegens, Beegens, Seagens, Lunarpunks, <br /> Mycopunks,
               Junglepunks and Solarpunks!
             </p>
-            <p className="text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml md:text-[10px] lg:text-[14px] xl:text-[18px]">
+            <p className="text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml text-[8px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
               We find ourselves at a critical crossroads in the history of our
               species. With over 8 Billion of us on this planet and existential
               challenges (Climate, AI) of our own making looming over us, how we
@@ -59,7 +59,7 @@ export default function Network() {
               arises -{" "}
               <span className="text-[#1D2939]">WTF are we doing!?</span>
             </p>
-            <p className="text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml md:text-[10px] lg:text-[14px] xl:text-[18px]">
+            <p className="text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml text-[8px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
               It is our belief that everyone reading this has asked this
               Question at some point in time. We are all here because there is
               some deep dissatisfaction and discomfort in the direction we are
@@ -75,7 +75,7 @@ export default function Network() {
                 digging our graves while aiming for the sky.
               </span>
             </p>
-            <p className="text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml md:text-[10px] lg:text-[14px] xl:text-[18px]">
+            <p className="text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml text-[8px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
               So what now ? Well as our beloved advisor loves to say - One
               cannot solve a problem from the same frequency that created it.
               The socio-economic frequency we inhabit is simply a function of
@@ -88,7 +88,7 @@ export default function Network() {
                 MONEY can manifest.
               </span>
             </p>
-            <p className="text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml md:text-[10px] lg:text-[14px] xl:text-[18px]">
+            <p className="text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml text-[8px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
               Today we can design our own monetary system on a permissionless,
               transparent, immutable, borderless ledger. Ascribe value to what
               we think is important, decide what kind of backing we want
@@ -97,7 +97,7 @@ export default function Network() {
               coordinate globally with complete sovereignty and without any
               intermediaries.
             </p>
-            <p className="text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml md:text-[10px] lg:text-[14px] xl:text-[18px]">
+            <p className="text-[#475467] mt-3 sm:mt-6 w-full font-apercu-pro text-left font-noraml text-[8px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
               We no longer have an excuse to blame any external agencies. Today
               we have the tools to take matters into our hands and create the
               regen/solarpunk reality we know is possible deep within.
@@ -117,7 +117,7 @@ export default function Network() {
               solar system, businesses are regenerative by design, well being is
               the north star, AGI helps us focus on becoming more human...
             </p>
-            <p className="text-[#475467] mt-2 sm:mt-6 w-full font-apercu-pro text-left font-noraml md:text-[10px] lg:text-[14px] xl:text-[18px]">
+            <p className="text-[#475467] mt-2 sm:mt-6 w-full font-apercu-pro text-left font-noraml text-[8px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
               This definitely is an unprecedented challenge but humanity&apos;s
               past is replete with instances where a committed collective of
               aligned frequencies have dramatically changed the world for the
@@ -129,11 +129,11 @@ export default function Network() {
               like the mycelium network (vibrant, adaptive, diverse & symbiotic)
               to fulfil our mission & vision.
             </p>
-            <p className="text-[#475467] mt-14 w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
+            <p className="text-[#475467] mt-10 w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] text-[8px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
               Mission -  <span className=" font-bold"> Make anthropogenic
               climate change history </span> 
             </p>
-            <p className="text-[#475467]  w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
+            <p className="text-[#475467]  w-full font-apercu-pro text-left font-noraml max-[322px]:text-[5px] max-[480px]:text-[6px] text-[8px] md:text-[10px] lg:text-[14px] xl:text-[18px]">
                Vision - <span className=" font-bold"> Seed the Solarpunk
               paradigm  </span>
             </p> 

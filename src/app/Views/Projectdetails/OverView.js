@@ -42,7 +42,7 @@ export default function OverView({ details }) {
   }
   return (
     <div id='overview' className='flex flex-col w-full gap-8 mt-12'>
-      <div className='flex flex-col sm:flex-row px-[5%] !items-start gap-28'>
+      <div className='flex flex-col sm:flex-row !items-start gap-28'>
         <div className='flex flex-col items-center w-full gap-2 sm:w-auto sm:items-start'>
           <div className='flex max-w-44 sm:max-w-52 w-full flex-col border-y-2 font-Inter py-3 border-[#EAECF0] items-center sm:items-start gap-3'>
             <p className='text-[#EC8000] font-semibold text-[14px]'>

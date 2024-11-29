@@ -47,7 +47,6 @@ export default function ProjectImpact({ details }) {
   ];
   return (
     <div id='impact' className='flex flex-col items-start w-full'>
-      <div className='px-[5%]'>
         <p className='text-[18px] sm:text-[28px] text-left font-semibold text-[#101828] font-syne'>
           Project Impact
         </p>
@@ -60,8 +59,6 @@ export default function ProjectImpact({ details }) {
             readOnly={true}
           />
         </div>
-      </div>
-
       <div className='flex flex-col items-center w-full gap-16 sm:gap-24 sm:flex-row'>
         {details?.projectImpactList.filter(impact => impact?.projectImpactIcon).map((impact, index) => (
           <div

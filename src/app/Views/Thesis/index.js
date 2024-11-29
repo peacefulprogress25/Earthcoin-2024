@@ -87,7 +87,7 @@ export default function Thesis() {
   return (
     <div>
       {!isMobile ? (
-        <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] flex gap-10 flex-col items-center">
+        <div className="mt-32 w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] 2xl:px-0 flex gap-10 flex-col items-center">
           <div className="flex flex-col items-center w-full gap-2">
             <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
               About
@@ -186,8 +186,8 @@ export default function Thesis() {
         height={500}
         className="object-cover w-full"
       />
-      <div className="w-full max-w-screen-2xl md:flex-row sm:mt-10 mx-auto px-4 sm:px-[5%] flex gap-10 flex-col items-center pb-10">
-        <div className="flex flex-col items-start w-full px-4 ">
+      <div className="w-full max-w-screen-2xl md:flex-row sm:mt-10 mx-auto px-4 sm:px-[6%] 2xl:px-0 flex gap-10 flex-col items-center pb-10">
+        <div className="flex flex-col items-start w-full">
           <p className="text-[#101828] font-semibold text-left  text-[20px] max-[480px]:text-wrap max-[480px]:text-center max-[480px]:text-[15px] max-[480px]:ml-8 sm:text-[28px] mr-10 font-syne">
             This transition is no longer a IF but a
             <span className="text-[#EC8000]"> WHEN.</span>
@@ -229,7 +229,7 @@ export default function Thesis() {
             alt="skeleton"
             width={200}
             height={200}
-            className="object-contain w-[400px] h-[300px]"
+            className="object-contain sm:object-cover w-[400px] h-[300px] sm:h-full"
           />
         </div>
       </div>
@@ -238,7 +238,7 @@ export default function Thesis() {
           Sectors we are focusing on -
         </p>
       </div>
-      <div className="px-[6%] flex gap-8 py-[4%] justify-between max-[480px]:gap-3">
+      <div className="px-[6%] 2xl:px-0 flex gap-8 py-[4%] justify-between max-[480px]:gap-3">
         {/* <ImageView
           src={earthPower}
           alt='earthPower'
@@ -298,7 +298,7 @@ export default function Thesis() {
         </div>
         <div className="w-[75%] max-[480px]:w-[76%] ">
           {title === "Regenerative Agriculture" && (
-            <div className="border-2 h-full lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6">
+            <div className="border-2 h-full lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] 2xl:px-0 py-6">
               <div className="lg:w-[60%]">
                 <p className="text-[#101828] font-semibold text-left max-[480px]:text-[12px]  text-[14px] sm:text-[18px] mr-10 lg:mr-0 font-inter">
                   Regenerative Agricuture
@@ -346,7 +346,7 @@ export default function Thesis() {
             </div>
           )}
           {title === "clean Energy" && (
-            <div className="border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] h-full py-6">
+            <div className="border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6% 2xl:px-0] h-full py-6">
               <div className="lg:w-[60%]">
                 <p className="text-[#101828] font-semibold text-left max-[480px]:text-[12px]  text-[14px] sm:text-[18px] mr-10 font-inter">
                   clean Energy
@@ -384,7 +384,7 @@ export default function Thesis() {
             </div>
           )}
           {title === "Ecosystem Conservation" && (
-            <div className="border-2 lg:flex lg:gap-5 border-[#F2F4F7] h-full  rounded-lg px-[6%] py-6">
+            <div className="border-2 lg:flex lg:gap-5 border-[#F2F4F7] h-full  rounded-lg px-[6%] 2xl:px-0 py-6">
               <div className="lg:w-[60%]">
                 <p className="text-[#101828] font-semibold text-left  text-[14px] max-[480px]:text-[12px] sm:text-[18px] mr-10 font-inter">
                   Ecosystem Conservation
@@ -438,7 +438,7 @@ export default function Thesis() {
             </div>
           )}
           {title === "clean Transport" && (
-            <div className="border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6">
+            <div className="border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] 2xl:px-0 py-6">
               <div className="lg:w-[60%]">
                 <p className="text-[#101828] font-semibold text-left  text-[14px] max-[480px]:text-[12px] sm:text-[18px] mr-10 font-inter">
                   clean Transport
@@ -493,7 +493,7 @@ export default function Thesis() {
             </div>
           )}
           {title === "Solarpunk Spaces" && (
-            <div className="border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] py-6">
+            <div className="border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] 2xl:px-0 py-6">
               <div className="lg:w-[60%]">
                 <p className="text-[#101828] font-semibold text-left  text-[14px] sm:text-[18px] max-[480px]:text-[12px] mr-10 font-inter">
                   Solarpunk Spaces
@@ -559,7 +559,7 @@ export default function Thesis() {
         </div>
       </div>
 
-      <div className="sm:px-[8%] px-4 flex flex-col">
+      <div className="sm:px-[6%] 2xl:px-0 px-4 flex flex-col">
         {/* <div className="flex flex-col items-center justify-between w-full gap-16 mt-3 sm:flex-row">
             <ImageView
               src={pieChart}
