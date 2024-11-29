@@ -23,11 +23,14 @@ const SetZoom = ({ setZoomLevel }) => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       if (screenWidth < 640) {
-        map.setZoom(0.1); // Set zoom for screens below 640px
-        setZoomLevel(0.1);
+        map.setZoom(0.2);
+        setZoomLevel(0.2);
+      } else if (screenWidth < 1536) {
+        map.setZoom(1.7);
+        setZoomLevel(1.7);
       } else {
-        map.setZoom(1); // Set zoom for screens above 640px
-        setZoomLevel(1);
+        map.setZoom(2.8);
+        setZoomLevel(2.8);
       }
     };
 
@@ -59,25 +62,25 @@ export default function WorldMap({ projects }) {
   const renderIcons = () => {
     return projects && projects.length
       ? projects.map((map, index) => (
-        <Marker
-          key={map.title}
-          position={[
-            map?.latitude ? map?.latitude : 17.89,
-            map?.longitude ? map?.longitude : 89.56,
-          ]}
-          icon={markerIcon}
-          eventHandlers={{
-            mouseover: (event) => {
-              event.target.openPopup();
-            },
-            mouseout: (event) => {
-              event.target.closePopup();
-            },
-          }}
-        >
-          <PopoverHandler map={map} key={map.subText} id={map.subText} />
-        </Marker>
-      ))
+          <Marker
+            key={map.title}
+            position={[
+              map?.latitude ? map?.latitude : 17.89,
+              map?.longitude ? map?.longitude : 89.56,
+            ]}
+            icon={markerIcon}
+            eventHandlers={{
+              mouseover: (event) => {
+                event.target.openPopup();
+              },
+              mouseout: (event) => {
+                event.target.closePopup();
+              },
+            }}
+          >
+            <PopoverHandler map={map} key={map.subText} id={map.subText} />
+          </Marker>
+        ))
       : null;
   };
 
@@ -105,15 +108,17 @@ export default function WorldMap({ projects }) {
         center={position}
         zoom={zoomLevel}
         zoomControl={false}
+        zoomSnap={0.1}
+        zoomDelta={0.1}
         scrollWheelZoom={false}
         doubleClickZoom={false}
         dragging={false}
         attributionControl={false}
-        className="leaflet-Map h-[100vh] w-[100vh] mt-0 sm:-mt-[2rem] ml-0 sm:-ml-[5rem] object-cover"
+        className="leaflet-Map h-[100vh] w-[100vh] flex items-center justify-center object-cover"
       >
         <SetZoom setZoomLevel={setZoomLevel} />
         {loading ? (
-          <div className="h-[60vh] w-full flex items-center justify-center ml-0 sm:ml-[5rem] pt-[5rem] sm:pt-[18rem]">
+          <div className="h-[60vh] w-full flex items-center justify-center">
             <Loader />
           </div>
         ) : (
@@ -123,7 +128,6 @@ export default function WorldMap({ projects }) {
           </>
         )}
       </MapContainer>
-
     </div>
   );
 }
