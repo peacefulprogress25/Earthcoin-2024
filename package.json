@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^5.16.7",
     "@reduxjs/toolkit": "^2.2.2",
+    "@use-gesture/react": "^10.3.1",
     "antd": "^5.15.3",
     "axios": "^1.6.8",
     "copy-to-clipboard": "^3.3.3",

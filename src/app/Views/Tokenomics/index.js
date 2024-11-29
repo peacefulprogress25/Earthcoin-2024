@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { useDrag } from "@use-gesture/react";
 
 const tokenomics = "/assets/images/tokenomics.png";
 const curious = "/assets/images/Curious.png";
@@ -31,6 +32,7 @@ export default function Mechanics() {
   gsap.registerPlugin(MotionPathPlugin);
   const [lastPosition, setLastPosition] = useState({ tx: 40, ty: 280 });
   const swiper = useRef();
+  const flowChartRef = useRef();
   useEffect(() => {
     gsap.set(".flow-chart", { x: lastPosition.tx, y: lastPosition.ty });
   }, []);
@@ -258,6 +260,26 @@ export default function Mechanics() {
       { duration: 1, x: tx, y: ty }
     );
   }
+  const dragSpeed = isMobile ? 6 : 8;
+  const smoothness = 0.2;
+
+  const bindDrag = useDrag((state) => {
+    const {
+      offset: [x, y],
+    } = state;
+
+    const scaledX = x * dragSpeed;
+    const scaledY = y * dragSpeed;
+
+    gsap.to(flowChartRef.current, {
+      x: scaledX,
+      y: scaledY,
+      duration: smoothness,
+      ease: "power2.out",
+    });
+
+    setLastPosition({ tx: scaledX, ty: scaledY });
+  });
 
   const swipeFn = (index) => {
     switch (index) {
@@ -518,14 +540,20 @@ export default function Mechanics() {
             style={{ backgroundImage: `url(${treasurybg})` }}
             className="w-[30rem] lg:w-[52rem]   overflow-hidden bg-cover sm:h-[33rem]  xl:h-[36rem]"
           >
-            <ImageView
-              src={"/assets/images/flow.png"}
-              alt="graph"
-              width={600}
-              height={600}
-              // style={{ transform: `scale(1.5)` }}
-              className="scale-150 w-96  flow-chart "
-            />
+            <div
+              {...bindDrag()}
+              ref={flowChartRef}
+              className="scale-150 w-96 flow-chart cursor-grab"
+            >
+              <ImageView
+                src={"/assets/images/flow.png"}
+                alt="graph"
+                width={600}
+                height={600}
+                // style={{ transform: `scale(1.5)` }}
+                className=""
+              />
+            </div>
           </div>
           <StepperMui
             className="absolute z-20 bottom-24"
@@ -584,15 +612,20 @@ export default function Mechanics() {
 
             <div
               style={{ backgroundImage: `url(${treasurybg})` }}
-              className=" lg:w-[52rem]   overflow-hidden bg-cover h-[70vh] "
+              className=" lg:w-[52rem] mt-10  overflow-hidden bg-cover h-[70vh] "
             >
-              <ImageView
-                src={"/assets/images/flow.png"}
-                alt="graph"
-                width={500}
-                height={500}
-                className="scale-150 flow-chart "
-              />
+              <div
+                {...bindDrag()}
+                ref={flowChartRef}
+                className="scale-150  flow-chart cursor-grab"
+              >
+                <ImageView
+                  src={"/assets/images/flow.png"}
+                  alt="graph"
+                  width={500}
+                  height={500}
+                />
+              </div>
             </div>
             <StepperMui
               className="absolute z-20 top-[102%] mr-10"
