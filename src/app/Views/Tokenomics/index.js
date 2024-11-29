@@ -260,26 +260,32 @@ export default function Mechanics() {
       { duration: 1, x: tx, y: ty }
     );
   }
-  const dragSpeed = isMobile ? 6 : 8;
+  const dragSpeed = isMobile ? 6 : 20;
   const smoothness = 0.2;
 
-  const bindDrag = useDrag((state) => {
-    const {
-      offset: [x, y],
-    } = state;
+  const bindDrag = useDrag(
+    (state) => {
+      const {
+        offset: [x, y],
+      } = state;
 
-    const scaledX = x * dragSpeed;
-    const scaledY = y * dragSpeed;
+      const scaledX = x * dragSpeed;
+      const scaledY = y * dragSpeed;
 
-    gsap.to(flowChartRef.current, {
-      x: scaledX,
-      y: scaledY,
-      duration: smoothness,
-      ease: "power2.out",
-    });
+      gsap.to(flowChartRef.current, {
+        x: scaledX,
+        y: scaledY,
+        duration: smoothness,
+        ease: "power2.out",
+      });
 
-    setLastPosition({ tx: scaledX, ty: scaledY });
-  });
+      setLastPosition({ tx: scaledX, ty: scaledY });
+    },
+    {
+      lock: true,
+      filterTaps: true,
+    }
+  );
 
   const swipeFn = (index) => {
     switch (index) {
