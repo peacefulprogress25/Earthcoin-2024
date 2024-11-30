@@ -603,9 +603,8 @@ export default function Mechanics() {
               className=" lg:w-[52rem] mt-10 relative overflow-hidden bg-cover h-[70vh] "
             >
               <div
-                // {...bindDrag()}
                 id="flow-chart"
-                className="scale-150  flow-chart cursor-grab"
+                className="scale-150 absolute flow-chart cursor-grab"
               >
                 <ImageView
                   src={"/assets/images/flow.png"}
