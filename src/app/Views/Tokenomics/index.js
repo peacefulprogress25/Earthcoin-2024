@@ -1,3 +1,4 @@
+"use client";
 import ImageView from "../../Components/ImageView";
 import Card from "./Card";
 import Community from "../../Components/Community";
@@ -12,6 +13,7 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useDrag } from "@use-gesture/react";
+import useDragger from "./useDraggable";
 
 const tokenomics = "/assets/images/tokenomics.png";
 const curious = "/assets/images/Curious.png";
@@ -33,6 +35,7 @@ export default function Mechanics() {
   const [lastPosition, setLastPosition] = useState({ tx: 40, ty: 280 });
   const swiper = useRef();
   const flowChartRef = useRef();
+
   useEffect(() => {
     gsap.set(".flow-chart", { x: lastPosition.tx, y: lastPosition.ty });
   }, []);
@@ -225,7 +228,7 @@ export default function Mechanics() {
       img2: treasuryflow4,
     },
   ];
-
+  useDragger("flow-chart");
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -260,34 +263,14 @@ export default function Mechanics() {
       { duration: 1, x: tx, y: ty }
     );
   }
-  const dragSpeed = isMobile ? 6 : 20;
-  const smoothness = 0.2;
-
-  const bindDrag = useDrag(
-    (state) => {
-      const {
-        offset: [x, y],
-      } = state;
-
-      const scaledX = x * dragSpeed;
-      const scaledY = y * dragSpeed;
-
-      gsap.to(flowChartRef.current, {
-        x: scaledX,
-        y: scaledY,
-        duration: smoothness,
-        ease: "power2.out",
-      });
-
-      setLastPosition({ tx: scaledX, ty: scaledY });
-    },
-    {
-      lock: true,
-      filterTaps: true,
-    }
-  );
 
   const swipeFn = (index) => {
+    const target = document.getElementById("flow-chart");
+
+    if (!target) return;
+    target.style.top = `0px`;
+    target.style.left = `0px`;
+
     switch (index) {
       case 0:
         moveTo({ ...lastPosition, tx: 40, ty: 280 });
@@ -544,12 +527,11 @@ export default function Mechanics() {
 
           <div
             style={{ backgroundImage: `url(${treasurybg})` }}
-            className="w-[30rem] lg:w-[52rem]   overflow-hidden bg-cover sm:h-[33rem]  xl:h-[36rem]"
+            className="w-[30rem] lg:w-[52rem] relative  overflow-hidden bg-cover sm:h-[33rem]  xl:h-[36rem]"
           >
             <div
-              {...bindDrag()}
-              ref={flowChartRef}
-              className="scale-150 w-96 flow-chart cursor-grab"
+              id="flow-chart"
+              className="scale-150 absolute w-96 flow-chart cursor-grab"
             >
               <ImageView
                 src={"/assets/images/flow.png"}
@@ -618,11 +600,11 @@ export default function Mechanics() {
 
             <div
               style={{ backgroundImage: `url(${treasurybg})` }}
-              className=" lg:w-[52rem] mt-10  overflow-hidden bg-cover h-[70vh] "
+              className=" lg:w-[52rem] mt-10 relative overflow-hidden bg-cover h-[70vh] "
             >
               <div
-                {...bindDrag()}
-                ref={flowChartRef}
+                // {...bindDrag()}
+                id="flow-chart"
                 className="scale-150  flow-chart cursor-grab"
               >
                 <ImageView
