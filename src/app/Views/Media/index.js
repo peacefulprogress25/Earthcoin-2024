@@ -70,12 +70,14 @@ export default function Media() {
           </p>
         </div>
         {media && media.length ? (
-          <div className="grid grid-flow-col grid-rows-3 gap-6 mt-8 sm:grid-rows-2">
+          <div className="grid w-full grid-cols-1 xl:grid-cols-2 gap-x-6 gap-y-5">
             {media.filter(card => card?.name).map((card, index) => (
               <Link
                 href={card?.link || ''}
                 target="_blank"
-                className={`flex flex-col sm:flex-row gap-6 ${index === 0 ? "sm:row-span-2 row-span-1 !flex-col" : ""
+                className={`flex cursor-pointer w-full items-start ${index === 0 ? 
+                   "col-span-1 sm:col-span-1 flex-col row-span-1 sm:row-span-3"
+                : "col-span-1  sm:col-span-1 flex-col sm:flex-row"
                   }`}
                 key={index}
               >
@@ -84,12 +86,15 @@ export default function Media() {
                   alt={card.name}
                   width={200}
                   height={200}
-                  className={`w-full h-[200px] object-cover ${index === 0
-                    ? "sm:h-[13rem]"
-                    : "sm:w-[50%] sm:h-auto"
+                  className={`${index === 0
+                   ? "w-full h-[13rem] object-contain sm:h-fit "
+                  : "w-full sm:w-[50%] h-[13rem] sm:h-fit object-contain"
                     }`}
                 />
-                <div className="flex flex-col gap-2">
+                <div  className={`${index === 0
+                  ? "mt-4"
+                  : "flex flex-col gap-2 px-4 mt-4 sm:mt-0"
+                  }`}>
                   <p className="text-[#EC8000] font-inter font-semibold text-[12px]">
                     {card?.name}
                   </p>
@@ -107,10 +112,13 @@ export default function Media() {
                     <LuArrowUpRight size={22} color="#101828" />
                     {/* )} */}
                   </div>
-                  <p className="text-[#475467] font-inter w-[90%] font-normal text-[14px] overflow-hidden text-ellipsis line-clamp-3">
+                  <p className={`text-[#475467] ${index === 0 ? "mt-2" : "mt-2 sm:mt-0"
+                    } font-inter w-[100%] font-normal text-[14px]`}
+                    >
                     {card?.description}
                   </p>
-                  <div className="flex items-center gap-2">
+                  <div  className={`flex items-center ${index === 0 ? "mt-4" : "mt-4 sm:mt-0"
+                    } gap-2`}>
                     {card?.tags.map((tag, i) => (
                       <p
                         className={`rounded-full flex py-[2px] px-2 font-inter text-[12px] font-medium ${colors[i]}`}

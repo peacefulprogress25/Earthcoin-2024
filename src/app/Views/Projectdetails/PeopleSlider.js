@@ -89,7 +89,7 @@ export function PeopleCard({ people }) {
         src={people?.image}
         width={400}
         height={400}
-        className="w-full h-[12rem]"
+        className="w-full h-[12rem] object-contain"
       />
       <p className="font-Inter text-[#101828] font-semibold text-[16px]">
         {people?.name}

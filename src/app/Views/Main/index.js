@@ -610,8 +610,8 @@ export default function Main() {
                 width={200}
                 height={200}
                 className={`${index === 0
-                  ? "w-full h-[13rem] sm:h-[20rem] xl:object-cover"
-                  : "w-full sm:w-[50%] h-[13rem] sm:h-full xl:object-cover"
+                  ? "w-full h-full sm:h-fit object-contain"
+                  : "w-full sm:w-[50%] h-full  object-contain xl:object-cover"
                   }`}
               />
               <div
