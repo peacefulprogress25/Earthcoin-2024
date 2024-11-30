@@ -88,7 +88,7 @@ export default function Mint({ totalEarth }) {
 
 
       const allowance = await contract.increaseAllowance(
-        Presale.address,
+        presaleAddress,
         Amount
       );
       await allowance.wait();
