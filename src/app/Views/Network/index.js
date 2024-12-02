@@ -14,6 +14,14 @@ const networkPage = "/assets/images/network-page.png";
 
 export default function Network() {
   const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
+  const backgroundStyle = {
+    backgroundImage: `url(${networkPage})`,
+    backgroundSize:"cover",
+    paddingTop:"10%",
+    paddingBottom:"10%",
+    height: "100%",
+    width: "100%",
+  }
 
   return (
     <div className="mt-32 w-full mx-auto px-4 sm:px-[6%] 2xl:px-0 flex gap-10 flex-col items-center pb-10">
@@ -28,17 +36,9 @@ export default function Network() {
           Mycelium network creating a regenerative economy using $EARTH
         </p>
       </div>
-      <div className="relative w-full ">
-        <ImageView
-          src={networkPage}
-          alt="earthcoin"
-          width={500}
-          height={500}
-          className="object-contain w-full h-full"
-        />
-
+      <div style={backgroundStyle} className="mb-16">
         {!isMobile ? (
-          <div className="absolute px-10 sm:px-[10%] flex flex-col justify-center items-center top-[4rem] md:top-[6rem] lg:top-[5rem] xl:top-[8rem] w-full">
+          <div className=" px-10 sm:px-[10%] flex flex-col justify-center items-center w-full">
             <p className="font-apercu-pro w-full text-left font-noraml text-[15px] md:text-[18px] lg:text-[22px] xl:text-[30px] text-[#101828]">
               <span className="text-[#EC8000]">Gm</span> Degens, Regens,
               Treegens, Beegens, Seagens, Lunarpunks, <br /> Mycopunks,
@@ -140,7 +140,9 @@ export default function Network() {
           </div>
         ) : (
           <>
-            <div className=" absolute top-8 px-4 max-[322px]:px-4  max-[480px]:px-5  flex flex-col justify-center items-center w-full">
+            <div
+          
+            className="px-4 max-[322px]:px-4  max-[480px]:px-5  flex flex-col justify-center items-center w-full">
               <p className="font-apercu-pro w-full text-left font-noraml max-[322px]:text-[8px] max-[480px]:text-[9px] text-[#101828]">
                 <span className="text-[#EC8000]">Gm</span> Degens, Regens,
                 Treegens, Beegens, Seagens, Lunarpunks, <br /> Mycopunks,

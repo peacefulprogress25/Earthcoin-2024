@@ -310,7 +310,7 @@ export default function Mechanics() {
 
   return (
     <div>
-      <div className=" mt-32 px-8 ">
+      <div className=" mt-32 px-4 sm:px-[6%] 2xl:px-0 ">
         <div className="flex flex-col items-center gap-2">
           <p className="text-[#EC8000] font-semibold text-center text-[14px] font-inter">
             About
@@ -499,10 +499,10 @@ export default function Mechanics() {
             </>
           )}
         </div>
-      </div>
+      
 
       {!isMobile ? (
-        <div className="h-[38rem] lg:h-[42rem] xl:h-[45rem] flex items-center relative pl-10">
+        <div className="h-[38rem] lg:h-[42rem] xl:h-[45rem] flex items-center relative">
           <Swiper
             ref={swiper}
             fadeEffect={{ crossFade: true }}
@@ -667,6 +667,7 @@ export default function Mechanics() {
           </div>
         </>
       )}
+      </div>
 
       {/* <div className="flex justify-between md:gap-10 xl:gap-16 w-full mt-[5rem]">
 
@@ -1024,7 +1025,7 @@ export default function Mechanics() {
 
       <div className="w-full h-[1.5px] my-14 bg-[#F2F4F7] "></div>
 
-      <div className="w-full max-[480px]:px-1  px-10">
+      <div className="w-full px-4 sm:px-[6%] 2xl:px-0">
         <Community
           //title="Still curious?"
           img={curious}
