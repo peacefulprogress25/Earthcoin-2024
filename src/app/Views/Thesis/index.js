@@ -884,11 +884,13 @@ export default function Thesis() {
           </>
         )}
       </div>
-
-      <Community
+<div className="px-4 sm:px-[6%] 2xl:px-0">
+   <Community
         title=""
         description=""
       />
+</div>
+     
     </div>
   );
 }
