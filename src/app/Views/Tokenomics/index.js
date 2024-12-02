@@ -28,7 +28,7 @@ const treasury = "/assets/images/treasury.png";
 const harvest = "/assets/images/harvest-treasury.png";
 
 export default function Mechanics() {
-  const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 624px)" });
   gsap.registerPlugin(MotionPathPlugin);
   const [lastPosition, setLastPosition] = useState({ tx: 40, ty: 280 });
   const [lastPositionSmall, setLastPositionSmall] = useState({ tx: 20, ty: 120 });
@@ -632,7 +632,7 @@ export default function Mechanics() {
 
             <div
             style={{ backgroundImage: `url(${treasurybg})` }}
-             className=" lg:w-[52rem]   overflow-hidden bg-cover h-[500px] "
+             className=" w-full lg:w-[52rem]   overflow-hidden bg-cover h-[500px] "
           >
             <ImageSpanner
               src={"/assets/images/flow.png"}
