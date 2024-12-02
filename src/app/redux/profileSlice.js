@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { networks } from "../Views/Dapp/constants/network";
 
 const initialState = {
   wallet: "",
   walletBalance: "0.0",
   accounts: [],
-  chainId: '',
+  chainId: networks[0]?.chainId,
   balance: {
     earth: 0,
     fruit: 0,
