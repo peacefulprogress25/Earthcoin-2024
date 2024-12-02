@@ -296,15 +296,15 @@ export default function Mechanics() {
           alt="tokenomics"
           width={400}
           height={400}
-          className="object-cover w-full mt-4"
+          className="object-cover w-full mt-6 sm:mt-12"
         />
         <div className="sm:px-[13%] px-4 flex flex-col w-full items-start">
-          <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] max-[480px]:text-[16px] sm:text-[28px]  font-syne">
+          <p className="text-[#101828] font-semibold text-left mt-8 sm:mt-20 text-[20px] max-[480px]:text-[16px] sm:text-[28px]  font-syne">
             $EARTH is designed to -
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-3 w-full justify-center">
+        <div className="grid grid-cols-1 gap-4 mt-12 mb-12 sm:grid-cols-3 w-full justify-center">
           {data.map((option, index) => (
             <Card key={index} option={option} />
           ))}
@@ -349,7 +349,7 @@ export default function Mechanics() {
           )}
           {!isMobile ? (
             <div className="mt-6 w-full flex flex-col sm:flex-row gap-15 justify-between items-start sm:items-center border-b-2 pb-8 border-[#EAECF0] space-between">
-              <p className="text-[#101828] w-[30%] font-semibold text-left   text-[20px]  font-syne">
+              <p className="text-[#101828] w-[30%] font-semibold text-left text-[20px]  font-syne">
                 Neoliberal Value -
               </p>
               <div className="flex flex-col gap-5 w-[70%] items-start">
