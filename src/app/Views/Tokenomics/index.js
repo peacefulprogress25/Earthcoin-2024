@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import ImageSpanner from "./ImageSpanner"
 
 const tokenomics = "/assets/images/tokenomics.png";
 const curious = "/assets/images/Curious.png";
@@ -30,9 +31,14 @@ export default function Mechanics() {
   const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
   gsap.registerPlugin(MotionPathPlugin);
   const [lastPosition, setLastPosition] = useState({ tx: 40, ty: 280 });
+  const [lastPositionSmall, setLastPositionSmall] = useState({ tx: 20, ty: 120 });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const swiper = useRef();
   useEffect(() => {
     gsap.set(".flow-chart", { x: lastPosition.tx, y: lastPosition.ty });
+  }, []);
+  useEffect(() => {
+    gsap.set(".flow-chart-small", { x: lastPositionSmall.tx, y: lastPositionSmall.ty });
   }, []);
   const data = [
     {
@@ -249,6 +255,32 @@ export default function Mechanics() {
       percent: "10.10%",
     },
   ];
+
+  function moveToSmall({ fx, fy, tx, ty }) {
+    setLastPosition({ tx, ty });
+    gsap.fromTo(
+      ".flow-chart-small",
+      { duration: 1, x: fx, y: fy },
+      { duration: 1, x: tx, y: ty }
+    );
+  }
+
+  const swipeFnSmall = (index) => {
+    switch (index) {
+      case 0:
+        moveToSmall({ ...lastPosition, tx: 20, ty: 120 });
+        return;
+      case 1:
+        moveToSmall({ ...lastPosition, tx: 10, ty: -40 });
+        return;
+      case 2:
+        moveToSmall({ ...lastPosition, tx: -90, ty: -280 });
+        return;
+      case 3:
+        moveToSmall({ ...lastPosition, tx: -10, ty: -280 });
+        return;
+    }
+  };
 
   function moveTo({ fx, fy, tx, ty }) {
     setLastPosition({ tx, ty });
@@ -514,7 +546,7 @@ export default function Mechanics() {
             })}
           </Swiper>
 
-          <div
+          {/* <div
             style={{ backgroundImage: `url(${treasurybg})` }}
             className="w-[30rem] lg:w-[52rem]   overflow-hidden bg-cover sm:h-[33rem]  xl:h-[36rem]"
           >
@@ -526,10 +558,26 @@ export default function Mechanics() {
               // style={{ transform: `scale(1.5)` }}
               className="scale-150 w-96  flow-chart "
             />
+          </div> */}
+           <div
+            style={{ backgroundImage: `url(${treasurybg})` }}
+            className=" w-[30rem] lg:w-[52rem] overflow-hidden bg-cover  sm:h-[33rem] xl:h-[36rem]"
+          >
+            <ImageSpanner
+              src={"/assets/images/flow.png"}
+              alt="graph"
+              className="scale-150 w-96 flow-chart"
+              setPosition= {setPosition}
+              position= {position}
+            />
           </div>
           <StepperMui
             className="absolute z-20 bottom-24"
-            onChange={(index) => swiper.current.swiper.slideTo(index)}
+            onChange={(index) => {
+              setPosition({ x: 0, y: 0 })
+              swiper.current.swiper.slideTo(index)
+            }}
+            
           />
         </div>
       ) : (
@@ -541,7 +589,7 @@ export default function Mechanics() {
               modules={[EffectFade]}
               effect="fade"
               className="!mt-10 mySwiper   mb-2  "
-              onSlideChange={(swiper) => swipeFn(swiper.activeIndex)}
+              onSlideChange={(swiper) => swipeFnSmall(swiper.activeIndex)}
             >
               {tokenomicsdata.map((obj, i) => {
                 return (
@@ -583,6 +631,21 @@ export default function Mechanics() {
             </Swiper>
 
             <div
+            style={{ backgroundImage: `url(${treasurybg})` }}
+             className=" lg:w-[52rem]   overflow-hidden bg-cover h-[500px] "
+          >
+            <ImageSpanner
+              src={"/assets/images/flow.png"}
+              alt="graph"
+              className=" scale-100 flow-chart-small "
+              setPosition= {setPosition}
+              position= {position}
+              containerWidth = {500}
+              containerHeight= {500}
+            />
+          </div>
+
+            {/* <div
               style={{ backgroundImage: `url(${treasurybg})` }}
               className=" lg:w-[52rem]   overflow-hidden bg-cover h-[70vh] "
             >
@@ -593,10 +656,13 @@ export default function Mechanics() {
                 height={500}
                 className="scale-150 flow-chart "
               />
-            </div>
+            </div> */}
             <StepperMui
               className="absolute z-20 top-[102%] mr-10"
-              onChange={(index) => swiper.current.swiper.slideTo(index)}
+              onChange={(index) => {
+                swiper.current.swiper.slideTo(index)
+                setPosition({x:0, y:0})
+              }}
             />
           </div>
         </>
