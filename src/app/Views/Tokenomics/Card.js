@@ -1,3 +1,5 @@
+
+
 export default function Card({ option }) {
   return (
     <div className=" py-6 lg:py-14 px-10  rounded-lg border justify-center !items-center border-[#EAECF0] w-full shadow-lg">
