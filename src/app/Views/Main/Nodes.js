@@ -16,9 +16,9 @@ function Nodes() {
   return (
     <div className='flex flex-col items-center justify-center mt-16'>  
       <section className='flex flex-col items-center justify-center w-full gap-3'>
-        <h6 className='text-[#EC8000] font-inter text-xs'>NODES</h6>
-        <h1 className='text-3xl font-semibold font-syne '>$EARTH NODES</h1>
-        <p className='text-[#475467] font-inter text-md font-light'>
+        <h6 className='text-[#EC8000] font-inter text-[14px]'>NODES</h6>
+        <h1 className='text-[30px] sm:text-[40px] font-semibold font-syne '>$EARTH NODES</h1>
+        <p className='text-[#475467] font-inter text-[16px] font-light'>
           Mycelium network coordinating to make climate change history and seed
           the solarpunk paradigm
         </p>

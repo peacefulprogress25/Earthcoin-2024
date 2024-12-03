@@ -163,7 +163,7 @@ export default function Footer() {
             <div className="flex items-center mt-20">
               <Link
                 href="/privacy-policy"
-                className="text-[#475467] pr-2 border-r border-[#475467] font-normal text-center lg:text-left font-inter text-lg"
+                className="text-[#475467] pr-2 border-r border-[#475467] font-normal text-center lg:text-left font-inter text-sm"
               >
                Token Disclaimer
               </Link>
