@@ -21,7 +21,7 @@ const Page = React.forwardRef((props, ref) => {
 Page.displayName = "Page";
 function FlipBook() {
   const [size, setSize] = useState({ height: 600, width: 550 });
-  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isTablet = useMediaQuery({ query: "(min-width: 769px) and (max-width: 1100px)" });
   useEffect(() => {
     if (isMobile) {
@@ -35,6 +35,7 @@ function FlipBook() {
 
   return (
     <>
+    <div className="w-full overflow-x-hidden 2xl:w-[1200px] mx-auto">
       <HTMLFlipBook
         width={size.width || 550}
         height={size.height || 600}
@@ -83,7 +84,7 @@ function FlipBook() {
         {/* Page 2 - Image Content */}
         <Page number="2">
   <div className="p-2 mb-1 sm:mb-6 sm:p-3">
-    <div className="h-[200px] sm:h-[200px] lg:h-[300px] sm:mb-4 mt-2 sm:mt-2 md:mt-8 h-auto mb-2 overflow-hidden">
+    <div className="h-auto sm:h-[50px] lg:h-[300px] sm:mb-4 mt-2 sm:mt-2 md:mt-8 h-auto mb-2 overflow-hidden">
       <ImageView
         src={jungle}
         alt="Jungle"
@@ -92,7 +93,7 @@ function FlipBook() {
         className="object-cover"
       />
     </div>
-    <div className="mt-4 sm:mt-2 md:mt-0 h-auto overflow-hidden">
+    <div className="mt-4 sm:mt-2 md:mt-0 h-auto md:h-[200px] overflow-hidden">
       <ImageView
         src={space}
         alt="Space"
@@ -325,6 +326,7 @@ function FlipBook() {
           </p>
         </Page>
       </HTMLFlipBook>
+      </div>
     </>
   );
 }
