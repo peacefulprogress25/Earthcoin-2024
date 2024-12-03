@@ -10,7 +10,7 @@ import { useMediaQuery } from "react-responsive";
 const Page = React.forwardRef((props, ref) => {
   return (
     <div
-      className="box-border z-20 flex flex-col justify-between w-full h-full p-3 md:p-12 transition-opacity duration-300 ease-out rounded-lg shadow-2xl opacity-100 demoPage bg-custom-gradient"
+      className="box-border z-20 flex flex-col justify-between w-full h-full p-3 sm:p-6 lg:p-8 xl:p-12 transition-opacity duration-300 ease-out rounded-lg shadow-2xl opacity-100 demoPage bg-custom-gradient"
       ref={ref}
       style={{ paddingTop: '20px', paddingBottom: '20px' }}
     >
@@ -30,7 +30,7 @@ function FlipBook() {
     } else if (isMedium) {
       setSize({ height: 400, width: 300 });
     }else if (isLarge) {
-      setSize({ height: 550, width: 350 });
+      setSize({ height: 450, width: 350 });
     }
      else {
       setSize({ height: 730, width: 550 });
@@ -57,7 +57,7 @@ function FlipBook() {
       >
         {/* Page 1 */}
         <Page number="1">
-          <p className="text-[#101828] font-semibold text-left text-[6px] md:text-[14px] lg:text-[16px] xl:text-[30px] mt-2 md:mt-0 leading-2 xl:leading-9 font-book-antiqua">
+          <p className="text-[#101828] font-semibold text-left text-[6px] md:text-[16px]   lg:text-[18px] xl:text-[30px] mt-2 md:mt-0 leading-2 xl:leading-9 font-book-antiqua">
             Context before currency,{" "}
             <span className="text-[#EC8000]">Planet before profits</span>
           </p>
@@ -88,7 +88,7 @@ function FlipBook() {
         {/* Page 2 - Image Content */}
         <Page number="2">
   <div className="p-2 mb-1 sm:mb-6 xl:p-3">
-    <div className="h-[200px] md:h-[150px] lg:h-[220px] xl:h-[300px] sm:mb-4 mt-2 sm:mt-2 md:mt-8 h-auto mb-2 overflow-hidden">
+    <div className="h-[200px] md:h-[150px] lg:h-[180px] xl:h-[300px] sm:mb-4 mt-2 sm:mt-2 md:mt-8 h-auto mb-2 overflow-hidden">
       <ImageView
         src={jungle}
         alt="Jungle"
@@ -112,13 +112,13 @@ function FlipBook() {
 
         {/* Page 3 */}
         <Page number="3">
-          <p className="text-[#101828] font-semibold text-left text-[6px] md:text-[14px] lg:text-[16px] xl:text-[30px] leading-2 xl:leading-7 font-book-antiqua" style={{ lineHeight: '1.2' }}>
+          <p className="text-[#101828] font-semibold text-left text-[6px] md:text-[18px] xl:text-[30px] leading-2 md:leading-4 xl:leading-7 font-book-antiqua" style={{ lineHeight: '1.2' }}>
             The recently experienced exponential advances although are not{" "}
             <span className="text-[#EC8000]">decoupled</span> from its{" "} <br />
             <span className="text-[#EC8000]">tradeoffs</span> -
           </p>
           <div className="pt-2">
-            <p className="text-[#475467] text-left font-normal mt-0 md:mt-4 text-[5px] md:text-[8px] lg:text-[10px] xl:text-[15px] leading-2 xl:leading-7 font-inknutAntiqua">
+            <p className="text-[#475467] text-left font-normal mt-0 md:mt-4 text-[5px] md:text-[8px] lg:text-[10px] xl:text-[15px] leading-2 md:leading-4 xl:leading-7 font-inknutAntiqua">
               We have sacrificed our connection to the natural world, perceiving
               it as something that can be domesticated by human will (fairly
               succeeded at that too). <br /> <br />
@@ -136,8 +136,8 @@ function FlipBook() {
 
         {/* Page 4 - Image Content */}
         <Page number="4">
-          <div className="p-0 sm:p-3">
-            <div className="xl:h-[260px] h-auto rounded-lg ">
+          <div className="p-0 xl:p-3">
+            <div className="xl:h-[260px] md:h-[150px] lg:h-[180px] h-auto rounded-lg ">
               <ImageView
                 src={man}
                 alt="Man"
@@ -146,7 +146,7 @@ function FlipBook() {
                 className="object-cover"
               />
             </div>
-            <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[4.5px] leading-2 xl:leading-7 mt-2 md:mt-16 font-inknutAntiqua">
+            <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[4.5px] leading-2 md:leading-4 xl:leading-7 mt-2 md:mt-10 xl:mt-16 font-inknutAntiqua">
               The dissonance amongst humanity in recognizing the
               interconnectedness of life and that{" "}
               <b>we are all simply matter processing information differently</b>{" "}
@@ -177,13 +177,13 @@ function FlipBook() {
           </p>
           {/* <br /> */}
           {/* <br /> */}
-          <p className="font-semibold md:text-[12px] lg:text-[16px] xl:text-[30px]  mt-2 md:mt-8 text-[6px] leading-2 xl:leading-7 font-book-antiqua text-black" style={{ lineHeight: '1.2' }}>
+          <p className="font-semibold md:text-[16px] lg:text-[18px] xl:text-[30px]  mt-2 md:mt-8 text-[6px] leading-2 md:leading-4 xl:leading-7 font-book-antiqua text-black" style={{ lineHeight: '1.2' }}>
             The aforementioned tradeoffs or shifts in perception have now come
             seeking reparations. The Anthropocene era characterized by -
             {/* <br /> */}
             {/* <br /> */}
           </p>
-          <p className="text-[#475467] text-left font-normal mt-2 md:mt-8 md:text-[8px] lg:text-[10px] xl:text-[15px]  text-[5px] leading-2 xl:leading-7 font-inknutAntiqua">
+          <p className="text-[#475467] text-left font-normal mt-2 md:mt-4 xl:mt-8 md:text-[8px] lg:text-[10px] xl:text-[15px]  text-[5px] leading-2 md:leading-4 xl:leading-7 font-inknutAntiqua">
             · Our unrestrained extraction of the decayed plant and animal matter
             converted to fuel over hundreds of millions of years being exposed
             to the atmosphere in a matter of mere centuries.
@@ -193,7 +193,7 @@ function FlipBook() {
         {/* Page 6 - Image Content */}
         <Page number="6">
           <div className="p-3">
-            <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[5px]  leading-2 xl:leading-7 font-inknutAntiqua">
+            <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[5px]  leading-2 md:leading-4 xl:leading-7 font-inknutAntiqua">
               · Our unhindered destruction of thriving natural ecosystems for
               raw materials, grazing and agriculture. 
               <p className="mt-1 md:mt-4"> · Our infusion of deadly chemicals into the soil, air and water
@@ -215,7 +215,7 @@ function FlipBook() {
 
         {/* Page 7 */}
         <Page number="7">
-          <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[4.5px] leading-2 xl:leading-7 font-inknutAntiqua">
+          <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[4.5px] leading-2 md:leading-4 xl:leading-7 font-inknutAntiqua">
             The massive rise in our standards of living at nature&rsquo;s
             expense has now come claiming the debt in the face of climate
             change. 
@@ -227,13 +227,13 @@ function FlipBook() {
             A debt that is topped with air pollution, land degradation,
             plastification of oceans, biodiversity loss, mounting landfills and
             freshwater depletion.
-            <p className="mt-2 md:mt-4 ">
+            <p className="mt-2 xl:mt-4 ">
             The onslaught of major environmental issues is a reflection of the
             deep systemic fault lines that exist within our ideology of
             sustaining life currently and it is nature&rsquo;s way of returning
             the favor we have so dearly bestowed upon it in recent times.
             </p>
-            <p className="mt-2 md:mt-4">
+            <p className="mt-2 xl:mt-4">
             Climate change is more of an umbrella term to describe the various
             repercussions that a warming earth can have. From raging wildfires,
             rising sea levels, floods and droughts, intensified cyclones,
@@ -247,12 +247,12 @@ function FlipBook() {
 
         {/* Page 8 */}
         <Page number="8">
-          <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[5px] leading-2 xl:leading-7 font-inknutAntiqua">
+          <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[5px] leading-2 md:leading-4 xl:leading-7 font-inknutAntiqua">
             Begun witnessing and these consequences are still simply what is
             within our scope of comprehension, <b> unforeseen feedback loops are the
             icing on the proverbial multi-layered climate change cake.</b>
           </p>{" "}
-          <p className="font-semibold mt-2 md:mt-6 md:text-[14px] lg:text-[16px] xl:text-[30px] text-[5px] leading-2 xl:leading-7 font-book-antiqua text-black" style={{ lineHeight: '1.2' }}>
+          <p className="font-semibold mt-2 md:mt-6 md:text-[16px] lg:text-[18px] xl:text-[30px] text-[5px] leading-2 md:leading-4 xl:leading-7 font-book-antiqua text-black" style={{ lineHeight: '1.2' }}>
             The onslaught of major environmental issues is a <br /> reflection of the
             deep systemic <br /> fault lines that exist within our ideology of
             sustaining life currently.
@@ -267,12 +267,12 @@ function FlipBook() {
             unevenly distributed, the perils of climate change too are unevenly
             distributed. 
           </p>{" "}
-          <p className="text-[#475467] text-left mt-1 sm:mt-4 font-normal md:text-[8px] lg:text-[10px] text-[5px] leading-2 xl:leading-7 font-inknutAntiqua">It is now a commonly accepted premise that section</p> 
+          <p className="text-[#475467] text-left mt-1 sm:mt-4 font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[5px] leading-2 xl:leading-7 font-inknutAntiqua">It is now a commonly accepted premise that section</p> 
         </Page>
 
         {/* Page 9 */}
         <Page number="9">
-          <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[4.5px] leading-2 xl:leading-7 font-inknutAntiqua">
+          <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[4.5px] leading-2 md:leading-4 xl:leading-7 font-inknutAntiqua">
             The part of humanity that is largely responsible for the predicament
             at hand is also better equipped to deal with the problem while the
             lower rungs of society will be left gasping as usual. Un/Fortunately
@@ -302,7 +302,7 @@ function FlipBook() {
 
         {/* Page 10 */}
         <Page number="10">
-          <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[4.8px] leading-2 xl:leading-7 font-inknutAntiqua">
+          <p className="text-[#475467] text-left font-normal md:text-[8px] lg:text-[10px] xl:text-[15px] text-[4.8px] leading-2 md:leading-4 xl:leading-7 font-inknutAntiqua">
             Although we see governments and corporates try to take
             &rsquo;bold&rsquo; action to ward off the worst of climate change,
             it&rsquo;s like Einstein said - it is not possible to solve a
