@@ -8,7 +8,19 @@ export const contractAddressList = {
         soulbound: "0x7d5fef3a09f8A67Bd8CEAce828Ca97af729F44df",
         stable: "0x2058A9D7613eEE744279e3856Ef0eAda5FCbaA7e",// not used
         stableCoin: "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
-        claim: "0x0DBAd79b9dA051d20857499f8fa1bDCF2a4dfE84"
+        claim: "0x0DBAd79b9dA051d20857499f8fa1bDCF2a4dfE84",
+        explorer: "https://polygonscan.com/address/",
+        infura: "https://polygon-mainnet.infura.io/v3/",
+        tokenContract: '0x9F9f149a02Cddc9a8251207cef',
+        metadata: {
+            explorerName: "View on Polygon scan",
+        },
+        units: {
+            unit1: '$DAI',
+            unit2: '',
+            unit3: '',
+            unit4: '',
+        }
     },
     44787: { //testnet
         earthERC20: "0xB30918C8Ea73D4a40A9bb7b800fb743F6Ef52489",
@@ -30,7 +42,19 @@ export const contractAddressList = {
         soulbound: "0x7d5fef3a09f8A67Bd8CEAce828Ca97af729F44df",
         stable: "0x2058A9D7613eEE744279e3856Ef0eAda5FCbaA7e", //missing
         stableCoin: "0x765DE816845861e75A25fCA122bb6898B8B1282a",
-        claim: "0xfe6323C648f1C7923CE6177157cd094630017C6E"
+        claim: "0xfe6323C648f1C7923CE6177157cd094630017C6E",
+        explorer: "https://explorer.celo.org/mainnet/address/",
+        infura: "https://celo-mainnet.infura.io/v3/",
+        tokenContract: '0x765DE816845861e75A25fCA122bb6898B8B1282a',
+        units: {
+            unit1: 'cUSD',
+            unit2: '',
+            unit3: '',
+            unit4: '',
+        },
+        metadata: {
+            explorerName: "View on Celo"
+        },
     },
     10: {
         nftMetaData: "0x2b2514535f3769289956Df44B0Bf1d8dfe138F68"

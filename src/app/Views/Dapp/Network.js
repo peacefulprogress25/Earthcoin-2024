@@ -31,11 +31,11 @@ export default function Network() {
   const handleChange = async (value) => {
     // Find the selected object based on the value
     const selectedObj = networks.filter((option) => option?.chainId === value);
-    setSelectedOption(selectedObj[0]);
-    dispatch(networkFn(selectedObj[0]?.chainId))
-    assignAddress(selectedObj[0].chainId)
     wallet && await VerifyNetwork(selectedObj[0]);
+    dispatch(networkFn(selectedObj[0]?.chainId))
     console.log(selectedObj[0]);  // logs the name of the selected object
+    setSelectedOption(selectedObj[0]);
+    assignAddress(selectedObj[0].chainId)
   };
 
   useEffect(() => {

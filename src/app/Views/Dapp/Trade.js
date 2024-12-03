@@ -2,19 +2,22 @@
 import Link from "next/link";
 import buttonConfig from "../../utils/button";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { MdContentCopy } from "react-icons/md";
 import { formatWalletAddress } from "./utils";
+import { AddressContext } from "../../Providers";
 
 export default function Trade() {
   const [copied, setCopied] = useState(false);
+  const { addressObj } = useContext(AddressContext)
+
 
   const onCopy = () => {
     setCopied(true);
   };
   return (
     <div className="flex flex-col items-center gap-5 p-6 bg-white">
-      <p className="text-[#101828] font-inter font-medium text-center text-md  sm:text-2xl">Trade $Dai <br />for $Earth</p>
+      <p className="text-[#101828] font-inter font-medium text-center text-md  sm:text-2xl">Trade {addressObj?.units?.unit1} <br />for $Earth</p>
       <div className="flex flex-col items-center">
         <p className="font-bold text-center text-black font-inter text-md">Network:</p>
         <p className="text-[#101828] font-inter font-semibold text-center text-sm">Polygon POS</p>

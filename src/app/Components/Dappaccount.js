@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { disconnectWalletFn, profileState } from "../redux/profileSlice";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { fetchBalance } from "../Views/Dapp/balance";
 import { formatWalletAddress } from "../Views/Dapp/utils";
+import { AddressContext } from "../Providers";
 
 const avatar = "/assets/images/dapp-Avatar.png";
 const copyIcon = "/assets/icons/copy-Icon.png";
@@ -16,8 +17,10 @@ export default function AccountDapp() {
         balance: balanceObj,
         earthBalance,
     } = useSelector(profileState);
+    const { addressObj } = useContext(AddressContext)
 
-    const explorerUrl = `https://polygonscan.com/address/${wallet}`;
+
+    const explorerUrl = `${addressObj?.explorer}${wallet}`;
     useEffect(() => {
         fetchBalance();
     }, []);
@@ -69,13 +72,13 @@ export default function AccountDapp() {
                             {balanceObj?.dai && balanceObj?.dai?.toFixed(2)}
                         </p>
                         <p className='font-inter font-semibold text-[12px] text-[#101828]'>
-                            $DAI Balance
+                            {addressObj?.units?.unit1} Balance
                         </p>
                     </div>
                 </div>
                 <div className='flex justify-between px-2 mt-4'>
                     <p className='text-[#C5C6C6] font-inter font-semibold text-[12px]'>
-                        View More on Polygon Scan
+                        {addressObj?.metadata?.explorerName}
                     </p>
                     <Link target='_blank' href={explorerUrl}>
                         <img className='w-6 h-6' src={sideIcon} />

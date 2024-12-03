@@ -191,7 +191,8 @@ export const addToken = async () => {
 export const getTreasury = async () => {
   try {
     const EarthTreasuryAddress = getAddressFn()?.earthTreasury;
-    const provider = `https://polygon-mainnet.infura.io/v3/${envObj.infuraId}`
+    const infuraUrl = getAddressFn()?.infura;
+    const provider = `${infuraUrl}${envObj.infuraId}`
     const web3 = new Web3(new Web3.providers.HttpProvider(provider));
     const contract = new web3.eth.Contract(EarthTreasuryJSON.abi, EarthTreasuryAddress);
     const info = await contract?.methods?.intrinsicValueRatio()?.call();

@@ -106,23 +106,23 @@ export default function Dapp() {
 
 
 
-  const networkChanged = async (chainId) => {
-    if (typeof window?.ethereum !== undefined) {
-      const selectedNetwork = networks.filter(obj => obj.chainId === chainId)
+  // const networkChanged = async (chainId) => {
+  //   if (typeof window?.ethereum !== undefined) {
+  //     const selectedNetwork = networks.filter(obj => obj.chainId === chainId)
 
-      showMessage({
-        type: "success",
-        value: `Network Switched to ${selectedNetwork[0].chainName}`,
-      });
-    }
-  };
+  //     showMessage({
+  //       type: "success",
+  //       value: `Network Switched to ${selectedNetwork[0].chainName}`,
+  //     });
+  //   }
+  // };
 
-  useEffect(() => {
-    if (typeof window?.ethereum !== undefined) {
-      window?.ethereum?.on("chainChanged", networkChanged);
-    }
+  // useEffect(() => {
+  //   if (typeof window?.ethereum !== undefined) {
+  //     window?.ethereum?.on("chainChanged", networkChanged);
+  //   }
 
-  }, []);
+  // }, []);
 
   // const handleAccountChange = (...args) => {
   //   connectWalletFn({

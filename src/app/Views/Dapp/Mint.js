@@ -223,12 +223,12 @@ export default function Mint({ totalEarth }) {
 
         : <div className='flex w-[72%] mt-8 py-8 sm:py-0 sm:mt-0 items-center flex-col gap-3'>
           <p className='text-black text-center font-inter sm:text-[28px] text-md font-medium'>
-            Mint $Earth <br /> by purging $Dai
+            Mint $Earth <br /> by purging {addressObj?.units?.unit1}
           </p>
           <div className='flex flex-wrap justify-center w-full gap-3 mt-2 sm:flex-nowrap'>
             <div className='flex flex-col w-[130px]'>
               <p className='text-black text-center font-inter text-[12px] font-medium'>
-                Enter $Dai amount
+                Enter {addressObj?.units?.unit1} amount
               </p>
               <div className='flex border-2  gap-2  border-[#EAECF0] items-center p-1'>
                 <input
@@ -238,7 +238,7 @@ export default function Mint({ totalEarth }) {
                   onChange={handleChange}
                 />
                 <p className='text-black text-center font-inter text-[12px] font-medium'>
-                  $DAI
+                  {addressObj?.units?.unit1}
                 </p>
               </div>
             </div>

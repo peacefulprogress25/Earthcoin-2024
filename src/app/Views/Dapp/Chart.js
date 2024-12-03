@@ -259,30 +259,30 @@ const Chart = ({ setScreen, screen, callBack }) => {
         let x, y;
         switch (d.name) {
           case "TRADE":
-            x = -260;
-            y = 200;
+            x = 570;
+            y = 80;
             break;
           case "CLAIM":
-            x = -260;
-            y = 200;
+            x = 600;
+            y = 320;
             break;
           case "CONNECT WALLET":
           case "DISCONNECT WALLET":
-            x = -250;
-            y = 140;
+            x = 210;
+            y = 500;
             break;
           case "STAKE":
-            x = -450;
-            y = 280;
+            x = 200;
+            y = -70;
 
             break
           case "MINT":
-            x = -680;
-            y = 280;
+            x = -240;
+            y = 100;
             break
           case "NODE":
-            x = -700;
-            y = 160;
+            x = -220;
+            y = 340;
             break
           default:
             break;
@@ -290,8 +290,8 @@ const Chart = ({ setScreen, screen, callBack }) => {
 
         // Update tooltip position
         tooltip
-          .style("top", `${event.pageY - y}px`)
-          .style("left", `${event.pageX + x}px`)
+          .style("top", `${y}px`)
+          .style("left", `${x}px`)
           .style("z-index", "100")
         // .html(`<strong>${d.name}</strong><br>Value: ${d.value}`);
 

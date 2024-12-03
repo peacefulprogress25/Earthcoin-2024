@@ -9,12 +9,13 @@ import { nexaflowPageObj } from "../../utils/constants";
 import nexaflowApi from "../../services/nexaflow";
 import Link from "next/link";
 import { Loader } from "../../Components/Loader";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import { addToken, fetchDexPrice, getTreasury, totalEarth } from "../Dapp/balance";
 import { Select } from "antd";
 import buttonConfig from "../../utils/button";
+import { AddressContext } from "../../Providers";
 
 const wallet = "/assets/icons/wallet.svg";
 const chart = "/assets/images/Line and bar chart.png";
@@ -129,6 +130,7 @@ export default function Dashboard() {
     search: "",
     type: ""
   })
+  const { addressObj } = useContext(AddressContext)
 
   useEffect(() => {
     setLoading(true)
@@ -207,7 +209,7 @@ export default function Dashboard() {
               Token Contract
             </p>
             <p className='text-[#475467] font-inter text-left font-normal text-[14px]'>
-              0x9F9f149a02Cddc9a8251207cef
+              {addressObj?.tokenContract}
             </p>
           </div>
           <div className='flex items-center gap-2'>
@@ -436,9 +438,9 @@ export default function Dashboard() {
                   { label: "All", value: "" },
                   ...(fundingData && fundingData.length
                     ? fundingData.map((obj) => ({
-                        label: obj?.title,
-                        value: obj?.title,
-                      }))
+                      label: obj?.title,
+                      value: obj?.title,
+                    }))
                     : []),
                 ]}
                 showSearch
