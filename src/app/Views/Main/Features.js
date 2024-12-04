@@ -73,7 +73,7 @@ function Features() {
   ];
 
   return (
-    <div className='min-h-[70vh] w-full py-8'>
+    <div className='h-fit w-full'>
       <Swiper
         modules={[Keyboard, Navigation, Autoplay, EffectFade]}
         className='w-full mySwiper '

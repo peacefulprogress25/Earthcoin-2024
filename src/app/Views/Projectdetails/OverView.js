@@ -42,7 +42,7 @@ export default function OverView({ details }) {
   }
   return (
     <div id='overview' className='flex flex-col w-full gap-8 mt-12'>
-      <div className='flex flex-col sm:flex-row !items-start gap-28'>
+      <div className='flex flex-col sm:flex-row px-[6%] !items-start gap-28'>
         <div className='flex flex-col items-center w-full gap-2 sm:w-auto sm:items-start'>
           <div className='flex max-w-44 sm:max-w-52 w-full flex-col border-y-2 font-Inter py-3 border-[#EAECF0] items-center sm:items-start gap-3'>
             <p className='text-[#EC8000] font-semibold text-[14px]'>
@@ -109,25 +109,25 @@ export default function OverView({ details }) {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col gap-3 sm:gap-8 mt-2 items-center  border-[#EAECF0]'>
-        {details?.projectValue ? <div className='flex items-center w-[14rem] sm:w-[22rem]  px-4  py-6  border-2 rounded-lg shadow-lg border-[#EAECF0] justify-center flex-col'>
-          <p className='font-syne font-semibold text-center text-[20px] sm:text-[32px] text-[#EC8000]'>
+      <div className='flex sm:flex-row justify-between flex-col gap-3 sm:gap-6 mt-2 items-center  border-[#EAECF0]'>
+        {details?.projectValue ? <div className='flex items-center w-[14rem] sm:w-[22rem]  px-4  py-8  border-2 rounded-lg shadow-lg border-[#EAECF0] justify-center flex-col'>
+          <p className='font-syne font-semibold text-center text-[20px] sm:text-[36px] text-[#EC8000]'>
             {details?.projectValue}
           </p>
           <p className='font-Inter font-semibold text-center text-[14px] text-[#101828]'>
             Total project value
           </p>
         </div> : null}
-        {details?.fundingNeeded ? <div className='flex items-center w-[14rem] sm:w-[22rem] px-4   py-6 border-2 rounded-lg shadow-lg border-[#EAECF0] justify-center flex-col'>
-          <p className='font-syne font-semibold text-[20px] text-center sm:text-[32px] text-[#EC8000]'>
+        {details?.fundingNeeded ? <div className='flex items-center w-[14rem] sm:w-[22rem] px-4   py-8 border-2 rounded-lg shadow-lg border-[#EAECF0] justify-center flex-col'>
+          <p className='font-syne font-semibold text-[20px] text-center sm:text-[36px] text-[#EC8000]'>
             {details?.fundingNeeded}
           </p>
           <p className='font-Inter font-semibold text-center text-[14px] text-[#101828]'>
             Funding needed
           </p>
         </div> : null}
-        {details?.Irr ? <div className='flex items-center w-[14rem] sm:w-[22rem] px-4  py-6 rounded-lg shadow-lg border-2 border-[#EAECF0]  justify-center flex-col'>
-          <p className='font-syne font-semibold text-[20px] text-center sm:text-[32px] text-[#EC8000]'>
+        {details?.Irr ? <div className='flex items-center w-[14rem] sm:w-[22rem] px-4  py-8 rounded-lg shadow-lg border-2 border-[#EAECF0]  justify-center flex-col'>
+          <p className='font-syne font-semibold text-[20px] text-center sm:text-[36px] text-[#EC8000]'>
             {details?.Irr}
           </p>
           <p className='font-Inter font-semibold text-center text-[14px] text-[#101828]'>
