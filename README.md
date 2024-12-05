@@ -41,6 +41,8 @@ Repo released under GNU General Public License (GPL)
 
 Lets GROW 
 
+$EARTH for EARTH 
+
 
 
 
