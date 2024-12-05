@@ -35,8 +35,15 @@
       right: auto;
       margin: 0;
     }
+    @media (min-width: 640px) and (max-width: 1024px) {
+      left: 80px;
+      /* left: 10%; */
+      /* transform: translateX(-50%); */
+      /* right: auto;
+      margin: 0; */
+    }
     @media (min-width: 1536px) {
-      left: 200px;
+      /* left: 200px; */
     }
 
     @media (max-width: 340px) {

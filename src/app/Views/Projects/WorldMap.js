@@ -25,12 +25,15 @@ const SetZoom = ({ setZoomLevel }) => {
       if (screenWidth < 640) {
         map.setZoom(0.2);
         setZoomLevel(0.2);
-      } else if (screenWidth < 1536) {
-        map.setZoom(1.7);
-        setZoomLevel(1.7);
+      } else if (screenWidth < 1024) {
+        map.setZoom(1.3);
+        setZoomLevel(1.3);
+      } else if (screenWidth < 1700) {
+        map.setZoom(1.6);
+        setZoomLevel(1.6);
       } else {
-        map.setZoom(2.8);
-        setZoomLevel(2.8);
+        map.setZoom(2.2);
+        setZoomLevel(2.2);
       }
     };
 
