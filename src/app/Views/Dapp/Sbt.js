@@ -104,6 +104,14 @@ export default function Sbt() {
   }
 
   const isVerified = async () => {
+
+    setPageStatus((pageStatus) => ({
+      ...pageStatus,
+      verifyStatus: "approved",
+      verify: true,
+    }));
+    return
+
     setLoading((loading) => ({ ...loading, verifyLoading: true }));
     const options = {
       method: "POST",
@@ -135,10 +143,8 @@ export default function Sbt() {
             } else {
               setPageStatus((pageStatus) => ({
                 ...pageStatus,
-                // verifyStatus: status,
-                // verify: false,
-                verifyStatus: "approved",
-                verify: true,
+                verifyStatus: status,
+                verify: false,
               }));
             }
             break;
@@ -149,15 +155,6 @@ export default function Sbt() {
       .catch((err) => {
         setLoading((loading) => ({ ...loading, verifyLoading: false }));
         console.error(err);
-
-        // temprovary code
-        setPageStatus((pageStatus) => ({
-          ...pageStatus,
-          // verifyStatus: status,
-          // verify: false,
-          verifyStatus: "approved",
-          verify: true,
-        }));
       });
     // setShowBalance(true);
   };
