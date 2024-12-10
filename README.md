@@ -39,7 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Repo released under GNU General Public License (GPL) 
 
-Lets GROW 
+Lets GROOOW 
 
 $EARTH for EARTH 
 
