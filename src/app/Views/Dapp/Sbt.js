@@ -353,13 +353,13 @@ export default function Sbt() {
   ) {
     return (
       <div className='flex flex-col items-center justify-center w-full gap-3'>
-        <CgDanger color='#c1272d' size='60' />
+        {/* <CgDanger color='#c1272d' size='60' />
         <p className='text-[22px] text-center font-inter font-medium text-black'>
           SOUL BOUND TOKEN <br />{" "}
           <span className='text-[#c94247]'>NOT FOUND</span>
-        </p>
-        <p className='text-black font-inter text-[12px] font-normal'>
-          Know more
+        </p> */}
+        <p className='mb-4 text-lg font-medium text-center text-black font-inter'>
+          One transaction away from <br /> becoming a NODE
         </p>
         <button
           onClick={safeMint}
