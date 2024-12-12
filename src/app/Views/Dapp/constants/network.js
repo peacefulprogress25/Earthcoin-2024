@@ -60,31 +60,31 @@ export const contractAddressList = {
             explorerName: "View on Celo"
         },
     },
-    84532: { //Base Sepolia Testnet
-        earthERC20: "0x14C0dcfC7cF3Cb0512B273F15a17EA5F7370ACb8",
-        earthStaking: "0x78C004B72F96e10C0484dEd69D6De34d7F1B956F",
-        earthTreasury: "0x21F5a64A8ffDcb94CeB7E4951ADA37F1d851398A",
-        fruit: "0x5Ffd36F3b15753DE948d7600Be5f6Ae7dEb0D8F5",
-        presale: "0x975C8135dbb0477e8efC0aAeBdFB8aB0CaD76ce4",
-        soulbound: "0x468A83A7cd1fEd2f900C1D7A35B2861a0d60bdE2",
-        stable: "", //missing
-        stableCoin: "0xDDB5E9d90A3e9f48dEdd4A75b04e78156b9241eF",
-        claim: "0xAc604aeE3881911beFDb135aec38D1A2a3Ee7B65",
+    // 84532: { //Base Sepolia Testnet
+    //     earthERC20: "0x14C0dcfC7cF3Cb0512B273F15a17EA5F7370ACb8",
+    //     earthStaking: "0x78C004B72F96e10C0484dEd69D6De34d7F1B956F",
+    //     earthTreasury: "0x21F5a64A8ffDcb94CeB7E4951ADA37F1d851398A",
+    //     fruit: "0x5Ffd36F3b15753DE948d7600Be5f6Ae7dEb0D8F5",
+    //     presale: "0x975C8135dbb0477e8efC0aAeBdFB8aB0CaD76ce4",
+    //     soulbound: "0x468A83A7cd1fEd2f900C1D7A35B2861a0d60bdE2",
+    //     stable: "", //missing
+    //     stableCoin: "0xDDB5E9d90A3e9f48dEdd4A75b04e78156b9241eF",
+    //     claim: "0xAc604aeE3881911beFDb135aec38D1A2a3Ee7B65",
 
 
-        explorer: "https://sepolia.basescan.org/address/",
-        infura: "https://base-sepolia.infura.io/v3/",
-        tokenContract: '0x765DE816845861e75A25fCA122bb6898B8B1282a',
-        units: {
-            unit1: 'USDC',
-            unit2: '',
-            unit3: '',
-            unit4: '',
-        },
-        metadata: {
-            explorerName: "View on Base Sepolia"
-        },
-    },
+    //     explorer: "https://sepolia.basescan.org/address/",
+    //     infura: "https://base-sepolia.infura.io/v3/",
+    //     tokenContract: '0x765DE816845861e75A25fCA122bb6898B8B1282a',
+    //     units: {
+    //         unit1: 'USDC',
+    //         unit2: '',
+    //         unit3: '',
+    //         unit4: '',
+    //     },
+    //     metadata: {
+    //         explorerName: "View on Base Sepolia"
+    //     },
+    // },
     10: {
         nftMetaData: "0x2b2514535f3769289956Df44B0Bf1d8dfe138F68"
     }
@@ -121,16 +121,16 @@ export const networks = [
             decimals: 18,
         },
     },
-    {
-        chainName: "Base Sepolia Testnet",
-        chainId: "0x14a34",
-        rpcUrls: ["https://sepolia.base.org"],
-        blockExplorerUrls: ["https://sepolia.basescan.org"],
-        nativeCurrency: {
-            symbol: "ETH",
-            decimals: 18,
-        },
-    },
+    // {
+    //     chainName: "Base Sepolia Testnet",
+    //     chainId: "0x14a34",
+    //     rpcUrls: ["https://sepolia.base.org"],
+    //     blockExplorerUrls: ["https://sepolia.basescan.org"],
+    //     nativeCurrency: {
+    //         symbol: "ETH",
+    //         decimals: 18,
+    //     },
+    // },
     // {
     //     chainName: "OP Mainnet",
     //     chainId: "0xa",
