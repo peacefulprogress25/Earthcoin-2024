@@ -306,9 +306,9 @@ export default function Main() {
             </SwiperSlide>
           </Swiper>
 
-          <p className="xl:text-[30px] lg:text-[25px] md:text-xl md:mt-3 lg:mt-0  text-sm  font-inter">Reserve currency for #Refi</p>
+          <p className="xl:text-[30px] lg:text-[25px] md:text-xl mt-2 md:mt-3 xl:mt-0  text-[10px]  font-inter">Reserve currency for #Refi</p>
 
-          <button className="text-white mt-4 sm:mt-6 font-inter font-semibold px-4 py-2 rounded-md bg-[#101323] border border-[#EC8000] text-sm sm:text-base">
+          <button className="text-white mt-1 sm:mt-6 font-inter font-semibold px-2 py-1 sm:px-4 sm:py-2 rounded-md bg-[#101323] border border-[#EC8000] text-[8px] sm:text-base">
             <Link
               href={buttonConfig?.home_get_earth?.link || ""}
               target={

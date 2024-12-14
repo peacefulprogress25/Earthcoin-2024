@@ -23,7 +23,7 @@ export default function EarthNode() {
     {
       title: "1. Google form & KYC verification",
       description:
-        "Fill the Google Form and complete KYC process by furnishing basic information including name, ID, and a live photo to ensure compliance and authenticity.",
+        "Fill the Google form with necessary details required to make you a NODE.",
       btntext: buttonConfig.network_earthnode_verified.title,
       buttonLink: buttonConfig.network_earthnode_verified.link,
       external: buttonConfig.network_earthnode_verified.external,
@@ -199,19 +199,8 @@ export default function EarthNode() {
                     {community?.description}
                   </p>
                   {community?.btntext1 ? (
-                    <div className="flex flex-col gap-2 sm:flex-row sm:gap-4">
                       <div className="px-2 sm:px-10">
-                        <Link
-                          key={`${index}-1`}
-                          className="w-full sm:w-fit min-w-[100px] mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
-                          href={community?.buttonLink || ""}
-                          target={community?.external ? "_blank" : "_self"}
-                        >
-                          {community?.btntext}
-                        </Link>
-                      </div>
-                      <div className="px-2 sm:px-0">
-                        <Link
+                      <Link
                           key={`${index}-2`}
                           className="w-full sm:w-fit min-w-[100px] mt-2 font-medium text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 px-3 text-sm"
                           href={community?.buttonLink1 || ""}
@@ -220,7 +209,6 @@ export default function EarthNode() {
                           {community?.btntext1}
                         </Link>
                       </div>
-                    </div>
                   ) : (
                     <div className="px-2 sm:px-10">
                       <Link

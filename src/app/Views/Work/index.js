@@ -107,9 +107,9 @@ export default function Work() {
           </div> */}
         </div>
 
-        <div className="flex justify-center items-center px-[100px]">
+        <div className="flex justify-center items-center lg:px-[100px]">
 
-          <div className="flex flex-col w-full items-start pl-[64px]">
+          <div className="flex flex-col w-full items-start lg:pl-[64px]">
             <div>
               <p className="text-[#101828] font-semibold text-left mt-6 text-[20px] sm:text-[28px] mr-10 font-syne">
                 Flow that makes regeneration a reality
@@ -119,7 +119,7 @@ export default function Work() {
                   {earthValues.map((value, index) => (
                     <li
                       key={index}
-                      className="text-[#475467] text-center mb-4 sm:text-left mt-8 font-normal text-[16px] font-inter"
+                      className="text-[#475467] mb-4 text-left mt-8 font-normal text-[16px] font-inter"
                     >
                       {value}
                     </li>

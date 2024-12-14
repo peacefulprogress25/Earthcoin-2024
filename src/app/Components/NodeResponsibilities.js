@@ -62,7 +62,7 @@ export default function ResponsibilitiesOfNode() {
                     key={index}
                     onClick={() => handleClick(item.title)}
                     style={{ cursor: "pointer" }}
-                    className=" flex justify-center items-center border-t-[1px] h-[25%]  border-[#D0D5DD]"
+                    className=" flex justify-center items-center border-t-[1px] p-5 sm:p-0 h-[25%]  border-[#D0D5DD]"
                   >
                     <p className="font-syne h-full flex flex-col justify-center items-center   text-[#000000] font-semibold text-[26px]">
                       {item.title}

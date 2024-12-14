@@ -448,14 +448,38 @@ export default function Header() {
             {pathname !== "/dapp" && (
               <>
                 <button
-                  className="w-full text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
+                className="w-full relative ml-auto text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
+                  // className="w-full text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"
                   onClick={() => {
                     setShowUniswap(true);
-                    setMobileMenuOpen(false); // Close menu on button click
+                    // setMobileMenuOpen(false); // Close menu on button click
                   }}
                 >
                   BUY
                 </button>
+                {showUniswap && (
+                  <div
+                  style={{
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: "rgba(0, 0, 0, 0.5)",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  >
+                <div
+                
+                  ref={buyRef}
+                  className="absolute w-[19rem] sm:w-[22rem] flex flex-col  border border-[#EAECF0]  shadow-lg gap-8 p-6  rounded-lg bg-white"
+                >
+                  <UniswapEarth setShowUniswap={setShowUniswap} />
+                </div>
+                </div>
+              )}
                 <Link
                   href="/dapp"
                   className="w-full text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-sm"

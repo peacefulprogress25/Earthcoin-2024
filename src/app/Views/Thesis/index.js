@@ -27,7 +27,7 @@ const solarpunk = "/assets/images/solarpunk.png";
 
 export default function Thesis() {
   const [fundingData, setFundingData] = useState([]);
-  const [title, setTitle] = useState("clean Energy");
+  const [title, setTitle] = useState("Clean Energy");
   const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function Thesis() {
       percent: "14.14%",
     },
     {
-      title: "clean Energy",
+      title: "Clean Energy",
       percent: "40.40%",
     },
     {
@@ -63,7 +63,7 @@ export default function Thesis() {
       percent: "10.10%",
     },
     {
-      title: "clean Transport",
+      title: "Clean Transport",
       percent: "20.20%",
     },
   ];
@@ -72,7 +72,7 @@ export default function Thesis() {
       title: "Regenerative Agriculture",
     },
     {
-      title: "clean Transport",
+      title: "Clean Transport",
     },
     {
       title: "Ecosystem Conservation",
@@ -81,7 +81,7 @@ export default function Thesis() {
       title: "Solarpunk Spaces",
     },
     {
-      title: "clean Energy",
+      title: "Clean Energy",
     },
   ];
   return (
@@ -274,13 +274,13 @@ export default function Thesis() {
                     />
                   </div>
                   <div
-                    className={`w-full h-2 ${power.title === "clean Energy"
+                    className={`w-full h-2 ${power.title === "Clean Energy"
                       ? "bg-[#486D2F]"
                       : power.title === "Regenerative Agriculture"
                         ? "bg-[#F4AB1F]"
                         : power.title === "Ecosystem Conservation"
                           ? "bg-[#B2BC45]"
-                          : power.title === "clean Transport"
+                          : power.title === "Clean Transport"
                             ? "bg-[#EC8000]"
                             : power.title === "Solarpunk Spaces"
                               ? "bg-[#045047]"
@@ -345,11 +345,11 @@ export default function Thesis() {
               </div>
             </div>
           )}
-          {title === "clean Energy" && (
-            <div className="border-2 lg:flex lg:gap-5 border-[#F2F4F7] rounded-lg px-[6% 2xl:px-0] h-full py-6">
+          {title === "Clean Energy" && (
+                        <div className="border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] 2xl:px-0 py-6">
               <div className="lg:w-[60%]">
                 <p className="text-[#101828] font-semibold text-left max-[480px]:text-[12px]  text-[14px] sm:text-[18px] mr-10 font-inter">
-                  clean Energy
+                  Clean Energy
                 </p>
                 <div className="mt-6">
                   <p className="text-[#475467] text-center sm:text-left font-normal max-[480px]:text-[9px]  text-[16px] lg:text-[14px] font-inter">
@@ -437,11 +437,11 @@ export default function Thesis() {
               </div>
             </div>
           )}
-          {title === "clean Transport" && (
+          {title === "Clean Transport" && (
             <div className="border-2 lg:flex h-full lg:gap-5 border-[#F2F4F7] rounded-lg px-[6%] 2xl:px-0 py-6">
               <div className="lg:w-[60%]">
                 <p className="text-[#101828] font-semibold text-left  text-[14px] max-[480px]:text-[12px] sm:text-[18px] mr-10 font-inter">
-                  clean Transport
+                  Clean Transport
                 </p>
                 <div className="mt-6">
                   <p className="text-[#475467] text-center sm:text-left font-normal  text-[16px] max-[480px]:text-[9px] lg:text-[14px] font-inter">
@@ -579,11 +579,11 @@ export default function Thesis() {
                         ? "bg-[#F4AB1F]"
                         : chart.title === "Ecosystem Conservation"
                           ? "bg-[#B2BC45]"
-                          : chart.title === "clean Energy"
+                          : chart.title === "Clean Energy"
                             ? "bg-[#486D2F]"
                             : chart.title === "Solarpunk Spaces"
                               ? "bg-[#045047]"
-                              : chart.title === "clean Transport"
+                              : chart.title === "Clean Transport"
                                 ? "bg-[#EC8000]"
                                 : ""
                       } w-[5px]  -left-3 top-[8px] absolute h-[5px] rounded-full`}
@@ -846,7 +846,7 @@ export default function Thesis() {
           </div>
         ) : (
           <>
-            <div className="flex flex-col justify-between gap-10 mt-32 mb-24 max-[768px]:flex-col">
+            <div className="flex flex-col justify-between gap-10 mb-24 max-[768px]:flex-col">
               <div className="md:w-[70%] lg:w-[50%]">
                 <p className="text-[#101828] font-semibold text-left mt-6 md:text-[16px] max-[480px]:text-[12px] max-[768px]:text-[16px] text-center lg:text-[28px] mr-10 font-syne">
                   How?
