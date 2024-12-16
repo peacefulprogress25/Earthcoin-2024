@@ -215,6 +215,7 @@ export default function Earth() {
                 // width={600}
                 width={width || 500}
                 height={600}
+                className="object-contain"
               />
             </div>
           ))}
