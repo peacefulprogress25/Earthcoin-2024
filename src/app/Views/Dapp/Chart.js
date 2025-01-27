@@ -28,7 +28,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
   const tooltipData = {
     mint: {
       title: "Mint",
-      description: "Purge your $DAI to create $EARTH and fund real world regeneration in one transaction."
+      description: "Purge your $USDC to create $EARTH and fund real world regeneration in one transaction."
     },
     stake: {
       title: "Stake",

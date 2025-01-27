@@ -21,7 +21,7 @@ export default function Trade() {
       <p className="text-[#101828] font-inter font-medium text-center text-md  sm:text-2xl">Trade {addressObj?.units?.unit1} <br />for $Earth</p>
       <div className="flex flex-col items-center">
         <p className="font-bold text-center text-black font-inter text-md">Network:</p>
-        <p className="text-[#101828] font-inter font-semibold text-center text-sm">Base POS</p>
+        <p className="text-[#101828] font-inter font-semibold text-center text-sm">BASE</p>
 
       </div>
       <div className="flex flex-col items-center">

@@ -7,6 +7,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState, useEffect } from "react";
 import buttonConfig from "../../utils/button";
 import Link from "next/link";
+import { contractAddressList } from "../Dapp/constants/network";
 
 const solarchakra = "/assets/images/solar-chakra.png";
 const check = "/assets/icons/Check_icon.svg";
@@ -61,7 +62,7 @@ export default function Earth() {
       description:
         "Decentralized exchange on Ethereum, enabling trustless token swaps, liquidity provision, and automated market making for DeFi participants",
       token: "Token Contract",
-      address: "0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
+      address: contractAddressList[8453].earthERC20,
       features: [
         "Protocol owned liquidity pool rewards stakers",
         "Transaction fees grow the treasury",
@@ -170,7 +171,7 @@ export default function Earth() {
                     </div>
                   ))}
                 </div>
-                <div className="flex sm:flex-col lg:flex-row gap-5">
+                <div className="flex gap-5 sm:flex-col lg:flex-row">
                   <div>
                     {data?.btntext1 && (
                       <Link
@@ -240,7 +241,7 @@ export default function Earth() {
                   <p className="text-[#101828] mt-2 font-semibold text-center text-[12px] sm:text-[16px] font-inter">
                     {data?.token}
                   </p>
-                  <div className="flex gap-2 justify-center">
+                  <div className="flex justify-center gap-2">
                     <p className="text-[#475467] text-center font-normal  text-[10px] font-inter">
                       {data?.address}
                     </p>
@@ -254,7 +255,7 @@ export default function Earth() {
                       " "
                     )}
                   </div>
-                  <div className="flex flex-col  gap-2 w-full items-center  ">
+                  <div className="flex flex-col items-center w-full gap-2 ">
                     {data?.features?.map((feature, i) => (
                       <div
                         className="flex gap-2 items-center w-[85%]  "
@@ -304,7 +305,7 @@ export default function Earth() {
                 <ImageView
                   src={data?.img}
                   alt={data?.title}
-                  className="w-full h-full  object-cover"
+                  className="object-cover w-full h-full"
                   width={650}
                   height={600}
                 />

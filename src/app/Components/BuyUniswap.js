@@ -7,6 +7,7 @@ const featuredNetwork = "/assets/icons/Featured-network.png";
 const creditCard = "/assets/icons/credit-card.png";
 import Link from "next/link";
 import buttonConfig from "../utils/button";
+import { contractAddressList } from "../Views/Dapp/constants/network";
 export default function UniswapEarth({ setShowUniswap }) {
     const [copied, setCopied] = useState(false);
 
@@ -22,7 +23,7 @@ export default function UniswapEarth({ setShowUniswap }) {
                 <img className="w-8 h-8" src={featuredNetwork} alt="earthcoin" />
                 <div className="flex flex-col">
                     <p className="text-[#344054] font-inter font-medium text-[10px] text-left">Network</p>
-                    <p className="text-[#475467] font-inter font-normal text-[8px] sm:text-[10px] text-left">Base POS</p>
+                    <p className="text-[#475467] font-inter font-normal text-[8px] sm:text-[10px] text-left">BASE</p>
                 </div>
             </div>
             <div className="flex p-2 border-[1px] border-[#EAECF0] rounded-lg mt-2">
@@ -30,14 +31,14 @@ export default function UniswapEarth({ setShowUniswap }) {
                 <div className="flex flex-col">
                     <section className="flex items-center gap-2">
                         <p className="text-[#344054] font-inter font-medium text-[10px]">Token Contract</p>
-                        <CopyToClipboard onCopy={onCopy} text="0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6">
+                        <CopyToClipboard onCopy={onCopy} text={contractAddressList[8453].earthERC20}>
                             <MdContentCopy fontSize={12} style={{ color: copied ? "#EC8000 " : "#344054" }} />
                         </CopyToClipboard>
 
                     </section>
 
                     <div style={{ cursor: "pointer" }} className="flex flex-col ">
-                        <p className="text-[#475467] font-inter font-normal text-[8px] sm:text-[10px]">0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6</p>
+                        <p className="text-[#475467] font-inter font-normal text-[8px] sm:text-[10px]">{contractAddressList[8453].earthERC20}</p>
                     </div>
                 </div>
             </div>

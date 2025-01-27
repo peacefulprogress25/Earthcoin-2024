@@ -95,7 +95,7 @@ export default {
     position: "Nodes",
     page: "/earth",
     external: true,
-    link: "https://app.uniswap.org/swap?inputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063&outputCurrency=0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6",
+    link: "https://app.uniswap.org/swap?inputCurrency=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913&outputCurrency=0x9d6501275e91c0b2b0845C2c5334dEa1EC6a3c18",
   },
   footer_banner: {
     title: "Learn More",
