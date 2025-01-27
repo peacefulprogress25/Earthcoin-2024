@@ -85,22 +85,47 @@ export const contractAddressList = {
     //         explorerName: "View on Base Sepolia"
     //     },
     // },
+    8453: { //Base Mainnet
+        earthERC20: "0x9d6501275e91c0b2b0845C2c5334dEa1EC6a3c18",
+        earthStaking: "0xa96D85F3D4c932c9be5d81010710DA84E22a58aa",
+        earthTreasury: "0x31f69dd9C0fab598797D023f9FbF1065E24c7651",
+        fruit: "0xc811121E9fF373eC742b5028D055C9F986fbE51c",
+        presale: "0x01E40CCf7114688c7936CDF9a4d4523F1E54afa8",
+        soulbound: "0x9EFB372f21fE31f17cED637dbe6e6F30Ee4802CB",
+        stableCoin: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        claim: "0x805190469eE06806ea9D93C507dE0CA2Fd48e146",
+        stableCoinConfig: {
+            decimal: 6
+        },
+        explorer: "https://basescan.org/address/",
+        infura: "https://base-mainnet.infura.io/v3/",
+        tokenContract: '0x9F9f149a02Cddc9a8251207cef',
+        metadata: {
+            explorerName: "View on Base scan",
+        },
+        units: {
+            unit1: '$USDC',
+            unit2: '',
+            unit3: '',
+            unit4: '',
+        }
+    },
     10: {
         nftMetaData: "0x2b2514535f3769289956Df44B0Bf1d8dfe138F68"
     }
 }
 
 export const networks = [
-    {
-        chainName: "Polygon Mainnet",
-        chainId: "0x89",
-        rpcUrls: ["https://polygon-rpc.com"],
-        blockExplorerUrls: ["https://polygonscan.com"],
-        nativeCurrency: {
-            symbol: "POL",
-            decimals: 18,
-        },
-    },
+    // {
+    //     chainName: "Polygon Mainnet",
+    //     chainId: "0x89",
+    //     rpcUrls: ["https://polygon-rpc.com"],
+    //     blockExplorerUrls: ["https://polygonscan.com"],
+    //     nativeCurrency: {
+    //         symbol: "POL",
+    //         decimals: 18,
+    //     },
+    // },
     // {
     //     chainName: "Celo Testnet",
     //     chainId: "0xaef3",
@@ -111,13 +136,23 @@ export const networks = [
     //         decimals: 18,
     //     },
     // },
+    // {
+    //     chainName: "Celo",
+    //     chainId: "0xa4ec",
+    //     rpcUrls: ["https://forno.celo.org"],
+    //     blockExplorerUrls: ["https://explorer.celo.org/mainnet"],
+    //     nativeCurrency: {
+    //         symbol: "CELO",
+    //         decimals: 18,
+    //     },
+    // },
     {
-        chainName: "Celo",
-        chainId: "0xa4ec",
-        rpcUrls: ["https://forno.celo.org"],
-        blockExplorerUrls: ["https://explorer.celo.org/mainnet"],
+        chainName: "Base Mainnet",
+        chainId: "0x2105",
+        rpcUrls: ["https://developer-access-mainnet.base.org"],
+        blockExplorerUrls: ["https://basescan.org"],
         nativeCurrency: {
-            symbol: "CELO",
+            symbol: "ETH",
             decimals: 18,
         },
     },

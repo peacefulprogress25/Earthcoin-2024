@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { MdContentCopy } from "react-icons/md";
 import { formatWalletAddress } from "./utils";
 import { AddressContext } from "../../Providers";
+import { contractAddressList } from "./constants/network";
 
 export default function Trade() {
   const [copied, setCopied] = useState(false);
@@ -20,15 +21,15 @@ export default function Trade() {
       <p className="text-[#101828] font-inter font-medium text-center text-md  sm:text-2xl">Trade {addressObj?.units?.unit1} <br />for $Earth</p>
       <div className="flex flex-col items-center">
         <p className="font-bold text-center text-black font-inter text-md">Network:</p>
-        <p className="text-[#101828] font-inter font-semibold text-center text-sm">Polygon POS</p>
+        <p className="text-[#101828] font-inter font-semibold text-center text-sm">Base POS</p>
 
       </div>
       <div className="flex flex-col items-center">
         <p className="text-sm font-bold text-center text-black font-inter">$EARTH Address: </p>
 
         <div className="flex items-center gap-2">
-          <p className="text-[#101828] font-inter ml-3  font-semibold text-center text-sm">{formatWalletAddress("0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6")}</p>
-          <CopyToClipboard onCopy={onCopy} text="0x9F9f149a02Cddc9a8251207cefD3fF774DAF56F6" className='cursor-pointer'>
+          <p className="text-[#101828] font-inter ml-3  font-semibold text-center text-sm">{formatWalletAddress(contractAddressList[8453].earthERC20)}</p>
+          <CopyToClipboard onCopy={onCopy} text={contractAddressList[8453].earthERC20} className='cursor-pointer'>
             <MdContentCopy className="text-sm" style={{ color: copied ? "#EC8000 " : "#344054" }} />
           </CopyToClipboard>
         </div>

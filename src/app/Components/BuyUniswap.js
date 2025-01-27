@@ -22,7 +22,7 @@ export default function UniswapEarth({ setShowUniswap }) {
                 <img className="w-8 h-8" src={featuredNetwork} alt="earthcoin" />
                 <div className="flex flex-col">
                     <p className="text-[#344054] font-inter font-medium text-[10px] text-left">Network</p>
-                    <p className="text-[#475467] font-inter font-normal text-[8px] sm:text-[10px] text-left">Polygon POS</p>
+                    <p className="text-[#475467] font-inter font-normal text-[8px] sm:text-[10px] text-left">Base POS</p>
                 </div>
             </div>
             <div className="flex p-2 border-[1px] border-[#EAECF0] rounded-lg mt-2">
