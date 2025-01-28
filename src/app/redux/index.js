@@ -24,6 +24,14 @@ const storage =
 const persistConfig = {
   key: "root",
   storage,
+  version: 1, 
+  migrate: (state) => {
+    if (state) {
+      console.log("Version changed, purging state...");
+      return Promise.resolve(null); 
+    }
+    return Promise.resolve(state); 
+  },
 };
 
 const rootReducer = combineReducers({
