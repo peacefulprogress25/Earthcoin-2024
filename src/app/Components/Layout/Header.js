@@ -3,7 +3,7 @@ import Link from "next/link";
 import ImageView from "../ImageView";
 import { useState, useRef } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import UniswapEarth from "../BuyUniswap";
+import UniswapEarth, { UniswapIframe } from "../BuyUniswap";
 import AccountDapp from "../Dappaccount";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
@@ -27,6 +27,7 @@ export default function Header() {
   const [showNodes, setShowNodes] = useState(false);
   const [showUniswap, setShowUniswap] = useState(false);
   const [accountDapp, setAccountDapp] = useState(false);
+  const [swap, setSwap] = useState(false)
   const profile = useSelector(profileState);
   const buyRef = useRef(null);
   const dappRef = useRef(null);
@@ -133,6 +134,7 @@ export default function Header() {
     },
   ];
 
+console.log(swap);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
@@ -317,7 +319,7 @@ export default function Header() {
                   ref={buyRef}
                   className="absolute w-[22rem] top-20 flex flex-col border border-[#EAECF0]  shadow-lg gap-8 p-6  rounded-lg bg-white"
                 >
-                  <UniswapEarth setShowUniswap={setShowUniswap} />
+                  <UniswapEarth setShowUniswap={setShowUniswap} setSwap={setSwap}  />
                 </div>
               )}
               <Link
@@ -476,7 +478,7 @@ export default function Header() {
                   ref={buyRef}
                   className="absolute w-[19rem] sm:w-[22rem] flex flex-col  border border-[#EAECF0]  shadow-lg gap-8 p-6  rounded-lg bg-white"
                 >
-                  <UniswapEarth setShowUniswap={setShowUniswap} />
+                  <UniswapEarth setShowUniswap={setShowUniswap} setSwap={setSwap} />
                 </div>
                 </div>
               )}
@@ -492,6 +494,7 @@ export default function Header() {
           </div>
         </div>
       )}
+      {swap ? <UniswapIframe swap={swap} setSwap={setSwap} />  : null}
     </nav>
   );
 }
