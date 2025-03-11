@@ -37,8 +37,6 @@ const wallet = "/assets/icons/wallet-white.svg";
 
 
 export default function Dapp() {
-  const [showPopup, setShowPopup] = useState(false);
-  const { showMessage } = useNotification();
   const [isSmallScreen, setIsSmallScreen] = useState(false)
   const [screen, setScreen] = useState("SBT");
   const {
@@ -157,7 +155,7 @@ export default function Dapp() {
         if (minted) {
           setScreen((items) => items && Array.isArray(items) && items.filter((heading) => heading !== "SBT"));
         } else {
-          setScreen(label);
+          // setScreen(label);
         }
       } catch (e) {
         console.log(e);

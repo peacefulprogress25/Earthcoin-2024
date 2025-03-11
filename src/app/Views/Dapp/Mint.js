@@ -37,6 +37,7 @@ export default function Mint({ totalEarth }) {
   const soulboundAddress = addressObj?.soulbound;
   const stableCoinAddress = addressObj?.stableCoin;
   const presaleAddress = addressObj?.presale;
+  const mintDecimal = addressObj?.stableCoinConfig?.decimal || 18
 
   const isMinted = async () => {
     if (typeof window?.ethereum !== undefined) {
@@ -67,7 +68,7 @@ export default function Mint({ totalEarth }) {
     const signer = provider.getSigner();
     const Amount = ethers.utils.parseUnits(input, "ether");
 
-    const Balance = balance * Math.pow(10, 18);
+    const Balance = balance * Math.pow(10, mintDecimal);
 
     if (Number(Amount) > Balance) {
       showMessage({
@@ -164,7 +165,7 @@ export default function Mint({ totalEarth }) {
       );
       try {
         const info = await contract.balanceOf(account);
-        setBalance(info / Math.pow(10, 18));
+        setBalance(info / Math.pow(10, mintDecimal));
 
       } catch (error) {
         console.log(error);

@@ -92,6 +92,7 @@ export const getBalance = async () => {
     return;
   }
   const stableCoinAddress = getAddressFn()?.stableCoin;
+  const decimal = getAddressFn()?.stableCoinConfig?.decimal || 18;
 
   if (typeof window?.ethereum !== undefined && stableCoinAddress) {
     const providers = new ethers.providers.Web3Provider(window?.ethereum);
@@ -103,7 +104,7 @@ export const getBalance = async () => {
     );
     try {
       const info = await contract.balanceOf(wallet);
-      const result = info / Math.pow(10, 18);
+      const result = info / Math.pow(10, decimal);
       dispatch(balanceFn({ dai: result }));
 
 
