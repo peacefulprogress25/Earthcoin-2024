@@ -66,10 +66,10 @@ export default function Mint({ totalEarth }) {
 
     const provider = new ethers.providers.Web3Provider(window?.ethereum);
     const signer = provider.getSigner();
-    const Amount = ethers.utils.parseUnits(input, "ether");
+    const Amount = ethers.utils.parseUnits(input, mintDecimal);
 
     const Balance = balance * Math.pow(10, mintDecimal);
-
+    
     if (Number(Amount) > Balance) {
       showMessage({
         type: "error",
