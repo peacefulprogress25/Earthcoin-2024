@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import buttonConfig from "../../utils/button";
 import Link from "next/link";
 import { contractAddressList } from "../Dapp/constants/network";
+import { UniswapIframe } from "../../Components/BuyUniswap";
 
 const solarchakra = "/assets/images/solar-chakra.png";
 const check = "/assets/icons/Check_icon.svg";
@@ -19,6 +20,7 @@ export default function Earth() {
   const isMedium = useMediaQuery({ query: "(min-width: 1280px)" });
   const isLarge = useMediaQuery({ query: "(min-width: 1440px)" });
   const isXLarge = useMediaQuery({ query: "(min-width: 1550px)" });
+  const [swap, setSwap] = useState(false)
   const [width, setWidth] = useState(null);
 
   useEffect(() => {
@@ -56,6 +58,7 @@ export default function Earth() {
       btntext1: buttonConfig.earth_protocol_becomenode.title,
       buttonLink1: buttonConfig.earth_protocol_becomenode.link,
       external1: buttonConfig.earth_protocol_becomenode.external,
+      iframe: false
     },
     {
       title: "Uniswap",
@@ -73,6 +76,7 @@ export default function Earth() {
       btntext: buttonConfig.earth_uniswap_becomeNode.title,
       buttonLink: buttonConfig.earth_uniswap_becomeNode.link,
       external: buttonConfig.earth_uniswap_becomeNode.external,
+      iframe:true
     },
   ];
 
@@ -188,14 +192,25 @@ export default function Earth() {
                     )}
                   </div>
                   <div className="text-start">
-                    <Link
+                    {!data?.iframe ?<Link
                       key={index}
                       className="bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter"
                       href={data?.buttonLink || ""}
                       target={data?.external ? "_blank" : "_self"}
                     >
                       {data?.btntext}
-                    </Link>
+                    </Link>:
+
+                    <button
+                        key={index}
+                        onClick={()=>setSwap(true)}
+                      className="bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter"
+                    >
+                      {data?.btntext}
+                    </button>}
+
+
+
                     {/* <button className='bg-[#EC8000]  p-2 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-32 font-normal buttonb-2 text-center text-[13px] font-inter'>
                     {data.external ? (
                       <a href={data?.buttonLink} target='_blank'>
@@ -291,14 +306,21 @@ export default function Earth() {
                       )}
                     </div>
                     <div className="text-start">
-                      <Link
+                     {!data?.iframe ? <Link
                         key={index}
                         className="bg-[#EC8000]  p-2 px-6 text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-20 font-normal text-center text-[10px] font-inter my-5"
                         href={data?.buttonLink || ""}
                         target={data?.external ? "_blank" : "_self"}
                       >
                         {data?.btntext}
-                      </Link>
+                      </Link>:
+                      <button
+                          key={index}
+                          onClick={()=>setSwap(true)}
+                        className="bg-[#EC8000]  p-2 px-6 w-fit text-white border border-[#EC8000] shadow-[0_1px_2px_0_rgba(16, 24, 40, 0.05)] rounded-md w-20 font-normal text-center text-[10px] font-inter my-5"
+                      >
+                        {data?.btntext}
+                      </button>}
                     </div>
                   </div>
                 </div>
@@ -317,6 +339,7 @@ export default function Earth() {
       <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-[6%] 2xl:px-0 flex gap-10 flex-col items-center pb-10">
         <Minting />
       </div>
+      {swap ? <UniswapIframe setSwap={setSwap} swap={swap} />:null}
     </div>
   );
 }
