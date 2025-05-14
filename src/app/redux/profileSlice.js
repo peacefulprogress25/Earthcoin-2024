@@ -6,6 +6,7 @@ const initialState = {
   walletBalance: "0.0",
   accounts: [],
   chainId: networks[0]?.chainId,
+  type: networks[0]?.type, 
   balance: {
     earth: 0,
     fruit: 0,
@@ -29,7 +30,7 @@ const profileSlice = createSlice({
       return { ...state, balance: { ...state.balance, ...action.payload } };
     },
     networkFn: (state, action) => {
-      return { ...state, chainId: action.payload }
+      return { ...state, chainId: action.payload.chainId,type:action.payload.type }
     },
     earthBalanceFn: (state, action) => {
       return {
@@ -38,7 +39,7 @@ const profileSlice = createSlice({
       };
     },
     disconnectWalletFn: (state) => {
-      return initialState;
+      return {...state,wallet:''};
     },
 
     termsConditionFn: (state, action) => {

@@ -277,7 +277,7 @@ export default function Header() {
           {pathname === "/dapp" ? (
             profile?.wallet ? (
               <div className="flex justify-end gap-2">
-                <button onClick={() => setAccountDapp(true)}>
+                <button onClick={() => profile.type==='evm' &&  setAccountDapp(true)}>
                   <div className=" relative ml-auto text-white font-inter flex h-10  items-center justify-end rounded-lg px-[2px] text-sm">
                     <div className="w-[11rem] rounded-lg bg-[#EC8000] h-9 flex justify-between px-3 items-center ">
                       <img className="object-cover w-5 h-5" src={avatar} alt="earthcoin" />

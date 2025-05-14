@@ -112,6 +112,11 @@ export const contractAddressList = {
     },
     10: {
         nftMetaData: "0x2b2514535f3769289956Df44B0Bf1d8dfe138F68"
+    },
+    'solana': {
+        programId: '3nqNJCZafkuLQcPcnF8jfExCTBWC3swcG61T9NsmdhwF',
+        earth: '2ukU7vt77TWFjTReoCPwWxVJXCixtRHnMHHP2b8h6fZg',
+        usdc:'9J5R3LFyUEhVteRoGWztcixB7xjgcEwsFjsxJ7rPKXNj'
     }
 }
 
@@ -151,10 +156,16 @@ export const networks = [
         chainId: "0x2105",
         rpcUrls: ["https://developer-access-mainnet.base.org"],
         blockExplorerUrls: ["https://basescan.org"],
+        type:'evm',
         nativeCurrency: {
             symbol: "ETH",
             decimals: 18,
         },
+    },
+    {
+        chainName: "Solana (Devnet)",
+        chainId: "solana",
+        type: 'solana',
     },
     // {
     //     chainName: "Base Sepolia Testnet",

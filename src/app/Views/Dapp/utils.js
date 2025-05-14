@@ -91,10 +91,34 @@ export const VerifyNetwork = async (obj) => {
 //   }
 // };
 
-export const connectWallet = async () => {
+export const connectWallet = async ({ walletInst, connection }) => {
   try {
     const wallet = store.getState().profile.wallet;
+    const type = store.getState().profile.type;
+    console.log({wallet,type});
+    
     if (!wallet) {
+      if (type === 'solana') {
+        console.log('gk');
+        
+        const ad= await walletInst.connect()
+        const address = await walletInst.publicKey?.toBase58()
+        console.log(address,ad,walletInst);
+
+        // if (walletInst?.connected) {
+          store.dispatch(connectWalletFn(address));
+
+          const lamports = await connection.getBalance(address);
+          const balance = lamports / 1e9; // Convert lamports to SOL
+
+          store.dispatch(balanceFn(balance));
+          NotifyUser({
+            type: "success",
+            message: "Wallet Connected",
+          });
+          return true
+        // }
+      }
 
       const chainId = store.getState().profile.chainId;
 
@@ -114,20 +138,20 @@ export const connectWallet = async () => {
       const accounts = await window?.ethereum.request({
         method: "eth_requestAccounts",
       });
-
-      if (accounts && accounts.length) {
-        store.dispatch(connectWalletFn(accounts[0]));
-        const balance = await provider.getBalance(accounts[0]);
-        store.dispatch(balanceFn(ethers.utils.formatEther(balance)));
-        NotifyUser({
-          type: "success",
-          message: "Wallet Connected",
-        });
-        return true
-      } else {
-        NotifyUser({ type: "error", message: "No Wallet Found" });
-      }
+        
+        if (accounts && accounts.length) {
+          store.dispatch(connectWalletFn(accounts[0]));
+          const balance = await provider.getBalance(accounts[0]);
+          store.dispatch(balanceFn(ethers.utils.formatEther(balance)));
+          NotifyUser({
+            type: "success",
+            message: "Wallet Connected",
+          });
+          return true
+        }
+      
     } else {
+      type==='solana' && walletInst?.disconnect()
       store.dispatch(disconnectWalletFn());
       NotifyUser({ type: "success", message: "Wallet Disconnected" });
     }

@@ -8,6 +8,7 @@ import { store, persistor } from "./redux";
 import { usePathname } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
 import { envObj } from "./utils/env";
+import { SolanaProvider } from './Views/Dapp/SolanaProvider'
 
 
 export const AddressContext = createContext()
@@ -31,7 +32,9 @@ export default function Providers({ children }) {
       <PersistGate loading={false} persistor={persistor}>
         <Toaster position='top-center' richColors />
         <AddressContext.Provider value={{ addressObj, setAddressObj }}>
+          <SolanaProvider>
           {children}
+          </SolanaProvider>
         </AddressContext.Provider>
       </PersistGate>
     </ReduxProvider>

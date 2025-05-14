@@ -7,6 +7,7 @@ import Claim from "./Claim";
 import Mint from "./Mint";
 import "./dapp.css";
 import Chart from "./Chart";
+import SolanaChart from "./SolanaChart";
 import { ethers } from "ethers";
 import useNotification from "../../Hooks/useNotification";
 import { envObj } from "../../utils/env";
@@ -26,6 +27,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import { networks } from "./constants/network";
 import { AddressContext } from "../../Providers";
+import SolanaMint from './SolanaMint'
 
 
 const GradientBg = "/assets/images/dapp-bg.png";
@@ -43,7 +45,8 @@ export default function Dapp() {
     wallet: account,
     balance: balanceObj,
     earthBalance,
-    chainId
+    chainId,
+    type
   } = useSelector(profileState);
   const [showContent, setShowContent] = useState(true);
   const { addressObj } = useContext(AddressContext)
@@ -284,13 +287,16 @@ export default function Dapp() {
                 className='w-full  z-[1] h-full  left-0  absolute'
               />
             ) : null}
-            <Chart
+            {type==='solana'?<SolanaChart
               setScreen={setScreen}
               screen={screen}
               callBack={walletCallBack}
-            >
-              {" "}
-            </Chart>
+            />
+             : <Chart
+                setScreen={setScreen}
+                screen={screen}
+                callBack={walletCallBack}
+            />}
             {showContent ? (
               <div className='rounded-full sm:w-[23rem] w-[71%] h-[71%]  sm:h-[23rem] border-2 z-[6] flex absolute  top-13  sm:top-[5.1rem] sm:left-[9.3rem]  xl:left-[11rem] overflow-auto  items-center shadow-lg bg-white justify-center border-black '>
                 {/* {account && screen === "DISCONNECT WALLET" ? (
@@ -321,7 +327,8 @@ export default function Dapp() {
                   <Stake totalEarth={totalEarth} />
                 ) : screen === "CLAIM" && account ? (
                   <Claim setScreen={setScreen} />
-                ) : screen === "MINT" && account ? (
+                      ) : screen === "MINT" && account ? (
+                          type==='solana'? <SolanaMint/> :
                   <Mint
                     totalEarth={totalEarth}
                     setHeading={setScreen}

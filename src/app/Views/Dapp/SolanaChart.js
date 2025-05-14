@@ -1,26 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import { connectWallet } from "./utils";
-import { useSelector } from "react-redux";
-import { profileState } from "../../redux/profileSlice";
+import {  useDispatch, useSelector } from "react-redux";
+import {  connectWalletFn, disconnectWalletFn, profileState } from "../../redux/profileSlice";
 import { store } from "../../redux";
+import {  useWallet } from "@solana/wallet-adapter-react";
 
-const Chart = ({ setScreen, screen, callBack }) => {
+const SolanaChart = ({ setScreen, screen, callBack }) => {
   const chartRef = useRef();
   const [disconnect, setDisconnect] = useState(false);
-  const { wallet, chainId } = useSelector(profileState);
-
+  const { wallet, type } = useSelector(profileState);
+  const dispatch=useDispatch()
   const init = [
-    { name: "MINT", value: 200, color: "#adb745" },
-    { name: "STAKE", value: 200, color: "#adb745" },
-    { name: "TRADE", value: 200, color: "#adb745" },
-    { name: "CLAIM", value: 170, color: "#adb745" },
+    { name: "MINT", value: 59, color: "#adb745" },
+    // { name: "STAKE", value: 200, color: "#adb745" },
+    // { name: "TRADE", value: 200, color: "#adb745" },
+    // { name: "CLAIM", value: 170, color: "#adb745" },
     {
       name: "CONNECT WALLET",
-      value: 270,
+      value: 59,
       color: wallet ? "#c1272d" : "#045047",
     },
-    { name: "NODE", value: 170, color: "#adb745" },
+    // { name: "NODE", value: 170, color: "#adb745" },
   ];
   const [donutData, setDonutData] = useState(init);
 
@@ -58,41 +58,61 @@ const Chart = ({ setScreen, screen, callBack }) => {
   }
 
 
+  const walletInst = useWallet()
+
+  
+
+
 
 
   useEffect(() => {
     setDonutData((data) => {
-      data[4] = {
+      data[1] = {
         name: wallet ? "DISCONNECT WALLET" : "CONNECT WALLET",
-        value: 270,
+        value: 59,
         color: wallet ? "#c1272d" : "#045047",
       };
       return data;
     });
   }, [wallet]);
 
+
   useEffect(() => {
-    if (screen === "CONNECT WALLET" || screen === "DISCONNECT WALLET") {
-      setDisconnect(true);
-      if (screen === "CONNECT WALLET") {
-        connectWallet({  });
-        setDonutData((prevData) =>
-          prevData.map((d) =>
-            d.name === "CONNECT WALLET"
-              ? { ...d, name: "DISCONNECT WALLET", color: "#c1272d" }
-              : d
-          )
-        );
-      } else {
-        connectWallet({});
-        setDonutData(init);
+    const address = walletInst.publicKey?.toBase58();
+    address && dispatch(connectWalletFn(address))
+  }, [walletInst.connected])
+
+
+  useEffect(() => {
+    (async () => {
+      if (screen === "CONNECT WALLET" || screen === "DISCONNECT WALLET") {
+        setDisconnect(true);
+        if (screen === "CONNECT WALLET") {
+          if (!wallet && !walletInst.connected)
+          {
+            walletInst?.select('Phantom')
+            await walletInst?.connect();
+          }
+          setDonutData((prevData) =>
+            prevData.map((d) =>
+              d.name === "CONNECT WALLET"
+                ? { ...d, name: "DISCONNECT WALLET", color: "#c1272d" }
+                : d
+            )
+          );
+        } else {
+          walletInst.disconnect()
+          dispatch(disconnectWalletFn())
+          setDonutData(init);
+          window.location.reload()
+        }
+        setInterval(() => {
+          setDisconnect(false);
+        }, 500);
+        callBack();
       }
-      setInterval(() => {
-        setDisconnect(false);
-      }, 500);
-      callBack();
-    }
-  }, [screen]);
+   })()
+  }, [screen, walletInst.publicKey]);
 
 
 
@@ -173,7 +193,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
       .style("stroke", "black")
       .style("stroke-width", 2)
       .style("fill", (d, i) => {
-        if (d.data.name === "SBT") {
+        if (d?.data?.name === "SBT") {
           return "#adb745"; // Set the color for "SBT" slice here
         } else if (i === 7) {
           return "#CCCCCC"; // Set the color for "Other" slice
@@ -187,7 +207,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
         svg.selectAll(".donutArcSlices").style("fill", "#fff");
         svg.selectAll(".donutText").style("fill", "#000");
         // Set the fill color of the clicked slice
-        d3.select(this).style("fill", d.data.color);
+        d3.select(this).style("fill", d?.data?.color);
 
         // Update the screen with the clicked slice's name
 
@@ -195,7 +215,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
           setScreen("DISCONNECT WALLET");
         } else {
 
-          chainId && setScreen(d.data.name);
+          type==='solana' && setScreen(d?.data?.name);
         }
       })
       //Create the new invisible arcs and flip the direction for the bottom half labels
@@ -206,25 +226,24 @@ const Chart = ({ setScreen, screen, callBack }) => {
         //Grab everything up to the first Line statement
         var newArc = firstArcSection.exec(d3.select(this).attr("d"))[1];
         //Replace all the commas so that IE can handle it
-        newArc = newArc.replace(/,/g, " ");
+        newArc = newArc.replace(/,/g, " "); 
 
         //If the end angle lies beyond a quarter of a circle (90 degrees or pi/2)
         //flip the end and start position
-        if (d.endAngle > (90 * Math.PI) / 180) {
+        if (d?.endAngle > Math.PI / 2)  {
           //Everything between the capital M and first capital A
-          var startLoc = /M(.*?)A/;
-          //Everything between the capital A and 0 0 1
-          var middleLoc = /A(.*?)0 0 1/;
-          //Everything between the 0 0 1 and the end of the string (denoted by $)
-          var endLoc = /0 0 1 (.*?)$/;
+          const startLoc = /M([^A]+)A/;
+          const middleLoc = /A([^0]+)0 0 [01]/;
+          const endLoc = /0 0 [01] ([^Z]+)/;
           //Flip the direction of the arc by switching the start and end point
           //and using a 0 (instead of 1) sweep flag
-          var newStart = endLoc.exec(newArc)[1];
-          var newEnd = startLoc.exec(newArc)[1];
-          var middleSec = middleLoc.exec(newArc)[1];
+          var newStart = endLoc.exec(newArc)?.[1];
+          var newEnd = startLoc.exec(newArc)?.[1];
+          var middleSec = middleLoc.exec(newArc)?.[1];
 
           //Build up the new arc notation, set the sweep-flag to 0
-          newArc = "M" + newStart + "A" + middleSec + "0 0 0 " + newEnd;
+          // newArc = "M" + newStart + "A" + middleSec + "0 0 0 " + newEnd;
+          newArc ='M-229.125 0A-229.125 229.125 0 1 0 229.125 0'
         } //if
 
         //Create a new invisible arc that the text can flow along
@@ -305,13 +324,13 @@ const Chart = ({ setScreen, screen, callBack }) => {
       // .attr("dy", 28)
       .attr("dy", function (d, i) {
         // Set different dy values based on the index
-        return i < donutData.length / 2 ? 28 : -18;
+        return i < donutData.length / 2 ? 28 : -20;
       })
       .style("z-index", "2")
       .on("click", function (event, d) {
         // Reset the fill color of all slices to white
-        const chainId = store.getState().profile.chainId
-        if (d.name === "CONNECT WALLET" && !chainId) return
+        const type = store.getState().profile.type
+        if (d.name === "CONNECT WALLET" && !type) return
         svg.selectAll(".donutArcSlices").style("fill", "#fff");
         svg.selectAll(".donutText").style("fill", "#000");
         // Find the corresponding slice and change its color
@@ -320,10 +339,9 @@ const Chart = ({ setScreen, screen, callBack }) => {
           .filter(function (sliceData) {
             return sliceData.data.name === d.name;
           })
-          .style("fill", d.color);
-        console.log(d.name);
+          .style("fill", d?.color);
         // Update the screen with the clicked slice's name
-        setScreen(d.name);
+        setScreen(d?.name);
         tooltip.style("visibility", "hidden")
 
       })
@@ -334,7 +352,7 @@ const Chart = ({ setScreen, screen, callBack }) => {
         return "#donutArc" + i;
       })
       .text(function (d) {
-        return d.name;
+        return d?.name;
       })
   }, [setScreen, donutData, disconnect]);
 
@@ -346,4 +364,4 @@ const Chart = ({ setScreen, screen, callBack }) => {
   ) : null;
 };
 
-export default Chart;
+export default SolanaChart;

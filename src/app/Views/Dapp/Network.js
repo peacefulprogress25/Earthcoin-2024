@@ -3,14 +3,14 @@ import { contractAddressList, networks } from "./constants/network";
 import { Select } from "antd";
 import "./dapp.css"
 import { useDispatch, useSelector } from "react-redux";
-import { networkFn, profileState } from "../../redux/profileSlice";
+import { connectWalletFn, disconnectWalletFn, networkFn, profileState } from "../../redux/profileSlice";
 import { VerifyNetwork } from "./utils";
 import { AddressContext } from "../../Providers";
 
 export default function Network() {
   const { Option } = Select;
 
-  const { wallet, chainId } = useSelector(profileState)
+  const { wallet, chainId,type } = useSelector(profileState)
   const dispatch = useDispatch()
   const [selectedOption, setSelectedOption] = useState(null);
   const { setAddressObj } = useContext(AddressContext)
@@ -31,8 +31,9 @@ export default function Network() {
   const handleChange = async (value) => {
     // Find the selected object based on the value
     const selectedObj = networks.filter((option) => option?.chainId === value);
-    wallet && await VerifyNetwork(selectedObj[0]);
-    dispatch(networkFn(selectedObj[0]?.chainId))
+    wallet && type==='evm' && await VerifyNetwork(selectedObj[0]);
+    dispatch((disconnectWalletFn()))
+    dispatch(networkFn({ chainId: selectedObj[0]?.chainId, type: selectedObj[0]?.type}))
     console.log(selectedObj[0]);  // logs the name of the selected object
     setSelectedOption(selectedObj[0]);
     assignAddress(selectedObj[0].chainId)
@@ -49,9 +50,9 @@ export default function Network() {
       assignAddress(filtered[0].chainId)
       console.log(filtered[0])
     }
-    else {
-      setSelectedOption('')
-    }
+    // else {
+    //   setSelectedOption('')
+    // }
   }, [chainId]);
 
   return (
