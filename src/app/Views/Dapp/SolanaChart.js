@@ -80,7 +80,7 @@ const SolanaChart = ({ setScreen, screen, callBack }) => {
   useEffect(() => {
     const address = walletInst.publicKey?.toBase58();
     address && dispatch(connectWalletFn(address))
-  }, [walletInst.connected])
+  }, [walletInst.connected, walletInst.publicKey])
 
 
   useEffect(() => {
