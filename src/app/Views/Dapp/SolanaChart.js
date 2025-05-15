@@ -59,6 +59,7 @@ const SolanaChart = ({ setScreen, screen, callBack }) => {
 
 
   const walletInst = useWallet()
+  walletInst?.select('Phantom')
 
   
 
@@ -80,26 +81,31 @@ const SolanaChart = ({ setScreen, screen, callBack }) => {
   useEffect(() => {
     const address = walletInst.publicKey?.toBase58();
     address && dispatch(connectWalletFn(address))
-  }, [walletInst.connected, walletInst.publicKey])
-
-
+  }, [ walletInst.publicKey])
+  
+  
   useEffect(() => {
     (async () => {
       if (screen === "CONNECT WALLET" || screen === "DISCONNECT WALLET") {
-        setDisconnect(true);
         if (screen === "CONNECT WALLET") {
-          if (!wallet && !walletInst.connected)
-          {
-            walletInst?.select('Phantom')
-            await walletInst?.connect();
+          try {
+            if (!wallet && !walletInst.connected) {
+              walletInst.connect && await walletInst?.connect();
+            }
+          } catch (error) {
+            console.log(error);
           }
+          if (!walletInst.publicKey) return
+          
+          setDisconnect(true);
+          
           setDonutData((prevData) =>
             prevData.map((d) =>
               d.name === "CONNECT WALLET"
-                ? { ...d, name: "DISCONNECT WALLET", color: "#c1272d" }
-                : d
-            )
-          );
+          ? { ...d, name: "DISCONNECT WALLET", color: "#c1272d" }
+          : d
+        )
+      );
         } else {
           walletInst.disconnect()
           dispatch(disconnectWalletFn())
@@ -356,12 +362,12 @@ const SolanaChart = ({ setScreen, screen, callBack }) => {
       })
   }, [setScreen, donutData, disconnect]);
 
-  return !disconnect ? (
+  return  (!disconnect ?
     <div
       ref={chartRef}
       className='cursor-pointer w-full sm:h-full flex items-center justify-center  chart text-center relative text-[16px] font-semibold font-inter z-[3]'
-    ></div>
-  ) : null;
+    ></div>:null
+  ) 
 };
 
 export default SolanaChart;
