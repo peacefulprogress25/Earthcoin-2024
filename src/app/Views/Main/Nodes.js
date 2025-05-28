@@ -19,12 +19,11 @@ function Nodes() {
         <h6 className='text-[#EC8000] font-inter text-[14px]'>NODES</h6>
         <h1 className='text-[30px] sm:text-[40px] font-semibold font-syne '>$EARTH NODES</h1>
         <p className='text-[#475467] font-inter text-[16px] font-light'>
-          Mycelium network coordinating to make climate change history and seed
-          the solarpunk paradigm
+          Become a Node, steward the Network
         </p>
       </section>
-      <div className='flex flex-col md:flex-row items-center justify-between w-full mt-12'>
-        <section className='flex flex-col w-full md:w-1/2 sm:mt-4 gap-6'>
+      <div className='flex flex-col items-center justify-between w-full mt-12 md:flex-row'>
+        <section className='flex flex-col w-full gap-6 md:w-1/2 sm:mt-4'>
           <section className='flex flex-col gap-5'>
             <p className='text-[#475467] font-inter text-sm font-light'>
               Just like Bitcoin has miners, Ethereum has validators, we have
@@ -45,7 +44,7 @@ function Nodes() {
               );
             })}
           </section>
-          <section className='flex items-center gap-3 mr-auto w-full sm:justify-start'>
+          <section className='flex items-center w-full gap-3 mr-auto sm:justify-start'>
             <button className='text-white font-inter flex h-10 items-center justify-center rounded-md bg-[#EC8000] p-2 text-xs'>
             <Link
               href={buttonConfig?.home_earthNode_learnMore?.link || ""}
@@ -64,7 +63,7 @@ function Nodes() {
             </button>
           </section>
         </section>
-        <section className='flex w-full md:w-1/2 justify-center mt-2' style={{marginTop:"2rem"}}>
+        <section className='flex justify-center w-full mt-2 md:w-1/2' style={{marginTop:"2rem"}}>
           <Image src={img} className='w-full object-contain sm:w-[100%]' width={400} height={400} />
         </section>
       </div>

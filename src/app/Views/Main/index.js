@@ -274,39 +274,15 @@ export default function Main() {
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-          <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-            Programming money to
+          <p className="text-[#000000] text-md sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+          Funding next gen infrastructure thats
           </p>
-          <Swiper
-            modules={[Autoplay, EffectFade]}
-            className='w-full mySwiper !h-fit mb-8'
-            fadeEffect={{ crossFade: true }}
-            effect='fade'
-            spaceBetween={100}
-            loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-          >
-            <SwiperSlide>
-              <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-                reward climate finance
-              </p>
-            </SwiperSlide>
-            <SwiperSlide>
-              <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-                make regeneration a reality
-              </p>
-            </SwiperSlide>
-            <SwiperSlide>
-              <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-                build the solarpunk paradigm
-              </p>
-            </SwiperSlide>
-          </Swiper>
-
-          <p className="xl:text-[30px] lg:text-[25px] md:text-xl mt-2 md:mt-3 xl:mt-0  text-[10px]  font-inter">Reserve currency for #Refi</p>
+          <p className="text-[#000000] text-md sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+            building the foundations of our future
+          </p>
+  
+          <p className="xl:text-[30px] !mt-5 lg:text-[25px]  md:text-xl   xl:mt-0  text-[10px]  font-inter">Network of yield generating assets   </p>
+          <p className="xl:text-[30px] xl:mt-4 lg:text-[25px]  md:text-xl   text-[10px]  font-inter" >across Energy, Agri, Mobility and Housing.</p>
 
           <button className="text-white mt-1 sm:mt-6 font-inter font-semibold px-2 py-1 sm:px-4 sm:py-2 rounded-md bg-[#101323] border border-[#EC8000] text-[8px] sm:text-base">
             <Link
@@ -343,7 +319,7 @@ export default function Main() {
         <div className="mt-[2rem] sm:mt-[4rem] xl:mt-[6rem]">
           <p className="leading-10 text-[#000000] text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
             {/* Just ONE transaction to get Rewarded for */}
-            Just ONE transaction to fund net zero infrastructure
+            Internet money to real infrastructure in ONE transaction 
             {/* <span className="text-[#EC8000]"> Climate Action</span> */}
           </p>
         </div>
@@ -379,10 +355,10 @@ export default function Main() {
             </div>
           ))}
         </div> */}
-        <p className="text-[#000000] mt-5 text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
+        {/* <p className="text-[#000000] mt-5 text-[20px] md:text-[25px] lg:text-[30px] xl:text-[35px] font-syne w-full text-center font-semibold">
           What is $EARTH?
-        </p>
-        <Features />
+        </p> */}
+        {/* <Features /> */}
 
         <div className="relative w-full mb-[2rem] sm:mb-[4rem] xl:mb-[6rem] -mt-10 pt-16">
           <ImageView
@@ -393,13 +369,14 @@ export default function Main() {
             className="w-full rounded-lg h-[24rem] object-cover mt-20"
           />
           <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] font-syne text-center flex items-center justify-center">
-            <p className="font-bold whitespace-normal text-[18px] xs:whitespace-nowrap sm:text-[24px] md:text-[27px] lg:text-[40px] xl:text-[44px] leading-tight">
-              $EARTH for EARTH {" "}
-              <br />
-              <span className="xs:whitespace-nowrap whitespace-normal font-normal text-[14px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px]">
-                Using crypto economics to value NATURE
-              </span>
-            </p>
+            {/* <p className="font-bold whitespace-normal text-[18px] xs:whitespace-nowrap sm:text-[24px] md:text-[27px] lg:text-[40px] xl:text-[44px] leading-tight"> */}
+              {/* $EARTH for EARTH {" "} */}
+              {/* <br /> */}
+              <p className=" sm:line-clamp-3  break-words  text-center  font-normal text-[14px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px]">
+                Fusing real world income from physical assets and on chain demand for the digital asset to deliver truly yummy yields.
+
+              </p>
+            {/* </p> */}
           </div>
 
         </div>

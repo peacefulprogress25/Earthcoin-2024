@@ -55,8 +55,7 @@ function Projects() {
       <>
 
         <p className="text-[#1F2636] font-syne text-center font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl w-3/4 mb-[2rem] sm:mb-[4rem] xl:mb-[6rem]">
-          Treasury is dedicated to yield bearing RWAs directly <br />
-          <span>addressing the climate crisis</span>
+          Assets part of EARTH Network 
         </p>
 
         <div className="flex flex-col justify-between w-full md:flex-row ">
