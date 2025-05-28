@@ -274,17 +274,16 @@ export default function Main() {
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-          <p className="text-[#000000] text-md sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+          <p className="text-[#000000] text-md sm:text-3xl md:text-[35px] lg:text-[45px] xl:text-[55px] font-syne font-medium leading-tight lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
           Funding next gen infrastructure
           </p>
-          <p className="text-[#000000] text-md sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+          <p className="text-[#000000] text-md sm:text-3xl md:text-[35px] lg:text-[45px] xl:text-[55px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
             serving our daily needs
           </p>
   
-          <p className="xl:text-[25px] !mt-5 lg:text-[20px]  md:text-xl   xl:mt-0  text-[10px]  font-inter">Network of yield generating assets   </p>
-          <p className="xl:text-[25px] xl:mt-4 lg:text-[20px]  md:text-xl   text-[10px]  font-inter" >across Energy, Agri, Mobility and Housing.</p>
+          <p className=" !mt-5 lg:text-[20px] xl:mt-0  text-[10px]  font-inter">Network of yield generating assets across Energy, Agri, Mobility and Housing.</p>
 
-          <button className="text-white mt-1 sm:mt-6 font-inter font-semibold px-2 py-1 sm:px-4 sm:py-2 rounded-md bg-[#101323] border border-[#EC8000] text-[8px] sm:text-base">
+          <button className="text-white mt-4 sm:mt-8 font-inter font-semibold px-2 py-1 sm:px-4 sm:py-2 rounded-md bg-[#101323] border border-[#EC8000] text-[8px] sm:text-base">
             <Link
               href={buttonConfig?.home_get_earth?.link || ""}
               target={
