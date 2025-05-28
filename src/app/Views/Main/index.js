@@ -36,7 +36,7 @@ const highlight = "/assets/images/highlightText.png";
 const graph = "/assets/icons/graph.svg";
 const climateEnvironmentCrisis = "/assets/images/climate-environment.png";
 const mainBottomSection = "/assets/images/main-bottom-section.png";
-const mainBottomSection1 = "/assets/images/main-bottom-section1.png";
+const mainBottomSection2 = "/assets/images/main-bottom-section2.png";
 
 export default function Main() {
   const router = useRouter();
@@ -275,14 +275,14 @@ export default function Main() {
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <p className="text-[#000000] text-md sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-          Funding next gen infrastructure thats
+          Funding next gen infrastructure
           </p>
           <p className="text-[#000000] text-md sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-            building the foundations of our future
+            serving our daily needs
           </p>
   
-          <p className="xl:text-[30px] !mt-5 lg:text-[25px]  md:text-xl   xl:mt-0  text-[10px]  font-inter">Network of yield generating assets   </p>
-          <p className="xl:text-[30px] xl:mt-4 lg:text-[25px]  md:text-xl   text-[10px]  font-inter" >across Energy, Agri, Mobility and Housing.</p>
+          <p className="xl:text-[25px] !mt-5 lg:text-[20px]  md:text-xl   xl:mt-0  text-[10px]  font-inter">Network of yield generating assets   </p>
+          <p className="xl:text-[25px] xl:mt-4 lg:text-[20px]  md:text-xl   text-[10px]  font-inter" >across Energy, Agri, Mobility and Housing.</p>
 
           <button className="text-white mt-1 sm:mt-6 font-inter font-semibold px-2 py-1 sm:px-4 sm:py-2 rounded-md bg-[#101323] border border-[#EC8000] text-[8px] sm:text-base">
             <Link
@@ -360,22 +360,22 @@ export default function Main() {
         </p> */}
         {/* <Features /> */}
 
-        <div className="relative w-full mb-[2rem] sm:mb-[4rem] xl:mb-[6rem] -mt-10 pt-16">
+        <div className="relative w-full mb-[2rem] sm:mb-[4rem] xl:mb-[6rem] -mt-10 sm:pt-16">
           <ImageView
             alt="social"
-            src={mainBottomSection1}
+            src={mainBottomSection2}
             width={1440}
             height={430}
-            className="w-full rounded-lg h-[24rem] object-cover mt-20"
+            className="w-full rounded-lg xl:h-[24rem] object-contain xl:object-cover mt-20"
           />
           <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FFFFFF] font-syne text-center flex items-center justify-center">
             {/* <p className="font-bold whitespace-normal text-[18px] xs:whitespace-nowrap sm:text-[24px] md:text-[27px] lg:text-[40px] xl:text-[44px] leading-tight"> */}
               {/* $EARTH for EARTH {" "} */}
               {/* <br /> */}
-              <p className=" sm:line-clamp-3  break-words  text-center  font-normal text-[14px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px]">
+              {/* <p className=" sm:line-clamp-3  break-words  text-center  font-normal text-[14px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px]">
                 Fusing real world income from physical assets and on chain demand for the digital asset to deliver truly yummy yields.
 
-              </p>
+              </p> */}
             {/* </p> */}
           </div>
 
