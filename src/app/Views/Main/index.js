@@ -274,15 +274,39 @@ export default function Main() {
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-          <p className="text-[#000000] text-md sm:text-3xl md:text-[35px] lg:text-[45px] xl:text-[55px] font-syne font-medium leading-tight lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-          Funding next gen infrastructure
+          <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+            Programming money to
           </p>
-          <p className="text-[#000000] text-md sm:text-3xl md:text-[35px] lg:text-[45px] xl:text-[55px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
-            serving our daily needs
-          </p>
-  
-          <p className=" !mt-5 lg:text-[20px] xl:mt-0  text-[10px]  font-inter">Network of yield generating assets across Energy, Agri, Mobility and Housing.</p>
+          <Swiper
+            modules={[Autoplay, EffectFade]}
+            className='w-full mySwiper !h-fit mb-8'
+            fadeEffect={{ crossFade: true }}
+            effect='fade'
+            spaceBetween={100}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+          >
+            <SwiperSlide>
+              <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+                reward climate finance
+              </p>
+            </SwiperSlide>
+            <SwiperSlide>
+              <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+                make regeneration a reality
+              </p>
+            </SwiperSlide>
+            <SwiperSlide>
+              <p className="text-[#000000] text-lg sm:text-3xl md:text-[40px] lg:text-[50px] xl:text-[60px] font-syne font-medium leading-tight  lg:leading-[1.1] xl:leading-[1.2] 2xl:leading-[1.3]">
+                build the solarpunk paradigm
+              </p>
+            </SwiperSlide>
+          </Swiper>
 
+          <p className="xl:text-[30px] lg:text-[25px] md:text-xl mt-2 md:mt-3 xl:mt-0  text-[10px]  font-inter">Reserve currency for #Refi</p>
           <button className="text-white mt-4 sm:mt-8 font-inter font-semibold px-2 py-1 sm:px-4 sm:py-2 rounded-md bg-[#101323] border border-[#EC8000] text-[8px] sm:text-base">
             <Link
               href={buttonConfig?.home_get_earth?.link || ""}
